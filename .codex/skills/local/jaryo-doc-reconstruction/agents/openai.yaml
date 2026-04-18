@@ -1,0 +1,4 @@
+interface:
+  display_name: "Jaryo Doc Reconstruction"
+  short_description: "Rebuild long-form docs from markdown sources"
+  default_prompt: "Use $jaryo-doc-reconstruction to improve the local docs from markdown sources, then ask focused follow-up questions and map any new source material into the right section."
