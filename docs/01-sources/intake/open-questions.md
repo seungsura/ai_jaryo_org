@@ -1,6 +1,6 @@
 # Open Questions
 
-현재 저장소의 markdown 기준으로 사실관계가 미해결인 항목은 없습니다. 다만 이번 prose 검증 패스에서 남은 편집 판단 2건은 아래에 열어 둡니다.
+현재 저장소의 markdown 기준으로 사실관계가 미해결인 항목은 없습니다. 다만 이번 prose 검증 패스에서 남은 편집 판단 1건은 아래에 열어 둡니다.
 
 ## Open Editorial Audit
 
@@ -10,13 +10,14 @@
 - 왜 보류했는가: 현재 local markdown은 패턴 taxonomy와 내부 사례를 충분히 주지만, 다섯 패턴을 같은 문제 위에 나란히 얹는 단일 예시는 제공하지 않습니다.
 - 사용자 확인 필요: 다음 편집 패스에서 다섯 패턴을 하나의 공통 시나리오로 다시 설명하는 보강 단락을 추가할지 확인이 필요합니다.
 
-## Q10. Public-facing handling of internal identifiers
-- 대상 섹션: `docs/02-seminar/prose/07-practical-workflow-and-tooling.md`, `docs/02-seminar/prose/90-appendix-references.md`
-- 부족한 내용: `OMC`, `Linear(PIMS)`, 내부 확인 정보 같은 식별자는 provenance에는 도움이 되지만, 외부 청중에게는 배경 설명이 부족하면 몰입을 끊을 수 있습니다.
-- 왜 보류했는가: local markdown은 이 식별자들의 존재와 역할을 보여 주지만, 공개 세미나 버전에서 그대로 유지할지 일반화할지에 대한 편집 방침은 따로 명시하지 않습니다.
-- 사용자 확인 필요: 공개 발표 기준으로는 내부 식별자를 유지할지, 더 일반적인 설명으로 치환할지 결정이 필요합니다.
-
 ## Closed Audit Records
+
+## Q10. Public-facing handling of internal identifiers
+- 상태: closed
+- 대상 섹션: `docs/02-seminar/prose/07-practical-workflow-and-tooling.md`, `docs/02-seminar/prose/90-appendix-references.md`
+- 확인 내용: 공개 글 기준으로는 `OMC`는 public preset pack 예시로 설명을 덧붙여 유지하고, `Linear(PIMS)`와 특정 내부 팀 식별자는 더 일반적인 표현으로 치환했습니다. provenance 구분은 유지하되, 내부 식별자가 본문 몰입을 끊지 않도록 노출 강도를 낮췄습니다.
+- 왜 닫았는가: 사용자가 seminar 전체 문서를 외부 공개 가능한 기술 블로그 수준으로 다듬는 편집 패스를 요청했으므로, 공개 독자 기준의 일반화 편집을 적용해 질문을 닫았습니다.
+- 추가 사용자 확인: 없음
 
 ## Q01. OMC page 071 literal uncertainty 3건
 - 상태: closed
