@@ -1,10 +1,8 @@
-# Gemini Invocation Contract
+# GPT Invocation Contract
 
 Always use this fixed model for Korean slide writing:
 
-```bash
-gemini -m gemini-3.1-pro-preview
-```
+- `gpt-5.4`
 
 ## Prompt Ingredients
 
@@ -20,7 +18,7 @@ Every invocation should include:
   - slide copy
   - speaker notes
 
-## Never Delegate To Gemini
+## Never Delegate To GPT
 
 - slide count decisions
 - family assignment

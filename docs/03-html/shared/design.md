@@ -63,7 +63,8 @@ Rules:
 
 ## Generation Model
 
-- 한국어 slide planning / slide copy / speaker notes 생성 경로: `gemini -m gemini-3.1-pro-preview`
+- 한국어 slide planning / slide copy / speaker notes 생성 경로: GPT-based local subagents
+- slide copy / speaker notes fixed writing model: `gpt-5.4`
 - HTML/CSS 생성 경로: Codex
 - Codex 책임: HTML generation, deck consistency auditing, render 검증, outline/manifest 동기화
 
@@ -73,7 +74,7 @@ Rules:
 
 1. `slide-outline-planner`
 2. `chapter-slide-pm-ko` / `exception-slide-pm-ko`
-3. `korean-slide-copywriter-gemini`
+3. `korean-slide-copywriter-gpt`
 4. `storyline-auditor-ko` + `korean-tone-auditor-ko`
 5. `html-slide-builder`
 6. `html-deck-consistency-auditor` + `html-slide-designer`
@@ -306,7 +307,9 @@ Rules:
 - slide 한 장에는 한 개의 핵심 목적만 유지
 - title은 slide intent를 압축해서 바로 읽히게 작성
 - helper translation, English UI label, 장식용 category label 금지
-- slide 관련 한국어 작성은 Gemini를 사용하되, 모델명은 항상 `gemini-3.1-pro-preview`로 고정
+- slide 관련 한국어 작성은 GPT를 사용하되, slide copy와 speaker notes의 모델명은 항상 `gpt-5.4`로 고정
+- 저장소 prose의 직접적이고 단정적인 문제의식을 유지하되, slide에 맞게 더 짧고 더 단단하게 압축
+- 번역투 방법론 용어, 보고서 문장, 설명문 냄새가 나는 문장은 기본적으로 제거
 - line, connector, meter, divider는 의미를 전달할 때만 사용하고, 장식 목적이면 제거
 - `minimal-light`의 clean tone을 유지하기 위해 subtitle, lead, card body는 특히 짧게 유지합니다.
 
@@ -317,6 +320,7 @@ Rules:
 - `습니다`, `입니다` 같은 공손체 ending이 slide copy에 나오면 기본적으로 gate failure 후보입니다.
 - 길고 설명적인 문장은 note로 보내고, slide에는 claim과 contrast만 남깁니다.
 - English technical term은 유지하되, 한국어 구조를 깨는 직역체 문장은 허용하지 않습니다.
+- 말은 맞지만 저장소 고유의 압력이 사라진 밋밋한 기업 문장도 tone failure 후보입니다.
 
 ## Footer Rules
 

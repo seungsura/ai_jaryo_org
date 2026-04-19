@@ -10,7 +10,7 @@ use_when:
   - "A section or chapter must be revised and followed by targeted user questions"
 default_prompt: |
   Use $jaryo-doc-reconstruction at /Users/seungsu/Desktop/project/jaryo/.codex/skills/local/jaryo-doc-reconstruction/SKILL.md to improve the target docs through an editorial loop.
-  Keep the writing faithful to the local markdown and approved user-supplied text sources, avoid visual assets, and always return:
+  Keep the writing faithful to the local markdown and approved user-supplied text sources, avoid visual assets, follow the repository seminar voice policy, and always return:
   1. what changed
   2. what still feels weak
   3. 1 to 3 focused questions for the user
@@ -26,4 +26,5 @@ output_expectations:
 hard_rules:
   - "No JPG/PDF reference unless the user overrides the policy"
   - "Do not invent examples or numbers"
+  - "Do not leave the prose in bland report-style Korean or translationese"
   - "Do not ask vague questions that do not unlock a concrete edit"

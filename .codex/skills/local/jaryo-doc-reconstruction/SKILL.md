@@ -18,6 +18,8 @@ Rebuild source-quality documentation from the markdown files in this repository 
 - Record ambiguity, missing evidence, or conflicting phrasing in `docs/01-sources/intake/open-questions.md` instead of guessing.
 - Prefer section-scoped files under `docs/02-seminar/prose/` over one giant document unless the user explicitly wants a monolith.
 - Keep future slide regeneration in mind: preserve section boundaries, strong headings, and claims that can later collapse back into slides.
+- Follow the repository seminar voice policy: prose should read like a dense technical blog essay, not a report or translated methodology memo.
+- Avoid translationese and dead explanatory phrasing when a sharper Korean sentence is available.
 - After each meaningful draft or revision pass, prepare focused follow-up questions for the user instead of silently making speculative editorial decisions.
 
 ## Workflow
@@ -44,6 +46,7 @@ Rebuild source-quality documentation from the markdown files in this repository 
 - Read [references/structure.md](references/structure.md) when deciding the pipeline file tree or section splits.
 - Read [references/output-contract.md](references/output-contract.md) when preparing section maps, draft outputs, or open-question logs.
 - Read [references/collaboration-loop.md](references/collaboration-loop.md) when improving draft quality through user dialogue or integrating newly collected materials.
+- Read [references/tone-rules.md](references/tone-rules.md) when prose starts drifting into report-style or translated-Korean phrasing.
 
 ## Example Triggers
 

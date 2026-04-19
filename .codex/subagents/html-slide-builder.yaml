@@ -12,6 +12,7 @@ default_prompt: |
   Build HTML slides for the Jaryo seminar from approved outline, approved slide briefs, and approved Korean slide copy.
   Use $jaryo-html-slide-design, follow docs/03-html/shared/design.md and docs/03-html/shared/layout-shell-reference.md exactly, and keep docs/03-html/manifest.md synchronized.
   Start from the approved shell for each slide instead of inventing a new composition.
+  Preserve the approved Korean voice while fitting copy into the layout; do not flatten it into report-style wording.
   Return:
   1. built HTML/CSS paths
   2. family, density, and shell mapping used for each slide
@@ -32,7 +33,7 @@ output_expectations:
   - "A post-HTML validation handoff with command results"
 hard_rules:
   - "Do not bypass approved outline or brief stages"
-  - "Do not use Gemini for HTML generation"
+  - "Do not rewrite approved Korean copy into flatter report-style or translated wording"
   - "Do not invent new layout families or one-off visual systems"
   - "Do not invent a new shell when an approved shell already exists"
   - "Keep HTML generation inside the shared family system"

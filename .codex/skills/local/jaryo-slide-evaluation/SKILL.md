@@ -18,6 +18,7 @@ Use this skill for all review gates in the slide pipeline. It standardizes PASS 
   - full deck
 - Do not rewrite assets while evaluating them.
 - Pre-HTML gates judge storyline and Korean slide wording.
+- Korean tone gates must catch report-style drift, translationese, and loss of the repository's direct Korean voice.
 - Post-HTML gates judge deck consistency and slide-level rendering.
 - Automated local checks can inform review, but they do not replace the gate decision.
 - A later stage must not proceed when a required gate returns `REVISE` or `BLOCK`.

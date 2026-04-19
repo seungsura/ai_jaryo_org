@@ -25,15 +25,15 @@ These subagents are project-local. They are defined for this repository only and
 - `exception-slide-pm-ko.yaml`
   - Exception-slide planning agent.
   - Use for cover, agenda, section divider, synthesis, comparison, or other structural exception slides.
-- `korean-slide-copywriter-gemini.yaml`
-  - Gemini-driven Korean slide copy agent.
-  - Use to compress approved slide briefs into presentation-ready Korean title/lead/body copy with `gemini -m gemini-3.1-pro-preview`.
+- `korean-slide-copywriter-gpt.yaml`
+  - GPT-driven Korean slide copy agent.
+  - Use to compress approved slide briefs into presentation-ready Korean title/lead/body copy with the fixed model `gpt-5.4`.
 - `storyline-auditor-ko.yaml`
   - Storyline gate agent.
   - Use to review title flow, chapter transitions, duplicate claims, and narrative jumps before HTML work proceeds.
 - `korean-tone-auditor-ko.yaml`
   - Korean tone gate agent.
-  - Use to review spoken-slide readability, awkward Korean phrasing, and report-like density before HTML work proceeds.
+  - Use to review spoken-slide readability, awkward Korean phrasing, translationese, and report-like density before HTML work proceeds.
 - `html-slide-builder.yaml`
   - Codex HTML authoring agent.
   - Use to build `slide-XX.html` files and shared HTML/CSS from approved outline, brief, and copy.
@@ -48,7 +48,7 @@ These subagents are project-local. They are defined for this repository only and
   - Use to review HTML-to-PDF conversion quality and block delivery when visual defects remain.
 - `speaker-notes-writer.yaml`
   - Presentation script agent.
-  - Use after the deck stabilizes to create Korean speaker notes, transitions, and delivery cues with Gemini.
+  - Use after the deck stabilizes to create Korean speaker notes, transitions, and delivery cues with GPT.
 
 ## Standard Order
 
@@ -58,7 +58,7 @@ These subagents are project-local. They are defined for this repository only and
 4. Run `slide-outline-planner` after the prose docs become the accepted source of truth. Do not let chapter PM work start before this gate passes.
 5. Run `chapter-slide-pm-ko` per chapter or theme batch, and add `exception-slide-pm-ko` when cover, agenda, section divider, synthesis, or comparison slides need special handling.
 6. Require an approved `reference shell` per slide before Korean copy or HTML work starts.
-7. Run `korean-slide-copywriter-gemini` with `gemini -m gemini-3.1-pro-preview` after the slide brief batch is approved.
+7. Run `korean-slide-copywriter-gpt` with the fixed model `gpt-5.4` after the slide brief batch is approved.
 8. Run `storyline-auditor-ko` and `korean-tone-auditor-ko` in parallel. Only proceed to HTML generation if both return `PASS`.
 9. Run `html-slide-builder` to author HTML/CSS, then run `python3 scripts/check_slide_contract.py` and `python3 scripts/check_slide_korean.py docs/03-html/slides`.
 10. Run `html-deck-consistency-auditor` and `html-slide-designer` in parallel. Only proceed if both return `PASS`.
@@ -89,8 +89,8 @@ These subagents are scoped to the Jaryo repository only.
 
 - Source curation and prose writing keep `docs/01-sources/` and `docs/02-seminar/prose/` as the canonical planning layer.
 - Presentation work follows a gated loop:
-  - `global outline gate -> chapter PM -> reference shell lock -> Gemini Korean copy -> pre-HTML gate -> Codex HTML build -> automated checks -> post-HTML gate -> final deck gate -> PDF -> speaker notes`
+  - `global outline gate -> chapter PM -> reference shell lock -> GPT Korean copy -> pre-HTML gate -> Codex HTML build -> automated checks -> post-HTML gate -> final deck gate -> PDF -> speaker notes`
 - `slide-outline.md` and `manifest.md` only hold approved outcomes, not working drafts of briefs or gate findings.
-- Gemini is used for slide-related Korean writing only, with the fixed model `gemini-3.1-pro-preview`.
+- GPT is used for slide-related Korean writing only, with the fixed model `gpt-5.4`.
 - Codex is used for HTML generation, deck consistency review, and render validation.
 - Speaker notes come last and must stay faithful to the approved docs and deck instead of inventing new framing.

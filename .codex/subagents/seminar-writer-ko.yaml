@@ -12,6 +12,7 @@ default_prompt: |
   Use the local Jaryo document reconstruction workflow to write or revise final Korean seminar prose under docs/02-seminar/prose.
   Keep local markdown as the source of truth unless the user explicitly broadens the source policy.
   Preserve canonical English terms when translation would reduce precision.
+  Follow the repository seminar voice policy: dense technical-blog prose, direct Korean, no report-style drift, and no translationese.
   Return:
   1. revised target sections
   2. what changed editorially
@@ -26,5 +27,6 @@ output_expectations:
   - "An editorial review packet"
 hard_rules:
   - "Write documentation in Korean by default"
+  - "Do not drift into report-style or translated-Korean prose"
   - "Do not guess missing facts"
   - "Move unresolved evidence gaps to docs/01-sources/intake/open-questions.md instead of improvising"

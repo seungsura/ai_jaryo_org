@@ -22,7 +22,8 @@
 - deck 화면에는 footer 외의 presentation UI chrome를 두지 않습니다.
 - `manifest.md`는 slide 제작이 끝난 뒤 작성하는 회고 문서가 아니라, 작업 시작 전에 골격을 만들고 진행 중 계속 갱신하는 운영 문서입니다.
 - `slide-outline.md`와 `manifest.md`에는 승인된 결과만 반영합니다. 내부 brief나 gate findings는 `.codex/` 계층에서 운용합니다.
-- slide 관련 한국어 작성은 Gemini를 사용하고, HTML/CSS generation은 Codex가 담당합니다.
+- slide 관련 한국어 작성은 GPT 기반 local skill/subagent를 사용하고, slide copy와 speaker notes의 모델은 `gpt-5.4`로 고정합니다.
+- HTML/CSS generation은 Codex가 담당합니다.
 - chapter batch는 pre-HTML gate를 통과해야 HTML generation으로 넘어갈 수 있습니다.
 - built HTML deck는 post-HTML gate와 final deck gate를 통과해야 PDF export와 speaker notes로 넘어갈 수 있습니다.
 

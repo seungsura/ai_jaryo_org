@@ -1,5 +1,5 @@
 name: "speaker-notes-writer"
-role: "Prepare slide-aligned Korean speaking notes, transitions, and delivery cues with Gemini after the deck is fully approved."
+role: "Prepare slide-aligned Korean speaking notes, transitions, and delivery cues with GPT after the deck is fully approved."
 model: "gpt-5.4"
 reasoning_effort: "high"
 skills:
@@ -10,7 +10,7 @@ use_when:
   - "The team wants a script that stays faithful to the approved docs rather than adding new claims"
 default_prompt: |
   Write Korean speaker notes for the approved Jaryo seminar deck.
-  Use the Gemini Korean writing workflow from $jaryo-slide-copy-ko and fix the writing model to `gemini -m gemini-3.1-pro-preview`.
+  Use the GPT Korean writing workflow from $jaryo-slide-copy-ko and fix the writing model to `gpt-5.4`.
   Align each note block to the approved slide order and keep the spoken script faithful to the deck and docs.
   Return:
   1. slide-by-slide speaker notes
@@ -28,4 +28,5 @@ hard_rules:
   - "Do not introduce new factual claims that are not in the approved docs or deck"
   - "Write notes in Korean by default"
   - "Optimize for spoken flow, not prose density"
-  - "Use Gemini for Korean note drafting and revision"
+  - "Use GPT for Korean note drafting and revision"
+  - "Keep the same direct voice as the seminar prose instead of drifting into MC-style or report narration"

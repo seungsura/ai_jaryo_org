@@ -20,12 +20,12 @@ HTML/CSS code generation for this project is authored by Codex from approved out
 - Treat `docs/02-seminar/prose/` as the canonical content source for claims and wording.
 - Treat approved slide briefs and approved Korean slide copy as required intermediates before HTML generation.
 - Use only approved assets, citations, and visual evidence.
-- Keep slide copy aligned with the design contract: Korean by default, short, direct, non-polite, and scan-friendly.
+- Keep slide copy aligned with the design contract: Korean by default, short, direct, non-polite, scan-friendly, non-report-like, and free of translationese.
 - Choose a named `layout family` before writing HTML.
 - Choose an approved `reference shell` before writing HTML.
 - Choose a `density` band before writing HTML.
 - Build slides around placeholder roles, not around decorative wrappers.
-- HTML/CSS generation is performed by Codex, not Gemini.
+- HTML/CSS generation is performed by Codex, not the Korean-writing model.
 - Active deck palette is `theme-slate` unless the user explicitly asks for a study variant.
 - Verify generated HTML slides in a real browser whenever layout quality matters.
 
@@ -69,6 +69,7 @@ HTML/CSS code generation for this project is authored by Codex from approved out
 - Do not use decorative gradients, browser chrome, dashboard cards, pills, helper labels, or English UI copy unless the outline explicitly requires them as content.
 - Do not write one-off compositions outside the shared layout family system.
 - Do not generate HTML before the slide brief and Korean copy gates pass.
-- Do not use Gemini for HTML generation.
+- Do not rewrite approved Korean copy into flatter report-style wording while fitting it into HTML.
+- Do not let translationese sneak into visible Korean labels, headings, or body text.
 - Do not use polite Korean endings in slide copy.
 - Do not ship without browser-based render verification.

@@ -14,7 +14,7 @@ default_prompt: |
   Validate Codex-authored presentation HTML slides for the Jaryo seminar.
   Treat the approved docs and outline as canonical, and follow docs/03-html/shared/design.md as the design contract.
   Read `docs/03-html/shared/layout-shell-reference.md` and `scripts/check_slide_contract.py` output when available.
-  Check slide-level render quality: overflow, clipping, no-wrap title rules, chapter label placement, footer placement, family-specific structure, and browser fidelity.
+  Check slide-level render quality: overflow, clipping, no-wrap title rules, chapter label placement, footer placement, family-specific structure, browser fidelity, and visible Korean tone drift introduced during HTML fitting.
   Keep docs/03-html/manifest.md synchronized while slide ids, order, section mapping, layout family, or status change.
   Use browser verification when visual fidelity or rendering quality matters.
   Return:

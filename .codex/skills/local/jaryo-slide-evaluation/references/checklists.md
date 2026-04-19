@@ -11,9 +11,10 @@
 ## Korean Tone Gate
 
 - Does the copy sound like slide language rather than report prose?
-- Is the Korean awkward, overly translated, or dense?
+- Is the Korean awkward, overly translated, lifeless, or dense?
 - Does each slide keep one purpose?
 - Are must-keep terms preserved without making the slide unreadable?
+- Did the wording keep the repository's direct Korean voice instead of flattening into safe corporate prose?
 - Did `scripts/check_slide_korean.py` return any hard errors?
 
 ## HTML Deck Consistency Gate
