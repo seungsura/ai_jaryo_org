@@ -1,0 +1,529 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: var(--slide-width);
+  height: var(--slide-height);
+  margin: 0;
+  overflow: hidden;
+  background: var(--color-paper);
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main,
+section,
+header,
+footer,
+article,
+h1,
+h2,
+h3,
+p,
+ol,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+.slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+.title-placeholder,
+.lead-placeholder,
+.body-copy,
+.agenda-text,
+.sequence-copy,
+.principle-copy,
+.short-line,
+.section-keyword,
+.role-shift-description {
+  word-break: keep-all;
+}
+
+.footer {
+  position: absolute;
+  left: 92px;
+  right: 92px;
+  bottom: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-mute);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.footer-right {
+  font-variant-numeric: tabular-nums;
+}
+
+.family-title {
+  padding: 84px 92px 112px;
+}
+
+.cover-main {
+  position: absolute;
+  left: 92px;
+  top: 154px;
+  max-width: 952px;
+}
+
+.cover-rule {
+  width: 108px;
+  height: 4px;
+  margin-bottom: 34px;
+  background: var(--color-signal);
+}
+
+.family-title .title-placeholder {
+  max-width: 820px;
+  font-size: 92px;
+  font-weight: 800;
+  line-height: 1.01;
+  letter-spacing: -0.05em;
+}
+
+.family-title .lead-placeholder {
+  margin-top: 28px;
+  max-width: 780px;
+  font-size: 30px;
+  line-height: 1.42;
+  font-weight: 600;
+  color: var(--color-mute);
+}
+
+.cover-body-list {
+  margin-top: 52px;
+  display: grid;
+  gap: 14px;
+  max-width: 760px;
+}
+
+.cover-point {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.cover-point::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  margin-top: 11px;
+  border-radius: 50%;
+  background: var(--color-signal);
+}
+
+.cover-point .body-copy {
+  font-size: 23px;
+  line-height: 1.45;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.family-agenda {
+  padding: 78px 92px 112px;
+}
+
+.agenda-header {
+  max-width: 1040px;
+}
+
+.family-agenda .title-placeholder {
+  font-size: 58px;
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+}
+
+.family-agenda .lead-placeholder {
+  margin-top: 18px;
+  max-width: 900px;
+  font-size: 24px;
+  line-height: 1.45;
+  font-weight: 600;
+  color: var(--color-mute);
+}
+
+.agenda-rule {
+  width: 100%;
+  height: 1px;
+  margin: 28px 0 34px;
+  background: var(--color-line-strong);
+}
+
+.agenda-list {
+  max-width: 1060px;
+}
+
+.agenda-item {
+  display: grid;
+  grid-template-columns: 56px 118px 1fr;
+  gap: 18px;
+  align-items: start;
+  padding: 18px 0 20px;
+  border-bottom: 1px solid var(--color-line-soft);
+}
+
+.agenda-number {
+  font-size: 24px;
+  line-height: 1.1;
+  font-weight: 800;
+  color: var(--color-signal);
+}
+
+.agenda-topic {
+  padding-top: 2px;
+  font-size: 22px;
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--color-mute);
+}
+
+.agenda-text {
+  font-size: 28px;
+  line-height: 1.22;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.family-section {
+  padding: 0 92px 112px;
+}
+
+.section-main {
+  position: absolute;
+  left: 92px;
+  top: 174px;
+  max-width: 980px;
+}
+
+.family-section .chapter-marker {
+  font-size: 22px;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: var(--color-signal);
+}
+
+.family-section .title-placeholder {
+  margin-top: 24px;
+  max-width: 920px;
+  font-size: 74px;
+  line-height: 1.04;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.family-section .short-line {
+  margin-top: 24px;
+  font-size: 30px;
+  line-height: 1.35;
+  font-weight: 600;
+  color: var(--color-mute);
+}
+
+.section-rule {
+  width: 244px;
+  height: 1px;
+  margin-top: 34px;
+  background: var(--color-line-strong);
+}
+
+.section-keywords {
+  display: flex;
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.section-keyword {
+  position: relative;
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+}
+
+.section-keyword:not(:last-child)::after {
+  content: "/";
+  position: absolute;
+  right: -15px;
+  top: 0;
+  color: var(--color-mute);
+}
+
+.family-content {
+  padding: 0;
+}
+
+.top-band {
+  position: absolute;
+  top: 58px;
+  left: 92px;
+  right: 92px;
+  display: grid;
+  grid-template-columns: 176px 1fr;
+  column-gap: 30px;
+  align-items: end;
+}
+
+.chapter-label {
+  align-self: start;
+  padding-top: 7px;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: var(--color-signal);
+  white-space: nowrap;
+}
+
+.top-band .title-placeholder {
+  font-size: 40px;
+  line-height: 1.02;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+}
+
+.top-band-rule {
+  position: absolute;
+  left: 92px;
+  right: 92px;
+  top: 148px;
+  height: 1px;
+  background: var(--color-line-strong);
+}
+
+.body-area {
+  position: absolute;
+  top: 186px;
+  left: 92px;
+  right: 92px;
+  bottom: 90px;
+}
+
+.family-content .lead-placeholder {
+  max-width: 980px;
+  font-size: 28px;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.progression-board,
+.role-shift-board {
+  margin-top: 54px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.progression-board {
+  position: relative;
+}
+
+.progression-board::before {
+  content: none;
+}
+
+.progress-step,
+.role-shift-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 248px;
+  border: 1px solid var(--color-line-soft);
+  border-radius: 22px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.progress-step {
+  padding: 26px 24px 30px;
+}
+
+.role-shift-card {
+  padding: 26px 24px 28px;
+}
+
+.progress-step-number,
+.role-shift-number {
+  position: relative;
+  z-index: 1;
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: var(--color-mute);
+}
+
+.progress-step-title,
+.role-shift-title {
+  margin-top: 26px;
+  font-size: 36px;
+  line-height: 1.04;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.progress-step-title {
+  font-size: 38px;
+}
+
+.sequence-copy,
+.principle-copy {
+  margin-top: 14px;
+  font-size: 21px;
+  line-height: 1.34;
+  font-weight: 600;
+  color: var(--color-mute);
+}
+
+.progress-step-detail,
+.role-shift-description {
+  margin-top: 22px;
+  font-size: 20px;
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.progress-step.is-focus,
+.role-shift-card.is-focus {
+  border-color: transparent;
+  background: var(--color-panel-focus);
+  color: var(--color-on-focus);
+  box-shadow: none;
+}
+
+.progress-step.is-focus {
+  transform: translateY(-8px);
+}
+
+.progress-step.is-focus .progress-step-number,
+.progress-step.is-focus .sequence-copy,
+.role-shift-card.is-focus .role-shift-number,
+.role-shift-card.is-focus .principle-copy {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.progress-step.is-focus .progress-step-detail,
+.role-shift-card.is-focus .role-shift-description {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.progress-step-meta {
+  margin-top: 18px;
+  font-size: 18px;
+  line-height: 1.35;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.role-shift-meter {
+  position: relative;
+  margin-top: 38px;
+  width: 100%;
+  height: 16px;
+  border-radius: 999px;
+  background: rgba(17, 24, 39, 0.1);
+  overflow: hidden;
+  display: none;
+}
+
+.role-shift-meter::after {
+  content: "";
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--color-signal);
+}
+
+.role-shift-card.is-short .role-shift-meter::after {
+  width: 34%;
+}
+
+.role-shift-card.is-medium .role-shift-meter::after {
+  width: 64%;
+}
+
+.role-shift-card.is-full .role-shift-meter::after {
+  width: 100%;
+}
+
+.role-shift-card.is-focus .role-shift-meter {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.role-shift-card.is-focus .role-shift-meter::after {
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.meta-overline {
+  color: var(--color-mute);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.code-panel {
+  margin-top: 28px;
+  padding: 24px 28px;
+  border: 1px solid var(--color-code-border);
+  border-radius: 18px;
+  background: var(--color-code-bg);
+  box-shadow: var(--shadow-card);
+  overflow-x: auto;
+}
+
+.code-panel pre,
+.code-panel code {
+  font-family: var(--font-mono);
+}
+
+.code-panel pre {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: 15px;
+  line-height: 1.72;
+}
+
+.media-frame {
+  margin-top: 28px;
+  border: 1px solid var(--color-line-soft);
+  border-radius: 20px;
+  background: var(--color-surface-muted);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.media-frame.is-placeholder {
+  display: flex;
+  min-height: 320px;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-mute);
+}

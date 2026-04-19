@@ -1,0 +1,26 @@
+- main [ref=e2]:
+  - heading "전체 세미나 전개 구조" [level=1] [ref=e4]
+  - list [ref=e5]:
+    - listitem [ref=e6]:
+      - generic [ref=e7]: "1"
+      - generic [ref=e8]: 변화
+      - paragraph [ref=e9]: 코딩의 중심 이동
+    - listitem [ref=e10]:
+      - generic [ref=e11]: "2"
+      - generic [ref=e12]: 핵심
+      - paragraph [ref=e13]: 왜 Harness인가
+    - listitem [ref=e14]:
+      - generic [ref=e15]: "3"
+      - generic [ref=e16]: 방법
+      - paragraph [ref=e17]: 어떻게 운영할 것인가
+    - listitem [ref=e18]:
+      - generic [ref=e19]: "4"
+      - generic [ref=e20]: 적용
+      - paragraph [ref=e21]: workflow와 사례
+    - listitem [ref=e22]:
+      - generic [ref=e23]: "5"
+      - generic [ref=e24]: 실천
+      - paragraph [ref=e25]: 지금 무엇부터
+  - generic [ref=e26]:
+    - generic [ref=e27]: Harness 잘 사용하기
+    - generic [ref=e28]: "2"

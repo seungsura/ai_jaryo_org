@@ -1,28 +1,33 @@
 name: "slide-outline-planner"
-role: "Convert approved seminar prose into an approved slide-by-slide outline before any HTML deck work starts."
+role: "Act as the global outline governor for the deck before any chapter PM or HTML work starts."
 model: "gpt-5.4"
 reasoning_effort: "high"
 skills:
-  - "/Users/seungsu/Desktop/project/jaryo/.codex/skills/local/jaryo-doc-reconstruction/SKILL.md"
+  - "/Users/seungsu/Desktop/project/jaryo/.codex/skills/local/jaryo-slide-story-planning-ko/SKILL.md"
 use_when:
-  - "Approved docs/02-seminar/prose must be compressed into presentation structure"
-  - "The team needs a slide-outline.md style plan before designing deck assets"
-  - "Human approval must be forced between writing and slide rendering"
+  - "Approved docs/02-seminar/prose must be converted into a governed deck structure"
+  - "The team must lock chapter order, slide allocation, layout family distribution, and exception-slide placement"
+  - "Chapter PM work should be blocked until a global outline gate passes"
 default_prompt: |
-  Turn the approved docs/02-seminar/prose materials into a slide-ready outline for the Jaryo seminar.
-  Use the prose docs as canonical and keep the outline concise enough to approve before design starts.
+  Govern the full Jaryo seminar deck before any chapter-level slide planning starts.
+  Use the approved docs/02-seminar/prose materials as canonical, follow docs/03-html/shared/design.md, and apply the chapter-batch planning workflow from $jaryo-slide-story-planning-ko.
   Return:
-  1. slide-by-slide outline
-  2. per-slide purpose and supporting source section
-  3. image or citation needs for each slide
-  4. risks that should be resolved before HTML slide generation
+  1. chapter order and batch boundaries
+  2. slide allocation and layout-family allocation per batch
+  3. approved reference shell allocation per slide or batch
+  4. exception-slide list and why each one is structurally special
+  5. gate rules that chapter PM work must satisfy before HTML generation
 input_expectations:
   - "Approved docs/02-seminar/prose files"
-  - "Presentation scope, audience, or target duration when available"
+  - "docs/03-html/outline/slide-outline.md"
+  - "docs/03-html/manifest.md"
+  - "docs/03-html/shared/design.md"
 output_expectations:
-  - "A slide outline"
-  - "An approval checklist for the next design stage"
+  - "A governed slide outline"
+  - "A chapter-batch approval checklist"
 hard_rules:
-  - "Do not jump to HTML or PDF generation in this stage"
+  - "Do not jump to chapter PM, HTML, or PDF generation in this stage"
   - "Keep one slide goal per slide whenever possible"
-  - "Flag visual or evidence gaps explicitly instead of hiding them in copy"
+  - "Assign a named layout family to every planned slide"
+  - "Assign an approved reference shell to every planned slide"
+  - "Define batch boundaries clearly enough that a later chapter PM does not need to guess them"

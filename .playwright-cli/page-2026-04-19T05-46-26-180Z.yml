@@ -1,0 +1,25 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - paragraph [ref=e4]: CHAPTER 01
+    - heading "타이핑에서 설계와 검증으로" [level=1] [ref=e5]
+  - generic [ref=e7]:
+    - paragraph [ref=e8]: 개발자의 중심 역할도 함께 이동
+    - generic [ref=e9]:
+      - article [ref=e10]:
+        - paragraph [ref=e11]: "01"
+        - heading "타이핑 감소" [level=2] [ref=e12]
+        - paragraph [ref=e14]: 직접 작성 비중 축소
+        - paragraph [ref=e15]: 개발 생산성의 기준이 입력량 자체와 분리된다.
+      - article [ref=e16]:
+        - paragraph [ref=e17]: "02"
+        - heading "설계 증가" [level=2] [ref=e18]
+        - paragraph [ref=e20]: 문맥·규칙·통과 기준 설계
+        - paragraph [ref=e21]: 무엇을 보여 주고 어디까지 허용할지 먼저 결정한다.
+      - article [ref=e22]:
+        - paragraph [ref=e23]: "03"
+        - heading "검증 강화" [level=2] [ref=e24]
+        - paragraph [ref=e26]: 시스템 이해 기반 결과 확인
+        - paragraph [ref=e27]: 엄밀함은 결과를 의심하고 통과시키는 구조로 이동한다.
+  - generic [ref=e28]:
+    - generic [ref=e29]: Harness 잘 사용하기
+    - generic [ref=e30]: "5"

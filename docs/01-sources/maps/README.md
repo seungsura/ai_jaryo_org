@@ -7,6 +7,9 @@
 - `seminar-claims-and-sources.md`
 - `claude-code-mastery-playbook-to-seminar.md`
 - `prompt-context-harness-to-seminar.md`
+- `evolution-of-ai-agentic-patterns-to-seminar.md`
+- `section-01-where-coding-is-going-claim-matrix.md`
+- `prose-recovery-checklist.md`
 
 ## 원칙
 

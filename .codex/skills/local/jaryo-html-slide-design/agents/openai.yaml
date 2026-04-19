@@ -1,0 +1,4 @@
+interface:
+  display_name: "Jaryo HTML Slide Design"
+  short_description: "Build and validate HTML seminar slides from approved outline, brief, and copy"
+  default_prompt: "Use $jaryo-html-slide-design to build or refine HTML seminar slides from the approved outline, approved slide briefs, and approved Korean copy, follow docs/03-html/shared/design.md, and keep docs/03-html/manifest.md synchronized."

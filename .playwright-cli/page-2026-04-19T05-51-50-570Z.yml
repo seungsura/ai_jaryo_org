@@ -1,0 +1,26 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - paragraph [ref=e4]: CHAPTER 01
+    - heading "코딩 중심의 3단계 이동" [level=1] [ref=e5]
+  - generic [ref=e7]:
+    - paragraph [ref=e8]: Prompt에서 Context를 거쳐 Harness로
+    - generic [ref=e9]:
+      - article [ref=e10]:
+        - paragraph [ref=e11]: "01"
+        - heading "Prompt" [level=2] [ref=e12]
+        - paragraph [ref=e13]: 무엇을 말할 것인가
+        - paragraph [ref=e14]: 요청의 방향과 범위를 먼저 정하는 층
+      - article [ref=e15]:
+        - paragraph [ref=e16]: "02"
+        - heading "Context" [level=2] [ref=e17]
+        - paragraph [ref=e18]: 무엇을 보여 줄 것인가
+        - paragraph [ref=e19]: 관련 자료와 규칙을 얼마나 정확히 공급하는가
+      - article [ref=e20]:
+        - paragraph [ref=e21]: "03"
+        - heading "Harness" [level=2] [ref=e22]
+        - paragraph [ref=e23]: 어떻게 운영할 것인가
+        - paragraph [ref=e24]: 도구 · 권한 · 검증 · 상태
+        - paragraph [ref=e25]: 실제 결과의 품질과 반복 가능성을 가르는 운영 층
+  - generic [ref=e26]:
+    - generic [ref=e27]: Harness 잘 사용하기
+    - generic [ref=e28]: "4"

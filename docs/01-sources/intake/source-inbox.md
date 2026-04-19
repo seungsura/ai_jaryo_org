@@ -18,7 +18,7 @@ Use this file to track newly collected text materials before or while integratin
 - source path or location: `docs/01-sources/local-supplemental/evolution-of-ai-agentic-patterns.md`
 - likely target section: `docs/02-seminar/prose/02-why-claude-code.md`, `docs/02-seminar/prose/03-ai-era-methodology.md`, `docs/02-seminar/prose/04-harness-and-context-engineering.md`, `docs/02-seminar/prose/05-limitations-and-failure-patterns.md`, `docs/02-seminar/prose/06-multi-agent-patterns.md`, `docs/02-seminar/prose/90-appendix-references.md`, `docs/01-sources/maps/seminar-claims-and-sources.md`
 - current status: integrated
-- integration note: `GitHub Copilot → Copilot Chat/ Cursor → Harness` 계보, `Prompt → Context → Harness` 시대 구분, `OpenAI Codex`와 Anthropic 사례를 통한 harness convergence 논지는 세미나 본문과 provenance 문서에 공식 편입했습니다. 별도 source-specific `docs/` 문서는 만들지 않고, Section 2의 genealogy와 Section 4~6의 보강 source로 유지합니다.
+- integration note: `GitHub Copilot → Copilot Chat/ Cursor → Harness` 계보, `Prompt → Context → Harness` 시대 구분, `OpenAI Codex`와 Anthropic 사례를 통한 harness convergence 논지는 세미나 본문과 provenance 문서에 공식 편입했습니다. source-specific canonical reference deliverable은 `docs/01-sources/maps/evolution-of-ai-agentic-patterns-to-seminar.md`로 관리하며, Section 2의 genealogy와 Section 4~7의 보강 source로 유지합니다.
 
 ### S02. Claude Code Mastery Playbook
 - source type: summary
