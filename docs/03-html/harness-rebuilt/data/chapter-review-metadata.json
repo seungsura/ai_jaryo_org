@@ -986,5 +986,131 @@
       "content-emphasis-shell": 5,
       "chapter-transition-shell": 1
     }
+  },
+  "08": {
+    "chapter_id": "08",
+    "title": "이 글과 발표가 만들어진 과정",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/08-이 글과 발표가 만들어진 과정.md",
+    "transition_slide_id": "S154",
+    "slide_ids": [
+      "S154",
+      "S155",
+      "S156",
+      "S157",
+      "S158",
+      "S159",
+      "S160",
+      "S161",
+      "S162",
+      "S163",
+      "S164",
+      "S165",
+      "S166",
+      "S167",
+      "S168",
+      "S169",
+      "S170",
+      "S171"
+    ],
+    "section_coverage": [
+      {
+        "block_id": "08-01",
+        "heading": "시작하며: 이 발표를 만든 방법",
+        "slide_count": 1,
+        "slide_ids": [
+          "S155"
+        ]
+      },
+      {
+        "block_id": "08-02",
+        "heading": "전체 파이프라인: source prose outline html pdf notes",
+        "slide_count": 3,
+        "slide_ids": [
+          "S156",
+          "S157",
+          "S158"
+        ]
+      },
+      {
+        "block_id": "08-03",
+        "heading": "source를 수집하였",
+        "slide_count": 1,
+        "slide_ids": [
+          "S159"
+        ]
+      },
+      {
+        "block_id": "08-04",
+        "heading": "prose를 canonical source로 세웠다",
+        "slide_count": 2,
+        "slide_ids": [
+          "S160",
+          "S161"
+        ]
+      },
+      {
+        "block_id": "08-05",
+        "heading": "outline과 manifest가 계획을 들고 간다",
+        "slide_count": 2,
+        "slide_ids": [
+          "S162",
+          "S163"
+        ]
+      },
+      {
+        "block_id": "08-06",
+        "heading": "design contract를 먼저 고정했다",
+        "slide_count": 2,
+        "slide_ids": [
+          "S164",
+          "S165"
+        ]
+      },
+      {
+        "block_id": "08-07",
+        "heading": "생성과 검증을 같은 손에 쥐지 않았다",
+        "slide_count": 2,
+        "slide_ids": [
+          "S166",
+          "S167"
+        ]
+      },
+      {
+        "block_id": "08-08",
+        "heading": "speaker notes를 맨 뒤로 밀었다",
+        "slide_count": 1,
+        "slide_ids": [
+          "S168"
+        ]
+      },
+      {
+        "block_id": "08-09",
+        "heading": "이 제작 과정이 보여 주는 하네스 원리",
+        "slide_count": 2,
+        "slide_ids": [
+          "S169",
+          "S170"
+        ]
+      },
+      {
+        "block_id": "08-10",
+        "heading": "결론: AI 를 잘 사용하는 방법: 결국 하나",
+        "slide_count": 1,
+        "slide_ids": [
+          "S171"
+        ]
+      }
+    ],
+    "footnote_assets": [],
+    "review_focus": "이 발표의 제작 과정이 하네스 원리를 그대로 증명하는지 확인",
+    "special_rules": [
+      "heuristic_multi_slide_decomposition"
+    ],
+    "shell_mix": {
+      "content-essay-shell": 9,
+      "content-card-shell": 6,
+      "content-emphasis-shell": 2,
+      "chapter-transition-shell": 1
+    }
   }
 }

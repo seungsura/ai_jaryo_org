@@ -4356,5 +4356,520 @@
     "body": {
       "line": "에이전트가 강해질수록 더 중요한 것은 생성 능력 자체가 아닙니다. 무엇을 어디서 검증하고, 어떤 흔적 위에 다음 판단을"
     }
+  },
+  {
+    "order": 154,
+    "slide_id": "S154",
+    "file_name": "slide-154.html",
+    "title": "이 글과 발표가 만들어진 과정",
+    "slide_kind": "chapter-transition",
+    "shell": "chapter-transition-shell",
+    "chapter_id": "08",
+    "chapter_label": "CHAPTER 08",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/08-이 글과 발표가 만들어진 과정.md",
+    "source_block": "08-01",
+    "key_claim": "시작하며: 이 발표를 만든 방법",
+    "lead": "시작하며: 이 발표를 만든 방법",
+    "review_hint": "이 발표의 제작 과정이 하네스 원리를 그대로 증명하는지 확인",
+    "shell_reason": "chapter transition anchor",
+    "family": "cover",
+    "layout": "centered",
+    "density": "tight",
+    "footnote_assets": [],
+    "body": {}
+  },
+  {
+    "order": 155,
+    "slide_id": "S155",
+    "file_name": "slide-155.html",
+    "title": "시작하며: 이 발표를 만든 방법",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "08",
+    "chapter_label": "CHAPTER 08",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/08-이 글과 발표가 만들어진 과정.md",
+    "source_block": "08-01",
+    "key_claim": "시작하며: 이 발표를 만든 방법",
+    "lead": "기억하시나요? 이 발표를 만든 방법 저는 코드 한 줄 PPT 한 장도 만들지 않았 한 것은 하나 하네스 설계",
+    "review_hint": "이 발표의 제작 과정이 하네스 원리를 그대로 증명하는지 확인",
+    "shell_reason": "default compressed essay",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "기억하시나요? 이 발표를 만든 방법 저는 코드 한 줄 PPT 한 장도 만들지 않았 한 것은 하나 하네스 설계"
+      ]
+    }
+  },
+  {
+    "order": 156,
+    "slide_id": "S156",
+    "file_name": "slide-156.html",
+    "title": "전체 파이프라인: source prose outline html pdf notes",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "08",
+    "chapter_label": "CHAPTER 08",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/08-이 글과 발표가 만들어진 과정.md",
+    "source_block": "08-02",
+    "key_claim": "전체 파이프라인: source prose outline html pdf notes",
+    "lead": "이 제작 과정은 다음 순서를 기본으로 삼았",
+    "review_hint": "이 발표의 제작 과정이 하네스 원리를 그대로 증명하는지 확인",
+    "shell_reason": "block opening claim",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "이 제작 과정은 다음 순서를 기본으로 삼았",
+        "앞에서 설명한 내용 그대로 적용하였 Spec, Harness, Skills"
+      ]
+    }
+  },
+  {
+    "order": 157,
+    "slide_id": "S157",
+    "file_name": "slide-157.html",
+    "title": "이 제작 과정은 다음 순서를 기본으로 삼았",
+    "slide_kind": "content",
+    "shell": "content-card-shell",
+    "chapter_id": "08",
+    "chapter_label": "CHAPTER 08",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/08-이 글과 발표가 만들어진 과정.md",
+    "source_block": "08-02",
+    "key_claim": "이 제작 과정은 다음 순서를 기본으로 삼았",
+    "lead": "앞에서 설명한 내용 그대로 적용하였 Spec, Harness, Skills",
+    "review_hint": "이 발표의 제작 과정이 하네스 원리를 그대로 증명하는지 확인",
+    "shell_reason": "parallel evidence split",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "cards": [
+        {
+          "title": "전체 파이프라인: source prose",
+          "copy": "source: PDF, HTML, 외부 링크, 로컬 마크다운 자료를 입력층으로 묶는다"
+        },
+        {
+          "title": "source: PDF, HTML, 외부",
+          "copy": "prose: 발표와 글의 기준 문장을 만든다"
+        },
+        {
+          "title": "prose: 발표와 글의 기준 문장을 만든다",
+          "copy": "outline: prose를 slide 단위와 장 구조로 압축"
+        }
+      ]
+    }
+  },
+  {
+    "order": 158,
+    "slide_id": "S158",
+    "file_name": "slide-158.html",
+    "title": "전체 파이프라인: source prose outline html pdf notes",
+    "slide_kind": "content",
+    "shell": "content-emphasis-shell",
+    "chapter_id": "08",
+    "chapter_label": "CHAPTER 08",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/08-이 글과 발표가 만들어진 과정.md",
+    "source_block": "08-02",
+    "key_claim": "앞에서 설명한 내용 그대로 적용하였",
+    "lead": "특별한 기술 없 markdown, html, 규칙문서로만 제작",
+    "review_hint": "이 발표의 제작 과정이 하네스 원리를 그대로 증명하는지 확인",
+    "shell_reason": "block synthesis emphasis",
+    "family": "content",
+    "layout": "wide",
+    "density": "tight",
+    "footnote_assets": [],
+    "body": {
+      "line": "여기서 outline은 별도 메모가 아닙니다. docs/03-html/outline 안에 들어가 있고, 바로 뒤 단계인"
+    }
+  },
+  {
+    "order": 159,
+    "slide_id": "S159",
+    "file_name": "slide-159.html",
+    "title": "source를 수집하였",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "08",
+    "chapter_label": "CHAPTER 08",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/08-이 글과 발표가 만들어진 과정.md",
+    "source_block": "08-03",
+    "key_claim": "source를 수집하였",
+    "lead": "가장 먼저 한 일은 자료 수집이었 유튜브, 링크드인, 인터넷 커뮤니티, 공식 사이트, 공개 문헌, 직접 수집한 마크다운",
+    "review_hint": "이 발표의 제작 과정이 하네스 원리를 그대로 증명하는지 확인",
+    "shell_reason": "default compressed essay",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "가장 먼저 한 일은 자료 수집이었 유튜브, 링크드인, 인터넷 커뮤니티, 공식 사이트, 공개 문헌, 직접 수집한 마크다운",
+        "먼저 어떤 자료가 어떤 주장에 쓰이는지 정리하고, 불확실한 부분은 억지로 메우지 않았"
+      ]
+    }
+  },
+  {
+    "order": 160,
+    "slide_id": "S160",
+    "file_name": "slide-160.html",
+    "title": "prose를 canonical source로 세웠다",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "08",
+    "chapter_label": "CHAPTER 08",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/08-이 글과 발표가 만들어진 과정.md",
+    "source_block": "08-04",
+    "key_claim": "prose를 canonical source로 세웠다",
+    "lead": "그 다음 prose를 만들었 prose는 발표 원문이 아니라 블로그 글처럼 작성하였 이는 논리 순서와 주장 강도를 책임지고",
+    "review_hint": "이 발표의 제작 과정이 하네스 원리를 그대로 증명하는지 확인",
+    "shell_reason": "block opening claim",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "그 다음 prose를 만들었 prose는 발표 원문이 아니라 블로그 글처럼 작성하였 이는 논리 순서와 주장 강도를 책임지고",
+        "이 본문은 나중에 HTML slide, speaker note, PDF 를 구성할 때 source of truth 로 사용"
+      ]
+    }
+  },
+  {
+    "order": 161,
+    "slide_id": "S161",
+    "file_name": "slide-161.html",
+    "title": "그 다음 prose를 만들었",
+    "slide_kind": "content",
+    "shell": "content-card-shell",
+    "chapter_id": "08",
+    "chapter_label": "CHAPTER 08",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/08-이 글과 발표가 만들어진 과정.md",
+    "source_block": "08-04",
+    "key_claim": "그 다음 prose를 만들었",
+    "lead": "이 본문은 나중에 HTML slide, speaker note, PDF 를 구성할 때 source of truth 로 사용",
+    "review_hint": "이 발표의 제작 과정이 하네스 원리를 그대로 증명하는지 확인",
+    "shell_reason": "parallel evidence split",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "cards": [
+        {
+          "title": "prose를 canonical source로",
+          "copy": "전체 논지의 흐름"
+        },
+        {
+          "title": "전체 논지의 흐름",
+          "copy": "어떤 주장이 중심이고 어떤 주장이 보조인지"
+        },
+        {
+          "title": "어떤 주장이 중심이고 어떤 주장이 보조인지",
+          "copy": "한국어 문체와 독자 경험"
+        }
+      ]
+    }
+  },
+  {
+    "order": 162,
+    "slide_id": "S162",
+    "file_name": "slide-162.html",
+    "title": "outline과 manifest가 계획을 들고 간다",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "08",
+    "chapter_label": "CHAPTER 08",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/08-이 글과 발표가 만들어진 과정.md",
+    "source_block": "08-05",
+    "key_claim": "outline과 manifest가 계획을 들고 간다",
+    "lead": "본문이 준비되고 곧바로 HTML 을 제작하는 것이 아니라, 먼저 outline을 만듭니다. outline은 단순한 목차가",
+    "review_hint": "이 발표의 제작 과정이 하네스 원리를 그대로 증명하는지 확인",
+    "shell_reason": "block opening claim",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "본문이 준비되고 곧바로 HTML 을 제작하는 것이 아니라, 먼저 outline을 만듭니다. outline은 단순한 목차가",
+        "그 다음 manifest가 상태를 들고 갑니다. manifest는 작업이 끝난 뒤 쓰는 회고가 아니라, 현재 산출물의 상태를"
+      ]
+    }
+  },
+  {
+    "order": 163,
+    "slide_id": "S163",
+    "file_name": "slide-163.html",
+    "title": "본문이 준비되고 곧바로 HTML 을 제작하는 것이 아니라, 먼저 outline을 만듭니다",
+    "slide_kind": "content",
+    "shell": "content-card-shell",
+    "chapter_id": "08",
+    "chapter_label": "CHAPTER 08",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/08-이 글과 발표가 만들어진 과정.md",
+    "source_block": "08-05",
+    "key_claim": "본문이 준비되고 곧바로 HTML 을 제작하는 것이 아니라, 먼저 outline을 만듭니다",
+    "lead": "그 다음 manifest가 상태를 들고 갑니다. manifest는 작업이 끝난 뒤 쓰는 회고가 아니라, 현재 산출물의 상태를",
+    "review_hint": "이 발표의 제작 과정이 하네스 원리를 그대로 증명하는지 확인",
+    "shell_reason": "parallel evidence split",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "cards": [
+        {
+          "title": "outline과 manifest가 계획을",
+          "copy": "어떤 본문이 어떤 slide 에 담겼는가"
+        },
+        {
+          "title": "어떤 본문이 어떤 slide 에 담겼는가",
+          "copy": "어떤 항목이 완료되었고 어떤 항목이 pending인가"
+        },
+        {
+          "title": "어떤 항목이 완료되었고 어떤 항목이",
+          "copy": "어떤 파일 경로에 산출물이 있는가"
+        }
+      ]
+    }
+  },
+  {
+    "order": 164,
+    "slide_id": "S164",
+    "file_name": "slide-164.html",
+    "title": "design contract를 먼저 고정했다",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "08",
+    "chapter_label": "CHAPTER 08",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/08-이 글과 발표가 만들어진 과정.md",
+    "source_block": "08-06",
+    "key_claim": "design contract를 먼저 고정했다",
+    "lead": "design contract를 고정 디자인 계약에는 다음이 들어갑니다",
+    "review_hint": "이 발표의 제작 과정이 하네스 원리를 그대로 증명하는지 확인",
+    "shell_reason": "block opening claim",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "design contract를 고정 디자인 계약에는 다음이 들어갑니다",
+        "디자인 규칙을 정하기 위해, MS 의 슬라이드 디자인 규칙, Google Stitch 의 Design.md, 재사용 가능한"
+      ]
+    }
+  },
+  {
+    "order": 165,
+    "slide_id": "S165",
+    "file_name": "slide-165.html",
+    "title": "design contract를 고정",
+    "slide_kind": "content",
+    "shell": "content-card-shell",
+    "chapter_id": "08",
+    "chapter_label": "CHAPTER 08",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/08-이 글과 발표가 만들어진 과정.md",
+    "source_block": "08-06",
+    "key_claim": "design contract를 고정",
+    "lead": "디자인 규칙을 정하기 위해, MS 의 슬라이드 디자인 규칙, Google Stitch 의 Design.md, 재사용 가능한",
+    "review_hint": "이 발표의 제작 과정이 하네스 원리를 그대로 증명하는지 확인",
+    "shell_reason": "parallel evidence split",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "cards": [
+        {
+          "title": "design contract를 먼저 고정했다",
+          "copy": "톤과 분위기"
+        },
+        {
+          "title": "톤과 분위기",
+          "copy": "색상 팔레트"
+        },
+        {
+          "title": "색상 팔레트",
+          "copy": "타이포그래피"
+        }
+      ]
+    }
+  },
+  {
+    "order": 166,
+    "slide_id": "S166",
+    "file_name": "slide-166.html",
+    "title": "생성과 검증을 같은 손에 쥐지 않았다",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "08",
+    "chapter_label": "CHAPTER 08",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/08-이 글과 발표가 만들어진 과정.md",
+    "source_block": "08-07",
+    "key_claim": "생성과 검증을 같은 손에 쥐지 않았다",
+    "lead": "생성자가 자기 결과를 스스로 통과시키게 두면 그럴듯한 오류가 오래 살아남 그래서 이 프로젝트는 생성과 검증을 분리",
+    "review_hint": "이 발표의 제작 과정이 하네스 원리를 그대로 증명하는지 확인",
+    "shell_reason": "block opening claim",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "생성자가 자기 결과를 스스로 통과시키게 두면 그럴듯한 오류가 오래 살아남 그래서 이 프로젝트는 생성과 검증을 분리",
+        "HTML generation 이후에는 기계적 검증과 사람 검토가 따릅니다"
+      ]
+    }
+  },
+  {
+    "order": 167,
+    "slide_id": "S167",
+    "file_name": "slide-167.html",
+    "title": "생성자가 자기 결과를 스스로 통과시키게 두면 그럴듯한 오류가 오래 살아남",
+    "slide_kind": "content",
+    "shell": "content-card-shell",
+    "chapter_id": "08",
+    "chapter_label": "CHAPTER 08",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/08-이 글과 발표가 만들어진 과정.md",
+    "source_block": "08-07",
+    "key_claim": "생성자가 자기 결과를 스스로 통과시키게 두면 그럴듯한 오류가 오래 살아남",
+    "lead": "HTML generation 이후에는 기계적 검증과 사람 검토가 따릅니다",
+    "review_hint": "이 발표의 제작 과정이 하네스 원리를 그대로 증명하는지 확인",
+    "shell_reason": "parallel evidence split",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "cards": [
+        {
+          "title": "생성과 검증을 같은 손에 쥐지 않았다",
+          "copy": "slide contract 점검"
+        },
+        {
+          "title": "slide contract 점검",
+          "copy": "한국어 문장 점검"
+        },
+        {
+          "title": "한국어 문장 점검",
+          "copy": "deck-level consistency 확인"
+        }
+      ]
+    }
+  },
+  {
+    "order": 168,
+    "slide_id": "S168",
+    "file_name": "slide-168.html",
+    "title": "speaker notes를 맨 뒤로 밀었다",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "08",
+    "chapter_label": "CHAPTER 08",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/08-이 글과 발표가 만들어진 과정.md",
+    "source_block": "08-08",
+    "key_claim": "speaker notes를 맨 뒤로 밀었다",
+    "lead": "많은 발표 작업은 대본부터 길어지면서 무너집니다. 설명하고 싶은 욕심이 먼저 커지고, 아직 굳지 않은 slide 구조를 말이",
+    "review_hint": "이 발표의 제작 과정이 하네스 원리를 그대로 증명하는지 확인",
+    "shell_reason": "default compressed essay",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "많은 발표 작업은 대본부터 길어지면서 무너집니다. 설명하고 싶은 욕심이 먼저 커지고, 아직 굳지 않은 slide 구조를 말이"
+      ]
+    }
+  },
+  {
+    "order": 169,
+    "slide_id": "S169",
+    "file_name": "slide-169.html",
+    "title": "이 제작 과정이 보여 주는 하네스 원리",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "08",
+    "chapter_label": "CHAPTER 08",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/08-이 글과 발표가 만들어진 과정.md",
+    "source_block": "08-09",
+    "key_claim": "이 제작 과정이 보여 주는 하네스 원리",
+    "lead": "이 사례의 핵심은 “AI가 HTML을 만들었다”가 아닙니다. 더 중요한 것은 AI에게 맡길 층과 맡기지 않을 층을 먼저",
+    "review_hint": "이 발표의 제작 과정이 하네스 원리를 그대로 증명하는지 확인",
+    "shell_reason": "block opening claim",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "이 사례의 핵심은 “AI가 HTML을 만들었다”가 아닙니다. 더 중요한 것은 AI에게 맡길 층과 맡기지 않을 층을 먼저",
+        "Source / 입력 경계, 근거 층위, 불확실한 질문 / 자료 정리 보조"
+      ]
+    }
+  },
+  {
+    "order": 170,
+    "slide_id": "S170",
+    "file_name": "slide-170.html",
+    "title": "이 사례의 핵심은 “AI가 HTML을 만들었다”가 아닙니다",
+    "slide_kind": "content",
+    "shell": "content-card-shell",
+    "chapter_id": "08",
+    "chapter_label": "CHAPTER 08",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/08-이 글과 발표가 만들어진 과정.md",
+    "source_block": "08-09",
+    "key_claim": "이 사례의 핵심은 “AI가 HTML을 만들었다”가 아닙니다",
+    "lead": "Source / 입력 경계, 근거 층위, 불확실한 질문 / 자료 정리 보조",
+    "review_hint": "이 발표의 제작 과정이 하네스 원리를 그대로 증명하는지 확인",
+    "shell_reason": "parallel evidence split",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "cards": [
+        {
+          "title": "이 제작 과정이 보여 주는 하네스 원리",
+          "copy": "Source / 입력 경계, 근거 층위, 불확실한 질문 / 자료 정리 보조"
+        },
+        {
+          "title": "Source / 입력 경계, 근거 층위",
+          "copy": "Prose / 논리 순서, 주장 강도, 문체 / 초안 정리와 변형"
+        },
+        {
+          "title": "Prose / 논리 순서, 주장 강도, 문체",
+          "copy": "Outline / 장표 단위 주장, 배치, 누락 확인 / 구조화 보조"
+        }
+      ]
+    }
+  },
+  {
+    "order": 171,
+    "slide_id": "S171",
+    "file_name": "slide-171.html",
+    "title": "결론: AI 를 잘 사용하는 방법: 결국 하나",
+    "slide_kind": "content",
+    "shell": "content-emphasis-shell",
+    "chapter_id": "08",
+    "chapter_label": "CHAPTER 08",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/08-이 글과 발표가 만들어진 과정.md",
+    "source_block": "08-10",
+    "key_claim": "결론: AI 를 잘 사용하는 방법: 결국 하나",
+    "lead": "원하는 것을 글로 작성 규칙을 문서로 작성 결과를 사람이 검증",
+    "review_hint": "이 발표의 제작 과정이 하네스 원리를 그대로 증명하는지 확인",
+    "shell_reason": "single emphasis close",
+    "family": "content",
+    "layout": "wide",
+    "density": "tight",
+    "footnote_assets": [],
+    "body": {
+      "line": "새로 배워야하는 것은 없 우리가 알고 있던 내용을 AI 시대에 더 의식적으로 밖으로 꺼내두어 사용해야 한다는 것"
+    }
   }
 ]

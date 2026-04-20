@@ -1,6 +1,6 @@
 # Harness Rebuilt Manifest
 
-- slide count: 153
+- slide count: 171
 - output deck: `/Users/seungsu/Desktop/project/jaryo/docs/03-html/harness-rebuilt/deck/index.html`
 - active theme: `theme-minimal-light`
 
@@ -22,6 +22,8 @@
 - chapter `06` copy: `copy/chapter-06.md`
 - chapter `07` brief: `briefs/chapter-07.md`
 - chapter `07` copy: `copy/chapter-07.md`
+- chapter `08` brief: `briefs/chapter-08.md`
+- chapter `08` copy: `copy/chapter-08.md`
 
 ## Slide Registry
 
@@ -180,3 +182,21 @@
 | 151 | `S151` | `content` | `content-essay-shell` | `07` | `07-10` | `slide-151.html` | 첫 주에 바로 세울 수 있는 최소 워크플로우 | - |
 | 152 | `S152` | `content` | `content-card-shell` | `07` | `07-10` | `slide-152.html` | 거창하게 시작할 필요는 없 | - |
 | 153 | `S153` | `content` | `content-emphasis-shell` | `07` | `07-11` | `slide-153.html` | 결론: 실전 워크플로우의 중심은 운영 구조다 | - |
+| 154 | `S154` | `chapter-transition` | `chapter-transition-shell` | `08` | `08-01` | `slide-154.html` | 이 글과 발표가 만들어진 과정 | - |
+| 155 | `S155` | `content` | `content-essay-shell` | `08` | `08-01` | `slide-155.html` | 시작하며: 이 발표를 만든 방법 | - |
+| 156 | `S156` | `content` | `content-essay-shell` | `08` | `08-02` | `slide-156.html` | 전체 파이프라인: source prose outline html pdf notes | - |
+| 157 | `S157` | `content` | `content-card-shell` | `08` | `08-02` | `slide-157.html` | 이 제작 과정은 다음 순서를 기본으로 삼았 | - |
+| 158 | `S158` | `content` | `content-emphasis-shell` | `08` | `08-02` | `slide-158.html` | 전체 파이프라인: source prose outline html pdf notes | - |
+| 159 | `S159` | `content` | `content-essay-shell` | `08` | `08-03` | `slide-159.html` | source를 수집하였 | - |
+| 160 | `S160` | `content` | `content-essay-shell` | `08` | `08-04` | `slide-160.html` | prose를 canonical source로 세웠다 | - |
+| 161 | `S161` | `content` | `content-card-shell` | `08` | `08-04` | `slide-161.html` | 그 다음 prose를 만들었 | - |
+| 162 | `S162` | `content` | `content-essay-shell` | `08` | `08-05` | `slide-162.html` | outline과 manifest가 계획을 들고 간다 | - |
+| 163 | `S163` | `content` | `content-card-shell` | `08` | `08-05` | `slide-163.html` | 본문이 준비되고 곧바로 HTML 을 제작하는 것이 아니라, 먼저 outline을 만듭니다 | - |
+| 164 | `S164` | `content` | `content-essay-shell` | `08` | `08-06` | `slide-164.html` | design contract를 먼저 고정했다 | - |
+| 165 | `S165` | `content` | `content-card-shell` | `08` | `08-06` | `slide-165.html` | design contract를 고정 | - |
+| 166 | `S166` | `content` | `content-essay-shell` | `08` | `08-07` | `slide-166.html` | 생성과 검증을 같은 손에 쥐지 않았다 | - |
+| 167 | `S167` | `content` | `content-card-shell` | `08` | `08-07` | `slide-167.html` | 생성자가 자기 결과를 스스로 통과시키게 두면 그럴듯한 오류가 오래 살아남 | - |
+| 168 | `S168` | `content` | `content-essay-shell` | `08` | `08-08` | `slide-168.html` | speaker notes를 맨 뒤로 밀었다 | - |
+| 169 | `S169` | `content` | `content-essay-shell` | `08` | `08-09` | `slide-169.html` | 이 제작 과정이 보여 주는 하네스 원리 | - |
+| 170 | `S170` | `content` | `content-card-shell` | `08` | `08-09` | `slide-170.html` | 이 사례의 핵심은 “AI가 HTML을 만들었다”가 아닙니다 | - |
+| 171 | `S171` | `content` | `content-emphasis-shell` | `08` | `08-10` | `slide-171.html` | 결론: AI 를 잘 사용하는 방법: 결국 하나 | - |

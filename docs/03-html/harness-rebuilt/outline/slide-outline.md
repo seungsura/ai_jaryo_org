@@ -161,3 +161,22 @@
 - S151 | content | content-essay-shell | 첫 주에 바로 세울 수 있는 최소 워크플로우 | 첫 주에 바로 세울 수 있는 최소 워크플로우
 - S152 | content | content-card-shell | 거창하게 시작할 필요는 없 | 거창하게 시작할 필요는 없
 - S153 | content | content-emphasis-shell | 결론: 실전 워크플로우의 중심은 운영 구조다 | 결론: 실전 워크플로우의 중심은 운영 구조다
+## CHAPTER 08 · 08
+- S154 | chapter-transition | chapter-transition-shell | 이 글과 발표가 만들어진 과정 | 시작하며: 이 발표를 만든 방법
+- S155 | content | content-essay-shell | 시작하며: 이 발표를 만든 방법 | 시작하며: 이 발표를 만든 방법
+- S156 | content | content-essay-shell | 전체 파이프라인: source prose outline html pdf notes | 전체 파이프라인: source prose outline html pdf notes
+- S157 | content | content-card-shell | 이 제작 과정은 다음 순서를 기본으로 삼았 | 이 제작 과정은 다음 순서를 기본으로 삼았
+- S158 | content | content-emphasis-shell | 전체 파이프라인: source prose outline html pdf notes | 앞에서 설명한 내용 그대로 적용하였
+- S159 | content | content-essay-shell | source를 수집하였 | source를 수집하였
+- S160 | content | content-essay-shell | prose를 canonical source로 세웠다 | prose를 canonical source로 세웠다
+- S161 | content | content-card-shell | 그 다음 prose를 만들었 | 그 다음 prose를 만들었
+- S162 | content | content-essay-shell | outline과 manifest가 계획을 들고 간다 | outline과 manifest가 계획을 들고 간다
+- S163 | content | content-card-shell | 본문이 준비되고 곧바로 HTML 을 제작하는 것이 아니라, 먼저 outline을 만듭니다 | 본문이 준비되고 곧바로 HTML 을 제작하는 것이 아니라, 먼저 outline을 만듭니다
+- S164 | content | content-essay-shell | design contract를 먼저 고정했다 | design contract를 먼저 고정했다
+- S165 | content | content-card-shell | design contract를 고정 | design contract를 고정
+- S166 | content | content-essay-shell | 생성과 검증을 같은 손에 쥐지 않았다 | 생성과 검증을 같은 손에 쥐지 않았다
+- S167 | content | content-card-shell | 생성자가 자기 결과를 스스로 통과시키게 두면 그럴듯한 오류가 오래 살아남 | 생성자가 자기 결과를 스스로 통과시키게 두면 그럴듯한 오류가 오래 살아남
+- S168 | content | content-essay-shell | speaker notes를 맨 뒤로 밀었다 | speaker notes를 맨 뒤로 밀었다
+- S169 | content | content-essay-shell | 이 제작 과정이 보여 주는 하네스 원리 | 이 제작 과정이 보여 주는 하네스 원리
+- S170 | content | content-card-shell | 이 사례의 핵심은 “AI가 HTML을 만들었다”가 아닙니다 | 이 사례의 핵심은 “AI가 HTML을 만들었다”가 아닙니다
+- S171 | content | content-emphasis-shell | 결론: AI 를 잘 사용하는 방법: 결국 하나 | 결론: AI 를 잘 사용하는 방법: 결국 하나
