@@ -1,6 +1,6 @@
 # Harness Rebuilt Manifest
 
-- slide count: 127
+- slide count: 153
 - output deck: `/Users/seungsu/Desktop/project/jaryo/docs/03-html/harness-rebuilt/deck/index.html`
 - active theme: `theme-minimal-light`
 
@@ -20,6 +20,8 @@
 - chapter `05` copy: `copy/chapter-05.md`
 - chapter `06` brief: `briefs/chapter-06.md`
 - chapter `06` copy: `copy/chapter-06.md`
+- chapter `07` brief: `briefs/chapter-07.md`
+- chapter `07` copy: `copy/chapter-07.md`
 
 ## Slide Registry
 
@@ -152,3 +154,29 @@
 | 125 | `S125` | `content` | `content-emphasis-shell` | `06` | `06-10` | `slide-125.html` | 설계 원칙: 패턴보다 경계가 중요하다 | - |
 | 126 | `S126` | `content` | `content-essay-shell` | `06` | `06-11` | `slide-126.html` | 멀티 모델은 멀티 에이전트와 다르다 | - |
 | 127 | `S127` | `content` | `content-emphasis-shell` | `06` | `06-12` | `slide-127.html` | 결론: 더 많은 AI가 아니라 더 좁은 역할의 AI 여럿 | - |
+| 128 | `S128` | `chapter-transition` | `chapter-transition-shell` | `07` | `07-01` | `slide-128.html` | 실전 워크플로우와 도구 세팅 | - |
+| 129 | `S129` | `content` | `content-essay-shell` | `07` | `07-01` | `slide-129.html` | 시작하며: 두 가지 막다른 길 | - |
+| 130 | `S130` | `content` | `content-essay-shell` | `07` | `07-01` | `slide-130.html` | 실전에서 먼저 피해야 할 막다른 길이 두 가지 있 | - |
+| 131 | `S131` | `content` | `content-essay-shell` | `07` | `07-02` | `slide-131.html` | Preset pack을 볼 때도 핵심은 명령어와 게이트다 | - |
+| 132 | `S132` | `content` | `content-card-shell` | `07` | `07-02` | `slide-132.html` | 원리는 이해 구현은 위임 - 잘 만들어진 플러그인을 사용하는 것이 방법이 될 수 있 | - |
+| 133 | `S133` | `content` | `content-emphasis-shell` | `07` | `07-02` | `slide-133.html` | Preset pack을 볼 때도 핵심은 명령어와 게이트다 | - |
+| 134 | `S134` | `content` | `content-essay-shell` | `07` | `07-03` | `slide-134.html` | 구현 전에 계획을 분리한다: Plan-Critic-Build | - |
+| 135 | `S135` | `content` | `content-card-shell` | `07` | `07-03` | `slide-135.html` | 실전에서 가장 먼저 고정할 문법은 Plan-Critic-Build | - |
+| 136 | `S136` | `content` | `content-emphasis-shell` | `07` | `07-03` | `slide-136.html` | 구현 전에 계획을 분리한다: Plan-Critic-Build | - |
+| 137 | `S137` | `content` | `content-essay-shell` | `07` | `07-04` | `slide-137.html` | 좋은 워크플로우는 도구보다 게이트를 설계 | - |
+| 138 | `S138` | `content` | `content-card-shell` | `07` | `07-04` | `slide-138.html` | 좋은 운영은 도구를 늘리는 기술보다 도구를 덜어내는 기술에 가깝 | - |
+| 139 | `S139` | `content` | `content-emphasis-shell` | `07` | `07-04` | `slide-139.html` | 좋은 워크플로우는 도구보다 게이트를 설계 | - |
+| 140 | `S140` | `content` | `content-essay-shell` | `07` | `07-05` | `slide-140.html` | Approval, Auto-accept, Plan Mode를 위험도에 맞춰 조절 | - |
+| 141 | `S141` | `content` | `content-card-shell` | `07` | `07-05` | `slide-141.html` | 모든 작업에 같은 자율성을 주면 안 됩니다 | - |
+| 142 | `S142` | `content` | `content-essay-shell` | `07` | `07-06` | `slide-142.html` | 컨텍스트를 줄이고 반복을 자산화 | - |
+| 143 | `S143` | `content` | `content-card-shell` | `07` | `07-06` | `slide-143.html` | 긴 세션이 망가지는 이유는 정보가 부족해서가 아니라, 오래 쌓인 기억이 잡음으로 바뀌기 때문 | - |
+| 144 | `S144` | `content` | `content-emphasis-shell` | `07` | `07-06` | `slide-144.html` | 컨텍스트를 줄이고 반복을 자산화 | - |
+| 145 | `S145` | `content` | `content-essay-shell` | `07` | `07-07` | `slide-145.html` | 한 모델에만 기대지 않는다: Claude, Codex, Gemini | - |
+| 146 | `S146` | `content` | `content-card-shell` | `07` | `07-07` | `slide-146.html` | 역할을 분해했다면 모델의 시야도 분산시킬 수 있 | - |
+| 147 | `S147` | `content` | `content-essay-shell` | `07` | `07-08` | `slide-147.html` | 메인 컨텍스트를 지키는 물리적 운영: cmux와 Git Worktree | - |
+| 148 | `S148` | `content` | `content-card-shell` | `07` | `07-08` | `slide-148.html` | 논리적 경계만으로는 부족 | - |
+| 149 | `S149` | `content` | `content-essay-shell` | `07` | `07-09` | `slide-149.html` | 세션이 아니라 이슈가 상태를 들고 간다 | - |
+| 150 | `S150` | `content` | `content-card-shell` | `07` | `07-09` | `slide-150.html` | 이 구조의 마지막 고정점은 이슈 기반 워크플로우 | - |
+| 151 | `S151` | `content` | `content-essay-shell` | `07` | `07-10` | `slide-151.html` | 첫 주에 바로 세울 수 있는 최소 워크플로우 | - |
+| 152 | `S152` | `content` | `content-card-shell` | `07` | `07-10` | `slide-152.html` | 거창하게 시작할 필요는 없 | - |
+| 153 | `S153` | `content` | `content-emphasis-shell` | `07` | `07-11` | `slide-153.html` | 결론: 실전 워크플로우의 중심은 운영 구조다 | - |

@@ -134,3 +134,30 @@
 - S125 | content | content-emphasis-shell | 설계 원칙: 패턴보다 경계가 중요하다 | 어떤 패턴을 쓰든 다음 원칙은 같
 - S126 | content | content-essay-shell | 멀티 모델은 멀티 에이전트와 다르다 | 멀티 모델은 멀티 에이전트와 다르다
 - S127 | content | content-emphasis-shell | 결론: 더 많은 AI가 아니라 더 좁은 역할의 AI 여럿 | 결론: 더 많은 AI가 아니라 더 좁은 역할의 AI 여럿
+## CHAPTER 07 · 07
+- S128 | chapter-transition | chapter-transition-shell | 실전 워크플로우와 도구 세팅 | 시작하며: 두 가지 막다른 길
+- S129 | content | content-essay-shell | 시작하며: 두 가지 막다른 길 | 시작하며: 두 가지 막다른 길
+- S130 | content | content-essay-shell | 실전에서 먼저 피해야 할 막다른 길이 두 가지 있 | 실전에서 먼저 피해야 할 막다른 길이 두 가지 있
+- S131 | content | content-essay-shell | Preset pack을 볼 때도 핵심은 명령어와 게이트다 | Preset pack을 볼 때도 핵심은 명령어와 게이트다
+- S132 | content | content-card-shell | 원리는 이해 구현은 위임 - 잘 만들어진 플러그인을 사용하는 것이 방법이 될 수 있 | 원리는 이해 구현은 위임 - 잘 만들어진 플러그인을 사용하는 것이 방법이 될 수 있
+- S133 | content | content-emphasis-shell | Preset pack을 볼 때도 핵심은 명령어와 게이트다 | OMC 같은 preset pack을 예로 들 수 있
+- S134 | content | content-essay-shell | 구현 전에 계획을 분리한다: Plan-Critic-Build | 구현 전에 계획을 분리한다: Plan-Critic-Build
+- S135 | content | content-card-shell | 실전에서 가장 먼저 고정할 문법은 Plan-Critic-Build | 실전에서 가장 먼저 고정할 문법은 Plan-Critic-Build
+- S136 | content | content-emphasis-shell | 구현 전에 계획을 분리한다: Plan-Critic-Build | 이 순서는 간단하지만 효과가 큽니다
+- S137 | content | content-essay-shell | 좋은 워크플로우는 도구보다 게이트를 설계 | 좋은 워크플로우는 도구보다 게이트를 설계
+- S138 | content | content-card-shell | 좋은 운영은 도구를 늘리는 기술보다 도구를 덜어내는 기술에 가깝 | 좋은 운영은 도구를 늘리는 기술보다 도구를 덜어내는 기술에 가깝
+- S139 | content | content-emphasis-shell | 좋은 워크플로우는 도구보다 게이트를 설계 | 컨텍스트 창에 유휴 MCP와 쓰지 않는 인터페이스를 쌓아 두면 판단력이 넓어지는 것이 아니라 흐려집니다
+- S140 | content | content-essay-shell | Approval, Auto-accept, Plan Mode를 위험도에 맞춰 조절 | Approval, Auto-accept, Plan Mode를 위험도에 맞춰 조절
+- S141 | content | content-card-shell | 모든 작업에 같은 자율성을 주면 안 됩니다 | 모든 작업에 같은 자율성을 주면 안 됩니다
+- S142 | content | content-essay-shell | 컨텍스트를 줄이고 반복을 자산화 | 컨텍스트를 줄이고 반복을 자산화
+- S143 | content | content-card-shell | 긴 세션이 망가지는 이유는 정보가 부족해서가 아니라, 오래 쌓인 기억이 잡음으로 바뀌기 때문 | 긴 세션이 망가지는 이유는 정보가 부족해서가 아니라, 오래 쌓인 기억이 잡음으로 바뀌기 때문
+- S144 | content | content-emphasis-shell | 컨텍스트를 줄이고 반복을 자산화 | 그래서 /context, /compact, /clear 같은 명령은 편의 기능이 아니라 운영 명령
+- S145 | content | content-essay-shell | 한 모델에만 기대지 않는다: Claude, Codex, Gemini | 한 모델에만 기대지 않는다: Claude, Codex, Gemini
+- S146 | content | content-card-shell | 역할을 분해했다면 모델의 시야도 분산시킬 수 있 | 역할을 분해했다면 모델의 시야도 분산시킬 수 있
+- S147 | content | content-essay-shell | 메인 컨텍스트를 지키는 물리적 운영: cmux와 Git Worktree | 메인 컨텍스트를 지키는 물리적 운영: cmux와 Git Worktree
+- S148 | content | content-card-shell | 논리적 경계만으로는 부족 | 논리적 경계만으로는 부족
+- S149 | content | content-essay-shell | 세션이 아니라 이슈가 상태를 들고 간다 | 세션이 아니라 이슈가 상태를 들고 간다
+- S150 | content | content-card-shell | 이 구조의 마지막 고정점은 이슈 기반 워크플로우 | 이 구조의 마지막 고정점은 이슈 기반 워크플로우
+- S151 | content | content-essay-shell | 첫 주에 바로 세울 수 있는 최소 워크플로우 | 첫 주에 바로 세울 수 있는 최소 워크플로우
+- S152 | content | content-card-shell | 거창하게 시작할 필요는 없 | 거창하게 시작할 필요는 없
+- S153 | content | content-emphasis-shell | 결론: 실전 워크플로우의 중심은 운영 구조다 | 결론: 실전 워크플로우의 중심은 운영 구조다

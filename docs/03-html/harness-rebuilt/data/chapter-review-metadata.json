@@ -837,5 +837,154 @@
       "content-emphasis-shell": 3,
       "chapter-transition-shell": 1
     }
+  },
+  "07": {
+    "chapter_id": "07",
+    "title": "실전 워크플로우와 도구 세팅",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/07-실전 워크플로우와 도구 세팅.md",
+    "transition_slide_id": "S128",
+    "slide_ids": [
+      "S128",
+      "S129",
+      "S130",
+      "S131",
+      "S132",
+      "S133",
+      "S134",
+      "S135",
+      "S136",
+      "S137",
+      "S138",
+      "S139",
+      "S140",
+      "S141",
+      "S142",
+      "S143",
+      "S144",
+      "S145",
+      "S146",
+      "S147",
+      "S148",
+      "S149",
+      "S150",
+      "S151",
+      "S152",
+      "S153"
+    ],
+    "section_coverage": [
+      {
+        "block_id": "07-01",
+        "heading": "시작하며: 두 가지 막다른 길",
+        "slide_count": 2,
+        "slide_ids": [
+          "S129",
+          "S130"
+        ]
+      },
+      {
+        "block_id": "07-02",
+        "heading": "Preset pack을 볼 때도 핵심은 명령어와 게이트다",
+        "slide_count": 3,
+        "slide_ids": [
+          "S131",
+          "S132",
+          "S133"
+        ]
+      },
+      {
+        "block_id": "07-03",
+        "heading": "구현 전에 계획을 분리한다: Plan-Critic-Build",
+        "slide_count": 3,
+        "slide_ids": [
+          "S134",
+          "S135",
+          "S136"
+        ]
+      },
+      {
+        "block_id": "07-04",
+        "heading": "좋은 워크플로우는 도구보다 게이트를 설계",
+        "slide_count": 3,
+        "slide_ids": [
+          "S137",
+          "S138",
+          "S139"
+        ]
+      },
+      {
+        "block_id": "07-05",
+        "heading": "Approval, Auto-accept, Plan Mode를 위험도에 맞춰 조절",
+        "slide_count": 2,
+        "slide_ids": [
+          "S140",
+          "S141"
+        ]
+      },
+      {
+        "block_id": "07-06",
+        "heading": "컨텍스트를 줄이고 반복을 자산화",
+        "slide_count": 3,
+        "slide_ids": [
+          "S142",
+          "S143",
+          "S144"
+        ]
+      },
+      {
+        "block_id": "07-07",
+        "heading": "한 모델에만 기대지 않는다: Claude, Codex, Gemini",
+        "slide_count": 2,
+        "slide_ids": [
+          "S145",
+          "S146"
+        ]
+      },
+      {
+        "block_id": "07-08",
+        "heading": "메인 컨텍스트를 지키는 물리적 운영: cmux와 Git Worktree",
+        "slide_count": 2,
+        "slide_ids": [
+          "S147",
+          "S148"
+        ]
+      },
+      {
+        "block_id": "07-09",
+        "heading": "세션이 아니라 이슈가 상태를 들고 간다",
+        "slide_count": 2,
+        "slide_ids": [
+          "S149",
+          "S150"
+        ]
+      },
+      {
+        "block_id": "07-10",
+        "heading": "첫 주에 바로 세울 수 있는 최소 워크플로우",
+        "slide_count": 2,
+        "slide_ids": [
+          "S151",
+          "S152"
+        ]
+      },
+      {
+        "block_id": "07-11",
+        "heading": "결론: 실전 워크플로우의 중심은 운영 구조다",
+        "slide_count": 1,
+        "slide_ids": [
+          "S153"
+        ]
+      }
+    ],
+    "footnote_assets": [],
+    "review_focus": "명령어, 게이트, 상태 외부화가 실전 workflow로 이어지는지 확인",
+    "special_rules": [
+      "heuristic_multi_slide_decomposition"
+    ],
+    "shell_mix": {
+      "content-essay-shell": 11,
+      "content-card-shell": 9,
+      "content-emphasis-shell": 5,
+      "chapter-transition-shell": 1
+    }
   }
 }

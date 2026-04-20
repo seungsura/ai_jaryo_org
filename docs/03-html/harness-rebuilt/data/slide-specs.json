@@ -3610,5 +3610,751 @@
     "body": {
       "line": "좋은 멀티 에이전트 설계는 “AI를 많이 붙인다”가 아닙니다. “더 좁은 역할의 AI 여럿을, 더 명확한 경계 안에서"
     }
+  },
+  {
+    "order": 128,
+    "slide_id": "S128",
+    "file_name": "slide-128.html",
+    "title": "실전 워크플로우와 도구 세팅",
+    "slide_kind": "chapter-transition",
+    "shell": "chapter-transition-shell",
+    "chapter_id": "07",
+    "chapter_label": "CHAPTER 07",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/07-실전 워크플로우와 도구 세팅.md",
+    "source_block": "07-01",
+    "key_claim": "시작하며: 두 가지 막다른 길",
+    "lead": "시작하며: 두 가지 막다른 길",
+    "review_hint": "명령어, 게이트, 상태 외부화가 실전 workflow로 이어지는지 확인",
+    "shell_reason": "chapter transition anchor",
+    "family": "cover",
+    "layout": "centered",
+    "density": "tight",
+    "footnote_assets": [],
+    "body": {}
+  },
+  {
+    "order": 129,
+    "slide_id": "S129",
+    "file_name": "slide-129.html",
+    "title": "시작하며: 두 가지 막다른 길",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "07",
+    "chapter_label": "CHAPTER 07",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/07-실전 워크플로우와 도구 세팅.md",
+    "source_block": "07-01",
+    "key_claim": "시작하며: 두 가지 막다른 길",
+    "lead": "실전에서 먼저 피해야 할 막다른 길이 두 가지 있",
+    "review_hint": "명령어, 게이트, 상태 외부화가 실전 workflow로 이어지는지 확인",
+    "shell_reason": "block opening claim",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "실전에서 먼저 피해야 할 막다른 길이 두 가지 있",
+        "첫째는 모든 것을 직접 세팅하느라 구조보다 수동으로 모든 것을 조작하는 것 명령어를 매번 손으로 조합하고, 검증 루프를 기억에"
+      ]
+    }
+  },
+  {
+    "order": 130,
+    "slide_id": "S130",
+    "file_name": "slide-130.html",
+    "title": "실전에서 먼저 피해야 할 막다른 길이 두 가지 있",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "07",
+    "chapter_label": "CHAPTER 07",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/07-실전 워크플로우와 도구 세팅.md",
+    "source_block": "07-01",
+    "key_claim": "실전에서 먼저 피해야 할 막다른 길이 두 가지 있",
+    "lead": "첫째는 모든 것을 직접 세팅하느라 구조보다 수동으로 모든 것을 조작하는 것 명령어를 매번 손으로 조합하고, 검증 루프를 기억에",
+    "review_hint": "명령어, 게이트, 상태 외부화가 실전 workflow로 이어지는지 확인",
+    "shell_reason": "second compressed essay split",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "둘째는 원리도 모른 채 남이 만든 Skills, 플러그인, 프리셋만 주워 붙이는 길 겉보기에는 편하지만 이상 동작이 나오면",
+        "그래서 실전 워크플로우의 출발점은 새 도구를 더 붙이는 일이 아닙니다. 어떤 원리를 시스템이 대신 강제하게 만들 것인가"
+      ]
+    }
+  },
+  {
+    "order": 131,
+    "slide_id": "S131",
+    "file_name": "slide-131.html",
+    "title": "Preset pack을 볼 때도 핵심은 명령어와 게이트다",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "07",
+    "chapter_label": "CHAPTER 07",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/07-실전 워크플로우와 도구 세팅.md",
+    "source_block": "07-02",
+    "key_claim": "Preset pack을 볼 때도 핵심은 명령어와 게이트다",
+    "lead": "원리는 이해 구현은 위임 - 잘 만들어진 플러그인을 사용하는 것이 방법이 될 수 있",
+    "review_hint": "명령어, 게이트, 상태 외부화가 실전 workflow로 이어지는지 확인",
+    "shell_reason": "block opening claim",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "원리는 이해 구현은 위임 - 잘 만들어진 플러그인을 사용하는 것이 방법이 될 수 있",
+        "OMC 같은 preset pack을 예로 들 수 있 여기서 중요한 것은 특정 도구 이름이 아닙니다. 사람이 매번 원리를 외워"
+      ]
+    }
+  },
+  {
+    "order": 132,
+    "slide_id": "S132",
+    "file_name": "slide-132.html",
+    "title": "원리는 이해 구현은 위임 - 잘 만들어진 플러그인을 사용하는 것이 방법이 될 수 있",
+    "slide_kind": "content",
+    "shell": "content-card-shell",
+    "chapter_id": "07",
+    "chapter_label": "CHAPTER 07",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/07-실전 워크플로우와 도구 세팅.md",
+    "source_block": "07-02",
+    "key_claim": "원리는 이해 구현은 위임 - 잘 만들어진 플러그인을 사용하는 것이 방법이 될 수 있",
+    "lead": "OMC 같은 preset pack을 예로 들 수 있 여기서 중요한 것은 특정 도구 이름이 아닙니다. 사람이 매번 원리를 외워",
+    "review_hint": "명령어, 게이트, 상태 외부화가 실전 workflow로 이어지는지 확인",
+    "shell_reason": "parallel evidence split",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "cards": [
+        {
+          "title": "Preset pack을 볼 때도 핵심은",
+          "copy": "역할 분리된 여러 에이전트"
+        },
+        {
+          "title": "역할 분리된 여러 에이전트",
+          "copy": "모델 라우팅"
+        },
+        {
+          "title": "모델 라우팅",
+          "copy": "Plan-Critic-Build 명령"
+        }
+      ]
+    }
+  },
+  {
+    "order": 133,
+    "slide_id": "S133",
+    "file_name": "slide-133.html",
+    "title": "Preset pack을 볼 때도 핵심은 명령어와 게이트다",
+    "slide_kind": "content",
+    "shell": "content-emphasis-shell",
+    "chapter_id": "07",
+    "chapter_label": "CHAPTER 07",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/07-실전 워크플로우와 도구 세팅.md",
+    "source_block": "07-02",
+    "key_claim": "OMC 같은 preset pack을 예로 들 수 있",
+    "lead": "예를 들어 이런 요소가 한 묶음으로 등장할 수 있",
+    "review_hint": "명령어, 게이트, 상태 외부화가 실전 workflow로 이어지는지 확인",
+    "shell_reason": "block synthesis emphasis",
+    "family": "content",
+    "layout": "wide",
+    "density": "tight",
+    "footnote_assets": [],
+    "body": {
+      "line": "사용자는 어떤 작업인지에 집중하고 원하는 명령어로만 작업을 진행 preset pack 이 적용한 harness 가"
+    }
+  },
+  {
+    "order": 134,
+    "slide_id": "S134",
+    "file_name": "slide-134.html",
+    "title": "구현 전에 계획을 분리한다: Plan-Critic-Build",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "07",
+    "chapter_label": "CHAPTER 07",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/07-실전 워크플로우와 도구 세팅.md",
+    "source_block": "07-03",
+    "key_claim": "구현 전에 계획을 분리한다: Plan-Critic-Build",
+    "lead": "실전에서 가장 먼저 고정할 문법은 Plan-Critic-Build",
+    "review_hint": "명령어, 게이트, 상태 외부화가 실전 workflow로 이어지는지 확인",
+    "shell_reason": "block opening claim",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "실전에서 가장 먼저 고정할 문법은 Plan-Critic-Build",
+        "이 순서는 간단하지만 효과가 큽니다. 에이전트가 가장 많이 실패하는 지점은 “나쁜 코드”가 아니라 “나쁜 전제” 전제가 잘못된"
+      ]
+    }
+  },
+  {
+    "order": 135,
+    "slide_id": "S135",
+    "file_name": "slide-135.html",
+    "title": "실전에서 가장 먼저 고정할 문법은 Plan-Critic-Build",
+    "slide_kind": "content",
+    "shell": "content-card-shell",
+    "chapter_id": "07",
+    "chapter_label": "CHAPTER 07",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/07-실전 워크플로우와 도구 세팅.md",
+    "source_block": "07-03",
+    "key_claim": "실전에서 가장 먼저 고정할 문법은 Plan-Critic-Build",
+    "lead": "이 순서는 간단하지만 효과가 큽니다. 에이전트가 가장 많이 실패하는 지점은 “나쁜 코드”가 아니라 “나쁜 전제” 전제가 잘못된",
+    "review_hint": "명령어, 게이트, 상태 외부화가 실전 workflow로 이어지는지 확인",
+    "shell_reason": "parallel evidence split",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "cards": [
+        {
+          "title": "구현 전에 계획을 분리",
+          "copy": "Plan: 구현 전에 계획을 쓴다"
+        },
+        {
+          "title": "Plan: 구현 전에 계획을 쓴다",
+          "copy": "Critic: 계획의 빈틈을 비판"
+        },
+        {
+          "title": "Critic: 계획의 빈틈을 비판",
+          "copy": "Build: 합의된 뒤에만 실행"
+        }
+      ]
+    }
+  },
+  {
+    "order": 136,
+    "slide_id": "S136",
+    "file_name": "slide-136.html",
+    "title": "구현 전에 계획을 분리한다: Plan-Critic-Build",
+    "slide_kind": "content",
+    "shell": "content-emphasis-shell",
+    "chapter_id": "07",
+    "chapter_label": "CHAPTER 07",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/07-실전 워크플로우와 도구 세팅.md",
+    "source_block": "07-03",
+    "key_claim": "이 순서는 간단하지만 효과가 큽니다",
+    "lead": "실무에서는 Explore Plan Code Commit 흐름으로 풀어 쓸 수 있",
+    "review_hint": "명령어, 게이트, 상태 외부화가 실전 workflow로 이어지는지 확인",
+    "shell_reason": "block synthesis emphasis",
+    "family": "content",
+    "layout": "wide",
+    "density": "tight",
+    "footnote_assets": [],
+    "body": {
+      "line": "여기서 빠지면 안 되는 것이 success criteria 무엇을 끝으로 볼 것인지, 어떤 테스트와 어떤 검증을"
+    }
+  },
+  {
+    "order": 137,
+    "slide_id": "S137",
+    "file_name": "slide-137.html",
+    "title": "좋은 워크플로우는 도구보다 게이트를 설계",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "07",
+    "chapter_label": "CHAPTER 07",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/07-실전 워크플로우와 도구 세팅.md",
+    "source_block": "07-04",
+    "key_claim": "좋은 워크플로우는 도구보다 게이트를 설계",
+    "lead": "좋은 운영은 도구를 늘리는 기술보다 도구를 덜어내는 기술에 가깝 컨텍스트 창에 유휴 MCP와 쓰지 않는 인터페이스를 쌓아 두면",
+    "review_hint": "명령어, 게이트, 상태 외부화가 실전 workflow로 이어지는지 확인",
+    "shell_reason": "block opening claim",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "좋은 운영은 도구를 늘리는 기술보다 도구를 덜어내는 기술에 가깝 컨텍스트 창에 유휴 MCP와 쓰지 않는 인터페이스를 쌓아 두면",
+        "Stripe 사례또한 내부 도구가 수백 개 있어도 실제 태스크에서 오케스트레이터가 고르는 도구는 소수일 수 있 Vercel"
+      ]
+    }
+  },
+  {
+    "order": 138,
+    "slide_id": "S138",
+    "file_name": "slide-138.html",
+    "title": "좋은 운영은 도구를 늘리는 기술보다 도구를 덜어내는 기술에 가깝",
+    "slide_kind": "content",
+    "shell": "content-card-shell",
+    "chapter_id": "07",
+    "chapter_label": "CHAPTER 07",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/07-실전 워크플로우와 도구 세팅.md",
+    "source_block": "07-04",
+    "key_claim": "좋은 운영은 도구를 늘리는 기술보다 도구를 덜어내는 기술에 가깝",
+    "lead": "Stripe 사례또한 내부 도구가 수백 개 있어도 실제 태스크에서 오케스트레이터가 고르는 도구는 소수일 수 있 Vercel",
+    "review_hint": "명령어, 게이트, 상태 외부화가 실전 workflow로 이어지는지 확인",
+    "shell_reason": "parallel evidence split",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "cards": [
+        {
+          "title": "좋은 워크플로우는 도구보다 게이트를 설계",
+          "copy": "lint"
+        },
+        {
+          "title": "lint",
+          "copy": "type check"
+        },
+        {
+          "title": "type check",
+          "copy": "테스트"
+        }
+      ]
+    }
+  },
+  {
+    "order": 139,
+    "slide_id": "S139",
+    "file_name": "slide-139.html",
+    "title": "좋은 워크플로우는 도구보다 게이트를 설계",
+    "slide_kind": "content",
+    "shell": "content-emphasis-shell",
+    "chapter_id": "07",
+    "chapter_label": "CHAPTER 07",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/07-실전 워크플로우와 도구 세팅.md",
+    "source_block": "07-04",
+    "key_claim": "컨텍스트 창에 유휴 MCP와 쓰지 않는 인터페이스를 쌓아 두면 판단력이 넓어지는 것이 아니라 흐려집니다",
+    "lead": "도구 큐레이션과 함께 더 중요한 것이 게이트",
+    "review_hint": "명령어, 게이트, 상태 외부화가 실전 workflow로 이어지는지 확인",
+    "shell_reason": "block synthesis emphasis",
+    "family": "content",
+    "layout": "wide",
+    "density": "tight",
+    "footnote_assets": [],
+    "body": {
+      "line": "기계가 확인할 수 있는 것은 기계가 닫아야  AI는 그 문을 통과할 답을 내놓는 데 집중해야"
+    }
+  },
+  {
+    "order": 140,
+    "slide_id": "S140",
+    "file_name": "slide-140.html",
+    "title": "Approval, Auto-accept, Plan Mode를 위험도에 맞춰 조절",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "07",
+    "chapter_label": "CHAPTER 07",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/07-실전 워크플로우와 도구 세팅.md",
+    "source_block": "07-05",
+    "key_claim": "Approval, Auto-accept, Plan Mode를 위험도에 맞춰 조절",
+    "lead": "모든 작업에 같은 자율성을 주면 안 됩니다. 위험도에 따라 모드를 나눠야",
+    "review_hint": "명령어, 게이트, 상태 외부화가 실전 workflow로 이어지는지 확인",
+    "shell_reason": "block opening claim",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "모든 작업에 같은 자율성을 주면 안 됩니다. 위험도에 따라 모드를 나눠야",
+        "좋은 워크플로우는 에이전트를 믿거나 믿지 않는 이분법이 아닙니다. 작업별로 신뢰 수준을 조절하는 구조"
+      ]
+    }
+  },
+  {
+    "order": 141,
+    "slide_id": "S141",
+    "file_name": "slide-141.html",
+    "title": "모든 작업에 같은 자율성을 주면 안 됩니다",
+    "slide_kind": "content",
+    "shell": "content-card-shell",
+    "chapter_id": "07",
+    "chapter_label": "CHAPTER 07",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/07-실전 워크플로우와 도구 세팅.md",
+    "source_block": "07-05",
+    "key_claim": "모든 작업에 같은 자율성을 주면 안 됩니다",
+    "lead": "좋은 워크플로우는 에이전트를 믿거나 믿지 않는 이분법이 아닙니다. 작업별로 신뢰 수준을 조절하는 구조",
+    "review_hint": "명령어, 게이트, 상태 외부화가 실전 workflow로 이어지는지 확인",
+    "shell_reason": "parallel evidence split",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "cards": [
+        {
+          "title": "Approval, Auto-accept",
+          "copy": "문서 초안, 로그 요약 / 비교적 넓은 자율성 / 실패 비용이 낮고 되돌리기 쉬움"
+        },
+        {
+          "title": "문서 초안, 로그 요약 / 비교적 넓은",
+          "copy": "테스트 보강, 작은 리팩터링 / 제한적 auto-accept + 검증 / 반복 작업이지만 검증 필요"
+        },
+        {
+          "title": "테스트 보강, 작은 리팩터링 / 제한적",
+          "copy": "아키텍처 변경, DB 마이그레이션 / Plan Mode + 승인 / 잘못되면 비용이 큼"
+        }
+      ]
+    }
+  },
+  {
+    "order": 142,
+    "slide_id": "S142",
+    "file_name": "slide-142.html",
+    "title": "컨텍스트를 줄이고 반복을 자산화",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "07",
+    "chapter_label": "CHAPTER 07",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/07-실전 워크플로우와 도구 세팅.md",
+    "source_block": "07-06",
+    "key_claim": "컨텍스트를 줄이고 반복을 자산화",
+    "lead": "긴 세션이 망가지는 이유는 정보가 부족해서가 아니라, 오래 쌓인 기억이 잡음으로 바뀌기 때문 그래서 /context",
+    "review_hint": "명령어, 게이트, 상태 외부화가 실전 workflow로 이어지는지 확인",
+    "shell_reason": "block opening claim",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "긴 세션이 망가지는 이유는 정보가 부족해서가 아니라, 오래 쌓인 기억이 잡음으로 바뀌기 때문 그래서 /context",
+        "세션을 비우지 못하면 작업은 계속 이어지는 것이 아니라 계속 끌려갑니다"
+      ]
+    }
+  },
+  {
+    "order": 143,
+    "slide_id": "S143",
+    "file_name": "slide-143.html",
+    "title": "긴 세션이 망가지는 이유는 정보가 부족해서가 아니라, 오래 쌓인 기억이 잡음으로 바뀌기 때문",
+    "slide_kind": "content",
+    "shell": "content-card-shell",
+    "chapter_id": "07",
+    "chapter_label": "CHAPTER 07",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/07-실전 워크플로우와 도구 세팅.md",
+    "source_block": "07-06",
+    "key_claim": "긴 세션이 망가지는 이유는 정보가 부족해서가 아니라, 오래 쌓인 기억이 잡음으로 바뀌기 때문",
+    "lead": "세션을 비우지 못하면 작업은 계속 이어지는 것이 아니라 계속 끌려갑니다",
+    "review_hint": "명령어, 게이트, 상태 외부화가 실전 workflow로 이어지는지 확인",
+    "shell_reason": "parallel evidence split",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "cards": [
+        {
+          "title": "컨텍스트를 줄이고 반복을 자산화",
+          "copy": "/context: 지금 무엇이 얼마나 쌓였는지 본다"
+        },
+        {
+          "title": "/context: 지금 무엇이 얼마나",
+          "copy": "/compact: 이어갈 결정과 상태만 압축"
+        },
+        {
+          "title": "/compact: 이어갈 결정과 상태만 압축",
+          "copy": "/clear: 다른 작업으로 넘어갈 때 세션을 비운다"
+        }
+      ]
+    }
+  },
+  {
+    "order": 144,
+    "slide_id": "S144",
+    "file_name": "slide-144.html",
+    "title": "컨텍스트를 줄이고 반복을 자산화",
+    "slide_kind": "content",
+    "shell": "content-emphasis-shell",
+    "chapter_id": "07",
+    "chapter_label": "CHAPTER 07",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/07-실전 워크플로우와 도구 세팅.md",
+    "source_block": "07-06",
+    "key_claim": "그래서 /context, /compact, /clear 같은 명령은 편의 기능이 아니라 운영 명령",
+    "lead": "반복되는 지침도 대화 안에 묻어 두면 안 됩니다. 매번 같은 설명을 타이핑하고 있다면 이미 시스템 바깥에 있어야 할 지식이라는 뜻",
+    "review_hint": "명령어, 게이트, 상태 외부화가 실전 workflow로 이어지는지 확인",
+    "shell_reason": "block synthesis emphasis",
+    "family": "content",
+    "layout": "wide",
+    "density": "tight",
+    "footnote_assets": [],
+    "body": {
+      "line": "개인 메모에 머물면 요령으로 끝나지만, 리포지토리와 팀 설정으로 올라가면 표준이 됩니다"
+    }
+  },
+  {
+    "order": 145,
+    "slide_id": "S145",
+    "file_name": "slide-145.html",
+    "title": "한 모델에만 기대지 않는다: Claude, Codex, Gemini",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "07",
+    "chapter_label": "CHAPTER 07",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/07-실전 워크플로우와 도구 세팅.md",
+    "source_block": "07-07",
+    "key_claim": "한 모델에만 기대지 않는다: Claude, Codex, Gemini",
+    "lead": "역할을 분해했다면 모델의 시야도 분산시킬 수 있 단일 모델에 모든 판단을 몰아주지 않고 Claude, Codex, Gemini",
+    "review_hint": "명령어, 게이트, 상태 외부화가 실전 workflow로 이어지는지 확인",
+    "shell_reason": "block opening claim",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "역할을 분해했다면 모델의 시야도 분산시킬 수 있 단일 모델에 모든 판단을 몰아주지 않고 Claude, Codex, Gemini",
+        "실전에서는 다음처럼 사용할 수 있"
+      ]
+    }
+  },
+  {
+    "order": 146,
+    "slide_id": "S146",
+    "file_name": "slide-146.html",
+    "title": "역할을 분해했다면 모델의 시야도 분산시킬 수 있",
+    "slide_kind": "content",
+    "shell": "content-card-shell",
+    "chapter_id": "07",
+    "chapter_label": "CHAPTER 07",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/07-실전 워크플로우와 도구 세팅.md",
+    "source_block": "07-07",
+    "key_claim": "역할을 분해했다면 모델의 시야도 분산시킬 수 있",
+    "lead": "실전에서는 다음처럼 사용할 수 있",
+    "review_hint": "명령어, 게이트, 상태 외부화가 실전 workflow로 이어지는지 확인",
+    "shell_reason": "parallel evidence split",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "cards": [
+        {
+          "title": "한 모델에만 기대지 않는다: Claude",
+          "copy": "Claude: 긴 맥락과 구현 루프 중심"
+        },
+        {
+          "title": "Claude: 긴 맥락과 구현 루프 중심",
+          "copy": "Codex: 코드 구조, 리팩터링, 코드 리뷰 및 검토"
+        },
+        {
+          "title": "Codex: 코드 구조, 리팩터링, 코드",
+          "copy": "Gemini: UI, 가독성, 대안적 시각, 문서 피드백"
+        }
+      ]
+    }
+  },
+  {
+    "order": 147,
+    "slide_id": "S147",
+    "file_name": "slide-147.html",
+    "title": "메인 컨텍스트를 지키는 물리적 운영: cmux와 Git Worktree",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "07",
+    "chapter_label": "CHAPTER 07",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/07-실전 워크플로우와 도구 세팅.md",
+    "source_block": "07-08",
+    "key_claim": "메인 컨텍스트를 지키는 물리적 운영: cmux와 Git Worktree",
+    "lead": "논리적 경계만으로는 부족 실전에서는 물리적 작업 환경도 함께 나눠야",
+    "review_hint": "명령어, 게이트, 상태 외부화가 실전 workflow로 이어지는지 확인",
+    "shell_reason": "block opening claim",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "논리적 경계만으로는 부족 실전에서는 물리적 작업 환경도 함께 나눠야",
+        "하나의 창에 탐색, 구현, 로그, 이슈 관리, PR 생성까지 모두 밀어 넣으면 메인 컨텍스트는 금방 흐려집니다. 반대로 창과"
+      ]
+    }
+  },
+  {
+    "order": 148,
+    "slide_id": "S148",
+    "file_name": "slide-148.html",
+    "title": "논리적 경계만으로는 부족",
+    "slide_kind": "content",
+    "shell": "content-card-shell",
+    "chapter_id": "07",
+    "chapter_label": "CHAPTER 07",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/07-실전 워크플로우와 도구 세팅.md",
+    "source_block": "07-08",
+    "key_claim": "논리적 경계만으로는 부족",
+    "lead": "하나의 창에 탐색, 구현, 로그, 이슈 관리, PR 생성까지 모두 밀어 넣으면 메인 컨텍스트는 금방 흐려집니다. 반대로 창과",
+    "review_hint": "명령어, 게이트, 상태 외부화가 실전 workflow로 이어지는지 확인",
+    "shell_reason": "parallel evidence split",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "cards": [
+        {
+          "title": "메인 컨텍스트를 지키는 물리적 운영",
+          "copy": "창 1: 메인 구현 세션"
+        },
+        {
+          "title": "창 1: 메인 구현 세션",
+          "copy": "창 2: 조사와 탐색 전용"
+        },
+        {
+          "title": "창 2: 조사와 탐색 전용",
+          "copy": "창 3: 테스트와 감시 로그"
+        }
+      ]
+    }
+  },
+  {
+    "order": 149,
+    "slide_id": "S149",
+    "file_name": "slide-149.html",
+    "title": "세션이 아니라 이슈가 상태를 들고 간다",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "07",
+    "chapter_label": "CHAPTER 07",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/07-실전 워크플로우와 도구 세팅.md",
+    "source_block": "07-09",
+    "key_claim": "세션이 아니라 이슈가 상태를 들고 간다",
+    "lead": "이 구조의 마지막 고정점은 이슈 기반 워크플로우 여기서 중요한 것은 특정 트래커 이름이 아니라, 이슈가 세션보다 오래가는 상태",
+    "review_hint": "명령어, 게이트, 상태 외부화가 실전 workflow로 이어지는지 확인",
+    "shell_reason": "block opening claim",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "이 구조의 마지막 고정점은 이슈 기반 워크플로우 여기서 중요한 것은 특정 트래커 이름이 아니라, 이슈가 세션보다 오래가는 상태",
+        "반대로 이슈는 작업의 목적, 기준, 증거를 붙잡아 둡니다. 그래서 이슈 1개 = 에이전트 세션 1개라는 규칙이 유용 이슈가"
+      ]
+    }
+  },
+  {
+    "order": 150,
+    "slide_id": "S150",
+    "file_name": "slide-150.html",
+    "title": "이 구조의 마지막 고정점은 이슈 기반 워크플로우",
+    "slide_kind": "content",
+    "shell": "content-card-shell",
+    "chapter_id": "07",
+    "chapter_label": "CHAPTER 07",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/07-실전 워크플로우와 도구 세팅.md",
+    "source_block": "07-09",
+    "key_claim": "이 구조의 마지막 고정점은 이슈 기반 워크플로우",
+    "lead": "반대로 이슈는 작업의 목적, 기준, 증거를 붙잡아 둡니다. 그래서 이슈 1개 = 에이전트 세션 1개라는 규칙이 유용 이슈가",
+    "review_hint": "명령어, 게이트, 상태 외부화가 실전 workflow로 이어지는지 확인",
+    "shell_reason": "parallel evidence split",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "cards": [
+        {
+          "title": "세션이 아니라 이슈가 상태를 들고 간다",
+          "copy": "Linear/PMS/GitHub Issue에 작업 목적과 수용 기준을 적는다"
+        },
+        {
+          "title": "Linear/PMS/GitHub Issue에",
+          "copy": "이슈에서 Worktree를 생성"
+        },
+        {
+          "title": "이슈에서 Worktree를 생성",
+          "copy": "에이전트 세션은 해당 이슈 범위만 다룬다"
+        }
+      ]
+    }
+  },
+  {
+    "order": 151,
+    "slide_id": "S151",
+    "file_name": "slide-151.html",
+    "title": "첫 주에 바로 세울 수 있는 최소 워크플로우",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "07",
+    "chapter_label": "CHAPTER 07",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/07-실전 워크플로우와 도구 세팅.md",
+    "source_block": "07-10",
+    "key_claim": "첫 주에 바로 세울 수 있는 최소 워크플로우",
+    "lead": "거창하게 시작할 필요는 없",
+    "review_hint": "명령어, 게이트, 상태 외부화가 실전 workflow로 이어지는지 확인",
+    "shell_reason": "block opening claim",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "거창하게 시작할 필요는 없",
+        "이 여섯 가지는 도구 과시가 아닙니다. 대화창에 떠다니는 기준을 작업 환경의 일부로 만드는 첫 단계"
+      ]
+    }
+  },
+  {
+    "order": 152,
+    "slide_id": "S152",
+    "file_name": "slide-152.html",
+    "title": "거창하게 시작할 필요는 없",
+    "slide_kind": "content",
+    "shell": "content-card-shell",
+    "chapter_id": "07",
+    "chapter_label": "CHAPTER 07",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/07-실전 워크플로우와 도구 세팅.md",
+    "source_block": "07-10",
+    "key_claim": "거창하게 시작할 필요는 없",
+    "lead": "이 여섯 가지는 도구 과시가 아닙니다. 대화창에 떠다니는 기준을 작업 환경의 일부로 만드는 첫 단계",
+    "review_hint": "명령어, 게이트, 상태 외부화가 실전 workflow로 이어지는지 확인",
+    "shell_reason": "parallel evidence split",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "cards": [
+        {
+          "title": "첫 주에 바로 세울 수 있는 최소 워크플로우",
+          "copy": "CLAUDE.md 또는 AGENTS.md에 반복 지시 세 가지를 적는다"
+        },
+        {
+          "title": "CLAUDE.md 또는 AGENTS.md에",
+          "copy": "위험 명령 하나를 훅이나 승인 규칙으로 막는다"
+        },
+        {
+          "title": "위험 명령 하나를 훅이나 승인 규칙으로 막는다",
+          "copy": "lint 또는 type check 하나를 필수 게이트로 둔다"
+        }
+      ]
+    }
+  },
+  {
+    "order": 153,
+    "slide_id": "S153",
+    "file_name": "slide-153.html",
+    "title": "결론: 실전 워크플로우의 중심은 운영 구조다",
+    "slide_kind": "content",
+    "shell": "content-emphasis-shell",
+    "chapter_id": "07",
+    "chapter_label": "CHAPTER 07",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/07-실전 워크플로우와 도구 세팅.md",
+    "source_block": "07-11",
+    "key_claim": "결론: 실전 워크플로우의 중심은 운영 구조다",
+    "lead": "실전 워크플로우의 중심은 더 많은 도구를 붙이는 데 있지 않 원리를 명령어로 고정하고, 계획과 실행을 분리하고, 결정론적",
+    "review_hint": "명령어, 게이트, 상태 외부화가 실전 workflow로 이어지는지 확인",
+    "shell_reason": "single emphasis close",
+    "family": "content",
+    "layout": "wide",
+    "density": "tight",
+    "footnote_assets": [],
+    "body": {
+      "line": "에이전트가 강해질수록 더 중요한 것은 생성 능력 자체가 아닙니다. 무엇을 어디서 검증하고, 어떤 흔적 위에 다음 판단을"
+    }
   }
 ]
