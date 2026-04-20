@@ -683,5 +683,159 @@
       "content-emphasis-shell": 1,
       "chapter-transition-shell": 1
     }
+  },
+  "06": {
+    "chapter_id": "06",
+    "title": "멀티 에이전트 활용 패턴",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/06-멀티 에이전트 활용 패턴.md",
+    "transition_slide_id": "S104",
+    "slide_ids": [
+      "S104",
+      "S105",
+      "S106",
+      "S107",
+      "S108",
+      "S109",
+      "S110",
+      "S111",
+      "S112",
+      "S113",
+      "S114",
+      "S115",
+      "S116",
+      "S117",
+      "S118",
+      "S119",
+      "S120",
+      "S121",
+      "S122",
+      "S123",
+      "S124",
+      "S125",
+      "S126",
+      "S127"
+    ],
+    "section_coverage": [
+      {
+        "block_id": "06-01",
+        "heading": "시작하며: 병렬화보다 분해가 먼저다",
+        "slide_count": 2,
+        "slide_ids": [
+          "S105",
+          "S106"
+        ]
+      },
+      {
+        "block_id": "06-02",
+        "heading": "왜 하나의 에이전트만으로는 부족한가",
+        "slide_count": 2,
+        "slide_ids": [
+          "S107",
+          "S108"
+        ]
+      },
+      {
+        "block_id": "06-03",
+        "heading": "Sub-Agent: 중간 작업을 격리하는 기본형",
+        "slide_count": 3,
+        "slide_ids": [
+          "S109",
+          "S110",
+          "S111"
+        ]
+      },
+      {
+        "block_id": "06-04",
+        "heading": "Orchestrator: 계획자 하나가 여러 실행자를 배치",
+        "slide_count": 2,
+        "slide_ids": [
+          "S112",
+          "S113"
+        ]
+      },
+      {
+        "block_id": "06-05",
+        "heading": "Parallel: 같은 목표를 평면으로 벌리고 나중에 합친다",
+        "slide_count": 2,
+        "slide_ids": [
+          "S114",
+          "S115"
+        ]
+      },
+      {
+        "block_id": "06-06",
+        "heading": "GAN-Style: 생성자와 평가자를 분리",
+        "slide_count": 2,
+        "slide_ids": [
+          "S116",
+          "S117"
+        ]
+      },
+      {
+        "block_id": "06-07",
+        "heading": "Agent Teams: 양방향 대화가 가능한 팀을 만든다",
+        "slide_count": 2,
+        "slide_ids": [
+          "S118",
+          "S119"
+        ]
+      },
+      {
+        "block_id": "06-08",
+        "heading": "Sub-Agent와 Agent Team은 다르다",
+        "slide_count": 2,
+        "slide_ids": [
+          "S120",
+          "S121"
+        ]
+      },
+      {
+        "block_id": "06-09",
+        "heading": "Advisor 전략: 작은 실행자, 큰 자문",
+        "slide_count": 1,
+        "slide_ids": [
+          "S122"
+        ]
+      },
+      {
+        "block_id": "06-10",
+        "heading": "설계 원칙: 패턴보다 경계가 중요하다",
+        "slide_count": 3,
+        "slide_ids": [
+          "S123",
+          "S124",
+          "S125"
+        ]
+      },
+      {
+        "block_id": "06-11",
+        "heading": "멀티 모델은 멀티 에이전트와 다르다",
+        "slide_count": 1,
+        "slide_ids": [
+          "S126"
+        ]
+      },
+      {
+        "block_id": "06-12",
+        "heading": "결론: 더 많은 AI가 아니라 더 좁은 역할의 AI 여럿",
+        "slide_count": 1,
+        "slide_ids": [
+          "S127"
+        ]
+      }
+    ],
+    "footnote_assets": [
+      "../../../assets/claude-code-seminar-kakao/page-065.png"
+    ],
+    "review_focus": "멀티 에이전트 패턴이 병렬화 자랑이 아니라 handoff 설계로 보이는지 확인",
+    "special_rules": [
+      "heuristic_multi_slide_decomposition"
+    ],
+    "shell_mix": {
+      "content-essay-shell": 14,
+      "content-card-shell": 6,
+      "content-emphasis-shell": 3,
+      "chapter-transition-shell": 1
+    }
   }
 }

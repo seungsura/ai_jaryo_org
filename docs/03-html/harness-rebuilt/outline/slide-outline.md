@@ -109,3 +109,28 @@
 - S101 | content | content-emphasis-shell | 결정 제어와 확률 제어를 분리하라 | 기계가 확인할 수 있는 것은 기계에게 맡겨야
 - S102 | content | content-essay-shell | SOLID도 하네스 관점으로 | SOLID도 하네스 관점으로
 - S103 | content | content-card-shell | 하네스는 새로운 유행어지만, 기존 소프트웨어 원칙을 버리라는 뜻은 아닙니다 | 하네스는 새로운 유행어지만, 기존 소프트웨어 원칙을 버리라는 뜻은 아닙니다
+## CHAPTER 06 · 06
+- S104 | chapter-transition | chapter-transition-shell | 멀티 에이전트 활용 패턴 | 시작하며: 병렬화보다 분해가 먼저다
+- S105 | content | content-essay-shell | 시작하며: 병렬화보다 분해가 먼저다 | 시작하며: 병렬화보다 분해가 먼저다
+- S106 | content | content-essay-shell | 멀티 에이전트는 AI를 더 많이 붙이는 묘기가 아닙니다 | 멀티 에이전트는 AI를 더 많이 붙이는 묘기가 아닙니다
+- S107 | content | content-essay-shell | 왜 하나의 에이전트만으로는 부족한가 | 왜 하나의 에이전트만으로는 부족한가
+- S108 | content | content-essay-shell | 하나의 에이전트에게 모든 것을 맡기면 세 가지 문제가 생깁니다 | 하나의 에이전트에게 모든 것을 맡기면 세 가지 문제가 생깁니다
+- S109 | content | content-essay-shell | Sub-Agent: 중간 작업을 격리하는 기본형 | Sub-Agent: 중간 작업을 격리하는 기본형
+- S110 | content | content-card-shell | 가장 자주 쓰는 기본형은 Sub-Agent | 가장 자주 쓰는 기본형은 Sub-Agent
+- S111 | content | content-emphasis-shell | Sub-Agent: 중간 작업을 격리하는 기본형 | 메인 에이전트가 특정 작업을 던지고, 격리된 워커가 처리한 뒤, 요약만 돌려주는 구조
+- S112 | content | content-essay-shell | Orchestrator: 계획자 하나가 여러 실행자를 배치 | Orchestrator: 계획자 하나가 여러 실행자를 배치
+- S113 | content | content-card-shell | Orchestrator는 큰 목표를 하위 작업으로 나누고 여러 실행자에게 배치하는 패턴 | Orchestrator는 큰 목표를 하위 작업으로 나누고 여러 실행자에게 배치하는 패턴
+- S114 | content | content-essay-shell | Parallel: 같은 목표를 평면으로 벌리고 나중에 합친다 | Parallel: 같은 목표를 평면으로 벌리고 나중에 합친다
+- S115 | content | content-card-shell | Parallel은 이름 그대로 여러 작업을 동시에 돌리는 패턴 | Parallel은 이름 그대로 여러 작업을 동시에 돌리는 패턴
+- S116 | content | content-essay-shell | GAN-Style: 생성자와 평가자를 분리 | GAN-Style: 생성자와 평가자를 분리
+- S117 | content | content-card-shell | GAN-Style 패턴은 생성과 평가를 같은 주체에 묶지 않는 방식 | GAN-Style 패턴은 생성과 평가를 같은 주체에 묶지 않는 방식
+- S118 | content | content-essay-shell | Agent Teams: 양방향 대화가 가능한 팀을 만든다 | Agent Teams: 양방향 대화가 가능한 팀을 만든다
+- S119 | content | content-card-shell | Agent Teams는 여러 에이전트가 각자 별도 컨텍스트를 가진 채 직접 메시지를 주고받는 구조 | Agent Teams는 여러 에이전트가 각자 별도 컨텍스트를 가진 채 직접 메시지를 주고받는 구조
+- S120 | content | content-essay-shell | Sub-Agent와 Agent Team은 다르다 | Sub-Agent와 Agent Team은 다르다
+- S121 | content | content-card-shell | 둘은 자주 혼동되지만 목적이 다릅니다 | 둘은 자주 혼동되지만 목적이 다릅니다
+- S122 | content | content-essay-shell | Advisor 전략: 작은 실행자, 큰 자문 | Advisor 전략: 작은 실행자, 큰 자문
+- S123 | content | content-essay-shell | 설계 원칙: 패턴보다 경계가 중요하다 | 설계 원칙: 패턴보다 경계가 중요하다
+- S124 | content | content-essay-shell | 패턴 이름보다 중요한 것은 경계 설계 | 패턴 이름보다 중요한 것은 경계 설계
+- S125 | content | content-emphasis-shell | 설계 원칙: 패턴보다 경계가 중요하다 | 어떤 패턴을 쓰든 다음 원칙은 같
+- S126 | content | content-essay-shell | 멀티 모델은 멀티 에이전트와 다르다 | 멀티 모델은 멀티 에이전트와 다르다
+- S127 | content | content-emphasis-shell | 결론: 더 많은 AI가 아니라 더 좁은 역할의 AI 여럿 | 결론: 더 많은 AI가 아니라 더 좁은 역할의 AI 여럿

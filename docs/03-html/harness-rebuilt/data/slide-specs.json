@@ -2936,5 +2936,679 @@
         }
       ]
     }
+  },
+  {
+    "order": 104,
+    "slide_id": "S104",
+    "file_name": "slide-104.html",
+    "title": "멀티 에이전트 활용 패턴",
+    "slide_kind": "chapter-transition",
+    "shell": "chapter-transition-shell",
+    "chapter_id": "06",
+    "chapter_label": "CHAPTER 06",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/06-멀티 에이전트 활용 패턴.md",
+    "source_block": "06-01",
+    "key_claim": "시작하며: 병렬화보다 분해가 먼저다",
+    "lead": "시작하며: 병렬화보다 분해가 먼저다",
+    "review_hint": "멀티 에이전트 패턴이 병렬화 자랑이 아니라 handoff 설계로 보이는지 확인",
+    "shell_reason": "chapter transition anchor",
+    "family": "cover",
+    "layout": "centered",
+    "density": "tight",
+    "footnote_assets": [],
+    "body": {}
+  },
+  {
+    "order": 105,
+    "slide_id": "S105",
+    "file_name": "slide-105.html",
+    "title": "시작하며: 병렬화보다 분해가 먼저다",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "06",
+    "chapter_label": "CHAPTER 06",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/06-멀티 에이전트 활용 패턴.md",
+    "source_block": "06-01",
+    "key_claim": "시작하며: 병렬화보다 분해가 먼저다",
+    "lead": "멀티 에이전트는 AI를 더 많이 붙이는 묘기가 아닙니다. 더 많은 모델을 동시에 돌린다고 자동으로 품질이 좋아지지는 않 오히려",
+    "review_hint": "멀티 에이전트 패턴이 병렬화 자랑이 아니라 handoff 설계로 보이는지 확인",
+    "shell_reason": "block opening claim",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "멀티 에이전트는 AI를 더 많이 붙이는 묘기가 아닙니다. 더 많은 모델을 동시에 돌린다고 자동으로 품질이 좋아지지는 않 오히려",
+        "멀티 에이전트의 본질은 병렬화가 아니라 분해 컨텍스트를 쪼개고, 역할을 쪼개고, 검증 책임을 쪼개는 설계 질문은 하나"
+      ]
+    }
+  },
+  {
+    "order": 106,
+    "slide_id": "S106",
+    "file_name": "slide-106.html",
+    "title": "멀티 에이전트는 AI를 더 많이 붙이는 묘기가 아닙니다",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "06",
+    "chapter_label": "CHAPTER 06",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/06-멀티 에이전트 활용 패턴.md",
+    "source_block": "06-01",
+    "key_claim": "멀티 에이전트는 AI를 더 많이 붙이는 묘기가 아닙니다",
+    "lead": "멀티 에이전트의 본질은 병렬화가 아니라 분해 컨텍스트를 쪼개고, 역할을 쪼개고, 검증 책임을 쪼개는 설계 질문은 하나",
+    "review_hint": "멀티 에이전트 패턴이 병렬화 자랑이 아니라 handoff 설계로 보이는지 확인",
+    "shell_reason": "second compressed essay split",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "이 장에서는 여섯 가지 패턴을 봅니다. Sub-Agent, Orchestrator, Parallel, GAN-Style",
+        "이 흐름을 가장 선명하게 보여 주는 예가 Planner / Generator / Evaluator 3역할 구조 Planner가"
+      ]
+    }
+  },
+  {
+    "order": 107,
+    "slide_id": "S107",
+    "file_name": "slide-107.html",
+    "title": "왜 하나의 에이전트만으로는 부족한가",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "06",
+    "chapter_label": "CHAPTER 06",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/06-멀티 에이전트 활용 패턴.md",
+    "source_block": "06-02",
+    "key_claim": "왜 하나의 에이전트만으로는 부족한가",
+    "lead": "하나의 에이전트에게 모든 것을 맡기면 세 가지 문제가 생깁니다",
+    "review_hint": "멀티 에이전트 패턴이 병렬화 자랑이 아니라 handoff 설계로 보이는지 확인",
+    "shell_reason": "block opening claim",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "하나의 에이전트에게 모든 것을 맡기면 세 가지 문제가 생깁니다",
+        "첫째, 컨텍스트가 비대해집니다. 탐색, 구현, 로그 분석, 리뷰, 문서 작성이 모두 같은 창에 쌓이면 핵심 신호가 흐려집니다"
+      ]
+    }
+  },
+  {
+    "order": 108,
+    "slide_id": "S108",
+    "file_name": "slide-108.html",
+    "title": "하나의 에이전트에게 모든 것을 맡기면 세 가지 문제가 생깁니다",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "06",
+    "chapter_label": "CHAPTER 06",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/06-멀티 에이전트 활용 패턴.md",
+    "source_block": "06-02",
+    "key_claim": "하나의 에이전트에게 모든 것을 맡기면 세 가지 문제가 생깁니다",
+    "lead": "첫째, 컨텍스트가 비대해집니다. 탐색, 구현, 로그 분석, 리뷰, 문서 작성이 모두 같은 창에 쌓이면 핵심 신호가 흐려집니다",
+    "review_hint": "멀티 에이전트 패턴이 병렬화 자랑이 아니라 handoff 설계로 보이는지 확인",
+    "shell_reason": "second compressed essay split",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "둘째, 역할이 섞 계획하는 에이전트가 구현까지 하고, 구현한 에이전트가 자기 결과를 리뷰하고, 리뷰한 에이전트가 다시 테스트",
+        "셋째, 신뢰 경계가 흐려집니다. 탐색만 해야 하는 작업에 쓰기 권한이 열려 있거나, 민감 데이터를 볼 필요가 없는 작업이 전체"
+      ]
+    }
+  },
+  {
+    "order": 109,
+    "slide_id": "S109",
+    "file_name": "slide-109.html",
+    "title": "Sub-Agent: 중간 작업을 격리하는 기본형",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "06",
+    "chapter_label": "CHAPTER 06",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/06-멀티 에이전트 활용 패턴.md",
+    "source_block": "06-03",
+    "key_claim": "Sub-Agent: 중간 작업을 격리하는 기본형",
+    "lead": "가장 자주 쓰는 기본형은 Sub-Agent 메인 에이전트가 특정 작업을 던지고, 격리된 워커가 처리한 뒤, 요약만 돌려주는 구조",
+    "review_hint": "멀티 에이전트 패턴이 병렬화 자랑이 아니라 handoff 설계로 보이는지 확인",
+    "shell_reason": "block opening claim",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "가장 자주 쓰는 기본형은 Sub-Agent 메인 에이전트가 특정 작업을 던지고, 격리된 워커가 처리한 뒤, 요약만 돌려주는 구조",
+        "대표적인 사용처는 다음과 같"
+      ]
+    }
+  },
+  {
+    "order": 110,
+    "slide_id": "S110",
+    "file_name": "slide-110.html",
+    "title": "가장 자주 쓰는 기본형은 Sub-Agent",
+    "slide_kind": "content",
+    "shell": "content-card-shell",
+    "chapter_id": "06",
+    "chapter_label": "CHAPTER 06",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/06-멀티 에이전트 활용 패턴.md",
+    "source_block": "06-03",
+    "key_claim": "가장 자주 쓰는 기본형은 Sub-Agent",
+    "lead": "대표적인 사용처는 다음과 같",
+    "review_hint": "멀티 에이전트 패턴이 병렬화 자랑이 아니라 handoff 설계로 보이는지 확인",
+    "shell_reason": "parallel evidence split",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "cards": [
+        {
+          "title": "Sub-Agent: 중간 작업을 격리하는 기본형",
+          "copy": "특정 디렉터리의 파일을 대량으로 읽고 요약하기"
+        },
+        {
+          "title": "특정 디렉터리의 파일을 대량으로 읽고 요약하기",
+          "copy": "긴 로그에서 원인 후보 찾기"
+        },
+        {
+          "title": "긴 로그에서 원인 후보 찾기",
+          "copy": "테스트 실패 원인 분석하기"
+        }
+      ]
+    }
+  },
+  {
+    "order": 111,
+    "slide_id": "S111",
+    "file_name": "slide-111.html",
+    "title": "Sub-Agent: 중간 작업을 격리하는 기본형",
+    "slide_kind": "content",
+    "shell": "content-emphasis-shell",
+    "chapter_id": "06",
+    "chapter_label": "CHAPTER 06",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/06-멀티 에이전트 활용 패턴.md",
+    "source_block": "06-03",
+    "key_claim": "메인 에이전트가 특정 작업을 던지고, 격리된 워커가 처리한 뒤, 요약만 돌려주는 구조",
+    "lead": "Sub-Agent의 강점은 성능보다 격리에 있 서브 에이전트가 파일을 많이 읽고 수만 토큰을 써도 메인 컨텍스트는 오염되지 않",
+    "review_hint": "멀티 에이전트 패턴이 병렬화 자랑이 아니라 handoff 설계로 보이는지 확인",
+    "shell_reason": "block synthesis emphasis",
+    "family": "content",
+    "layout": "wide",
+    "density": "tight",
+    "footnote_assets": [],
+    "body": {
+      "line": "Sub-Agent는 단순하지만 가장 자주 이기는 패턴 메인 컨텍스트를 지키는 데 특히 강"
+    }
+  },
+  {
+    "order": 112,
+    "slide_id": "S112",
+    "file_name": "slide-112.html",
+    "title": "Orchestrator: 계획자 하나가 여러 실행자를 배치",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "06",
+    "chapter_label": "CHAPTER 06",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/06-멀티 에이전트 활용 패턴.md",
+    "source_block": "06-04",
+    "key_claim": "Orchestrator: 계획자 하나가 여러 실행자를 배치",
+    "lead": "Orchestrator는 큰 목표를 하위 작업으로 나누고 여러 실행자에게 배치하는 패턴 Sub-Agent가 단일 심부름이라면",
+    "review_hint": "멀티 에이전트 패턴이 병렬화 자랑이 아니라 handoff 설계로 보이는지 확인",
+    "shell_reason": "block opening claim",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "Orchestrator는 큰 목표를 하위 작업으로 나누고 여러 실행자에게 배치하는 패턴 Sub-Agent가 단일 심부름이라면",
+        "흐름은 보통 이렇"
+      ]
+    }
+  },
+  {
+    "order": 113,
+    "slide_id": "S113",
+    "file_name": "slide-113.html",
+    "title": "Orchestrator는 큰 목표를 하위 작업으로 나누고 여러 실행자에게 배치하는 패턴",
+    "slide_kind": "content",
+    "shell": "content-card-shell",
+    "chapter_id": "06",
+    "chapter_label": "CHAPTER 06",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/06-멀티 에이전트 활용 패턴.md",
+    "source_block": "06-04",
+    "key_claim": "Orchestrator는 큰 목표를 하위 작업으로 나누고 여러 실행자에게 배치하는 패턴",
+    "lead": "흐름은 보통 이렇",
+    "review_hint": "멀티 에이전트 패턴이 병렬화 자랑이 아니라 handoff 설계로 보이는지 확인",
+    "shell_reason": "parallel evidence split",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "cards": [
+        {
+          "title": "Orchestrator: 계획자 하나가 여러",
+          "copy": "계획자가 목표를 해석"
+        },
+        {
+          "title": "계획자가 목표를 해석",
+          "copy": "하위 작업으로 분해"
+        },
+        {
+          "title": "하위 작업으로 분해",
+          "copy": "각 작업을 실행자에게 배정"
+        }
+      ]
+    }
+  },
+  {
+    "order": 114,
+    "slide_id": "S114",
+    "file_name": "slide-114.html",
+    "title": "Parallel: 같은 목표를 평면으로 벌리고 나중에 합친다",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "06",
+    "chapter_label": "CHAPTER 06",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/06-멀티 에이전트 활용 패턴.md",
+    "source_block": "06-05",
+    "key_claim": "Parallel: 같은 목표를 평면으로 벌리고 나중에 합친다",
+    "lead": "Parallel은 이름 그대로 여러 작업을 동시에 돌리는 패턴 하지만 핵심은 속도보다 간섭 제어 서로 의존성이 낮은 탐색",
+    "review_hint": "멀티 에이전트 패턴이 병렬화 자랑이 아니라 handoff 설계로 보이는지 확인",
+    "shell_reason": "block opening claim",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "Parallel은 이름 그대로 여러 작업을 동시에 돌리는 패턴 하지만 핵심은 속도보다 간섭 제어 서로 의존성이 낮은 탐색",
+        "적합한 작업은 다음과 같"
+      ]
+    }
+  },
+  {
+    "order": 115,
+    "slide_id": "S115",
+    "file_name": "slide-115.html",
+    "title": "Parallel은 이름 그대로 여러 작업을 동시에 돌리는 패턴",
+    "slide_kind": "content",
+    "shell": "content-card-shell",
+    "chapter_id": "06",
+    "chapter_label": "CHAPTER 06",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/06-멀티 에이전트 활용 패턴.md",
+    "source_block": "06-05",
+    "key_claim": "Parallel은 이름 그대로 여러 작업을 동시에 돌리는 패턴",
+    "lead": "적합한 작업은 다음과 같",
+    "review_hint": "멀티 에이전트 패턴이 병렬화 자랑이 아니라 handoff 설계로 보이는지 확인",
+    "shell_reason": "parallel evidence split",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "cards": [
+        {
+          "title": "Parallel: 같은 목표를 평면으로",
+          "copy": "세 가지 라이브러리 대안 비교하기"
+        },
+        {
+          "title": "세 가지 라이브러리 대안 비교하기",
+          "copy": "같은 요구사항에 대해 여러 설계안 만들기"
+        },
+        {
+          "title": "같은 요구사항에 대해 여러 설계안 만들기",
+          "copy": "서로 다른 파일 묶음을 독립적으로 점검하기"
+        }
+      ]
+    }
+  },
+  {
+    "order": 116,
+    "slide_id": "S116",
+    "file_name": "slide-116.html",
+    "title": "GAN-Style: 생성자와 평가자를 분리",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "06",
+    "chapter_label": "CHAPTER 06",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/06-멀티 에이전트 활용 패턴.md",
+    "source_block": "06-06",
+    "key_claim": "GAN-Style: 생성자와 평가자를 분리",
+    "lead": "GAN-Style 패턴은 생성과 평가를 같은 주체에 묶지 않는 방식 한쪽은 만들고, 다른 한쪽은 루브릭으로 평가 중요한 것은",
+    "review_hint": "멀티 에이전트 패턴이 병렬화 자랑이 아니라 handoff 설계로 보이는지 확인",
+    "shell_reason": "block opening claim",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "GAN-Style 패턴은 생성과 평가를 같은 주체에 묶지 않는 방식 한쪽은 만들고, 다른 한쪽은 루브릭으로 평가 중요한 것은",
+        "Self-review에는 blind spot이 남 에이전트는 자기 결과를 “완료”라고 선언하는 데 능숙하지만, 그 결과가"
+      ]
+    }
+  },
+  {
+    "order": 117,
+    "slide_id": "S117",
+    "file_name": "slide-117.html",
+    "title": "GAN-Style 패턴은 생성과 평가를 같은 주체에 묶지 않는 방식",
+    "slide_kind": "content",
+    "shell": "content-card-shell",
+    "chapter_id": "06",
+    "chapter_label": "CHAPTER 06",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/06-멀티 에이전트 활용 패턴.md",
+    "source_block": "06-06",
+    "key_claim": "GAN-Style 패턴은 생성과 평가를 같은 주체에 묶지 않는 방식",
+    "lead": "Self-review에는 blind spot이 남 에이전트는 자기 결과를 “완료”라고 선언하는 데 능숙하지만, 그 결과가",
+    "review_hint": "멀티 에이전트 패턴이 병렬화 자랑이 아니라 handoff 설계로 보이는지 확인",
+    "shell_reason": "parallel evidence split",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "cards": [
+        {
+          "title": "GAN-Style: 생성자와 평가자를 분리",
+          "copy": "Planner: 사용자 요청을 제품 스펙과 작업 범위로 확장"
+        },
+        {
+          "title": "Planner: 사용자 요청을 제품 스펙과",
+          "copy": "Generator: 한 번에 하나의 기능 또는 스프린트를 구현"
+        },
+        {
+          "title": "Generator: 한 번에 하나의 기능",
+          "copy": "Evaluator: 테스트, 브라우저 자동화, 루브릭, 코드 리뷰 기준으로 평가"
+        }
+      ]
+    }
+  },
+  {
+    "order": 118,
+    "slide_id": "S118",
+    "file_name": "slide-118.html",
+    "title": "Agent Teams: 양방향 대화가 가능한 팀을 만든다",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "06",
+    "chapter_label": "CHAPTER 06",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/06-멀티 에이전트 활용 패턴.md",
+    "source_block": "06-07",
+    "key_claim": "Agent Teams: 양방향 대화가 가능한 팀을 만든다",
+    "lead": "Agent Teams는 여러 에이전트가 각자 별도 컨텍스트를 가진 채 직접 메시지를 주고받는 구조 Sub-Agent가 “시켜",
+    "review_hint": "멀티 에이전트 패턴이 병렬화 자랑이 아니라 handoff 설계로 보이는지 확인",
+    "shell_reason": "block opening claim",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "Agent Teams는 여러 에이전트가 각자 별도 컨텍스트를 가진 채 직접 메시지를 주고받는 구조 Sub-Agent가 “시켜",
+        "예를 들어 다음과 같은 역할을 둘 수 있"
+      ]
+    }
+  },
+  {
+    "order": 119,
+    "slide_id": "S119",
+    "file_name": "slide-119.html",
+    "title": "Agent Teams는 여러 에이전트가 각자 별도 컨텍스트를 가진 채 직접 메시지를 주고받는 구조",
+    "slide_kind": "content",
+    "shell": "content-card-shell",
+    "chapter_id": "06",
+    "chapter_label": "CHAPTER 06",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/06-멀티 에이전트 활용 패턴.md",
+    "source_block": "06-07",
+    "key_claim": "Agent Teams는 여러 에이전트가 각자 별도 컨텍스트를 가진 채 직접 메시지를 주고받는 구조",
+    "lead": "예를 들어 다음과 같은 역할을 둘 수 있",
+    "review_hint": "멀티 에이전트 패턴이 병렬화 자랑이 아니라 handoff 설계로 보이는지 확인",
+    "shell_reason": "parallel evidence split",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "cards": [
+        {
+          "title": "Agent Teams: 양방향 대화가 가능한",
+          "copy": "Researcher: 외부 문서와 사례를 조사"
+        },
+        {
+          "title": "Researcher: 외부 문서와 사례를 조사",
+          "copy": "Architect: 설계 대안을 비교"
+        },
+        {
+          "title": "Architect: 설계 대안을 비교",
+          "copy": "Reviewer: 위험과 누락을 지적"
+        }
+      ]
+    }
+  },
+  {
+    "order": 120,
+    "slide_id": "S120",
+    "file_name": "slide-120.html",
+    "title": "Sub-Agent와 Agent Team은 다르다",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "06",
+    "chapter_label": "CHAPTER 06",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/06-멀티 에이전트 활용 패턴.md",
+    "source_block": "06-08",
+    "key_claim": "Sub-Agent와 Agent Team은 다르다",
+    "lead": "둘은 자주 혼동되지만 목적이 다릅니다",
+    "review_hint": "멀티 에이전트 패턴이 병렬화 자랑이 아니라 handoff 설계로 보이는지 확인",
+    "shell_reason": "block opening claim",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [
+      "../../../assets/claude-code-seminar-kakao/page-065.png"
+    ],
+    "body": {
+      "lines": [
+        "둘은 자주 혼동되지만 목적이 다릅니다",
+        "단순한 심부름은 Sub-Agent로 충분 양방향 토론이 필요한 경우에만 Agent Team을 고려하는 편이 낫"
+      ]
+    }
+  },
+  {
+    "order": 121,
+    "slide_id": "S121",
+    "file_name": "slide-121.html",
+    "title": "둘은 자주 혼동되지만 목적이 다릅니다",
+    "slide_kind": "content",
+    "shell": "content-card-shell",
+    "chapter_id": "06",
+    "chapter_label": "CHAPTER 06",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/06-멀티 에이전트 활용 패턴.md",
+    "source_block": "06-08",
+    "key_claim": "둘은 자주 혼동되지만 목적이 다릅니다",
+    "lead": "단순한 심부름은 Sub-Agent로 충분 양방향 토론이 필요한 경우에만 Agent Team을 고려하는 편이 낫",
+    "review_hint": "멀티 에이전트 패턴이 병렬화 자랑이 아니라 handoff 설계로 보이는지 확인",
+    "shell_reason": "parallel evidence split",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [
+      "../../../assets/claude-code-seminar-kakao/page-065.png"
+    ],
+    "body": {
+      "cards": [
+        {
+          "title": "Sub-Agent와 Agent Team은 다르다",
+          "copy": "구조 / 메인이 작업을 던지고 결과를 받음 / 여러 에이전트가 서로 대화하며 수렴"
+        },
+        {
+          "title": "구조 / 메인이 작업을 던지고 결과를 받음",
+          "copy": "컨텍스트 / 제한된 범위, 요약 반환 / 각자 별도 컨텍스트와 공유 맥락"
+        },
+        {
+          "title": "컨텍스트 / 제한된 범위, 요약 반환 /",
+          "copy": "통신 / 주로 메인과 단방향 / 에이전트 사이 양방향"
+        }
+      ]
+    }
+  },
+  {
+    "order": 122,
+    "slide_id": "S122",
+    "file_name": "slide-122.html",
+    "title": "Advisor 전략: 작은 실행자, 큰 자문",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "06",
+    "chapter_label": "CHAPTER 06",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/06-멀티 에이전트 활용 패턴.md",
+    "source_block": "06-09",
+    "key_claim": "Advisor 전략: 작은 실행자, 큰 자문",
+    "lead": "Advisor 전략은 팀을 하나 더 꾸리는 방식이 아닙니다. 메인 실행자는 그대로 두고, 막히는 순간에만 더 강한 판단을",
+    "review_hint": "멀티 에이전트 패턴이 병렬화 자랑이 아니라 handoff 설계로 보이는지 확인",
+    "shell_reason": "default compressed essay",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "Advisor 전략은 팀을 하나 더 꾸리는 방식이 아닙니다. 메인 실행자는 그대로 두고, 막히는 순간에만 더 강한 판단을",
+        "여기서 advisor는 별도 worker가 아닙니다. shared context를 읽고 다음 계획, 방향 수정, 여기서 멈춰라"
+      ]
+    }
+  },
+  {
+    "order": 123,
+    "slide_id": "S123",
+    "file_name": "slide-123.html",
+    "title": "설계 원칙: 패턴보다 경계가 중요하다",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "06",
+    "chapter_label": "CHAPTER 06",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/06-멀티 에이전트 활용 패턴.md",
+    "source_block": "06-10",
+    "key_claim": "설계 원칙: 패턴보다 경계가 중요하다",
+    "lead": "패턴 이름보다 중요한 것은 경계 설계 어떤 패턴을 쓰든 다음 원칙은 같",
+    "review_hint": "멀티 에이전트 패턴이 병렬화 자랑이 아니라 handoff 설계로 보이는지 확인",
+    "shell_reason": "block opening claim",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "패턴 이름보다 중요한 것은 경계 설계 어떤 패턴을 쓰든 다음 원칙은 같",
+        "각 에이전트는 필요한 것만 받아야"
+      ]
+    }
+  },
+  {
+    "order": 124,
+    "slide_id": "S124",
+    "file_name": "slide-124.html",
+    "title": "패턴 이름보다 중요한 것은 경계 설계",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "06",
+    "chapter_label": "CHAPTER 06",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/06-멀티 에이전트 활용 패턴.md",
+    "source_block": "06-10",
+    "key_claim": "패턴 이름보다 중요한 것은 경계 설계",
+    "lead": "각 에이전트는 필요한 것만 받아야",
+    "review_hint": "멀티 에이전트 패턴이 병렬화 자랑이 아니라 handoff 설계로 보이는지 확인",
+    "shell_reason": "second compressed essay split",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "컨텍스트를 많이 주는 것은 친절이 아닙니다. 불필요한 파일과 기록은 판단을 흐립니다. 작업에 필요한 정보만 주고, 나머지는",
+        "역할과 금지 행동을 먼저 정해야"
+      ]
+    }
+  },
+  {
+    "order": 125,
+    "slide_id": "S125",
+    "file_name": "slide-125.html",
+    "title": "설계 원칙: 패턴보다 경계가 중요하다",
+    "slide_kind": "content",
+    "shell": "content-emphasis-shell",
+    "chapter_id": "06",
+    "chapter_label": "CHAPTER 06",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/06-멀티 에이전트 활용 패턴.md",
+    "source_block": "06-10",
+    "key_claim": "어떤 패턴을 쓰든 다음 원칙은 같",
+    "lead": "컨텍스트를 많이 주는 것은 친절이 아닙니다. 불필요한 파일과 기록은 판단을 흐립니다. 작업에 필요한 정보만 주고, 나머지는",
+    "review_hint": "멀티 에이전트 패턴이 병렬화 자랑이 아니라 handoff 설계로 보이는지 확인",
+    "shell_reason": "block synthesis emphasis",
+    "family": "content",
+    "layout": "wide",
+    "density": "tight",
+    "footnote_assets": [],
+    "body": {
+      "line": "멀티 에이전트는 쉽게 길어집니다. 몇 번까지 재시도할지, 무엇을 완료로 볼지, 어떤 경우 사람에게 넘길지를 미리 정해야"
+    }
+  },
+  {
+    "order": 126,
+    "slide_id": "S126",
+    "file_name": "slide-126.html",
+    "title": "멀티 모델은 멀티 에이전트와 다르다",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "06",
+    "chapter_label": "CHAPTER 06",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/06-멀티 에이전트 활용 패턴.md",
+    "source_block": "06-11",
+    "key_claim": "멀티 모델은 멀티 에이전트와 다르다",
+    "lead": "Claude, Codex, Gemini 같은 여러 모델을 교차 사용하는 것은 유용 하지만 그것만으로 곧바로 Agent",
+    "review_hint": "멀티 에이전트 패턴이 병렬화 자랑이 아니라 handoff 설계로 보이는지 확인",
+    "shell_reason": "default compressed essay",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "Claude, Codex, Gemini 같은 여러 모델을 교차 사용하는 것은 유용 하지만 그것만으로 곧바로 Agent",
+        "예를 들어 Claude가 구현 계획을 만들고, Codex가 아키텍처 리스크를 검토하고, Gemini가 UI나 문서 가독성을"
+      ]
+    }
+  },
+  {
+    "order": 127,
+    "slide_id": "S127",
+    "file_name": "slide-127.html",
+    "title": "결론: 더 많은 AI가 아니라 더 좁은 역할의 AI 여럿",
+    "slide_kind": "content",
+    "shell": "content-emphasis-shell",
+    "chapter_id": "06",
+    "chapter_label": "CHAPTER 06",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/06-멀티 에이전트 활용 패턴.md",
+    "source_block": "06-12",
+    "key_claim": "결론: 더 많은 AI가 아니라 더 좁은 역할의 AI 여럿",
+    "lead": "멀티 에이전트가 강력한 이유는 처리량이 늘어서만이 아닙니다. 메인 컨텍스트를 비우고, 판단 책임을 분리하고, 검증 관점을",
+    "review_hint": "멀티 에이전트 패턴이 병렬화 자랑이 아니라 handoff 설계로 보이는지 확인",
+    "shell_reason": "single emphasis close",
+    "family": "content",
+    "layout": "wide",
+    "density": "tight",
+    "footnote_assets": [],
+    "body": {
+      "line": "좋은 멀티 에이전트 설계는 “AI를 많이 붙인다”가 아닙니다. “더 좁은 역할의 AI 여럿을, 더 명확한 경계 안에서"
+    }
   }
 ]

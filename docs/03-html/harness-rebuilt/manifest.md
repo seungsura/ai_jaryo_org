@@ -1,6 +1,6 @@
 # Harness Rebuilt Manifest
 
-- slide count: 103
+- slide count: 127
 - output deck: `/Users/seungsu/Desktop/project/jaryo/docs/03-html/harness-rebuilt/deck/index.html`
 - active theme: `theme-minimal-light`
 
@@ -18,6 +18,8 @@
 - chapter `04` copy: `copy/chapter-04.md`
 - chapter `05` brief: `briefs/chapter-05.md`
 - chapter `05` copy: `copy/chapter-05.md`
+- chapter `06` brief: `briefs/chapter-06.md`
+- chapter `06` copy: `copy/chapter-06.md`
 
 ## Slide Registry
 
@@ -126,3 +128,27 @@
 | 101 | `S101` | `content` | `content-emphasis-shell` | `05` | `05-08` | `slide-101.html` | 결정 제어와 확률 제어를 분리하라 | page-009.jpg, page-010.jpg, page-011.jpg |
 | 102 | `S102` | `content` | `content-essay-shell` | `05` | `05-09` | `slide-102.html` | SOLID도 하네스 관점으로 | page-012.jpg |
 | 103 | `S103` | `content` | `content-card-shell` | `05` | `05-09` | `slide-103.html` | 하네스는 새로운 유행어지만, 기존 소프트웨어 원칙을 버리라는 뜻은 아닙니다 | page-012.jpg |
+| 104 | `S104` | `chapter-transition` | `chapter-transition-shell` | `06` | `06-01` | `slide-104.html` | 멀티 에이전트 활용 패턴 | - |
+| 105 | `S105` | `content` | `content-essay-shell` | `06` | `06-01` | `slide-105.html` | 시작하며: 병렬화보다 분해가 먼저다 | - |
+| 106 | `S106` | `content` | `content-essay-shell` | `06` | `06-01` | `slide-106.html` | 멀티 에이전트는 AI를 더 많이 붙이는 묘기가 아닙니다 | - |
+| 107 | `S107` | `content` | `content-essay-shell` | `06` | `06-02` | `slide-107.html` | 왜 하나의 에이전트만으로는 부족한가 | - |
+| 108 | `S108` | `content` | `content-essay-shell` | `06` | `06-02` | `slide-108.html` | 하나의 에이전트에게 모든 것을 맡기면 세 가지 문제가 생깁니다 | - |
+| 109 | `S109` | `content` | `content-essay-shell` | `06` | `06-03` | `slide-109.html` | Sub-Agent: 중간 작업을 격리하는 기본형 | - |
+| 110 | `S110` | `content` | `content-card-shell` | `06` | `06-03` | `slide-110.html` | 가장 자주 쓰는 기본형은 Sub-Agent | - |
+| 111 | `S111` | `content` | `content-emphasis-shell` | `06` | `06-03` | `slide-111.html` | Sub-Agent: 중간 작업을 격리하는 기본형 | - |
+| 112 | `S112` | `content` | `content-essay-shell` | `06` | `06-04` | `slide-112.html` | Orchestrator: 계획자 하나가 여러 실행자를 배치 | - |
+| 113 | `S113` | `content` | `content-card-shell` | `06` | `06-04` | `slide-113.html` | Orchestrator는 큰 목표를 하위 작업으로 나누고 여러 실행자에게 배치하는 패턴 | - |
+| 114 | `S114` | `content` | `content-essay-shell` | `06` | `06-05` | `slide-114.html` | Parallel: 같은 목표를 평면으로 벌리고 나중에 합친다 | - |
+| 115 | `S115` | `content` | `content-card-shell` | `06` | `06-05` | `slide-115.html` | Parallel은 이름 그대로 여러 작업을 동시에 돌리는 패턴 | - |
+| 116 | `S116` | `content` | `content-essay-shell` | `06` | `06-06` | `slide-116.html` | GAN-Style: 생성자와 평가자를 분리 | - |
+| 117 | `S117` | `content` | `content-card-shell` | `06` | `06-06` | `slide-117.html` | GAN-Style 패턴은 생성과 평가를 같은 주체에 묶지 않는 방식 | - |
+| 118 | `S118` | `content` | `content-essay-shell` | `06` | `06-07` | `slide-118.html` | Agent Teams: 양방향 대화가 가능한 팀을 만든다 | - |
+| 119 | `S119` | `content` | `content-card-shell` | `06` | `06-07` | `slide-119.html` | Agent Teams는 여러 에이전트가 각자 별도 컨텍스트를 가진 채 직접 메시지를 주고받는 구조 | - |
+| 120 | `S120` | `content` | `content-essay-shell` | `06` | `06-08` | `slide-120.html` | Sub-Agent와 Agent Team은 다르다 | page-065.png |
+| 121 | `S121` | `content` | `content-card-shell` | `06` | `06-08` | `slide-121.html` | 둘은 자주 혼동되지만 목적이 다릅니다 | page-065.png |
+| 122 | `S122` | `content` | `content-essay-shell` | `06` | `06-09` | `slide-122.html` | Advisor 전략: 작은 실행자, 큰 자문 | - |
+| 123 | `S123` | `content` | `content-essay-shell` | `06` | `06-10` | `slide-123.html` | 설계 원칙: 패턴보다 경계가 중요하다 | - |
+| 124 | `S124` | `content` | `content-essay-shell` | `06` | `06-10` | `slide-124.html` | 패턴 이름보다 중요한 것은 경계 설계 | - |
+| 125 | `S125` | `content` | `content-emphasis-shell` | `06` | `06-10` | `slide-125.html` | 설계 원칙: 패턴보다 경계가 중요하다 | - |
+| 126 | `S126` | `content` | `content-essay-shell` | `06` | `06-11` | `slide-126.html` | 멀티 모델은 멀티 에이전트와 다르다 | - |
+| 127 | `S127` | `content` | `content-emphasis-shell` | `06` | `06-12` | `slide-127.html` | 결론: 더 많은 AI가 아니라 더 좁은 역할의 AI 여럿 | - |
