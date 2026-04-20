@@ -60,5 +60,100 @@
       "content-essay-shell": 4,
       "content-card-shell": 1
     }
+  },
+  "01": {
+    "chapter_id": "01",
+    "title": "코딩은 사라지는가",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/01-코딩은 사라지는가.md",
+    "transition_slide_id": "S009",
+    "slide_ids": [
+      "S009",
+      "S010",
+      "S011",
+      "S012",
+      "S013",
+      "S014",
+      "S015",
+      "S016",
+      "S017",
+      "S018",
+      "S019",
+      "S020",
+      "S021",
+      "S022",
+      "S023"
+    ],
+    "section_coverage": [
+      {
+        "block_id": "01-01",
+        "heading": "시작하며: 언어의 발전",
+        "slide_count": 5,
+        "slide_ids": [
+          "S010",
+          "S011",
+          "S012",
+          "S013",
+          "S014"
+        ]
+      },
+      {
+        "block_id": "01-02",
+        "heading": "추상화의 역사: 직접 하던 일은 계속 줄어들었다",
+        "slide_count": 2,
+        "slide_ids": [
+          "S015",
+          "S016"
+        ]
+      },
+      {
+        "block_id": "01-03",
+        "heading": "숫자로 보는 변화",
+        "slide_count": 1,
+        "slide_ids": [
+          "S017"
+        ]
+      },
+      {
+        "block_id": "01-04",
+        "heading": "문서가 코드다",
+        "slide_count": 1,
+        "slide_ids": [
+          "S018"
+        ]
+      },
+      {
+        "block_id": "01-05",
+        "heading": "개발자의 새로운 역할: 컨텍스트를 설계하는 능력",
+        "slide_count": 3,
+        "slide_ids": [
+          "S019",
+          "S020",
+          "S021"
+        ]
+      },
+      {
+        "block_id": "01-06",
+        "heading": "그래도 기초가 중요하다",
+        "slide_count": 2,
+        "slide_ids": [
+          "S022",
+          "S023"
+        ]
+      }
+    ],
+    "footnote_assets": [
+      "../../../assets/prompt-context-harness-1-15/page-003.jpg"
+    ],
+    "review_focus": "추상화의 역사와 역할 이동이 선언이 아니라 증거로 읽히는지 확인",
+    "special_rules": [
+      "chapter_01_special_decomposition",
+      "heuristic_multi_slide_decomposition"
+    ],
+    "shell_mix": {
+      "content-essay-shell": 9,
+      "content-card-shell": 3,
+      "content-emphasis-shell": 2,
+      "chapter-transition-shell": 1
+    }
   }
 }
