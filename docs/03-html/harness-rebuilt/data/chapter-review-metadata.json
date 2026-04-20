@@ -1,0 +1,64 @@
+{
+  "00": {
+    "chapter_id": "00",
+    "title": "Harness를 설계하는 법",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/00-overview.md",
+    "transition_slide_id": null,
+    "slide_ids": [
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006",
+      "S007",
+      "S008"
+    ],
+    "section_coverage": [
+      {
+        "block_id": "00-01",
+        "heading": "Harness를 설계하는 법",
+        "slide_count": 1,
+        "slide_ids": [
+          "S002"
+        ]
+      },
+      {
+        "block_id": "00-02",
+        "heading": "시작하며",
+        "slide_count": 2,
+        "slide_ids": [
+          "S003",
+          "S004"
+        ]
+      },
+      {
+        "block_id": "00-03",
+        "heading": "코딩보다 환경 구성을 해야",
+        "slide_count": 1,
+        "slide_ids": [
+          "S005"
+        ]
+      },
+      {
+        "block_id": "00-04",
+        "heading": "앞으로 다룰 이야기",
+        "slide_count": 3,
+        "slide_ids": [
+          "S006",
+          "S007",
+          "S008"
+        ]
+      }
+    ],
+    "footnote_assets": [],
+    "review_focus": "문제의식과 전체 덱의 리듬이 첫 장부터 곧바로 보이는지 확인",
+    "special_rules": [
+      "heuristic_multi_slide_decomposition"
+    ],
+    "shell_mix": {
+      "content-emphasis-shell": 2,
+      "content-essay-shell": 4,
+      "content-card-shell": 1
+    }
+  }
+}

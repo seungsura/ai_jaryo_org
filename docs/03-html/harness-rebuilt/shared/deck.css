@@ -1,0 +1,245 @@
+
+.slide {
+  padding: 76px 88px 88px;
+  background: var(--color-paper);
+}
+
+.slide::before {
+  content: "";
+  position: absolute;
+  inset: 24px;
+  border: 1px solid var(--color-line-soft);
+  pointer-events: none;
+}
+
+.icon-cluster {
+  position: absolute;
+  top: 40px;
+  right: 48px;
+  display: flex;
+  gap: 10px;
+}
+
+.icon-cluster-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  border: 1px solid var(--color-line-soft);
+  box-shadow: var(--shadow-card);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.icon-cluster-glyph {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: var(--color-signal-soft);
+  color: var(--color-signal);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.cover-shell,
+.transition-shell,
+.content-shell {
+  position: relative;
+  max-width: 930px;
+}
+
+.family-cover.layout-centered .cover-shell,
+.family-cover.layout-centered .transition-shell {
+  position: absolute;
+  left: 88px;
+  right: 220px;
+  top: 144px;
+}
+
+.cover-title,
+.transition-title,
+.content-title {
+  letter-spacing: -0.04em;
+  word-break: keep-all;
+}
+
+.cover-title {
+  font-size: 78px;
+  line-height: 0.98;
+  font-weight: 800;
+  max-width: 820px;
+}
+
+.cover-subtitle {
+  margin-top: 28px;
+  max-width: 760px;
+  font-size: 28px;
+  line-height: 1.34;
+  font-weight: 600;
+  color: var(--color-mute);
+}
+
+.cover-author {
+  margin-top: 32px;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--color-signal);
+}
+
+.transition-title {
+  font-size: 68px;
+  line-height: 1.02;
+  font-weight: 800;
+  max-width: 860px;
+}
+
+.family-content.layout-wide .content-shell {
+  margin-top: 54px;
+}
+
+.content-title {
+  max-width: 920px;
+  font-size: 56px;
+  line-height: 1.06;
+  font-weight: 800;
+}
+
+.content-body {
+  display: grid;
+  gap: 16px;
+  margin-top: 28px;
+  max-width: 860px;
+}
+
+.content-body p {
+  font-size: 28px;
+  line-height: 1.36;
+  font-weight: 600;
+  color: var(--color-mute);
+  word-break: keep-all;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.card-item {
+  min-height: 220px;
+  padding: 24px;
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+  border: 1px solid var(--color-line-soft);
+  box-shadow: var(--shadow-card);
+}
+
+.card-title {
+  font-size: 28px;
+  line-height: 1.12;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.card-copy {
+  margin-top: 16px;
+  font-size: 23px;
+  line-height: 1.34;
+  font-weight: 600;
+  color: var(--color-mute);
+}
+
+.content-shell-emphasis {
+  max-width: 980px;
+}
+
+.emphasis-line {
+  margin-top: 34px;
+  max-width: 960px;
+  font-size: 62px;
+  line-height: 1.02;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  word-break: keep-all;
+}
+
+.footnote-assets {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.asset-chip {
+  padding: 8px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-line-soft);
+  background: var(--color-surface-muted);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-mute);
+}
+
+.deck {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--color-paper);
+}
+
+.deck-slide {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.deck-slide.active {
+  display: flex;
+}
+
+.deck-slide .slide {
+  transform: scale(var(--deck-scale));
+  transform-origin: top left;
+}
+
+@media print {
+  html,
+  body {
+    width: auto;
+    height: auto;
+    overflow: visible;
+  }
+
+  .deck {
+    display: block;
+    width: auto;
+    height: auto;
+    overflow: visible;
+  }
+
+  .deck-slide {
+    position: relative;
+    display: block !important;
+    padding: 0;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  .deck-slide .slide {
+    transform: none;
+  }
+}

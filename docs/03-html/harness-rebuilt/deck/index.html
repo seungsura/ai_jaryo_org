@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Harness Rebuilt Deck</title>
+  <style>
+:root {
+  --slide-width: 1280px;
+  --slide-height: 720px;
+
+  --font-sans: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+
+  --color-paper: #fafafa;
+  --color-ink: #1a1a1a;
+  --color-signal: #0066cc;
+  --color-support: #0a84ff;
+  --color-mute: #555555;
+  --color-panel: #ffffff;
+  --color-panel-focus: #1a1a1a;
+  --color-on-focus: rgba(255, 255, 255, 0.92);
+  --color-surface: #ffffff;
+  --color-surface-muted: #f5f5f5;
+
+  --color-line-soft: rgba(26, 26, 26, 0.1);
+  --color-line-strong: rgba(26, 26, 26, 0.16);
+  --color-signal-soft: rgba(0, 102, 204, 0.1);
+  --color-support-soft: rgba(10, 132, 255, 0.12);
+  --color-code-bg: #f5f5f5;
+  --color-code-border: #e0e0e0;
+
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+  --space-8: 80px;
+
+  --radius-card: 18px;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-soft: 0 6px 20px rgba(0, 0, 0, 0.04);
+
+  --title-max-width: 980px;
+  --body-max-width: 920px;
+  --caption-max-width: 1040px;
+}
+
+body.theme-minimal-light {
+  --color-paper: #fafafa;
+  --color-ink: #1a1a1a;
+  --color-signal: #0066cc;
+  --color-support: #0a84ff;
+  --color-mute: #555555;
+  --color-panel: #ffffff;
+  --color-panel-focus: #1a1a1a;
+  --color-on-focus: rgba(255, 255, 255, 0.92);
+  --color-surface: #ffffff;
+  --color-surface-muted: #f5f5f5;
+  --color-line-soft: rgba(26, 26, 26, 0.1);
+  --color-line-strong: rgba(26, 26, 26, 0.16);
+  --color-signal-soft: rgba(0, 102, 204, 0.1);
+  --color-support-soft: rgba(10, 132, 255, 0.12);
+  --color-code-bg: #f5f5f5;
+  --color-code-border: #e0e0e0;
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-soft: 0 6px 20px rgba(0, 0, 0, 0.04);
+}
+
+body.theme-warm {
+  --color-paper: #f6f1e8;
+  --color-ink: #0f172a;
+  --color-signal: #e85d2a;
+  --color-support: #0f766e;
+  --color-mute: #64748b;
+  --color-panel: rgba(255, 255, 255, 0.28);
+  --color-panel-focus: #0f172a;
+  --color-on-focus: rgba(255, 255, 255, 0.86);
+  --color-surface: rgba(255, 255, 255, 0.78);
+  --color-surface-muted: rgba(255, 255, 255, 0.54);
+  --color-line-soft: rgba(15, 23, 42, 0.12);
+  --color-line-strong: rgba(15, 23, 42, 0.2);
+  --color-code-bg: rgba(255, 255, 255, 0.58);
+  --color-code-border: rgba(15, 23, 42, 0.12);
+  --shadow-card: none;
+  --shadow-soft: none;
+}
+
+body.theme-slate {
+  --color-paper: #edf3f7;
+  --color-ink: #111827;
+  --color-signal: #2563eb;
+  --color-support: #0f766e;
+  --color-mute: #64748b;
+  --color-panel: rgba(255, 255, 255, 0.44);
+  --color-panel-focus: #111827;
+  --color-on-focus: rgba(255, 255, 255, 0.88);
+  --color-surface: rgba(255, 255, 255, 0.72);
+  --color-surface-muted: rgba(255, 255, 255, 0.56);
+  --color-line-soft: rgba(17, 24, 39, 0.12);
+  --color-line-strong: rgba(17, 24, 39, 0.22);
+  --color-code-bg: rgba(255, 255, 255, 0.56);
+  --color-code-border: rgba(17, 24, 39, 0.12);
+  --shadow-card: none;
+  --shadow-soft: none;
+}
+
+body.theme-forest {
+  --color-paper: #f1efe7;
+  --color-ink: #1f2b24;
+  --color-signal: #b45309;
+  --color-support: #3f6212;
+  --color-mute: #5f6b63;
+  --color-panel: rgba(255, 255, 255, 0.26);
+  --color-panel-focus: #1f2b24;
+  --color-on-focus: rgba(255, 255, 255, 0.88);
+  --color-surface: rgba(255, 255, 255, 0.72);
+  --color-surface-muted: rgba(255, 255, 255, 0.52);
+  --color-line-soft: rgba(31, 43, 36, 0.12);
+  --color-line-strong: rgba(31, 43, 36, 0.22);
+  --color-code-bg: rgba(255, 255, 255, 0.52);
+  --color-code-border: rgba(31, 43, 36, 0.12);
+  --shadow-card: none;
+  --shadow-soft: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: var(--slide-width);
+  height: var(--slide-height);
+  margin: 0;
+  overflow: hidden;
+  background: var(--color-paper);
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main,
+section,
+article,
+header,
+footer,
+h1,
+h2,
+h3,
+p,
+ol,
+ul,
+li,
+table,
+thead,
+tbody,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+.slide {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  border: 1px solid var(--color-line-soft);
+}
+
+.chapter-label,
+.chapter-marker,
+.statement-tag,
+.agenda-topic,
+.agenda-number,
+.step-index,
+.compare-label {
+  font-size: 14px;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-signal);
+}
+
+.title-placeholder,
+.statement-text {
+  letter-spacing: -0.04em;
+}
+
+.lead-placeholder,
+.short-line,
+.statement-support,
+.callout-card,
+.step-copy,
+.compare-point,
+.table-callout,
+.closing-point,
+.hero-point,
+.agenda-text {
+  word-break: keep-all;
+}
+
+.title-placeholder {
+  font-size: 58px;
+  line-height: 1.06;
+  font-weight: 800;
+}
+
+.lead-placeholder,
+.short-line {
+  font-size: 28px;
+  line-height: 1.35;
+  font-weight: 600;
+  color: var(--color-mute);
+}
+
+.footer {
+  position: absolute;
+  left: 88px;
+  right: 88px;
+  bottom: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-mute);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.footer-right {
+  font-variant-numeric: tabular-nums;
+}
+
+.layout-centered {
+  padding: 0;
+}
+
+.layout-wide {
+  padding: 74px 88px 92px;
+}
+
+.layout-split {
+  padding: 70px 88px 92px;
+}
+
+.layout-editorial {
+  padding: 74px 88px 92px;
+}
+
+.cover-main,
+.closing-main {
+  position: absolute;
+  left: 88px;
+  top: 132px;
+  max-width: 900px;
+}
+
+.cover-rule {
+  width: 112px;
+  height: 4px;
+  background: var(--color-signal);
+  margin-bottom: 28px;
+}
+
+.family-title .title-placeholder,
+.family-conclusion .title-placeholder {
+  font-size: 84px;
+  line-height: 0.98;
+}
+
+.family-title .lead-placeholder,
+.family-conclusion .lead-placeholder {
+  margin-top: 24px;
+  max-width: 760px;
+}
+
+.hero-points,
+.closing-points {
+  display: grid;
+  gap: 14px;
+  margin-top: 42px;
+  max-width: 760px;
+}
+
+.hero-point,
+.closing-point {
+  position: relative;
+  padding-left: 24px;
+  font-size: 24px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.hero-point::before,
+.closing-point::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-signal);
+}
+
+.agenda-header {
+  max-width: 1080px;
+}
+
+.agenda-header .lead-placeholder {
+  margin-top: 16px;
+  max-width: 860px;
+}
+
+.agenda-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 42px;
+}
+
+.agenda-item {
+  display: grid;
+  grid-template-columns: 62px 120px 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 18px 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line-soft);
+  border-radius: 18px;
+  box-shadow: var(--shadow-card);
+}
+
+.agenda-number {
+  font-size: 26px;
+  letter-spacing: -0.02em;
+}
+
+.agenda-topic {
+  padding-top: 6px;
+  font-size: 16px;
+}
+
+.agenda-text {
+  font-size: 24px;
+  line-height: 1.24;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.section-main {
+  position: absolute;
+  left: 88px;
+  top: 154px;
+  max-width: 900px;
+}
+
+.chapter-marker {
+  font-size: 20px;
+}
+
+.section-main .title-placeholder {
+  margin-top: 22px;
+  font-size: 74px;
+  line-height: 1.02;
+}
+
+.section-main .short-line {
+  margin-top: 22px;
+  max-width: 820px;
+}
+
+.section-keywords {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.section-keyword {
+  padding: 11px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--color-line-strong);
+  background: var(--color-surface);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.statement-panel {
+  position: absolute;
+  left: 88px;
+  right: 88px;
+  bottom: 110px;
+  display: grid;
+  gap: 22px;
+}
+
+.statement-tag {
+  font-size: 15px;
+}
+
+.statement-text {
+  max-width: 920px;
+  font-size: 76px;
+  line-height: 0.98;
+  font-weight: 800;
+}
+
+.statement-support {
+  max-width: 700px;
+  font-size: 28px;
+  line-height: 1.32;
+  font-weight: 600;
+  color: var(--color-mute);
+}
+
+.statement-chips {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.statement-chip {
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line-soft);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.top-band {
+  display: grid;
+  gap: 14px;
+  max-width: 1040px;
+}
+
+.top-band .lead-placeholder {
+  max-width: 860px;
+}
+
+.body-area {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 28px;
+  margin-top: 38px;
+}
+
+.callout-card {
+  padding: 24px 24px 26px;
+  border-radius: 20px;
+  background: var(--color-signal-soft);
+  border: 1px solid rgba(0, 102, 204, 0.12);
+  font-size: 26px;
+  line-height: 1.2;
+  font-weight: 800;
+  color: var(--color-ink);
+}
+
+.bullet-list {
+  display: grid;
+  gap: 14px;
+}
+
+.bullet-item {
+  position: relative;
+  padding: 18px 20px 18px 46px;
+  border-radius: 18px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line-soft);
+  box-shadow: var(--shadow-card);
+  font-size: 24px;
+  line-height: 1.24;
+  font-weight: 700;
+}
+
+.bullet-item::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 27px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-signal);
+}
+
+.process-track {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.process-step {
+  display: grid;
+  gap: 14px;
+  min-height: 220px;
+  padding: 20px;
+  border-radius: 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line-soft);
+  box-shadow: var(--shadow-card);
+}
+
+.step-index {
+  font-size: 18px;
+}
+
+.step-title {
+  font-size: 28px;
+  line-height: 1.08;
+  font-weight: 800;
+}
+
+.step-copy {
+  font-size: 22px;
+  line-height: 1.28;
+  font-weight: 600;
+  color: var(--color-mute);
+}
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 38px;
+}
+
+.compare-col {
+  min-height: 360px;
+  padding: 24px;
+  border-radius: 22px;
+  background: var(--color-surface-muted);
+  border: 1px solid var(--color-line-soft);
+}
+
+.compare-col.is-focus {
+  background: var(--color-surface);
+  border-color: rgba(0, 102, 204, 0.18);
+}
+
+.compare-label {
+  font-size: 16px;
+}
+
+.compare-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.compare-point {
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 22px;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.table-wrap {
+  display: grid;
+  gap: 20px;
+  margin-top: 38px;
+}
+
+.table-callout {
+  max-width: 680px;
+  font-size: 24px;
+  line-height: 1.28;
+  font-weight: 700;
+  color: var(--color-mute);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid var(--color-line-soft);
+  box-shadow: var(--shadow-card);
+}
+
+.data-table thead {
+  background: var(--color-surface-muted);
+}
+
+.data-table th,
+.data-table td {
+  padding: 18px 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-line-soft);
+  font-size: 20px;
+  line-height: 1.24;
+  font-weight: 600;
+}
+
+.data-table th {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-mute);
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+
+.slide {
+  padding: 76px 88px 88px;
+  background: var(--color-paper);
+}
+
+.slide::before {
+  content: "";
+  position: absolute;
+  inset: 24px;
+  border: 1px solid var(--color-line-soft);
+  pointer-events: none;
+}
+
+.icon-cluster {
+  position: absolute;
+  top: 40px;
+  right: 48px;
+  display: flex;
+  gap: 10px;
+}
+
+.icon-cluster-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  border: 1px solid var(--color-line-soft);
+  box-shadow: var(--shadow-card);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.icon-cluster-glyph {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: var(--color-signal-soft);
+  color: var(--color-signal);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.cover-shell,
+.transition-shell,
+.content-shell {
+  position: relative;
+  max-width: 930px;
+}
+
+.family-cover.layout-centered .cover-shell,
+.family-cover.layout-centered .transition-shell {
+  position: absolute;
+  left: 88px;
+  right: 220px;
+  top: 144px;
+}
+
+.cover-title,
+.transition-title,
+.content-title {
+  letter-spacing: -0.04em;
+  word-break: keep-all;
+}
+
+.cover-title {
+  font-size: 78px;
+  line-height: 0.98;
+  font-weight: 800;
+  max-width: 820px;
+}
+
+.cover-subtitle {
+  margin-top: 28px;
+  max-width: 760px;
+  font-size: 28px;
+  line-height: 1.34;
+  font-weight: 600;
+  color: var(--color-mute);
+}
+
+.cover-author {
+  margin-top: 32px;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--color-signal);
+}
+
+.transition-title {
+  font-size: 68px;
+  line-height: 1.02;
+  font-weight: 800;
+  max-width: 860px;
+}
+
+.family-content.layout-wide .content-shell {
+  margin-top: 54px;
+}
+
+.content-title {
+  max-width: 920px;
+  font-size: 56px;
+  line-height: 1.06;
+  font-weight: 800;
+}
+
+.content-body {
+  display: grid;
+  gap: 16px;
+  margin-top: 28px;
+  max-width: 860px;
+}
+
+.content-body p {
+  font-size: 28px;
+  line-height: 1.36;
+  font-weight: 600;
+  color: var(--color-mute);
+  word-break: keep-all;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.card-item {
+  min-height: 220px;
+  padding: 24px;
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+  border: 1px solid var(--color-line-soft);
+  box-shadow: var(--shadow-card);
+}
+
+.card-title {
+  font-size: 28px;
+  line-height: 1.12;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.card-copy {
+  margin-top: 16px;
+  font-size: 23px;
+  line-height: 1.34;
+  font-weight: 600;
+  color: var(--color-mute);
+}
+
+.content-shell-emphasis {
+  max-width: 980px;
+}
+
+.emphasis-line {
+  margin-top: 34px;
+  max-width: 960px;
+  font-size: 62px;
+  line-height: 1.02;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  word-break: keep-all;
+}
+
+.footnote-assets {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.asset-chip {
+  padding: 8px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-line-soft);
+  background: var(--color-surface-muted);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-mute);
+}
+
+.deck {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--color-paper);
+}
+
+.deck-slide {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.deck-slide.active {
+  display: flex;
+}
+
+.deck-slide .slide {
+  transform: scale(var(--deck-scale));
+  transform-origin: top left;
+}
+
+@media print {
+  html,
+  body {
+    width: auto;
+    height: auto;
+    overflow: visible;
+  }
+
+  .deck {
+    display: block;
+    width: auto;
+    height: auto;
+    overflow: visible;
+  }
+
+  .deck-slide {
+    position: relative;
+    display: block !important;
+    padding: 0;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  .deck-slide .slide {
+    transform: none;
+  }
+}
+
+:root {
+  --deck-scale: 1;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: var(--color-paper);
+}
+body {
+  width: 100vw;
+  height: 100vh;
+}
+  </style>
+</head>
+<body class="theme-minimal-light">
+  <div class="deck">
+    <section class="deck-slide active" data-slide-id="S001"><main class="slide family-cover layout-centered density-tight" data-slide-id="S001" data-shell="cover-title-shell" data-slide-kind="cover" data-chapter="00" data-source-block="00-01" data-footer="default"><ul class="icon-cluster" aria-label="tool icons"><li class="icon-cluster-item"><span class="icon-cluster-glyph">CC</span><span class="icon-cluster-label">Claude Code</span></li><li class="icon-cluster-item"><span class="icon-cluster-glyph">CX</span><span class="icon-cluster-label">Codex</span></li><li class="icon-cluster-item"><span class="icon-cluster-glyph">OC</span><span class="icon-cluster-label">OpenCode</span></li></ul><section class="cover-shell"><h1 class="cover-title">Harness를 설계하는 법</h1><p class="cover-subtitle">챗봇과 싸우지 않고, 에이전트가 일할 환경을 설계하는 방법</p><p class="cover-author">게임플랫폼 1팀 라승수</p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-center">OPENING</span><span class="footer-right">1</span></footer></main></section><section class="deck-slide" data-slide-id="S002"><main class="slide family-content layout-wide density-tight" data-slide-id="S002" data-shell="content-emphasis-shell" data-slide-kind="content" data-chapter="00" data-source-block="00-01" data-footer="default"><ul class="icon-cluster" aria-label="tool icons"><li class="icon-cluster-item"><span class="icon-cluster-glyph">CC</span><span class="icon-cluster-label">Claude Code</span></li><li class="icon-cluster-item"><span class="icon-cluster-glyph">CX</span><span class="icon-cluster-label">Codex</span></li><li class="icon-cluster-item"><span class="icon-cluster-glyph">OC</span><span class="icon-cluster-label">OpenCode</span></li></ul><section class="content-shell content-shell-emphasis"><h1 class="content-title">Harness를 설계하는 법</h1><p class="emphasis-line">챗봇과 싸우지 않고, 에이전트가 일할 환경을 설계하는 방법</p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-center">OPENING</span><span class="footer-right">2</span></footer></main></section><section class="deck-slide" data-slide-id="S003"><main class="slide family-content layout-wide density-medium" data-slide-id="S003" data-shell="content-essay-shell" data-slide-kind="content" data-chapter="00" data-source-block="00-02" data-footer="default"><ul class="icon-cluster" aria-label="tool icons"><li class="icon-cluster-item"><span class="icon-cluster-glyph">CC</span><span class="icon-cluster-label">Claude Code</span></li><li class="icon-cluster-item"><span class="icon-cluster-glyph">CX</span><span class="icon-cluster-label">Codex</span></li><li class="icon-cluster-item"><span class="icon-cluster-glyph">OC</span><span class="icon-cluster-label">OpenCode</span></li></ul><section class="content-shell"><h1 class="content-title">시작하며</h1><div class="content-body"><p>AI 를 사용해본 경험은 다들 있으실 것 그런데 남들은 AI 를 잘 사용하는 것 같고, 나는 그렇게 하지 못한다는 느낌 받으신</p><p>이 글의 제목을 “Harness 잘 사용하기”로 잡은 이유도 여기에 있 이제 더 이상 챗봇과 말씨름하며 더 좋은 질문을 하는</p></div></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-center">OPENING</span><span class="footer-right">3</span></footer></main></section><section class="deck-slide" data-slide-id="S004"><main class="slide family-content layout-wide density-medium" data-slide-id="S004" data-shell="content-essay-shell" data-slide-kind="content" data-chapter="00" data-source-block="00-02" data-footer="default"><ul class="icon-cluster" aria-label="tool icons"><li class="icon-cluster-item"><span class="icon-cluster-glyph">CC</span><span class="icon-cluster-label">Claude Code</span></li><li class="icon-cluster-item"><span class="icon-cluster-glyph">CX</span><span class="icon-cluster-label">Codex</span></li><li class="icon-cluster-item"><span class="icon-cluster-glyph">OC</span><span class="icon-cluster-label">OpenCode</span></li></ul><section class="content-shell"><h1 class="content-title">AI 를 사용해본 경험은 다들 있으실 것</h1><div class="content-body"><p>한 문장으로 말하면 이렇</p><p>이제 개발자의 핵심 역량은 “AI에게 무엇을 말할까”에서 “AI가 안전하게 일할 환경을 어떻게 만들까”로 이동하고 있</p></div></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-center">OPENING</span><span class="footer-right">4</span></footer></main></section><section class="deck-slide" data-slide-id="S005"><main class="slide family-content layout-wide density-medium" data-slide-id="S005" data-shell="content-essay-shell" data-slide-kind="content" data-chapter="00" data-source-block="00-03" data-footer="default"><ul class="icon-cluster" aria-label="tool icons"><li class="icon-cluster-item"><span class="icon-cluster-glyph">CC</span><span class="icon-cluster-label">Claude Code</span></li><li class="icon-cluster-item"><span class="icon-cluster-glyph">CX</span><span class="icon-cluster-label">Codex</span></li><li class="icon-cluster-item"><span class="icon-cluster-glyph">OC</span><span class="icon-cluster-label">OpenCode</span></li></ul><section class="content-shell"><h1 class="content-title">코딩보다 환경 구성을 해야</h1><div class="content-body"><p>각자 다른 방법론에서 출발한 수많은 AI 도구들은 점점 점점 하나로 수렴하고 있 Harness 어떤 도구는 자동완성에서</p></div></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-center">OPENING</span><span class="footer-right">5</span></footer></main></section><section class="deck-slide" data-slide-id="S006"><main class="slide family-content layout-wide density-medium" data-slide-id="S006" data-shell="content-essay-shell" data-slide-kind="content" data-chapter="00" data-source-block="00-04" data-footer="default"><ul class="icon-cluster" aria-label="tool icons"><li class="icon-cluster-item"><span class="icon-cluster-glyph">CC</span><span class="icon-cluster-label">Claude Code</span></li><li class="icon-cluster-item"><span class="icon-cluster-glyph">CX</span><span class="icon-cluster-label">Codex</span></li><li class="icon-cluster-item"><span class="icon-cluster-glyph">OC</span><span class="icon-cluster-label">OpenCode</span></li></ul><section class="content-shell"><h1 class="content-title">앞으로 다룰 이야기</h1><div class="content-body"><p>이 글은 특정 제품의 도구 리뷰가 아닙니다. 왜 최근의 AI 코딩 도구와 방법론이 Harness 중심으로 수렴하는지, 그</p><p>목차</p></div></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-center">OPENING</span><span class="footer-right">6</span></footer></main></section><section class="deck-slide" data-slide-id="S007"><main class="slide family-content layout-wide density-medium" data-slide-id="S007" data-shell="content-card-shell" data-slide-kind="content" data-chapter="00" data-source-block="00-04" data-footer="default"><ul class="icon-cluster" aria-label="tool icons"><li class="icon-cluster-item"><span class="icon-cluster-glyph">CC</span><span class="icon-cluster-label">Claude Code</span></li><li class="icon-cluster-item"><span class="icon-cluster-glyph">CX</span><span class="icon-cluster-label">Codex</span></li><li class="icon-cluster-item"><span class="icon-cluster-glyph">OC</span><span class="icon-cluster-label">OpenCode</span></li></ul><section class="content-shell"><h1 class="content-title">이 글은 특정 제품의 도구 리뷰가 아닙니다</h1><div class="card-grid"><article class="card-item"><h2 class="card-title">앞으로 다룰 이야기</h2><p class="card-copy">코딩은 어디로 가고 있는가 / 개발자의 숙련은 어디로 이동하는가</p></article><article class="card-item"><h2 class="card-title">코딩은 어디로 가고 있는가 / 개발자의</h2><p class="card-copy">왜 Claude Code인가, 그리고 왜 Harness 인가 / 최근 AI 코딩 도구는 왜 비슷한 구조로 모이는가</p></article><article class="card-item"><h2 class="card-title">왜 Claude Code인가, 그리고 왜</h2><p class="card-copy">AI 시대의 개발 방법론 / TDD, SDD, Spec-first는 왜 다시 중요해졌는가</p></article></div></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-center">OPENING</span><span class="footer-right">7</span></footer></main></section><section class="deck-slide" data-slide-id="S008"><main class="slide family-content layout-wide density-tight" data-slide-id="S008" data-shell="content-emphasis-shell" data-slide-kind="content" data-chapter="00" data-source-block="00-04" data-footer="default"><ul class="icon-cluster" aria-label="tool icons"><li class="icon-cluster-item"><span class="icon-cluster-glyph">CC</span><span class="icon-cluster-label">Claude Code</span></li><li class="icon-cluster-item"><span class="icon-cluster-glyph">CX</span><span class="icon-cluster-label">Codex</span></li><li class="icon-cluster-item"><span class="icon-cluster-glyph">OC</span><span class="icon-cluster-label">OpenCode</span></li></ul><section class="content-shell content-shell-emphasis"><h1 class="content-title">앞으로 다룰 이야기</h1><p class="emphasis-line">목차</p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-center">OPENING</span><span class="footer-right">8</span></footer></main></section>
+  </div>
+  <script>
+const slides = Array.from(document.querySelectorAll('.deck-slide'));
+let currentIndex = 0;
+let touchStartX = 0;
+
+function updateScale() {
+  const usableWidth = window.innerWidth - 48;
+  const usableHeight = window.innerHeight - 48;
+  const scale = Math.min(usableWidth / 1280, usableHeight / 720, 1);
+  document.documentElement.style.setProperty('--deck-scale', String(scale));
+}
+
+function goTo(index) {
+  currentIndex = Math.max(0, Math.min(index, slides.length - 1));
+  slides.forEach((slide, slideIndex) => {
+    slide.classList.toggle('active', slideIndex === currentIndex);
+  });
+}
+
+window.addEventListener('resize', updateScale);
+window.addEventListener('keydown', (event) => {
+  if (event.key === 'ArrowRight' || event.key === 'PageDown' || event.key === ' ') {
+    goTo(currentIndex + 1);
+  }
+  if (event.key === 'ArrowLeft' || event.key === 'PageUp') {
+    goTo(currentIndex - 1);
+  }
+});
+window.addEventListener('touchstart', (event) => {
+  touchStartX = event.changedTouches[0].clientX;
+});
+window.addEventListener('touchend', (event) => {
+  const delta = event.changedTouches[0].clientX - touchStartX;
+  if (delta < -50) goTo(currentIndex + 1);
+  if (delta > 50) goTo(currentIndex - 1);
+});
+updateScale();
+goTo(0);
+  </script>
+</body>
+</html>
