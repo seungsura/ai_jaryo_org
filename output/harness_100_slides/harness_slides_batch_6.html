@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harness: 에이전틱 코딩 시대의 생존 전략 - Batch 6</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
+    <style>
+        :root {
+            --bg: #fafafa;
+            --text: #1a1a1a;
+            --accent: #666;
+            --primary: #000;
+            --font-main: 'Pretendard Variable', 'Pretendard', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            width: 100%; height: 100%;
+            overflow: hidden;
+            background: var(--bg);
+            font-family: var(--font-main);
+            color: var(--text);
+        }
+
+        .deck { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
+
+        .slide {
+            position: absolute; inset: 0;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center;
+            padding: 80px;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.5s ease;
+            background: var(--bg);
+        }
+
+        .slide.active { opacity: 1; pointer-events: auto; z-index: 2; }
+
+        /* Typography */
+        .overline { font-size: 18px; letter-spacing: 8px; color: var(--accent); text-transform: uppercase; margin-bottom: 40px; font-weight: 500; }
+        h1 { font-size: 84px; font-weight: 800; line-height: 1.1; margin-bottom: 30px; letter-spacing: -2px; }
+        h2 { font-size: 64px; font-weight: 800; line-height: 1.2; margin-bottom: 40px; letter-spacing: -1.5px; }
+        h3 { font-size: 44px; font-weight: 700; line-height: 1.3; margin-bottom: 30px; }
+        p { font-size: 28px; color: #444; line-height: 1.6; max-width: 900px; margin: 0 auto; }
+        
+        .highlight { color: var(--primary); font-weight: 700; border-bottom: 4px solid #eee; }
+        .quote { font-size: 36px; font-style: italic; font-weight: 600; line-height: 1.5; color: #333; position: relative; padding: 40px; }
+        .quote::before { content: '"'; position: absolute; top: 0; left: 0; font-size: 100px; color: #eee; font-family: serif; }
+
+        /* Layouts */
+        .content-left { text-align: left; align-items: flex-start; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; width: 100%; text-align: left; }
+        
+        /* List Styles */
+        ul { list-style: none; margin-top: 40px; }
+        li { font-size: 28px; margin-bottom: 24px; position: relative; padding-left: 40px; color: #444; }
+        li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
+
+        /* Table Styles */
+        table { width: 100%; border-collapse: collapse; margin-top: 40px; font-size: 22px; }
+        th { text-align: left; padding: 20px; border-bottom: 2px solid #000; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; font-size: 16px; }
+        td { padding: 24px 20px; border-bottom: 1px solid #eee; }
+        tr:last-child td { border-bottom: none; }
+        .tag { font-family: var(--font-mono); font-size: 14px; background: #eee; padding: 4px 12px; border-radius: 4px; vertical-align: middle; margin-right: 10px; }
+
+        /* Animations */
+        .a { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .slide.active .a { opacity: 1; transform: translateY(0); }
+        .a-1 { transition-delay: 0.1s; }
+        .a-2 { transition-delay: 0.2s; }
+        .a-3 { transition-delay: 0.3s; }
+        .a-4 { transition-delay: 0.4s; }
+        .a-5 { transition-delay: 0.5s; }
+
+        /* Navigation */
+        .nav { position: fixed; bottom: 40px; right: 40px; display: flex; gap: 20px; z-index: 100; }
+        .nav-btn { background: none; border: 1px solid #ddd; width: 50px; height: 50px; cursor: pointer; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.2s; }
+        .nav-btn:hover { background: #000; color: #fff; border-color: #000; }
+        .progress { position: fixed; bottom: 0; left: 0; height: 4px; background: #000; transition: width 0.3s; z-index: 100; }
+        .counter { position: fixed; bottom: 40px; left: 40px; font-family: var(--font-mono); font-size: 14px; color: var(--accent); z-index: 100; }
+    </style>
+</head>
+<body>
+    <div class="progress" id="progress"></div>
+    <div class="counter" id="counter">61 / 72</div>
+    <div class="nav">
+        <button class="nav-btn" onclick="prevSlide()">←</button>
+        <button class="nav-btn" onclick="nextSlide()">→</button>
+    </div>
+
+    <div class="deck">
+        <!-- Slide 61: Chapter 06 Title -->
+        <section class="slide active">
+            <div class="overline a a-1">Chapter 06</div>
+            <h1 class="a a-2">멀티 에이전트 활용 패턴</h1>
+            <p class="a a-3">병렬화보다 분해가 먼저다</p>
+        </section>
+
+        <!-- Slide 62: Decomposition over Parallelization -->
+        <section class="slide">
+            <h2 class="a a-1">분해의 미학</h2>
+            <p class="a a-2">에이전트 수만 늘린다고 품질이 좋아지지 않습니다.<br><span class="highlight">역할과 컨텍스트를 쪼개는 설계</span>가 핵심입니다.</p>
+            <div class="quote a a-3" style="margin-top: 40px;">
+                "메인 컨텍스트에 무엇을 남기고,<br>무엇을 밖으로 밀어낼 것인가?"
+            </div>
+        </section>
+
+        <!-- Slide 63: Why Multi-Agent? -->
+        <section class="slide content-left">
+            <h2 class="a a-1">단일 에이전트의 한계</h2>
+            <ul class="a a-2">
+                <li><b>컨텍스트 비대화</b>: 핵심 신호가 소음에 묻힘</li>
+                <li><b>역할 혼동</b>: 자기 답을 자기가 채점하는 구조</li>
+                <li><b>신뢰 경계 모호</b>: 불필요한 권한 노출로 인한 사고 위험</li>
+            </ul>
+        </section>
+
+        <!-- Slide 64: Pattern 01: Sub-Agent -->
+        <section class="slide">
+            <div class="overline a a-1">Pattern 01</div>
+            <h2 class="a a-2">Sub-Agent</h2>
+            <p class="a a-3">중간 작업을 격리하는 기본형</p>
+            <div class="grid-2 a a-4" style="margin-top: 40px;">
+                <div style="background: #f0f0f0; padding: 30px;">
+                    <h3>Isolation</h3>
+                    <p style="font-size: 18px;">대량 파일 요약, 로그 분석 등<br>메인 컨텍스트 오염 방지</p>
+                </div>
+                <div style="background: #f0f0f0; padding: 30px;">
+                    <h3>Least Privilege</h3>
+                    <p style="font-size: 18px;">필요한 파일과 권한만 부여<br>(주로 읽기 전용)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 65: Pattern 02: Orchestrator -->
+        <section class="slide">
+            <div class="overline a a-1">Pattern 02</div>
+            <h2 class="a a-2">Orchestrator</h2>
+            <p class="a a-3">1:N 위임 구조</p>
+            <div class="a a-4" style="display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 500px; margin-top: 40px;">
+                <div style="border: 2px solid #000; padding: 15px;">Planner (목표 해석 및 분해)</div>
+                <div style="display: flex; gap: 10px;">
+                    <div style="flex: 1; border: 1px solid #ccc; padding: 15px;">Worker A</div>
+                    <div style="flex: 1; border: 1px solid #ccc; padding: 15px;">Worker B</div>
+                    <div style="flex: 1; border: 1px solid #ccc; padding: 15px;">Worker C</div>
+                </div>
+                <div style="border: 2px solid #000; padding: 15px;">Aggregator (결과 통합)</div>
+            </div>
+        </section>
+
+        <!-- Slide 66: Pattern 03: Parallel -->
+        <section class="slide">
+            <div class="overline a a-1">Pattern 03</div>
+            <h2 class="a a-2">Parallel</h2>
+            <p class="a a-3">속도보다 <span class="highlight">간섭 제어</span></p>
+            <div class="grid-2 a a-4" style="margin-top: 40px;">
+                <div>
+                    <h3>의존성 낮은 작업</h3>
+                    <p style="font-size: 18px;">대안 비교, 독립 모듈 점검,<br>다양한 스타일 초안 생성</p>
+                </div>
+                <div>
+                    <h3>격리 도구</h3>
+                    <p style="font-size: 18px;">Git Worktree, 별도 브랜치,<br>명확한 출력 계약</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 67: Pattern 04: GAN-Style -->
+        <section class="slide">
+            <div class="overline a a-1">Pattern 04</div>
+            <h2 class="a a-2">GAN-Style</h2>
+            <p class="a a-3">생성과 평가의 분리</p>
+            <div class="grid-2 a a-4" style="margin-top: 40px;">
+                <div style="border-right: 1px solid #eee; padding-right: 40px;">
+                    <h3>Generator</h3>
+                    <p style="font-size: 18px;">기능 구현 및 스프린트 수행</p>
+                </div>
+                <div>
+                    <h3>Evaluator</h3>
+                    <p style="font-size: 18px;">테스트, 루브릭, 리뷰 기준 평가<br>구체적 피드백 제공</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 68: Pattern 05: Agent Teams -->
+        <section class="slide">
+            <div class="overline a a-1">Pattern 05</div>
+            <h2 class="a a-2">Agent Teams</h2>
+            <p class="a a-3">양방향 토론과 합의</p>
+            <div class="a a-4" style="margin-top: 40px;">
+                <span class="tag">Researcher</span>
+                <span class="tag">Architect</span>
+                <span class="tag">Reviewer</span>
+                <span class="tag">Coordinator</span>
+            </div>
+            <p class="a a-5" style="margin-top: 30px; font-size: 20px;">관점의 균형이 중요한 기획, 아키텍처 검토에 적합</p>
+        </section>
+
+        <!-- Slide 69: Sub-Agent vs Agent Team -->
+        <section class="slide content-left">
+            <h2 class="a a-1">Sub-Agent vs Agent Team</h2>
+            <table class="a a-2">
+                <thead>
+                    <tr>
+                        <th>구분</th>
+                        <th>Sub-Agent</th>
+                        <th>Agent Team</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>구조</td><td>단방향 심부름</td><td>양방향 토론</td></tr>
+                    <tr><td>컨텍스트</td><td>제한적, 요약 반환</td><td>각자 별도 맥락 유지</td></tr>
+                    <tr><td>적합 작업</td><td>로그 파싱, 탐색</td><td>기획, 아키텍처 토론</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Slide 70: Design Principles -->
+        <section class="slide content-left">
+            <h2 class="a a-1">멀티 에이전트 설계 원칙</h2>
+            <ul class="a a-2">
+                <li><b>필요한 것만 준다</b>: 불필요한 정보는 소음이다</li>
+                <li><b>역할과 금지를 정한다</b>: 행동 반경을 명확히 통제</li>
+                <li><b>출력 계약을 구조화한다</b>: JSON, 표 등 파싱 가능한 형식</li>
+                <li><b>생성과 검증을 가른다</b>: 자기 채점 방지</li>
+            </ul>
+        </section>
+
+        <!-- Slide 71: Multi-Model Strategy -->
+        <section class="slide">
+            <h2 class="a a-1">멀티 모델 활용</h2>
+            <p class="a a-2">모델의 특성에 따른 역할 분담</p>
+            <div class="grid-2 a a-3" style="margin-top: 40px; font-size: 20px;">
+                <p><b>Claude</b><br>구현 계획 및 로직 작성</p>
+                <p><b>Codex</b><br>아키텍처 리스크 검토</p>
+                <p><b>Gemini</b><br>UI 및 문서 가독성 피드백</p>
+                <p><b>DeepSeek</b><br>복잡한 알고리즘 최적화</p>
+            </div>
+        </section>
+
+        <!-- Slide 72: Summary of Ch 06 -->
+        <section class="slide">
+            <h2 class="a a-1">6장 요약</h2>
+            <ul class="a a-2" style="text-align: left; display: inline-block;">
+                <li>멀티 에이전트는 병렬화가 아니라 분해다</li>
+                <li>메인 컨텍스트를 비우는 것이 성능의 핵심이다</li>
+                <li>생성과 검증의 분리가 품질을 보장한다</li>
+                <li>패턴보다 명확한 역할 경계가 중요하다</li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const progress = document.getElementById('progress');
+        const counter = document.getElementById('counter');
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            
+            progress.style.width = ((currentSlide + 1) / slides.length * 100) + '%';
+            counter.innerText = (currentSlide + 60 + 1) + ' / 100'; // Offset for batch 6
+        }
+
+        function nextSlide() { showSlide(currentSlide + 1); }
+        function prevSlide() { showSlide(currentSlide - 1); }
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+    </script>
+</body>
+</html>

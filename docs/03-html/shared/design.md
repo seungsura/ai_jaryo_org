@@ -18,10 +18,10 @@
 
 - `docs/03-html/outline/slide-outline.md`
 - `docs/03-html/manifest.md`
+- `docs/03-html/shared/make-slide-adoption.md`
 - `docs/03-html/shared/tokens.css`
 - `docs/03-html/shared/layout-shell-reference.md`
 - `docs/03-html/shared/minimal-light-adaptation.md`
-- `.codex/skills/local/jaryo-html-slide-design/references/presentation-archetypes.md`
 
 ## Template Model
 
@@ -33,10 +33,13 @@
   - PowerPoint `slide master / layout family`
 - `slide-XX.html`
   - template를 사용하는 actual sample slide
+- `deck/index.html`
+  - final standalone deck artifact
 - `outline/manifest`
   - slide intent, layout family, density bookkeeping
 
 HTML은 canonical source가 아닙니다. 문장과 논지는 항상 `docs/02-seminar/prose/`와 approved outline을 따릅니다.
+`deck/index.html`도 canonical source가 아니라 delivery artifact입니다.
 
 ## Reference-Driven Build Model
 
@@ -58,35 +61,35 @@ Rules:
   - `data-shell="shell-id"`
 - shell이 정해지기 전에는 HTML generation을 시작하지 않습니다.
 - shell을 바꾸려면 outline과 manifest를 먼저 수정합니다.
+- `make-slide`에서 채택한 runtime은 `deck/index.html`의 keyboard navigation, active slide switching, print CSS, optional `data-notes` 저장까지만 제한합니다.
+- progress bar, fullscreen button, slide counter, notes UI 같은 chrome은 비채택입니다.
 
 활성 shell 목록과 required structure는 `docs/03-html/shared/layout-shell-reference.md`를 기준으로 합니다.
 
 ## Generation Model
 
-- 한국어 slide planning / slide copy / speaker notes 생성 경로: GPT-based local subagents
-- slide copy / speaker notes fixed writing model: `gpt-5.4`
+- slide wording, outline, and HTML artifacts are maintained directly in this repository workflow
 - HTML/CSS 생성 경로: Codex
-- Codex 책임: HTML generation, deck consistency auditing, render 검증, outline/manifest 동기화
+- Codex 책임: HTML generation, render 검증, outline/manifest 동기화
+- 최종 delivery는 `slide-XX.html` source와 `deck/index.html` artifact를 함께 유지하는 hybrid output입니다.
 
 ## Producer-Reviewer Loop
 
 `revfactory/harness`에서 가져오는 핵심은 producer와 reviewer를 분리하고, 재작업 범위를 gate 결과로 고정하는 방식입니다. 이 프로젝트에서는 아래 loop를 deck 운영의 기본값으로 둡니다.
 
-1. `slide-outline-planner`
-2. `chapter-slide-pm-ko` / `exception-slide-pm-ko`
-3. `korean-slide-copywriter-gpt`
-4. `storyline-auditor-ko` + `korean-tone-auditor-ko`
-5. `html-slide-builder`
-6. `html-deck-consistency-auditor` + `html-slide-designer`
-7. final deck gate
-8. PDF export / speaker notes
+1. `slide-outline.md`와 `manifest.md`를 먼저 잠금
+2. slide copy packet과 batch 메모를 정리
+3. HTML/CSS를 생성
+4. automated check를 실행
+5. render review와 deck-level 점검을 수행
+6. 필요하면 PDF export나 notes 단계로 전달
 
 Rules:
 
 - reviewer는 asset을 직접 고치지 않고 `PASS`, `REVISE`, `BLOCK`만 반환합니다.
 - `REVISE` 또는 `BLOCK`이면 exact rework scope를 남겨야 합니다.
 - approved outcome만 outline/manifest에 반영합니다.
-- rework delta는 internal agent output에 남기고, 다음 batch에서 같은 drift가 반복되지 않게 prompt와 template를 갱신합니다.
+- rework delta는 batch notes나 작업 로그에 남기고, 다음 batch에서 같은 drift가 반복되지 않게 반영합니다.
 
 ## Theme Rules
 
@@ -307,7 +310,6 @@ Rules:
 - slide 한 장에는 한 개의 핵심 목적만 유지
 - title은 slide intent를 압축해서 바로 읽히게 작성
 - helper translation, English UI label, 장식용 category label 금지
-- slide 관련 한국어 작성은 GPT를 사용하되, slide copy와 speaker notes의 모델명은 항상 `gpt-5.4`로 고정
 - 저장소 prose의 직접적이고 단정적인 문제의식을 유지하되, slide에 맞게 더 짧고 더 단단하게 압축
 - 번역투 방법론 용어, 보고서 문장, 설명문 냄새가 나는 문장은 기본적으로 제거
 - line, connector, meter, divider는 의미를 전달할 때만 사용하고, 장식 목적이면 제거
@@ -334,26 +336,26 @@ Rules:
 
 이 deck는 아래 gate를 통과해야 다음 단계로 넘어갑니다.
 
-### Pre-HTML Gate
+### Pre-Build Review
 
-- `storyline-auditor-ko`
-- `korean-tone-auditor-ko`
+- storyline continuity
+- Korean tone and density
 
-둘 다 `PASS`일 때만 HTML generation 허용
+필수 검토를 통과할 때만 HTML generation 허용
 
-### Post-HTML Gate
+### Post-Build Review
 
-- `html-deck-consistency-auditor`
-- `html-slide-designer`
+- deck consistency
+- slide-level render quality
 
-둘 다 `PASS`일 때만 다음 chapter batch 또는 final deck gate 진행 허용
+필수 검토를 통과할 때만 다음 chapter batch 또는 final deck review 진행 허용
 
 ### Final Deck Gate
 
-- `storyline-auditor-ko`
-- `korean-tone-auditor-ko`
-- `html-deck-consistency-auditor`
-- `html-slide-designer`
+- storyline continuity
+- Korean tone and density
+- deck consistency
+- slide-level render quality
 
 이 gate를 통과한 뒤에만 PDF export와 speaker notes 진행 허용
 

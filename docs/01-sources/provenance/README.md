@@ -6,6 +6,7 @@
 
 - `people-and-orgs.md`: 발표에서 반복 등장하는 인물과 기관의 배경
 - `external-repo-audit.md`: 외부 curated repo 검증 기록
+- `make-slide-adoption-audit.md`: `make-slide` 채택/비채택 감사 기록
 
 ## 원칙
 

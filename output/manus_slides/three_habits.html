@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0A0A0B;
+            color: #E0E0E0;
+            font-family: 'Inter', sans-serif;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .grid-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: 1;
+        }
+        .header {
+            position: relative;
+            z-index: 10;
+            padding-top: 60px;
+            padding-left: 80px;
+            margin-bottom: 60px;
+        }
+        .header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 48px;
+            color: #00F2FF;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+        .header .accent-line {
+            width: 100px;
+            height: 4px;
+            background: #FF2E63;
+            margin-top: 15px;
+        }
+        .main-content {
+            position: relative;
+            z-index: 10;
+            flex-grow: 1;
+            padding-left: 80px;
+            padding-right: 80px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        .habit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0, 242, 255, 0.1);
+        }
+        .habit-index {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            color: #FF2E63;
+            min-width: 60px;
+        }
+        .habit-content h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            color: #00F2FF;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .habit-content p {
+            font-size: 20px;
+            line-height: 1.6;
+            color: #B0B0B0;
+        }
+        .habit-content strong {
+            color: #E0E0E0;
+        }
+        .footer {
+            position: relative;
+            z-index: 10;
+            padding-top: 20px;
+            padding-left: 80px;
+            padding-right: 80px;
+            padding-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 12px;
+            color: rgba(224, 224, 224, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="grid-bg"></div>
+        
+        <header class="header">
+            <h2>지금 바로 시작할 수 있는 3가지 습관</h2>
+            <div class="accent-line"></div>
+        </header>
+
+        <div class="main-content">
+            <div class="habit-item">
+                <div class="habit-index">01</div>
+                <div class="habit-content">
+                    <h3>Externalize Rules</h3>
+                    <p>반복해서 말하는 규칙 3가지를 <strong>파일(CLAUDE.md 등)</strong>로 빼십시오. 에이전트에게 보이지 않는 지식은 없는 지식과 같습니다.</p>
+                </div>
+            </div>
+            <div class="habit-item">
+                <div class="habit-index">02</div>
+                <div class="habit-content">
+                    <h3>Install Gates</h3>
+                    <p>에이전트가 우회할 수 없는 <strong>결정론적 문(Gate)</strong> 하나를 세우십시오. Lint, Test 등 기계적 검증을 필수 관문으로 만듭니다.</p>
+                </div>
+            </div>
+            <div class="habit-item">
+                <div class="habit-index">03</div>
+                <div class="habit-content">
+                    <h3>Record Conclusions</h3>
+                    <p>긴 세션의 결론을 <strong>채팅창 밖(이슈, 문서)</strong>에 남기십시오. 세션이 닫혀도 판단 기준이 사라지지 않게 하는 것이 핵심입니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <span>MANUS AGENTIC SYSTEMS // HARNESS PROJECT</span>
+            <span>PAGE 09</span>
+        </footer>
+    </div>
+</body>
+</html>

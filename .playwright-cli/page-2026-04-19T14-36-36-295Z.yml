@@ -1,0 +1,11 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - heading "Harness Engineer가 새 역할이다" [level=1] [ref=e5]
+    - paragraph [ref=e6]: 숙련은 사라지지 않는다. 하네스를 설계하고 운영하는 쪽으로 옮겨 갈 뿐이다
+    - generic [ref=e7]:
+      - paragraph [ref=e9]: 반복 규칙 세 가지부터 파일로 빼라
+      - paragraph [ref=e11]: 검증 문 하나를 추가해 기준을 잠가라
+      - paragraph [ref=e13]: 세션 결론을 밖에 남겨 컨텍스트를 가볍게 하라
+  - generic [ref=e14]:
+    - generic [ref=e15]: Harness 잘 사용하기
+    - generic [ref=e16]: "33"

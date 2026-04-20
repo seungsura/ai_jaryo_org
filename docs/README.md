@@ -7,6 +7,9 @@
 ```text
 docs/
   README.md
+  00-process/
+    seminar-refinement-plan.md
+    seminar-refinement-manifest.md
   01-sources/
     README.md
     registry.md

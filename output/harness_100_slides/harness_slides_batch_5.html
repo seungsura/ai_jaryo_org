@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harness: 에이전틱 코딩 시대의 생존 전략 - Batch 5</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
+    <style>
+        :root {
+            --bg: #fafafa;
+            --text: #1a1a1a;
+            --accent: #666;
+            --primary: #000;
+            --font-main: 'Pretendard Variable', 'Pretendard', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            width: 100%; height: 100%;
+            overflow: hidden;
+            background: var(--bg);
+            font-family: var(--font-main);
+            color: var(--text);
+        }
+
+        .deck { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
+
+        .slide {
+            position: absolute; inset: 0;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center;
+            padding: 80px;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.5s ease;
+            background: var(--bg);
+        }
+
+        .slide.active { opacity: 1; pointer-events: auto; z-index: 2; }
+
+        /* Typography */
+        .overline { font-size: 18px; letter-spacing: 8px; color: var(--accent); text-transform: uppercase; margin-bottom: 40px; font-weight: 500; }
+        h1 { font-size: 84px; font-weight: 800; line-height: 1.1; margin-bottom: 30px; letter-spacing: -2px; }
+        h2 { font-size: 64px; font-weight: 800; line-height: 1.2; margin-bottom: 40px; letter-spacing: -1.5px; }
+        h3 { font-size: 44px; font-weight: 700; line-height: 1.3; margin-bottom: 30px; }
+        p { font-size: 28px; color: #444; line-height: 1.6; max-width: 900px; margin: 0 auto; }
+        
+        .highlight { color: var(--primary); font-weight: 700; border-bottom: 4px solid #eee; }
+        .quote { font-size: 36px; font-style: italic; font-weight: 600; line-height: 1.5; color: #333; position: relative; padding: 40px; }
+        .quote::before { content: '"'; position: absolute; top: 0; left: 0; font-size: 100px; color: #eee; font-family: serif; }
+
+        /* Layouts */
+        .content-left { text-align: left; align-items: flex-start; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; width: 100%; text-align: left; }
+        
+        /* List Styles */
+        ul { list-style: none; margin-top: 40px; }
+        li { font-size: 28px; margin-bottom: 24px; position: relative; padding-left: 40px; color: #444; }
+        li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
+
+        /* Table Styles */
+        table { width: 100%; border-collapse: collapse; margin-top: 40px; font-size: 22px; }
+        th { text-align: left; padding: 20px; border-bottom: 2px solid #000; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; font-size: 16px; }
+        td { padding: 24px 20px; border-bottom: 1px solid #eee; }
+        tr:last-child td { border-bottom: none; }
+        .tag { font-family: var(--font-mono); font-size: 14px; background: #eee; padding: 4px 12px; border-radius: 4px; vertical-align: middle; margin-right: 10px; }
+
+        /* Animations */
+        .a { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .slide.active .a { opacity: 1; transform: translateY(0); }
+        .a-1 { transition-delay: 0.1s; }
+        .a-2 { transition-delay: 0.2s; }
+        .a-3 { transition-delay: 0.3s; }
+        .a-4 { transition-delay: 0.4s; }
+        .a-5 { transition-delay: 0.5s; }
+
+        /* Navigation */
+        .nav { position: fixed; bottom: 40px; right: 40px; display: flex; gap: 20px; z-index: 100; }
+        .nav-btn { background: none; border: 1px solid #ddd; width: 50px; height: 50px; cursor: pointer; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.2s; }
+        .nav-btn:hover { background: #000; color: #fff; border-color: #000; }
+        .progress { position: fixed; bottom: 0; left: 0; height: 4px; background: #000; transition: width 0.3s; z-index: 100; }
+        .counter { position: fixed; bottom: 40px; left: 40px; font-family: var(--font-mono); font-size: 14px; color: var(--accent); z-index: 100; }
+    </style>
+</head>
+<body>
+    <div class="progress" id="progress"></div>
+    <div class="counter" id="counter">49 / 60</div>
+    <div class="nav">
+        <button class="nav-btn" onclick="prevSlide()">←</button>
+        <button class="nav-btn" onclick="nextSlide()">→</button>
+    </div>
+
+    <div class="deck">
+        <!-- Slide 49: Chapter 05 Title -->
+        <section class="slide active">
+            <div class="overline a a-1">Chapter 05</div>
+            <h1 class="a a-2">이렇게 하면 망한다</h1>
+            <p class="a a-3">코딩 에이전트의 한계와 실패 패턴</p>
+        </section>
+
+        <!-- Slide 50: Failure as Input -->
+        <section class="slide">
+            <h2 class="a a-1">실패는 설계의 입력이다</h2>
+            <p class="a a-2">데모의 매끈함에 속지 마세요.<br>실제 작업은 <span class="highlight">오류의 누적 사슬</span>입니다.</p>
+            <div class="quote a a-3" style="margin-top: 40px;">
+                "중요한 것은 모델의 영리함이 아니라,<br>구조 안에서 오류가 어디에 쌓이는가입니다."
+            </div>
+        </section>
+
+        <!-- Slide 51: Long Context Paradox -->
+        <section class="slide content-left">
+            <h2 class="a a-1">Long Context의 역설</h2>
+            <table class="a a-2">
+                <thead>
+                    <tr>
+                        <th>실패 모드</th>
+                        <th>의미</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><b>Poisoning</b></td><td>잘못된 정보가 사실처럼 재사용됨</td></tr>
+                    <tr><td><b>Distraction</b></td><td>무관한 정보가 주의를 빼앗음</td></tr>
+                    <tr><td><b>Confusion</b></td><td>유사하지만 다른 정보가 섞임</td></tr>
+                    <tr><td><b>Clash</b></td><td>지시가 서로 충돌함</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Slide 52: Context Rot -->
+        <section class="slide">
+            <div class="overline a a-1">Concept</div>
+            <h2 class="a a-2">Context Rot</h2>
+            <p class="a a-3">길어진 맥락은 결국 <span class="highlight">썩습니다.</span></p>
+            <ul class="a a-4" style="text-align: left; display: inline-block;">
+                <li>초반의 제약과 의도가 서서히 흐려짐</li>
+                <li>중간에 나온 가정이 사실처럼 눌어붙음</li>
+                <li>세션을 오래 끌수록 Drift 관리 비용 폭증</li>
+            </ul>
+        </section>
+
+        <!-- Slide 53: Failure Signals 01 -->
+        <section class="slide">
+            <h2 class="a a-1">현장의 실패 신호 (1)</h2>
+            <div class="grid-2 a a-2" style="margin-top: 40px;">
+                <div style="background: #f9f9f9; padding: 30px;">
+                    <h3>AI Slop</h3>
+                    <p style="font-size: 18px;">겉은 그럴듯하지만<br>속은 허술한 산출물</p>
+                </div>
+                <div style="background: #f9f9f9; padding: 30px;">
+                    <h3>Doom Loop</h3>
+                    <p style="font-size: 18px;">같은 실패를 반복하며<br>빠져나오지 못하는 상태</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 54: Failure Signals 02 -->
+        <section class="slide">
+            <h2 class="a a-1">현장의 실패 신호 (2)</h2>
+            <div class="grid-2 a a-2" style="margin-top: 40px;">
+                <div style="background: #f9f9f9; padding: 30px;">
+                    <h3>Shadow Agent</h3>
+                    <p style="font-size: 18px;">목표를 잊고 무관한<br>탐색을 이어가는 상태</p>
+                </div>
+                <div style="background: #f9f9f9; padding: 30px;">
+                    <h3>Silent Failure</h3>
+                    <p style="font-size: 18px;">실패가 조용히 묻히고<br>"완료"라고 말하는 상태</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 55: Calibrated Trust -->
+        <section class="slide">
+            <div class="overline a a-1">Trust</div>
+            <h2 class="a a-2">Calibrated Trust</h2>
+            <p class="a a-3">신뢰는 감정이 아니라 <span class="highlight">설정값</span>입니다.</p>
+            <div class="grid-2 a a-4" style="margin-top: 40px;">
+                <div style="opacity: 0.6;">
+                    <h3>High Autonomy</h3>
+                    <p style="font-size: 18px;">리팩터링 초안, 문서화,<br>로그 요약</p>
+                </div>
+                <div style="border: 2px solid #000; padding: 20px;">
+                    <h3>High Verification</h3>
+                    <p style="font-size: 18px;">보안, 인증, 결제,<br>데이터 마이그레이션</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 56: Lethal Trifecta -->
+        <section class="slide">
+            <h2 class="a a-1">보안 실패: Lethal Trifecta</h2>
+            <p class="a a-2">다음 세 가지가 동시에 열리면 위험합니다.</p>
+            <div class="a a-3" style="display: flex; gap: 20px; margin-top: 40px; width: 100%;">
+                <div style="flex: 1; border: 1px solid #ccc; padding: 20px;">신뢰할 수 없는 입력</div>
+                <div style="flex: 1; border: 1px solid #ccc; padding: 20px;">민감 데이터 접근</div>
+                <div style="flex: 1; border: 1px solid #ccc; padding: 20px;">상태 변경 권한</div>
+            </div>
+            <p class="a a-4" style="margin-top: 20px; font-weight: 700;">Rule of Two: 동시에 최대 두 가지만 허용하라!</p>
+        </section>
+
+        <!-- Slide 57: Recovery Mechanisms -->
+        <section class="slide content-left">
+            <h2 class="a a-1">실패 복구 장치</h2>
+            <ul class="a a-2">
+                <li><b>중단 조건</b>: 반복 실패 시 루프 강제 종료</li>
+                <li><b>전략 전환</b>: 같은 방식 반복 시 다른 접근 요구</li>
+                <li><b>비용 예산</b>: 토큰 및 API 비용 제한</li>
+                <li><b>체크포인트</b>: 단계별 상태 보존 및 롤백 경로</li>
+            </ul>
+        </section>
+
+        <!-- Slide 58: Beyond Automation -->
+        <section class="slide">
+            <h2 class="a a-1">자동화가 답이 아니다</h2>
+            <p class="a a-2">자동화를 더 세게 미는 것보다,<br><span class="highlight">작업을 끊고 상태를 남기는 구조</span>가 중요합니다.</p>
+            <div class="a a-3" style="margin-top: 60px;">
+                <span class="tag">ISOLATE</span>
+                <span class="tag">VERIFY</span>
+                <span class="tag">RECOVER</span>
+            </div>
+        </section>
+
+        <!-- Slide 59: Chapter 06 Preview -->
+        <section class="slide">
+            <div class="overline a a-1">Next Chapter</div>
+            <h2 class="a a-2">멀티 에이전트 패턴</h2>
+            <p class="a a-3">역할 분담과 협업 구조 설계</p>
+        </section>
+
+        <!-- Slide 60: Summary of Ch 05 -->
+        <section class="slide">
+            <h2 class="a a-1">5장 요약</h2>
+            <ul class="a a-2" style="text-align: left; display: inline-block;">
+                <li>실패는 예외가 아니라 설계의 입력이다</li>
+                <li>컨텍스트는 넓히는 것이 아니라 관리하는 것이다</li>
+                <li>유창함을 정확성과 혼동하지 마라</li>
+                <li>복구 장치를 처음부터 하네스에 포함하라</li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const progress = document.getElementById('progress');
+        const counter = document.getElementById('counter');
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            
+            progress.style.width = ((currentSlide + 1) / slides.length * 100) + '%';
+            counter.innerText = (currentSlide + 48 + 1) + ' / 100'; // Offset for batch 5
+        }
+
+        function nextSlide() { showSlide(currentSlide + 1); }
+        function prevSlide() { showSlide(currentSlide - 1); }
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+    </script>
+</body>
+</html>

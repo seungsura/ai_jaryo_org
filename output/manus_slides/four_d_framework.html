@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0A0A0B;
+            color: #E0E0E0;
+            font-family: 'Inter', sans-serif;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .grid-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: 1;
+        }
+        .header {
+            position: relative;
+            z-index: 10;
+            padding-top: 60px;
+            padding-left: 80px;
+            margin-bottom: 40px;
+        }
+        .header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 48px;
+            color: #00F2FF;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+        .header .accent-line {
+            width: 100px;
+            height: 4px;
+            background: #FF2E63;
+            margin-top: 10px;
+        }
+        .main-content {
+            position: relative;
+            z-index: 10;
+            flex-grow: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 2px;
+            background: rgba(0, 242, 255, 0.1);
+            margin-left: 80px;
+            margin-right: 80px;
+            margin-bottom: 60px;
+            border: 1px solid rgba(0, 242, 255, 0.1);
+        }
+        .framework-box {
+            background: #0A0A0B;
+            padding-top: 40px;
+            padding-left: 40px;
+            padding-right: 40px;
+            display: flex;
+            flex-direction: column;
+        }
+        .box-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 14px;
+            color: #FF2E63;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        .box-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            color: #00F2FF;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        .box-desc {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #E0E0E0;
+            margin-bottom: 15px;
+        }
+        .box-question {
+            font-size: 16px;
+            color: #808080;
+            font-style: italic;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 15px;
+        }
+        .footer {
+            position: relative;
+            z-index: 10;
+            padding-left: 80px;
+            padding-right: 80px;
+            padding-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 12px;
+            color: rgba(224, 224, 224, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="grid-bg"></div>
+        
+        <header class="header">
+            <h2>4D 프레임워크: AI 협업의 기준</h2>
+            <div class="accent-line"></div>
+        </header>
+
+        <div class="main-content">
+            <div class="framework-box">
+                <div class="box-label">AXIS 01</div>
+                <h3 class="box-title">Delegation</h3>
+                <p class="box-desc">무엇을 맡길 것인가</p>
+                <p class="box-question">"이 작업을 에이전트에게 맡겨도 되는가?"</p>
+            </div>
+            <div class="framework-box">
+                <div class="box-label">AXIS 02</div>
+                <h3 class="box-title">Description</h3>
+                <p class="box-desc">어떻게 설명할 것인가</p>
+                <p class="box-question">"목적, 범위, 기준, 금지 사항이 명확한가?"</p>
+            </div>
+            <div class="framework-box">
+                <div class="box-label">AXIS 03</div>
+                <h3 class="box-title">Discernment</h3>
+                <p class="box-desc">어떻게 판단할 것인가</p>
+                <p class="box-question">"결과를 무엇으로 검증할 것인가?"</p>
+            </div>
+            <div class="framework-box">
+                <div class="box-label">AXIS 04</div>
+                <h3 class="box-title">Diligence</h3>
+                <p class="box-desc">책임을 어떻게 질 것인가</p>
+                <p class="box-question">"최종 의사결정 책임은 누가 지는가?"</p>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <span>MANUS AGENTIC SYSTEMS // HARNESS PROJECT</span>
+            <span>PAGE 08</span>
+        </footer>
+    </div>
+</body>
+</html>

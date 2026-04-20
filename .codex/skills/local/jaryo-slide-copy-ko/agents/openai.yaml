@@ -1,4 +1,0 @@
-interface:
-  display_name: "Jaryo Slide Copy KO"
-  short_description: "Generate Korean slide copy and speaker notes with GPT"
-  default_prompt: "Use $jaryo-slide-copy-ko to turn approved slide briefs into Korean slide copy or speaker notes with the fixed model `gpt-5.4`."

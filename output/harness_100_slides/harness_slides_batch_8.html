@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harness: 에이전틱 코딩 시대의 생존 전략 - Batch 8</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
+    <style>
+        :root {
+            --bg: #fafafa;
+            --text: #1a1a1a;
+            --accent: #666;
+            --primary: #000;
+            --font-main: 'Pretendard Variable', 'Pretendard', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            width: 100%; height: 100%;
+            overflow: hidden;
+            background: var(--bg);
+            font-family: var(--font-main);
+            color: var(--text);
+        }
+
+        .deck { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
+
+        .slide {
+            position: absolute; inset: 0;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center;
+            padding: 80px;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.5s ease;
+            background: var(--bg);
+        }
+
+        .slide.active { opacity: 1; pointer-events: auto; z-index: 2; }
+
+        /* Typography */
+        .overline { font-size: 18px; letter-spacing: 8px; color: var(--accent); text-transform: uppercase; margin-bottom: 40px; font-weight: 500; }
+        h1 { font-size: 84px; font-weight: 800; line-height: 1.1; margin-bottom: 30px; letter-spacing: -2px; }
+        h2 { font-size: 64px; font-weight: 800; line-height: 1.2; margin-bottom: 40px; letter-spacing: -1.5px; }
+        h3 { font-size: 44px; font-weight: 700; line-height: 1.3; margin-bottom: 30px; }
+        p { font-size: 28px; color: #444; line-height: 1.6; max-width: 900px; margin: 0 auto; }
+        
+        .highlight { color: var(--primary); font-weight: 700; border-bottom: 4px solid #eee; }
+        .quote { font-size: 36px; font-style: italic; font-weight: 600; line-height: 1.5; color: #333; position: relative; padding: 40px; }
+        .quote::before { content: '"'; position: absolute; top: 0; left: 0; font-size: 100px; color: #eee; font-family: serif; }
+
+        /* Layouts */
+        .content-left { text-align: left; align-items: flex-start; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; width: 100%; text-align: left; }
+        
+        /* List Styles */
+        ul { list-style: none; margin-top: 40px; }
+        li { font-size: 28px; margin-bottom: 24px; position: relative; padding-left: 40px; color: #444; }
+        li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
+
+        /* Table Styles */
+        table { width: 100%; border-collapse: collapse; margin-top: 40px; font-size: 22px; }
+        th { text-align: left; padding: 20px; border-bottom: 2px solid #000; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; font-size: 16px; }
+        td { padding: 24px 20px; border-bottom: 1px solid #eee; }
+        tr:last-child td { border-bottom: none; }
+        .tag { font-family: var(--font-mono); font-size: 14px; background: #eee; padding: 4px 12px; border-radius: 4px; vertical-align: middle; margin-right: 10px; }
+
+        /* Animations */
+        .a { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .slide.active .a { opacity: 1; transform: translateY(0); }
+        .a-1 { transition-delay: 0.1s; }
+        .a-2 { transition-delay: 0.2s; }
+        .a-3 { transition-delay: 0.3s; }
+        .a-4 { transition-delay: 0.4s; }
+        .a-5 { transition-delay: 0.5s; }
+
+        /* Navigation */
+        .nav { position: fixed; bottom: 40px; right: 40px; display: flex; gap: 20px; z-index: 100; }
+        .nav-btn { background: none; border: 1px solid #ddd; width: 50px; height: 50px; cursor: pointer; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.2s; }
+        .nav-btn:hover { background: #000; color: #fff; border-color: #000; }
+        .progress { position: fixed; bottom: 0; left: 0; height: 4px; background: #000; transition: width 0.3s; z-index: 100; }
+        .counter { position: fixed; bottom: 40px; left: 40px; font-family: var(--font-mono); font-size: 14px; color: var(--accent); z-index: 100; }
+    </style>
+</head>
+<body>
+    <div class="progress" id="progress"></div>
+    <div class="counter" id="counter">85 / 92</div>
+    <div class="nav">
+        <button class="nav-btn" onclick="prevSlide()">←</button>
+        <button class="nav-btn" onclick="nextSlide()">→</button>
+    </div>
+
+    <div class="deck">
+        <!-- Slide 85: Chapter 08 Title -->
+        <section class="slide active">
+            <div class="overline a a-1">Chapter 08</div>
+            <h1 class="a a-2">이 발표가 만들어진 과정</h1>
+            <p class="a a-3">장표부터 만들지 않았습니다</p>
+        </section>
+
+        <!-- Slide 86: The Pipeline -->
+        <section class="slide">
+            <h2 class="a a-1">제작 파이프라인</h2>
+            <div class="a a-2" style="display: flex; gap: 10px; margin-top: 40px; font-size: 18px; font-weight: 700;">
+                <div style="flex: 1; border: 1px solid #000; padding: 15px;">Source<br>(근거)</div>
+                <div style="flex: 1; border: 1px solid #000; padding: 15px;">Prose<br>(논리)</div>
+                <div style="flex: 1; border: 1px solid #000; padding: 15px;">Outline<br>(구조)</div>
+                <div style="flex: 1; border: 1px solid #000; padding: 15px;">HTML<br>(표현)</div>
+                <div style="flex: 1; border: 1px solid #000; padding: 15px;">Notes<br>(해설)</div>
+            </div>
+            <p class="a a-3" style="margin-top: 40px;">층이 섞이면 근거와 편집 판단을 구분할 수 없습니다.</p>
+        </section>
+
+        <!-- Slide 87: Canonical Prose -->
+        <section class="slide">
+            <div class="overline a a-1">The Spine</div>
+            <h2 class="a a-2">Canonical Prose</h2>
+            <p class="a a-3">발표 bullet이 아니라 <span class="highlight">논리의 본문</span>을 먼저 세웠습니다.</p>
+            <ul class="a a-4" style="text-align: left; display: inline-block;">
+                <li>전체 논지의 흐름 고정</li>
+                <li>주장의 강약 조절</li>
+                <li>에이전트가 흔들릴 때 돌아올 기준점</li>
+            </ul>
+        </section>
+
+        <!-- Slide 88: Design Contract -->
+        <section class="slide">
+            <h2 class="a a-1">Design Contract</h2>
+            <p class="a a-2">"예쁘게"가 아니라 <span class="highlight">"계약대로"</span></p>
+            <div class="grid-2 a a-3" style="margin-top: 40px;">
+                <div style="background: #f0f0f0; padding: 30px;">
+                    <h3>사람의 역할</h3>
+                    <p style="font-size: 18px;">톤, 팔레트, 타이포그래피,<br>레이아웃 규칙 정의</p>
+                </div>
+                <div style="background: #f0f0f0; padding: 30px;">
+                    <h3>에이전트의 역할</h3>
+                    <p style="font-size: 18px;">잠긴 문법 안에서<br>HTML/CSS 대량 생산</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 89: Separation of Concerns -->
+        <section class="slide content-left">
+            <h2 class="a a-1">생성과 검증의 분리</h2>
+            <p class="a a-2">생성자가 자기 결과를 스스로 통과시키게 두지 않았습니다.</p>
+            <ul class="a a-3">
+                <li><b>기계적 검증</b>: Contract 위반, 링크 깨짐 확인</li>
+                <li><b>사람 검토</b>: 한국어 문체, 논지 매핑 확인</li>
+                <li><b>모델 교차 점검</b>: 다른 모델을 통한 비판적 리뷰</li>
+            </ul>
+        </section>
+
+        <!-- Slide 90: Notes at the End -->
+        <section class="slide">
+            <h2 class="a a-1">대본은 맨 마지막에</h2>
+            <p class="a a-2">말이 앞서 나가면 구조가 무너집니다.</p>
+            <div class="quote a a-3" style="margin-top: 40px;">
+                "발표 대본은 설계의 주인이 아니라,<br>결과의 해설자가 되어야 합니다."
+            </div>
+        </section>
+
+        <!-- Slide 91: Harness in Action -->
+        <section class="slide content-left">
+            <h2 class="a a-1">제작 과정의 하네스 원리</h2>
+            <table class="a a-2">
+                <thead>
+                    <tr>
+                        <th>층</th>
+                        <th>사람이 붙든 것</th>
+                        <th>에이전트가 한 것</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Source</td><td>입력 경계, 근거 층위</td><td>자료 정리 보조</td></tr>
+                    <tr><td>Prose</td><td>논리 순서, 주장 강도</td><td>초안 정리</td></tr>
+                    <tr><td>Design</td><td>시각 문법과 제약</td><td>HTML 생성</td></tr>
+                    <tr><td>Validation</td><td>통과 기준과 최종 판단</td><td>기계적 체크</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Slide 92: Summary of Ch 08 -->
+        <section class="slide">
+            <h2 class="a a-1">8장 요약</h2>
+            <ul class="a a-2" style="text-align: left; display: inline-block;">
+                <li>우리가 만든 것은 슬라이드가 아니라 파이프라인이다</li>
+                <li>입력층을 좁히고 기준 문장(Prose)을 먼저 세워라</li>
+                <li>디자인 계약(Contract)으로 에이전트의 자유를 제약하라</li>
+                <li>생성과 검증을 분리하여 그럴듯한 오류를 막아라</li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const progress = document.getElementById('progress');
+        const counter = document.getElementById('counter');
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            
+            progress.style.width = ((currentSlide + 1) / slides.length * 100) + '%';
+            counter.innerText = (currentSlide + 84 + 1) + ' / 100'; // Offset for batch 8
+        }
+
+        function nextSlide() { showSlide(currentSlide + 1); }
+        function prevSlide() { showSlide(currentSlide - 1); }
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+    </script>
+</body>
+</html>

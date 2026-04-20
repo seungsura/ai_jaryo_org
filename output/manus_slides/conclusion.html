@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0A0A0B;
+            color: #E0E0E0;
+            font-family: 'Inter', sans-serif;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .grid-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: 1;
+        }
+        .header {
+            position: relative;
+            z-index: 10;
+            padding-top: 60px;
+            padding-left: 80px;
+        }
+        .header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 48px;
+            color: #00F2FF;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+        .main-content {
+            position: relative;
+            z-index: 10;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+        .hero-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 84px;
+            color: #FF2E63;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            text-shadow: 0 0 30px rgba(255, 46, 99, 0.3);
+        }
+        .hero-subtitle {
+            font-size: 32px;
+            color: #E0E0E0;
+            margin-bottom: 80px;
+            font-weight: 700;
+        }
+        .summary-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 60px;
+            width: 100%;
+            border-top: 1px solid rgba(0, 242, 255, 0.2);
+            padding-top: 40px;
+        }
+        .summary-item {
+            text-align: center;
+        }
+        .summary-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            color: #00F2FF;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        .summary-desc {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #B0B0B0;
+        }
+        .footer {
+            position: relative;
+            z-index: 10;
+            padding-top: 20px;
+            padding-left: 80px;
+            padding-right: 80px;
+            padding-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 12px;
+            color: rgba(224, 224, 224, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="grid-bg"></div>
+        
+        <header class="header">
+            <h2>결론: Harness Engineer가 되십시오</h2>
+        </header>
+
+        <div class="main-content">
+            <h1 class="hero-title">Harness Engineer</h1>
+            <p class="hero-subtitle">에이전트가 일할 환경을 설계하는 사람</p>
+            
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-title">Future Talent</div>
+                    <div class="summary-desc">에이전트 환경을 설계하고 운영하는 사람이 미래의 핵심 인재입니다.</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-title">Skill Shift</div>
+                    <div class="summary-desc">숙련은 사라지지 않습니다. 단지 더 높은 층위로 이동할 뿐입니다.</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-title">Action</div>
+                    <div class="summary-desc">새 모델 소식에 휩쓸리지 말고, 나만의 하네스를 구축하십시오.</div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <span>MANUS AGENTIC SYSTEMS // HARNESS PROJECT</span>
+            <span>FINAL PAGE</span>
+        </footer>
+    </div>
+</body>
+</html>

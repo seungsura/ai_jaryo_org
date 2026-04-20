@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harness: 에이전틱 코딩 시대의 생존 전략 - Batch 2</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
+    <style>
+        :root {
+            --bg: #fafafa;
+            --text: #1a1a1a;
+            --accent: #666;
+            --primary: #000;
+            --font-main: 'Pretendard Variable', 'Pretendard', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            width: 100%; height: 100%;
+            overflow: hidden;
+            background: var(--bg);
+            font-family: var(--font-main);
+            color: var(--text);
+        }
+
+        .deck { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
+
+        .slide {
+            position: absolute; inset: 0;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center;
+            padding: 80px;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.5s ease;
+            background: var(--bg);
+        }
+
+        .slide.active { opacity: 1; pointer-events: auto; z-index: 2; }
+
+        /* Typography */
+        .overline { font-size: 18px; letter-spacing: 8px; color: var(--accent); text-transform: uppercase; margin-bottom: 40px; font-weight: 500; }
+        h1 { font-size: 84px; font-weight: 800; line-height: 1.1; margin-bottom: 30px; letter-spacing: -2px; }
+        h2 { font-size: 64px; font-weight: 800; line-height: 1.2; margin-bottom: 40px; letter-spacing: -1.5px; }
+        h3 { font-size: 44px; font-weight: 700; line-height: 1.3; margin-bottom: 30px; }
+        p { font-size: 28px; color: #444; line-height: 1.6; max-width: 900px; margin: 0 auto; }
+        
+        .highlight { color: var(--primary); font-weight: 700; border-bottom: 4px solid #eee; }
+        .quote { font-size: 36px; font-style: italic; font-weight: 600; line-height: 1.5; color: #333; position: relative; padding: 40px; }
+        .quote::before { content: '"'; position: absolute; top: 0; left: 0; font-size: 100px; color: #eee; font-family: serif; }
+
+        /* Layouts */
+        .content-left { text-align: left; align-items: flex-start; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; width: 100%; text-align: left; }
+        
+        /* List Styles */
+        ul { list-style: none; margin-top: 40px; }
+        li { font-size: 28px; margin-bottom: 24px; position: relative; padding-left: 40px; color: #444; }
+        li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
+
+        /* Table Styles */
+        table { width: 100%; border-collapse: collapse; margin-top: 40px; font-size: 22px; }
+        th { text-align: left; padding: 20px; border-bottom: 2px solid #000; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; font-size: 16px; }
+        td { padding: 24px 20px; border-bottom: 1px solid #eee; }
+        tr:last-child td { border-bottom: none; }
+        .tag { font-family: var(--font-mono); font-size: 14px; background: #eee; padding: 4px 12px; border-radius: 4px; vertical-align: middle; margin-right: 10px; }
+
+        /* Animations */
+        .a { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .slide.active .a { opacity: 1; transform: translateY(0); }
+        .a-1 { transition-delay: 0.1s; }
+        .a-2 { transition-delay: 0.2s; }
+        .a-3 { transition-delay: 0.3s; }
+        .a-4 { transition-delay: 0.4s; }
+        .a-5 { transition-delay: 0.5s; }
+
+        /* Navigation */
+        .nav { position: fixed; bottom: 40px; right: 40px; display: flex; gap: 20px; z-index: 100; }
+        .nav-btn { background: none; border: 1px solid #ddd; width: 50px; height: 50px; cursor: pointer; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.2s; }
+        .nav-btn:hover { background: #000; color: #fff; border-color: #000; }
+        .progress { position: fixed; bottom: 0; left: 0; height: 4px; background: #000; transition: width 0.3s; z-index: 100; }
+        .counter { position: fixed; bottom: 40px; left: 40px; font-family: var(--font-mono); font-size: 14px; color: var(--accent); z-index: 100; }
+    </style>
+</head>
+<body>
+    <div class="progress" id="progress"></div>
+    <div class="counter" id="counter">13 / 24</div>
+    <div class="nav">
+        <button class="nav-btn" onclick="prevSlide()">←</button>
+        <button class="nav-btn" onclick="nextSlide()">→</button>
+    </div>
+
+    <div class="deck">
+        <!-- Slide 13: Productivity Paradox -->
+        <section class="slide active">
+            <div class="overline a a-1">Productivity Paradox</div>
+            <h2 class="a a-2">생산성 폭발의 이면</h2>
+            <p class="a a-3">초안 생산 속도 vs <span class="highlight">품질 검증 속도</span></p>
+            <div class="grid-2 a a-4" style="margin-top: 60px;">
+                <div style="background: #f9f9f9; padding: 40px; border-radius: 20px;">
+                    <h3>Speed</h3>
+                    <p style="font-size: 22px;">AI는 1초에 수백 줄의 코드를 씁니다.</p>
+                </div>
+                <div style="background: #f9f9f9; padding: 40px; border-radius: 20px;">
+                    <h3>Risk</h3>
+                    <p style="font-size: 22px;">잘못된 판단도 빛의 속도로 증폭됩니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 14: Agent Autonomy -->
+        <section class="slide">
+            <h2 class="a a-1">에이전트의 자율성과 위험성</h2>
+            <p class="a a-2">자율성이 높을수록 <span class="highlight">통제 경계</span>가 중요해집니다.</p>
+            <ul class="a a-3" style="text-align: left; display: inline-block;">
+                <li>파일 시스템 접근 권한</li>
+                <li>셸 명령어 실행의 위험성</li>
+                <li>비결정론적 판단의 연쇄 작용</li>
+            </ul>
+        </section>
+
+        <!-- Slide 15: Chapter 02 Title -->
+        <section class="slide">
+            <div class="overline a a-1">Chapter 02</div>
+            <h1 class="a a-2">왜 Claude Code인가?</h1>
+            <p class="a a-3">도구는 어떻게 하네스로 수렴하는가</p>
+        </section>
+
+        <!-- Slide 16: Three Eras -->
+        <section class="slide content-left">
+            <h2 class="a a-1">세 시대의 흐름</h2>
+            <table class="a a-2">
+                <thead>
+                    <tr>
+                        <th>시대</th>
+                        <th>핵심 질문</th>
+                        <th>한계</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><b>Prompt</b></td><td>어떻게 말할 것인가</td><td>보지 못한 정보는 알 수 없다</td></tr>
+                    <tr><td><b>Context</b></td><td>무엇을 보여줄 것인가</td><td>실행 루프를 통제할 수 없다</td></tr>
+                    <tr><td><b>Harness</b></td><td>어떤 시스템 위에서 일하게 할 것인가</td><td>보안 및 운영의 복잡성</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Slide 17: Prompt Era -->
+        <section class="slide">
+            <div class="overline a a-1">Era 01: Prompt</div>
+            <h2 class="a a-2">프롬프트의 시대</h2>
+            <p class="a a-3">모델을 감싸는 <span class="highlight">패턴</span>의 발견</p>
+            <div class="grid-2 a a-4" style="margin-top: 40px; font-size: 20px;">
+                <p><b>Reflection</b><br>자기 결과 검토 및 수정</p>
+                <p><b>Tool Use</b><br>외부 도구 호출</p>
+                <p><b>Planning</b><br>목표를 하위 단계로 분할</p>
+                <p><b>Multi-Agent</b><br>역할 분담 및 협업</p>
+            </div>
+        </section>
+
+        <!-- Slide 18: Prompt Era Wall -->
+        <section class="slide">
+            <h2 class="a a-1">프롬프트 시대의 벽</h2>
+            <div class="quote a a-2">
+                "모델은 보지 못한 것을 알 수 없다."
+            </div>
+            <p class="a a-3" style="margin-top: 40px;">프로젝트의 컨벤션, 내부 유틸리티, 설계 결정이<br>컨텍스트에 없으면 지시는 무의미해집니다.</p>
+        </section>
+
+        <!-- Slide 19: Context Era -->
+        <section class="slide">
+            <div class="overline a a-1">Era 02: Context</div>
+            <h2 class="a a-2">컨텍스트의 시대</h2>
+            <p class="a a-3">Cursor가 보여준 <span class="highlight">전체 코드베이스</span>의 힘</p>
+            <div class="grid-2 a a-4" style="margin-top: 40px;">
+                <div style="border-bottom: 1px solid #eee; padding-bottom: 20px;">
+                    <h3>RAG</h3>
+                    <p style="font-size: 20px;">필요한 정보를 선별하여 주입</p>
+                </div>
+                <div style="border-bottom: 1px solid #eee; padding-bottom: 20px;">
+                    <h3>Indexing</h3>
+                    <p style="font-size: 20px;">코드베이스 전체를 지도로 만듦</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 20: Context Era Wall -->
+        <section class="slide">
+            <h2 class="a a-1">컨텍스트 시대의 벽</h2>
+            <p class="a a-2">좋은 입력만으로는 <span class="highlight">루프를 통제</span>할 수 없습니다.</p>
+            <ul class="a a-3" style="text-align: left; display: inline-block;">
+                <li>도구 호출 실패의 처리</li>
+                <li>테스트 결과의 오독</li>
+                <li>비용 폭주 및 보안 경계 침범</li>
+            </ul>
+        </section>
+
+        <!-- Slide 21: Harness Era -->
+        <section class="slide">
+            <div class="overline a a-1">Era 03: Harness</div>
+            <h2 class="a a-2">하네스의 시대</h2>
+            <p class="a a-3">Claude Code: <span class="highlight">작업 환경 전체</span>를 품다</p>
+            <div class="grid-2 a a-4" style="margin-top: 40px;">
+                <div style="background: #000; color: #fff; padding: 30px;">
+                    <h4 style="font-family: var(--font-mono);">CLAUDE.md</h4>
+                    <p style="font-size: 18px; color: #ccc;">상시 규칙과 기준선</p>
+                </div>
+                <div style="background: #000; color: #fff; padding: 30px;">
+                    <h4 style="font-family: var(--font-mono);">MCP</h4>
+                    <p style="font-size: 18px; color: #ccc;">외부 도구 연결 표준</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 22: New Axis of Competition -->
+        <section class="slide content-left">
+            <h2 class="a a-1">도구 경쟁의 새로운 축</h2>
+            <ul class="a a-2">
+                <li>규칙 파일과 문서 계층을 어떻게 다루는가?</li>
+                <li>위험한 명령을 어떻게 승인/차단하는가?</li>
+                <li>테스트와 린트를 자동 루프에 어떻게 넣는가?</li>
+                <li>긴 작업의 상태를 어디에 남기는가?</li>
+            </ul>
+        </section>
+
+        <!-- Slide 23: Vibe Coding -->
+        <section class="slide">
+            <h2 class="a a-1">Vibe Coding의 숙취</h2>
+            <p class="a a-2">"돌아가기만 하면 된다"는 방식의 한계</p>
+            <div class="grid-2 a a-3" style="margin-top: 40px;">
+                <div style="padding: 30px; border: 1px dashed #ccc;">
+                    <h3>Chaos</h3>
+                    <p style="font-size: 20px;">아무도 읽지 않은 코드<br>기록되지 않은 설계 결정</p>
+                </div>
+                <div style="padding: 30px; border: 1px solid #000;">
+                    <h3>Order</h3>
+                    <p style="font-size: 20px;">하네스 기반의 검증<br>엄밀함이 담긴 워크플로우</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 24: Conclusion of Ch 02 -->
+        <section class="slide">
+            <h2 class="a a-1">Claude Code는 렌즈다</h2>
+            <p class="a a-2">어떤 도구가 내 개발 문맥, 권한, 검증 루프,<br>상태 기록을 <span class="highlight">하나의 하네스</span>로 묶어 주는가?</p>
+            <div class="a a-3" style="margin-top: 60px;">
+                <span class="tag">INTEGRATION</span>
+                <span class="tag">CONTROL</span>
+                <span class="tag">PERSISTENCE</span>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const progress = document.getElementById('progress');
+        const counter = document.getElementById('counter');
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            
+            progress.style.width = ((currentSlide + 1) / slides.length * 100) + '%';
+            counter.innerText = (currentSlide + 12 + 1) + ' / 100'; // Offset for batch 2
+        }
+
+        function nextSlide() { showSlide(currentSlide + 1); }
+        function prevSlide() { showSlide(currentSlide - 1); }
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+    </script>
+</body>
+</html>

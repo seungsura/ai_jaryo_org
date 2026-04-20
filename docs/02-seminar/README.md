@@ -24,3 +24,10 @@
 - source provenance와 section mapping은 `docs/01-sources/`에서 관리합니다.
 - 근거가 부족하거나 source만으로 확정할 수 없는 내용은 `docs/01-sources/intake/open-questions.md`로 보냅니다.
 - 이 계층은 slide copy나 발표 대본을 직접 겸하지 않습니다.
+
+## 다듬기 루프
+
+- canonical prose는 `docs/00-process/seminar-refinement-plan.md`의 per-document loop를 기본값으로 다듬습니다.
+- 각 chapter는 `00-overview.md`, 인접 chapter, source map, open questions를 묶은 reference shell을 먼저 읽고 수정합니다.
+- review는 `PASS`, `REVISE`, `BLOCK`으로만 반환하고, `REVISE` 또는 `BLOCK`이면 exact rework scope를 남깁니다.
+- 진행 상태와 다음 패스 목표는 `docs/00-process/seminar-refinement-manifest.md`에 live sync로 기록합니다.

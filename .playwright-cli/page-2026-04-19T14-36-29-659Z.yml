@@ -1,0 +1,25 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e4]: CHAPTER 05
+    - heading "Context Rot는 조용히 누적된다" [level=1] [ref=e5]
+  - generic [ref=e7]:
+    - paragraph [ref=e8]: 실패는 갑자기 터지지 않는다. 기준선이 흐려지며 조용히 쌓인다
+    - generic [ref=e9]:
+      - article [ref=e10]:
+        - generic [ref=e11]: START
+        - heading "기준선" [level=2] [ref=e12]
+        - paragraph [ref=e13]: 처음에는 목적과 범위가 또렷하다
+        - paragraph [ref=e14]: 무엇을 해야 하는지, 무엇을 하면 안 되는지가 보인다
+      - article [ref=e15]:
+        - generic [ref=e16]: DRIFT
+        - heading "누적" [level=2] [ref=e17]
+        - paragraph [ref=e18]: 중간 노동이 쌓이며 기준이 조금씩 흐려진다
+        - paragraph [ref=e19]: 관련 없는 수정과 설명이 섞이면 Context Rot가 시작된다
+      - article [ref=e20]:
+        - generic [ref=e21]: FAIL
+        - heading "확신" [level=2] [ref=e22]
+        - paragraph [ref=e23]: 마지막에는 틀린 방향을 자신 있게 민다
+        - paragraph [ref=e24]: 실패 신호는 대개 하네스 공백의 다른 이름이다
+  - generic [ref=e25]:
+    - generic [ref=e26]: Harness 잘 사용하기
+    - generic [ref=e27]: "21"

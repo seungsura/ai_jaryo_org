@@ -21,7 +21,7 @@
 ## What We Localize For Jaryo
 
 - 발표용 한국어를 우선하고, `Agenda`, `Content`, `Process` 같은 English UI label은 구조적 필요가 없으면 제거
-- speaker notes와 next-slide preview 라벨은 한국어로 고정
+- notes UI는 채택하지 않고, 필요한 경우 `data-notes` 저장만 허용
 - shell 중심 구조를 먼저 정하고 copy가 그 shell 안에 맞게 압축되도록 함
 - section 흐름과 chapter label을 Jaryo deck rhythm에 맞춤
 
@@ -81,7 +81,9 @@
 - spacing rhythm
 - typography scale discipline
 - shell 재사용
+- keyboard navigation과 active slide switching
 - PDF/print를 염두에 둔 구조 정리
+- `data-notes` 저장 슬롯
 
 비채택:
 

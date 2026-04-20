@@ -1,4 +1,0 @@
-interface:
-  display_name: "Jaryo Slide Evaluation"
-  short_description: "Run PASS/REVISE/BLOCK gates for slide planning, wording, and HTML"
-  default_prompt: "Use $jaryo-slide-evaluation to run a strict PASS / REVISE / BLOCK gate for storyline, Korean tone, deck consistency, or HTML render validation."

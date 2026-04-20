@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harness: 에이전틱 코딩 시대의 생존 전략 - Batch 7</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
+    <style>
+        :root {
+            --bg: #fafafa;
+            --text: #1a1a1a;
+            --accent: #666;
+            --primary: #000;
+            --font-main: 'Pretendard Variable', 'Pretendard', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            width: 100%; height: 100%;
+            overflow: hidden;
+            background: var(--bg);
+            font-family: var(--font-main);
+            color: var(--text);
+        }
+
+        .deck { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
+
+        .slide {
+            position: absolute; inset: 0;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center;
+            padding: 80px;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.5s ease;
+            background: var(--bg);
+        }
+
+        .slide.active { opacity: 1; pointer-events: auto; z-index: 2; }
+
+        /* Typography */
+        .overline { font-size: 18px; letter-spacing: 8px; color: var(--accent); text-transform: uppercase; margin-bottom: 40px; font-weight: 500; }
+        h1 { font-size: 84px; font-weight: 800; line-height: 1.1; margin-bottom: 30px; letter-spacing: -2px; }
+        h2 { font-size: 64px; font-weight: 800; line-height: 1.2; margin-bottom: 40px; letter-spacing: -1.5px; }
+        h3 { font-size: 44px; font-weight: 700; line-height: 1.3; margin-bottom: 30px; }
+        p { font-size: 28px; color: #444; line-height: 1.6; max-width: 900px; margin: 0 auto; }
+        
+        .highlight { color: var(--primary); font-weight: 700; border-bottom: 4px solid #eee; }
+        .quote { font-size: 36px; font-style: italic; font-weight: 600; line-height: 1.5; color: #333; position: relative; padding: 40px; }
+        .quote::before { content: '"'; position: absolute; top: 0; left: 0; font-size: 100px; color: #eee; font-family: serif; }
+
+        /* Layouts */
+        .content-left { text-align: left; align-items: flex-start; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; width: 100%; text-align: left; }
+        
+        /* List Styles */
+        ul { list-style: none; margin-top: 40px; }
+        li { font-size: 28px; margin-bottom: 24px; position: relative; padding-left: 40px; color: #444; }
+        li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
+
+        /* Table Styles */
+        table { width: 100%; border-collapse: collapse; margin-top: 40px; font-size: 22px; }
+        th { text-align: left; padding: 20px; border-bottom: 2px solid #000; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; font-size: 16px; }
+        td { padding: 24px 20px; border-bottom: 1px solid #eee; }
+        tr:last-child td { border-bottom: none; }
+        .tag { font-family: var(--font-mono); font-size: 14px; background: #eee; padding: 4px 12px; border-radius: 4px; vertical-align: middle; margin-right: 10px; }
+
+        /* Animations */
+        .a { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .slide.active .a { opacity: 1; transform: translateY(0); }
+        .a-1 { transition-delay: 0.1s; }
+        .a-2 { transition-delay: 0.2s; }
+        .a-3 { transition-delay: 0.3s; }
+        .a-4 { transition-delay: 0.4s; }
+        .a-5 { transition-delay: 0.5s; }
+
+        /* Navigation */
+        .nav { position: fixed; bottom: 40px; right: 40px; display: flex; gap: 20px; z-index: 100; }
+        .nav-btn { background: none; border: 1px solid #ddd; width: 50px; height: 50px; cursor: pointer; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.2s; }
+        .nav-btn:hover { background: #000; color: #fff; border-color: #000; }
+        .progress { position: fixed; bottom: 0; left: 0; height: 4px; background: #000; transition: width 0.3s; z-index: 100; }
+        .counter { position: fixed; bottom: 40px; left: 40px; font-family: var(--font-mono); font-size: 14px; color: var(--accent); z-index: 100; }
+    </style>
+</head>
+<body>
+    <div class="progress" id="progress"></div>
+    <div class="counter" id="counter">73 / 84</div>
+    <div class="nav">
+        <button class="nav-btn" onclick="prevSlide()">←</button>
+        <button class="nav-btn" onclick="nextSlide()">→</button>
+    </div>
+
+    <div class="deck">
+        <!-- Slide 73: Chapter 07 Title -->
+        <section class="slide active">
+            <div class="overline a a-1">Chapter 07</div>
+            <h1 class="a a-2">실전 워크플로우와 도구 세팅</h1>
+            <p class="a a-3">운영 구조가 손기술을 이긴다</p>
+        </section>
+
+        <!-- Slide 74: Principles over Tools -->
+        <section class="slide">
+            <h2 class="a a-1">도구보다 원리</h2>
+            <p class="a a-2">좋은 워크플로우는 손재주가 아니라<br><span class="highlight">시스템이 원리를 강제하게 만드는 것</span>입니다.</p>
+            <div class="grid-2 a a-3" style="margin-top: 40px;">
+                <div style="background: #f9f9f9; padding: 30px;">
+                    <h3>기억 의존</h3>
+                    <p style="font-size: 18px;">매번 지시를 다시 입력하고<br>검증을 기억에 맡김 (지속 불가)</p>
+                </div>
+                <div style="background: #f9f9f9; padding: 30px;">
+                    <h3>시스템 강제</h3>
+                    <p style="font-size: 18px;">명령어와 라우팅이<br>검증 순서를 잡아줌 (표준화)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 75: Plan-Critic-Build in Practice -->
+        <section class="slide">
+            <div class="overline a a-1">Workflow</div>
+            <h2 class="a a-2">Plan-Critic-Build 실전</h2>
+            <div class="a a-3" style="display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 600px; margin-top: 40px; text-align: left;">
+                <div style="border-left: 4px solid #000; padding-left: 20px;"><b>Explore</b>: 구조와 관련 파일 파악</div>
+                <div style="border-left: 4px solid #000; padding-left: 20px;"><b>Plan</b>: 변경 계획과 위험 명시</div>
+                <div style="border-left: 4px solid #000; padding-left: 20px;"><b>Code</b>: 승인된 계획만 구현</div>
+                <div style="border-left: 4px solid #000; padding-left: 20px;"><b>Commit</b>: 검증 결과와 함께 커밋</div>
+            </div>
+        </section>
+
+        <!-- Slide 76: Tool Curation -->
+        <section class="slide">
+            <h2 class="a a-1">도구 큐레이션 (Tool Curation)</h2>
+            <p class="a a-2">많이 연결하는 것보다 <span class="highlight">필요한 것만 남기는 것</span>이 성능입니다.</p>
+            <div class="quote a a-3" style="margin-top: 40px;">
+                "유휴 인터페이스와 소음은<br>에이전트의 판단력을 흐립니다."
+            </div>
+        </section>
+
+        <!-- Slide 77: Gate Design -->
+        <section class="slide content-left">
+            <h2 class="a a-1">게이트 설계</h2>
+            <div class="grid-2 a a-2">
+                <ul style="margin-top: 0;">
+                    <li>Lint / Type Check</li>
+                    <li>Unit / Integration Test</li>
+                    <li>Code Review Gate</li>
+                </ul>
+                <ul style="margin-top: 0;">
+                    <li>Pre/Post Tool Use Hooks</li>
+                    <li>위험 명령 차단 규칙</li>
+                    <li>Human-in-the-loop</li>
+                </ul>
+            </div>
+            <p class="a a-3" style="margin-top: 40px; font-weight: 700;">기계가 확인할 수 있는 것은 기계가 닫아야 합니다.</p>
+        </section>
+
+        <!-- Slide 78: Mode Selection -->
+        <section class="slide content-left">
+            <h2 class="a a-1">위험도에 따른 모드 조절</h2>
+            <table class="a a-2">
+                <thead>
+                    <tr>
+                        <th>작업 유형</th>
+                        <th>권장 모드</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>문서 초안, 로그 요약</td><td>High Autonomy</td></tr>
+                    <tr><td>테스트 보강, 리팩터링</td><td>Auto-accept + Verify</td></tr>
+                    <tr><td>아키텍처 변경, DB</td><td>Plan Mode + Approval</td></tr>
+                    <tr><td>삭제, 배포, 권한</td><td>Manual Approval Only</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Slide 79: Session Management -->
+        <section class="slide">
+            <h2 class="a a-1">세션 관리 명령</h2>
+            <div class="grid-2 a a-2" style="margin-top: 40px; font-family: var(--font-mono); font-size: 20px;">
+                <div style="background: #eee; padding: 20px;">/context<br><span style="font-size: 14px; font-family: var(--font-main);">현재 축적량 확인</span></div>
+                <div style="background: #eee; padding: 20px;">/compact<br><span style="font-size: 14px; font-family: var(--font-main);">결정과 상태만 압축</span></div>
+                <div style="background: #eee; padding: 20px;">/clear<br><span style="font-size: 14px; font-family: var(--font-main);">세션 비우기</span></div>
+                <div style="background: #eee; padding: 20px;">/save<br><span style="font-size: 14px; font-family: var(--font-main);">상태를 파일로 외부화</span></div>
+            </div>
+        </section>
+
+        <!-- Slide 80: Physical Isolation -->
+        <section class="slide">
+            <div class="overline a a-1">Environment</div>
+            <h2 class="a a-2">물리적 격리: cmux & Worktree</h2>
+            <p class="a a-3">논리적 경계를 넘어 <span class="highlight">작업 환경</span>을 나눕니다.</p>
+            <div class="grid-2 a a-4" style="margin-top: 40px;">
+                <div style="border: 1px solid #ccc; padding: 20px;">
+                    <h3>cmux</h3>
+                    <p style="font-size: 18px;">탐색, 구현, 로그용<br>세션 분리 운영</p>
+                </div>
+                <div style="border: 1px solid #ccc; padding: 20px;">
+                    <h3>Git Worktree</h3>
+                    <p style="font-size: 18px;">파일 시스템 수준의<br>독립 작업 디렉터리</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 81: Issue-based Workflow -->
+        <section class="slide">
+            <h2 class="a a-1">이슈 기반 워크플로우</h2>
+            <p class="a a-2">이슈는 세션보다 오래가는 <span class="highlight">상태 저장소</span>입니다.</p>
+            <div class="a a-3" style="margin-top: 40px; font-size: 24px; font-weight: 700;">
+                Issue → Worktree → Session → PR → Verify → Close
+            </div>
+            <p class="a a-4" style="margin-top: 20px; font-size: 20px;">채팅창에 떠다니는 기준을 작업 환경의 일부로!</p>
+        </section>
+
+        <!-- Slide 82: Minimum Viable Workflow -->
+        <section class="slide content-left">
+            <h2 class="a a-1">최소 워크플로우 (MVW)</h2>
+            <ul class="a a-2">
+                <li>CLAUDE.md에 반복 지시 3개 적기</li>
+                <li>위험 명령 하나를 훅으로 막기</li>
+                <li>Lint/Type Check를 필수 게이트로 두기</li>
+                <li>구현 전 계획 쓰고 승인 받기</li>
+                <li>세션 종료 시 결정 사항 파일로 남기</li>
+            </ul>
+        </section>
+
+        <!-- Slide 83: Chapter 08 Preview -->
+        <section class="slide">
+            <div class="overline a a-1">Next Chapter</div>
+            <h2 class="a a-2">사례 연구 (Case Study)</h2>
+            <p class="a a-3">이 발표 자료는 어떻게 만들어졌는가</p>
+        </section>
+
+        <!-- Slide 84: Summary of Ch 07 -->
+        <section class="slide">
+            <h2 class="a a-1">7장 요약</h2>
+            <ul class="a a-2" style="text-align: left; display: inline-block;">
+                <li>운영 원리를 명령어로 고정하라</li>
+                <li>도구보다 게이트를 먼저 설계하라</li>
+                <li>위험도에 따라 자율성을 조절하라</li>
+                <li>이슈와 파일을 상태 저장소로 활용하라</li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const progress = document.getElementById('progress');
+        const counter = document.getElementById('counter');
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            
+            progress.style.width = ((currentSlide + 1) / slides.length * 100) + '%';
+            counter.innerText = (currentSlide + 72 + 1) + ' / 100'; // Offset for batch 7
+        }
+
+        function nextSlide() { showSlide(currentSlide + 1); }
+        function prevSlide() { showSlide(currentSlide - 1); }
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+    </script>
+</body>
+</html>

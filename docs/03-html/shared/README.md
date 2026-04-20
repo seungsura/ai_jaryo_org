@@ -5,6 +5,7 @@
 - `design.md`: tone, palette, typography, spacing, slide grammar를 고정하는 design contract
 - `layout-shell-reference.md`: 승인된 slide shell id와 required structure catalog
 - `minimal-light-adaptation.md`: `make-slide` minimal-light를 Jaryo deck으로 변환한 적용 규칙
+- `make-slide-adoption.md`: `make-slide` 채택/비채택과 hybrid output contract
 - `tokens.css`: 실제 HTML slide에서 재사용할 CSS custom properties
 - `slide-base.css`: slide shell, card, title, footer 같은 공용 presentation primitives
 
@@ -13,4 +14,5 @@
 ```bash
 python3 scripts/check_slide_contract.py
 python3 scripts/check_slide_korean.py docs/03-html/slides
+python3 scripts/check_deck_runtime.py docs/03-html/deck/index.html
 ```

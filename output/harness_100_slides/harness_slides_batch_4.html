@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harness: 에이전틱 코딩 시대의 생존 전략 - Batch 4</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
+    <style>
+        :root {
+            --bg: #fafafa;
+            --text: #1a1a1a;
+            --accent: #666;
+            --primary: #000;
+            --font-main: 'Pretendard Variable', 'Pretendard', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            width: 100%; height: 100%;
+            overflow: hidden;
+            background: var(--bg);
+            font-family: var(--font-main);
+            color: var(--text);
+        }
+
+        .deck { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
+
+        .slide {
+            position: absolute; inset: 0;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center;
+            padding: 80px;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.5s ease;
+            background: var(--bg);
+        }
+
+        .slide.active { opacity: 1; pointer-events: auto; z-index: 2; }
+
+        /* Typography */
+        .overline { font-size: 18px; letter-spacing: 8px; color: var(--accent); text-transform: uppercase; margin-bottom: 40px; font-weight: 500; }
+        h1 { font-size: 84px; font-weight: 800; line-height: 1.1; margin-bottom: 30px; letter-spacing: -2px; }
+        h2 { font-size: 64px; font-weight: 800; line-height: 1.2; margin-bottom: 40px; letter-spacing: -1.5px; }
+        h3 { font-size: 44px; font-weight: 700; line-height: 1.3; margin-bottom: 30px; }
+        p { font-size: 28px; color: #444; line-height: 1.6; max-width: 900px; margin: 0 auto; }
+        
+        .highlight { color: var(--primary); font-weight: 700; border-bottom: 4px solid #eee; }
+        .quote { font-size: 36px; font-style: italic; font-weight: 600; line-height: 1.5; color: #333; position: relative; padding: 40px; }
+        .quote::before { content: '"'; position: absolute; top: 0; left: 0; font-size: 100px; color: #eee; font-family: serif; }
+
+        /* Layouts */
+        .content-left { text-align: left; align-items: flex-start; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; width: 100%; text-align: left; }
+        
+        /* List Styles */
+        ul { list-style: none; margin-top: 40px; }
+        li { font-size: 28px; margin-bottom: 24px; position: relative; padding-left: 40px; color: #444; }
+        li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
+
+        /* Table Styles */
+        table { width: 100%; border-collapse: collapse; margin-top: 40px; font-size: 22px; }
+        th { text-align: left; padding: 20px; border-bottom: 2px solid #000; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; font-size: 16px; }
+        td { padding: 24px 20px; border-bottom: 1px solid #eee; }
+        tr:last-child td { border-bottom: none; }
+        .tag { font-family: var(--font-mono); font-size: 14px; background: #eee; padding: 4px 12px; border-radius: 4px; vertical-align: middle; margin-right: 10px; }
+
+        /* Animations */
+        .a { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .slide.active .a { opacity: 1; transform: translateY(0); }
+        .a-1 { transition-delay: 0.1s; }
+        .a-2 { transition-delay: 0.2s; }
+        .a-3 { transition-delay: 0.3s; }
+        .a-4 { transition-delay: 0.4s; }
+        .a-5 { transition-delay: 0.5s; }
+
+        /* Navigation */
+        .nav { position: fixed; bottom: 40px; right: 40px; display: flex; gap: 20px; z-index: 100; }
+        .nav-btn { background: none; border: 1px solid #ddd; width: 50px; height: 50px; cursor: pointer; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.2s; }
+        .nav-btn:hover { background: #000; color: #fff; border-color: #000; }
+        .progress { position: fixed; bottom: 0; left: 0; height: 4px; background: #000; transition: width 0.3s; z-index: 100; }
+        .counter { position: fixed; bottom: 40px; left: 40px; font-family: var(--font-mono); font-size: 14px; color: var(--accent); z-index: 100; }
+    </style>
+</head>
+<body>
+    <div class="progress" id="progress"></div>
+    <div class="counter" id="counter">37 / 48</div>
+    <div class="nav">
+        <button class="nav-btn" onclick="prevSlide()">←</button>
+        <button class="nav-btn" onclick="nextSlide()">→</button>
+    </div>
+
+    <div class="deck">
+        <!-- Slide 37: Chapter 04 Title -->
+        <section class="slide active">
+            <div class="overline a a-1">Chapter 04</div>
+            <h1 class="a a-2">프롬프트를 넘어서</h1>
+            <p class="a a-3">에이전트를 움직이는 기술, Harness</p>
+        </section>
+
+        <!-- Slide 38: From Sentence to Structure -->
+        <section class="slide">
+            <h2 class="a a-1">이제는 문장보다 구조다</h2>
+            <div class="grid-2 a a-2" style="margin-top: 40px;">
+                <div style="opacity: 0.5;">
+                    <h3>Prompt</h3>
+                    <p style="font-size: 20px;">어떻게 말할 것인가</p>
+                </div>
+                <div>
+                    <h3>Harness</h3>
+                    <p style="font-size: 20px;">어떤 환경 위에서 움직이고,<br>어떤 제약 안에서 일할 것인가</p>
+                </div>
+            </div>
+            <p class="a a-3" style="margin-top: 40px;">하네스는 프롬프트와 컨텍스트를 더 큰 구조 안에 배치합니다.</p>
+        </section>
+
+        <!-- Slide 39: Context Engineering Strategy -->
+        <section class="slide content-left">
+            <h2 class="a a-1">컨텍스트 엔지니어링 4대 전략</h2>
+            <div class="grid-2 a a-2">
+                <div>
+                    <h3>01. Write</h3>
+                    <p style="font-size: 18px;">지시를 구조화하여 작성 (역할, 목표, 금지 사항 분리)</p>
+                </div>
+                <div>
+                    <h3>02. Select</h3>
+                    <p style="font-size: 18px;">필요한 정보만 선별 (신호 대 잡음비 최적화)</p>
+                </div>
+                <div>
+                    <h3>03. Compress</h3>
+                    <p style="font-size: 18px;">오래된 맥락 압축 (결정과 증거 중심 요약)</p>
+                </div>
+                <div>
+                    <h3>04. Isolate</h3>
+                    <p style="font-size: 18px;">하위 작업 격리 (서브에이전트 활용)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 40: LLM-as-OS -->
+        <section class="slide content-left">
+            <h2 class="a a-1">LLM-as-OS: 운영체제로서의 LLM</h2>
+            <table class="a a-2">
+                <thead>
+                    <tr>
+                        <th>기존 OS</th>
+                        <th>LLM 시스템 대응</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>RAM (작업 기억)</td><td>컨텍스트 윈도우</td></tr>
+                    <tr><td>파일 시스템</td><td>코드베이스, RAG, 벡터 DB</td></tr>
+                    <tr><td>시스템 호출</td><td>Tool Call, API, MCP</td></tr>
+                    <tr><td>프로세스 관리</td><td>에이전트 오케스트레이션</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Slide 41: KV-cache Optimization -->
+        <section class="slide">
+            <div class="overline a a-1">Optimization</div>
+            <h2 class="a a-2">안정 접두어와 동적 접미어</h2>
+            <p class="a a-3">KV-cache를 고려한 컨텍스트 설계</p>
+            <div class="a a-4" style="display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 600px; margin-top: 40px;">
+                <div style="background: #eee; padding: 20px; border: 1px solid #000;">Stable Prefix (시스템 프롬프트, 도구 정의)</div>
+                <div style="background: #fff; padding: 20px; border: 1px dashed #000;">Variable Suffix (사용자 입력, 도구 결과)</div>
+            </div>
+            <p class="a a-5" style="font-size: 20px; margin-top: 20px;">안정적인 부분이 앞쪽에 올수록 비용과 지연이 감소합니다.</p>
+        </section>
+
+        <!-- Slide 42: MCP and Context Hub -->
+        <section class="slide">
+            <h2 class="a a-1">MCP와 Context Hub</h2>
+            <p class="a a-2">도구와 최신 지식의 표준 연결</p>
+            <div class="grid-2 a a-3" style="margin-top: 40px;">
+                <div style="background: #f0f0f0; padding: 30px;">
+                    <h3>MCP</h3>
+                    <p style="font-size: 18px;">외부 도구 연결 표준 프로토콜<br>(Slack, GitHub, DB 등)</p>
+                </div>
+                <div style="background: #f0f0f0; padding: 30px;">
+                    <h3>Context Hub</h3>
+                    <p style="font-size: 18px;">검증된 최신 문서를<br>실시간으로 주입하는 구조</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 43: Memory beyond Session -->
+        <section class="slide">
+            <h2 class="a a-1">세션을 넘어서는 기억</h2>
+            <p class="a a-2">대화창을 기억 저장소로 착각하지 마세요.</p>
+            <ul class="a a-3" style="text-align: left; display: inline-block;">
+                <li><b>CLAUDE.md</b>: 상시 규칙과 기준선</li>
+                <li><b>Git History</b>: 결정의 맥락과 근거</li>
+                <li><b>Progress.txt</b>: 장기 작업의 진행 상태</li>
+            </ul>
+        </section>
+
+        <!-- Slide 44: Agent = Model + Harness -->
+        <section class="slide">
+            <h1 class="a a-1" style="font-size: 64px;">Agent = Model + Harness</h1>
+            <p class="a a-2" style="margin-top: 40px;">모델은 추론을 담당하지만,<br>성능은 <span class="highlight">하네스</span>에서 결정됩니다.</p>
+        </section>
+
+        <!-- Slide 45: 5 Blocks of Harness -->
+        <section class="slide content-left">
+            <h2 class="a a-1">하네스의 5대 구성 요소</h2>
+            <table class="a a-2">
+                <thead>
+                    <tr>
+                        <th>블록</th>
+                        <th>역할</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><b>Guardrails</b></td><td>위험 행동 차단 및 권한 경계</td></tr>
+                    <tr><td><b>Specification</b></td><td>작업 범위와 기준선 고정</td></tr>
+                    <tr><td><b>Verification</b></td><td>결정론적 결과 필터링 (Lint, Test)</td></tr>
+                    <tr><td><b>State</b></td><td>세션 간 상태 보존</td></tr>
+                    <tr><td><b>Observability</b></td><td>루프의 흐름 가시화</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Slide 46: Deterministic vs Probabilistic -->
+        <section class="slide">
+            <h2 class="a a-1">제어의 분리</h2>
+            <div class="grid-2 a a-2" style="margin-top: 40px;">
+                <div style="border: 2px solid #000; padding: 30px;">
+                    <h3>결정론적 제어</h3>
+                    <p style="font-size: 18px;">기계가 확실히 판단<br>(Lint, Type, Test, Auth)</p>
+                </div>
+                <div style="border: 1px solid #ccc; padding: 30px;">
+                    <h3>확률적 제어</h3>
+                    <p style="font-size: 18px;">AI가 유연하게 판단<br>(Design, Review, Summary)</p>
+                </div>
+            </div>
+            <p class="a a-3" style="margin-top: 40px; font-weight: 700;">Keep Quality Left: 기계가 할 일은 앞단 게이트로!</p>
+        </section>
+
+        <!-- Slide 47: SOLID in Harness -->
+        <section class="slide content-left">
+            <h2 class="a a-1">SOLID 원칙의 재해석</h2>
+            <ul class="a a-2">
+                <li><b>S</b>: 에이전트와 도구의 역할을 분리한다</li>
+                <li><b>I</b>: 불필요한 도구와 권한을 노출하지 않는다</li>
+                <li><b>D</b>: 프롬프트보다 규칙과 컨텍스트를 외부화한다</li>
+            </ul>
+        </section>
+
+        <!-- Slide 48: Summary of Ch 04 -->
+        <section class="slide">
+            <h2 class="a a-1">4장 요약</h2>
+            <ul class="a a-2" style="text-align: left; display: inline-block;">
+                <li>하네스는 모델이 움직이는 세계의 법칙이다</li>
+                <li>선별된 컨텍스트가 신호 대 잡음비를 높인다</li>
+                <li>안정적인 접두어 설계로 비용과 지연을 줄여라</li>
+                <li>결정론적 게이트로 품질을 앞단에서 잡아라</li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const progress = document.getElementById('progress');
+        const counter = document.getElementById('counter');
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            
+            progress.style.width = ((currentSlide + 1) / slides.length * 100) + '%';
+            counter.innerText = (currentSlide + 36 + 1) + ' / 100'; // Offset for batch 4
+        }
+
+        function nextSlide() { showSlide(currentSlide + 1); }
+        function prevSlide() { showSlide(currentSlide - 1); }
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+    </script>
+</body>
+</html>

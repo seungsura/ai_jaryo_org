@@ -17,9 +17,9 @@ Rebuild source-quality documentation from the markdown files in this repository 
 - Rewrite OCR-like fragments into coherent prose, but do not invent facts that are missing from the markdown.
 - Record ambiguity, missing evidence, or conflicting phrasing in `docs/01-sources/intake/open-questions.md` instead of guessing.
 - Prefer section-scoped files under `docs/02-seminar/prose/` over one giant document unless the user explicitly wants a monolith.
-- Keep future slide regeneration in mind: preserve section boundaries, strong headings, and claims that can later collapse back into slides.
 - Follow the repository seminar voice policy: prose should read like a dense technical blog essay, not a report or translated methodology memo.
 - Avoid translationese and dead explanatory phrasing when a sharper Korean sentence is available.
+- When improving the canonical seminar prose as a set, follow `docs/00-process/seminar-refinement-plan.md` and keep `docs/00-process/seminar-refinement-manifest.md` synchronized.
 - After each meaningful draft or revision pass, prepare focused follow-up questions for the user instead of silently making speculative editorial decisions.
 
 ## Workflow
@@ -27,14 +27,16 @@ Rebuild source-quality documentation from the markdown files in this repository 
 1. Inventory the available markdown sources and identify repeated section titles, themes, and overlaps.
 2. Build or confirm a target documentation tree before drafting prose. Use [references/structure.md](references/structure.md) for the default layout.
 3. Map page ranges, source fragments, or newly collected materials to target sections.
-4. Draft or revise one section at a time in prose form.
-5. Cross-check terminology and claims across related markdown files before finalizing a section.
-6. After each pass, return a short editorial review packet: what changed, what still feels weak, and what specific questions should be asked to the user next.
-7. Promote all unresolved issues to `docs/01-sources/intake/open-questions.md` using the output contract in [references/output-contract.md](references/output-contract.md).
+4. When revising `docs/02-seminar/prose/`, read `docs/00-process/seminar-refinement-plan.md` and lock the target file's reference shell before editing.
+5. Draft or revise one section at a time in prose form.
+6. Cross-check terminology and claims across related markdown files before finalizing a section.
+7. After each pass, return a short editorial review packet: what changed, what still feels weak, and what specific questions should be asked to the user next.
+8. Promote all unresolved issues to `docs/01-sources/intake/open-questions.md` using the output contract in [references/output-contract.md](references/output-contract.md).
+9. If the work touched canonical seminar prose, update `docs/00-process/seminar-refinement-manifest.md` so later passes inherit the same loop state.
 
 ## Output Expectations
 
-- Produce readable narrative prose, not slide bullets.
+- Produce readable narrative prose, not outline-like bullet fragments.
 - Preserve the original argument order when it is recoverable from the markdown.
 - Distinguish recovered facts from editorial smoothing.
 - Surface missing content early so the user can fill the gap collaboratively.
@@ -47,6 +49,7 @@ Rebuild source-quality documentation from the markdown files in this repository 
 - Read [references/output-contract.md](references/output-contract.md) when preparing section maps, draft outputs, or open-question logs.
 - Read [references/collaboration-loop.md](references/collaboration-loop.md) when improving draft quality through user dialogue or integrating newly collected materials.
 - Read [references/tone-rules.md](references/tone-rules.md) when prose starts drifting into report-style or translated-Korean phrasing.
+- Read `docs/00-process/seminar-refinement-plan.md` when aligning multiple prose chapters or pulling later chapters back to the opening chapters' quality bar.
 
 ## Example Triggers
 

@@ -1,0 +1,25 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e4]: CHAPTER 05
+    - heading "Long Context의 적은 길이가 아니다" [level=1] [ref=e5]
+  - generic [ref=e7]:
+    - paragraph [ref=e8]: 문맥이 길다고 강해지는 것이 아니라, 잘 섞였을 때만 강해진다
+    - generic [ref=e9]:
+      - article [ref=e10]:
+        - generic [ref=e11]: TOO MUCH
+        - heading "과다 주입" [level=2] [ref=e12]
+        - paragraph [ref=e13]: 많이 넣는다고 더 정확해지지 않는다
+        - paragraph [ref=e14]: 관련 없는 문장이 늘수록 판단 비용만 커진다
+      - article [ref=e15]:
+        - generic [ref=e16]: CONFLICT
+        - heading "기준 충돌" [level=2] [ref=e17]
+        - paragraph [ref=e18]: 서로 다른 기준이 같이 들어오면 루프가 흔들린다
+        - paragraph [ref=e19]: 긴 문맥의 적은 길이가 아니라 조성이다
+      - article [ref=e20]:
+        - generic [ref=e21]: NOISE
+        - heading "노이즈" [level=2] [ref=e22]
+        - paragraph [ref=e23]: 핵심과 주변이 구분되지 않으면 드리프트가 시작된다
+        - paragraph [ref=e24]: 좋은 컨텍스트는 선별이고 압축이다
+  - generic [ref=e25]:
+    - generic [ref=e26]: Harness 잘 사용하기
+    - generic [ref=e27]: "20"

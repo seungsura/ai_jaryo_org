@@ -22,7 +22,9 @@
 
 ## Approved External
 
-- 없음
+- `docs/01-sources/approved-external/make-slide.md`
+  - 역할: HTML stage의 approved external design/process reference
+  - 상태: active
 
 ## 관리 메모
 

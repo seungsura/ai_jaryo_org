@@ -1,4 +1,0 @@
-interface:
-  display_name: "Jaryo Slide Story Planning KO"
-  short_description: "Plan chapter slide briefs and exception slides before copy or HTML"
-  default_prompt: "Use $jaryo-slide-story-planning-ko to govern chapter batches, write internal slide briefs, and assign slide families before Korean copy or HTML generation starts."

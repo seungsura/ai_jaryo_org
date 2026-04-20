@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harness: 에이전틱 코딩 시대의 생존 전략 - Batch 1</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
+    <style>
+        :root {
+            --bg: #fafafa;
+            --text: #1a1a1a;
+            --accent: #666;
+            --primary: #000;
+            --font-main: 'Pretendard Variable', 'Pretendard', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            width: 100%; height: 100%;
+            overflow: hidden;
+            background: var(--bg);
+            font-family: var(--font-main);
+            color: var(--text);
+        }
+
+        .deck { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
+
+        .slide {
+            position: absolute; inset: 0;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center;
+            padding: 80px;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.5s ease;
+            background: var(--bg);
+        }
+
+        .slide.active { opacity: 1; pointer-events: auto; z-index: 2; }
+
+        /* Typography */
+        .overline { font-size: 18px; letter-spacing: 8px; color: var(--accent); text-transform: uppercase; margin-bottom: 40px; font-weight: 500; }
+        h1 { font-size: 84px; font-weight: 800; line-height: 1.1; margin-bottom: 30px; letter-spacing: -2px; }
+        h2 { font-size: 64px; font-weight: 800; line-height: 1.2; margin-bottom: 40px; letter-spacing: -1.5px; }
+        h3 { font-size: 44px; font-weight: 700; line-height: 1.3; margin-bottom: 30px; }
+        p { font-size: 28px; color: #444; line-height: 1.6; max-width: 900px; margin: 0 auto; }
+        
+        .highlight { color: var(--primary); font-weight: 700; border-bottom: 4px solid #eee; }
+        .quote { font-size: 36px; font-style: italic; font-weight: 600; line-height: 1.5; color: #333; position: relative; padding: 40px; }
+        .quote::before { content: '"'; position: absolute; top: 0; left: 0; font-size: 100px; color: #eee; font-family: serif; }
+
+        /* Layouts */
+        .content-left { text-align: left; align-items: flex-start; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; width: 100%; text-align: left; }
+        
+        /* List Styles */
+        ul { list-style: none; margin-top: 40px; }
+        li { font-size: 28px; margin-bottom: 24px; position: relative; padding-left: 40px; color: #444; }
+        li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
+
+        /* Table Styles */
+        table { width: 100%; border-collapse: collapse; margin-top: 40px; font-size: 22px; }
+        th { text-align: left; padding: 20px; border-bottom: 2px solid #000; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; font-size: 16px; }
+        td { padding: 24px 20px; border-bottom: 1px solid #eee; }
+        tr:last-child td { border-bottom: none; }
+        .tag { font-family: var(--font-mono); font-size: 14px; background: #eee; padding: 4px 12px; border-radius: 4px; vertical-align: middle; margin-right: 10px; }
+
+        /* Animations */
+        .a { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .slide.active .a { opacity: 1; transform: translateY(0); }
+        .a-1 { transition-delay: 0.1s; }
+        .a-2 { transition-delay: 0.2s; }
+        .a-3 { transition-delay: 0.3s; }
+        .a-4 { transition-delay: 0.4s; }
+        .a-5 { transition-delay: 0.5s; }
+
+        /* Navigation */
+        .nav { position: fixed; bottom: 40px; right: 40px; display: flex; gap: 20px; z-index: 100; }
+        .nav-btn { background: none; border: 1px solid #ddd; width: 50px; height: 50px; cursor: pointer; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.2s; }
+        .nav-btn:hover { background: #000; color: #fff; border-color: #000; }
+        .progress { position: fixed; bottom: 0; left: 0; height: 4px; background: #000; transition: width 0.3s; z-index: 100; }
+        .counter { position: fixed; bottom: 40px; left: 40px; font-family: var(--font-mono); font-size: 14px; color: var(--accent); z-index: 100; }
+    </style>
+</head>
+<body>
+    <div class="progress" id="progress"></div>
+    <div class="counter" id="counter">1 / 12</div>
+    <div class="nav">
+        <button class="nav-btn" onclick="prevSlide()">←</button>
+        <button class="nav-btn" onclick="nextSlide()">→</button>
+    </div>
+
+    <div class="deck">
+        <!-- Slide 01: Title -->
+        <section class="slide active">
+            <div class="overline a a-1">Seminar 2026</div>
+            <h1 class="a a-2">Harness</h1>
+            <p class="a a-3">에이전틱 코딩 시대의 생존 전략</p>
+            <div style="margin-top: 60px;" class="a a-4">
+                <span class="tag">AI AGENT</span>
+                <span class="tag">SOFTWARE ENGINEERING</span>
+                <span class="tag">HARNESS</span>
+            </div>
+        </section>
+
+        <!-- Slide 02: Purpose -->
+        <section class="slide">
+            <h2 class="a a-1">세미나의 목적</h2>
+            <p class="a a-2">챗봇과 싸우지 않고,<br><span class="highlight">에이전트가 일할 환경을 설계하는 법</span>을 다룹니다.</p>
+            <ul class="a a-3" style="text-align: left; display: inline-block;">
+                <li>프롬프트 엔지니어링을 넘어선 '하네스' 설계</li>
+                <li>반복 가능한 규칙과 통제 구조 구축</li>
+                <li>AI 시대에 더 중요해지는 고전 방법론의 재발견</li>
+            </ul>
+        </section>
+
+        <!-- Slide 03: Evolution -->
+        <section class="slide">
+            <div class="overline a a-1">Evolution of Tools</div>
+            <h2 class="a a-2">코딩 도구의 진화 단계</h2>
+            <div class="grid-2 a a-3" style="margin-top: 40px;">
+                <div>
+                    <h3>01. 자동완성</h3>
+                    <p>코드의 다음 단어를 예측 (Copilot, IntelliSense)</p>
+                </div>
+                <div>
+                    <h3>02. 채팅</h3>
+                    <p>자연어로 대화하며 코드 생성 (ChatGPT, Claude)</p>
+                </div>
+                <div style="grid-column: span 2; background: #f0f0f0; padding: 40px; border-radius: 20px;">
+                    <h3 style="margin-bottom: 10px;">03. 에이전트 (The Next Step)</h3>
+                    <p>파일 읽기, 셸 실행, 테스트 수행, 자가 수정을 스스로 판단</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 04: Definition -->
+        <section class="slide">
+            <h2 class="a a-1">에이전트 시대의 정의</h2>
+            <div class="quote a a-2">
+                "에이전트는 단순히 코드를 쓰는 존재가 아니라,<br>작업의 실행 경로를 스스로 결정하는 존재입니다."
+            </div>
+            <div class="grid-2 a a-3" style="margin-top: 60px; font-size: 24px;">
+                <p><b>자율성 (Autonomy)</b><br>도구 사용 권한을 가짐</p>
+                <p><b>루프 (Loop)</b><br>결과를 보고 스스로 수정</p>
+            </div>
+        </section>
+
+        <!-- Slide 05: Skill Shift -->
+        <section class="slide">
+            <h2 class="a a-1">개발자 역량의 이동</h2>
+            <div class="grid-2 a a-2">
+                <div style="border-right: 1px solid #eee; padding-right: 40px;">
+                    <div class="overline" style="letter-spacing: 2px;">Past</div>
+                    <h3>프롬프트 작성</h3>
+                    <p>어떻게 질문할 것인가?<br>(Prompt Engineering)</p>
+                </div>
+                <div>
+                    <div class="overline" style="letter-spacing: 2px; color: #000;">Future</div>
+                    <h3>작업 환경 설계</h3>
+                    <p>어떤 환경에서 일하게 할 것인가?<br><span class="highlight">Harness Engineering</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 06: Why Harness? -->
+        <section class="slide">
+            <h2 class="a a-1">왜 'Harness'인가?</h2>
+            <p class="a a-2">말(에이전트)이 제멋대로 뛰지 않도록<br><span class="highlight">방향을 잡고 힘을 전달하는 마구(Harness)</span>가 필요합니다.</p>
+            <div class="grid-2 a a-3" style="margin-top: 60px;">
+                <div style="background: #fff; padding: 30px; border: 1px solid #eee;">
+                    <h4>반복 가능성</h4>
+                    <p style="font-size: 20px;">누가 실행해도 같은 결과</p>
+                </div>
+                <div style="background: #fff; padding: 30px; border: 1px solid #eee;">
+                    <h4>통제 구조</h4>
+                    <p style="font-size: 20px;">위험한 행동의 사전 차단</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 07: History of Abstraction -->
+        <section class="slide content-left">
+            <div class="overline a a-1">History</div>
+            <h2 class="a a-2">코딩의 추상화 역사</h2>
+            <table class="a a-3">
+                <thead>
+                    <tr>
+                        <th>시대</th>
+                        <th>전환</th>
+                        <th>위임한 것</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1960s</td><td>고급 언어</td><td>레지스터 최적화</td></tr>
+                    <tr><td>1990s</td><td>Java / GC</td><td>메모리 직접 관리</td></tr>
+                    <tr><td>2010s</td><td>Cloud</td><td>서버 운영 및 확장</td></tr>
+                    <tr><td>2020s</td><td>AI Agent</td><td>코드 작성 및 환경 설계</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Slide 08: Layers of Control -->
+        <section class="slide">
+            <h2 class="a a-1">통제의 층위</h2>
+            <div class="a a-2" style="display: flex; flex-direction: column; gap: 20px; width: 100%; max-width: 600px;">
+                <div style="padding: 20px; border: 1px solid #000;">01. Prompt (지시)</div>
+                <div style="padding: 20px; border: 2px solid #000; font-weight: 700;">02. Context (맥락)</div>
+                <div style="padding: 40px; border: 4px solid #000; font-weight: 900; background: #eee;">03. Harness (구조)</div>
+            </div>
+            <p class="a a-3" style="margin-top: 40px;">구조가 지시보다 강력합니다.</p>
+        </section>
+
+        <!-- Slide 09: Classic Methods -->
+        <section class="slide">
+            <h2 class="a a-1">다시 중요해지는 고전</h2>
+            <div class="grid-2 a a-2">
+                <div>
+                    <h3>TDD</h3>
+                    <p>에이전트의 환각을 방지하는 가장 강력한 안전장치</p>
+                </div>
+                <div>
+                    <h3>SDD</h3>
+                    <p>모호한 자연어를 명확한 명세로 바꾸는 과정</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 10: Harness Engineer -->
+        <section class="slide">
+            <h2 class="a a-1">Harness Engineer의 등장</h2>
+            <p class="a a-2">우리는 이제 코더(Coder)가 아니라<br><span class="highlight">환경 설계자(Environment Architect)</span>가 되어야 합니다.</p>
+            <div class="a a-3" style="margin-top: 60px;">
+                <span class="tag">DESIGN</span>
+                <span class="tag">VERIFY</span>
+                <span class="tag">AUTOMATE</span>
+            </div>
+        </section>
+
+        <!-- Slide 11: Shift of Mastery -->
+        <section class="slide">
+            <div class="overline a a-1">Chapter 01</div>
+            <h2 class="a a-2">숙련의 이동</h2>
+            <p class="a a-3">손끝의 속도에서 <span class="highlight">설계의 깊이</span>로</p>
+            <ul class="a a-4" style="text-align: left; display: inline-block;">
+                <li>타이핑의 희소성 하락</li>
+                <li>의사결정의 가치 상승</li>
+                <li>검증 능력의 중요성 폭발</li>
+            </ul>
+        </section>
+
+        <!-- Slide 12: Bottleneck Shift -->
+        <section class="slide">
+            <h2 class="a a-1">병목 구간의 변화</h2>
+            <div class="grid-2 a a-2">
+                <div style="opacity: 0.5;">
+                    <div class="overline">Before</div>
+                    <h3>코드 작성</h3>
+                    <p>구현에 걸리는 시간</p>
+                </div>
+                <div>
+                    <div class="overline" style="color: #000;">After</div>
+                    <h3>정의 및 검증</h3>
+                    <p>무엇을 만들지 정하고,<br>맞게 되었는지 확인하는 시간</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const progress = document.getElementById('progress');
+        const counter = document.getElementById('counter');
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            
+            // Update progress and counter
+            progress.style.width = ((currentSlide + 1) / slides.length * 100) + '%';
+            counter.innerText = (currentSlide + 1) + ' / ' + slides.length;
+        }
+
+        function nextSlide() { showSlide(currentSlide + 1); }
+        function prevSlide() { showSlide(currentSlide - 1); }
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+    </script>
+</body>
+</html>

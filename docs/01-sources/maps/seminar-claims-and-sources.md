@@ -92,6 +92,9 @@
 - 내부 확인 항목
   - `claude-code-seminar-kakao.md`의 표지와 말미에는 `김영동` 표기가 남아 있고, 부록 reference에는 `이재영` 계정이 등장합니다.
   - 내부 확인 기준으로 두 인물 모두 `카카오 AI 팀` 인원으로만 기록하고, 본문에는 발표자나 제작자 같은 별도 role label을 부여하지 않습니다.
+- approved external design/process reference
+  - `make-slide`는 본문 claim의 factual source가 아니라 HTML stage의 design/process reference입니다.
+  - `minimal-light` theme, shell reuse, hybrid deck runtime 같은 구현 계약만 보강하고 canonical prose의 자리를 대신하지 않습니다.
 - supplemental markdown source
   - page 076~082는 수집층, 계획층, 실행층 분리, `CLAUDE.md`, `slides-grab`, 승인 게이트, `피드백 8회 반복`을 통해 발표 자체가 하네스 설계의 사례가 되도록 구성돼 있습니다.
 

@@ -7,3 +7,7 @@
 - 기본 정책은 local markdown 우선입니다.
 - 외부 source를 추가할 때는 provenance와 승인 맥락을 함께 남깁니다.
 - 승인되지 않은 외부 source는 이 폴더에 두지 않습니다.
+
+## 현재 snapshot
+
+- `make-slide.md`: HTML stage의 approved external design/process reference snapshot

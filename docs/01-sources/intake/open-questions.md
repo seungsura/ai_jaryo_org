@@ -1,16 +1,17 @@
 # Open Questions
 
-현재 저장소의 markdown 기준으로 사실관계가 미해결인 항목은 없습니다. 다만 이번 prose 검증 패스에서 남은 편집 판단 1건은 아래에 열어 둡니다.
+현재 저장소의 markdown 기준으로 사실관계가 미해결인 항목은 없습니다. 이번 prose 검증 패스에서 남았던 편집 판단도 이번 루프에서 닫았습니다.
 
 ## Open Editorial Audit
 
-## Q09. Sections 06-07 example density
-- 대상 섹션: `docs/02-seminar/prose/06-multi-agent-patterns.md`, `docs/02-seminar/prose/07-practical-workflow-and-tooling.md`
-- 부족한 내용: 패턴과 워크플로우의 원리는 정리돼 있지만, 외부 청중 기준으로는 각 패턴을 같은 시나리오 위에서 비교하는 공통 예시가 하나 더 있으면 이해 속도가 빨라집니다.
-- 왜 보류했는가: 현재 local markdown은 패턴 taxonomy와 내부 사례를 충분히 주지만, 다섯 패턴을 같은 문제 위에 나란히 얹는 단일 예시는 제공하지 않습니다.
-- 사용자 확인 필요: 다음 편집 패스에서 다섯 패턴을 하나의 공통 시나리오로 다시 설명하는 보강 단락을 추가할지 확인이 필요합니다.
-
 ## Closed Audit Records
+
+## Q09. Sections 06-07 example density
+- 상태: closed
+- 대상 섹션: `docs/02-seminar/prose/06-multi-agent-patterns.md`, `docs/02-seminar/prose/07-practical-workflow-and-tooling.md`
+- 확인 내용: `06`장을 저장소 변경이라는 하나의 공통 시나리오 위에서 다섯 패턴 비교로 다시 묶었고, `07`장은 그 비교를 `Write / Select / Compress / Isolate`, command, gate, state 외부화, worktree, issue 운영으로 이어 받도록 재구성했습니다.
+- 왜 닫았는가: 패턴과 워크플로우가 같은 문제를 서로 다른 높이에서 다룬다는 비교 spine이 본문 안에 들어와, 추가 사용자 확인 없이도 이해 속도 저하 문제를 해소했습니다.
+- 추가 사용자 확인: 없음
 
 ## Q10. Public-facing handling of internal identifiers
 - 상태: closed

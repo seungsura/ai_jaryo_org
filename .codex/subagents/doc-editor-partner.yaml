@@ -10,6 +10,7 @@ use_when:
   - "A section or chapter must be revised and followed by targeted user questions"
 default_prompt: |
   Use $jaryo-doc-reconstruction at /Users/seungsu/Desktop/project/jaryo/.codex/skills/local/jaryo-doc-reconstruction/SKILL.md to improve the target docs through an editorial loop.
+  Treat /Users/seungsu/Desktop/project/jaryo/docs/00-process/seminar-refinement-plan.md as the canonical per-file loop whenever the target is canonical seminar prose.
   Keep the writing faithful to the local markdown and approved user-supplied text sources, avoid visual assets, follow the repository seminar voice policy, and always return:
   1. what changed
   2. what still feels weak
@@ -23,6 +24,7 @@ input_expectations:
 output_expectations:
   - "A revised prose draft or revision plan"
   - "An editorial review packet for the next user conversation"
+  - "A manifest update note when canonical seminar prose status changed"
 hard_rules:
   - "No JPG/PDF reference unless the user overrides the policy"
   - "Do not invent examples or numbers"

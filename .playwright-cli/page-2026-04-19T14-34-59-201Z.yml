@@ -1,0 +1,772 @@
+- generic [ref=e2]:
+  - main [ref=e4]:
+    - generic [ref=e5]:
+      - heading "Harness를 설계하는 법" [level=1] [ref=e7]
+      - paragraph [ref=e8]: 챗봇과 씨름하는 대신, 에이전트가 일할 구조를 짠다
+      - generic [ref=e9]:
+        - paragraph [ref=e11]: 타이핑보다 규칙과 검증이 앞에 온다
+        - paragraph [ref=e13]: 도구 경쟁은 Harness 경쟁으로 모인다
+        - paragraph [ref=e15]: 마지막은 실전 workflow와 제작 사례다
+    - generic [ref=e16]:
+      - generic [ref=e17]: Harness 잘 사용하기
+      - generic [ref=e18]: "1"
+  - generic:
+    - main:
+      - generic:
+        - heading "전체 구조" [level=1]
+        - paragraph: 이동, 수렴, 방법, 운영, 실천 순으로 좁혀 간다
+      - generic:
+        - article:
+          - generic: "01"
+          - generic: 이동
+          - paragraph: 코딩의 중심이 손가락에서 운영 구조로 옮겨 간다
+        - article:
+          - generic: "02"
+          - generic: 수렴
+          - paragraph: 도구 경쟁은 결국 Harness 경쟁으로 모인다
+        - article:
+          - generic: "03"
+          - generic: 방법
+          - paragraph: Spec-first와 TDD가 다시 앞줄로 나온다
+        - article:
+          - generic: "04"
+          - generic: 운영
+          - paragraph: 실패 패턴과 멀티 에이전트 운영 원리를 본다
+        - article:
+          - generic: "05"
+          - generic: 실천
+          - paragraph: 이 발표 제작 과정과 다음 습관으로 닫는다
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "2"
+  - generic:
+    - main:
+      - generic:
+        - text: CHAPTER 01
+        - heading "코딩은 어디로 가는가" [level=1]
+        - paragraph: 타이핑이 사라지는가가 아니라 숙련이 어디로 옮겨 가는가
+        - generic:
+          - generic: Prompt /
+          - generic: Context /
+          - generic: Harness
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "3"
+  - generic:
+    - main:
+      - generic:
+        - generic: CHAPTER 01
+        - heading "직접 하던 일은 계속 줄어든다" [level=1]
+      - generic:
+        - paragraph: 직접 해야 할 일은 줄고, 더 높은 구조를 설계하는 일이 남았다
+        - generic:
+          - article:
+            - generic: STEP 01
+            - heading "직접 제어" [level=2]
+            - paragraph: 기계어와 포인터를 손으로 붙들었다
+            - paragraph: 낮은 수준의 세부를 사람이 끝까지 책임졌다
+          - article:
+            - generic: STEP 02
+            - heading "위임 확장" [level=2]
+            - paragraph: 프레임워크와 클라우드가 반복 작업을 가져갔다
+            - paragraph: 직접 구현보다 구조 선택과 조합이 더 중요해졌다
+          - article:
+            - generic: STEP 03
+            - heading "환경 설계" [level=2]
+            - paragraph: AI 에이전트에게 코딩을 맡기고 환경을 설계한다
+            - paragraph: 이제 핵심은 규칙과 문맥과 검증을 짜는 일이다
+            - paragraph: 2020s
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "4"
+  - generic:
+    - main:
+      - generic:
+        - generic: CHAPTER 01
+        - heading "타이핑보다 환경 설계가 앞선다" [level=1]
+      - generic:
+        - paragraph: 손보다 먼저 붙들 일은 규칙, 문맥, 검증이다
+        - generic:
+          - article:
+            - generic: RULE
+            - heading "규칙" [level=2]
+            - paragraph: 문서와 규칙 파일이 기준선을 잠근다
+            - paragraph: 좋은 지침서는 참고 문서가 아니라 실행 기준이 된다
+          - article:
+            - generic: CONTEXT
+            - heading "문맥" [level=2]
+            - paragraph: 무엇을 읽힐지 선택하는 일이 앞에 온다
+            - paragraph: 시야를 잘못 주면 좋은 모델도 그릇된 답으로 간다
+          - article:
+            - generic: VERIFY
+            - heading "검증" [level=2]
+            - paragraph: 결과를 걸러내는 루프가 실력을 드러낸다
+            - paragraph: 새 역할은 Harness Engineer에 더 가깝다
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "5"
+  - generic:
+    - main:
+      - generic:
+        - text: CHAPTER 02
+        - heading "왜 Claude Code인가" [level=1]
+        - paragraph: 중요한 것은 제품 선호가 아니라 도구 진화의 방향이다
+        - generic:
+          - generic: Claude Code /
+          - generic: Cursor /
+          - generic: Copilot
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "6"
+  - generic:
+    - main:
+      - generic:
+        - generic: CHAPTER 02
+        - heading "도구 진화의 세 단계" [level=1]
+      - generic:
+        - paragraph: 질문도 바뀌었다. 무엇을 말할지에서 무엇을 통제할지로 갔다
+        - generic:
+          - article:
+            - generic: "2022"
+            - heading "Prompt" [level=2]
+            - paragraph: 어떻게 말해야 원하는 코드를 얻는가
+            - paragraph: 초점은 지시문의 품질과 추론 기법에 있었다
+          - article:
+            - generic: "2025"
+            - heading "Context" [level=2]
+            - paragraph: 무엇을 보여 줘야 덜 틀리게 만드는가
+            - paragraph: 프로젝트 전체를 읽히는 주입과 선별이 중요해졌다
+          - article:
+            - generic: "2026"
+            - heading "Harness" [level=2]
+            - paragraph: 무엇을 통제하고 어디서 멈출 것인가
+            - paragraph: 권한, 검증, 상태, 분업이 경쟁력의 중심이 됐다
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "7"
+  - generic:
+    - main:
+      - generic:
+        - generic: CHAPTER 02
+        - heading "에이전트 루프가 문제를 바꾼다" [level=1]
+      - generic:
+        - paragraph: 자료 수집, 실행, 검증이 한 루프로 이어질 때 하네스가 필수가 된다
+        - generic:
+          - article:
+            - generic: LOOP 01
+            - heading "Gather" [level=2]
+            - paragraph: 무엇을 읽을지 잘못 고르면 출발부터 오염된다
+            - paragraph: 쓰레기 문맥이 들어오면 그다음 단계도 함께 흔들린다
+          - article:
+            - generic: LOOP 02
+            - heading "Action" [level=2]
+            - paragraph: 권한이 느슨하면 실수는 곧바로 사고가 된다
+            - paragraph: 수정과 실행은 도구 사용 규칙 아래서만 안전하다
+          - article:
+            - generic: LOOP 03
+            - heading "Verify" [level=2]
+            - paragraph: 검증이 약하면 틀린 방향으로 끝까지 달린다
+            - paragraph: 이 루프를 고정하는 바깥 구조가 바로 Harness다
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "8"
+  - generic:
+    - main:
+      - generic:
+        - generic: CHAPTER 02
+        - heading "Claude Code는 하네스를 드러낸다" [level=1]
+      - generic:
+        - paragraph: 좋은 에이전트는 무엇을 할 수 있는가보다 어떤 구조 위에서 굴러가는가를 보여 준다
+        - generic:
+          - article:
+            - generic: PLAN
+            - heading "계획 분리" [level=2]
+            - paragraph: Plan Mode가 실행 전 사고를 떼어 놓는다
+            - paragraph: 긴 작업일수록 판단과 실행을 같은 층에 두지 않는다
+          - article:
+            - generic: CONTROL
+            - heading "권한 통제" [level=2]
+            - paragraph: approval과 permission이 행동 경계를 잘게 나눈다
+            - paragraph: 무엇을 하게 할지보다 무엇을 못 하게 할지가 중요하다
+          - article:
+            - generic: DIVIDE
+            - heading "분업 구조" [level=2]
+            - paragraph: skills와 subagents가 책임을 좁게 쪼갠다
+            - paragraph: 에이전트를 하나 더 쓰는 이유가 더 선명해진다
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "9"
+  - generic:
+    - main:
+      - generic:
+        - generic: CHAPTER 02
+        - heading "모델 경쟁이 아니라 하네스 경쟁" [level=1]
+      - generic:
+        - paragraph: 도구 이름은 달라도 더 두꺼운 Harness를 요구하는 흐름은 같다
+        - generic:
+          - article:
+            - generic: OPENAI
+            - heading "Codex" [level=2]
+            - paragraph: agent-first workspace로 일의 단위를 다시 묶는다
+            - paragraph: 문맥과 행동을 작업 공간 수준에서 다루기 시작했다
+          - article:
+            - generic: ANTHROPIC
+            - heading "Claude Code" [level=2]
+            - paragraph: runtime control을 전면에 드러낸다
+            - paragraph: 권한, 계획, 분업을 하네스 부품으로 보여 준다
+          - article:
+            - generic: OTHER
+            - heading "OpenCode" [level=2]
+            - paragraph: planner와 permission 경계를 노출한다
+            - paragraph: 도구 경쟁이 같은 구조 문제로 모인다는 증거다
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "10"
+  - generic:
+    - main:
+      - generic:
+        - text: CHAPTER 03
+        - heading "방법론이 다시 앞에 온다" [level=1]
+        - paragraph: 자율성이 커질수록 무엇을 만들지와 어디서 멈출지가 먼저다
+        - generic:
+          - generic: SDD /
+          - generic: TDD /
+          - generic: Harness
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "11"
+  - generic:
+    - main:
+      - generic:
+        - generic: CHAPTER 03
+        - heading "왜 지금 방법론인가" [level=1]
+      - generic:
+        - paragraph: 질문이 바뀌었다. 빨리 만드는가에서 무엇을 고정할 것인가로 갔다
+        - generic:
+          - article:
+            - generic: "2025.02"
+            - heading "폭발" [level=2]
+            - paragraph: 일단 빨리 만들어 보자는 분위기가 앞섰다
+            - paragraph: 초기 충격은 생성 속도 그 자체였다
+          - article:
+            - generic: 2025 H2
+            - heading "고정" [level=2]
+            - paragraph: 구현 전에 방향을 못 박으려는 움직임이 나왔다
+            - paragraph: Spec-first와 SDD가 여기에 응답했다
+          - article:
+            - generic: "2026"
+            - heading "검증" [level=2]
+            - paragraph: 구현 뒤 결과를 걸러내는 규율이 다시 중요해졌다
+            - paragraph: TDD와 Context control이 함께 다시 올라왔다
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "12"
+  - generic:
+    - main:
+      - generic:
+        - generic: CHAPTER 03
+        - heading "Spec-first가 방향을 못 박는다" [level=1]
+      - generic:
+        - paragraph: 속도를 죽이려는 절차가 아니라 잘못된 목표로 달리는 일을 막는 장치다
+        - generic:
+          - article:
+            - generic: GOAL
+            - heading "목적" [level=2]
+            - paragraph: 무엇을 만들라고 하는지 먼저 닫는다
+            - paragraph: 목적이 흐리면 빠른 생성은 곧 빠른 드리프트가 된다
+          - article:
+            - generic: SCOPE
+            - heading "범위" [level=2]
+            - paragraph: 무엇을 하지 말아야 하는지도 함께 적는다
+            - paragraph: 빼야 할 범위가 없으면 에이전트는 쉽게 넓어진다
+          - article:
+            - generic: DONE
+            - heading "완료 기준" [level=2]
+            - paragraph: 무엇을 통과로 볼지 결정론적으로 남긴다
+            - paragraph: 좋은 스펙은 구현보다 검증 기준을 더 선명하게 남긴다
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "13"
+  - generic:
+    - main:
+      - generic:
+        - generic: CHAPTER 03
+        - heading "TDD가 가장 거친 가드레일" [level=1]
+      - generic:
+        - paragraph: 에이전트는 그럴듯한 코드를 쉽게 낸다. 테스트는 그 자신감을 잘라내는 벽이다
+        - generic:
+          - article:
+            - generic: RED
+            - heading "Red" [level=2]
+            - paragraph: 실패하는 테스트로 기대 동작을 먼저 선언한다
+            - paragraph: 정답 경계를 사람이 먼저 박아 넣는다
+          - article:
+            - generic: GREEN
+            - heading "Green" [level=2]
+            - paragraph: 테스트를 통과하는 최소 구현만 허용한다
+            - paragraph: 기능을 넓히는 속도보다 기준 준수가 앞선다
+          - article:
+            - generic: REVIEW
+            - heading "Review" [level=2]
+            - paragraph: 테스트 삭제나 완화 같은 기만을 막는다
+            - paragraph: AI 시대의 TDD는 가장 거친 가드레일이다
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "14"
+  - generic:
+    - main:
+      - generic:
+        - text: CHAPTER 04
+        - heading "프롬프트를 넘어서 Harness" [level=1]
+        - paragraph: 문장은 시작일 뿐이고 병목은 운영 구조로 이동했다
+        - generic:
+          - generic: Prompt /
+          - generic: Context /
+          - generic: Harness
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "15"
+  - generic:
+    - main:
+      - generic:
+        - generic: CHAPTER 04
+        - heading "Prompt, Context, Harness" [level=1]
+      - generic:
+        - paragraph: 무엇을 말할지, 무엇을 보여 줄지, 무엇을 통제할지는 서로 다른 층의 문제다
+        - generic:
+          - article:
+            - generic: PROMPT
+            - heading "Prompt" [level=2]
+            - paragraph: 어떻게 말할 것인가
+            - paragraph: 지시문과 추론 유도는 이 층의 문제다
+          - article:
+            - generic: CONTEXT
+            - heading "Context" [level=2]
+            - paragraph: 무엇을 보여 줄 것인가
+            - paragraph: 시야를 잘못 주면 모델은 쉽게 흔들린다
+          - article:
+            - generic: HARNESS
+            - heading "Harness" [level=2]
+            - paragraph: 무엇을 통제하고 방지할 것인가
+            - paragraph: 권한과 검증과 상태를 다루는 가장 바깥 구조다
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "16"
+  - generic:
+    - main:
+      - generic:
+        - generic: CHAPTER 04
+        - heading "Agent = Model + Harness" [level=1]
+      - generic:
+        - paragraph: 좋은 모델만으로는 부족하다. 도구와 규칙과 관측이 함께 묶여야 한다
+        - generic:
+          - article:
+            - generic: MODEL
+            - heading "Model" [level=2]
+            - paragraph: 생성과 추론의 엔진이다
+            - paragraph: 하지만 스스로 경계를 세우지는 못한다
+          - article:
+            - generic: TOOLS
+            - heading "Tools" [level=2]
+            - paragraph: 읽고 쓰고 실행하는 팔이 된다
+            - paragraph: 행동 능력이 커질수록 위험도 같이 커진다
+          - article:
+            - generic: HARNESS
+            - heading "Harness" [level=2]
+            - paragraph: 권한, 상태, 검증을 묶는 뼈대다
+            - paragraph: 좋은 에이전트는 모델보다 하네스에서 더 크게 갈린다
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "17"
+  - generic:
+    - main:
+      - generic:
+        - generic: CHAPTER 04
+        - heading "하네스의 다섯 블록" [level=1]
+      - generic:
+        - paragraph: 이름은 다섯 개지만, 역할은 세 묶음으로 기억하면 된다
+        - generic:
+          - article:
+            - generic: CONTROL
+            - heading "경계 고정" [level=2]
+            - paragraph: Guardrails와 Specification이 범위를 먼저 잠근다
+            - paragraph: 위험한 행동을 막고 작업 기준을 흔들리지 않게 만든다
+          - article:
+            - generic: FILTER
+            - heading "결과 필터링" [level=2]
+            - paragraph: Verification이 결과를 결정론적으로 거른다
+            - paragraph: lint, test, review gate가 이 층에 선다
+          - article:
+            - generic: STATE
+            - heading "상태 가시화" [level=2]
+            - paragraph: State와 Observability가 세션 밖 흔적을 남긴다
+            - paragraph: 파일, 로그, 이력이 루프를 다시 읽을 수 있게 만든다
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "18"
+  - generic:
+    - main:
+      - generic:
+        - text: CHAPTER 05
+        - heading "실패 패턴을 먼저 봐야 한다" [level=1]
+        - paragraph: 실패는 부작용이 아니라 운영 설계의 본문이다
+        - generic:
+          - generic: Long Context /
+          - generic: Context Rot /
+          - generic: Trust
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "19"
+  - generic:
+    - main:
+      - generic:
+        - generic: CHAPTER 05
+        - heading "Long Context의 적은 길이가 아니다" [level=1]
+      - generic:
+        - paragraph: 문맥이 길다고 강해지는 것이 아니라, 잘 섞였을 때만 강해진다
+        - generic:
+          - article:
+            - generic: TOO MUCH
+            - heading "과다 주입" [level=2]
+            - paragraph: 많이 넣는다고 더 정확해지지 않는다
+            - paragraph: 관련 없는 문장이 늘수록 판단 비용만 커진다
+          - article:
+            - generic: CONFLICT
+            - heading "기준 충돌" [level=2]
+            - paragraph: 서로 다른 기준이 같이 들어오면 루프가 흔들린다
+            - paragraph: 긴 문맥의 적은 길이가 아니라 조성이다
+          - article:
+            - generic: NOISE
+            - heading "노이즈" [level=2]
+            - paragraph: 핵심과 주변이 구분되지 않으면 드리프트가 시작된다
+            - paragraph: 좋은 컨텍스트는 선별이고 압축이다
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "20"
+  - generic:
+    - main:
+      - generic:
+        - generic: CHAPTER 05
+        - heading "Context Rot는 조용히 누적된다" [level=1]
+      - generic:
+        - paragraph: 실패는 갑자기 터지지 않는다. 기준선이 흐려지며 조용히 쌓인다
+        - generic:
+          - article:
+            - generic: START
+            - heading "기준선" [level=2]
+            - paragraph: 처음에는 목적과 범위가 또렷하다
+            - paragraph: 무엇을 해야 하는지, 무엇을 하면 안 되는지가 보인다
+          - article:
+            - generic: DRIFT
+            - heading "누적" [level=2]
+            - paragraph: 중간 노동이 쌓이며 기준이 조금씩 흐려진다
+            - paragraph: 관련 없는 수정과 설명이 섞이면 Context Rot가 시작된다
+          - article:
+            - generic: FAIL
+            - heading "확신" [level=2]
+            - paragraph: 마지막에는 틀린 방향을 자신 있게 민다
+            - paragraph: 실패 신호는 대개 하네스 공백의 다른 이름이다
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "21"
+  - generic:
+    - main:
+      - generic:
+        - generic: CHAPTER 05
+        - heading "Calibrated Trust" [level=1]
+      - generic:
+        - paragraph: 중요한 것은 믿느냐가 아니라 무엇을 어디까지 맡기느냐다
+        - generic:
+          - article:
+            - generic: HUMAN
+            - heading "인간 승인" [level=2]
+            - paragraph: 고위험 수정은 사람이 마지막 문을 쥔다
+            - paragraph: 권한이 큰 행동일수록 승인선은 더 앞에 와야 한다
+          - article:
+            - generic: AUTO
+            - heading "자동 검증" [level=2]
+            - paragraph: 기계적 테스트가 자신감을 잘라낸다
+            - paragraph: 좋은 trust는 자동 필터 위에 쌓인다
+          - article:
+            - generic: ISOLATE
+            - heading "격리" [level=2]
+            - paragraph: 샌드박스와 worktree가 실패 범위를 좁힌다
+            - paragraph: 신뢰는 능력보다 반경을 설계하는 일에 가깝다
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "22"
+  - generic:
+    - main:
+      - generic:
+        - text: CHAPTER 06
+        - heading "멀티 에이전트 패턴" [level=1]
+        - paragraph: 병렬화보다 먼저 책임을 좁게 쪼개는 일이 필요하다
+        - generic:
+          - generic: Sub-Agent /
+          - generic: Orchestrator /
+          - generic: Parallel
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "23"
+  - generic:
+    - main:
+      - generic:
+        - generic: CHAPTER 06
+        - heading "더 많은 AI보다 더 좁은 책임" [level=1]
+      - generic:
+        - paragraph: 패턴 이름보다 중요한 것은 누구에게 무엇을 넘기고 어디서 다시 만날지다
+        - generic:
+          - article:
+            - generic: ISOLATE
+            - heading "격리" [level=2]
+            - paragraph: Sub-Agent는 중간 노동을 메인 밖으로 밀어낸다
+            - paragraph: 메인 컨텍스트는 방향과 판단을 붙든다
+          - article:
+            - generic: HANDOFF
+            - heading "handoff" [level=2]
+            - paragraph: Orchestrator는 입력과 출력 경계를 먼저 설계한다
+            - paragraph: 좋은 분업은 메시지보다 handoff에서 갈린다
+          - article:
+            - generic: EVAL
+            - heading "평가" [level=2]
+            - paragraph: GAN-Style 분리가 자기최면을 끊는다
+            - paragraph: 생성자와 평가자를 같은 손에 두지 않는다
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "24"
+  - generic:
+    - main:
+      - generic:
+        - text: CHAPTER 07
+        - heading "실전 워크플로우와 도구" [level=1]
+        - paragraph: 원리를 잊어도 버티는 구조가 workflow가 된다
+        - generic:
+          - generic: Write /
+          - generic: Select /
+          - generic: Compress
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "25"
+  - generic:
+    - main:
+      - generic:
+        - generic: CHAPTER 07
+        - heading "네 동사로 굴러간다" [level=1]
+      - generic:
+        - paragraph: 복잡한 원리도 동사 네 개로 줄이면 작업 습관으로 남기 쉬워진다
+        - generic:
+          - article:
+            - generic: WRITE
+            - heading "Write + Select" [level=2]
+            - paragraph: 무엇을 남기고 무엇을 읽힐지 먼저 고른다
+            - paragraph: 좋은 workflow는 기록과 선별을 같이 시작한다
+          - article:
+            - generic: COMPRESS
+            - heading "Compress" [level=2]
+            - paragraph: 긴 세션 대신 결론을 짧은 아티팩트로 남긴다
+            - paragraph: 압축 없는 컨텍스트는 곧바로 rot로 간다
+          - article:
+            - generic: ISOLATE
+            - heading "Isolate" [level=2]
+            - paragraph: 위험한 작업과 중간 노동을 따로 격리한다
+            - paragraph: 격리가 있어야 메인 컨텍스트가 살아남는다
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "26"
+  - generic:
+    - main:
+      - generic:
+        - generic: CHAPTER 07
+        - heading "Plan-Critic-Build" [level=1]
+      - generic:
+        - paragraph: 에이전트가 강해질수록 실행 전 사고를 따로 잠그는 구조가 더 중요해진다
+        - generic:
+          - article:
+            - generic: PLAN
+            - heading "Plan" [level=2]
+            - paragraph: 목표, 범위, 성공 조건을 먼저 고정한다
+            - paragraph: 판단이 흐린 채 구현으로 뛰지 않는다
+          - article:
+            - generic: CRITIC
+            - heading "Critic" [level=2]
+            - paragraph: 다른 시야로 계획의 구멍을 먼저 건드린다
+            - paragraph: 자기최면을 끊는 가장 싼 순간이 이 단계다
+          - article:
+            - generic: BUILD
+            - heading "Build" [level=2]
+            - paragraph: 생산은 마지막에만 몰아넣는다
+            - paragraph: 좋은 build는 좋은 plan과 critic의 뒤에 선다
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "27"
+  - generic:
+    - main:
+      - generic:
+        - generic: CHAPTER 07
+        - heading "gate와 observability" [level=1]
+      - generic:
+        - paragraph: 좋은 구조는 결과를 한 번 보는 대신, 중간에 어디서 멈출지 먼저 정한다
+        - generic:
+          - article:
+            - generic: PRE
+            - heading "pre gate" [level=2]
+            - paragraph: 생산 전에 방향과 톤을 먼저 막는다
+            - paragraph: storyline과 tone gate가 여기에 선다
+          - article:
+            - generic: POST
+            - heading "post gate" [level=2]
+            - paragraph: 생산 뒤에는 구조와 렌더를 따로 본다
+            - paragraph: deck consistency와 slide validation이 분리된다
+          - article:
+            - generic: TRACE
+            - heading "trace" [level=2]
+            - paragraph: 로그와 체크포인트가 흔들린 지점을 보여 준다
+            - paragraph: Observability가 있어야 재작업 범위도 좁아진다
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "28"
+  - generic:
+    - main:
+      - generic:
+        - generic: CHAPTER 07
+        - heading "메인 컨텍스트를 지키는 운영" [level=1]
+      - generic:
+        - paragraph: 세션 안 기억보다 파일과 worktree와 이슈가 상태를 더 오래 들고 간다
+        - generic:
+          - article:
+            - generic: MUX
+            - heading "cmux" [level=2]
+            - paragraph: 작업 채널을 분리해 메인 시야를 덜 더럽힌다
+            - paragraph: 같은 터미널 안에서도 역할 경계를 명확히 만든다
+          - article:
+            - generic: TREE
+            - heading "Git Worktree" [level=2]
+            - paragraph: 실험과 본선을 물리적으로 갈라 놓는다
+            - paragraph: 격리는 추상 규칙보다 물리적 경계에서 더 잘 지켜진다
+          - article:
+            - generic: STATE
+            - heading "issue와 PR" [level=2]
+            - paragraph: 상태를 세션 밖 아티팩트에 남긴다
+            - paragraph: 실전에서 신뢰할 것은 대화보다 바깥 흔적이다
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "29"
+  - generic:
+    - main:
+      - generic:
+        - generic: CHAPTER 08
+        - heading "이 발표는 이렇게 만들었다" [level=1]
+      - generic:
+        - paragraph: 우리가 먼저 만든 것은 개별 slide가 아니라 slide가 생겨나는 경로였다
+        - generic:
+          - article:
+            - generic: INPUT
+            - heading "source" [level=2]
+            - paragraph: 입력층은 docs/01-sources에만 가뒀다
+            - paragraph: 근거와 해석을 한 파일 계층에 섞지 않았다
+          - article:
+            - generic: CANON
+            - heading "prose" [level=2]
+            - paragraph: docs/02-seminar/prose를 기준 문장으로 세웠다
+            - paragraph: slide는 본문을 압축할 뿐 논지 밖으로 뛰지 못하게 했다
+          - article:
+            - generic: BUILD
+            - heading "outline → HTML" [level=2]
+            - paragraph: outline과 manifest 뒤에만 Codex가 HTML을 만들게 했다
+            - paragraph: 생성과 검증도 서로 다른 문으로 분리했다
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "30"
+  - generic:
+    - main:
+      - generic:
+        - text: CHAPTER 09
+        - heading "우리가 다음에 해야 할 일" [level=1]
+        - paragraph: 새 모델 소식보다 먼저 작업 환경의 원칙을 고정해야 한다
+        - generic:
+          - generic: rules /
+          - generic: gates /
+          - generic: harness
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "31"
+  - generic:
+    - main:
+      - generic:
+        - generic: CHAPTER 09
+        - heading "암묵지를 밖으로 꺼내라" [level=1]
+      - generic:
+        - paragraph: 잘하는 사람 머릿속에만 있던 판단 기준을 파일과 gate로 밖에 꺼내야 한다
+        - generic:
+          - article:
+            - generic: RULES
+            - heading "규칙 파일" [level=2]
+            - paragraph: 반복해서 말하는 기준부터 문서로 뺀다
+            - paragraph: 좋은 암묵지는 먼저 규칙 파일이 된다
+          - article:
+            - generic: GATES
+            - heading "결정론적 gate" [level=2]
+            - paragraph: AI의 자신감과 무관하게 통과 문을 세운다
+            - paragraph: test와 review와 hook이 이 층을 맡는다
+          - article:
+            - generic: STATE
+            - heading "세션 밖 상태" [level=2]
+            - paragraph: 결론과 다음 행동을 파일에 남긴다
+            - paragraph: 상태를 대화 밖으로 밀어낼수록 안전해진다
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "32"
+  - generic:
+    - main:
+      - generic:
+        - heading "Harness Engineer가 새 역할이다" [level=1]
+        - paragraph: 숙련은 사라지지 않는다. 하네스를 설계하고 운영하는 쪽으로 옮겨 갈 뿐이다
+        - generic:
+          - generic:
+            - paragraph: 반복 규칙 세 가지부터 파일로 빼라
+          - generic:
+            - paragraph: 검증 문 하나를 추가해 기준을 잠가라
+          - generic:
+            - paragraph: 세션 결론을 밖에 남겨 컨텍스트를 가볍게 하라
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "33"
+  - generic:
+    - main:
+      - generic:
+        - text: APPENDIX
+        - heading "출처와 후속 읽기" [level=1]
+        - paragraph: 공개 근거와 로컬 연결망을 섞지 않는 일이 먼저다
+        - generic:
+          - generic: Public /
+          - generic: Internal /
+          - generic: Local
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "34"
+  - generic:
+    - main:
+      - generic:
+        - generic: APPENDIX
+        - heading "공개 근거와 로컬 지도의 순서" [level=1]
+      - generic:
+        - paragraph: 먼저 공개 근거를 세우고, 그 다음에 내부 맥락과 로컬 연결망을 붙인다
+        - generic:
+          - article:
+            - generic: PUBLIC
+            - heading "공개 근거" [level=2]
+            - paragraph: 본문의 핵심 주장은 먼저 여기서 버텨야 한다
+            - paragraph: 공식 문서와 공개 리포트가 가장 바깥 기준선이다
+          - article:
+            - generic: INTERNAL
+            - heading "내부 확인" [level=2]
+            - paragraph: 생산성 체감과 제작 맥락은 제한적으로만 쓴다
+            - paragraph: 공개 근거와 같은 무게로 올리면 글이 기운다
+          - article:
+            - generic: LOCAL
+            - heading "로컬 지도" [level=2]
+            - paragraph: archive와 map 문서는 연결망 역할로 둔다
+            - paragraph: 큐레이션은 유용하지만 1차 근거의 자리를 대신 못 한다
+      - generic:
+        - generic: Harness 잘 사용하기
+        - generic: "35"
