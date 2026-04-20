@@ -2519,5 +2519,422 @@
     "body": {
       "line": "좋은 하네스는 덕지덕지 붙이는 구조가 아닙니다. 필요한 파일, 필요한 도구, 필요한 규칙만 남기는 구조 어디서 손을"
     }
+  },
+  {
+    "order": 89,
+    "slide_id": "S089",
+    "file_name": "slide-089.html",
+    "title": "이렇게 하면 망한다: 한계와 실패 패턴",
+    "slide_kind": "chapter-transition",
+    "shell": "chapter-transition-shell",
+    "chapter_id": "05",
+    "chapter_label": "CHAPTER 05",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/05-이렇게 하면 망한다: 한계와 실패 패턴.md",
+    "source_block": "05-01",
+    "key_claim": "오류의 나비효과",
+    "lead": "오류의 나비효과",
+    "review_hint": "실패 패턴이 공포 마케팅이 아니라 설계 결함의 결과로 보이는지 확인",
+    "shell_reason": "chapter transition anchor",
+    "family": "cover",
+    "layout": "centered",
+    "density": "tight",
+    "footnote_assets": [],
+    "body": {}
+  },
+  {
+    "order": 90,
+    "slide_id": "S090",
+    "file_name": "slide-090.html",
+    "title": "오류의 나비효과",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "05",
+    "chapter_label": "CHAPTER 05",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/05-이렇게 하면 망한다: 한계와 실패 패턴.md",
+    "source_block": "05-01",
+    "key_claim": "오류의 나비효과",
+    "lead": "AI 코딩 에이전트를 몇 번만 길게 돌려 봐도 알게 되는 사실이 있 문제는 한 번의 대형 사고가 아니라, 그럴듯하게 지나간",
+    "review_hint": "실패 패턴이 공포 마케팅이 아니라 설계 결함의 결과로 보이는지 확인",
+    "shell_reason": "default compressed essay",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "AI 코딩 에이전트를 몇 번만 길게 돌려 봐도 알게 되는 사실이 있 문제는 한 번의 대형 사고가 아니라, 그럴듯하게 지나간",
+        "에이전트는 읽고, 수정하고, 실행하고, 다시 판단하는 루프를 반복 이 구조에서는 초반의 작은 오해도 다음 단계의 입력으로"
+      ]
+    }
+  },
+  {
+    "order": 91,
+    "slide_id": "S091",
+    "file_name": "slide-091.html",
+    "title": "긴 작업 사슬이 특히 위험한 이유",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "05",
+    "chapter_label": "CHAPTER 05",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/05-이렇게 하면 망한다: 한계와 실패 패턴.md",
+    "source_block": "05-02",
+    "key_claim": "긴 작업 사슬이 특히 위험한 이유",
+    "lead": "단발성 작업에서는 모델의 영리함이 꽤 잘 먹힙니다. 하지만 작업이 길어질수록 기준이 달라집니다. 길게 작업이 진행될 수록",
+    "review_hint": "실패 패턴이 공포 마케팅이 아니라 설계 결함의 결과로 보이는지 확인",
+    "shell_reason": "default compressed essay",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "단발성 작업에서는 모델의 영리함이 꽤 잘 먹힙니다. 하지만 작업이 길어질수록 기준이 달라집니다. 길게 작업이 진행될 수록",
+        "긴 사슬에서는 작은 오류가 비용으로 바뀝니다. 잘못된 파일을 기준으로 계획을 세우고, 이미 깨진 테스트 결과를 정상 상태로"
+      ]
+    }
+  },
+  {
+    "order": 92,
+    "slide_id": "S092",
+    "file_name": "slide-092.html",
+    "title": "컨텍스트가 길수록 항상 좋은 것은 아니다",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "05",
+    "chapter_label": "CHAPTER 05",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/05-이렇게 하면 망한다: 한계와 실패 패턴.md",
+    "source_block": "05-03",
+    "key_claim": "컨텍스트가 길수록 항상 좋은 것은 아니다",
+    "lead": "긴 컨텍스트는 분명 강력한 기능 더 많이 넣으면 더 잘할 것이라고 믿는 것",
+    "review_hint": "실패 패턴이 공포 마케팅이 아니라 설계 결함의 결과로 보이는지 확인",
+    "shell_reason": "default compressed essay",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "긴 컨텍스트는 분명 강력한 기능 더 많이 넣으면 더 잘할 것이라고 믿는 것"
+      ]
+    }
+  },
+  {
+    "order": 93,
+    "slide_id": "S093",
+    "file_name": "slide-093.html",
+    "title": "대표 실패 패턴 네 가지",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "05",
+    "chapter_label": "CHAPTER 05",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/05-이렇게 하면 망한다: 한계와 실패 패턴.md",
+    "source_block": "05-04",
+    "key_claim": "대표 실패 패턴 네 가지",
+    "lead": "긴 세션에서 반복해서 나타나는 실패는 4가지 정도로 분류하고 있",
+    "review_hint": "실패 패턴이 공포 마케팅이 아니라 설계 결함의 결과로 보이는지 확인",
+    "shell_reason": "block opening claim",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "긴 세션에서 반복해서 나타나는 실패는 4가지 정도로 분류하고 있",
+        "첫째는 Poisoning 오래된 가정이나 잘못된 메모가 이후 판단 전체를 오염시키는 경우 처음에 잘못 넣은 정보 하나가 루프"
+      ]
+    }
+  },
+  {
+    "order": 94,
+    "slide_id": "S094",
+    "file_name": "slide-094.html",
+    "title": "긴 세션에서 반복해서 나타나는 실패는 4가지 정도로 분류하고 있",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "05",
+    "chapter_label": "CHAPTER 05",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/05-이렇게 하면 망한다: 한계와 실패 패턴.md",
+    "source_block": "05-04",
+    "key_claim": "긴 세션에서 반복해서 나타나는 실패는 4가지 정도로 분류하고 있",
+    "lead": "첫째는 Poisoning 오래된 가정이나 잘못된 메모가 이후 판단 전체를 오염시키는 경우 처음에 잘못 넣은 정보 하나가 루프",
+    "review_hint": "실패 패턴이 공포 마케팅이 아니라 설계 결함의 결과로 보이는지 확인",
+    "shell_reason": "second compressed essay split",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "둘째는 Distraction 관련 정보가 너무 많아 정작 핵심 신호가 묻히는 경우 에이전트는 필요한 파일을 보고도 우선순위를",
+        "셋째는 Confusion 과거 결정과 현재 결정이 한 창 안에서 뒤엉켜, 무엇이 최신 기준인지 분간하지 못하는 경우 길게"
+      ]
+    }
+  },
+  {
+    "order": 95,
+    "slide_id": "S095",
+    "file_name": "slide-095.html",
+    "title": "현실에서 보이는 증상들",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "05",
+    "chapter_label": "CHAPTER 05",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/05-이렇게 하면 망한다: 한계와 실패 패턴.md",
+    "source_block": "05-05",
+    "key_claim": "현실에서 보이는 증상들",
+    "lead": "AI Slop은 산출물이 급격히 조잡해지는 상태를 가리킵니다. 그럴듯해 보이지만 품질 기준이 빠르게 무너집니다",
+    "review_hint": "실패 패턴이 공포 마케팅이 아니라 설계 결함의 결과로 보이는지 확인",
+    "shell_reason": "block opening claim",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "AI Slop은 산출물이 급격히 조잡해지는 상태를 가리킵니다. 그럴듯해 보이지만 품질 기준이 빠르게 무너집니다",
+        "Doom Loop는 같은 실수를 다른 표현으로 반복하는 상태 테스트를 고치지 못한 채 프롬프트만 바꾸거나, 같은 파일을 돌려"
+      ]
+    }
+  },
+  {
+    "order": 96,
+    "slide_id": "S096",
+    "file_name": "slide-096.html",
+    "title": "AI Slop은 산출물이 급격히 조잡해지는 상태를 가리킵니다",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "05",
+    "chapter_label": "CHAPTER 05",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/05-이렇게 하면 망한다: 한계와 실패 패턴.md",
+    "source_block": "05-05",
+    "key_claim": "AI Slop은 산출물이 급격히 조잡해지는 상태를 가리킵니다",
+    "lead": "Doom Loop는 같은 실수를 다른 표현으로 반복하는 상태 테스트를 고치지 못한 채 프롬프트만 바꾸거나, 같은 파일을 돌려",
+    "review_hint": "실패 패턴이 공포 마케팅이 아니라 설계 결함의 결과로 보이는지 확인",
+    "shell_reason": "second compressed essay split",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "Shadow Agent는 지금 왜 이 작업을 하고 있는지, 어떤 기준을 따라야 하는지를 잊어버린 채 움직이는 상태 겉으로는",
+        "이 증상들을 보면 흔히 “오늘 모델이 이상하다”고 말하고 넘어갑니다. 하지만 중요한 것은 구조 어떤 검증이 비어 있었는지"
+      ]
+    }
+  },
+  {
+    "order": 97,
+    "slide_id": "S097",
+    "file_name": "slide-097.html",
+    "title": "Context Rot: 길어진 기억은 조용히 썩는다",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "05",
+    "chapter_label": "CHAPTER 05",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/05-이렇게 하면 망한다: 한계와 실패 패턴.md",
+    "source_block": "05-06",
+    "key_claim": "Context Rot: 길어진 기억은 조용히 썩는다",
+    "lead": "긴 세션의 진짜 문제는 단순한 길이가 아닙니다. 시간이 지나면서 초반의 의도와 제약이 점점 희미해진다는 점 처음에는 분명했던",
+    "review_hint": "실패 패턴이 공포 마케팅이 아니라 설계 결함의 결과로 보이는지 확인",
+    "shell_reason": "default compressed essay",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "긴 세션의 진짜 문제는 단순한 길이가 아닙니다. 시간이 지나면서 초반의 의도와 제약이 점점 희미해진다는 점 처음에는 분명했던",
+        "이 상태를 흔히 Context Rot이라고 부릅니다. 세션을 오래 이어 가는 것이 곧 숙련은 아닙니다. 오히려 잘하는 팀일수록"
+      ]
+    }
+  },
+  {
+    "order": 98,
+    "slide_id": "S098",
+    "file_name": "slide-098.html",
+    "title": "신뢰는 조율되어야",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "05",
+    "chapter_label": "CHAPTER 05",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/05-이렇게 하면 망한다: 한계와 실패 패턴.md",
+    "source_block": "05-07",
+    "key_claim": "신뢰는 조율되어야",
+    "lead": "AI를 믿느냐 마느냐는 감정 문제가 아닙니다. 어떤 작업에 어느 정도 자율성을 줄 것인지 조절하는 운영 문제 이것을",
+    "review_hint": "실패 패턴이 공포 마케팅이 아니라 설계 결함의 결과로 보이는지 확인",
+    "shell_reason": "default compressed essay",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [],
+    "body": {
+      "lines": [
+        "AI를 믿느냐 마느냐는 감정 문제가 아닙니다. 어떤 작업에 어느 정도 자율성을 줄 것인지 조절하는 운영 문제 이것을",
+        "초안 작성, 반복적인 리팩터링, 구조 탐색처럼 비용이 낮은 구간에는 비교적 넓은 자율성을 줄 수 있 반대로 배포, 삭제, 민감"
+      ]
+    }
+  },
+  {
+    "order": 99,
+    "slide_id": "S099",
+    "file_name": "slide-099.html",
+    "title": "결정 제어와 확률 제어를 분리하라",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "05",
+    "chapter_label": "CHAPTER 05",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/05-이렇게 하면 망한다: 한계와 실패 패턴.md",
+    "source_block": "05-08",
+    "key_claim": "결정 제어와 확률 제어를 분리하라",
+    "lead": "하네스 설계에서 중요한 원칙은 기계가 확실히 판단할 수 있는 것과 AI가 유연하게 판단해야 하는 것을 분리하는 일",
+    "review_hint": "실패 패턴이 공포 마케팅이 아니라 설계 결함의 결과로 보이는지 확인",
+    "shell_reason": "block opening claim",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [
+      "../../../assets/prompt-context-harness-1-15/page-009.jpg",
+      "../../../assets/prompt-context-harness-1-15/page-010.jpg",
+      "../../../assets/prompt-context-harness-1-15/page-011.jpg"
+    ],
+    "body": {
+      "lines": [
+        "하네스 설계에서 중요한 원칙은 기계가 확실히 판단할 수 있는 것과 AI가 유연하게 판단해야 하는 것을 분리하는 일",
+        "기계가 확인할 수 있는 것은 기계에게 맡겨야  AI에게 “테스트를 잘 통과했는지 확인해 줘”라고만 말하는 것보다 실제 테스트를"
+      ]
+    }
+  },
+  {
+    "order": 100,
+    "slide_id": "S100",
+    "file_name": "slide-100.html",
+    "title": "하네스 설계에서 중요한 원칙은 기계가 확실히 판단할 수 있는 것과 AI가 유연하게 판단해야 하는 것을 분리하는 일",
+    "slide_kind": "content",
+    "shell": "content-card-shell",
+    "chapter_id": "05",
+    "chapter_label": "CHAPTER 05",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/05-이렇게 하면 망한다: 한계와 실패 패턴.md",
+    "source_block": "05-08",
+    "key_claim": "하네스 설계에서 중요한 원칙은 기계가 확실히 판단할 수 있는 것과 AI가 유연하게 판단해야 하는 것을 분리하는 일",
+    "lead": "기계가 확인할 수 있는 것은 기계에게 맡겨야 AI에게 “테스트를 잘 통과했는지 확인해 줘”라고만 말하는 것보다 실제 테스트를",
+    "review_hint": "실패 패턴이 공포 마케팅이 아니라 설계 결함의 결과로 보이는지 확인",
+    "shell_reason": "parallel evidence split",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [
+      "../../../assets/prompt-context-harness-1-15/page-009.jpg",
+      "../../../assets/prompt-context-harness-1-15/page-010.jpg",
+      "../../../assets/prompt-context-harness-1-15/page-011.jpg"
+    ],
+    "body": {
+      "cards": [
+        {
+          "title": "결정 제어와 확률 제어를 분리하라",
+          "copy": "결정론적 제어: 린트, 타입 체크, 테스트, 포맷, 위험 명령 차단, 파일 권한, 승인 게이트"
+        },
+        {
+          "title": "결정론적 제어: 린트, 타입 체크, 테스트",
+          "copy": "확률적 제어: 설계 대안 제안, 코드 리뷰 의견, 아키텍처 판단, 요약, 우선순위 평가"
+        },
+        {
+          "title": "확률적 제어: 설계 대안 제안, 코드 리뷰",
+          "copy": "Keep Quality Left: 기계가 확인할 수 있는 것은 앞쪽의 결정론적 게이트로 옮기고, AI는 판단과 생성에"
+        }
+      ]
+    }
+  },
+  {
+    "order": 101,
+    "slide_id": "S101",
+    "file_name": "slide-101.html",
+    "title": "결정 제어와 확률 제어를 분리하라",
+    "slide_kind": "content",
+    "shell": "content-emphasis-shell",
+    "chapter_id": "05",
+    "chapter_label": "CHAPTER 05",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/05-이렇게 하면 망한다: 한계와 실패 패턴.md",
+    "source_block": "05-08",
+    "key_claim": "기계가 확인할 수 있는 것은 기계에게 맡겨야",
+    "lead": "긴 세션을 무조건 유지하기보다 압축하고 새로 시작할 줄 알아야 관련 없는 도구와 파일은 컨텍스트에서 빼야 현재 결정과 남은",
+    "review_hint": "실패 패턴이 공포 마케팅이 아니라 설계 결함의 결과로 보이는지 확인",
+    "shell_reason": "block synthesis emphasis",
+    "family": "content",
+    "layout": "wide",
+    "density": "tight",
+    "footnote_assets": [
+      "../../../assets/prompt-context-harness-1-15/page-009.jpg",
+      "../../../assets/prompt-context-harness-1-15/page-010.jpg",
+      "../../../assets/prompt-context-harness-1-15/page-011.jpg"
+    ],
+    "body": {
+      "line": "Keep Quality Left: 기계가 확인할 수 있는 것은 앞쪽의 결정론적 게이트로 옮기고, AI는 판단과 생성에"
+    }
+  },
+  {
+    "order": 102,
+    "slide_id": "S102",
+    "file_name": "slide-102.html",
+    "title": "SOLID도 하네스 관점으로",
+    "slide_kind": "content",
+    "shell": "content-essay-shell",
+    "chapter_id": "05",
+    "chapter_label": "CHAPTER 05",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/05-이렇게 하면 망한다: 한계와 실패 패턴.md",
+    "source_block": "05-09",
+    "key_claim": "SOLID도 하네스 관점으로",
+    "lead": "하네스는 새로운 유행어지만, 기존 소프트웨어 원칙을 버리라는 뜻은 아닙니다. 오히려 오래된 원칙을 에이전트 중심으로 재해석하게",
+    "review_hint": "실패 패턴이 공포 마케팅이 아니라 설계 결함의 결과로 보이는지 확인",
+    "shell_reason": "block opening claim",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [
+      "../../../assets/prompt-context-harness-1-15/page-012.jpg"
+    ],
+    "body": {
+      "lines": [
+        "하네스는 새로운 유행어지만, 기존 소프트웨어 원칙을 버리라는 뜻은 아닙니다. 오히려 오래된 원칙을 에이전트 중심으로 재해석하게",
+        "예를 들어 SOLID를 하네스 관점에서 보면 이렇게 읽을 수 있"
+      ]
+    }
+  },
+  {
+    "order": 103,
+    "slide_id": "S103",
+    "file_name": "slide-103.html",
+    "title": "하네스는 새로운 유행어지만, 기존 소프트웨어 원칙을 버리라는 뜻은 아닙니다",
+    "slide_kind": "content",
+    "shell": "content-card-shell",
+    "chapter_id": "05",
+    "chapter_label": "CHAPTER 05",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/05-이렇게 하면 망한다: 한계와 실패 패턴.md",
+    "source_block": "05-09",
+    "key_claim": "하네스는 새로운 유행어지만, 기존 소프트웨어 원칙을 버리라는 뜻은 아닙니다",
+    "lead": "예를 들어 SOLID를 하네스 관점에서 보면 이렇게 읽을 수 있",
+    "review_hint": "실패 패턴이 공포 마케팅이 아니라 설계 결함의 결과로 보이는지 확인",
+    "shell_reason": "parallel evidence split",
+    "family": "content",
+    "layout": "wide",
+    "density": "medium",
+    "footnote_assets": [
+      "../../../assets/prompt-context-harness-1-15/page-012.jpg"
+    ],
+    "body": {
+      "cards": [
+        {
+          "title": "SOLID도 하네스 관점으로",
+          "copy": "S: 단일 책임 / 클래스를 분리한다 / 에이전트와 도구의 역할을 분리"
+        },
+        {
+          "title": "S: 단일 책임 / 클래스를 분리한다 /",
+          "copy": "O: 개방-폐쇄 / 코드는 수정 없이 확장 가능해야 한다 / 검증은 훅과 플러그인으로 확장하되 핵심 로직을 흔들지 않는다"
+        },
+        {
+          "title": "O: 개방-폐쇄 / 코드는 수정 없이 확장",
+          "copy": "I: 인터페이스 분리 / 불필요한 메서드 의존을 줄인다 / 에이전트에게 불필요한 도구와 파일 권한을 노출하지 않는다"
+        }
+      ]
+    }
   }
 ]

@@ -1,6 +1,6 @@
 # Harness Rebuilt Manifest
 
-- slide count: 88
+- slide count: 103
 - output deck: `/Users/seungsu/Desktop/project/jaryo/docs/03-html/harness-rebuilt/deck/index.html`
 - active theme: `theme-minimal-light`
 
@@ -16,6 +16,8 @@
 - chapter `03` copy: `copy/chapter-03.md`
 - chapter `04` brief: `briefs/chapter-04.md`
 - chapter `04` copy: `copy/chapter-04.md`
+- chapter `05` brief: `briefs/chapter-05.md`
+- chapter `05` copy: `copy/chapter-05.md`
 
 ## Slide Registry
 
@@ -109,3 +111,18 @@
 | 86 | `S086` | `content` | `content-essay-shell` | `04` | `04-19` | `slide-086.html` | 하네스 엔지니어링의 5대 기능 블록 | page-005.jpg |
 | 87 | `S087` | `content` | `content-card-shell` | `04` | `04-19` | `slide-087.html` | 앞서 본 여섯 개 실행 요소를 운영 관점으로 다시 묶으면 다섯 개 기능 블록으로 정리할 수 있 | page-005.jpg |
 | 88 | `S088` | `content` | `content-emphasis-shell` | `04` | `04-19` | `slide-088.html` | 하네스 엔지니어링의 5대 기능 블록 | page-005.jpg |
+| 89 | `S089` | `chapter-transition` | `chapter-transition-shell` | `05` | `05-01` | `slide-089.html` | 이렇게 하면 망한다: 한계와 실패 패턴 | - |
+| 90 | `S090` | `content` | `content-essay-shell` | `05` | `05-01` | `slide-090.html` | 오류의 나비효과 | - |
+| 91 | `S091` | `content` | `content-essay-shell` | `05` | `05-02` | `slide-091.html` | 긴 작업 사슬이 특히 위험한 이유 | - |
+| 92 | `S092` | `content` | `content-essay-shell` | `05` | `05-03` | `slide-092.html` | 컨텍스트가 길수록 항상 좋은 것은 아니다 | - |
+| 93 | `S093` | `content` | `content-essay-shell` | `05` | `05-04` | `slide-093.html` | 대표 실패 패턴 네 가지 | - |
+| 94 | `S094` | `content` | `content-essay-shell` | `05` | `05-04` | `slide-094.html` | 긴 세션에서 반복해서 나타나는 실패는 4가지 정도로 분류하고 있 | - |
+| 95 | `S095` | `content` | `content-essay-shell` | `05` | `05-05` | `slide-095.html` | 현실에서 보이는 증상들 | - |
+| 96 | `S096` | `content` | `content-essay-shell` | `05` | `05-05` | `slide-096.html` | AI Slop은 산출물이 급격히 조잡해지는 상태를 가리킵니다 | - |
+| 97 | `S097` | `content` | `content-essay-shell` | `05` | `05-06` | `slide-097.html` | Context Rot: 길어진 기억은 조용히 썩는다 | - |
+| 98 | `S098` | `content` | `content-essay-shell` | `05` | `05-07` | `slide-098.html` | 신뢰는 조율되어야 | - |
+| 99 | `S099` | `content` | `content-essay-shell` | `05` | `05-08` | `slide-099.html` | 결정 제어와 확률 제어를 분리하라 | page-009.jpg, page-010.jpg, page-011.jpg |
+| 100 | `S100` | `content` | `content-card-shell` | `05` | `05-08` | `slide-100.html` | 하네스 설계에서 중요한 원칙은 기계가 확실히 판단할 수 있는 것과 AI가 유연하게 판단해야 하는 것을 분리하는 일 | page-009.jpg, page-010.jpg, page-011.jpg |
+| 101 | `S101` | `content` | `content-emphasis-shell` | `05` | `05-08` | `slide-101.html` | 결정 제어와 확률 제어를 분리하라 | page-009.jpg, page-010.jpg, page-011.jpg |
+| 102 | `S102` | `content` | `content-essay-shell` | `05` | `05-09` | `slide-102.html` | SOLID도 하네스 관점으로 | page-012.jpg |
+| 103 | `S103` | `content` | `content-card-shell` | `05` | `05-09` | `slide-103.html` | 하네스는 새로운 유행어지만, 기존 소프트웨어 원칙을 버리라는 뜻은 아닙니다 | page-012.jpg |
