@@ -1,6 +1,6 @@
 # Harness Rebuilt Manifest
 
-- slide count: 40
+- slide count: 51
 - output deck: `/Users/seungsu/Desktop/project/jaryo/docs/03-html/harness-rebuilt/deck/index.html`
 - active theme: `theme-minimal-light`
 
@@ -12,6 +12,8 @@
 - chapter `01` copy: `copy/chapter-01.md`
 - chapter `02` brief: `briefs/chapter-02.md`
 - chapter `02` copy: `copy/chapter-02.md`
+- chapter `03` brief: `briefs/chapter-03.md`
+- chapter `03` copy: `copy/chapter-03.md`
 
 ## Slide Registry
 
@@ -57,3 +59,14 @@
 | 38 | `S038` | `content` | `content-essay-shell` | `02` | `02-06` | `slide-038.html` | 막: Claude Code, Codex, OpenCode 와 하네스의 시대 | 01-three-era-timeline.png, page-002.jpg |
 | 39 | `S039` | `content` | `content-card-shell` | `02` | `02-06` | `slide-039.html` | 하네스 시대의 대표 장면은 코딩 도구가 단순한 자동완성이나 채팅을 넘어 작업 환경 전체를 품기 시작한 것 | 01-three-era-timeline.png, page-002.jpg |
 | 40 | `S040` | `content` | `content-emphasis-shell` | `02` | `02-06` | `slide-040.html` | 막: Claude Code, Codex, OpenCode 와 하네스의 시대 | 01-three-era-timeline.png, page-002.jpg |
+| 41 | `S041` | `chapter-transition` | `chapter-transition-shell` | `03` | `03-01` | `slide-041.html` | AI 시대의 개발 방법론 | - |
+| 42 | `S042` | `content` | `content-essay-shell` | `03` | `03-01` | `slide-042.html` | AI 시대의 개발 방법론 | page-026.png |
+| 43 | `S043` | `content` | `content-card-shell` | `03` | `03-01` | `slide-043.html` | 왜 지금 방법론 | page-026.png |
+| 44 | `S044` | `content` | `content-essay-shell` | `03` | `03-02` | `slide-044.html` | TDD: AI 가드레일 | - |
+| 45 | `S045` | `content` | `content-card-shell` | `03` | `03-02` | `slide-045.html` | 에이전트는 "그럴듯하게 작동하는 코드"를 너무 쉽게, 그리고 너무 자신 있게 내놓 | - |
+| 46 | `S046` | `content` | `content-emphasis-shell` | `03` | `03-02` | `slide-046.html` | TDD: AI 가드레일 | - |
+| 47 | `S047` | `content` | `content-essay-shell` | `03` | `03-03` | `slide-047.html` | SDD: 스펙이 진실의 원천 | - |
+| 48 | `S048` | `content` | `content-card-shell` | `03` | `03-03` | `slide-048.html` | 구현 단계에서 TDD가 에이전트의 일탈을 막아낸다면, 그 이전 단계에서 방향을 통제하는 것은 SDD | - |
+| 49 | `S049` | `content` | `content-essay-shell` | `03` | `03-04` | `slide-049.html` | Waterfall과는 무엇이 다른가 | page-032.png |
+| 50 | `S050` | `content` | `content-card-shell` | `03` | `03-04` | `slide-050.html` | 이쯤 되면 당연한 반론이 나옵니다 | page-032.png |
+| 51 | `S051` | `content` | `content-emphasis-shell` | `03` | `03-04` | `slide-051.html` | Waterfall과는 무엇이 다른가 | page-032.png |

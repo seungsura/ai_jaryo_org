@@ -259,5 +259,78 @@
       "content-emphasis-shell": 4,
       "chapter-transition-shell": 1
     }
+  },
+  "03": {
+    "chapter_id": "03",
+    "title": "AI 시대의 개발 방법론",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/03-AI 시대의 개발 방법론.md",
+    "transition_slide_id": "S041",
+    "slide_ids": [
+      "S041",
+      "S042",
+      "S043",
+      "S044",
+      "S045",
+      "S046",
+      "S047",
+      "S048",
+      "S049",
+      "S050",
+      "S051"
+    ],
+    "section_coverage": [
+      {
+        "block_id": "03-01",
+        "heading": "AI 시대의 개발 방법론",
+        "slide_count": 2,
+        "slide_ids": [
+          "S042",
+          "S043"
+        ]
+      },
+      {
+        "block_id": "03-02",
+        "heading": "TDD: AI 가드레일",
+        "slide_count": 3,
+        "slide_ids": [
+          "S044",
+          "S045",
+          "S046"
+        ]
+      },
+      {
+        "block_id": "03-03",
+        "heading": "SDD: 스펙이 진실의 원천",
+        "slide_count": 2,
+        "slide_ids": [
+          "S047",
+          "S048"
+        ]
+      },
+      {
+        "block_id": "03-04",
+        "heading": "Waterfall과는 무엇이 다른가",
+        "slide_count": 3,
+        "slide_ids": [
+          "S049",
+          "S050",
+          "S051"
+        ]
+      }
+    ],
+    "footnote_assets": [
+      "../../../assets/claude-code-seminar-kakao/page-026.png",
+      "../../../assets/claude-code-seminar-kakao/page-032.png"
+    ],
+    "review_focus": "Spec-first, TDD, SDD의 관계가 도식이 아니라 실행 규율로 읽히는지 확인",
+    "special_rules": [
+      "heuristic_multi_slide_decomposition"
+    ],
+    "shell_mix": {
+      "content-essay-shell": 4,
+      "content-card-shell": 4,
+      "content-emphasis-shell": 2,
+      "chapter-transition-shell": 1
+    }
   }
 }

@@ -43,3 +43,15 @@
 - S038 | content | content-essay-shell | 막: Claude Code, Codex, OpenCode 와 하네스의 시대 | 막: Claude Code, Codex, OpenCode 와 하네스의 시대
 - S039 | content | content-card-shell | 하네스 시대의 대표 장면은 코딩 도구가 단순한 자동완성이나 채팅을 넘어 작업 환경 전체를 품기 시작한 것 | 하네스 시대의 대표 장면은 코딩 도구가 단순한 자동완성이나 채팅을 넘어 작업 환경 전체를 품기 시작한 것
 - S040 | content | content-emphasis-shell | 막: Claude Code, Codex, OpenCode 와 하네스의 시대 | Claude Code는 터미널 네이티브 워크플로우를 중심에 둡니다
+## CHAPTER 03 · 03
+- S041 | chapter-transition | chapter-transition-shell | AI 시대의 개발 방법론 | AI 시대의 개발 방법론
+- S042 | content | content-essay-shell | AI 시대의 개발 방법론 | AI 시대의 개발 방법론
+- S043 | content | content-card-shell | 왜 지금 방법론 | 왜 지금 방법론
+- S044 | content | content-essay-shell | TDD: AI 가드레일 | TDD: AI 가드레일
+- S045 | content | content-card-shell | 에이전트는 "그럴듯하게 작동하는 코드"를 너무 쉽게, 그리고 너무 자신 있게 내놓 | 에이전트는 "그럴듯하게 작동하는 코드"를 너무 쉽게, 그리고 너무 자신 있게 내놓
+- S046 | content | content-emphasis-shell | TDD: AI 가드레일 | 인간이 실패하는 테스트를 먼저 작성
+- S047 | content | content-essay-shell | SDD: 스펙이 진실의 원천 | SDD: 스펙이 진실의 원천
+- S048 | content | content-card-shell | 구현 단계에서 TDD가 에이전트의 일탈을 막아낸다면, 그 이전 단계에서 방향을 통제하는 것은 SDD | 구현 단계에서 TDD가 에이전트의 일탈을 막아낸다면, 그 이전 단계에서 방향을 통제하는 것은 SDD
+- S049 | content | content-essay-shell | Waterfall과는 무엇이 다른가 | Waterfall과는 무엇이 다른가
+- S050 | content | content-card-shell | 이쯤 되면 당연한 반론이 나옵니다 | 이쯤 되면 당연한 반론이 나옵니다
+- S051 | content | content-emphasis-shell | Waterfall과는 무엇이 다른가 | 스펙을 먼저 쓰고 계획을 세우면, 결국 옛날 Waterfall 시절로 회귀하는 것 아닌가?" 겉보기엔 그럴싸한 지적
