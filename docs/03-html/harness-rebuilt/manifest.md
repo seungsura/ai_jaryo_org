@@ -1,6 +1,6 @@
 # Harness Rebuilt Manifest
 
-- slide count: 171
+- slide count: 179
 - output deck: `/Users/seungsu/Desktop/project/jaryo/docs/03-html/harness-rebuilt/deck/index.html`
 - active theme: `theme-minimal-light`
 
@@ -24,6 +24,8 @@
 - chapter `07` copy: `copy/chapter-07.md`
 - chapter `08` brief: `briefs/chapter-08.md`
 - chapter `08` copy: `copy/chapter-08.md`
+- chapter `09` brief: `briefs/chapter-09.md`
+- chapter `09` copy: `copy/chapter-09.md`
 
 ## Slide Registry
 
@@ -200,3 +202,11 @@
 | 169 | `S169` | `content` | `content-essay-shell` | `08` | `08-09` | `slide-169.html` | 이 제작 과정이 보여 주는 하네스 원리 | - |
 | 170 | `S170` | `content` | `content-card-shell` | `08` | `08-09` | `slide-170.html` | 이 사례의 핵심은 “AI가 HTML을 만들었다”가 아닙니다 | - |
 | 171 | `S171` | `content` | `content-emphasis-shell` | `08` | `08-10` | `slide-171.html` | 결론: AI 를 잘 사용하는 방법: 결국 하나 | - |
+| 172 | `S172` | `chapter-transition` | `chapter-transition-shell` | `09` | `09-01` | `slide-172.html` | 우리가 다음에 해야 할 일 | - |
+| 173 | `S173` | `content` | `content-essay-shell` | `09` | `09-01` | `slide-173.html` | 시작하며: FOMO 와 피로 | - |
+| 174 | `S174` | `content` | `content-card-shell` | `09` | `09-01` | `slide-174.html` | 새 모델 소식이 나올 때마다 뒤처지는 느낌이 듭니다 | - |
+| 175 | `S175` | `content` | `content-emphasis-shell` | `09` | `09-01` | `slide-175.html` | 시작하며: FOMO 와 피로 | - |
+| 176 | `S176` | `content` | `content-essay-shell` | `09` | `09-02` | `slide-176.html` | 팀 차원의 성숙도: 카오스에서 혁신으로 | page-013.jpg |
+| 177 | `S177` | `content` | `content-card-shell` | `09` | `09-02` | `slide-177.html` | 조직 차원에서도 차이는 모델 선택보다 성숙도에서 납니다 | page-013.jpg |
+| 178 | `S178` | `content` | `content-essay-shell` | `09` | `09-03` | `slide-178.html` | 결론: Harness Engineer | - |
+| 179 | `S179` | `content` | `content-essay-shell` | `09` | `09-03` | `slide-179.html` | 지금 더 분명해지는 역할은 직접 코드를 가장 빨리 치는 사람이 아닙니다 | - |

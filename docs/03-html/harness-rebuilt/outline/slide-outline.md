@@ -180,3 +180,12 @@
 - S169 | content | content-essay-shell | 이 제작 과정이 보여 주는 하네스 원리 | 이 제작 과정이 보여 주는 하네스 원리
 - S170 | content | content-card-shell | 이 사례의 핵심은 “AI가 HTML을 만들었다”가 아닙니다 | 이 사례의 핵심은 “AI가 HTML을 만들었다”가 아닙니다
 - S171 | content | content-emphasis-shell | 결론: AI 를 잘 사용하는 방법: 결국 하나 | 결론: AI 를 잘 사용하는 방법: 결국 하나
+## CHAPTER 09 · 09
+- S172 | chapter-transition | chapter-transition-shell | 우리가 다음에 해야 할 일 | 시작하며: FOMO 와 피로
+- S173 | content | content-essay-shell | 시작하며: FOMO 와 피로 | 시작하며: FOMO 와 피로
+- S174 | content | content-card-shell | 새 모델 소식이 나올 때마다 뒤처지는 느낌이 듭니다 | 새 모델 소식이 나올 때마다 뒤처지는 느낌이 듭니다
+- S175 | content | content-emphasis-shell | 시작하며: FOMO 와 피로 | 누군가는 더 빨리 자동화하고, 누군가는 새 도구를 바로 써 보고, 누군가는 이미 워크플로우를 완전히 바꾼 것처럼 보
+- S176 | content | content-essay-shell | 팀 차원의 성숙도: 카오스에서 혁신으로 | 팀 차원의 성숙도: 카오스에서 혁신으로
+- S177 | content | content-card-shell | 조직 차원에서도 차이는 모델 선택보다 성숙도에서 납니다 | 조직 차원에서도 차이는 모델 선택보다 성숙도에서 납니다
+- S178 | content | content-essay-shell | 결론: Harness Engineer | 결론: Harness Engineer
+- S179 | content | content-essay-shell | 지금 더 분명해지는 역할은 직접 코드를 가장 빨리 치는 사람이 아닙니다 | 지금 더 분명해지는 역할은 직접 코드를 가장 빨리 치는 사람이 아닙니다

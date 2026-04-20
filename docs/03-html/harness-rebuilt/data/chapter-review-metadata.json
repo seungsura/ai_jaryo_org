@@ -1112,5 +1112,64 @@
       "content-emphasis-shell": 2,
       "chapter-transition-shell": 1
     }
+  },
+  "09": {
+    "chapter_id": "09",
+    "title": "우리가 다음에 해야 할 일",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/09-우리가 다음에 해야 할 일.md",
+    "transition_slide_id": "S172",
+    "slide_ids": [
+      "S172",
+      "S173",
+      "S174",
+      "S175",
+      "S176",
+      "S177",
+      "S178",
+      "S179"
+    ],
+    "section_coverage": [
+      {
+        "block_id": "09-01",
+        "heading": "시작하며: FOMO 와 피로",
+        "slide_count": 3,
+        "slide_ids": [
+          "S173",
+          "S174",
+          "S175"
+        ]
+      },
+      {
+        "block_id": "09-02",
+        "heading": "팀 차원의 성숙도: 카오스에서 혁신으로",
+        "slide_count": 2,
+        "slide_ids": [
+          "S176",
+          "S177"
+        ]
+      },
+      {
+        "block_id": "09-03",
+        "heading": "결론: Harness Engineer",
+        "slide_count": 2,
+        "slide_ids": [
+          "S178",
+          "S179"
+        ]
+      }
+    ],
+    "footnote_assets": [
+      "../../../assets/prompt-context-harness-1-15/page-013.jpg"
+    ],
+    "review_focus": "행동 항목이 FOMO를 자극하지 않고 바로 옮길 습관으로 남는지 확인",
+    "special_rules": [
+      "heuristic_multi_slide_decomposition"
+    ],
+    "shell_mix": {
+      "content-essay-shell": 4,
+      "content-card-shell": 2,
+      "content-emphasis-shell": 1,
+      "chapter-transition-shell": 1
+    }
   }
 }
