@@ -25,3 +25,21 @@
 - S021 | content | content-emphasis-shell | 개발자의 새로운 역할: 컨텍스트를 설계하는 능력 | 앞으로의 개발자는 에이전트가 코드를 잘 쓸 수 있도록 환경을 설계하고, 결과를 판단하는 사람에 가까워집니다
 - S022 | content | content-essay-shell | 그래도 기초가 중요하다 | 그래도 기초가 중요하다
 - S023 | content | content-essay-shell | AI가 코드를 더 많이 써 줄수록 기본기가 덜 중요해질 것처럼 보 | AI가 코드를 더 많이 써 줄수록 기본기가 덜 중요해질 것처럼 보
+## CHAPTER 02 · 02
+- S024 | chapter-transition | chapter-transition-shell | 왜 Claude Code인가, 그리고 왜 Harness 인가 | 왜 Claude Code인가, 그리고 왜 Harness 인가
+- S025 | content | content-essay-shell | 왜 Claude Code인가, 그리고 왜 Harness 인가 | 왜 Claude Code인가, 그리고 왜 Harness 인가
+- S026 | content | content-essay-shell | 시작하며: 특정 제품 리뷰가 아닙니다 | 시작하며: 특정 제품 리뷰가 아닙니다
+- S027 | content | content-essay-shell | 막: Copilot과 ChatGPT, 프롬프트의 시대 | 막: Copilot과 ChatGPT, 프롬프트의 시대
+- S028 | content | content-card-shell | AI 코딩 도구의 출발점에는 GitHub Copilot이 있었 | AI 코딩 도구의 출발점에는 GitHub Copilot이 있었
+- S029 | content | content-essay-shell | 초창기 Copilot은 현재 파일의 코드를 바탕으로 다음 줄을 제안하는 스마트 자동완성에 가까웠 | 초창기 Copilot은 현재 파일의 코드를 바탕으로 다음 줄을 제안하는 스마트 자동완성에 가까웠
+- S030 | content | content-emphasis-shell | 막: Copilot과 ChatGPT, 프롬프트의 시대 | 현재 열려 있는 파일이 곧 암묵적 프롬프트였고, 모델은 그 프롬프트의 다음 토큰을 예측
+- S031 | content | content-essay-shell | 프롬프트 시대의 벽: 모델은 보지 못한 것을 알 수 | 프롬프트 시대의 벽: 모델은 보지 못한 것을 알 수
+- S032 | content | content-essay-shell | 막: Cursor와 컨텍스트의 시대 | 막: Cursor와 컨텍스트의 시대
+- S033 | content | content-card-shell | 프롬프트의 벽을 가장 먼저 크게 밀어낸 도구가 Cursor였 | 프롬프트의 벽을 가장 먼저 크게 밀어낸 도구가 Cursor였
+- S034 | content | content-emphasis-shell | 막: Cursor와 컨텍스트의 시대 | Copilot이 현재 파일 중심이었다면 Cursor는 전체 코드베이스를 인덱싱하고, 필요한 파일과 심볼을 검색해 컨텍스트에
+- S035 | content | content-essay-shell | 컨텍스트 시대의 벽: 좋은 입력만으로는 루프를 통제할 수 | 컨텍스트 시대의 벽: 좋은 입력만으로는 루프를 통제할 수
+- S036 | content | content-card-shell | 하지만 컨텍스트만으로도 충분하지 않았 | 하지만 컨텍스트만으로도 충분하지 않았
+- S037 | content | content-emphasis-shell | 컨텍스트 시대의 벽: 좋은 입력만으로는 루프를 통제할 수 | 이유는 간단
+- S038 | content | content-essay-shell | 막: Claude Code, Codex, OpenCode 와 하네스의 시대 | 막: Claude Code, Codex, OpenCode 와 하네스의 시대
+- S039 | content | content-card-shell | 하네스 시대의 대표 장면은 코딩 도구가 단순한 자동완성이나 채팅을 넘어 작업 환경 전체를 품기 시작한 것 | 하네스 시대의 대표 장면은 코딩 도구가 단순한 자동완성이나 채팅을 넘어 작업 환경 전체를 품기 시작한 것
+- S040 | content | content-emphasis-shell | 막: Claude Code, Codex, OpenCode 와 하네스의 시대 | Claude Code는 터미널 네이티브 워크플로우를 중심에 둡니다

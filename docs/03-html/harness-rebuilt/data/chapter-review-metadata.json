@@ -155,5 +155,109 @@
       "content-emphasis-shell": 2,
       "chapter-transition-shell": 1
     }
+  },
+  "02": {
+    "chapter_id": "02",
+    "title": "왜 Claude Code인가, 그리고 왜 Harness 인가",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/02-왜 Claude Code인가, 그리고 왜 Harness 인가.md",
+    "transition_slide_id": "S024",
+    "slide_ids": [
+      "S024",
+      "S025",
+      "S026",
+      "S027",
+      "S028",
+      "S029",
+      "S030",
+      "S031",
+      "S032",
+      "S033",
+      "S034",
+      "S035",
+      "S036",
+      "S037",
+      "S038",
+      "S039",
+      "S040"
+    ],
+    "section_coverage": [
+      {
+        "block_id": "02-01",
+        "heading": "왜 Claude Code인가, 그리고 왜 Harness 인가",
+        "slide_count": 2,
+        "slide_ids": [
+          "S025",
+          "S026"
+        ]
+      },
+      {
+        "block_id": "02-02",
+        "heading": "막: Copilot과 ChatGPT, 프롬프트의 시대",
+        "slide_count": 4,
+        "slide_ids": [
+          "S027",
+          "S028",
+          "S029",
+          "S030"
+        ]
+      },
+      {
+        "block_id": "02-03",
+        "heading": "프롬프트 시대의 벽: 모델은 보지 못한 것을 알 수",
+        "slide_count": 1,
+        "slide_ids": [
+          "S031"
+        ]
+      },
+      {
+        "block_id": "02-04",
+        "heading": "막: Cursor와 컨텍스트의 시대",
+        "slide_count": 3,
+        "slide_ids": [
+          "S032",
+          "S033",
+          "S034"
+        ]
+      },
+      {
+        "block_id": "02-05",
+        "heading": "컨텍스트 시대의 벽: 좋은 입력만으로는 루프를 통제할 수",
+        "slide_count": 3,
+        "slide_ids": [
+          "S035",
+          "S036",
+          "S037"
+        ]
+      },
+      {
+        "block_id": "02-06",
+        "heading": "막: Claude Code, Codex, OpenCode 와 하네스의 시대",
+        "slide_count": 3,
+        "slide_ids": [
+          "S038",
+          "S039",
+          "S040"
+        ]
+      }
+    ],
+    "footnote_assets": [
+      "../../../assets/evolution-of-ai-agentic-patterns/01-three-era-timeline.png",
+      "../../../assets/evolution-of-ai-agentic-patterns/02-chain-of-thought.png",
+      "../../../assets/evolution-of-ai-agentic-patterns/03-react-pattern.png",
+      "../../../assets/evolution-of-ai-agentic-patterns/04-tree-of-thought.png",
+      "../../../assets/evolution-of-ai-agentic-patterns/05-andrew-ng-agentic-design-patterns.png",
+      "../../../assets/evolution-of-ai-agentic-patterns/06-cursor-ai-code-editor-architecture.png",
+      "../../../assets/prompt-context-harness-1-15/page-002.jpg"
+    ],
+    "review_focus": "프롬프트에서 하네스로 이동하는 구조가 제품 소개처럼 보이지 않는지 확인",
+    "special_rules": [
+      "heuristic_multi_slide_decomposition"
+    ],
+    "shell_mix": {
+      "content-essay-shell": 8,
+      "content-card-shell": 4,
+      "content-emphasis-shell": 4,
+      "chapter-transition-shell": 1
+    }
   }
 }
