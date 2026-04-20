@@ -332,5 +332,238 @@
       "content-emphasis-shell": 2,
       "chapter-transition-shell": 1
     }
+  },
+  "04": {
+    "chapter_id": "04",
+    "title": "프롬프트를 넘어서: 에이전트를 움직이는 기술, Harness",
+    "source_path": "docs/02-seminar/harness-rebuilt-md/04-프롬프트를 넘어서: 에이전트를 움직이는 기술, Harness.md",
+    "transition_slide_id": "S052",
+    "slide_ids": [
+      "S052",
+      "S053",
+      "S054",
+      "S055",
+      "S056",
+      "S057",
+      "S058",
+      "S059",
+      "S060",
+      "S061",
+      "S062",
+      "S063",
+      "S064",
+      "S065",
+      "S066",
+      "S067",
+      "S068",
+      "S069",
+      "S070",
+      "S071",
+      "S072",
+      "S073",
+      "S074",
+      "S075",
+      "S076",
+      "S077",
+      "S078",
+      "S079",
+      "S080",
+      "S081",
+      "S082",
+      "S083",
+      "S084",
+      "S085",
+      "S086",
+      "S087",
+      "S088"
+    ],
+    "section_coverage": [
+      {
+        "block_id": "04-01",
+        "heading": "프롬프트를 넘어서: 에이전트를 움직이는 기술, Harness",
+        "slide_count": 1,
+        "slide_ids": [
+          "S053"
+        ]
+      },
+      {
+        "block_id": "04-02",
+        "heading": "Prompt, Context, Harness",
+        "slide_count": 3,
+        "slide_ids": [
+          "S054",
+          "S055",
+          "S056"
+        ]
+      },
+      {
+        "block_id": "04-03",
+        "heading": "Agent = Model + Harness",
+        "slide_count": 2,
+        "slide_ids": [
+          "S057",
+          "S058"
+        ]
+      },
+      {
+        "block_id": "04-04",
+        "heading": "Context Engineering: 더 많이 넣는 기술이 아니다",
+        "slide_count": 3,
+        "slide_ids": [
+          "S059",
+          "S060",
+          "S061"
+        ]
+      },
+      {
+        "block_id": "04-05",
+        "heading": "에이전트 루프: 하네스의 심장",
+        "slide_count": 1,
+        "slide_ids": [
+          "S062"
+        ]
+      },
+      {
+        "block_id": "04-06",
+        "heading": "Right Altitude: 지시문의 고도",
+        "slide_count": 1,
+        "slide_ids": [
+          "S063"
+        ]
+      },
+      {
+        "block_id": "04-07",
+        "heading": "하네스를 만드는 네 가지 기본 도구",
+        "slide_count": 2,
+        "slide_ids": [
+          "S064",
+          "S065"
+        ]
+      },
+      {
+        "block_id": "04-08",
+        "heading": "Stable Prefix와 Variable Suffix: 비용 최적화",
+        "slide_count": 3,
+        "slide_ids": [
+          "S066",
+          "S067",
+          "S068"
+        ]
+      },
+      {
+        "block_id": "04-09",
+        "heading": "MCP와 Context Hub: 도구와 최신 지식의 연결",
+        "slide_count": 3,
+        "slide_ids": [
+          "S069",
+          "S070",
+          "S071"
+        ]
+      },
+      {
+        "block_id": "04-10",
+        "heading": "Memory: 세션을 넘어서는 기억",
+        "slide_count": 3,
+        "slide_ids": [
+          "S072",
+          "S073",
+          "S074"
+        ]
+      },
+      {
+        "block_id": "04-11",
+        "heading": "기능 블록과 도구 레이어는 다르다",
+        "slide_count": 2,
+        "slide_ids": [
+          "S075",
+          "S076"
+        ]
+      },
+      {
+        "block_id": "04-12",
+        "heading": "CLAUDE.md와 AGENTS.md: 규칙을 정",
+        "slide_count": 2,
+        "slide_ids": [
+          "S077",
+          "S078"
+        ]
+      },
+      {
+        "block_id": "04-13",
+        "heading": "Skills, Hooks, MCP는 같은 말이 아니다",
+        "slide_count": 1,
+        "slide_ids": [
+          "S079"
+        ]
+      },
+      {
+        "block_id": "04-14",
+        "heading": "Plan-Critic-Build: 계획과 실행을 갈라놓기",
+        "slide_count": 1,
+        "slide_ids": [
+          "S080"
+        ]
+      },
+      {
+        "block_id": "04-15",
+        "heading": "Ralph Loop: 가장 단순한 하네스",
+        "slide_count": 1,
+        "slide_ids": [
+          "S081"
+        ]
+      },
+      {
+        "block_id": "04-16",
+        "heading": "암묵지를 파일로 뽑아내라",
+        "slide_count": 1,
+        "slide_ids": [
+          "S082"
+        ]
+      },
+      {
+        "block_id": "04-17",
+        "heading": "Harness Builder라는 역할",
+        "slide_count": 1,
+        "slide_ids": [
+          "S083"
+        ]
+      },
+      {
+        "block_id": "04-18",
+        "heading": "LLM-as-OS: 프롬프트는 명령어 한 줄일 뿐",
+        "slide_count": 2,
+        "slide_ids": [
+          "S084",
+          "S085"
+        ]
+      },
+      {
+        "block_id": "04-19",
+        "heading": "하네스 엔지니어링의 5대 기능 블록",
+        "slide_count": 3,
+        "slide_ids": [
+          "S086",
+          "S087",
+          "S088"
+        ]
+      }
+    ],
+    "footnote_assets": [
+      "../../../assets/claude-code-seminar-kakao/page-043.png",
+      "../../../assets/evolution-of-ai-agentic-patterns/08-kv-cache-mechanism.png",
+      "../../../assets/evolution-of-ai-agentic-patterns/09-mcp-architecture.png",
+      "../../../assets/prompt-context-harness-1-15/page-002.jpg",
+      "../../../assets/prompt-context-harness-1-15/page-005.jpg"
+    ],
+    "review_focus": "Harness를 유행어가 아니라 실행 구조로 설명하는 데 성공했는지 확인",
+    "special_rules": [
+      "heuristic_multi_slide_decomposition"
+    ],
+    "shell_mix": {
+      "content-essay-shell": 19,
+      "content-card-shell": 11,
+      "content-emphasis-shell": 6,
+      "chapter-transition-shell": 1
+    }
   }
 }

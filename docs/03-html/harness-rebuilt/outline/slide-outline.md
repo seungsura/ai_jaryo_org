@@ -55,3 +55,41 @@
 - S049 | content | content-essay-shell | Waterfall과는 무엇이 다른가 | Waterfall과는 무엇이 다른가
 - S050 | content | content-card-shell | 이쯤 되면 당연한 반론이 나옵니다 | 이쯤 되면 당연한 반론이 나옵니다
 - S051 | content | content-emphasis-shell | Waterfall과는 무엇이 다른가 | 스펙을 먼저 쓰고 계획을 세우면, 결국 옛날 Waterfall 시절로 회귀하는 것 아닌가?" 겉보기엔 그럴싸한 지적
+## CHAPTER 04 · 04
+- S052 | chapter-transition | chapter-transition-shell | 프롬프트를 넘어서: 에이전트를 움직이는 기술, Harness | 프롬프트를 넘어서: 에이전트를 움직이는 기술, Harness
+- S053 | content | content-essay-shell | 프롬프트를 넘어서: 에이전트를 움직이는 기술, Harness | 프롬프트를 넘어서: 에이전트를 움직이는 기술, Harness
+- S054 | content | content-essay-shell | Prompt, Context, Harness | Prompt, Context, Harness
+- S055 | content | content-card-shell | 셋은 비슷한 유행어가 아니라 서로 다른 문제를 다룹니다 | 셋은 비슷한 유행어가 아니라 서로 다른 문제를 다룹니다
+- S056 | content | content-emphasis-shell | Prompt, Context, Harness | 단일 프롬프트 정적 |
+- S057 | content | content-essay-shell | Agent = Model + Harness | Agent = Model + Harness
+- S058 | content | content-card-shell | Agent = Model + Harness라는 말은 과장이 아닙니다 | Agent = Model + Harness라는 말은 과장이 아닙니다
+- S059 | content | content-essay-shell | Context Engineering: 더 많이 넣는 기술이 아니다 | Context Engineering: 더 많이 넣는 기술이 아니다
+- S060 | content | content-essay-shell | 컨텍스트 엔지니어링을 “정보를 많이 넣는 기술”로 이해하면 곧바로 실패 | 컨텍스트 엔지니어링을 “정보를 많이 넣는 기술”로 이해하면 곧바로 실패
+- S061 | content | content-emphasis-shell | Context Engineering: 더 많이 넣는 기술이 아니다 | 저장소 전체, 로그 전체, 문서 전체를 컨텍스트 창에 밀어 넣으면 모델이 더 똑똑해질 것 같지만, 실제로는 신호와 잡음이 뒤섞
+- S062 | content | content-card-shell | 에이전트 루프: 하네스의 심장 | 에이전트 루프: 하네스의 심장
+- S063 | content | content-essay-shell | Right Altitude: 지시문의 고도 | Right Altitude: 지시문의 고도
+- S064 | content | content-essay-shell | 하네스를 만드는 네 가지 기본 도구 | 하네스를 만드는 네 가지 기본 도구
+- S065 | content | content-card-shell | CLAUDE.md는 시스템 프롬프트라기보다 지속 컨텍스트에 가깝 | CLAUDE.md는 시스템 프롬프트라기보다 지속 컨텍스트에 가깝
+- S066 | content | content-essay-shell | Stable Prefix와 Variable Suffix: 비용 최적화 | Stable Prefix와 Variable Suffix: 비용 최적화
+- S067 | content | content-card-shell | 컨텍스트를 잘 구성한다는 말은 단순히 “잘 요약한다”는 뜻이 아닙니다 | 컨텍스트를 잘 구성한다는 말은 단순히 “잘 요약한다”는 뜻이 아닙니다
+- S068 | content | content-emphasis-shell | Stable Prefix와 Variable Suffix: 비용 최적화 | 프로덕션에서는 비용과 지연도 함께 봐야
+- S069 | content | content-essay-shell | MCP와 Context Hub: 도구와 최신 지식의 연결 | MCP와 Context Hub: 도구와 최신 지식의 연결
+- S070 | content | content-card-shell | 컨텍스트 엔지니어링에서 외부 도구와 최신 문서 연결은 핵심 인프라 | 컨텍스트 엔지니어링에서 외부 도구와 최신 문서 연결은 핵심 인프라
+- S071 | content | content-emphasis-shell | MCP와 Context Hub: 도구와 최신 지식의 연결 | MCP는 에이전트와 외부 도구·데이터 소스를 연결하는 표준 인터페이스로 이해할 수 있
+- S072 | content | content-essay-shell | Memory: 세션을 넘어서는 기억 | Memory: 세션을 넘어서는 기억
+- S073 | content | content-card-shell | 컨텍스트 윈도우는 작업 기억 | 컨텍스트 윈도우는 작업 기억
+- S074 | content | content-emphasis-shell | Memory: 세션을 넘어서는 기억 | 하지만 프로젝트 지식은 세션 하나 안에만 머물 수 없
+- S075 | content | content-essay-shell | 기능 블록과 도구 레이어는 다르다 | 기능 블록과 도구 레이어는 다르다
+- S076 | content | content-card-shell | 하네스를 설계할 때 가장 많이 생기는 혼동은 기능 블록과 도구 레이어를 섞는 것 | 하네스를 설계할 때 가장 많이 생기는 혼동은 기능 블록과 도구 레이어를 섞는 것
+- S077 | content | content-essay-shell | CLAUDE.md와 AGENTS.md: 규칙을 정 | CLAUDE.md와 AGENTS.md: 규칙을 정
+- S078 | content | content-card-shell | CLAUDE.md나 AGENTS.md 같은 규칙 파일은 프로젝트의 기준선을 고정 | CLAUDE.md나 AGENTS.md 같은 규칙 파일은 프로젝트의 기준선을 고정
+- S079 | content | content-essay-shell | Skills, Hooks, MCP는 같은 말이 아니다 | Skills, Hooks, MCP는 같은 말이 아니다
+- S080 | content | content-essay-shell | Plan-Critic-Build: 계획과 실행을 갈라놓기 | Plan-Critic-Build: 계획과 실행을 갈라놓기
+- S081 | content | content-essay-shell | Ralph Loop: 가장 단순한 하네스 | Ralph Loop: 가장 단순한 하네스
+- S082 | content | content-essay-shell | 암묵지를 파일로 뽑아내라 | 암묵지를 파일로 뽑아내라
+- S083 | content | content-essay-shell | Harness Builder라는 역할 | Harness Builder라는 역할
+- S084 | content | content-essay-shell | LLM-as-OS: 프롬프트는 명령어 한 줄일 뿐 | LLM-as-OS: 프롬프트는 명령어 한 줄일 뿐
+- S085 | content | content-card-shell | 기존 OS 구성요소 / 역할 / LLM 시스템 대응 | 기존 OS 구성요소 / 역할 / LLM 시스템 대응
+- S086 | content | content-essay-shell | 하네스 엔지니어링의 5대 기능 블록 | 하네스 엔지니어링의 5대 기능 블록
+- S087 | content | content-card-shell | 앞서 본 여섯 개 실행 요소를 운영 관점으로 다시 묶으면 다섯 개 기능 블록으로 정리할 수 있 | 앞서 본 여섯 개 실행 요소를 운영 관점으로 다시 묶으면 다섯 개 기능 블록으로 정리할 수 있
+- S088 | content | content-emphasis-shell | 하네스 엔지니어링의 5대 기능 블록 | 결론: 프롬프트와 컨텍스트는 하네스의 일부다
