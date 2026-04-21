@@ -10,6 +10,7 @@
   - canonical seminar prose
 - `docs/03-html/`
   - HTML slide outline과 구현
+  - 모든 HTML 관련 작업 전 `docs/03-html/shared/slide-quality-rules.md` 확인
 - `docs/04-pdf/`
   - PDF export와 QA
 - `docs/05-speaker-notes/`

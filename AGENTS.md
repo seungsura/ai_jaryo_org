@@ -28,10 +28,17 @@ This repository uses project-local skills and subagent specs under `.codex/`. Ke
 
 ## HTML Slide Policy
 
-- `docs/03-html/` 작업 전 `docs/03-html/shared/slide-quality-rules.md`를 먼저 읽습니다.
-- 사용자와 대화하며 확정한 HTML slide 규칙은 기존 HTML stage 관례보다 우선합니다.
+- 모든 HTML 관련 작업 전 `docs/03-html/shared/slide-quality-rules.md`를 먼저 읽고, 새 슬라이드 피드백은 거기에 먼저 기록합니다.
+- HTML 관련 작업 범위에는 `docs/03-html/`의 outline, manifest, generator output, shared CSS, shared token, deck HTML, screenshot QA, PDF export QA가 모두 포함됩니다.
+- 사용자와 대화하며 확정한 HTML slide 규칙은 기존 HTML stage 관례, design 문서, generator 관성보다 우선합니다.
+- HTML 작업 subagent prompt에는 `docs/03-html/shared/slide-quality-rules.md` 사전 확인을 명시합니다.
+- `Kuneosu/make-slide`의 outline-first, theme/layout 분리, shell reuse, standalone deck, keyboard/touch, print/PDF 구조를 우선 적용합니다.
+- HTML slide 문구와 시각 구조의 의미 단위는 source markdown 또는 사용자가 명시한 reference에서만 가져옵니다.
+- source에 없는 비교 축, label, 의미, 예시, metric, 해설 문구를 새로 만들지 않습니다.
 - deck은 `theme-minimal-light`, 기존/minimal-light palette, `720pt × 405pt`, Pretendard CDN, footer `Harness 잘 사용하기` 기준을 유지합니다.
 - slide 문구는 명사형·구 단위 중심으로 쓰고, 공손체·서술형·명령형을 피합니다.
+- HTML 수정 후 `check_slide_contract`, `check_slide_korean`, `check_deck_runtime`, 필요한 Playwright/PDF smoke를 규칙 기준으로 실행합니다.
+
 ## Local Skills
 
 - `.codex/skills/local/jaryo-doc-reconstruction/SKILL.md`

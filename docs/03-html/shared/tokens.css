@@ -12,14 +12,17 @@
   --color-signal: #0066cc;
   --color-support: #0a84ff;
   --color-mute: #555555;
+  --color-tertiary: #444444;
   --color-panel: #ffffff;
   --color-panel-focus: #1a1a1a;
   --color-on-focus: rgba(255, 255, 255, 0.92);
   --color-surface: #ffffff;
   --color-surface-muted: #f5f5f5;
+  --color-dark-ink: #111111;
+  --color-dark-surface: #2f2b27;
 
-  --color-line-soft: rgba(26, 26, 26, 0.1);
-  --color-line-strong: rgba(26, 26, 26, 0.16);
+  --color-line-soft: #e0e0e0;
+  --color-line-strong: #d2d2d2;
   --color-signal-soft: rgba(0, 102, 204, 0.1);
   --color-support-soft: rgba(10, 132, 255, 0.12);
   --color-code-bg: #f5f5f5;
@@ -51,17 +54,20 @@ body.theme-minimal-light {
   --color-signal: #0066cc;
   --color-support: #0a84ff;
   --color-mute: #555555;
+  --color-tertiary: #444444;
   --color-panel: #ffffff;
   --color-panel-focus: #1a1a1a;
   --color-on-focus: rgba(255, 255, 255, 0.92);
   --color-surface: #ffffff;
   --color-surface-muted: #f5f5f5;
-  --color-line-soft: rgba(26, 26, 26, 0.1);
-  --color-line-strong: rgba(26, 26, 26, 0.16);
+  --color-line-soft: #e0e0e0;
+  --color-line-strong: #d2d2d2;
   --color-signal-soft: rgba(0, 102, 204, 0.1);
   --color-support-soft: rgba(10, 132, 255, 0.12);
   --color-code-bg: #f5f5f5;
   --color-code-border: #e0e0e0;
+  --color-dark-ink: #111111;
+  --color-dark-surface: #2f2b27;
   --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04);
   --shadow-soft: 0 6px 20px rgba(0, 0, 0, 0.04);
 }

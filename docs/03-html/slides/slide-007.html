@@ -9,17 +9,13 @@
 <link rel="stylesheet" href="../shared/slide-base.css">
 </head>
 <body class="theme-minimal-light">
-<main class="slide family-comparison layout-split density-medium" data-slide-id="S007" data-shell="split-compare-shell" data-notes="C의 malloc/free와 Java의 객체 생성 및 GC를 비교한다." data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 01</p><h1 class="title-placeholder">C → Java</h1></section><section class="compare-grid"><article class="compare-col"><p class="compare-label">C</p><pre class="code-block"><code>
-#include &lt;stdio.h&gt;
+<main class="slide family-comparison layout-split density-medium chapter-01" data-slide-id="S007" data-shell="split-compare-shell" data-notes="source markdown의 C와 Java 코드 블록" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 01</p><h1 class="title-placeholder">C → Java</h1></section><section class="compare-grid with-arrow"><article class="compare-col"><p class="compare-label">C</p><pre class="code-block"><code>#include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
 
-typedef struct {
-    int x;
-    int y;
-} Point;
+...
 
 int main() {
-    Point* p = malloc(sizeof(Point));
+    Point* p = (Point*)malloc(sizeof(Point));
     p-&gt;x = 10;
     p-&gt;y = 20;
     printf(
@@ -29,27 +25,12 @@ int main() {
     );
     free(p);
     return 0;
-}
-</code></pre></article><article class="compare-col is-focus"><p class="compare-label">Java</p><pre class="code-block"><code>
-class Point {
-    int x;
-    int y;
-
-    Point(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        Point p = new Point(10, 20);
-        System.out.println(
-            &quot;Point: &quot; + p.x + &quot;, &quot; + p.y
-        );
-        p = null;
-    }
-}
-</code></pre></article></section><p class="negative-opinion">메모리 직접 관리 없는 개발은 장난</p><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">7</span></footer></main>
+}</code></pre>
+</article><div class="compare-arrow" aria-hidden="true">→</div><article class="compare-col is-focus"><p class="compare-label">Java</p><pre class="code-block"><code>Point p = new Point(10, 20);
+System.out.println(
+    &quot;Point: &quot; + p.x + &quot;, &quot; + p.y
+);
+p = null;</code></pre>
+</article></section><p class="negative-opinion">메모리를 직접 관리하지 않으면 진짜 개발자가 아니다!</p><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">7</span></footer></main>
 </body>
 </html>

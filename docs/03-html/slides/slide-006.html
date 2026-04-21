@@ -9,29 +9,27 @@
 <link rel="stylesheet" href="../shared/slide-base.css">
 </head>
 <body class="theme-minimal-light">
-<main class="slide family-comparison layout-split density-medium" data-slide-id="S006" data-shell="split-compare-shell" data-notes="Hello World 수준에서도 어셈블리와 C의 표현량 차이가 명확하다." data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 01</p><h1 class="title-placeholder">어셈블리 → C/Pascal</h1></section><section class="compare-grid"><article class="compare-col"><p class="compare-label">어셈블리</p><pre class="code-block"><code>
-section .data
-  msg db &quot;Hello World&quot;, 10
+<main class="slide family-comparison layout-split density-medium chapter-01" data-slide-id="S006" data-shell="split-compare-shell" data-notes="source markdown의 어셈블리와 C 코드 블록" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 01</p><h1 class="title-placeholder">어셈블리 → C/Pascal</h1></section><section class="compare-grid with-arrow"><article class="compare-col"><p class="compare-label">어셈블리</p><pre class="code-block"><code>section .data
+  msg db &quot;Hello World&quot;
 
 section .text
-  global _start
+  global_start
 
 _start:
-  mov rax, 1
-  mov rdi, 1
-  mov rsi, msg
-  mov rdx, 12
-  syscall
-  mov rax, 60
-  mov rdi, 0
-  syscall
-</code></pre></article><article class="compare-col is-focus"><p class="compare-label">C/Pascal</p><pre class="code-block"><code>
-#include &lt;stdio.h&gt;
+	mov rax, 1
+	mov rdi, 1
+	mov rsi, msg
+	mov rdx, 12
+	syscall
+	mov rax, 60
+	mov rdi, 0
+	syscall</code></pre>
+</article><div class="compare-arrow" aria-hidden="true">→</div><article class="compare-col is-focus"><p class="compare-label">C/Pascal</p><pre class="code-block"><code>#include &lt;stdio.h&gt;
 
 int main() {
     printf(&quot;Hello\n&quot;);
     return 0;
-}
-</code></pre></article></section><p class="negative-opinion">어셈블리를 모르면 진짜 개발자 아님</p><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">6</span></footer></main>
+}</code></pre>
+</article></section><p class="negative-opinion">진짜 프로그래머는 파스칼 같은 걸 쓰지 않는다!</p><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">6</span></footer></main>
 </body>
 </html>

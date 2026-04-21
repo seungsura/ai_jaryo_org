@@ -12,7 +12,9 @@
 
 ## Required Reading
 
-HTML slide 작업 전 `slide-quality-rules.md`를 먼저 확인한다. 해당 파일의 대화 기반 규칙은 오래된 shell/design 문서보다 우선한다.
+모든 HTML 관련 작업 전 `slide-quality-rules.md`를 먼저 확인한다. 대상은 slide HTML뿐 아니라 outline, manifest, generator, shared CSS, token, deck HTML, screenshot QA, PDF export QA까지 포함한다.
+
+`slide-quality-rules.md`의 대화 기반 규칙은 오래된 shell/design 문서와 generator 기존 구현보다 우선한다. 새 사용자 피드백은 구현 전에 해당 파일의 판단 로그에 먼저 기록한다.
 
 ## Validation
 

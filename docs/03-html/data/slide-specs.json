@@ -3,7 +3,7 @@
     "order": 1,
     "slide_id": "S001",
     "file_name": "slide-001.html",
-    "title": "Harness를 설계하는 법",
+    "title": "Harness 잘 사용하기",
     "slide_type": "title",
     "layout": "centered",
     "shell": "title-hero-shell",
@@ -170,12 +170,12 @@
     "density": "medium",
     "source_section": "01",
     "source_block": "01-01",
-    "key_claim": "이진 코드 직접 작성에서 명령어 기호로",
-    "notes_intent": "언어 발전의 첫 추상화 사례",
+    "key_claim": "이진 코드 직접 작성 부담의 감소",
+    "notes_intent": "source code block 기반 첫 전환 사례",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "CHAPTER 01",
-    "notes": "기계어의 이진 표현이 어셈블리 명령어로 올라오며 직접 다루는 부담이 줄어든다.",
+    "notes": "source markdown의 기계어와 어셈블리 코드 블록",
     "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
@@ -183,7 +183,8 @@
       "left_code": "10111000 00000001 00000000 00000000 00000000",
       "right_label": "어셈블리",
       "right_code": "MOV EAX, 1",
-      "opinion": "기계어를 모르면 진짜 개발자 아님"
+      "opinion": "컴파일러가 만든 코드가 사람보다 효율적일 리 없다!",
+      "arrow": true
     }
   },
   {
@@ -198,20 +199,21 @@
     "density": "medium",
     "source_section": "01",
     "source_block": "01-01",
-    "key_claim": "레지스터와 syscall에서 함수와 컴파일러로",
-    "notes_intent": "어셈블리와 C/Pascal의 표현량 차이",
+    "key_claim": "어셈블리 표현량에서 C 함수 표현으로",
+    "notes_intent": "source code block 기반 두 번째 전환 사례",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "CHAPTER 01",
-    "notes": "Hello World 수준에서도 어셈블리와 C의 표현량 차이가 명확하다.",
+    "notes": "source markdown의 어셈블리와 C 코드 블록",
     "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
       "left_label": "어셈블리",
-      "left_code": "section .data\n  msg db \"Hello World\", 10\n\nsection .text\n  global _start\n\n_start:\n  mov rax, 1\n  mov rdi, 1\n  mov rsi, msg\n  mov rdx, 12\n  syscall\n  mov rax, 60\n  mov rdi, 0\n  syscall",
+      "left_code": "section .data\n  msg db \"Hello World\"\n\nsection .text\n  global_start\n\n_start:\n\tmov rax, 1\n\tmov rdi, 1\n\tmov rsi, msg\n\tmov rdx, 12\n\tsyscall\n\tmov rax, 60\n\tmov rdi, 0\n\tsyscall",
       "right_label": "C/Pascal",
       "right_code": "#include <stdio.h>\n\nint main() {\n    printf(\"Hello\\n\");\n    return 0;\n}",
-      "opinion": "어셈블리를 모르면 진짜 개발자 아님"
+      "opinion": "진짜 프로그래머는 파스칼 같은 걸 쓰지 않는다!",
+      "arrow": true
     }
   },
   {
@@ -227,19 +229,20 @@
     "source_section": "01",
     "source_block": "01-01",
     "key_claim": "수동 메모리 관리에서 GC로",
-    "notes_intent": "메모리 관리 책임의 이동",
+    "notes_intent": "source code block 기반 세 번째 전환 사례",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "CHAPTER 01",
-    "notes": "C의 malloc/free와 Java의 객체 생성 및 GC를 비교한다.",
+    "notes": "source markdown의 C와 Java 코드 블록",
     "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
       "left_label": "C",
-      "left_code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct {\n    int x;\n    int y;\n} Point;\n\nint main() {\n    Point* p = malloc(sizeof(Point));\n    p->x = 10;\n    p->y = 20;\n    printf(\n        \"Point: %d, %d\\n\",\n        p->x,\n        p->y\n    );\n    free(p);\n    return 0;\n}",
+      "left_code": "#include <stdio.h>\n#include <stdlib.h>\n\n...\n\nint main() {\n    Point* p = (Point*)malloc(sizeof(Point));\n    p->x = 10;\n    p->y = 20;\n    printf(\n        \"Point: %d, %d\\n\",\n        p->x,\n        p->y\n    );\n    free(p);\n    return 0;\n}",
       "right_label": "Java",
-      "right_code": "class Point {\n    int x;\n    int y;\n\n    Point(int x, int y) {\n        this.x = x;\n        this.y = y;\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Point p = new Point(10, 20);\n        System.out.println(\n            \"Point: \" + p.x + \", \" + p.y\n        );\n        p = null;\n    }\n}",
-      "opinion": "메모리 직접 관리 없는 개발은 장난"
+      "right_code": "        Point p = new Point(10, 20);\n        System.out.println(\n            \"Point: \" + p.x + \", \" + p.y\n        );\n        p = null;",
+      "opinion": "메모리를 직접 관리하지 않으면 진짜 개발자가 아니다!",
+      "arrow": true
     }
   },
   {
@@ -254,12 +257,12 @@
     "density": "medium",
     "source_section": "01",
     "source_block": "01-01",
-    "key_claim": "보일러플레이트 축소와 표현 밀도 상승",
-    "notes_intent": "Java와 Python의 boilerplate 차이",
+    "key_claim": "같은 출력과 더 짧은 표현",
+    "notes_intent": "source code block 기반 네 번째 전환 사례",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "CHAPTER 01",
-    "notes": "같은 Hello World라도 Java와 Python의 표현 밀도는 크게 다르다.",
+    "notes": "source markdown의 Java와 Python 코드 블록",
     "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
@@ -267,7 +270,8 @@
       "left_code": "public class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, World!\");\n    }\n}",
       "right_label": "Python",
       "right_code": "print(\"Hello, World!\")",
-      "opinion": "보일러플레이트 없는 언어는 장난감"
+      "opinion": "장난감 언어로 무슨 개발을 하냐!",
+      "arrow": true
     }
   },
   {
@@ -275,32 +279,24 @@
     "slide_id": "S009",
     "file_name": "slide-009.html",
     "title": "AI 개발",
-    "slide_type": "comparison",
-    "layout": "split",
-    "shell": "split-compare-shell",
-    "family": "comparison",
+    "slide_type": "statement",
+    "layout": "editorial",
+    "shell": "statement-editorial-shell",
+    "family": "content",
     "density": "medium",
     "source_section": "01",
     "source_block": "01-01",
-    "key_claim": "자연어 지시에서 작업 위임으로",
-    "notes_intent": "언어 발전 사례의 현재형",
+    "key_claim": "개발의 추상화 수준 상승",
+    "notes_intent": "source prompt와 quote 기반 AI 개발 사례",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "CHAPTER 01",
-    "notes": "AI 개발은 개발의 종말이 아니라 추상화 수준 상승으로 읽어야 한다.",
+    "notes": "source markdown의 AI 개발 prompt와 quote",
     "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
-      "left_label": "직접 작성",
-      "left_points": [
-        "대상 코드 탐색",
-        "수정 지점 선택",
-        "테스트 작성",
-        "결과 검토"
-      ],
-      "right_label": "AI 개발",
-      "right_code": "대상 함수 리팩터링\n테스트 코드 작성\n검증 결과 정리",
-      "opinion": "자연어 지시는 개발이 아님"
+      "variant": "prompt-only",
+      "prompt": "이 함수를 리펙토링하고 테스트 코드를 작성해줘."
     }
   },
   {
@@ -320,7 +316,7 @@
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "CHAPTER 01",
-    "notes": "시대별 전환을 표로 압축하고, 개발자가 끝까지 붙들 일이 어디로 이동하는지 묻는다.",
+    "notes": "시대별 전환을 표로 압축하고, 변경된 source 질문을 독립된 한 줄로 배치한다.",
     "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
@@ -333,35 +329,35 @@
         [
           "1950s",
           "기계어 → 어셈블리",
-          "이진 코드"
+          "이진 코드를 직접 작성하는 부담"
         ],
         [
           "1960s",
           "어셈블리 → C",
-          "명령어 최적화"
+          "레지스터와 명령어 최적화를 컴파일러에 위임"
         ],
         [
           "1990s",
           "C/C++ → Java",
-          "메모리 해제"
+          "메모리 해제를 가비지 컬렉터에 위임"
         ],
         [
           "2000s",
           "언어 → 프레임워크",
-          "보일러플레이트"
+          "반복되는 보일러플레이트를 프레임워크에 위임"
         ],
         [
           "2010s",
           "온프레미스 → 클라우드",
-          "서버 운영·확장"
+          "서버 운영과 확장을 클라우드에 위임"
         ],
         [
           "2020s",
           "직접 코딩 → AI 에이전트",
-          "코드 작성 일부"
+          "코드 작성의 상당 부분과 작업 환경 설계"
         ]
       ],
-      "question": "개발자가 끝까지 직접 붙들 일의 이동 위치"
+      "question": "직접하는 일을 줄고, 설계하는 일은 늘어난다"
     }
   },
   {
@@ -376,53 +372,32 @@
     "density": "medium",
     "source_section": "01",
     "source_block": "01-03",
-    "key_claim": "타이핑 비중 감소의 현장 신호",
-    "notes_intent": "숫자 근거를 대형 카드와 표로 압축",
+    "key_claim": "수동 코드 작성 비중 감소의 현장 신호",
+    "notes_intent": "source 숫자 사실만 압축",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "CHAPTER 01",
-    "notes": "YC W25, OpenAI Codex 팀, Meta 엔지니어 사례를 큰 숫자 중심으로 보여 준다.",
+    "notes": "source markdown의 YC W25, OpenAI Codex 팀, Meta 엔지니어 사례",
     "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
-      "metrics": [
+      "variant": "evidence-cards",
+      "cards": [
         {
           "value": "25%",
           "label": "YC W25",
-          "text": "95% 이상 AI 코드베이스"
+          "text": "코드베이스 95% 이상 AI"
         },
         {
           "value": "100만 줄",
-          "label": "OpenAI Codex",
-          "text": "수동 코드 없이 프로덕트 완성"
+          "label": "OpenAI Codex 팀",
+          "text": "수동 코드 한 줄 없음"
         },
         {
           "value": "3개월+",
-          "label": "Meta",
-          "text": "직접 타이핑 중단 사례"
+          "label": "Meta 엔지니어",
+          "text": "직접 코드 타이핑 없음"
         }
-      ],
-      "headers": [
-        "신호",
-        "규모",
-        "의미"
-      ],
-      "rows": [
-        [
-          "YC W25",
-          "25%",
-          "AI 작성 비중"
-        ],
-        [
-          "Codex 팀",
-          "100만 줄",
-          "수동 코딩 감소"
-        ],
-        [
-          "Meta 사례",
-          "3개월+",
-          "역할 변화"
-        ]
       ]
     }
   },
@@ -430,54 +405,49 @@
     "order": 12,
     "slide_id": "S012",
     "file_name": "slide-012.html",
-    "title": "문서의 코드화",
-    "slide_type": "table",
+    "title": "문서가 코드",
+    "slide_type": "process",
     "layout": "wide",
-    "shell": "evidence-table-shell",
+    "shell": "process-flow-shell",
     "family": "content",
     "density": "medium",
     "source_section": "01",
     "source_block": "01-04",
-    "key_claim": "문서의 실행 경로 편입",
-    "notes_intent": "문서 역할 변화와 규칙 파일 예시",
+    "key_claim": "에이전트가 매 세션 읽고 따라야 할 운영 규칙",
+    "notes_intent": "page-011 reference 기반 문서 card layout",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "CHAPTER 01",
-    "notes": "AI 코딩 도구에서 문서는 사람이 읽는 참고 자료를 넘어 에이전트가 따르는 운영 규칙이 된다.",
-    "lead": "",
+    "notes": "source markdown의 규칙 파일 네 가지",
+    "lead": "이름은 다르지만 역할은 동일",
     "footer_left": "Harness 잘 사용하기",
     "body": {
-      "headers": [
-        "파일",
-        "역할",
-        "에이전트 기준"
-      ],
-      "rows": [
-        [
-          "README",
-          "사람의 입구",
-          "프로젝트 방향"
-        ],
-        [
-          "CLAUDE.md",
-          "세션 운영",
-          "작업 방식"
-        ],
-        [
-          "AGENTS.md",
-          "역할과 금지선",
-          "우선순위"
-        ],
-        [
-          "Cursor Rules",
-          "도구별 규칙",
-          "편집 기준"
-        ],
-        [
-          "copilot-instructions",
-          "반복 기준",
-          "코드 생성 습관"
-        ]
+      "variant": "document-grid",
+      "steps": [
+        {
+          "index": "01",
+          "tool": "Claude Code",
+          "title": "CLAUDE.md",
+          "icon": "claude"
+        },
+        {
+          "index": "02",
+          "tool": "Cursor",
+          "title": "Cursor Rules",
+          "icon": "cursor"
+        },
+        {
+          "index": "03",
+          "tool": "GitHub Copilot",
+          "title": "copilot-instructions.md",
+          "icon": "copilot"
+        },
+        {
+          "index": "04",
+          "tool": "Codex",
+          "title": "AGENTS.md",
+          "icon": "codex"
+        }
       ]
     }
   },
@@ -485,36 +455,44 @@
     "order": 13,
     "slide_id": "S013",
     "file_name": "slide-013.html",
-    "title": "컨텍스트를 설계하는 능력",
-    "slide_type": "comparison",
-    "layout": "split",
-    "shell": "split-compare-shell",
-    "family": "comparison",
+    "title": "개발자의 새로운 역할",
+    "slide_type": "process",
+    "layout": "wide",
+    "shell": "process-flow-shell",
+    "family": "content",
     "density": "medium",
     "source_section": "01",
     "source_block": "01-05",
-    "key_claim": "개발자의 역할은 환경 설계와 결과 판단으로 이동",
-    "notes_intent": "Harness Engineer의 핵심 역량",
+    "key_claim": "환경 설계와 결과 판단",
+    "notes_intent": "reference layout 기반 evolution and analogy blocks",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "CHAPTER 01",
-    "notes": "문제 분해, 컨텍스트 선택, 수용 기준, 검증, 권한 경계가 새로운 핵심 역량이 된다.",
+    "notes": "source markdown의 개발자 역할 bullet list",
     "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
-      "left_label": "이전 역할",
-      "left_points": [
-        "코드 직접 작성",
-        "버그 수정",
-        "문서 사후 정리"
+      "variant": "evolution-analogies",
+      "flow": [
+        "코드를 잘 짜는 능력",
+        "문서를 잘 쓰는 능력",
+        "컨텍스트를 설계하는 능력"
       ],
-      "right_label": "새 역할",
-      "right_points": [
-        "문제 분해",
-        "컨텍스트 선택",
-        "수용 기준",
-        "검증 gate",
-        "권한 경계"
+      "analogies": [
+        {
+          "title": "건축가",
+          "lines": [
+            "벽돌 쌓기 대신 설계도 작성",
+            "정확한 설계도 → 튼튼한 건물"
+          ]
+        },
+        {
+          "title": "오케스트라 지휘자",
+          "lines": [
+            "직접 연주 대신 전체 조율",
+            "CLAUDE.md = 총보"
+          ]
+        }
       ]
     }
   },
@@ -522,7 +500,7 @@
     "order": 14,
     "slide_id": "S014",
     "file_name": "slide-014.html",
-    "title": "기초의 중요성",
+    "title": "그래도 기초가 중요하다",
     "slide_type": "statement",
     "layout": "editorial",
     "shell": "statement-editorial-shell",
@@ -530,23 +508,760 @@
     "density": "light",
     "source_section": "01",
     "source_block": "01-06",
-    "key_claim": "타이핑은 줄고 시스템 판단은 남는다",
-    "notes_intent": "01장 결론 전환",
+    "key_claim": "AI 코딩은 에이전트가 일할 환경을 설계하고 검증하는 영역",
+    "notes_intent": "reference layout 기반 quote and summary cards",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "CHAPTER 01",
-    "notes": "AI가 더 많은 코드를 만들수록 기본기는 사라지지 않고 판단 책임으로 더 무거워진다.",
+    "notes": "source markdown의 기본기와 시스템 이해 문단",
     "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
-      "tag": "BASICS",
-      "statement": "타이핑 감소, 시스템 판단 책임",
-      "support": "인증·동시성·DB·캐시·보안·비용·배포",
-      "chips": [
-        "Architecture",
-        "Security",
-        "Operations"
+      "variant": "summary-cards",
+      "quote": "AI가 더 많이 해줄수록 기초 지식을 가진 사람의 경쟁력 상승",
+      "cards": [
+        {
+          "eyebrow": "변하는 것",
+          "title": "직접 코드를 타이핑하는 비중",
+          "lines": [
+            "줄어든 것은 타이핑의 비중"
+          ]
+        },
+        {
+          "eyebrow": "변하지 않는 것",
+          "title": "시스템을 이해하는 능력",
+          "lines": [
+            "안전성 · 유지보수성 · 기존 시스템 적합성",
+            "인증과 권한 · 동시성 · 데이터베이스 스키마 · 캐싱"
+          ]
+        }
       ]
+    }
+  },
+  {
+    "order": 15,
+    "slide_id": "S015",
+    "file_name": "slide-015.html",
+    "title": "왜 Claude Code인가",
+    "slide_type": "section",
+    "layout": "centered",
+    "shell": "section-divider-shell",
+    "family": "section",
+    "density": "light",
+    "source_section": "02",
+    "source_block": "02-00",
+    "key_claim": "AI 코딩 도구 흐름의 대표 사례",
+    "notes_intent": "02장 진입과 제품 리뷰가 아닌 흐름 분석 고정",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 02",
+    "notes": "Claude Code를 특정 제품 리뷰가 아니라 하네스 흐름의 대표 사례로 둔다.",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "keywords": []
+    }
+  },
+  {
+    "order": 16,
+    "slide_id": "S016",
+    "file_name": "slide-016.html",
+    "title": "에이전틱 코딩의 실제 성과",
+    "slide_type": "table",
+    "layout": "wide",
+    "shell": "evidence-table-shell",
+    "family": "content",
+    "density": "medium",
+    "source_section": "02",
+    "source_block": "02-01",
+    "key_claim": "속도, 온보딩, 불가능하던 작업의 변화",
+    "notes_intent": "page-017 reference 기반 성과 metric cards",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 02",
+    "notes": "source markdown의 에이전틱 코딩 실제 성과와 page-017 reference",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "variant": "metric-impact-cards",
+      "reference": "tall",
+      "cards": [
+        {
+          "value": "2주",
+          "label": "CTO 추정 4~8개월",
+          "text": "프로젝트 완료",
+          "meta": "Augment Code + Vertex AI"
+        },
+        {
+          "value": "1~2일",
+          "label": "신규 개발자 온보딩",
+          "text": "기존 수주~수개월에서 단축",
+          "meta": "첫날부터 의미 있는 기여"
+        },
+        {
+          "value": "불가능하던 작업 실현",
+          "label": "기술 부채 해결",
+          "text": "즉각 피드백과 작업 실현",
+          "meta": "문서화된 작업 환경"
+        }
+      ]
+    }
+  },
+  {
+    "order": 17,
+    "slide_id": "S017",
+    "file_name": "slide-017.html",
+    "title": "왜 Claude Code인가",
+    "slide_type": "statement",
+    "layout": "editorial",
+    "shell": "statement-editorial-shell",
+    "family": "content",
+    "density": "medium",
+    "source_section": "02",
+    "source_block": "02-00",
+    "key_claim": "Agent = Model + Harness",
+    "notes_intent": "Agent = Model + Harness thesis와 명사형 quote",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 02",
+    "notes": "source markdown의 핵심 공식과 LangChain quote를 명사형으로 압축한다.",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "variant": "thesis-harness",
+      "statement": "Agent = Model + Harness",
+      "quote": "모델이 아닌 것은 전부 하네스",
+      "meaning": "힘이 센 말을 원하는 방향으로 몰고 멈추게 만드는 장비 전체",
+      "mapping": [
+        {
+          "title": "무엇을 보는지",
+          "text": "컨텍스트"
+        },
+        {
+          "title": "무엇을 하게 할지",
+          "text": "도구 · 권한"
+        },
+        {
+          "title": "언제 멈출지",
+          "text": "제약 · 검증"
+        }
+      ],
+      "source": "LangChain · Vivek Trivedy"
+    }
+  },
+  {
+    "order": 18,
+    "slide_id": "S018",
+    "file_name": "slide-018.html",
+    "title": "1막: Copilot과 ChatGPT, 프롬프트의 시대",
+    "slide_type": "process",
+    "layout": "wide",
+    "shell": "process-flow-shell",
+    "family": "content",
+    "density": "medium",
+    "source_section": "02",
+    "source_block": "02-02",
+    "key_claim": "자동완성에서 자연어 지시 인터페이스로",
+    "notes_intent": "프롬프트 시대의 출발점 비교",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 02",
+    "notes": "source markdown의 초기 Copilot과 ChatGPT 전환",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "variant": "prompt-era",
+      "range": "2022~2024",
+      "stages": [
+        {
+          "title": "GitHub Copilot",
+          "text": "현재 파일 기반 다음 줄 제안",
+          "items": [
+            "현재 파일",
+            "암묵적 프롬프트",
+            "자동완성"
+          ]
+        },
+        {
+          "title": "ChatGPT",
+          "text": "자연어 지시 기반 코드 생성",
+          "items": [
+            "역할 부여",
+            "예시",
+            "단계별 요청"
+          ]
+        }
+      ],
+      "thesis": "자연어 지시문이 새로운 프로그래밍 인터페이스처럼 보이던 시기"
+    }
+  },
+  {
+    "order": 19,
+    "slide_id": "S019",
+    "file_name": "slide-019.html",
+    "title": "프롬프트 패턴의 확장",
+    "slide_type": "process",
+    "layout": "wide",
+    "shell": "process-flow-shell",
+    "family": "content",
+    "density": "medium",
+    "source_section": "02",
+    "source_block": "02-03",
+    "key_claim": "프롬프트가 모델에게 추가로 맡긴 일",
+    "notes_intent": "CoT/ReAct/ToT/Self-Refine/Reflexion diagram",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 02",
+    "notes": "source markdown의 prompt pattern table과 02-v01 assets",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "variant": "pattern-diagram",
+      "patterns": [
+        {
+          "index": "01",
+          "title": "Chain-of-Thought",
+          "text": "중간 추론 단계",
+          "kind": "cot",
+          "example": {
+            "label": "테니스공 산술",
+            "problem": "5개 + 2캔 × 3개",
+            "step": "2캔 × 3개 = 6개",
+            "answer": "5개 + 6개 = 11개"
+          }
+        },
+        {
+          "index": "02",
+          "title": "ReAct",
+          "text": "추론과 행동 교대",
+          "kind": "react",
+          "example": {
+            "label": "WebShop 검색",
+            "start": "WebShop",
+            "action": "Search",
+            "observation": "Observe"
+          }
+        },
+        {
+          "index": "03",
+          "title": "Tree-of-Thought",
+          "text": "여러 추론 경로",
+          "kind": "tot",
+          "example": {
+            "label": "Game of 24",
+            "root": "Game of 24",
+            "branches": [
+              {
+                "text": "4 × 6"
+              },
+              {
+                "text": "8 + 16",
+                "class": "selected"
+              },
+              {
+                "text": "backtrack"
+              }
+            ]
+          }
+        },
+        {
+          "index": "04",
+          "title": "Self-Refine",
+          "text": "자기 출력 개선",
+          "kind": "refine",
+          "example": {
+            "label": "code feedback",
+            "draft": "초안 코드",
+            "feedback": "code feedback",
+            "refined": "개선 코드"
+          }
+        },
+        {
+          "index": "05",
+          "title": "Reflexion",
+          "text": "피드백 루프",
+          "kind": "reflexion",
+          "example": {
+            "label": "reflection memory",
+            "trial": "실패 로그",
+            "memory": "reflection memory",
+            "retry": "재시도"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "order": 20,
+    "slide_id": "S020",
+    "file_name": "slide-020.html",
+    "title": "네 가지 에이전틱 패턴",
+    "slide_type": "table",
+    "layout": "wide",
+    "shell": "evidence-table-shell",
+    "family": "content",
+    "density": "medium",
+    "source_section": "02",
+    "source_block": "02-04",
+    "key_claim": "모델 바깥 구조가 성능을 좌우",
+    "notes_intent": "Andrew Ng 4 agentic patterns",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 02",
+    "notes": "source markdown의 Andrew Ng 네 가지 패턴과 02-v02 asset",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "variant": "agentic-native",
+      "cards": [
+        {
+          "title": "Reflection",
+          "text": "자기 결과 검토와 수정",
+          "effect": "자기 수정 루프",
+          "example": [
+            "Generate",
+            "Critique",
+            "Revise"
+          ]
+        },
+        {
+          "title": "Tool Use",
+          "text": "검색·계산·실행 도구 호출",
+          "effect": "바깥 세계 연결",
+          "example": [
+            "Model",
+            "Search/API",
+            "Result"
+          ]
+        },
+        {
+          "title": "Planning",
+          "text": "큰 목표의 단계 분해",
+          "effect": "긴 작업 추진",
+          "example": [
+            "Goal",
+            "Plan",
+            "Steps"
+          ]
+        },
+        {
+          "title": "Multi-Agent Collaboration",
+          "text": "역할 분리와 협업",
+          "effect": "생성과 검증 분리",
+          "example": [
+            "Writer",
+            "Reviewer",
+            "Merge"
+          ]
+        }
+      ],
+      "thesis": "모델 바깥 구조가 성능을 좌우"
+    }
+  },
+  {
+    "order": 21,
+    "slide_id": "S021",
+    "file_name": "slide-021.html",
+    "title": "프롬프트 시대의 벽",
+    "slide_type": "statement",
+    "layout": "editorial",
+    "shell": "statement-editorial-shell",
+    "family": "content",
+    "density": "medium",
+    "source_section": "02",
+    "source_block": "02-05",
+    "key_claim": "모델은 보지 못한 것을 알 수 없음",
+    "notes_intent": "프롬프트 시대의 한계",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 02",
+    "notes": "source markdown의 Blind Prompting 문단",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "variant": "blind-prompting",
+      "statement": "모델은 보지 못한 것을 알 수 없음",
+      "cards": [
+        {
+          "title": "관련 파일 부재",
+          "text": "기존 유틸리티 인식 불가"
+        },
+        {
+          "title": "기존 설계 부재",
+          "text": "아키텍처 결정 활용 불가"
+        },
+        {
+          "title": "팀 컨벤션 부재",
+          "text": "규칙 없는 문장 수정"
+        }
+      ],
+      "thesis": "문제는 지시문이 아니라 모델이 소비하는 정보"
+    }
+  },
+  {
+    "order": 22,
+    "slide_id": "S022",
+    "file_name": "slide-022.html",
+    "title": "2막: Cursor와 컨텍스트의 시대",
+    "slide_type": "process",
+    "layout": "wide",
+    "shell": "process-flow-shell",
+    "family": "content",
+    "density": "medium",
+    "source_section": "02",
+    "source_block": "02-06",
+    "key_claim": "현재 파일에서 전체 코드베이스로",
+    "notes_intent": "초기 Copilot과 Cursor 계열 도구 비교",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 02",
+    "notes": "source markdown의 Cursor 비교 표와 Tools 문장",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "variant": "cursor-tools",
+      "left": {
+        "title": "초기 Copilot",
+        "items": [
+          "현재 파일 중심",
+          "검색 없음 또는 제한",
+          "한 줄 또는 한 블록"
+        ]
+      },
+      "right": {
+        "title": "Cursor 계열 도구",
+        "items": [
+          "전체 코드베이스",
+          "RAG · AST · 시맨틱 검색",
+          "멀티파일 수정과 Tools"
+        ]
+      },
+      "tools": [
+        "채팅",
+        "Composer",
+        "Agent Mode",
+        "명령 실행"
+      ]
+    }
+  },
+  {
+    "order": 23,
+    "slide_id": "S023",
+    "file_name": "slide-023.html",
+    "title": "Cursor 아키텍처",
+    "slide_type": "process",
+    "layout": "wide",
+    "shell": "process-flow-shell",
+    "family": "content",
+    "density": "medium",
+    "source_section": "02",
+    "source_block": "02-07",
+    "key_claim": "긴 프롬프트가 아니라 검색기와 편집기",
+    "notes_intent": "Cursor architecture asset and process",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 02",
+    "notes": "source markdown의 Cursor 아키텍처 text diagram과 02-v04 asset",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "variant": "cursor-architecture-native",
+      "request": "사용자 요청",
+      "index": "파일 · 심볼 · 문서 · PR",
+      "context": "관련 파일 · 규칙 · 변경 이력",
+      "tools": [
+        "SearchCode",
+        "Read",
+        "EditFile",
+        "명령 실행"
+      ],
+      "feedback": "테스트 · 린트 · 로그 확인",
+      "steps": [
+        {
+          "index": "01",
+          "title": "인덱싱",
+          "text": "파일 · 심볼 · AST · 문서"
+        },
+        {
+          "index": "02",
+          "title": "검색",
+          "text": "파일 · 규칙 · 히스토리"
+        },
+        {
+          "index": "03",
+          "title": "조립",
+          "text": "Composer · Agent Mode"
+        },
+        {
+          "index": "04",
+          "title": "수정·실행",
+          "text": "멀티파일 수정 · 명령 실행"
+        },
+        {
+          "index": "05",
+          "title": "검증",
+          "text": "테스트 · 린트 · 로그"
+        }
+      ]
+    }
+  },
+  {
+    "order": 24,
+    "slide_id": "S024",
+    "file_name": "slide-024.html",
+    "title": "컨텍스트 시대의 벽",
+    "slide_type": "process",
+    "layout": "wide",
+    "shell": "process-flow-shell",
+    "family": "content",
+    "density": "medium",
+    "source_section": "02",
+    "source_block": "02-08",
+    "key_claim": "좋은 입력만으로는 루프 통제 불가",
+    "notes_intent": "컨텍스트 시대의 한계와 에이전트 루프",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 02",
+    "notes": "source markdown의 gather context to repeat loop",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "variant": "loop-map",
+      "steps": [
+        {
+          "index": "01",
+          "title": "gather context",
+          "text": "컨텍스트 수집"
+        },
+        {
+          "index": "02",
+          "title": "take action",
+          "text": "파일 수정과 명령 실행"
+        },
+        {
+          "index": "03",
+          "title": "verify",
+          "text": "테스트 · 린트 · 로그"
+        },
+        {
+          "index": "04",
+          "title": "repeat",
+          "text": "실패 후 재수정"
+        }
+      ],
+      "thesis": "목표 달성까지 반복"
+    }
+  },
+  {
+    "order": 25,
+    "slide_id": "S025",
+    "file_name": "slide-025.html",
+    "title": "3막: 하네스의 시대",
+    "slide_type": "process",
+    "layout": "wide",
+    "shell": "process-flow-shell",
+    "family": "content",
+    "density": "medium",
+    "source_section": "02",
+    "source_block": "02-09",
+    "key_claim": "터미널 네이티브 실행 환경",
+    "notes_intent": "Claude Code harness components",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 02",
+    "notes": "source markdown의 Claude Code 구성 요소 bullet list",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "variant": "component-clusters",
+      "context": "Claude Code · Codex · OpenCode",
+      "tiers": [
+        {
+          "label": "기초",
+          "items": [
+            {
+              "title": "CLAUDE.md",
+              "text": "모든 세션에서 로드되는 프로젝트 컨텍스트",
+              "primary": true
+            }
+          ]
+        },
+        {
+          "label": "자동화",
+          "items": [
+            {
+              "title": "Skills",
+              "text": "재사용 가능한 워크플로우"
+            },
+            {
+              "title": "Hooks",
+              "text": "이벤트 기반 검증과 차단"
+            }
+          ]
+        },
+        {
+          "label": "연결",
+          "items": [
+            {
+              "title": "MCP",
+              "text": "외부 도구와 데이터 연결"
+            }
+          ]
+        },
+        {
+          "label": "확장",
+          "items": [
+            {
+              "title": "Subagents",
+              "text": "역할과 컨텍스트 분리"
+            },
+            {
+              "title": "승인/샌드박스",
+              "text": "위험 행동 권한 경계"
+            }
+          ]
+        }
+      ],
+      "steps": [
+        {
+          "index": "01",
+          "title": "CLAUDE.md",
+          "text": "프로젝트 상시 규칙"
+        },
+        {
+          "index": "02",
+          "title": "Skills",
+          "text": "재사용 작업 지식"
+        },
+        {
+          "index": "03",
+          "title": "Hooks",
+          "text": "이벤트 기반 검증과 차단"
+        },
+        {
+          "index": "04",
+          "title": "MCP",
+          "text": "외부 도구와 데이터 연결"
+        },
+        {
+          "index": "05",
+          "title": "Subagents",
+          "text": "역할과 컨텍스트 분리"
+        },
+        {
+          "index": "06",
+          "title": "승인/샌드박스",
+          "text": "위험 행동 권한 경계"
+        }
+      ]
+    }
+  },
+  {
+    "order": 26,
+    "slide_id": "S026",
+    "file_name": "slide-026.html",
+    "title": "Agent = Model + Harness",
+    "slide_type": "statement",
+    "layout": "editorial",
+    "shell": "statement-editorial-shell",
+    "family": "content",
+    "density": "medium",
+    "source_section": "02",
+    "source_block": "02-10",
+    "key_claim": "하네스가 결정하는 네 지점",
+    "notes_intent": "02-v05 decision points",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 02",
+    "notes": "source markdown의 하네스가 결정하는 것",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "variant": "harness-layered",
+      "statement": "Agent = Model + Harness",
+      "decisions": [
+        {
+          "title": "무엇을 보는지",
+          "text": "컨텍스트"
+        },
+        {
+          "title": "무엇을 할 수 있는지",
+          "text": "도구 · 권한"
+        },
+        {
+          "title": "언제 멈추는지",
+          "text": "검증 · 중단 조건"
+        },
+        {
+          "title": "잘못되었을 때",
+          "text": "오류 시나리오와 재시도"
+        }
+      ]
+    }
+  },
+  {
+    "order": 27,
+    "slide_id": "S027",
+    "file_name": "slide-027.html",
+    "title": "시대의 흐름",
+    "slide_type": "table",
+    "layout": "wide",
+    "shell": "evidence-table-shell",
+    "family": "content",
+    "density": "medium",
+    "source_section": "02",
+    "source_block": "02-11",
+    "key_claim": "프롬프트, 컨텍스트, 하네스의 포함 관계",
+    "notes_intent": "three-era timeline and table",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 02",
+    "notes": "source markdown의 시대 구분 표와 02-v05 asset",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "variant": "era-native",
+      "headers": [
+        "시대",
+        "핵심 질문",
+        "주안점"
+      ],
+      "rows": [
+        [
+          "Prompt Engineering",
+          "어떤 말을 해야 하나",
+          "자연어 지시문과 기법"
+        ],
+        [
+          "Context Engineering",
+          "어떤 정보를 넣어야 하나",
+          "코드베이스와 구조화 정보"
+        ],
+        [
+          "Harness Engineering",
+          "어떤 시스템을 만들어야 하나",
+          "권한 · 피드백 루프 · 검증"
+        ]
+      ],
+      "cards": [
+        {
+          "range": "2022~2024",
+          "title": "Prompt Engineering",
+          "question": "어떤 말을 해야 하나"
+        },
+        {
+          "range": "2025 중반~",
+          "title": "Context Engineering",
+          "question": "어떤 정보를 넣어야 하나"
+        },
+        {
+          "range": "2026~",
+          "title": "Harness Engineering",
+          "question": "어떤 시스템을 만들어야 하나"
+        }
+      ],
+      "question": "",
+      "relationship": "Prompt ⊂ Context ⊂ Harness"
     }
   }
 ]

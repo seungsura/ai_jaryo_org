@@ -35,6 +35,12 @@ These subagents are project-local. They are defined for this repository only and
 
 Use `.codex/templates/subagent-task-template.md` as the wrapper prompt. Each agent YAML already contains a `default_prompt` that can be inserted into that template.
 
+## HTML Work Gate
+
+For any HTML-related task, every spawned subagent must read `AGENTS.md` and `docs/03-html/shared/slide-quality-rules.md` before planning or editing. HTML-related scope includes `docs/03-html/` outline, manifest, generated slides, deck HTML, shared CSS/tokens, screenshot QA, and PDF export QA.
+
+Latest user feedback must be written to `docs/03-html/shared/slide-quality-rules.md` before implementation, then verified through the relevant static checks and visual/PDF smoke checks.
+
 ## Pipeline Intent
 
 These subagents are scoped to the Jaryo repository only.

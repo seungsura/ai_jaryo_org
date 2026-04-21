@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cursor 아키텍처</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="../shared/slide-base.css">
+</head>
+<body class="theme-minimal-light">
+<main class="slide family-content layout-wide density-medium chapter-02" data-slide-id="S023" data-shell="process-flow-shell" data-notes="source markdown의 Cursor 아키텍처 text diagram과 02-v04 asset" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 02</p><h1 class="title-placeholder">Cursor 아키텍처</h1></section><section class="cursor-architecture-redraw-body"><div class="cursor-architecture-canvas"><div class="cursor-architecture-example-canvas"><p class="architecture-request">사용자 요청</p><div class="architecture-arrow" aria-hidden="true">→</div><article class="architecture-boundary codebase-index-box"><h2>codebase index</h2><p>파일 · 심볼 · 문서 · PR</p></article><div class="architecture-arrow" aria-hidden="true">→</div><article class="architecture-boundary context-bundle-box"><h2>context bundle</h2><p>관련 파일 · 규칙 · 변경 이력</p></article><div class="architecture-arrow" aria-hidden="true">→</div><p class="architecture-feedback">테스트 · 린트 · 로그 확인</p></div><ol class="process-track cursor-architecture-flow"><li class="process-step cursor-architecture-step"><span class="step-index">01</span><span class="step-title">인덱싱</span><span class="step-copy">파일 · 심볼 · AST · 문서</span></li><li class="process-step cursor-architecture-step"><span class="step-index">02</span><span class="step-title">검색</span><span class="step-copy">파일 · 규칙 · 히스토리</span></li><li class="process-step cursor-architecture-step"><span class="step-index">03</span><span class="step-title">조립</span><span class="step-copy">Composer · Agent Mode</span></li><li class="process-step cursor-architecture-step"><span class="step-index">04</span><span class="step-title">수정·실행</span><span class="step-copy">멀티파일 수정 · 명령 실행</span></li><li class="process-step cursor-architecture-step"><span class="step-index">05</span><span class="step-title">검증</span><span class="step-copy">테스트 · 린트 · 로그</span></li></ol></div><aside class="architecture-side-tools"><p>Tools</p><span>SearchCode</span><span>Read</span><span>EditFile</span><span>명령 실행</span></aside></div></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">23</span></footer></main>
+</body>
+</html>
