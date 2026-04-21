@@ -13,10 +13,13 @@
 - `shared/layout-shell-reference.md`: family보다 더 구체적인 approved shell catalog
 - `shared/minimal-light-adaptation.md`: `make-slide` minimal-light theme의 Jaryo 적용 기준
 - `shared/make-slide-adoption.md`: `make-slide` 채택 범위와 hybrid output 계약
+- `shared/slide-quality-rules.md`: 사용자 대화 기반 slide 품질 규칙과 판단 로그
 - `manifest.md`: 현재 deck 버전, slide id, section 대응, 진행 상태를 기록하는 live sync 문서
 
 ## 원칙
 
+- HTML slide 작업 전 `shared/slide-quality-rules.md`를 먼저 읽습니다.
+- 사용자와 대화하며 확정한 `shared/slide-quality-rules.md`의 규칙은 기존 HTML stage 관례보다 우선합니다.
 - HTML은 canonical source가 아닙니다.
 - deck 구조는 `docs/02-seminar/prose/`와 승인된 outline을 따라야 합니다.
 - 시각적 강조를 위해 표현은 바꿔도, 핵심 claim은 prose를 벗어나면 안 됩니다.

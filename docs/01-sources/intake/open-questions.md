@@ -1,8 +1,23 @@
 # Open Questions
 
-현재 저장소의 markdown 기준으로 사실관계가 미해결인 항목은 없습니다. 이번 prose 검증 패스에서 남았던 편집 판단도 이번 루프에서 닫았습니다.
+현재 저장소의 markdown 기준으로 사실관계가 미해결인 항목은 없습니다. 다만 `docs/02-seminar/harness-rebuilt-md` 시각물 asset 링크화 패스에서는 direct asset가 없는 합성 시각물 backlog가 열려 있습니다.
 
 ## Open Editorial Audit
+
+### Q11. `harness-rebuilt-md` synthetic visual asset backlog
+- 상태: open
+- 대상 섹션: `docs/02-seminar/harness-rebuilt-md/00-overview.md`, `docs/02-seminar/harness-rebuilt-md/01-코딩은 사라지는가.md`, `docs/02-seminar/harness-rebuilt-md/02-왜 Claude Code인가, 그리고 왜 Harness 인가.md`, `docs/02-seminar/harness-rebuilt-md/04-프롬프트를 넘어서: 에이전트를 움직이는 기술, Harness.md`, `docs/02-seminar/harness-rebuilt-md/07-실전 워크플로우와 도구 세팅.md`, `docs/02-seminar/harness-rebuilt-md/08-이 글과 발표가 만들어진 과정.md`, `docs/02-seminar/harness-rebuilt-md/09-우리가 다음에 해야 할 일.md`
+- 확인 내용: direct asset가 있는 17개 시각물에는 footnote link를 추가했고, 아래 9개 묶음은 exact asset가 없는 합성 시각물로 backlog에 남겼습니다.
+- backlog: `00-v01` — overview 목차 표. direct asset 없음.
+- backlog: `01-v01`~`01-v09` — 기계어/어셈블리/C/Java/Python/자연어 prompt 코드 예시 블록. direct asset 없음.
+- backlog: `02-v03` — Cursor 비교표. candidate: [06-cursor-ai-code-editor-architecture.png](../../../assets/evolution-of-ai-agentic-patterns/06-cursor-ai-code-editor-architecture.png)
+- backlog: `04-v06` — `RAG vs Context Hub` 비교표. direct asset 없음.
+- backlog: `04-v07` — `LLM-as-OS` 표. source markdown 표 기반 합성 시각물.
+- backlog: `07-v01` — 위험도별 `Approval / Auto-accept / Plan Mode` 표. candidate: [page-006.png](../../../assets/claude-code-mastery-playbook/page-006.png), [page-007.png](../../../assets/claude-code-mastery-playbook/page-007.png), [page-012.png](../../../assets/claude-code-mastery-playbook/page-012.png), [page-014.png](../../../assets/claude-code-mastery-playbook/page-014.png)
+- backlog: `08-v01` — `source → prose → outline → html → pdf → notes` 경로 표. candidate: [page-080.png](../../../assets/claude-code-seminar-kakao/page-080.png), [page-081.png](../../../assets/claude-code-seminar-kakao/page-081.png)
+- backlog: `08-v02` — 사람이 붙든 것 / 에이전트에게 맡긴 것 표. candidate: [page-081.png](../../../assets/claude-code-seminar-kakao/page-081.png), [page-082.png](../../../assets/claude-code-seminar-kakao/page-082.png)
+- backlog: `09-v01` — Kent Beck / Simon Willison / Martin Fowler 표. provenance 정리표라 direct asset 없음.
+- 추가 사용자 확인: 합성 시각물에도 candidate asset 연결을 허용할지, 아니면 direct asset가 새로 정리될 때까지 backlog로 유지할지 후속 대화에서 닫습니다.
 
 ## Closed Audit Records
 

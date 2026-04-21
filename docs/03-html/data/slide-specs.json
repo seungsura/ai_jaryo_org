@@ -11,93 +11,55 @@
     "density": "light",
     "source_section": "00",
     "source_block": "00-00",
-    "key_claim": "좋은 모델보다 좋은 하네스가 앞에 선다",
-    "notes_intent": "문제의식과 발표 범위를 한 번에 고정",
+    "key_claim": "에이전트가 일할 환경 설계",
+    "notes_intent": "첫 장에서 제목, 부제, 발표자만 고정",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "OPENING",
-    "notes": "오늘의 질문은 모델 성능이 아니다. 에이전트가 일할 구조를 어떻게 설계하는지가 핵심이라는 점부터 잠근다.",
-    "lead": "챗봇과 씨름하는 대신, 에이전트가 일할 구조를 짠다",
+    "notes": "제목과 부제만 두고, 발표자는 게임플랫폼 1팀 라승수로 표시한다.",
+    "lead": "챗봇과 싸우지 않고, 에이전트가 일할 환경을 설계하는 방법",
     "footer_left": "Harness 잘 사용하기",
     "body": {
-      "points": [
-        "코딩보다 운영 구조가 먼저 온다",
-        "도구 경쟁은 하네스 경쟁으로 좁혀진다",
-        "실패 패턴과 workflow까지 같이 본다"
-      ]
+      "presenter": "게임플랫폼 1팀 라승수"
     }
   },
   {
     "order": 2,
     "slide_id": "S002",
     "file_name": "slide-002.html",
-    "title": "전체 구조",
-    "slide_type": "agenda",
+    "title": "시작하며",
+    "slide_type": "process",
     "layout": "wide",
-    "shell": "agenda-list-shell",
-    "family": "agenda",
+    "shell": "process-flow-shell",
+    "family": "content",
     "density": "medium",
     "source_section": "00",
-    "source_block": "00-00",
-    "key_claim": "이 덱은 이동, 수렴, 방법, 구조, 실패, 분해, 운영, 사례, 실천, 출처 순으로 읽힌다",
-    "notes_intent": "청중이 132장 전체 지도를 먼저 잡게 만든다",
+    "source_block": "00-01",
+    "key_claim": "AI에게 무엇을 말할까에서 AI가 일할 환경 설계로 이동",
+    "notes_intent": "챗봇 사용 경험과 도구 수렴을 Harness 문제로 연결",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "OPENING",
-    "notes": "장수가 많아도 흐름은 단순하다. 전체 지도를 먼저 잡아 두면 뒤의 세부 슬라이드는 길을 잃지 않는다.",
-    "lead": "이동에서 실천까지, 그리고 마지막에 출처로 닫는다",
+    "notes": "좋은 결과는 한 번의 프롬프트보다 반복 가능한 구조에서 나온다는 흐름을 고정한다.",
+    "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
-      "items": [
+      "thesis": "개발자의 핵심 역량: AI에게 할 말 → AI가 안전하게 일할 환경",
+      "steps": [
         {
-          "number": "01",
-          "topic": "이동",
-          "text": "숙련이 손끝에서 운영 구조로 옮겨 간다"
+          "index": "01",
+          "title": "챗봇과 말씨름",
+          "text": "맥락 충돌과 반복 설명"
         },
         {
-          "number": "02",
-          "topic": "수렴",
-          "text": "도구 경쟁은 결국 하네스 경쟁으로 좁혀진다"
+          "index": "02",
+          "title": "도구들의 수렴",
+          "text": "자동완성·채팅 UI·터미널 에이전트"
         },
         {
-          "number": "03",
-          "topic": "방법",
-          "text": "Spec-first와 TDD가 다시 앞줄로 나온다"
-        },
-        {
-          "number": "04",
-          "topic": "구조",
-          "text": "Prompt를 넘어서 하네스를 설계한다"
-        },
-        {
-          "number": "05",
-          "topic": "실패",
-          "text": "실패는 대개 조용히 누적되고 뒤늦게 터진다"
-        },
-        {
-          "number": "06",
-          "topic": "분해",
-          "text": "멀티 에이전트는 병렬화보다 handoff 설계다"
-        },
-        {
-          "number": "07",
-          "topic": "운영",
-          "text": "좋은 workflow는 생성이 아니라 운영 구조다"
-        },
-        {
-          "number": "08",
-          "topic": "사례",
-          "text": "이 발표가 만들어진 경로 자체를 해부한다"
-        },
-        {
-          "number": "09",
-          "topic": "실천",
-          "text": "작업 환경에 하네스 습관을 박아 넣는다"
-        },
-        {
-          "number": "10",
-          "topic": "출처",
-          "text": "근거의 층위를 섞지 않고 다시 읽는다"
+          "index": "03",
+          "title": "Harness",
+          "text": "규칙·컨텍스트·권한·검증·상태 기록"
         }
       ]
     }
@@ -106,29 +68,69 @@
     "order": 3,
     "slide_id": "S003",
     "file_name": "slide-003.html",
-    "title": "개발의 중심축이 옮겨가고 있다",
-    "slide_type": "bullets",
+    "title": "전체 목차",
+    "slide_type": "agenda",
     "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
+    "shell": "agenda-list-shell",
+    "family": "agenda",
+    "density": "heavy",
     "source_section": "00",
-    "source_block": "00-01",
-    "key_claim": "개발의 중심축이 옮겨가고 ",
-    "notes_intent": "opening narrative를 짧은 리듬으로 쪼갠다",
+    "source_block": "00-03",
+    "key_claim": "Harness 관점으로 읽는 9개 장",
+    "notes_intent": "00-overview의 목차 표를 한 장에 압축",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "OPENING",
-    "notes": "개발의 중심축이 옮겨가고 를 먼저 고정한다. 세부 근거는 뒤 슬라이드에서 더 잘게 펼친다.",
-    "lead": "AI 코딩 도구는 하루가 다르게 좋아집니다. 그런데 진짜",
+    "notes": "전체 표를 한 장으로 보여 주고, 다음 장부터 각 항목을 순서대로 펼친다.",
+    "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
-      "callout": "개발의 중심축이 옮겨가고 ",
-      "points": [
-        "AI 코딩 도구는 하루가 다르게 좋아집니다.",
-        "그런데 진짜 변화는 모델이 더 똑똑해졌다는",
-        "손으로 코드를 밀어 넣는 시간은 줄고",
-        "그 이동을 설명하려고 씁니다."
+      "items": [
+        {
+          "number": "01",
+          "topic": "코딩은 어디로 가고 있는가",
+          "text": "개발자의 숙련 이동"
+        },
+        {
+          "number": "02",
+          "topic": "왜 Claude Code인가",
+          "text": "AI 코딩 도구의 구조 수렴"
+        },
+        {
+          "number": "03",
+          "topic": "AI 시대의 개발 방법론",
+          "text": "TDD·SDD·Spec-first 재부상"
+        },
+        {
+          "number": "04",
+          "topic": "Harness",
+          "text": "Prompt 이후의 에이전트 운영 구조"
+        },
+        {
+          "number": "05",
+          "topic": "한계와 실패 패턴",
+          "text": "긴 작업·보안·신뢰 문제"
+        },
+        {
+          "number": "06",
+          "topic": "멀티 에이전트",
+          "text": "역할과 컨텍스트 분리"
+        },
+        {
+          "number": "07",
+          "topic": "워크플로우와 도구",
+          "text": "명령어·게이트·워크트리·이슈"
+        },
+        {
+          "number": "08",
+          "topic": "제작 과정",
+          "text": "발표 제작 파이프라인 해부"
+        },
+        {
+          "number": "09",
+          "topic": "다음에 해야 할 일",
+          "text": "개인과 팀의 첫 변화"
+        }
       ]
     }
   },
@@ -136,114 +138,7 @@
     "order": 4,
     "slide_id": "S004",
     "file_name": "slide-004.html",
-    "title": "운영 구조가 앞선다",
-    "slide_type": "statement",
-    "layout": "editorial",
-    "shell": "statement-editorial-shell",
-    "family": "content",
-    "density": "light",
-    "source_section": "00",
-    "source_block": "00-02",
-    "key_claim": "코딩보다 운영 구조가 앞선다",
-    "notes_intent": "opening narrative를 짧은 리듬으로 쪼갠다",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "OPENING",
-    "notes": "코딩보다 운영 구조가 앞선다를 먼저 고정한다. 세부 근거는 뒤 슬라이드에서 더 잘게 펼친다.",
-    "lead": "지금 AI 엔지니어링은 점점 하나의 방향으로 모입니다",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "tag": "KEY MESSAGE",
-      "statement": "코딩보다 운영 구조가 앞선다",
-      "support": "프롬프트와 컨텍스트만으로는 긴 작업을 버티지 못",
-      "chips": [
-        "지금 AI 엔지니어링은 점점 하나의 방향으로 모",
-        "Harness",
-        "출발점은 제각각이었습니다."
-      ]
-    }
-  },
-  {
-    "order": 5,
-    "slide_id": "S005",
-    "file_name": "slide-005.html",
-    "title": "앞으로 다룰 이야기",
-    "slide_type": "process",
-    "layout": "wide",
-    "shell": "process-flow-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "00",
-    "source_block": "00-03",
-    "key_claim": "앞으로 다룰 이야기",
-    "notes_intent": "opening narrative를 짧은 리듬으로 쪼갠다",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "OPENING",
-    "notes": "앞으로 다룰 이야기를 먼저 고정한다. 세부 근거는 뒤 슬라이드에서 더 잘게 펼친다.",
-    "lead": "특정 제품을 치켜세우는 도구 리뷰가 아닙니다. 왜 최근의",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "steps": [
-        {
-          "index": "01",
-          "title": "이동",
-          "text": "코딩의 중심이 어디로 가는가"
-        },
-        {
-          "index": "02",
-          "title": "수렴",
-          "text": "왜 도구가 Harness로 모이는가"
-        },
-        {
-          "index": "03",
-          "title": "운영",
-          "text": "실패와 workflow를 어떻게 다루는가"
-        },
-        {
-          "index": "04",
-          "title": "실천",
-          "text": "이 구조를 작업 습관으로 옮기는 법"
-        }
-      ]
-    }
-  },
-  {
-    "order": 6,
-    "slide_id": "S006",
-    "file_name": "slide-006.html",
-    "title": "더 나은 Harness",
-    "slide_type": "statement",
-    "layout": "editorial",
-    "shell": "statement-editorial-shell",
-    "family": "content",
-    "density": "light",
-    "source_section": "00",
-    "source_block": "00-03",
-    "key_claim": "경쟁력은 더 좋은 모델보다 더 나은 하네스에서 갈린다",
-    "notes_intent": "opening chapter를 한 문장으로 봉합",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "OPENING",
-    "notes": "서론의 마지막에서는 질문을 다시 한 문장으로 닫는다. 뒤의 100장 넘는 세부도 결국 이 문장을 증명하는 과정이라는 점을 다시 박아 둔다.",
-    "lead": "도구보다 운영 구조가 앞에 선다",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "tag": "THESIS",
-      "statement": "좋은 모델보다 좋은 하네스",
-      "support": "문맥, 권한, 검증, 상태 기록이 결과를 바꾼다",
-      "chips": [
-        "Context",
-        "Permissions",
-        "Verify"
-      ]
-    }
-  },
-  {
-    "order": 7,
-    "slide_id": "S007",
-    "file_name": "slide-007.html",
-    "title": "코딩은 어디로 가고 있는가",
+    "title": "코딩은 사라지는가",
     "slide_type": "section",
     "layout": "centered",
     "shell": "section-divider-shell",
@@ -251,57 +146,168 @@
     "density": "light",
     "source_section": "01",
     "source_block": "01-00",
-    "key_claim": "코딩은 어디로 가고 있는가",
+    "key_claim": "개발의 추상화 수준 상승",
     "notes_intent": "01장의 질문을 챕터 단위로 고정",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "CHAPTER 01",
-    "notes": "코딩은 어디로 가고 있는가에서 무엇을 묻는지 먼저 잠근다. 지금부터는 세부 논지를 2~3문장 단위로 분해해 본다.",
-    "lead": "지금 던져야 할 질문은 “코딩이 사라지는가”가 아닙니다",
+    "notes": "코딩이 사라지는가보다 개발자가 직접 붙들 일이 어디로 이동하는가를 묻는다.",
+    "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
-      "keywords": [
-        "추상화",
-        "문서",
-        "역할"
-      ]
+      "keywords": []
+    }
+  },
+  {
+    "order": 5,
+    "slide_id": "S005",
+    "file_name": "slide-005.html",
+    "title": "기계어 → 어셈블리",
+    "slide_type": "comparison",
+    "layout": "split",
+    "shell": "split-compare-shell",
+    "family": "comparison",
+    "density": "medium",
+    "source_section": "01",
+    "source_block": "01-01",
+    "key_claim": "이진 코드 직접 작성에서 명령어 기호로",
+    "notes_intent": "언어 발전의 첫 추상화 사례",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 01",
+    "notes": "기계어의 이진 표현이 어셈블리 명령어로 올라오며 직접 다루는 부담이 줄어든다.",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "left_label": "기계어",
+      "left_code": "10111000 00000001 00000000 00000000 00000000",
+      "right_label": "어셈블리",
+      "right_code": "MOV EAX, 1",
+      "opinion": "기계어를 모르면 진짜 개발자 아님"
+    }
+  },
+  {
+    "order": 6,
+    "slide_id": "S006",
+    "file_name": "slide-006.html",
+    "title": "어셈블리 → C/Pascal",
+    "slide_type": "comparison",
+    "layout": "split",
+    "shell": "split-compare-shell",
+    "family": "comparison",
+    "density": "medium",
+    "source_section": "01",
+    "source_block": "01-01",
+    "key_claim": "레지스터와 syscall에서 함수와 컴파일러로",
+    "notes_intent": "어셈블리와 C/Pascal의 표현량 차이",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 01",
+    "notes": "Hello World 수준에서도 어셈블리와 C의 표현량 차이가 명확하다.",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "left_label": "어셈블리",
+      "left_code": "section .data\n  msg db \"Hello World\", 10\n\nsection .text\n  global _start\n\n_start:\n  mov rax, 1\n  mov rdi, 1\n  mov rsi, msg\n  mov rdx, 12\n  syscall\n  mov rax, 60\n  mov rdi, 0\n  syscall",
+      "right_label": "C/Pascal",
+      "right_code": "#include <stdio.h>\n\nint main() {\n    printf(\"Hello\\n\");\n    return 0;\n}",
+      "opinion": "어셈블리를 모르면 진짜 개발자 아님"
+    }
+  },
+  {
+    "order": 7,
+    "slide_id": "S007",
+    "file_name": "slide-007.html",
+    "title": "C → Java",
+    "slide_type": "comparison",
+    "layout": "split",
+    "shell": "split-compare-shell",
+    "family": "comparison",
+    "density": "medium",
+    "source_section": "01",
+    "source_block": "01-01",
+    "key_claim": "수동 메모리 관리에서 GC로",
+    "notes_intent": "메모리 관리 책임의 이동",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 01",
+    "notes": "C의 malloc/free와 Java의 객체 생성 및 GC를 비교한다.",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "left_label": "C",
+      "left_code": "#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct {\n    int x;\n    int y;\n} Point;\n\nint main() {\n    Point* p = malloc(sizeof(Point));\n    p->x = 10;\n    p->y = 20;\n    printf(\n        \"Point: %d, %d\\n\",\n        p->x,\n        p->y\n    );\n    free(p);\n    return 0;\n}",
+      "right_label": "Java",
+      "right_code": "class Point {\n    int x;\n    int y;\n\n    Point(int x, int y) {\n        this.x = x;\n        this.y = y;\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Point p = new Point(10, 20);\n        System.out.println(\n            \"Point: \" + p.x + \", \" + p.y\n        );\n        p = null;\n    }\n}",
+      "opinion": "메모리 직접 관리 없는 개발은 장난"
     }
   },
   {
     "order": 8,
     "slide_id": "S008",
     "file_name": "slide-008.html",
-    "title": "코딩이 사라지는가",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
+    "title": "Java → Python",
+    "slide_type": "comparison",
+    "layout": "split",
+    "shell": "split-compare-shell",
+    "family": "comparison",
     "density": "medium",
     "source_section": "01",
     "source_block": "01-01",
-    "key_claim": "코딩이 사라지는가",
-    "notes_intent": "코딩이 사라지는가, 질문이 잘못됐다를 slide 단위 주장으로 분해",
+    "key_claim": "보일러플레이트 축소와 표현 밀도 상승",
+    "notes_intent": "Java와 Python의 boilerplate 차이",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "CHAPTER 01",
-    "notes": "코딩이 사라지는가를 먼저 말한다. 이어서 코딩이 사라지는가의 근거를 짧게 보강한다.",
-    "lead": "지금 던져야 할 질문은 “코딩이 사라지는가”가 아닙니다.",
+    "notes": "같은 Hello World라도 Java와 Python의 표현 밀도는 크게 다르다.",
+    "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
-      "callout": "코딩이 사라지는가",
-      "points": [
-        "지금 던져야 할 질문은 “코딩이",
-        "더 정확한 질문은 이것",
-        "개발자가 끝까지 직접 붙들어야 하는 일이",
-        "손으로 코드를 한 줄씩 밀어 넣던 시대에서"
-      ]
+      "left_label": "Java",
+      "left_code": "public class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, World!\");\n    }\n}",
+      "right_label": "Python",
+      "right_code": "print(\"Hello, World!\")",
+      "opinion": "보일러플레이트 없는 언어는 장난감"
     }
   },
   {
     "order": 9,
     "slide_id": "S009",
     "file_name": "slide-009.html",
-    "title": "우리는 늘 직접 하던 일을 줄여왔다",
+    "title": "AI 개발",
+    "slide_type": "comparison",
+    "layout": "split",
+    "shell": "split-compare-shell",
+    "family": "comparison",
+    "density": "medium",
+    "source_section": "01",
+    "source_block": "01-01",
+    "key_claim": "자연어 지시에서 작업 위임으로",
+    "notes_intent": "언어 발전 사례의 현재형",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 01",
+    "notes": "AI 개발은 개발의 종말이 아니라 추상화 수준 상승으로 읽어야 한다.",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "left_label": "직접 작성",
+      "left_points": [
+        "대상 코드 탐색",
+        "수정 지점 선택",
+        "테스트 작성",
+        "결과 검토"
+      ],
+      "right_label": "AI 개발",
+      "right_code": "대상 함수 리팩터링\n테스트 코드 작성\n검증 결과 정리",
+      "opinion": "자연어 지시는 개발이 아님"
+    }
+  },
+  {
+    "order": 10,
+    "slide_id": "S010",
+    "file_name": "slide-010.html",
+    "title": "직접 하던 일의 감소",
     "slide_type": "table",
     "layout": "wide",
     "shell": "evidence-table-shell",
@@ -309,13 +315,13 @@
     "density": "medium",
     "source_section": "01",
     "source_block": "01-02",
-    "key_claim": "우리는 늘 직접 하던 일을 줄여왔다",
-    "notes_intent": "우리는 늘 직접 하던 일을 줄여왔다를 slide 단위 주장으로 분해",
+    "key_claim": "직접 작성 부담의 지속적 위임",
+    "notes_intent": "시대별 위임 표와 질문 반전",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "CHAPTER 01",
-    "notes": "우리는 늘 직접 하던 일을 줄여왔다를 먼저 말한다. 이어서 우리는 늘 직접 하던 일을 줄여왔다의 근거를 짧게 보강한다.",
-    "lead": "이러한 변화는 어느 날 갑자기 일어난 일이 아닙니다.",
+    "notes": "시대별 전환을 표로 압축하고, 개발자가 끝까지 붙들 일이 어디로 이동하는지 묻는다.",
+    "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
       "headers": [
@@ -326,84 +332,97 @@
       "rows": [
         [
           "1950s",
-          "기계어 어셈블리",
-          "이진 코드 직접 작성"
+          "기계어 → 어셈블리",
+          "이진 코드"
         ],
         [
           "1960s",
-          "어셈블리 고급 언어",
-          "레지스터·명령어 최적화를"
+          "어셈블리 → C",
+          "명령어 최적화"
         ],
         [
           "1990s",
-          "C Java",
-          "메모리 해제를 가비지 컬렉터에"
+          "C/C++ → Java",
+          "메모리 해제"
         ],
         [
           "2000s",
-          "언어 프레임워크",
-          "반복되는 보일러플레이트를"
+          "언어 → 프레임워크",
+          "보일러플레이트"
+        ],
+        [
+          "2010s",
+          "온프레미스 → 클라우드",
+          "서버 운영·확장"
+        ],
+        [
+          "2020s",
+          "직접 코딩 → AI 에이전트",
+          "코드 작성 일부"
         ]
-      ]
-    }
-  },
-  {
-    "order": 10,
-    "slide_id": "S010",
-    "file_name": "slide-010.html",
-    "title": "전환이 일어날 때마다",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "01",
-    "source_block": "01-02",
-    "key_claim": "우리는 늘 직접 하던 일을 줄여왔다",
-    "notes_intent": "우리는 늘 직접 하던 일을 줄여왔다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 01",
-    "notes": "우리는 늘 직접 하던 일을 줄여왔다를 먼저 말한다. 이어서 우리는 늘 직접 하던 일을 줄여왔다의 근거를 짧게 보강한다.",
-    "lead": "전환이 일어날 때마다",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "우리는 늘 직접 하던 일을 줄여왔다",
-      "points": [
-        "전환이 일어날 때마다",
-        "지금, 우리는 AI에게 \"이 함수를",
-        "다음 반발은 이미 들립니다.",
-        "이러한 변화는 어느 날 갑자기 일어난 일이"
-      ]
+      ],
+      "question": "개발자가 끝까지 직접 붙들 일의 이동 위치"
     }
   },
   {
     "order": 11,
     "slide_id": "S011",
     "file_name": "slide-011.html",
-    "title": "자연어는 진짜 개발이 아니다!",
-    "slide_type": "bullets",
+    "title": "숫자로 보는 변화",
+    "slide_type": "table",
     "layout": "wide",
-    "shell": "wide-bullets-shell",
+    "shell": "evidence-table-shell",
     "family": "content",
     "density": "medium",
     "source_section": "01",
-    "source_block": "01-02",
-    "key_claim": "우리는 늘 직접 하던 일을 줄여왔다",
-    "notes_intent": "우리는 늘 직접 하던 일을 줄여왔다를 slide 단위 주장으로 분해",
+    "source_block": "01-03",
+    "key_claim": "타이핑 비중 감소의 현장 신호",
+    "notes_intent": "숫자 근거를 대형 카드와 표로 압축",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "CHAPTER 01",
-    "notes": "우리는 늘 직접 하던 일을 줄여왔다를 먼저 말한다. 이어서 우리는 늘 직접 하던 일을 줄여왔다의 근거를 짧게 보강한다.",
-    "lead": "자연어는 진짜 개발이 아니다!",
+    "notes": "YC W25, OpenAI Codex 팀, Meta 엔지니어 사례를 큰 숫자 중심으로 보여 준다.",
+    "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
-      "callout": "우리는 늘 직접 하던 일을 줄여왔다",
-      "points": [
-        "자연어는 진짜 개발이 아니다!",
-        "높은 추상화로 나아갈 때마다 저항은 반드시",
-        "직접 하는 일은 줄었고",
-        "이러한 변화는 어느 날 갑자기 일어난 일이"
+      "metrics": [
+        {
+          "value": "25%",
+          "label": "YC W25",
+          "text": "95% 이상 AI 코드베이스"
+        },
+        {
+          "value": "100만 줄",
+          "label": "OpenAI Codex",
+          "text": "수동 코드 없이 프로덕트 완성"
+        },
+        {
+          "value": "3개월+",
+          "label": "Meta",
+          "text": "직접 타이핑 중단 사례"
+        }
+      ],
+      "headers": [
+        "신호",
+        "규모",
+        "의미"
+      ],
+      "rows": [
+        [
+          "YC W25",
+          "25%",
+          "AI 작성 비중"
+        ],
+        [
+          "Codex 팀",
+          "100만 줄",
+          "수동 코딩 감소"
+        ],
+        [
+          "Meta 사례",
+          "3개월+",
+          "역할 변화"
+        ]
       ]
     }
   },
@@ -411,29 +430,54 @@
     "order": 12,
     "slide_id": "S012",
     "file_name": "slide-012.html",
-    "title": "이번에도 다르지 않을 것",
-    "slide_type": "bullets",
+    "title": "문서의 코드화",
+    "slide_type": "table",
     "layout": "wide",
-    "shell": "wide-bullets-shell",
+    "shell": "evidence-table-shell",
     "family": "content",
     "density": "medium",
     "source_section": "01",
-    "source_block": "01-02",
-    "key_claim": "우리는 늘 직접 하던 일을 줄여왔다",
-    "notes_intent": "우리는 늘 직접 하던 일을 줄여왔다를 slide 단위 주장으로 분해",
+    "source_block": "01-04",
+    "key_claim": "문서의 실행 경로 편입",
+    "notes_intent": "문서 역할 변화와 규칙 파일 예시",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "CHAPTER 01",
-    "notes": "우리는 늘 직접 하던 일을 줄여왔다를 먼저 말한다. 이어서 우리는 늘 직접 하던 일을 줄여왔다의 근거를 짧게 보강한다.",
-    "lead": "이번에도 다르지 않을 것",
+    "notes": "AI 코딩 도구에서 문서는 사람이 읽는 참고 자료를 넘어 에이전트가 따르는 운영 규칙이 된다.",
+    "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
-      "callout": "우리는 늘 직접 하던 일을 줄여왔다",
-      "points": [
-        "이번에도 다르지 않을 것",
-        "기계어 어셈블리",
-        "어셈블리 C",
-        "이러한 변화는 어느 날 갑자기 일어난 일이"
+      "headers": [
+        "파일",
+        "역할",
+        "에이전트 기준"
+      ],
+      "rows": [
+        [
+          "README",
+          "사람의 입구",
+          "프로젝트 방향"
+        ],
+        [
+          "CLAUDE.md",
+          "세션 운영",
+          "작업 방식"
+        ],
+        [
+          "AGENTS.md",
+          "역할과 금지선",
+          "우선순위"
+        ],
+        [
+          "Cursor Rules",
+          "도구별 규칙",
+          "편집 기준"
+        ],
+        [
+          "copilot-instructions",
+          "반복 기준",
+          "코드 생성 습관"
+        ]
       ]
     }
   },
@@ -441,29 +485,36 @@
     "order": 13,
     "slide_id": "S013",
     "file_name": "slide-013.html",
-    "title": "C Java",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
+    "title": "컨텍스트를 설계하는 능력",
+    "slide_type": "comparison",
+    "layout": "split",
+    "shell": "split-compare-shell",
+    "family": "comparison",
     "density": "medium",
     "source_section": "01",
-    "source_block": "01-02",
-    "key_claim": "우리는 늘 직접 하던 일을 줄여왔다",
-    "notes_intent": "우리는 늘 직접 하던 일을 줄여왔다를 slide 단위 주장으로 분해",
+    "source_block": "01-05",
+    "key_claim": "개발자의 역할은 환경 설계와 결과 판단으로 이동",
+    "notes_intent": "Harness Engineer의 핵심 역량",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "CHAPTER 01",
-    "notes": "우리는 늘 직접 하던 일을 줄여왔다를 먼저 말한다. 이어서 우리는 늘 직접 하던 일을 줄여왔다의 근거를 짧게 보강한다.",
-    "lead": "C Java",
+    "notes": "문제 분해, 컨텍스트 선택, 수용 기준, 검증, 권한 경계가 새로운 핵심 역량이 된다.",
+    "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
-      "callout": "우리는 늘 직접 하던 일을 줄여왔다",
-      "points": [
-        "C Java",
-        "Java Python",
-        "이러한 변화는 어느 날 갑자기 일어난 일이",
-        "전환이 일어날 때마다"
+      "left_label": "이전 역할",
+      "left_points": [
+        "코드 직접 작성",
+        "버그 수정",
+        "문서 사후 정리"
+      ],
+      "right_label": "새 역할",
+      "right_points": [
+        "문제 분해",
+        "컨텍스트 선택",
+        "수용 기준",
+        "검증 gate",
+        "권한 경계"
       ]
     }
   },
@@ -471,3844 +522,30 @@
     "order": 14,
     "slide_id": "S014",
     "file_name": "slide-014.html",
-    "title": "타이핑은 더 이상 실력을 설명하지 못",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
+    "title": "기초의 중요성",
+    "slide_type": "statement",
+    "layout": "editorial",
+    "shell": "statement-editorial-shell",
     "family": "content",
-    "density": "medium",
-    "source_section": "01",
-    "source_block": "01-03",
-    "key_claim": "타이핑은 더 이상 실력을 설명하지 못",
-    "notes_intent": "타이핑은 더 이상 실력을 설명하지 못한다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 01",
-    "notes": "타이핑은 더 이상 실력을 설명하지 못를 먼저 말한다. 이어서 타이핑은 더 이상 실력을 설명하지 못의 근거를 짧게 보강한다.",
-    "lead": "이 변화는 이미 현장에서 강력하게 나타나고 있습니다.",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "타이핑은 더 이상 실력을 설명하지 못",
-      "points": [
-        "이 변화는 이미 현장에서 강력하게 나타나고",
-        "YC W25의 통계에 따르면",
-        "OpenAI Codex 팀은 5개월간 수동",
-        "직접 타이핑을 얼마나 하는가”는 더 이상"
-      ]
-    }
-  },
-  {
-    "order": 15,
-    "slide_id": "S015",
-    "file_name": "slide-015.html",
-    "title": "문서가 결과를 바꾸는 세계",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "01",
-    "source_block": "01-04",
-    "key_claim": "문서가 결과를 바꾸는 세계",
-    "notes_intent": "문서가 결과를 바꾸는 세계를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 01",
-    "notes": "문서가 결과를 바꾸는 세계를 먼저 말한다. 이어서 문서가 결과를 바꾸는 세계의 근거를 짧게 보강한다.",
-    "lead": "가장 두드러진 변화는 코드 바깥에 적힌 문서의 역할이",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "문서가 결과를 바꾸는 세계",
-      "points": [
-        "가장 두드러진 변화는 코드 바깥에 적힌",
-        "CLAUDE.md",
-        "과거에 이런 문서들은 단순한 참고 자료나",
-        "AI와 함께 일하는 환경에서는 이 문서들이"
-      ]
-    }
-  },
-  {
-    "order": 16,
-    "slide_id": "S016",
-    "file_name": "slide-016.html",
-    "title": "개발자의 새로운 역할",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "01",
-    "source_block": "01-05",
-    "key_claim": "개발자의 새로운 역할",
-    "notes_intent": "개발자의 새로운 역할를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 01",
-    "notes": "개발자의 새로운 역할를 먼저 말한다. 이어서 개발자의 새로운 역할의 근거를 짧게 보강한다.",
-    "lead": "결과적으로 개발자의 핵심 역량도 이동하고 있습니다.",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "개발자의 새로운 역할",
-      "points": [
-        "결과적으로 개발자의 핵심 역량도 이동하고",
-        "한쪽에는 여전히 “코드를 잘 짜는 능력”이",
-        "문서를 잘 쓴다는 것은 예쁘게 정리한다는",
-        "마치 건축가가 직접 벽돌을 쌓기보다 설계도로"
-      ]
-    }
-  },
-  {
-    "order": 17,
-    "slide_id": "S017",
-    "file_name": "slide-017.html",
-    "title": "그래도 기본기는 더 무거워진다",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
+    "density": "light",
     "source_section": "01",
     "source_block": "01-06",
-    "key_claim": "그래도 기본기는 더 무거워진다",
-    "notes_intent": "그래도 기본기는 더 무거워진다를 slide 단위 주장으로 분해",
+    "key_claim": "타이핑은 줄고 시스템 판단은 남는다",
+    "notes_intent": "01장 결론 전환",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "CHAPTER 01",
-    "notes": "그래도 기본기는 더 무거워진다를 먼저 말한다. 이어서 그래도 기본기는 더 무거워진다의 근거를 짧게 보강한다.",
-    "lead": "물론 그렇다고 해서 소프트웨어의 기본기가 덜 중요해지는",
+    "notes": "AI가 더 많은 코드를 만들수록 기본기는 사라지지 않고 판단 책임으로 더 무거워진다.",
+    "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
-      "callout": "그래도 기본기는 더 무거워진다",
-      "points": [
-        "물론 그렇다고 해서 소프트웨어의 기본기가 덜",
-        "오히려 정반대",
-        "AI가 실무의 많은 부분을 자동화할수록",
-        "줄어든 것은 '코드를 타이핑하는 비중'일 뿐"
-      ]
-    }
-  },
-  {
-    "order": 18,
-    "slide_id": "S018",
-    "file_name": "slide-018.html",
-    "title": "데모 수준의 간단한 앱을 만드는 일은",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "01",
-    "source_block": "01-06",
-    "key_claim": "그래도 기본기는 더 무거워진다",
-    "notes_intent": "그래도 기본기는 더 무거워진다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 01",
-    "notes": "그래도 기본기는 더 무거워진다를 먼저 말한다. 이어서 그래도 기본기는 더 무거워진다의 근거를 짧게 보강한다.",
-    "lead": "데모 수준의 간단한 앱을 만드는 일은 극단적으로 쉬워졌습니다.",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "그래도 기본기는 더 무거워진다",
-      "points": [
-        "데모 수준의 간단한 앱을 만드는 일은",
-        "실제 리얼 서비스로 넘어가면 보안",
-        "이런 문제들은 프롬프트 몇 줄로 그냥",
-        "무엇을 파고들어야 할지"
-      ]
-    }
-  },
-  {
-    "order": 19,
-    "slide_id": "S019",
-    "file_name": "slide-019.html",
-    "title": "결론",
-    "slide_type": "statement",
-    "layout": "editorial",
-    "shell": "statement-editorial-shell",
-    "family": "content",
-    "density": "light",
-    "source_section": "01",
-    "source_block": "01-07",
-    "key_claim": "코딩이라는 행위 자체가 끝난다는 말은 틀렸습니다.",
-    "notes_intent": "결론를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 01",
-    "notes": "코딩이라는 행위 자체가 끝난다는 말은 틀렸습니다.를 먼저 말한다. 이어서 결론의 근거를 짧게 보강한다.",
-    "lead": "코딩이라는 행위 자체가 끝난다는 말은 틀렸습니다.",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "tag": "이동",
-      "statement": "코딩이라는 행위 자체가 끝난다는 말은 틀렸습니다.",
-      "support": "손으로 한 줄씩 치는 비중은 빠르게 줄고 있고",
+      "tag": "BASICS",
+      "statement": "타이핑 감소, 시스템 판단 책임",
+      "support": "인증·동시성·DB·캐시·보안·비용·배포",
       "chips": [
-        "코딩이라는 행위 자체가 끝난다는 말은",
-        "손으로 한 줄씩 치는 비중은 빠르게 줄고 있고",
-        "질문도 바뀌어야"
-      ]
-    }
-  },
-  {
-    "order": 20,
-    "slide_id": "S020",
-    "file_name": "slide-020.html",
-    "title": "AI가 코딩을 대체하는가?”가 아니라",
-    "slide_type": "statement",
-    "layout": "editorial",
-    "shell": "statement-editorial-shell",
-    "family": "content",
-    "density": "light",
-    "source_section": "01",
-    "source_block": "01-07",
-    "key_claim": "AI가 코딩을 대체하는가?”가 아니라 “개발자의 숙련은",
-    "notes_intent": "결론를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 01",
-    "notes": "AI가 코딩을 대체하는가?”가 아니라 “개발자의 숙련은를 먼저 말한다. 이어서 결론의 근거를 짧게 보강한다.",
-    "lead": "AI가 코딩을 대체하는가?”가 아니라 “개발자의 숙련은",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "tag": "이동",
-      "statement": "AI가 코딩을 대체하는가?”가 아니라 “개발자의 숙련은",
-      "support": "지금 보이는 대답은 분명",
-      "chips": [
-        "AI가 코딩을 대체하는가?”가 아니라",
-        "지금 보이는 대답은 분명",
-        "코딩의 중심은 손가락 끝에서 설계와 검증의"
-      ]
-    }
-  },
-  {
-    "order": 21,
-    "slide_id": "S021",
-    "file_name": "slide-021.html",
-    "title": "왜 Claude Code인가",
-    "slide_type": "section",
-    "layout": "centered",
-    "shell": "section-divider-shell",
-    "family": "section",
-    "density": "light",
-    "source_section": "02",
-    "source_block": "02-00",
-    "key_claim": "왜 Claude Code인가",
-    "notes_intent": "02장의 질문을 챕터 단위로 고정",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 02",
-    "notes": "왜 Claude Code인가, 그리고 코딩 도구는 왜 Harness로 수렴하는가에서 무엇을 묻는지 먼저 잠근다. 지금부터는 세부 논지를 2~3문장 단위로 분해해 본다.",
-    "lead": "이 글의 출발점은 “왜 Claude Code인가”라는",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "keywords": [
-        "Prompt",
-        "Context",
-        "Harness"
-      ]
-    }
-  },
-  {
-    "order": 22,
-    "slide_id": "S022",
-    "file_name": "slide-022.html",
-    "title": "왜 하필 Claude Code인가",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "02",
-    "source_block": "02-01",
-    "key_claim": "왜 하필 Claude Code인가",
-    "notes_intent": "왜 하필 Claude Code인가를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 02",
-    "notes": "왜 하필 Claude Code인가를 먼저 말한다. 이어서 왜 하필 Claude Code인가의 근거를 짧게 보강한다.",
-    "lead": "이 글의 출발점은 “왜 Claude Code인가”라는 질문",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "왜 하필 Claude Code인가",
-      "points": [
-        "이 글의 출발점은 “왜 Claude",
-        "답은 단순한 선호가 아닙니다.",
-        "지금 코딩 에이전트가 어떤 방향으로",
-        "Harness라는 렌즈로 보면 더 그렇습니다."
-      ]
-    }
-  },
-  {
-    "order": 23,
-    "slide_id": "S023",
-    "file_name": "slide-023.html",
-    "title": "우리가 보려는 것은 단일 제품의 장점",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "02",
-    "source_block": "02-01",
-    "key_claim": "왜 하필 Claude Code인가",
-    "notes_intent": "왜 하필 Claude Code인가를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 02",
-    "notes": "왜 하필 Claude Code인가를 먼저 말한다. 이어서 왜 하필 Claude Code인가의 근거를 짧게 보강한다.",
-    "lead": "우리가 보려는 것은 단일 제품의 장점 목록이 아니라",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "왜 하필 Claude Code인가",
-      "points": [
-        "우리가 보려는 것은 단일 제품의 장점 목록이",
-        "IDE 플러그인",
-        "더 많은 맥락을 읽고",
-        "경쟁의 축도 자연스럽게 옮겨갑니다."
-      ]
-    }
-  },
-  {
-    "order": 24,
-    "slide_id": "S024",
-    "file_name": "slide-024.html",
-    "title": "코딩 에이전트 패러다임 진화 연대기",
-    "slide_type": "table",
-    "layout": "wide",
-    "shell": "evidence-table-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "02",
-    "source_block": "02-02",
-    "key_claim": "코딩 에이전트 패러다임 진화 연대기",
-    "notes_intent": "코딩 에이전트 패러다임 진화 연대기 (2022-2026)를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 02",
-    "notes": "코딩 에이전트 패러다임 진화 연대기를 먼저 말한다. 이어서 코딩 에이전트 패러다임 진화 연대기의 근거를 짧게 보강한다.",
-    "lead": "각 시대가 왜 한계에 부딪혔으며 어떻게 다음 패러다임으로",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "headers": [
-        "시대 구분",
-        "시기",
-        "핵심 질문"
-      ],
-      "rows": [
-        [
-          "Prompt Engineering",
-          "2022~2024",
-          "어떤 말을 해야 하나?"
-        ],
-        [
-          "Context",
-          "2025 중반~",
-          "어떤 정보를 넣어야 하나?"
-        ],
-        [
-          "Harness",
-          "2026~",
-          "어떤 시스템을 만들어야 하나?"
-        ]
-      ]
-    }
-  },
-  {
-    "order": 25,
-    "slide_id": "S025",
-    "file_name": "slide-025.html",
-    "title": "코딩 에이전트 패러다임 진화 연대기",
-    "slide_type": "process",
-    "layout": "wide",
-    "shell": "process-flow-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "02",
-    "source_block": "02-02",
-    "key_claim": "코딩 에이전트 패러다임 진화 연대기",
-    "notes_intent": "코딩 에이전트 패러다임 진화 연대기 (2022-2026)를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 02",
-    "notes": "코딩 에이전트 패러다임 진화 연대기를 먼저 말한다. 이어서 코딩 에이전트 패러다임 진화 연대기의 근거를 짧게 보강한다.",
-    "lead": "코딩 에이전트 패러다임 진화 연대기",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "steps": [
-        {
-          "index": "01",
-          "title": "Prompt Engineering",
-          "text": "Prompt Engineering"
-        },
-        {
-          "index": "02",
-          "title": "Context",
-          "text": "Context Engineering"
-        },
-        {
-          "index": "03",
-          "title": "Harness",
-          "text": "Harness Engineering"
-        }
-      ]
-    }
-  },
-  {
-    "order": 26,
-    "slide_id": "S026",
-    "file_name": "slide-026.html",
-    "title": "GitHub Copilot",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "02",
-    "source_block": "02-03",
-    "key_claim": "GitHub Copilot",
-    "notes_intent": "GitHub Copilot, 프롬프트(Prompt)의 시대를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 02",
-    "notes": "GitHub Copilot를 먼저 말한다. 이어서 GitHub Copilot의 근거를 짧게 보강한다.",
-    "lead": "이러한 흐름의 시작에는 2022년 세상에 등장한",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "GitHub Copilot",
-      "points": [
-        "이러한 흐름의 시작에는 2022년 세상에",
-        "OpenAI Codex를 엔진으로 삼은",
-        "이 도구는 “코드는 인간이 쓰고 AI가",
-        "진정한 프롬프트의 시대는 불과 5개월 뒤"
-      ]
-    }
-  },
-  {
-    "order": 27,
-    "slide_id": "S027",
-    "file_name": "slide-027.html",
-    "title": "모델이 의도를 정확히 이해하도록 명확한",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "02",
-    "source_block": "02-03",
-    "key_claim": "GitHub Copilot",
-    "notes_intent": "GitHub Copilot, 프롬프트(Prompt)의 시대를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 02",
-    "notes": "GitHub Copilot를 먼저 말한다. 이어서 GitHub Copilot의 근거를 짧게 보강한다.",
-    "lead": "모델이 의도를 정확히 이해하도록 명확한 지시문",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "GitHub Copilot",
-      "points": [
-        "모델이 의도를 정확히 이해하도록 명확한 지시문",
-        "학계와 업계에서는 한계를 뛰어넘기 위한",
-        "2022년 1월 Google Brain 팀이",
-        "같은 해 10월에는 추론과 외부 도구 사용을"
-      ]
-    }
-  },
-  {
-    "order": 28,
-    "slide_id": "S028",
-    "file_name": "slide-028.html",
-    "title": "Cursor",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "02",
-    "source_block": "02-04",
-    "key_claim": "Cursor",
-    "notes_intent": "Cursor, 컨텍스트(Context)의 시대를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 02",
-    "notes": "Cursor를 먼저 말한다. 이어서 Cursor의 근거를 짧게 보강한다.",
-    "lead": "프롬프트의 한계는 명확",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "Cursor",
-      "points": [
-        "프롬프트의 한계는 명확",
-        "제아무리 좋은 지시를 내려도 AI 모델이",
-        "2023년 3월 등장한 Cursor는 이",
-        "VS Code를 기반으로 전체 코드베이스를"
-      ]
-    }
-  },
-  {
-    "order": 29,
-    "slide_id": "S029",
-    "file_name": "slide-029.html",
-    "title": "컨텍스트 시대가 개념적으로 공식화된 것은",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "02",
-    "source_block": "02-04",
-    "key_claim": "Cursor",
-    "notes_intent": "Cursor, 컨텍스트(Context)의 시대를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 02",
-    "notes": "Cursor를 먼저 말한다. 이어서 Cursor의 근거를 짧게 보강한다.",
-    "lead": "컨텍스트 시대가 개념적으로 공식화된 것은 2025년 6월",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "Cursor",
-      "points": [
-        "컨텍스트 시대가 개념적으로 공식화된 것은",
-        "Shopify CEO Tobi Lütke가",
-        "이 시점부터 Cursor Composer",
-        "그러나 이 시점에도 중심 목표가 여전히"
-      ]
-    }
-  },
-  {
-    "order": 30,
-    "slide_id": "S030",
-    "file_name": "slide-030.html",
-    "title": "에이전트 루프와 Tool Use",
-    "slide_type": "process",
-    "layout": "wide",
-    "shell": "process-flow-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "02",
-    "source_block": "02-05",
-    "key_claim": "에이전트 루프와 Tool Use",
-    "notes_intent": "에이전트 루프와 Tool Use를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 02",
-    "notes": "에이전트 루프와 Tool Use를 먼저 말한다. 이어서 에이전트 루프와 Tool Use의 근거를 짧게 보강한다.",
-    "lead": "진짜 변화와 문제는 에이전트 도구가 스스로 무언가를",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "steps": [
-        {
-          "index": "01",
-          "title": "진짜 변화와 문제는 에이전트",
-          "text": "진짜 변화와 문제는 에이전트 도구가 스스로"
-        },
-        {
-          "index": "02",
-          "title": "거의 모든 에이전트 기반 코딩",
-          "text": "거의 모든 에이전트 기반 코딩 도구는"
-        },
-        {
-          "index": "03",
-          "title": "자료를 수집하고 파일을 수정한 뒤",
-          "text": "자료를 수집하고 파일을 수정한 뒤"
-        },
-        {
-          "index": "04",
-          "title": "루프의 각 단계마다 위험도 분명",
-          "text": "루프의 각 단계마다 위험도 분명"
-        }
-      ]
-    }
-  },
-  {
-    "order": 31,
-    "slide_id": "S031",
-    "file_name": "slide-031.html",
-    "title": "쓰레기 데이터가 섞이면 컨텍스트가 오염되고",
-    "slide_type": "process",
-    "layout": "wide",
-    "shell": "process-flow-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "02",
-    "source_block": "02-05",
-    "key_claim": "에이전트 루프와 Tool Use",
-    "notes_intent": "에이전트 루프와 Tool Use를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 02",
-    "notes": "에이전트 루프와 Tool Use를 먼저 말한다. 이어서 에이전트 루프와 Tool Use의 근거를 짧게 보강한다.",
-    "lead": "쓰레기 데이터가 섞이면 컨텍스트가 오염되고",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "steps": [
-        {
-          "index": "01",
-          "title": "쓰레기 데이터가 섞이면",
-          "text": "쓰레기 데이터가 섞이면 컨텍스트가 오염되고"
-        },
-        {
-          "index": "02",
-          "title": "이쯤 되면 문제는 모델이",
-          "text": "이쯤 되면 문제는 모델이 똑똑한가 아닌가가"
-        },
-        {
-          "index": "03",
-          "title": "에이전트의 런타임 루프를 어떤",
-          "text": "에이전트의 런타임 루프를 어떤 규칙과 권한"
-        },
-        {
-          "index": "04",
-          "title": "바로 이 지점에서",
-          "text": "바로 이 지점에서 Harness는 선택지가"
-        }
-      ]
-    }
-  },
-  {
-    "order": 32,
-    "slide_id": "S032",
-    "file_name": "slide-032.html",
-    "title": "Claude Code가 대표 사례가 된 이유",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "02",
-    "source_block": "02-06",
-    "key_claim": "Claude Code가 대표 사례가 된 이유",
-    "notes_intent": "Claude Code가 대표 사례가 된 이유를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 02",
-    "notes": "Claude Code가 대표 사례가 된 이유를 먼저 말한다. 이어서 Claude Code가 대표 사례가 된 이유의 근거를 짧게 보강한다.",
-    "lead": "이런 흐름 속에서 Claude Code가 자주 예시로",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "Claude Code가 대표 사례가 된 이유",
-      "points": [
-        "이런 흐름 속에서 Claude Code가",
-        "단순히 퍼포먼스가 좋아서가 아닙니다.",
-        "터미널 네이티브 워크플로우",
-        "좋은 에이전트는 결국 어떤 환경 위에서"
-      ]
-    }
-  },
-  {
-    "order": 33,
-    "slide_id": "S033",
-    "file_name": "slide-033.html",
-    "title": "파일을 분석하고 셸을 실행하며 결과를",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "02",
-    "source_block": "02-06",
-    "key_claim": "Claude Code가 대표 사례가 된 이유",
-    "notes_intent": "Claude Code가 대표 사례가 된 이유를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 02",
-    "notes": "Claude Code가 대표 사례가 된 이유를 먼저 말한다. 이어서 Claude Code가 대표 사례가 된 이유의 근거를 짧게 보강한다.",
-    "lead": "파일을 분석하고 셸을 실행하며 결과를 뜯어 살펴보고 궤도를",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "Claude Code가 대표 사례가 된 이유",
-      "points": [
-        "파일을 분석하고 셸을 실행하며 결과를 뜯어",
-        "나아가 이러한 진화의 양상은 단순한 우연이",
-        "Codex와 OpenCode 등 주요",
-        "이런 흐름 속에서 Claude Code가"
-      ]
-    }
-  },
-  {
-    "order": 34,
-    "slide_id": "S034",
-    "file_name": "slide-034.html",
-    "title": "결론",
-    "slide_type": "statement",
-    "layout": "editorial",
-    "shell": "statement-editorial-shell",
-    "family": "content",
-    "density": "light",
-    "source_section": "02",
-    "source_block": "02-07",
-    "key_claim": "최근의 코딩 도구 경쟁은 특정 제품 한두 개의 우열",
-    "notes_intent": "결론를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 02",
-    "notes": "최근의 코딩 도구 경쟁은 특정 제품 한두 개의 우열를 먼저 말한다. 이어서 결론의 근거를 짧게 보강한다.",
-    "lead": "최근의 코딩 도구 경쟁은 특정 제품 한두 개의 우열",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "tag": "수렴",
-      "statement": "최근의 코딩 도구 경쟁은 특정 제품 한두 개의 우열",
-      "support": "GitHub Copilot이 첫 삽을 뜬 뒤",
-      "chips": [
-        "최근의 코딩 도구 경쟁은 특정 제품 한두",
-        "GitHub Copilot이 첫 삽을 뜬 뒤",
-        "봐야 할 렌즈도 달라집니다."
-      ]
-    }
-  },
-  {
-    "order": 35,
-    "slide_id": "S035",
-    "file_name": "slide-035.html",
-    "title": "AI 시대의 개발 방법론",
-    "slide_type": "section",
-    "layout": "centered",
-    "shell": "section-divider-shell",
-    "family": "section",
-    "density": "light",
-    "source_section": "03",
-    "source_block": "03-00",
-    "key_claim": "AI 시대의 개발 방법론",
-    "notes_intent": "03장의 질문을 챕터 단위로 고정",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 03",
-    "notes": "AI 시대의 개발 방법론에서 무엇을 묻는지 먼저 잠근다. 지금부터는 세부 논지를 2~3문장 단위로 분해해 본다.",
-    "lead": "이전 장에서 코딩 도구의 진화가 Prompt와",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "keywords": [
-        "Spec-first",
-        "TDD",
-        "SDD"
-      ]
-    }
-  },
-  {
-    "order": 36,
-    "slide_id": "S036",
-    "file_name": "slide-036.html",
-    "title": "방법론이 다시 전면에 나온다",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "03",
-    "source_block": "03-01",
-    "key_claim": "방법론이 다시 전면에 나온다",
-    "notes_intent": "방법론이 다시 전면에 나온다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 03",
-    "notes": "방법론이 다시 전면에 나온다를 먼저 말한다. 이어서 방법론이 다시 전면에 나온다의 근거를 짧게 보강한다.",
-    "lead": "이전 장에서 코딩 도구의 진화가 Prompt와",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "방법론이 다시 전면에 나온다",
-      "points": [
-        "이전 장에서 코딩 도구의 진화가",
-        "그런데 도구가 자율성을 얻을수록 불편한",
-        "병목은 더 이상 손가락 속도가 아닙니다.",
-        "무엇을 만들 것인지"
-      ]
-    }
-  },
-  {
-    "order": 37,
-    "slide_id": "S037",
-    "file_name": "slide-037.html",
-    "title": "왜 지금 방법론",
-    "slide_type": "statement",
-    "layout": "editorial",
-    "shell": "statement-editorial-shell",
-    "family": "content",
-    "density": "light",
-    "source_section": "03",
-    "source_block": "03-02",
-    "key_claim": "왜 지금 방법론",
-    "notes_intent": "왜 지금 방법론를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 03",
-    "notes": "왜 지금 방법론를 먼저 말한다. 이어서 왜 지금 방법론의 근거를 짧게 보강한다.",
-    "lead": "왜 지금 방법론",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "tag": "방법",
-      "statement": "왜 지금 방법론",
-      "support": "왜 지금 방법론",
-      "chips": [
-        "왜 지금 방법론",
-        "왜 지금 방법론",
-        "왜 지금 방법론"
-      ]
-    }
-  },
-  {
-    "order": 38,
-    "slide_id": "S038",
-    "file_name": "slide-038.html",
-    "title": "AI 코딩 방법론 재부상 연대기",
-    "slide_type": "table",
-    "layout": "wide",
-    "shell": "evidence-table-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "03",
-    "source_block": "03-03",
-    "key_claim": "AI 코딩 방법론 재부상 연대기",
-    "notes_intent": "AI 코딩 방법론 재부상 연대기 (2025-2026)를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 03",
-    "notes": "AI 코딩 방법론 재부상 연대기를 먼저 말한다. 이어서 AI 코딩 방법론 재부상 연대기의 근거를 짧게 보강한다.",
-    "lead": "이 흐름은 단순한 유행의 변천사가 아닙니다.",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "headers": [
-        "시기",
-        "현상",
-        "대표 키워드/도구"
-      ],
-      "rows": [
-        [
-          "2025.02",
-          "AI 코딩의 대중화와 문화적",
-          "Vibe Coding"
-        ],
-        [
-          "2025 중반",
-          "생성 코드의 품질",
-          "구조화된 검토"
-        ],
-        [
-          "2025 하반기",
-          "구현 전에 방향을 고정하려는",
-          "SDD, Spec-first"
-        ],
-        [
-          "2026 초",
-          "구현 뒤 검증 체계와 문맥",
-          "TDD, Context"
-        ]
-      ]
-    }
-  },
-  {
-    "order": 39,
-    "slide_id": "S039",
-    "file_name": "slide-039.html",
-    "title": "업계의 고민은 자연스럽게 진화",
-    "slide_type": "process",
-    "layout": "wide",
-    "shell": "process-flow-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "03",
-    "source_block": "03-03",
-    "key_claim": "AI 코딩 방법론 재부상 연대기",
-    "notes_intent": "AI 코딩 방법론 재부상 연대기 (2025-2026)를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 03",
-    "notes": "AI 코딩 방법론 재부상 연대기를 먼저 말한다. 이어서 AI 코딩 방법론 재부상 연대기의 근거를 짧게 보강한다.",
-    "lead": "업계의 고민은 자연스럽게 진화",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "steps": [
-        {
-          "index": "01",
-          "title": "2025.02",
-          "text": "2025.02"
-        },
-        {
-          "index": "02",
-          "title": "2025 중반",
-          "text": "2025 중반 / 생성 코드의 품질"
-        },
-        {
-          "index": "03",
-          "title": "2025 하반기",
-          "text": "2025 하반기"
-        },
-        {
-          "index": "04",
-          "title": "2026 초",
-          "text": "2026 초"
-        }
-      ]
-    }
-  },
-  {
-    "order": 40,
-    "slide_id": "S040",
-    "file_name": "slide-040.html",
-    "title": "구현 전에 방향을 고정하는 규율과",
-    "slide_type": "process",
-    "layout": "wide",
-    "shell": "process-flow-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "03",
-    "source_block": "03-03",
-    "key_claim": "AI 코딩 방법론 재부상 연대기",
-    "notes_intent": "AI 코딩 방법론 재부상 연대기 (2025-2026)를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 03",
-    "notes": "AI 코딩 방법론 재부상 연대기를 먼저 말한다. 이어서 AI 코딩 방법론 재부상 연대기의 근거를 짧게 보강한다.",
-    "lead": "구현 전에 방향을 고정하는 규율과",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "steps": [
-        {
-          "index": "01",
-          "title": "2025.02",
-          "text": "2025.02"
-        },
-        {
-          "index": "02",
-          "title": "2025 중반",
-          "text": "2025 중반 / 생성 코드의 품질"
-        },
-        {
-          "index": "03",
-          "title": "2025 하반기",
-          "text": "2025 하반기"
-        },
-        {
-          "index": "04",
-          "title": "2026 초",
-          "text": "2026 초"
-        }
-      ]
-    }
-  },
-  {
-    "order": 41,
-    "slide_id": "S041",
-    "file_name": "slide-041.html",
-    "title": "AI에게 가장 거친 가드레일",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "03",
-    "source_block": "03-04",
-    "key_claim": "AI에게 가장 거친 가드레일",
-    "notes_intent": "AI에게 가장 거친 가드레일를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 03",
-    "notes": "AI에게 가장 거친 가드레일를 먼저 말한다. 이어서 AI에게 가장 거친 가드레일의 근거를 짧게 보강한다.",
-    "lead": "TDD가 다시 앞줄로 나온 이유는 단순",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "AI에게 가장 거친 가드레일",
-      "points": [
-        "TDD가 다시 앞줄로 나온 이유는 단순",
-        "에이전트는 \"그럴듯하게 작동하는 코드\"를",
-        "기존 코드 수정",
-        "인간이 실패하는 테스트를 먼저 작성해"
-      ]
-    }
-  },
-  {
-    "order": 42,
-    "slide_id": "S042",
-    "file_name": "slide-042.html",
-    "title": "중요한 것은 에이전트가 제멋대로 테스트를",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "03",
-    "source_block": "03-04",
-    "key_claim": "AI에게 가장 거친 가드레일",
-    "notes_intent": "AI에게 가장 거친 가드레일를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 03",
-    "notes": "AI에게 가장 거친 가드레일를 먼저 말한다. 이어서 AI에게 가장 거친 가드레일의 근거를 짧게 보강한다.",
-    "lead": "중요한 것은 에이전트가 제멋대로 테스트를 지우거나",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "AI에게 가장 거친 가드레일",
-      "points": [
-        "중요한 것은 에이전트가 제멋대로 테스트를",
-        "AI 시대의 TDD는 단순한 품질 관리",
-        "테스트 코드 임의 수정 금지",
-        "이런 엄격한 운영 규칙이 결합될 때 비로소"
-      ]
-    }
-  },
-  {
-    "order": 43,
-    "slide_id": "S043",
-    "file_name": "slide-043.html",
-    "title": "구현 전에 방향을 못 박는다",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "03",
-    "source_block": "03-05",
-    "key_claim": "구현 전에 방향을 못 박는다",
-    "notes_intent": "구현 전에 방향을 못 박는다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 03",
-    "notes": "구현 전에 방향을 못 박는다를 먼저 말한다. 이어서 구현 전에 방향을 못 박는다의 근거를 짧게 보강한다.",
-    "lead": "구현 단계에서 TDD가 에이전트의 일탈을 막아낸다면",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "구현 전에 방향을 못 박는다",
-      "points": [
-        "구현 단계에서 TDD가 에이전트의 일탈을",
-        "SDD는 코드보다 스펙을 유일한 진실의",
-        "어떻게 만들 것인가\"에 뛰어들기 전에 \"무엇을",
-        "신규 기능 개발"
-      ]
-    }
-  },
-  {
-    "order": 44,
-    "slide_id": "S044",
-    "file_name": "slide-044.html",
-    "title": "요점은 하나",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "03",
-    "source_block": "03-05",
-    "key_claim": "구현 전에 방향을 못 박는다",
-    "notes_intent": "구현 전에 방향을 못 박는다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 03",
-    "notes": "구현 전에 방향을 못 박는다를 먼저 말한다. 이어서 구현 전에 방향을 못 박는다의 근거를 짧게 보강한다.",
-    "lead": "요점은 하나",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "구현 전에 방향을 못 박는다",
-      "points": [
-        "요점은 하나",
-        "에이전트가 잘못된 방향으로 빠르게 달리지",
-        "이 과정의 무게중심은 모든 산출물이 파일로",
-        "긴 작업에서 필연적으로 일어나는 컨텍스트"
-      ]
-    }
-  },
-  {
-    "order": 45,
-    "slide_id": "S045",
-    "file_name": "slide-045.html",
-    "title": "Waterfall과는 무엇이 다른가",
-    "slide_type": "comparison",
-    "layout": "split",
-    "shell": "split-compare-shell",
-    "family": "comparison",
-    "density": "medium",
-    "source_section": "03",
-    "source_block": "03-06",
-    "key_claim": "Waterfall과는 무엇이 다른가",
-    "notes_intent": "Waterfall과는 무엇이 다른가를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 03",
-    "notes": "Waterfall과는 무엇이 다른가를 먼저 말한다. 이어서 Waterfall과는 무엇이 다른가의 근거를 짧게 보강한다.",
-    "lead": "이쯤 되면 당연한 반론이 나옵니다.",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "left_label": "축 A",
-      "left_points": [
-        "이쯤 되면 당연한 반론이 나옵니다.",
-        "스펙을 먼저 쓰고 계획을 세우면"
-      ],
-      "right_label": "축 B",
-      "right_points": [
-        "둘 다 코드를 짜기 전에 문서를 만들고",
-        "실제 작동 원리는 완전히 다릅니다."
-      ]
-    }
-  },
-  {
-    "order": 46,
-    "slide_id": "S046",
-    "file_name": "slide-046.html",
-    "title": "스펙은 출발선이자",
-    "slide_type": "comparison",
-    "layout": "split",
-    "shell": "split-compare-shell",
-    "family": "comparison",
-    "density": "medium",
-    "source_section": "03",
-    "source_block": "03-06",
-    "key_claim": "Waterfall과는 무엇이 다른가",
-    "notes_intent": "Waterfall과는 무엇이 다른가를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 03",
-    "notes": "Waterfall과는 무엇이 다른가를 먼저 말한다. 이어서 Waterfall과는 무엇이 다른가의 근거를 짧게 보강한다.",
-    "lead": "스펙은 출발선이자",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "left_label": "축 A",
-      "left_points": [
-        "스펙은 출발선이자",
-        "모호함이 터져 나오면 [NEEDS"
-      ],
-      "right_label": "축 B",
-      "right_points": [
-        "여기에 TDD를 통한 자동 검증이 맞물리면",
-        "정리하면 Waterfall은 \"앞에서 다"
-      ]
-    }
-  },
-  {
-    "order": 47,
-    "slide_id": "S047",
-    "file_name": "slide-047.html",
-    "title": "결론",
-    "slide_type": "statement",
-    "layout": "editorial",
-    "shell": "statement-editorial-shell",
-    "family": "content",
-    "density": "light",
-    "source_section": "03",
-    "source_block": "03-07",
-    "key_claim": "TDD와 SDD는 취향 문제가 아닙니다.",
-    "notes_intent": "결론를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 03",
-    "notes": "TDD와 SDD는 취향 문제가 아닙니다.를 먼저 말한다. 이어서 결론의 근거를 짧게 보강한다.",
-    "lead": "TDD와 SDD는 취향 문제가 아닙니다.",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "tag": "방법",
-      "statement": "TDD와 SDD는 취향 문제가 아닙니다.",
-      "support": "SDD가 방향과 제약을 고정하면 TDD는 실제",
-      "chips": [
-        "TDD와 SDD는 취향 문제가 아닙니다.",
-        "SDD가 방향과 제약을 고정하면 TDD는",
-        "둘 중 하나라도 빠지면 금방 무너집니다."
-      ]
-    }
-  },
-  {
-    "order": 48,
-    "slide_id": "S048",
-    "file_name": "slide-048.html",
-    "title": "에이전트를 움직이는 기술",
-    "slide_type": "section",
-    "layout": "centered",
-    "shell": "section-divider-shell",
-    "family": "section",
-    "density": "light",
-    "source_section": "04",
-    "source_block": "04-00",
-    "key_claim": "에이전트를 움직이는 기술",
-    "notes_intent": "04장의 질문을 챕터 단위로 고정",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 04",
-    "notes": "에이전트를 움직이는 기술, Harness에서 무엇을 묻는지 먼저 잠근다. 지금부터는 세부 논지를 2~3문장 단위로 분해해 본다.",
-    "lead": "처음 AI 코딩 도구가 주목받았을 때 사람들의 시선은 거의",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "keywords": [
-        "Agent",
-        "Context",
-        "Permissions"
-      ]
-    }
-  },
-  {
-    "order": 49,
-    "slide_id": "S049",
-    "file_name": "slide-049.html",
-    "title": "이제 병목은 문장보다 운영 구조다",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "04",
-    "source_block": "04-01",
-    "key_claim": "이제 병목은 문장보다 운영 구조다",
-    "notes_intent": "이제 병목은 문장보다 운영 구조다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 04",
-    "notes": "이제 병목은 문장보다 운영 구조다를 먼저 말한다. 이어서 이제 병목은 문장보다 운영 구조다의 근거를 짧게 보강한다.",
-    "lead": "처음 AI 코딩 도구가 주목받았을 때 사람들의 시선은 거의",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "이제 병목은 문장보다 운영 구조다",
-      "points": [
-        "처음 AI 코딩 도구가 주목받았을 때",
-        "어떤 프롬프트를 쓰면 더 잘 작동하는가.",
-        "Prompt Engineering이 전면에",
-        "곧 질문은 한 단계 넓어졌습니다."
-      ]
-    }
-  },
-  {
-    "order": 50,
-    "slide_id": "S050",
-    "file_name": "slide-050.html",
-    "title": "진짜 차이를 만드는 것은 따로 ",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "04",
-    "source_block": "04-01",
-    "key_claim": "이제 병목은 문장보다 운영 구조다",
-    "notes_intent": "이제 병목은 문장보다 운영 구조다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 04",
-    "notes": "이제 병목은 문장보다 운영 구조다를 먼저 말한다. 이어서 이제 병목은 문장보다 운영 구조다의 근거를 짧게 보강한다.",
-    "lead": "진짜 차이를 만드는 것은 따로 ",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "이제 병목은 문장보다 운영 구조다",
-      "points": [
-        "진짜 차이를 만드는 것은 따로 ",
-        "어떤 권한을 줄 것인가",
-        "이 바깥 구조를 설계하는 일이 Harness",
-        "좋은 문장은 여전히 중요"
-      ]
-    }
-  },
-  {
-    "order": 51,
-    "slide_id": "S051",
-    "file_name": "slide-051.html",
-    "title": "Prompt",
-    "slide_type": "table",
-    "layout": "wide",
-    "shell": "evidence-table-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "04",
-    "source_block": "04-02",
-    "key_claim": "Prompt",
-    "notes_intent": "Prompt, Context, Harness는 서로 다른 질문에 답한다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 04",
-    "notes": "Prompt를 먼저 말한다. 이어서 Prompt의 근거를 짧게 보강한다.",
-    "lead": "이 셋은 자주 한 묶음으로 불리지만",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "headers": [
-        "층위",
-        "핵심 질문",
-        "초점"
-      ],
-      "rows": [
-        [
-          "Prompt",
-          "어떻게 말할 것인가",
-          "명령의 품질"
-        ],
-        [
-          "Context",
-          "무엇을 보여 줄 것인가",
-          "정보의 품질"
-        ],
-        [
-          "Harness",
-          "무엇을 통제하고 방지할 것인가",
-          "시스템의 안정성"
-        ]
-      ]
-    }
-  },
-  {
-    "order": 52,
-    "slide_id": "S052",
-    "file_name": "slide-052.html",
-    "title": "하네스는 둘이 언제",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "04",
-    "source_block": "04-02",
-    "key_claim": "Prompt",
-    "notes_intent": "Prompt, Context, Harness는 서로 다른 질문에 답한다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 04",
-    "notes": "Prompt를 먼저 말한다. 이어서 Prompt의 근거를 짧게 보강한다.",
-    "lead": "하네스는 둘이 언제",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "Prompt",
-      "points": [
-        "하네스는 둘이 언제",
-        "Harness Engineering은",
-        "프롬프트와 컨텍스트를 제자리로 돌려놓는 상위",
-        "좋은 하네스는 좋은 프롬프트를 버리지 않습니다."
-      ]
-    }
-  },
-  {
-    "order": 53,
-    "slide_id": "S053",
-    "file_name": "slide-053.html",
-    "title": "Context Engineering은 주입이",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "04",
-    "source_block": "04-03",
-    "key_claim": "Context Engineering은 주입이 아니라 선별",
-    "notes_intent": "Context Engineering은 주입이 아니라 선별이다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 04",
-    "notes": "Context Engineering은 주입이 아니라 선별를 먼저 말한다. 이어서 Context Engineering은의 근거를 짧게 보강한다.",
-    "lead": "Context Engineering을 “많이 넣는 기술”로",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "Context Engineering은 주입이 아니라 선별",
-      "points": [
-        "Context Engineering을 “많이",
-        "긴 컨텍스트 창은 능력 그 자체가 아닙니다.",
-        "필요한 것과 불필요한 것을 함께 밀어 넣을",
-        "중요한 것은 양보다 조성"
-      ]
-    }
-  },
-  {
-    "order": 54,
-    "slide_id": "S054",
-    "file_name": "slide-054.html",
-    "title": "끝난 시도의 잔해",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "04",
-    "source_block": "04-03",
-    "key_claim": "Context Engineering은 주입이 아니라 선별",
-    "notes_intent": "Context Engineering은 주입이 아니라 선별이다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 04",
-    "notes": "Context Engineering은 주입이 아니라 선별를 먼저 말한다. 이어서 Context Engineering은의 근거를 짧게 보강한다.",
-    "lead": "끝난 시도의 잔해",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "Context Engineering은 주입이 아니라 선별",
-      "points": [
-        "끝난 시도의 잔해",
-        "많이 보여 주는 것보다 덜 보여 주는 편이",
-        "그런데 이 선별만으로도 아직 부족",
-        "에이전트 작업은 응답이 아니라 루프이기 때문"
-      ]
-    }
-  },
-  {
-    "order": 55,
-    "slide_id": "S055",
-    "file_name": "slide-055.html",
-    "title": "Agent = Model + Harness",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "04",
-    "source_block": "04-04",
-    "key_claim": "Agent = Model + Harness",
-    "notes_intent": "Agent = Model + Harness를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 04",
-    "notes": "Agent = Model + Harness를 먼저 말한다. 이어서 Agent = Model + Harness의 근거를 짧게 보강한다.",
-    "lead": "이 관점은 종종 이 한 줄로 압축됩니다.",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "Agent = Model + Harness",
-      "points": [
-        "이 관점은 종종 이 한 줄로 압축됩니다.",
-        "> Agent = Model + Harness",
-        "이 문장은 모델이 중요하지 않다는 뜻이",
-        "모델은 추론과 생성의 엔진"
-      ]
-    }
-  },
-  {
-    "order": 56,
-    "slide_id": "S056",
-    "file_name": "slide-056.html",
-    "title": "하네스의 5대 해부학",
-    "slide_type": "table",
-    "layout": "wide",
-    "shell": "evidence-table-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "04",
-    "source_block": "04-05",
-    "key_claim": "하네스의 5대 해부학",
-    "notes_intent": "하네스의 5대 해부학를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 04",
-    "notes": "하네스의 5대 해부학를 먼저 말한다. 이어서 하네스의 5대 해부학의 근거를 짧게 보강한다.",
-    "lead": "하네스를 손에 잡히는 구조로 보려면 다섯 기능 블록으로",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "headers": [
-        "블록",
-        "하는 일",
-        "구현 예시"
-      ],
-      "rows": [
-        [
-          "Guardrails",
-          "위험한 행동을 막고 권한",
-          "승인 규칙"
-        ],
-        [
-          "Specification",
-          "작업 범위와 기준선을 흔들리지",
-          "작업 명세"
-        ],
-        [
-          "Verification",
-          "결과를 결정론적으로 걸러낸다",
-          "lint"
-        ],
-        [
-          "State Management",
-          "세션이 바뀌어도 상태가",
-          "파일, Git 이력, 진행 기록"
-        ]
-      ]
-    }
-  },
-  {
-    "order": 57,
-    "slide_id": "S057",
-    "file_name": "slide-057.html",
-    "title": "특히 장시간 작업일수록 State",
-    "slide_type": "process",
-    "layout": "wide",
-    "shell": "process-flow-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "04",
-    "source_block": "04-05",
-    "key_claim": "하네스의 5대 해부학",
-    "notes_intent": "하네스의 5대 해부학를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 04",
-    "notes": "하네스의 5대 해부학를 먼저 말한다. 이어서 하네스의 5대 해부학의 근거를 짧게 보강한다.",
-    "lead": "특히 장시간 작업일수록 State Management와",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "steps": [
-        {
-          "index": "01",
-          "title": "Guardrails",
-          "text": "Guardrails"
-        },
-        {
-          "index": "02",
-          "title": "Specification",
-          "text": "Specification"
-        },
-        {
-          "index": "03",
-          "title": "Verification",
-          "text": "Verification"
-        },
-        {
-          "index": "04",
-          "title": "State Management",
-          "text": "State Management"
-        }
-      ]
-    }
-  },
-  {
-    "order": 58,
-    "slide_id": "S058",
-    "file_name": "slide-058.html",
-    "title": "기능 블록과 도구 레이어를 섞지 말자",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "04",
-    "source_block": "04-06",
-    "key_claim": "기능 블록과 도구 레이어를 섞지 말자",
-    "notes_intent": "기능 블록과 도구 레이어를 섞지 말자를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 04",
-    "notes": "기능 블록과 도구 레이어를 섞지 말자를 먼저 말한다. 이어서 기능 블록과 도구 레이어를 섞지 말자의 근거를 짧게 보강한다.",
-    "lead": "한 번 더 분리해야 할 것이 있습니다.",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "기능 블록과 도구 레이어를 섞지 말자",
-      "points": [
-        "한 번 더 분리해야 할 것이 있습니다.",
-        "방금의 다섯 항목은 하네스의 기능 블록",
-        "반면 CLAUDE.md",
-        "둘은 같은 말이 아닙니다."
-      ]
-    }
-  },
-  {
-    "order": 59,
-    "slide_id": "S059",
-    "file_name": "slide-059.html",
-    "title": "규칙 파일은 상시 기준선을 고정",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "04",
-    "source_block": "04-07",
-    "key_claim": "규칙 파일은 상시 기준선을 고정",
-    "notes_intent": "규칙 파일은 상시 기준선을 고정한다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 04",
-    "notes": "규칙 파일은 상시 기준선을 고정를 먼저 말한다. 이어서 규칙 파일은 상시 기준선을 고정의 근거를 짧게 보강한다.",
-    "lead": "CLAUDE.md나 AGENTS.md 같은 규칙 파일은",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "규칙 파일은 상시 기준선을 고정",
-      "points": [
-        "CLAUDE.md나 AGENTS.md 같은",
-        "코딩 스타일",
-        "그 덕분에 에이전트는 같은 출발선을 매번",
-        "모든 것을 이 파일 하나에 밀어 넣으면 곧장"
-      ]
-    }
-  },
-  {
-    "order": 60,
-    "slide_id": "S060",
-    "file_name": "slide-060.html",
-    "title": "Skills",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "04",
-    "source_block": "04-08",
-    "key_claim": "Skills",
-    "notes_intent": "Skills, Hooks, MCP, Plugins는 책임이 다르다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 04",
-    "notes": "Skills를 먼저 말한다. 이어서 Skills의 근거를 짧게 보강한다.",
-    "lead": "Skills는 필요할 때 불러오는 작업 지식에 가깝습니다.",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "Skills",
-      "points": [
-        "Skills는 필요할 때 불러오는 작업",
-        "특정 종류의 일을 할 때만 쓰는 절차와",
-        "반대로 Hooks는 우회하면 안 되는 기계적",
-        "위험 명령 차단"
-      ]
-    }
-  },
-  {
-    "order": 61,
-    "slide_id": "S061",
-    "file_name": "slide-061.html",
-    "title": "도구 이름을 곧 하네스로 오해하지 말아야 ",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "04",
-    "source_block": "04-08",
-    "key_claim": "Skills",
-    "notes_intent": "Skills, Hooks, MCP, Plugins는 책임이 다르다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 04",
-    "notes": "Skills를 먼저 말한다. 이어서 Skills의 근거를 짧게 보강한다.",
-    "lead": "도구 이름을 곧 하네스로 오해하지 말아야 ",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "Skills",
-      "points": [
-        "도구 이름을 곧 하네스로 오해하지 말아야 ",
-        "하네스는 이 자산들을 어디에",
-        "좋은 하네스는 규칙을 더 보태는 구조가",
-        "규칙을 맞는 높이에 올려놓는 구조"
-      ]
-    }
-  },
-  {
-    "order": 62,
-    "slide_id": "S062",
-    "file_name": "slide-062.html",
-    "title": "정리 좋은 하네스는 잘 시키는 구조가 아니라",
-    "slide_type": "statement",
-    "layout": "editorial",
-    "shell": "statement-editorial-shell",
-    "family": "content",
-    "density": "light",
-    "source_section": "04",
-    "source_block": "04-09",
-    "key_claim": "정리 좋은 하네스는 잘 시키는 구조가 아니라 잘 멈추는 구조다",
-    "notes_intent": "정리 좋은 하네스는 잘 시키는 구조가 아니라 잘 멈추는 구조다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 04",
-    "notes": "정리 좋은 하네스는 잘 시키는 구조가 아니라 잘 멈추는 구조다를 먼저 말한다. 이어서 정리 좋은 하네스는 잘 시키는 구조가의 근거를 짧게 보강한다.",
-    "lead": "프롬프트는 여전히 중요",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "tag": "구조",
-      "statement": "정리 좋은 하네스는 잘 시키는 구조가 아니라 잘 멈추는 구조다",
-      "support": "컨텍스트도 여전히 중요",
-      "chips": [
-        "프롬프트는 여전히 중요",
-        "컨텍스트도 여전히 중요",
-        "둘 다 하네스 안에서만 오래 버팁니다."
-      ]
-    }
-  },
-  {
-    "order": 63,
-    "slide_id": "S063",
-    "file_name": "slide-063.html",
-    "title": "코딩 에이전트 한계와 실패 패턴",
-    "slide_type": "section",
-    "layout": "centered",
-    "shell": "section-divider-shell",
-    "family": "section",
-    "density": "light",
-    "source_section": "05",
-    "source_block": "05-00",
-    "key_claim": "코딩 에이전트 한계와 실패 패턴",
-    "notes_intent": "05장의 질문을 챕터 단위로 고정",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 05",
-    "notes": "코딩 에이전트 한계와 실패 패턴에서 무엇을 묻는지 먼저 잠근다. 지금부터는 세부 논지를 2~3문장 단위로 분해해 본다.",
-    "lead": "AI 코딩 에이전트의 한계를 사소한 부작용처럼 다루면",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "keywords": [
-        "Long Context",
-        "Rot",
-        "Trust"
-      ]
-    }
-  },
-  {
-    "order": 64,
-    "slide_id": "S064",
-    "file_name": "slide-064.html",
-    "title": "실패는 부작용이 아니라 운영 설계의 본문",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "05",
-    "source_block": "05-01",
-    "key_claim": "실패는 부작용이 아니라 운영 설계의 본문",
-    "notes_intent": "실패는 부작용이 아니라 운영 설계의 본문이다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 05",
-    "notes": "실패는 부작용이 아니라 운영 설계의 본문를 먼저 말한다. 이어서 실패는 부작용이 아니라 운영 설계의 본문의 근거를 짧게 보강한다.",
-    "lead": "AI 코딩 에이전트의 한계를 사소한 부작용처럼 다루면",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "실패는 부작용이 아니라 운영 설계의 본문",
-      "points": [
-        "AI 코딩 에이전트의 한계를 사소한",
-        "문제가 터진 뒤 로그를 뒤지고",
-        "짧은 데모에서는 한 번의 응답이 그럴듯하면",
-        "실제 작업은 정반대"
-      ]
-    }
-  },
-  {
-    "order": 65,
-    "slide_id": "S065",
-    "file_name": "slide-065.html",
-    "title": "실패는 대개 조용히 누적",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "05",
-    "source_block": "05-02",
-    "key_claim": "실패는 대개 조용히 누적",
-    "notes_intent": "실패는 대개 조용히 누적된다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 05",
-    "notes": "실패는 대개 조용히 누적를 먼저 말한다. 이어서 실패는 대개 조용히 누적의 근거를 짧게 보강한다.",
-    "lead": "긴 작업에서 더 무서운 것은 대형 오답 한 번이 아닙니다.",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "실패는 대개 조용히 누적",
-      "points": [
-        "긴 작업에서 더 무서운 것은 대형 오답 한",
-        "그럴듯하게 통과한 작은 오류",
-        "에이전트는 한 번 답하고 끝나지 않습니다.",
-        "읽고, 수정하고, 실행하고, 다시 판단하는"
-      ]
-    }
-  },
-  {
-    "order": 66,
-    "slide_id": "S066",
-    "file_name": "slide-066.html",
-    "title": "시간이 갈수록 실패의 기원을 추적하기는",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "05",
-    "source_block": "05-02",
-    "key_claim": "실패는 대개 조용히 누적",
-    "notes_intent": "실패는 대개 조용히 누적된다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 05",
-    "notes": "실패는 대개 조용히 누적를 먼저 말한다. 이어서 실패는 대개 조용히 누적의 근거를 짧게 보강한다.",
-    "lead": "시간이 갈수록 실패의 기원을 추적하기는 어려워집니다.",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "실패는 대개 조용히 누적",
-      "points": [
-        "시간이 갈수록 실패의 기원을 추적하기는",
-        "긴 세션의 품질은 한 번의 응답 품질보다",
-        "필요한 것은 모델을 더 믿는 일이 아닙니다.",
-        "작업을 더 잘 자르는 일"
-      ]
-    }
-  },
-  {
-    "order": 67,
-    "slide_id": "S067",
-    "file_name": "slide-067.html",
-    "title": "Long Context의 적은 길이가 아니라",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "05",
-    "source_block": "05-03",
-    "key_claim": "Long Context의 적은 길이가 아니라 조성",
-    "notes_intent": "Long Context의 적은 길이가 아니라 조성이다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 05",
-    "notes": "Long Context의 적은 길이가 아니라 조성를 먼저 말한다. 이어서 Long Context의 적은 길이가의 근거를 짧게 보강한다.",
-    "lead": "Long Context는 분명 강력한 기능",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "Long Context의 적은 길이가 아니라 조성",
-      "points": [
-        "Long Context는 분명 강력한 기능",
-        "창이 커졌다고 문제가 함께 사라지지는 않습니다.",
-        "저장소 전체를 한꺼번에 밀어 넣으면 더 잘할",
-        "문제는 길이 자체보다"
-      ]
-    }
-  },
-  {
-    "order": 68,
-    "slide_id": "S068",
-    "file_name": "slide-068.html",
-    "title": "Clash는 목표",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "05",
-    "source_block": "05-03",
-    "key_claim": "Long Context의 적은 길이가 아니라 조성",
-    "notes_intent": "Long Context의 적은 길이가 아니라 조성이다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 05",
-    "notes": "Long Context의 적은 길이가 아니라 조성를 먼저 말한다. 이어서 Long Context의 적은 길이가의 근거를 짧게 보강한다.",
-    "lead": "Clash는 목표",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "Long Context의 적은 길이가 아니라 조성",
-      "points": [
-        "Clash는 목표",
-        "좋은 컨텍스트는 넓은 컨텍스트가 아닙니다.",
-        "선별된 컨텍스트",
-        "많이 넣는 것보다 무엇을 빼야 하는지 아는"
-      ]
-    }
-  },
-  {
-    "order": 69,
-    "slide_id": "S069",
-    "file_name": "slide-069.html",
-    "title": "세션이 길어질수록 기준은 흐려진다",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "05",
-    "source_block": "05-04",
-    "key_claim": "세션이 길어질수록 기준은 흐려진다",
-    "notes_intent": "세션이 길어질수록 기준은 흐려진다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 05",
-    "notes": "세션이 길어질수록 기준은 흐려진다를 먼저 말한다. 이어서 세션이 길어질수록 기준은 흐려진다의 근거를 짧게 보강한다.",
-    "lead": "Context Rot은 긴 입력과 긴 세션이 품질을 어떻게",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "세션이 길어질수록 기준은 흐려진다",
-      "points": [
-        "Context Rot은 긴 입력과 긴 세션이",
-        "컨텍스트가 길어질수록 성능이 고르게 유지되지",
-        "실전에서는 둘이 자주 겹칩니다.",
-        "처음에는 분명했던 기준이 세션 뒤쪽으로"
-      ]
-    }
-  },
-  {
-    "order": 70,
-    "slide_id": "S070",
-    "file_name": "slide-070.html",
-    "title": "오히려 길게 유지할수록 drift를",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "05",
-    "source_block": "05-04",
-    "key_claim": "세션이 길어질수록 기준은 흐려진다",
-    "notes_intent": "세션이 길어질수록 기준은 흐려진다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 05",
-    "notes": "세션이 길어질수록 기준은 흐려진다를 먼저 말한다. 이어서 세션이 길어질수록 기준은 흐려진다의 근거를 짧게 보강한다.",
-    "lead": "오히려 길게 유지할수록 drift를 관리하는 비용이 커집니다.",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "세션이 길어질수록 기준은 흐려진다",
-      "points": [
-        "오히려 길게 유지할수록 drift를 관리하는",
-        "상태는 대화창 안에만 두면 안 됩니다.",
-        "현재 결정",
-        "적당한 시점의 요약과 새 세션 전환도 필요"
-      ]
-    }
-  },
-  {
-    "order": 71,
-    "slide_id": "S071",
-    "file_name": "slide-071.html",
-    "title": "실패 신호는 하네스 공백의 이름",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "05",
-    "source_block": "05-05",
-    "key_claim": "실패 신호는 하네스 공백의 이름",
-    "notes_intent": "실패 신호는 하네스 공백의 이름이다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 05",
-    "notes": "실패 신호는 하네스 공백의 이름를 먼저 말한다. 이어서 실패 신호는 하네스 공백의 이름의 근거를 짧게 보강한다.",
-    "lead": "실무에서 자주 마주치는 실패 신호는 낯설지 않습니다.",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "실패 신호는 하네스 공백의 이름",
-      "points": [
-        "실무에서 자주 마주치는 실패 신호는 낯설지",
-        "산출물이 급격히 조잡해지는 AI Slop",
-        "이런 장면을 보고 “오늘 모델 컨디션이 안",
-        "더 중요한 질문은 따로 있습니다."
-      ]
-    }
-  },
-  {
-    "order": 72,
-    "slide_id": "S072",
-    "file_name": "slide-072.html",
-    "title": "어떤 상태가 기록되지 않았는가.",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "05",
-    "source_block": "05-05",
-    "key_claim": "실패 신호는 하네스 공백의 이름",
-    "notes_intent": "실패 신호는 하네스 공백의 이름이다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 05",
-    "notes": "실패 신호는 하네스 공백의 이름를 먼저 말한다. 이어서 실패 신호는 하네스 공백의 이름의 근거를 짧게 보강한다.",
-    "lead": "어떤 상태가 기록되지 않았는가.",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "실패 신호는 하네스 공백의 이름",
-      "points": [
-        "어떤 상태가 기록되지 않았는가.",
-        "어떤 실행 흔적이 남지 않았는가.",
-        "실패 패턴은 대개 구조 바깥에서 생기지",
-        "하네스의 빈틈이 그것을 키웁니다."
-      ]
-    }
-  },
-  {
-    "order": 73,
-    "slide_id": "S073",
-    "file_name": "slide-073.html",
-    "title": "신뢰는 감정이 아니라 배치다",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "05",
-    "source_block": "05-06",
-    "key_claim": "신뢰는 감정이 아니라 배치다",
-    "notes_intent": "신뢰는 감정이 아니라 배치다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 05",
-    "notes": "신뢰는 감정이 아니라 배치다를 먼저 말한다. 이어서 신뢰는 감정이 아니라 배치다의 근거를 짧게 보강한다.",
-    "lead": "Calibrated Trust는 AI를 믿느냐 마느냐의",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "신뢰는 감정이 아니라 배치다",
-      "points": [
-        "Calibrated Trust는 AI를",
-        "어떤 작업에는 자율성을 넓게 주고",
-        "신뢰는 태도가 아니라 설정값에 가깝습니다.",
-        "로직의 큰 윤곽을 잡거나 반복 리팩터링"
-      ]
-    }
-  },
-  {
-    "order": 74,
-    "slide_id": "S074",
-    "file_name": "slide-074.html",
-    "title": "정리 실패를 줄이는 길은 더 오래 붙드는",
-    "slide_type": "statement",
-    "layout": "editorial",
-    "shell": "statement-editorial-shell",
-    "family": "content",
-    "density": "light",
-    "source_section": "05",
-    "source_block": "05-07",
-    "key_claim": "정리 실패를 줄이는 길은 더 오래 붙드는 것이 아니라 더",
-    "notes_intent": "정리 실패를 줄이는 길은 더 오래 붙드는 것이 아니라 더 잘 끊는 것이다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 05",
-    "notes": "정리 실패를 줄이는 길은 더 오래 붙드는 것이 아니라 더를 먼저 말한다. 이어서 정리 실패를 줄이는 길은 더 오래 붙드는의 근거를 짧게 보강한다.",
-    "lead": "이 장의 요점은 분명",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "tag": "실패",
-      "statement": "정리 실패를 줄이는 길은 더 오래 붙드는 것이 아니라 더",
-      "support": "실패를 줄이는 길은 자동화를 더 세게 미는 데 있지",
-      "chips": [
-        "이 장의 요점은 분명",
-        "실패를 줄이는 길은 자동화를 더 세게 미는",
-        "컨텍스트를 줄이고"
-      ]
-    }
-  },
-  {
-    "order": 75,
-    "slide_id": "S075",
-    "file_name": "slide-075.html",
-    "title": "멀티 에이전트 활용 패턴",
-    "slide_type": "section",
-    "layout": "centered",
-    "shell": "section-divider-shell",
-    "family": "section",
-    "density": "light",
-    "source_section": "06",
-    "source_block": "06-00",
-    "key_claim": "멀티 에이전트 활용 패턴",
-    "notes_intent": "06장의 질문을 챕터 단위로 고정",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 06",
-    "notes": "멀티 에이전트 활용 패턴에서 무엇을 묻는지 먼저 잠근다. 지금부터는 세부 논지를 2~3문장 단위로 분해해 본다.",
-    "lead": "앞 장에서 본 것은 실패가 어떻게 쌓이는가였습니다. 긴 세션",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "keywords": [
-        "Sub-Agent",
-        "Parallel",
-        "GAN"
-      ]
-    }
-  },
-  {
-    "order": 76,
-    "slide_id": "S076",
-    "file_name": "slide-076.html",
-    "title": "병렬화보다 분해가 먼저다",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "06",
-    "source_block": "06-01",
-    "key_claim": "병렬화보다 분해가 먼저다",
-    "notes_intent": "병렬화보다 분해가 먼저다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 06",
-    "notes": "병렬화보다 분해가 먼저다를 먼저 말한다. 이어서 병렬화보다 분해가 먼저다의 근거를 짧게 보강한다.",
-    "lead": "앞 장에서 본 것은 실패가 어떻게 쌓이는가",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "병렬화보다 분해가 먼저다",
-      "points": [
-        "앞 장에서 본 것은 실패가 어떻게 쌓이는가",
-        "긴 세션",
-        "그렇다면 이번 장의 질문은 자연스럽습니다.",
-        "이 누적 비용을 구조적으로 어떻게 줄일 것인가."
-      ]
-    }
-  },
-  {
-    "order": 77,
-    "slide_id": "S077",
-    "file_name": "slide-077.html",
-    "title": "병렬화는 결과일 수 있어도 본질은 아닙니다.",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "06",
-    "source_block": "06-01",
-    "key_claim": "병렬화보다 분해가 먼저다",
-    "notes_intent": "병렬화보다 분해가 먼저다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 06",
-    "notes": "병렬화보다 분해가 먼저다를 먼저 말한다. 이어서 병렬화보다 분해가 먼저다의 근거를 짧게 보강한다.",
-    "lead": "병렬화는 결과일 수 있어도 본질은 아닙니다.",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "병렬화보다 분해가 먼저다",
-      "points": [
-        "병렬화는 결과일 수 있어도 본질은 아닙니다.",
-        "본질은 분해",
-        "무엇을 메인 컨텍스트에 남기고",
-        "중요한 것은 패턴 이름을 외우는 일이 아닙니다."
-      ]
-    }
-  },
-  {
-    "order": 78,
-    "slide_id": "S078",
-    "file_name": "slide-078.html",
-    "title": "같은 일을 다섯 방식으로 쪼개기",
-    "slide_type": "process",
-    "layout": "wide",
-    "shell": "process-flow-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "06",
-    "source_block": "06-02",
-    "key_claim": "같은 일을 다섯 방식으로 쪼개기",
-    "notes_intent": "같은 일을 다섯 방식으로 쪼개기를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 06",
-    "notes": "같은 일을 다섯 방식으로 쪼개기를 먼저 말한다. 이어서 같은 일을 다섯 방식으로 쪼개기의 근거를 짧게 보강한다.",
-    "lead": "비교를 위해 하나의 공통 시나리오를 놓고 봅시다.",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "steps": [
-        {
-          "index": "01",
-          "title": "비교를 위해 하나의 공통",
-          "text": "비교를 위해 하나의 공통 시나리오를 놓고"
-        },
-        {
-          "index": "02",
-          "title": "저장소 안에서 중간 규모 변경",
-          "text": "저장소 안에서 중간 규모 변경 하나를 끝내야"
-        },
-        {
-          "index": "03",
-          "title": "관련 파일을 읽고",
-          "text": "관련 파일을 읽고"
-        },
-        {
-          "index": "04",
-          "title": "06과 07 전체가 암시해 온",
-          "text": "06과 07 전체가 암시해 온 실전 작업을"
-        }
-      ]
-    }
-  },
-  {
-    "order": 79,
-    "slide_id": "S079",
-    "file_name": "slide-079.html",
-    "title": "중간 노동을 메인 컨텍스트 밖으로 격리",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "06",
-    "source_block": "06-03",
-    "key_claim": "중간 노동을 메인 컨텍스트 밖으로 격리",
-    "notes_intent": "중간 노동을 메인 컨텍스트 밖으로 격리한다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 06",
-    "notes": "중간 노동을 메인 컨텍스트 밖으로 격리를 먼저 말한다. 이어서 중간 노동을 메인 컨텍스트 밖으로 격리의 근거를 짧게 보강한다.",
-    "lead": "가장 기본이 되는 패턴은 Sub-Agent",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "중간 노동을 메인 컨텍스트 밖으로 격리",
-      "points": [
-        "가장 기본이 되는 패턴은 Sub-Agent",
-        "메인이 해야 할 판단은 남기고",
-        "저장소 변경 시나리오라면 대표적인 대상은",
-        "토큰은 많이 먹지만"
-      ]
-    }
-  },
-  {
-    "order": 80,
-    "slide_id": "S080",
-    "file_name": "slide-080.html",
-    "title": "긴 작업에서 이 단순한 분리가 생각보다",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "06",
-    "source_block": "06-03",
-    "key_claim": "중간 노동을 메인 컨텍스트 밖으로 격리",
-    "notes_intent": "중간 노동을 메인 컨텍스트 밖으로 격리한다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 06",
-    "notes": "중간 노동을 메인 컨텍스트 밖으로 격리를 먼저 말한다. 이어서 중간 노동을 메인 컨텍스트 밖으로 격리의 근거를 짧게 보강한다.",
-    "lead": "긴 작업에서 이 단순한 분리가 생각보다 자주 이깁니다.",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "중간 노동을 메인 컨텍스트 밖으로 격리",
-      "points": [
-        "긴 작업에서 이 단순한 분리가 생각보다 자주",
-        "least privilege는 권한 모델만",
-        "정보 스코핑도 포함",
-        "서브 에이전트에게 전체 대화와 저장소를"
-      ]
-    }
-  },
-  {
-    "order": 81,
-    "slide_id": "S081",
-    "file_name": "slide-081.html",
-    "title": "계획자가 전체 분해를 쥔다",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "06",
-    "source_block": "06-04",
-    "key_claim": "계획자가 전체 분해를 쥔다",
-    "notes_intent": "계획자가 전체 분해를 쥔다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 06",
-    "notes": "계획자가 전체 분해를 쥔다를 먼저 말한다. 이어서 계획자가 전체 분해를 쥔다의 근거를 짧게 보강한다.",
-    "lead": "Sub-Agent가 단일 심부름 분리라면",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "계획자가 전체 분해를 쥔다",
-      "points": [
-        "Sub-Agent가 단일 심부름 분리라면",
-        "저장소 변경 하나를 끝내기 위해 먼저",
-        "어떤 파일군을 먼저 읽을지",
-        "그 다음에야 여러 실행자에게 일을 나눠"
-      ]
-    }
-  },
-  {
-    "order": 82,
-    "slide_id": "S082",
-    "file_name": "slide-082.html",
-    "title": "같은 목표를 동시에 벌리되 서로를 더럽히지",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "06",
-    "source_block": "06-05",
-    "key_claim": "같은 목표를 동시에 벌리되 서로를 더럽히지 않는다",
-    "notes_intent": "같은 목표를 동시에 벌리되 서로를 더럽히지 않는다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 06",
-    "notes": "같은 목표를 동시에 벌리되 서로를 더럽히지 않는다를 먼저 말한다. 이어서 같은 목표를 동시에 벌리되 서로를의 근거를 짧게 보강한다.",
-    "lead": "Parallel은 이름 때문에 늘 속도 패턴처럼 들립니다.",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "같은 목표를 동시에 벌리되 서로를 더럽히지 않는다",
-      "points": [
-        "Parallel은 이름 때문에 늘 속도",
-        "실제로는 간섭 제어 패턴에 가깝습니다.",
-        "저장소 변경 시나리오를 다시 가져오면",
-        "빨리 끝내는 것이 아니라"
-      ]
-    }
-  },
-  {
-    "order": 83,
-    "slide_id": "S083",
-    "file_name": "slide-083.html",
-    "title": "생성자와 평가자를 갈라 자기최면을 끊는다",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "06",
-    "source_block": "06-06",
-    "key_claim": "생성자와 평가자를 갈라 자기최면을 끊는다",
-    "notes_intent": "생성자와 평가자를 갈라 자기최면을 끊는다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 06",
-    "notes": "생성자와 평가자를 갈라 자기최면을 끊는다를 먼저 말한다. 이어서 생성자와 평가자를 갈라 자기최면을 끊는다의 근거를 짧게 보강한다.",
-    "lead": "실전에서 자주 놓치는 것은 생성과 평가를 같은 손에 쥐게",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "생성자와 평가자를 갈라 자기최면을 끊는다",
-      "points": [
-        "실전에서 자주 놓치는 것은 생성과 평가를",
-        "초안을 만든 주체가 “충분히 괜찮다”고",
-        "GAN-Style 패턴이 필요",
-        "한쪽은 만듭니다."
-      ]
-    }
-  },
-  {
-    "order": 84,
-    "slide_id": "S084",
-    "file_name": "slide-084.html",
-    "title": "양방향 대화 자체가 일인 경우에만 쓴다",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "06",
-    "source_block": "06-07",
-    "key_claim": "양방향 대화 자체가 일인 경우에만 쓴다",
-    "notes_intent": "양방향 대화 자체가 일인 경우에만 쓴다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 06",
-    "notes": "양방향 대화 자체가 일인 경우에만 쓴다를 먼저 말한다. 이어서 양방향 대화 자체가 일인 경우에만 쓴다의 근거를 짧게 보강한다.",
-    "lead": "Agent Teams는 가장 화려해 보이지만",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "양방향 대화 자체가 일인 경우에만 쓴다",
-      "points": [
-        "Agent Teams는 가장 화려해 보이지만",
-        "이 패턴은 서브 에이전트를 많이 붙인 형태가",
-        "여러 독립 세션이 각자 별도 컨텍스트를 가진 채",
-        "메인이 모든 handoff를 중계하지 않아도"
-      ]
-    }
-  },
-  {
-    "order": 85,
-    "slide_id": "S085",
-    "file_name": "slide-085.html",
-    "title": "이런 경우에는 단방향 심부름보다 양방향",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "06",
-    "source_block": "06-07",
-    "key_claim": "양방향 대화 자체가 일인 경우에만 쓴다",
-    "notes_intent": "양방향 대화 자체가 일인 경우에만 쓴다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 06",
-    "notes": "양방향 대화 자체가 일인 경우에만 쓴다를 먼저 말한다. 이어서 양방향 대화 자체가 일인 경우에만 쓴다의 근거를 짧게 보강한다.",
-    "lead": "이런 경우에는 단방향 심부름보다 양방향 조정이 더",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "양방향 대화 자체가 일인 경우에만 쓴다",
-      "points": [
-        "이런 경우에는 단방향 심부름보다 양방향",
-        "서로가 서로의 결론을 다시 밀어보는 과정이",
-        "팀이라고 늘 좋은 것은 아닙니다.",
-        "인원이 늘어날수록 대기 시간이 작업 시간을"
-      ]
-    }
-  },
-  {
-    "order": 86,
-    "slide_id": "S086",
-    "file_name": "slide-086.html",
-    "title": "패턴 이름보다 handoff 설계가 먼저다",
-    "slide_type": "process",
-    "layout": "wide",
-    "shell": "process-flow-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "06",
-    "source_block": "06-08",
-    "key_claim": "패턴 이름보다 handoff 설계가 먼저다",
-    "notes_intent": "패턴 이름보다 handoff 설계가 먼저다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 06",
-    "notes": "패턴 이름보다 handoff 설계가 먼저다를 먼저 말한다. 이어서 패턴 이름보다 handoff 설계가 먼저다의 근거를 짧게 보강한다.",
-    "lead": "이 다섯 패턴을 비교할 때 가장 먼저 볼 것은 복잡도가",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "steps": [
-        {
-          "index": "01",
-          "title": "이 다섯 패턴을 비교할 때",
-          "text": "이 다섯 패턴을 비교할 때 가장 먼저 볼"
-        },
-        {
-          "index": "02",
-          "title": "handoff의 성격",
-          "text": "handoff의 성격"
-        },
-        {
-          "index": "03",
-          "title": "한 번 던지고 요약만 받으면",
-          "text": "한 번 던지고 요약만 받으면 되는가."
-        },
-        {
-          "index": "04",
-          "title": "전체 분해를 쥔 계획자가",
-          "text": "전체 분해를 쥔 계획자가 필요한가."
-        }
-      ]
-    }
-  },
-  {
-    "order": 87,
-    "slide_id": "S087",
-    "file_name": "slide-087.html",
-    "title": "패턴 선택은 이 질문에 대한 답",
-    "slide_type": "process",
-    "layout": "wide",
-    "shell": "process-flow-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "06",
-    "source_block": "06-08",
-    "key_claim": "패턴 이름보다 handoff 설계가 먼저다",
-    "notes_intent": "패턴 이름보다 handoff 설계가 먼저다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 06",
-    "notes": "패턴 이름보다 handoff 설계가 먼저다를 먼저 말한다. 이어서 패턴 이름보다 handoff 설계가 먼저다의 근거를 짧게 보강한다.",
-    "lead": "패턴 선택은 이 질문에 대한 답",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "steps": [
-        {
-          "index": "01",
-          "title": "패턴 선택은 이 질문에 대한 답",
-          "text": "패턴 선택은 이 질문에 대한 답"
-        },
-        {
-          "index": "02",
-          "title": "멀티 에이전트 설계에서 가장",
-          "text": "멀티 에이전트 설계에서 가장 위험한 습관은"
-        },
-        {
-          "index": "03",
-          "title": "팀이 멋져 보여서 팀을 만들고",
-          "text": "팀이 멋져 보여서 팀을 만들고"
-        },
-        {
-          "index": "04",
-          "title": "먼저 정해야 할 것은 작업의 경계",
-          "text": "먼저 정해야 할 것은 작업의 경계"
-        }
-      ]
-    }
-  },
-  {
-    "order": 88,
-    "slide_id": "S088",
-    "file_name": "slide-088.html",
-    "title": "더 많은 AI가 아니라 더 좁은 책임이 필요하다",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "06",
-    "source_block": "06-09",
-    "key_claim": "더 많은 AI가 아니라 더 좁은 책임이 필요하다",
-    "notes_intent": "더 많은 AI가 아니라 더 좁은 책임이 필요하다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 06",
-    "notes": "더 많은 AI가 아니라 더 좁은 책임이 필요하다를 먼저 말한다. 이어서 더 많은 AI가 아니라 더 좁은 책임이의 근거를 짧게 보강한다.",
-    "lead": "이 장의 결론은 단순",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "더 많은 AI가 아니라 더 좁은 책임이 필요하다",
-      "points": [
-        "이 장의 결론은 단순",
-        "멀티 에이전트는 병렬화 기술이 아닙니다.",
-        "책임 분해 기술",
-        "하나의 긴 일을 여러 지능에게 나누어 준다는"
-      ]
-    }
-  },
-  {
-    "order": 89,
-    "slide_id": "S089",
-    "file_name": "slide-089.html",
-    "title": "실전 워크플로우와 도구 세팅",
-    "slide_type": "section",
-    "layout": "centered",
-    "shell": "section-divider-shell",
-    "family": "section",
-    "density": "light",
-    "source_section": "07",
-    "source_block": "07-00",
-    "key_claim": "실전 워크플로우와 도구 세팅",
-    "notes_intent": "07장의 질문을 챕터 단위로 고정",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 07",
-    "notes": "실전 워크플로우와 도구 세팅에서 무엇을 묻는지 먼저 잠근다. 지금부터는 세부 논지를 2~3문장 단위로 분해해 본다.",
-    "lead": "실전에서 먼저 피해야 할 막다른 길은 둘입니다. 하나는",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "keywords": [
-        "Write",
-        "Select",
-        "Compress"
-      ]
-    }
-  },
-  {
-    "order": 90,
-    "slide_id": "S090",
-    "file_name": "slide-090.html",
-    "title": "원리를 잊어도 버티는 구조가 필요하다",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "07",
-    "source_block": "07-01",
-    "key_claim": "원리를 잊어도 버티는 구조가 필요하다",
-    "notes_intent": "원리를 잊어도 버티는 구조가 필요하다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 07",
-    "notes": "원리를 잊어도 버티는 구조가 필요하다를 먼저 말한다. 이어서 원리를 잊어도 버티는 구조가 필요하다의 근거를 짧게 보강한다.",
-    "lead": "실전에서 먼저 피해야 할 막다른 길은 둘",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "원리를 잊어도 버티는 구조가 필요하다",
-      "points": [
-        "실전에서 먼저 피해야 할 막다른 길은 둘",
-        "하나는 모든 것을 직접 세팅하느라 구조보다",
-        "다른 하나는 원리도 모른 채 남이 만든",
-        "전자는 유지되지 않고"
-      ]
-    }
-  },
-  {
-    "order": 91,
-    "slide_id": "S091",
-    "file_name": "slide-091.html",
-    "title": "실전 워크플로우는 네 동사로 굴러간다 Write",
-    "slide_type": "process",
-    "layout": "wide",
-    "shell": "process-flow-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "07",
-    "source_block": "07-02",
-    "key_claim": "실전 워크플로우는 네 동사로 굴러간다 Write",
-    "notes_intent": "실전 워크플로우는 네 동사로 굴러간다 Write, Select, Compress, Isolate를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 07",
-    "notes": "실전 워크플로우는 네 동사로 굴러간다 Write를 먼저 말한다. 이어서 실전 워크플로우는 네 동사로 굴러간다의 근거를 짧게 보강한다.",
-    "lead": "긴 작업을 버티는 workflow는 의외로 소박한 네",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "steps": [
-        {
-          "index": "01",
-          "title": "긴 작업을 버티는",
-          "text": "긴 작업을 버티는 workflow는 의외로"
-        },
-        {
-          "index": "02",
-          "title": "규칙과 기준을 밖에 써 두는",
-          "text": "규칙과 기준을 밖에 써 두는 Write"
-        },
-        {
-          "index": "03",
-          "title": "거창한 프레임워크보다 먼저 이",
-          "text": "거창한 프레임워크보다 먼저 이 네 가지가"
-        },
-        {
-          "index": "04",
-          "title": "이 네 동사는 결국 같은",
-          "text": "이 네 동사는 결국 같은 문제를 겨냥"
-        }
-      ]
-    }
-  },
-  {
-    "order": 92,
-    "slide_id": "S092",
-    "file_name": "slide-092.html",
-    "title": "command가 먼저이고 tool은 그 뒤다",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "07",
-    "source_block": "07-03",
-    "key_claim": "command가 먼저이고 tool은 그 뒤다",
-    "notes_intent": "command가 먼저이고 tool은 그 뒤다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 07",
-    "notes": "command가 먼저이고 tool은 그 뒤다를 먼저 말한다. 이어서 command가 먼저이고 tool은 그 뒤다의 근거를 짧게 보강한다.",
-    "lead": "OMC 같은 preset pack을 사례로 드는 이유는 툴",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "command가 먼저이고 tool은 그 뒤다",
-      "points": [
-        "OMC 같은 preset pack을 사례로",
-        "사람이 매번 원리를 다시 조립하지 않아도",
-        "는 역할 분리된 29+ 에이전트",
-        "핵심은 숫자나 고유명사가 아닙니다."
-      ]
-    }
-  },
-  {
-    "order": 93,
-    "slide_id": "S093",
-    "file_name": "slide-093.html",
-    "title": "Plan-Critic-Build",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "07",
-    "source_block": "07-04",
-    "key_claim": "Plan-Critic-Build",
-    "notes_intent": "Plan-Critic-Build를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 07",
-    "notes": "Plan-Critic-Build를 먼저 말한다. 이어서 Plan-Critic-Build의 근거를 짧게 보강한다.",
-    "lead": "실전에서 가장 먼저 고정해야 할 문법은 구현 전에 계획을",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "Plan-Critic-Build",
-      "points": [
-        "실전에서 가장 먼저 고정해야 할 문법은 구현",
-        "Plan-Critic-Build라는 이름은",
-        "순서가 중요",
-        "먼저 계획을 세우고"
-      ]
-    }
-  },
-  {
-    "order": 94,
-    "slide_id": "S094",
-    "file_name": "slide-094.html",
-    "title": "무엇을 끝으로 볼 것인지",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "07",
-    "source_block": "07-04",
-    "key_claim": "Plan-Critic-Build",
-    "notes_intent": "Plan-Critic-Build를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 07",
-    "notes": "Plan-Critic-Build를 먼저 말한다. 이어서 Plan-Critic-Build의 근거를 짧게 보강한다.",
-    "lead": "무엇을 끝으로 볼 것인지",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "Plan-Critic-Build",
-      "points": [
-        "무엇을 끝으로 볼 것인지",
-        "그래야 실행이 속도 경쟁이 아니라 기준",
-        "계획을 따로 세우는 이유는 단순",
-        "코드 수정은 되돌릴 수 있어도"
-      ]
-    }
-  },
-  {
-    "order": 95,
-    "slide_id": "S095",
-    "file_name": "slide-095.html",
-    "title": "좋은 워크플로우는 pass/fail보다",
-    "slide_type": "process",
-    "layout": "wide",
-    "shell": "process-flow-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "07",
-    "source_block": "07-05",
-    "key_claim": "좋은 워크플로우는 pass/fail보다 gate와",
-    "notes_intent": "좋은 워크플로우는 pass/fail보다 gate와 Observability를 먼저 세운다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 07",
-    "notes": "좋은 워크플로우는 pass/fail보다 gate와를 먼저 말한다. 이어서 좋은 워크플로우는 pass/fail보다의 근거를 짧게 보강한다.",
-    "lead": "lint",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "steps": [
-        {
-          "index": "01",
-          "title": "lint",
-          "text": "lint"
-        },
-        {
-          "index": "02",
-          "title": "우회할 수 없는 문",
-          "text": "우회할 수 없는 문"
-        },
-        {
-          "index": "03",
-          "title": "에이전트에게 재량을 더 주는",
-          "text": "에이전트에게 재량을 더 주는"
-        },
-        {
-          "index": "04",
-          "title": "Approval",
-          "text": "Approval"
-        }
-      ]
-    }
-  },
-  {
-    "order": 96,
-    "slide_id": "S096",
-    "file_name": "slide-096.html",
-    "title": "pass/fail은 결과를 말하지만",
-    "slide_type": "process",
-    "layout": "wide",
-    "shell": "process-flow-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "07",
-    "source_block": "07-05",
-    "key_claim": "좋은 워크플로우는 pass/fail보다 gate와",
-    "notes_intent": "좋은 워크플로우는 pass/fail보다 gate와 Observability를 먼저 세운다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 07",
-    "notes": "좋은 워크플로우는 pass/fail보다 gate와를 먼저 말한다. 이어서 좋은 워크플로우는 pass/fail보다의 근거를 짧게 보강한다.",
-    "lead": "pass/fail은 결과를 말하지만",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "steps": [
-        {
-          "index": "01",
-          "title": "pass/fail은 결과를",
-          "text": "pass/fail은 결과를 말하지만"
-        },
-        {
-          "index": "02",
-          "title": "경로가 보이지 않으면",
-          "text": "경로가 보이지 않으면 drift의 기원을"
-        },
-        {
-          "index": "03",
-          "title": "이 구도는 결국 결정론적",
-          "text": "이 구도는 결국 결정론적 제어와 확률적"
-        },
-        {
-          "index": "04",
-          "title": "기계가 확인할 수 있는 것은",
-          "text": "기계가 확인할 수 있는 것은 기계에게"
-        }
-      ]
-    }
-  },
-  {
-    "order": 97,
-    "slide_id": "S097",
-    "file_name": "slide-097.html",
-    "title": "컨텍스트를 덜어내고 반복 규칙을 자산으로 올린다",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "07",
-    "source_block": "07-06",
-    "key_claim": "컨텍스트를 덜어내고 반복 규칙을 자산으로 올린다",
-    "notes_intent": "컨텍스트를 덜어내고 반복 규칙을 자산으로 올린다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 07",
-    "notes": "컨텍스트를 덜어내고 반복 규칙을 자산으로 올린다를 먼저 말한다. 이어서 컨텍스트를 덜어내고 반복 규칙을 자산으로의 근거를 짧게 보강한다.",
-    "lead": "긴 세션이 무너지는 이유는 정보가 부족해서가 아닙니다.",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "컨텍스트를 덜어내고 반복 규칙을 자산으로 올린다",
-      "points": [
-        "긴 세션이 무너지는 이유는 정보가 부족해서가",
-        "오래 쌓인 기억이 점점 잡음으로 바뀌기 때문",
-        "/context",
-        "지금 무엇이 얼마나 쌓였는지 보고"
-      ]
-    }
-  },
-  {
-    "order": 98,
-    "slide_id": "S098",
-    "file_name": "slide-098.html",
-    "title": "반복 지시는 Skills로 올리고",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "07",
-    "source_block": "07-06",
-    "key_claim": "컨텍스트를 덜어내고 반복 규칙을 자산으로 올린다",
-    "notes_intent": "컨텍스트를 덜어내고 반복 규칙을 자산으로 올린다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 07",
-    "notes": "컨텍스트를 덜어내고 반복 규칙을 자산으로 올린다를 먼저 말한다. 이어서 컨텍스트를 덜어내고 반복 규칙을 자산으로의 근거를 짧게 보강한다.",
-    "lead": "반복 지시는 Skills로 올리고",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "컨텍스트를 덜어내고 반복 규칙을 자산으로 올린다",
-      "points": [
-        "반복 지시는 Skills로 올리고",
-        "개인 메모에 머물면 요령으로 끝나지만",
-        "이것이 상태 외부화의 실제 의미",
-        "세션 안의 기억을 믿지 말고"
-      ]
-    }
-  },
-  {
-    "order": 99,
-    "slide_id": "S099",
-    "file_name": "slide-099.html",
-    "title": "core workflow가 선 뒤에 시야를",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "07",
-    "source_block": "07-07",
-    "key_claim": "core workflow가 선 뒤에 시야를 교차시킨다",
-    "notes_intent": "core workflow가 선 뒤에 시야를 교차시킨다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 07",
-    "notes": "core workflow가 선 뒤에 시야를 교차시킨다를 먼저 말한다. 이어서 core workflow가 선 뒤에의 근거를 짧게 보강한다.",
-    "lead": "여기까지의 문법이 먼저 서고 나면",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "core workflow가 선 뒤에 시야를 교차시킨다",
-      "points": [
-        "여기까지의 문법이 먼저 서고 나면",
-        "단일 모델에 모든 판단을 몰아주지 않고",
-        "훈련 분포와 blind spot이 다르기 때문",
-        "한 모델의 자신감은 자주 유창함에 가깝고"
-      ]
-    }
-  },
-  {
-    "order": 100,
-    "slide_id": "S100",
-    "file_name": "slide-100.html",
-    "title": "cmux와 Git Worktree",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "07",
-    "source_block": "07-08",
-    "key_claim": "cmux와 Git Worktree",
-    "notes_intent": "cmux와 Git Worktree를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 07",
-    "notes": "cmux와 Git Worktree를 먼저 말한다. 이어서 cmux와 Git Worktree의 근거를 짧게 보강한다.",
-    "lead": "논리적 경계를 세웠다면",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "cmux와 Git Worktree",
-      "points": [
-        "논리적 경계를 세웠다면",
-        "하나의 창에 모든 탐색",
-        "반대로 메인 작업",
-        "cmux가 유용한 이유가 바로 여기에 있습니다."
-      ]
-    }
-  },
-  {
-    "order": 101,
-    "slide_id": "S101",
-    "file_name": "slide-101.html",
-    "title": "세션이 아니라 이슈가 상태를 들고 간다",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "07",
-    "source_block": "07-09",
-    "key_claim": "세션이 아니라 이슈가 상태를 들고 간다",
-    "notes_intent": "세션이 아니라 이슈가 상태를 들고 간다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 07",
-    "notes": "세션이 아니라 이슈가 상태를 들고 간다를 먼저 말한다. 이어서 세션이 아니라 이슈가 상태를 들고 간다의 근거를 짧게 보강한다.",
-    "lead": "긴 작업에서 가장 위험한 착각 하나가 있습니다.",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "세션이 아니라 이슈가 상태를 들고 간다",
-      "points": [
-        "긴 작업에서 가장 위험한 착각 하나가 있습니다.",
-        "지금 이 대화창이 모든 상태를 기억하고",
-        "실제로는 그 반대",
-        "채팅은 빨리 달아오르지만 빨리 휘발"
-      ]
-    }
-  },
-  {
-    "order": 102,
-    "slide_id": "S102",
-    "file_name": "slide-102.html",
-    "title": "이슈가 작업의 목적과 기준과 증거를 붙들고",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "07",
-    "source_block": "07-09",
-    "key_claim": "세션이 아니라 이슈가 상태를 들고 간다",
-    "notes_intent": "세션이 아니라 이슈가 상태를 들고 간다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 07",
-    "notes": "세션이 아니라 이슈가 상태를 들고 간다를 먼저 말한다. 이어서 세션이 아니라 이슈가 상태를 들고 간다의 근거를 짧게 보강한다.",
-    "lead": "이슈가 작업의 목적과 기준과 증거를 붙들고",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "세션이 아니라 이슈가 상태를 들고 간다",
-      "points": [
-        "이슈가 작업의 목적과 기준과 증거를 붙들고",
-        "이슈 생성",
-        "완료 기준과 흔적을 바깥에 남겨 drift를",
-        "상태를 세션 안에만 쌓아 두면 창이 닫히는"
-      ]
-    }
-  },
-  {
-    "order": 103,
-    "slide_id": "S103",
-    "file_name": "slide-103.html",
-    "title": "결론 좋은 workflow는 생성 능력이",
-    "slide_type": "statement",
-    "layout": "editorial",
-    "shell": "statement-editorial-shell",
-    "family": "content",
-    "density": "light",
-    "source_section": "07",
-    "source_block": "07-10",
-    "key_claim": "결론 좋은 workflow는 생성 능력이 아니라 운영",
-    "notes_intent": "결론 좋은 workflow는 생성 능력이 아니라 운영 구조를 설계한다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 07",
-    "notes": "결론 좋은 workflow는 생성 능력이 아니라 운영를 먼저 말한다. 이어서 결론 좋은 workflow는 생성 능력이의 근거를 짧게 보강한다.",
-    "lead": "이 장의 결론은 분명",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "tag": "운영",
-      "statement": "결론 좋은 workflow는 생성 능력이 아니라 운영",
-      "support": "실전 워크플로우의 중심은 더 많은 도구를 붙이는 데",
-      "chips": [
-        "이 장의 결론은 분명",
-        "실전 워크플로우의 중심은 더 많은 도구를",
-        "command로 원리를 고정하고"
-      ]
-    }
-  },
-  {
-    "order": 104,
-    "slide_id": "S104",
-    "file_name": "slide-104.html",
-    "title": "Codex를 어디에 넣었는가",
-    "slide_type": "section",
-    "layout": "centered",
-    "shell": "section-divider-shell",
-    "family": "section",
-    "density": "light",
-    "source_section": "08",
-    "source_block": "08-00",
-    "key_claim": "Codex를 어디에 넣었는가",
-    "notes_intent": "08장의 질문을 챕터 단위로 고정",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 08",
-    "notes": "Codex를 어디에 넣었는가에서 무엇을 묻는지 먼저 잠근다. 지금부터는 세부 논지를 2~3문장 단위로 분해해 본다.",
-    "lead": "이 발표를 만든 방식은 앞 장에서 설명한 원리를 그대로",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "keywords": [
-        "source",
-        "outline",
-        "Codex"
-      ]
-    }
-  },
-  {
-    "order": 105,
-    "slide_id": "S105",
-    "file_name": "slide-105.html",
-    "title": "우리는 slide부터 열지 않았다",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "08",
-    "source_block": "08-01",
-    "key_claim": "우리는 slide부터 열지 않았다",
-    "notes_intent": "우리는 slide부터 열지 않았다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 08",
-    "notes": "우리는 slide부터 열지 않았다를 먼저 말한다. 이어서 우리는 slide부터 열지 않았다의 근거를 짧게 보강한다.",
-    "lead": "이 발표를 만든 방식은 앞 장에서 설명한 원리를 그대로",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "우리는 slide부터 열지 않았다",
-      "points": [
-        "이 발표를 만든 방식은 앞 장에서 설명한",
-        "처음부터 slide 툴을 열고 문장을 채운",
-        "먼저 source를 잠그고",
-        "PDF와 speaker notes는 그"
-      ]
-    }
-  },
-  {
-    "order": 106,
-    "slide_id": "S106",
-    "file_name": "slide-106.html",
-    "title": "source를 입력층에 가둔 이유",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "08",
-    "source_block": "08-02",
-    "key_claim": "source를 입력층에 가둔 이유",
-    "notes_intent": "source를 입력층에 가둔 이유를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 08",
-    "notes": "source를 입력층에 가둔 이유를 먼저 말한다. 이어서 source를 입력층에 가둔 이유의 근거를 짧게 보강한다.",
-    "lead": "이 프로젝트의 바깥 경계는 단순",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "source를 입력층에 가둔 이유",
-      "points": [
-        "이 프로젝트의 바깥 경계는 단순",
-        "입력층은 docs/01-sources/에 가두고",
-        "docs/02-seminar/prose/는",
-        "source와 해석을 한 파일 계층 안에"
-      ]
-    }
-  },
-  {
-    "order": 107,
-    "slide_id": "S107",
-    "file_name": "slide-107.html",
-    "title": "prose를 canonical source로",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "08",
-    "source_block": "08-03",
-    "key_claim": "prose를 canonical source로 세웠다",
-    "notes_intent": "prose를 canonical source로 세웠다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 08",
-    "notes": "prose를 canonical source로 세웠다를 먼저 말한다. 이어서 prose를 canonical의 근거를 짧게 보강한다.",
-    "lead": "source를 모았다고 바로 장표로 가지는 않았습니다.",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "prose를 canonical source로 세웠다",
-      "points": [
-        "source를 모았다고 바로 장표로 가지는",
-        "00-overview.md부터",
-        "이 계층은 bullet 원고가 아니라",
-        "이 결정이 중요한 이유는 분명"
-      ]
-    }
-  },
-  {
-    "order": 108,
-    "slide_id": "S108",
-    "file_name": "slide-108.html",
-    "title": "outline과 manifest가 계획을",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "08",
-    "source_block": "08-04",
-    "key_claim": "outline과 manifest가 계획을 세션 밖으로 끌어냈다",
-    "notes_intent": "outline과 manifest가 계획을 세션 밖으로 끌어냈다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 08",
-    "notes": "outline과 manifest가 계획을 세션 밖으로 끌어냈다를 먼저 말한다. 이어서 outline과 manifest가 계획을의 근거를 짧게 보강한다.",
-    "lead": "prose가 준비되면 다음은 압축",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "outline과 manifest가 계획을 세션 밖으로 끌어냈다",
-      "points": [
-        "prose가 준비되면 다음은 압축",
-        "곧바로 HTML로 뛰지 않고 먼저",
-        "발표를 slide 단위로 먼저 잘라 놓아야",
-        "이때 manifest가 붙드는 것은 세부"
-      ]
-    }
-  },
-  {
-    "order": 109,
-    "slide_id": "S109",
-    "file_name": "slide-109.html",
-    "title": "design contract를 먼저 잠그고",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "08",
-    "source_block": "08-05",
-    "key_claim": "design contract를 먼저 잠그고 Codex를 넣었다",
-    "notes_intent": "design contract를 먼저 잠그고 Codex를 넣었다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 08",
-    "notes": "design contract를 먼저 잠그고 Codex를 넣었다를 먼저 말한다. 이어서 design contract를 먼저의 근거를 짧게 보강한다.",
-    "lead": "이 저장소에서 Codex가 맡은 핵심 일은 HTML/CSS",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "design contract를 먼저 잠그고 Codex를 넣었다",
-      "points": [
-        "이 저장소에서 Codex가 맡은 핵심 일은",
-        "그보다 먼저 잠기는 것이 있습니다.",
-        "design.md가 시각 문법을 먼저",
-        "무엇을 만들지는 outline이 잡고"
-      ]
-    }
-  },
-  {
-    "order": 110,
-    "slide_id": "S110",
-    "file_name": "slide-110.html",
-    "title": "반대로 progress bar",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "08",
-    "source_block": "08-05",
-    "key_claim": "design contract를 먼저 잠그고 Codex를 넣었다",
-    "notes_intent": "design contract를 먼저 잠그고 Codex를 넣었다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 08",
-    "notes": "design contract를 먼저 잠그고 Codex를 넣었다를 먼저 말한다. 이어서 design contract를 먼저의 근거를 짧게 보강한다.",
-    "lead": "반대로 progress bar",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "design contract를 먼저 잠그고 Codex를 넣었다",
-      "points": [
-        "반대로 progress bar",
-        "외부 reference를 그대로 이식한 것이",
-        "이 순서가 중요",
-        "그래야 Codex는 막연한 영감 생성기가 아니라"
-      ]
-    }
-  },
-  {
-    "order": 111,
-    "slide_id": "S111",
-    "file_name": "slide-111.html",
-    "title": "생성과 검증을 같은 손에 쥐지 않았다",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "08",
-    "source_block": "08-06",
-    "key_claim": "생성과 검증을 같은 손에 쥐지 않았다",
-    "notes_intent": "생성과 검증을 같은 손에 쥐지 않았다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 08",
-    "notes": "생성과 검증을 같은 손에 쥐지 않았다를 먼저 말한다. 이어서 생성과 검증을 같은 손에 쥐지 않았다의 근거를 짧게 보강한다.",
-    "lead": "이 프로젝트는 생성과 검증을 한 덩어리로 묶지 않습니다.",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "생성과 검증을 같은 손에 쥐지 않았다",
-      "points": [
-        "이 프로젝트는 생성과 검증을 한 덩어리로",
-        "AGENTS.md와",
-        "HTML generation과 HTML",
-        "이 분리가 중요한 이유는 단순"
-      ]
-    }
-  },
-  {
-    "order": 112,
-    "slide_id": "S112",
-    "file_name": "slide-112.html",
-    "title": "speaker notes를 맨 뒤로 밀었다",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "08",
-    "source_block": "08-07",
-    "key_claim": "speaker notes를 맨 뒤로 밀었다",
-    "notes_intent": "speaker notes를 맨 뒤로 밀었다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 08",
-    "notes": "speaker notes를 맨 뒤로 밀었다를 먼저 말한다. 이어서 speaker notes를 맨 뒤로 밀었다의 근거를 짧게 보강한다.",
-    "lead": "발표 작업이 흔히 무너지는 지점도 여기",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "speaker notes를 맨 뒤로 밀었다",
-      "points": [
-        "발표 작업이 흔히 무너지는 지점도 여기",
-        "slide 구조가 아직 흔들리는데 대본부터",
-        "이 저장소는 그 순서를 거꾸로 잡습니다.",
-        "docs/05-speaker-notes/는"
-      ]
-    }
-  },
-  {
-    "order": 113,
-    "slide_id": "S113",
-    "file_name": "slide-113.html",
-    "title": "우리가 만든 것은 slide보다 파이프라인",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "08",
-    "source_block": "08-08",
-    "key_claim": "우리가 만든 것은 slide보다 파이프라인",
-    "notes_intent": "우리가 만든 것은 slide보다 파이프라인이다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 08",
-    "notes": "우리가 만든 것은 slide보다 파이프라인를 먼저 말한다. 이어서 우리가 만든 것은 slide보다 파이프라인의 근거를 짧게 보강한다.",
-    "lead": "이 발표의 핵심은 Codex가 HTML을 만들었다는 사실이",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "우리가 만든 것은 slide보다 파이프라인",
-      "points": [
-        "이 발표의 핵심은 Codex가 HTML을",
-        "더 중요한 것은 Codex를 어디에 넣고",
-        "source boundary는 사람이 잠갔고",
-        "그 뒤에야 Codex가 HTML/CSS"
-      ]
-    }
-  },
-  {
-    "order": 114,
-    "slide_id": "S114",
-    "file_name": "slide-114.html",
-    "title": "우리가 다음에 해야 할 일",
-    "slide_type": "section",
-    "layout": "centered",
-    "shell": "section-divider-shell",
-    "family": "section",
-    "density": "light",
-    "source_section": "09",
-    "source_block": "09-00",
-    "key_claim": "우리가 다음에 해야 할 일",
-    "notes_intent": "09장의 질문을 챕터 단위로 고정",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 09",
-    "notes": "우리가 다음에 해야 할 일에서 무엇을 묻는지 먼저 잠근다. 지금부터는 세부 논지를 2~3문장 단위로 분해해 본다.",
-    "lead": "앞 장에서 본 것은 하나의 제작 사례였습니다. 하지만",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "keywords": [
-        "rules",
-        "gates",
-        "Build to Delete"
-      ]
-    }
-  },
-  {
-    "order": 115,
-    "slide_id": "S115",
-    "file_name": "slide-115.html",
-    "title": "방금 본 사례를 습관으로 바꿔야 ",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "09",
-    "source_block": "09-01",
-    "key_claim": "방금 본 사례를 습관으로 바꿔야 ",
-    "notes_intent": "방금 본 사례를 습관으로 바꿔야 한다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 09",
-    "notes": "방금 본 사례를 습관으로 바꿔야 를 먼저 말한다. 이어서 방금 본 사례를 습관으로 바꿔야 의 근거를 짧게 보강한다.",
-    "lead": "앞 장에서 본 것은 하나의 제작 사례",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "방금 본 사례를 습관으로 바꿔야 ",
-      "points": [
-        "앞 장에서 본 것은 하나의 제작 사례",
-        "거기서 멈추면 그저 “이 저장소는 이렇게",
-        "지금 필요한 것은 그 사례를 다시 자기 작업",
-        "새 모델 소식이 쏟아질 때마다 뒤처지는"
-      ]
-    }
-  },
-  {
-    "order": 116,
-    "slide_id": "S116",
-    "file_name": "slide-116.html",
-    "title": "암묵지를 문서와 규칙으로 밖에 꺼내라",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "09",
-    "source_block": "09-02",
-    "key_claim": "암묵지를 문서와 규칙으로 밖에 꺼내라",
-    "notes_intent": "암묵지를 문서와 규칙으로 밖에 꺼내라를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 09",
-    "notes": "암묵지를 문서와 규칙으로 밖에 꺼내라를 먼저 말한다. 이어서 암묵지를 문서와 규칙으로 밖에 꺼내라의 근거를 짧게 보강한다.",
-    "lead": "가장 먼저 해야 할 일은 더 영리한 프롬프트를 외우는 것이",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "암묵지를 문서와 규칙으로 밖에 꺼내라",
-      "points": [
-        "가장 먼저 해야 할 일은 더 영리한",
-        "잘하는 사람이 머릿속에서만 쓰던 판단 기준을",
-        "좋은 실무자는 늘 비슷한 순간에 멈춥니다.",
-        "어떤 설계가 위험한지"
-      ]
-    }
-  },
-  {
-    "order": 117,
-    "slide_id": "S117",
-    "file_name": "slide-117.html",
-    "title": "Thought Partner라는 표현도",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "09",
-    "source_block": "09-02",
-    "key_claim": "암묵지를 문서와 규칙으로 밖에 꺼내라",
-    "notes_intent": "암묵지를 문서와 규칙으로 밖에 꺼내라를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 09",
-    "notes": "암묵지를 문서와 규칙으로 밖에 꺼내라를 먼저 말한다. 이어서 암묵지를 문서와 규칙으로 밖에 꺼내라의 근거를 짧게 보강한다.",
-    "lead": "Thought Partner라는 표현도 여기서 이해해야 ",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "암묵지를 문서와 규칙으로 밖에 꺼내라",
-      "points": [
-        "Thought Partner라는 표현도",
-        "AI를 만능 자동화 장치로 보는 대신",
-        "산출물만 남기는 일이 아닙니다.",
-        "왜 그 선택이 맞았는지"
-      ]
-    }
-  },
-  {
-    "order": 118,
-    "slide_id": "S118",
-    "file_name": "slide-118.html",
-    "title": "숙련의 중심은 사라지지 않고 이동",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "09",
-    "source_block": "09-03",
-    "key_claim": "숙련의 중심은 사라지지 않고 이동",
-    "notes_intent": "숙련의 중심은 사라지지 않고 이동한다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 09",
-    "notes": "숙련의 중심은 사라지지 않고 이동를 먼저 말한다. 이어서 숙련의 중심은 사라지지 않고 이동의 근거를 짧게 보강한다.",
-    "lead": "AI가 강해질수록 덜 희소해지는 것은 기계적으로 복제",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "숙련의 중심은 사라지지 않고 이동",
-      "points": [
-        "AI가 강해질수록 덜 희소해지는 것은",
-        "반대로 더 중요해지는 것은 범위를 정하고",
-        "무엇을 자동화하고 무엇을 사람 손에 남길지",
-        "TDD, Spec-first"
-      ]
-    }
-  },
-  {
-    "order": 119,
-    "slide_id": "S119",
-    "file_name": "slide-119.html",
-    "title": "모델보다 하네스를 봐야 ",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "09",
-    "source_block": "09-04",
-    "key_claim": "모델보다 하네스를 봐야 ",
-    "notes_intent": "모델보다 하네스를 봐야 한다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 09",
-    "notes": "모델보다 하네스를 봐야 를 먼저 말한다. 이어서 모델보다 하네스를 봐야 의 근거를 짧게 보강한다.",
-    "lead": "이 변화는 개인의 감각에만 머물지 않습니다.",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "모델보다 하네스를 봐야 ",
-      "points": [
-        "이 변화는 개인의 감각에만 머물지 않습니다.",
-        "최근 도구 업체들의 발표를 보면 관심의",
-        "Codex의 확장",
-        "이제 경쟁력은 모델 이름 하나보다"
-      ]
-    }
-  },
-  {
-    "order": 120,
-    "slide_id": "S120",
-    "file_name": "slide-120.html",
-    "title": "작은 규칙 파일과 결정론적 문부터 세워라",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "09",
-    "source_block": "09-05",
-    "key_claim": "작은 규칙 파일과 결정론적 문부터 세워라",
-    "notes_intent": "작은 규칙 파일과 결정론적 문부터 세워라를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 09",
-    "notes": "작은 규칙 파일과 결정론적 문부터 세워라를 먼저 말한다. 이어서 작은 규칙 파일과 결정론적 문부터 세워라의 근거를 짧게 보강한다.",
-    "lead": "실천은 거창할 필요가 없습니다.",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "작은 규칙 파일과 결정론적 문부터 세워라",
-      "points": [
-        "실천은 거창할 필요가 없습니다.",
-        "먼저 작은 규칙 파일과 검증 루프부터 세우면",
-        "목적, 출력 형식, 금지 사항, 리뷰",
-        "CLAUDE.md든 저장소 운영 규칙 문서든"
-      ]
-    }
-  },
-  {
-    "order": 121,
-    "slide_id": "S121",
-    "file_name": "slide-121.html",
-    "title": "Hooks",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "09",
-    "source_block": "09-05",
-    "key_claim": "작은 규칙 파일과 결정론적 문부터 세워라",
-    "notes_intent": "작은 규칙 파일과 결정론적 문부터 세워라를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 09",
-    "notes": "작은 규칙 파일과 결정론적 문부터 세워라를 먼저 말한다. 이어서 작은 규칙 파일과 결정론적 문부터 세워라의 근거를 짧게 보강한다.",
-    "lead": "Hooks",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "작은 규칙 파일과 결정론적 문부터 세워라",
-      "points": [
-        "Hooks",
-        "초안을 잘 쓰는 것과 결과를 통과시키는 것은",
-        "그 둘을 분리하지 않으면 에이전트는 계속",
-        "긴 세션을 억지로 끌고 가는 습관도 버려야 "
-      ]
-    }
-  },
-  {
-    "order": 122,
-    "slide_id": "S122",
-    "file_name": "slide-122.html",
-    "title": "Build to Delete를 잊지 말자",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "09",
-    "source_block": "09-06",
-    "key_claim": "Build to Delete를 잊지 말자",
-    "notes_intent": "Build to Delete를 잊지 말자를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 09",
-    "notes": "Build to Delete를 잊지 말자를 먼저 말한다. 이어서 Build to Delete를 잊지 말자의 근거를 짧게 보강한다.",
-    "lead": "좋은 하네스는 지금 당장 모델의 약점을 덮어 주지만",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "Build to Delete를 잊지 말자",
-      "points": [
-        "좋은 하네스는 지금 당장 모델의 약점을 덮어",
-        "오늘 필요했던 가드레일이 내일은 불필요한",
-        "하네스는 처음부터 삭제 조건을 함께 생각하며",
-        "이 원칙이 없으면 문서와 규칙은 쉽게"
-      ]
-    }
-  },
-  {
-    "order": 123,
-    "slide_id": "S123",
-    "file_name": "slide-123.html",
-    "title": "Harness Engineer라는 역할이",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "09",
-    "source_block": "09-07",
-    "key_claim": "Harness Engineer라는 역할이 또렷해진다",
-    "notes_intent": "Harness Engineer라는 역할이 또렷해진다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 09",
-    "notes": "Harness Engineer라는 역할이 또렷해진다를 먼저 말한다. 이어서 Harness Engineer라는 역할이의 근거를 짧게 보강한다.",
-    "lead": "지금 더 선명해지는 역할은 직접 코드를 가장 빨리 치는",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "Harness Engineer라는 역할이 또렷해진다",
-      "points": [
-        "지금 더 선명해지는 역할은 직접 코드를 가장",
-        "에이전트가 일할 환경을 설계하는 사람",
-        "저장소의 지식을 문서와 규칙으로 정리하고",
-        "는 이 역할을 Harness"
-      ]
-    }
-  },
-  {
-    "order": 124,
-    "slide_id": "S124",
-    "file_name": "slide-124.html",
-    "title": "그 세 가지만 해도 하네스는 추상 개념이",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "09",
-    "source_block": "09-07",
-    "key_claim": "Harness Engineer라는 역할이 또렷해진다",
-    "notes_intent": "Harness Engineer라는 역할이 또렷해진다를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 09",
-    "notes": "Harness Engineer라는 역할이 또렷해진다를 먼저 말한다. 이어서 Harness Engineer라는 역할이의 근거를 짧게 보강한다.",
-    "lead": "그 세 가지만 해도 하네스는 추상 개념이 아니라 작업",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "Harness Engineer라는 역할이 또렷해진다",
-      "points": [
-        "그 세 가지만 해도 하네스는 추상 개념이",
-        "바뀌는 것은 코딩의 존재 여부가 아닙니다.",
-        "숙련이 드러나는 위치",
-        "손끝에만 머물던 감각은 이제 하네스를"
-      ]
-    }
-  },
-  {
-    "order": 125,
-    "slide_id": "S125",
-    "file_name": "slide-125.html",
-    "title": "출처와 후속 읽기를 위한 가이드",
-    "slide_type": "section",
-    "layout": "centered",
-    "shell": "section-divider-shell",
-    "family": "section",
-    "density": "light",
-    "source_section": "90",
-    "source_block": "90-00",
-    "key_claim": "출처와 후속 읽기를 위한 가이드",
-    "notes_intent": "90장의 질문을 챕터 단위로 고정",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "APPENDIX",
-    "notes": "출처와 후속 읽기를 위한 가이드에서 무엇을 묻는지 먼저 잠근다. 지금부터는 세부 논지를 2~3문장 단위로 분해해 본다.",
-    "lead": "이 부록은 본문을 다시 요약하는 곳이 아닙니다. 이 글이",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "keywords": [
-        "Public Source",
-        "archive",
-        "map"
-      ]
-    }
-  },
-  {
-    "order": 126,
-    "slide_id": "S126",
-    "file_name": "slide-126.html",
-    "title": "무엇을 어디까지 믿고",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "90",
-    "source_block": "90-01",
-    "key_claim": "무엇을 어디까지 믿고",
-    "notes_intent": "무엇을 어디까지 믿고, 어디서부터 전진할 것인가를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "APPENDIX",
-    "notes": "무엇을 어디까지 믿고를 먼저 말한다. 이어서 무엇을 어디까지 믿고의 근거를 짧게 보강한다.",
-    "lead": "이 부록은 본문을 다시 요약하는 곳이 아닙니다.",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "무엇을 어디까지 믿고",
-      "points": [
-        "이 부록은 본문을 다시 요약하는 곳이 아닙니다.",
-        "이 글이 어디에 기대어 서 있는지",
-        "공개 근거",
-        "무엇을 먼저 믿고"
-      ]
-    }
-  },
-  {
-    "order": 127,
-    "slide_id": "S127",
-    "file_name": "slide-127.html",
-    "title": "근거의 세 층위",
-    "slide_type": "comparison",
-    "layout": "split",
-    "shell": "split-compare-shell",
-    "family": "comparison",
-    "density": "medium",
-    "source_section": "90",
-    "source_block": "90-02",
-    "key_claim": "근거의 세 층위",
-    "notes_intent": "근거의 세 층위를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "APPENDIX",
-    "notes": "근거의 세 층위를 먼저 말한다. 이어서 근거의 세 층위의 근거를 짧게 보강한다.",
-    "lead": "가장 바깥 기준선은 공개 출처",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "left_label": "바깥 기준",
-      "left_points": [
-        "가장 바깥 기준선은 공개 출처",
-        "코딩 패러다임 변화의 속도는 YC W25와"
-      ],
-      "right_label": "안쪽 기준",
-      "right_points": [
-        "스펙 중심 방법론은 GitHub",
-        "불안과 역할 재배치 논지는 AI FoMO 논문"
-      ]
-    }
-  },
-  {
-    "order": 128,
-    "slide_id": "S128",
-    "file_name": "slide-128.html",
-    "title": "이 층은 공개 1차 근거와 같은 무게로",
-    "slide_type": "comparison",
-    "layout": "split",
-    "shell": "split-compare-shell",
-    "family": "comparison",
-    "density": "medium",
-    "source_section": "90",
-    "source_block": "90-02",
-    "key_claim": "근거의 세 층위",
-    "notes_intent": "근거의 세 층위를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "APPENDIX",
-    "notes": "근거의 세 층위를 먼저 말한다. 이어서 근거의 세 층위의 근거를 짧게 보강한다.",
-    "lead": "이 층은 공개 1차 근거와 같은 무게로 읽지 않습니다.",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "left_label": "바깥 기준",
-      "left_points": [
-        "이 층은 공개 1차 근거와 같은 무게로 읽지",
-        "공개 출처 위에 제한적으로 덧대는 정보로만"
-      ],
-      "right_label": "안쪽 기준",
-      "right_points": [
-        "내부 확인 정보가 앞줄로 나오기 시작하면",
-        "마지막 층은 로컬 markdown archive"
-      ]
-    }
-  },
-  {
-    "order": 129,
-    "slide_id": "S129",
-    "file_name": "slide-129.html",
-    "title": "로컬 source-to-section map",
-    "slide_type": "process",
-    "layout": "wide",
-    "shell": "process-flow-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "90",
-    "source_block": "90-03",
-    "key_claim": "로컬 source-to-section map",
-    "notes_intent": "로컬 source-to-section map를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "APPENDIX",
-    "notes": "로컬 source-to-section map를 먼저 말한다. 이어서 로컬 source-to-section map의 근거를 짧게 보강한다.",
-    "lead": "로컬 markdown은 전부 같은 무게로 쓰이지 않습니다.",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "steps": [
-        {
-          "index": "01",
-          "title": "claude-code-semina",
-          "text": "claude-code-seminar-kaka"
-        },
-        {
-          "index": "02",
-          "title": "claude-code-master",
-          "text": "claude-code-mastery-play"
-        },
-        {
-          "index": "03",
-          "title": "prompt-context-har",
-          "text": "prompt-context-harness-1"
-        },
-        {
-          "index": "04",
-          "title": "evolution-of-ai-ag",
-          "text": "evolution-of-ai-agentic"
-        }
-      ]
-    }
-  },
-  {
-    "order": 130,
-    "slide_id": "S130",
-    "file_name": "slide-130.html",
-    "title": "후속 읽기 순서",
-    "slide_type": "process",
-    "layout": "wide",
-    "shell": "process-flow-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "90",
-    "source_block": "90-04",
-    "key_claim": "후속 읽기 순서",
-    "notes_intent": "후속 읽기 순서를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "APPENDIX",
-    "notes": "후속 읽기 순서를 먼저 말한다. 이어서 후속 읽기 순서의 근거를 짧게 보강한다.",
-    "lead": "후속 읽기의 순서도 분명",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "steps": [
-        {
-          "index": "01",
-          "title": "후속 읽기의 순서도 분명",
-          "text": "후속 읽기의 순서도 분명"
-        },
-        {
-          "index": "02",
-          "title": "먼저 OpenAI와",
-          "text": "먼저 OpenAI와 Anthropic의 공식"
-        },
-        {
-          "index": "03",
-          "title": "그다음에야 practitioner",
-          "text": "그다음에야 practitioner"
-        },
-        {
-          "index": "04",
-          "title": "기준선을 먼저 세워 두어야",
-          "text": "기준선을 먼저 세워 두어야"
-        }
-      ]
-    }
-  },
-  {
-    "order": 131,
-    "slide_id": "S131",
-    "file_name": "slide-131.html",
-    "title": "외부 reference repo를 다루는 법",
-    "slide_type": "bullets",
-    "layout": "wide",
-    "shell": "wide-bullets-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "90",
-    "source_block": "90-05",
-    "key_claim": "외부 reference repo를 다루는 법",
-    "notes_intent": "외부 reference repo를 다루는 법를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "APPENDIX",
-    "notes": "외부 reference repo를 다루는 법를 먼저 말한다. 이어서 외부 reference repo를 다루는 법의 근거를 짧게 보강한다.",
-    "lead": "Youngdong2/claude-seminar-referenc",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "callout": "외부 reference repo를 다루는 법",
-      "points": [
-        "Youngdong2/claude-seminar",
-        "이 저장소 자체를 1차 근거처럼 읽으면 안",
-        "이곳은 어디까지나 정리된 후속 독서 인덱스에",
-        "개별 링크의 생존 여부는 계속 달라질 수 있고"
-      ]
-    }
-  },
-  {
-    "order": 132,
-    "slide_id": "S132",
-    "file_name": "slide-132.html",
-    "title": "다시 열어볼 로컬 지도",
-    "slide_type": "closing",
-    "layout": "centered",
-    "shell": "closing-shell",
-    "family": "conclusion",
-    "density": "light",
-    "source_section": "90",
-    "source_block": "90-06",
-    "key_claim": "근거의 층위를 섞지 않는 읽기 습관이 마지막 안전장치다",
-    "notes_intent": "다시 열어볼 로컬 지도를 slide 단위 주장으로 분해",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "APPENDIX",
-    "notes": "마지막 슬라이드는 새 주장 추가가 아니다. 어디를 먼저 읽고 어디를 나중에 읽을지, 읽기 순서 자체를 다시 고정한다.",
-    "lead": "공개 근거를 앞줄에, 로컬 지도는 뒤줄에 둔다",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "points": [
-        "공개 근거를 먼저 세운다",
-        "내부 맥락은 뒤에서 보강한다",
-        "로컬 map은 연결망으로만 쓴다"
+        "Architecture",
+        "Security",
+        "Operations"
       ]
     }
   }

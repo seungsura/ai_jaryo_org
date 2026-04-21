@@ -6,8 +6,13 @@
 - `layout-shell-reference.md`: 승인된 slide shell id와 required structure catalog
 - `minimal-light-adaptation.md`: `make-slide` minimal-light를 Jaryo deck으로 변환한 적용 규칙
 - `make-slide-adoption.md`: `make-slide` 채택/비채택과 hybrid output contract
+- `slide-quality-rules.md`: 사용자 대화 기반 slide 품질 규칙과 판단 로그
 - `tokens.css`: 실제 HTML slide에서 재사용할 CSS custom properties
 - `slide-base.css`: slide shell, card, title, footer 같은 공용 presentation primitives
+
+## Required Reading
+
+HTML slide 작업 전 `slide-quality-rules.md`를 먼저 확인한다. 해당 파일의 대화 기반 규칙은 오래된 shell/design 문서보다 우선한다.
 
 ## Validation
 

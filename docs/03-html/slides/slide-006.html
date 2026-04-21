@@ -3,11 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>더 나은 Harness</title>
+<title>어셈블리 → C/Pascal</title>
+<link rel="icon" href="data:,">
 <link rel="stylesheet" href="../shared/tokens.css">
 <link rel="stylesheet" href="../shared/slide-base.css">
 </head>
 <body class="theme-minimal-light">
-<main class="slide family-content layout-editorial density-light" data-slide-id="S006" data-shell="statement-editorial-shell" data-notes="서론의 마지막에서는 질문을 다시 한 문장으로 닫는다. 뒤의 100장 넘는 세부도 결국 이 문장을 증명하는 과정이라는 점을 다시 박아 둔다." data-footer="default"><section class="statement-panel"><p class="statement-tag">THESIS</p><h1 class="statement-text">좋은 모델보다 좋은 하네스</h1><p class="statement-support">문맥, 권한, 검증, 상태 기록이 결과를 바꾼다</p><ul class="statement-chips"><li class="statement-chip">Context</li><li class="statement-chip">Permissions</li><li class="statement-chip">Verify</li></ul></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">6</span></footer></main>
+<main class="slide family-comparison layout-split density-medium" data-slide-id="S006" data-shell="split-compare-shell" data-notes="Hello World 수준에서도 어셈블리와 C의 표현량 차이가 명확하다." data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 01</p><h1 class="title-placeholder">어셈블리 → C/Pascal</h1></section><section class="compare-grid"><article class="compare-col"><p class="compare-label">어셈블리</p><pre class="code-block"><code>
+section .data
+  msg db &quot;Hello World&quot;, 10
+
+section .text
+  global _start
+
+_start:
+  mov rax, 1
+  mov rdi, 1
+  mov rsi, msg
+  mov rdx, 12
+  syscall
+  mov rax, 60
+  mov rdi, 0
+  syscall
+</code></pre></article><article class="compare-col is-focus"><p class="compare-label">C/Pascal</p><pre class="code-block"><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    printf(&quot;Hello\n&quot;);
+    return 0;
+}
+</code></pre></article></section><p class="negative-opinion">어셈블리를 모르면 진짜 개발자 아님</p><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">6</span></footer></main>
 </body>
 </html>

@@ -25,6 +25,13 @@ This repository uses project-local skills and subagent specs under `.codex/`. Ke
 - 영어식 번역투와 방법론 직역체를 피합니다. 예: `상류/하류`, `강하게 호출된다`, `핵심은 ~ 데 있다`, `~의 측면에서`, `~라고 볼 수 있다` 같은 표현은 더 살아 있는 한국어가 있으면 교체합니다.
 - 명사구만 무겁게 쌓는 문장, 설명문 냄새가 짙은 추상 문장, bullet을 줄글로 늘인 듯한 문장은 피합니다.
 - 근거가 있는 강한 문장은 허용하지만, 밈체·허세체·과장된 인터넷체로 미끄러지면 안 됩니다.
+
+## HTML Slide Policy
+
+- `docs/03-html/` 작업 전 `docs/03-html/shared/slide-quality-rules.md`를 먼저 읽습니다.
+- 사용자와 대화하며 확정한 HTML slide 규칙은 기존 HTML stage 관례보다 우선합니다.
+- deck은 `theme-minimal-light`, 기존/minimal-light palette, `720pt × 405pt`, Pretendard CDN, footer `Harness 잘 사용하기` 기준을 유지합니다.
+- slide 문구는 명사형·구 단위 중심으로 쓰고, 공손체·서술형·명령형을 피합니다.
 ## Local Skills
 
 - `.codex/skills/local/jaryo-doc-reconstruction/SKILL.md`
