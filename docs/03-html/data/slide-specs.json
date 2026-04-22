@@ -657,7 +657,7 @@
     "order": 18,
     "slide_id": "S018",
     "file_name": "slide-018.html",
-    "title": "Chain-of-Thought",
+    "title": "CoT / ReAct / ToT",
     "slide_type": "process",
     "layout": "wide",
     "shell": "process-flow-shell",
@@ -665,30 +665,34 @@
     "density": "medium",
     "source_section": "02",
     "source_block": "02-03",
-    "key_claim": "중간 추론 단계를 쓰게 한다",
-    "notes_intent": "Chain-of-Thought native example diagram",
+    "key_claim": "세 추론 패턴의 구조 차이",
+    "notes_intent": "CoT / ReAct / ToT native three-card comparison",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "CHAPTER 02",
-    "notes": "source markdown의 Chain-of-Thought row와 approved 02-chain-of-thought asset 구조",
+    "notes": "source markdown의 CoT, ReAct, ToT row와 approved page-064 layout 구조",
     "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
-      "variant": "cot-native",
-      "claim": "중간 추론 단계를 쓰게 한다",
-      "meaning": "답만 내던 모델을 reasoning path가 있는 모델처럼 다루기 시작",
-      "steps": [
+      "variant": "cot-triad",
+      "cards": [
         {
-          "title": "문제",
-          "text": "5개 + 2캔 × 3개"
+          "title": "Chain-of-Thought",
+          "acronym": "CoT",
+          "meaning": "중간 추론 단계",
+          "kind": "cot"
         },
         {
-          "title": "중간 추론",
-          "text": "2캔 × 3개 = 6개"
+          "title": "ReAct",
+          "acronym": "Reason + Act",
+          "meaning": "추론과 행동 반복",
+          "kind": "react"
         },
         {
-          "title": "답",
-          "text": "5개 + 6개 = 11개"
+          "title": "Tree-of-Thought",
+          "acronym": "ToT",
+          "meaning": "여러 추론 경로",
+          "kind": "tot"
         }
       ]
     }
@@ -1172,6 +1176,892 @@
       "question": "",
       "formula": "Agent = Model + Harness",
       "relationship": "Prompt ⊂ Context ⊂ Harness"
+    }
+  },
+  {
+    "order": 28,
+    "slide_id": "S028",
+    "file_name": "slide-028.html",
+    "title": "AI 시대의 개발 방법론",
+    "slide_type": "section",
+    "layout": "centered",
+    "shell": "section-divider-shell",
+    "family": "section",
+    "density": "medium",
+    "source_section": "03",
+    "source_block": "03-00",
+    "key_claim": "TDD·SDD·Spec-first 재부상",
+    "notes_intent": "03장 진입을 알리는 section divider",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 03",
+    "notes": "AI 시대의 개발 방법론 장 진입",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "keywords": []
+    }
+  },
+  {
+    "order": 29,
+    "slide_id": "S029",
+    "file_name": "slide-029.html",
+    "title": "왜 지금 방법론",
+    "slide_type": "table",
+    "layout": "wide",
+    "shell": "evidence-table-shell",
+    "family": "content",
+    "density": "medium",
+    "source_section": "03",
+    "source_block": "03-01",
+    "key_claim": "AI에게 무엇을 시킬지, 어떻게 검증할 것인지",
+    "notes_intent": "AI 코딩 방법론 재부상 연대기",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 03",
+    "notes": "생성 속도에서 검증 절차로 생각이 이동한 흐름",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "headers": [
+        "시기",
+        "현상",
+        "대표 키워드/도구",
+        "핵심 질문"
+      ],
+      "rows": [
+        [
+          "2025.02",
+          "AI 코딩의 대중화와 문화적 전환점",
+          "Vibe Coding",
+          "일단 빨리 만들어 보자"
+        ],
+        [
+          "2025 중반",
+          "생성 코드의 품질, 보안, 유지보수 문제 부각",
+          "구조화된 검토, 검증 루프",
+          "이 결과를 믿어도 되나?"
+        ],
+        [
+          "2025 하반기",
+          "구현 전에 방향을 고정하려는 업계 대응",
+          "SDD, Spec-first, GitHub Spec Kit",
+          "애초에 무엇을 만들라고 할 것인가?"
+        ],
+        [
+          "2026 초",
+          "구현 뒤 검증 체계와 문맥 통제가 다시 중요해짐",
+          "TDD, Context Engineering",
+          "정말 그 스펙대로 동작하는가?"
+        ]
+      ],
+      "question": "AI에게 무엇을 시킬지, 어떻게 검증할 것인지"
+    }
+  },
+  {
+    "order": 30,
+    "slide_id": "S030",
+    "file_name": "slide-030.html",
+    "title": "SDD",
+    "slide_type": "process",
+    "layout": "wide",
+    "shell": "process-flow-shell",
+    "family": "content",
+    "density": "medium",
+    "source_section": "03",
+    "source_block": "03-02",
+    "key_claim": "스펙이 진실의 원천",
+    "notes_intent": "GitHub Spec Kit의 세 단계와 멈춤 장치",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 03",
+    "notes": "요구사항, 계획, 태스크를 파일로 고정하는 흐름",
+    "lead": "Spec-Driven Development",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "variant": "spec-kit-workflow",
+      "steps": [
+        {
+          "index": "SPECIFY",
+          "title": "/speckit.specify",
+          "text": "WHAT / WHY 분리",
+          "items": [
+            "[NEEDS CLARIFICATION]"
+          ]
+        },
+        {
+          "index": "PLAN",
+          "title": "/speckit.plan",
+          "text": "HOW 제안",
+          "items": [
+            "Constitution Check"
+          ]
+        },
+        {
+          "index": "TASKS",
+          "title": "/speckit.tasks",
+          "text": "태스크 분해",
+          "items": [
+            "병렬 가능 작업 [P] 마킹"
+          ]
+        }
+      ],
+      "principle_title": "강제되는 원칙",
+      "principle": "WHAT/WHY와 HOW를 분리하고, 모호한 부분은 [NEEDS CLARIFICATION]에서 멈춘다.",
+      "outcome_title": "핵심",
+      "outcome": "모든 산출물이 파일로 저장되고 커밋되고 계속 참조된다.",
+      "source": {
+        "icon_label": "GitHub Copilot icon",
+        "text": "GitHub spec-kit"
+      }
+    }
+  },
+  {
+    "order": 31,
+    "slide_id": "S031",
+    "file_name": "slide-031.html",
+    "title": "TDD (Test-Driven Development)",
+    "slide_type": "statement",
+    "layout": "editorial",
+    "shell": "statement-editorial-shell",
+    "family": "content",
+    "density": "medium",
+    "source_section": "03",
+    "source_block": "03-03",
+    "key_claim": "테스트를 먼저 쓰고, 통과하는 코드를 나중에 쓴다",
+    "notes_intent": "Page 028 TDD lead와 anti-cheat 규칙",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 03",
+    "notes": "테스트가 에이전트의 자유를 제한하는 통제선",
+    "lead": "테스트를 먼저 쓰고, 통과하는 코드를 나중에 쓴다. AI 시대에는 인간이 테스트, AI가 구현.",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "variant": "tdd-control-layers",
+      "flow": [
+        {
+          "title": "Red",
+          "text": "인간이 실패 테스트 작성"
+        },
+        {
+          "title": "Green",
+          "text": "AI가 통과 코드 구현"
+        },
+        {
+          "title": "Refactor",
+          "text": "인간 리뷰 → AI가 리팩토링"
+        }
+      ],
+      "controls": [
+        {
+          "title": "왜 AI에게 특히 중요한가",
+          "text": "AI는 \"동작하는 것 같은\" 코드를 자신 있게 만듦. 테스트 없으면 맞는지 틀린지 확인 불가."
+        },
+        {
+          "title": "AI의 치팅에 주의",
+          "text": "테스트 수정 금지 규칙 필수. 테스트 코드 임의 수정 금지 · assert 조건 약화 · 실패 확인 전 구현 금지."
+        }
+      ]
+    }
+  },
+  {
+    "order": 32,
+    "slide_id": "S032",
+    "file_name": "slide-032.html",
+    "title": "Waterfall vs SDD",
+    "slide_type": "comparison",
+    "layout": "split",
+    "shell": "split-compare-shell",
+    "family": "comparison",
+    "density": "medium",
+    "source_section": "03",
+    "source_block": "03-04",
+    "key_claim": "Waterfall은 순차적으로 진행되고, SDD는 스펙을 실행 기준으로 둔다",
+    "notes_intent": "Royce 1970과 spec-driven.md evidence로 Waterfall vs SDD 비교",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 03",
+    "notes": "요구사항·설계·코딩·테스트 vs specification·plan·tasks",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "variant": "waterfall-comparison",
+      "left_label": "Waterfall",
+      "right_label": "SDD",
+      "rows": [
+        {
+          "key": "개발 흐름",
+          "left": "요구사항 → 설계 → 코딩 → 테스트",
+          "right": "스펙이 primary artifact"
+        },
+        {
+          "key": "검증 시점",
+          "left": "테스트가 개발 후반에 실제 제약을 드러냄",
+          "right": "/speckit.specify​ → ​/speckit.plan​ → ​/speckit.tasks"
+        },
+        {
+          "key": "실행 산출물",
+          "left": "요구사항 또는 설계를 다시 고침",
+          "right": "spec · plan · tasks를 실행 산출물로 갱신"
+        }
+      ]
+    }
+  },
+  {
+    "order": 33,
+    "slide_id": "S033",
+    "file_name": "slide-033.html",
+    "title": "SDD + TDD가 Harness로 이어지는 이유",
+    "slide_type": "statement",
+    "layout": "editorial",
+    "shell": "statement-editorial-shell",
+    "family": "content",
+    "density": "medium",
+    "source_section": "03",
+    "source_block": "03-05",
+    "key_claim": "이 시스템이 곧 하네스 엔지니어링",
+    "notes_intent": "03장에서 04장 Harness 구조로 넘어가는 bridge",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 03",
+    "notes": "스펙과 테스트 루프를 사람이 매번 손으로 굴리지 않도록 시스템화",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "variant": "spec-tdd-bridge",
+      "subheading": "SDD + TDD가 Harness로 이어지는 이유",
+      "synthesis": "이 시스템이 곧 하네스 엔지니어링",
+      "cards": [
+        {
+          "title": "Spec",
+          "items": [
+            "스펙 템플릿",
+            "계획 문서"
+          ]
+        },
+        {
+          "title": "TDD",
+          "items": [
+            "TDD 루프",
+            "Skills",
+            "Hooks"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "order": 34,
+    "slide_id": "S034",
+    "file_name": "slide-034.html",
+    "title": "프롬프트를 넘어서",
+    "slide_type": "section",
+    "layout": "centered",
+    "shell": "section-divider-shell",
+    "family": "section",
+    "density": "medium",
+    "source_section": "04",
+    "source_block": "04-00",
+    "key_claim": "Prompt, Context, Harness",
+    "notes_intent": "04장 진입을 알리는 section divider",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 04",
+    "notes": "프롬프트와 컨텍스트를 포함하는 하네스 구조로 진입",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "keywords": [
+        "Prompt",
+        "Context",
+        "Harness"
+      ]
+    }
+  },
+  {
+    "order": 35,
+    "slide_id": "S035",
+    "file_name": "slide-035.html",
+    "title": "Prompt, Context, Harness",
+    "slide_type": "table",
+    "layout": "wide",
+    "shell": "evidence-table-shell",
+    "family": "content",
+    "density": "medium",
+    "source_section": "04",
+    "source_block": "04-01",
+    "key_claim": "Prompt ⊂ Context ⊂ Harness",
+    "notes_intent": "source page 36/37 의미를 한 장의 hierarchy로 압축",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 04",
+    "notes": "프롬프트, 컨텍스트, 하네스의 포함 관계",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "headers": [
+        "층위",
+        "핵심 질문",
+        "초점"
+      ],
+      "rows": [
+        [
+          "Prompt",
+          "무엇을/어떻게 말할 것인가",
+          "명령의 품질 / 단일 프롬프트 / 정적"
+        ],
+        [
+          "Context",
+          "무엇을/어떻게 보여줄 것인가",
+          "정보의 품질 / 입력 파이프라인 / 동적"
+        ],
+        [
+          "Harness",
+          "무엇을/어떻게 통제할 것인가",
+          "시스템의 안정성 / 실행 환경 전체"
+        ]
+      ],
+      "question": "Prompt ⊂ Context ⊂ Harness"
+    }
+  },
+  {
+    "order": 36,
+    "slide_id": "S036",
+    "file_name": "slide-036.html",
+    "title": "Agent = Model + Harness",
+    "slide_type": "table",
+    "layout": "wide",
+    "shell": "evidence-table-shell",
+    "family": "content",
+    "density": "medium",
+    "source_section": "04",
+    "source_block": "04-02",
+    "key_claim": "모델이 아닌 것은 전부 하네스입니다.",
+    "notes_intent": "공식, 인용구, 여섯 구성 요소를 한 장에 배치",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 04",
+    "notes": "Agent 공식과 하네스의 여섯 구성 요소",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "variant": "agent-harness-quote",
+      "quote": "모델이 아닌 것은 전부 하네스입니다.",
+      "attribution": "LangChain, Vivek Trivedy",
+      "components": [
+        {
+          "title": "Context Engineering",
+          "text": "모델이 봐야 할 정보와 버려야 할 정보"
+        },
+        {
+          "title": "Tool Orchestration",
+          "text": "도구 호출 순서와 권한"
+        },
+        {
+          "title": "State & Memory",
+          "text": "세션을 넘어 남는 파일과 기록"
+        },
+        {
+          "title": "Verification Loop",
+          "text": "테스트, 린트, 리뷰"
+        },
+        {
+          "title": "Error Recovery",
+          "text": "실패 감지와 재시도, 우회, 중단"
+        },
+        {
+          "title": "Human-in-the-Loop Control",
+          "text": "사람 승인과 개입 지점"
+        }
+      ]
+    }
+  },
+  {
+    "order": 37,
+    "slide_id": "S037",
+    "file_name": "slide-037.html",
+    "title": "에이전트 루프: 하네스의 심장",
+    "slide_type": "process",
+    "layout": "wide",
+    "shell": "process-flow-shell",
+    "family": "content",
+    "density": "medium",
+    "source_section": "04",
+    "source_block": "04-03",
+    "key_claim": "네 지점을 신뢰성 있게 만드는 일",
+    "notes_intent": "gather context, take action, verify work, repeat loop",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 04",
+    "notes": "거의 모든 코딩 에이전트가 반복하는 네 단계",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "variant": "loop-map",
+      "steps": [
+        {
+          "index": "01",
+          "title": "gather context",
+          "text": "무엇을 안 보여줄지 설계"
+        },
+        {
+          "index": "02",
+          "title": "take action",
+          "text": "되돌릴 수 있는 액션부터 허용"
+        },
+        {
+          "index": "03",
+          "title": "verify work",
+          "text": "테스트, 린트, 리뷰"
+        },
+        {
+          "index": "04",
+          "title": "repeat",
+          "text": "현재 결론과 다음 행동만 남김"
+        }
+      ],
+      "thesis": "이 네 지점을 신뢰성 있게 만드는 일"
+    }
+  },
+  {
+    "order": 38,
+    "slide_id": "S038",
+    "file_name": "slide-038.html",
+    "title": "하네스의 책임",
+    "slide_type": "process",
+    "layout": "wide",
+    "shell": "process-flow-shell",
+    "family": "content",
+    "density": "medium",
+    "source_section": "04",
+    "source_block": "04-04",
+    "key_claim": "다섯 개 기능 블록",
+    "notes_intent": "5 responsibility cards와 설계 순서 rail",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 04",
+    "notes": "운영 관점에서 보는 하네스의 책임",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "steps": [
+        {
+          "index": "01",
+          "title": "Guardrails",
+          "text": "위험한 행동과 권한 경계"
+        },
+        {
+          "index": "02",
+          "title": "Specification",
+          "text": "작업 범위와 기준선"
+        },
+        {
+          "index": "03",
+          "title": "Verification",
+          "text": "결정론적 결과 검증"
+        },
+        {
+          "index": "04",
+          "title": "State Management",
+          "text": "파일, Git 이력, 진행 기록"
+        },
+        {
+          "index": "05",
+          "title": "Observability",
+          "text": "실행 로그, trace, checkpoint"
+        }
+      ]
+    }
+  },
+  {
+    "order": 39,
+    "slide_id": "S039",
+    "file_name": "slide-039.html",
+    "title": "하네스의 도구",
+    "slide_type": "table",
+    "layout": "wide",
+    "shell": "evidence-table-shell",
+    "family": "content",
+    "density": "medium",
+    "source_section": "04",
+    "source_block": "04-05",
+    "key_claim": "책임과 도구는 1:1이 아니다",
+    "notes_intent": "책임 anchor와 도구 node의 다대다 관계 지도",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 04",
+    "notes": "기능 블록과 도구 레이어는 1:1로 대응하지 않음",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "variant": "tool-relation-map",
+      "responsibilities": [
+        {
+          "title": "Guardrails",
+          "tools": [
+            "CLAUDE.md / AGENTS.md",
+            "Hooks",
+            "Plugins"
+          ]
+        },
+        {
+          "title": "Specification",
+          "tools": [
+            "CLAUDE.md / AGENTS.md",
+            "Skills",
+            "이슈 / PR / 진행 파일"
+          ]
+        },
+        {
+          "title": "Verification",
+          "tools": [
+            "Hooks",
+            "pytest / CI / PR 체크",
+            "CLAUDE.md / AGENTS.md"
+          ]
+        },
+        {
+          "title": "State Management",
+          "tools": [
+            "Git Worktree",
+            "이슈 / PR / 진행 파일",
+            "CLAUDE.md / AGENTS.md"
+          ]
+        },
+        {
+          "title": "Observability",
+          "tools": [
+            "실행 로그 / trace",
+            "MCP / Context Hub",
+            "pytest / CI / PR 체크"
+          ]
+        }
+      ],
+      "tools": [
+        {
+          "title": "CLAUDE.md / AGENTS.md"
+        },
+        {
+          "title": "Skills"
+        },
+        {
+          "title": "Hooks"
+        },
+        {
+          "title": "MCP / Context Hub"
+        },
+        {
+          "title": "Plugins"
+        },
+        {
+          "title": "Git Worktree"
+        },
+        {
+          "title": "pytest / CI / PR 체크"
+        },
+        {
+          "title": "이슈 / PR / 진행 파일"
+        },
+        {
+          "title": "실행 로그 / trace"
+        }
+      ]
+    }
+  },
+  {
+    "order": 40,
+    "slide_id": "S040",
+    "file_name": "slide-040.html",
+    "title": "Context Engineering",
+    "slide_type": "process",
+    "layout": "wide",
+    "shell": "process-flow-shell",
+    "family": "content",
+    "density": "medium",
+    "source_section": "04",
+    "source_block": "04-06",
+    "key_claim": "smallest set of high-signal tokens",
+    "notes_intent": "Write, Select, Compress, Isolate 네 전략",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 04",
+    "notes": "좋은 컨텍스트는 넓은 컨텍스트가 아니라 선별된 컨텍스트",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "variant": "context-quote",
+      "steps": [
+        {
+          "index": "01",
+          "title": "Write",
+          "text": "역할, 목표, 금지, 출력, 검증 기준을 구조화"
+        },
+        {
+          "index": "02",
+          "title": "Select",
+          "text": "지금 필요한 문서와 파일만 선택"
+        },
+        {
+          "index": "03",
+          "title": "Compress",
+          "text": "결정, 남은 일, 증거 중심으로 압축"
+        },
+        {
+          "index": "04",
+          "title": "Isolate",
+          "text": "대량 탐색과 로그 분석은 격리"
+        }
+      ],
+      "thesis": "smallest set of high-signal tokens",
+      "source_label": "Anthropic Research"
+    }
+  },
+  {
+    "order": 41,
+    "slide_id": "S041",
+    "file_name": "slide-041.html",
+    "title": "MCP와 Context Hub",
+    "slide_type": "process",
+    "layout": "wide",
+    "shell": "process-flow-shell",
+    "family": "content",
+    "density": "medium",
+    "source_section": "04",
+    "source_block": "04-07",
+    "key_claim": "연결 방식을 표준화",
+    "notes_intent": "MCP native architecture와 Context Hub 연결 의미",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 04",
+    "notes": "외부 도구와 최신 문서 연결은 컨텍스트 엔지니어링의 핵심 인프라",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "variant": "mcp-context-architecture",
+      "flow": [
+        {
+          "title": "에이전트",
+          "text": "필요한 외부 컨텍스트 판단"
+        },
+        {
+          "title": "MCP 클라이언트",
+          "text": "서버 연결과 결과 형식 유지"
+        },
+        {
+          "title": "MCP 서버",
+          "text": "외부 도구·데이터 소스 제공"
+        }
+      ],
+      "tools": [
+        "GitHub",
+        "Slack",
+        "DB",
+        "Filesystem",
+        "Internal API"
+      ],
+      "usage_note": "도구 결과가 컨텍스트 윈도우로 돌아와 다음 판단의 재료가 됨",
+      "hub_title": "최신 문서를 읽힌 뒤 답하게 하는 통로",
+      "principles": [
+        {
+          "label": "역할",
+          "text": "최신 API 문서와 공식 자료를 필요할 때 가져옴"
+        },
+        {
+          "label": "원리",
+          "text": "모델 기억 대신 지금 기준 문서를 컨텍스트로 주입"
+        },
+        {
+          "label": "효과",
+          "text": "호출 방식과 결과 형식이 안정화"
+        }
+      ]
+    }
+  },
+  {
+    "order": 42,
+    "slide_id": "S042",
+    "file_name": "slide-042.html",
+    "title": "RAG vs Context Hub",
+    "slide_type": "table",
+    "layout": "wide",
+    "shell": "evidence-table-shell",
+    "family": "content",
+    "density": "medium",
+    "source_section": "04",
+    "source_block": "04-08",
+    "key_claim": "넓게 찾는가, 지금 맞는 문서를 지정하는가",
+    "notes_intent": "RAG 논문과 MCP/Context Hub 문서 조사 기반 비교",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 04",
+    "notes": "RAG는 넓은 검색 인덱스, Context Hub MCP는 최신/버전 지정 문서 주입",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "variant": "rag-context-researched",
+      "cards": [
+        {
+          "label": "RAG",
+          "title": "넓은 저장소에서 passage 검색",
+          "items": [
+            "질문마다 관련 조각을 생성 입력에 주입",
+            "벡터 인덱스와 retriever 품질이 결과를 좌우",
+            "내부 위키·정책·긴 참고 자료에 적합"
+          ]
+        },
+        {
+          "label": "Context Hub MCP",
+          "title": "지정한 최신 문서를 컨텍스트로 주입",
+          "items": [
+            "공식·버전별 API 문서를 필요할 때 가져옴",
+            "라이브러리 ID·버전·언어로 범위를 좁힘",
+            "SDK/API 변경이 잦은 작업에 적합"
+          ]
+        }
+      ],
+      "decision_label": "선택 기준",
+      "decision": "넓게 찾을 때는 RAG, 지금 맞는 문서를 확인할 때는 Context Hub",
+      "source_label": "Sources: Lewis et al. 2020 · MCP Docs · Context Hub / Context7"
+    }
+  },
+  {
+    "order": 43,
+    "slide_id": "S043",
+    "file_name": "slide-043.html",
+    "title": "Memory: 세션을 넘어서는 기억",
+    "slide_type": "table",
+    "layout": "wide",
+    "shell": "evidence-table-shell",
+    "family": "content",
+    "density": "medium",
+    "source_section": "04",
+    "source_block": "04-09",
+    "key_claim": "대화창을 기억 저장소로 착각하지 않는다",
+    "notes_intent": "외부 artifact map과 memory claim",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 04",
+    "notes": "상태와 근거는 파일 시스템, Git, 이슈, PR, 문서로 나가야 함",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "variant": "memory-artifact-map",
+      "question": "대화창을 기억 저장소로 착각하지 않는다",
+      "artifacts": [
+        {
+          "title": "CLAUDE.md / AGENTS.md",
+          "text": "규칙 파일과 기준선"
+        },
+        {
+          "title": "프로젝트 노트와 결정 기록",
+          "text": "설계 의도와 합의"
+        },
+        {
+          "title": "이슈와 PR 히스토리",
+          "text": "작업 맥락과 리뷰 흔적"
+        },
+        {
+          "title": "progress.txt / prd.json",
+          "text": "진행 상태와 요구사항"
+        },
+        {
+          "title": "벡터 DB / 코드 그래프",
+          "text": "검색 가능한 프로젝트 지식"
+        },
+        {
+          "title": "커밋 히스토리와 아키텍처 결정 기록",
+          "text": "변경 이유와 구조 결정"
+        }
+      ]
+    }
+  },
+  {
+    "order": 44,
+    "slide_id": "S044",
+    "file_name": "slide-044.html",
+    "title": "Stable Prefix와 Variable Suffix",
+    "slide_type": "comparison",
+    "layout": "split",
+    "shell": "split-compare-shell",
+    "family": "comparison",
+    "density": "medium",
+    "source_section": "04",
+    "source_block": "04-10",
+    "key_claim": "잘 쓰는 것 못지않게 안 바꾸는 것도 능력",
+    "notes_intent": "prefix/suffix diagram",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 04",
+    "notes": "자주 변하지 않는 것은 앞쪽에, 최신 입력과 도구 결과는 뒤쪽에 둠",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "variant": "prefix-suffix-cache",
+      "left_label": "Stable Prefix",
+      "left_badges": [
+        "KV-cache",
+        "고정",
+        "재사용"
+      ],
+      "left_points": [
+        "시스템 프롬프트",
+        "도구 정의",
+        "장기 규칙"
+      ],
+      "left_note": "앞쪽의 안정 접두어",
+      "right_label": "Variable Suffix",
+      "right_badges": [
+        "동적 접미어",
+        "갈아 끼움"
+      ],
+      "right_points": [
+        "최신 사용자 입력",
+        "도구 결과",
+        "뒤에서 갈아 끼움"
+      ],
+      "right_note": "최신 입력과 도구 결과",
+      "opinion": "잘 쓰는 것 못지않게 안 바꾸는 것도 능력"
+    }
+  },
+  {
+    "order": 45,
+    "slide_id": "S045",
+    "file_name": "slide-045.html",
+    "title": "하네스는 환경 그 자체다",
+    "slide_type": "process",
+    "layout": "wide",
+    "shell": "process-flow-shell",
+    "family": "content",
+    "density": "medium",
+    "source_section": "04",
+    "source_block": "04-11",
+    "key_claim": "필요한 파일, 필요한 도구, 필요한 규칙",
+    "notes_intent": "chapter 04 closing statement",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 04",
+    "notes": "Harness Builder는 에이전트가 쓸 수 있는 환경을 만드는 사람",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "steps": [
+        {
+          "index": "01",
+          "title": "필요한 파일",
+          "text": "상태와 근거를 세션 밖에 남김"
+        },
+        {
+          "index": "02",
+          "title": "필요한 도구",
+          "text": "에이전트가 실제 일을 할 수 있게 연결"
+        },
+        {
+          "index": "03",
+          "title": "필요한 규칙",
+          "text": "권한, 검증, 중단 지점을 고정"
+        }
+      ],
+      "thesis": "Harness Builder는 에이전트가 쓸 수 있는 환경을 만드는 사람"
     }
   }
 ]

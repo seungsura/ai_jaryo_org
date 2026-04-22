@@ -32,6 +32,24 @@ SLIDE_024_PATH = SLIDES_DIR / "slide-024.html"
 SLIDE_025_PATH = SLIDES_DIR / "slide-025.html"
 SLIDE_026_PATH = SLIDES_DIR / "slide-026.html"
 SLIDE_027_PATH = SLIDES_DIR / "slide-027.html"
+SLIDE_028_PATH = SLIDES_DIR / "slide-028.html"
+SLIDE_029_PATH = SLIDES_DIR / "slide-029.html"
+SLIDE_030_PATH = SLIDES_DIR / "slide-030.html"
+SLIDE_031_PATH = SLIDES_DIR / "slide-031.html"
+SLIDE_032_PATH = SLIDES_DIR / "slide-032.html"
+SLIDE_033_PATH = SLIDES_DIR / "slide-033.html"
+SLIDE_034_PATH = SLIDES_DIR / "slide-034.html"
+SLIDE_035_PATH = SLIDES_DIR / "slide-035.html"
+SLIDE_036_PATH = SLIDES_DIR / "slide-036.html"
+SLIDE_037_PATH = SLIDES_DIR / "slide-037.html"
+SLIDE_038_PATH = SLIDES_DIR / "slide-038.html"
+SLIDE_039_PATH = SLIDES_DIR / "slide-039.html"
+SLIDE_040_PATH = SLIDES_DIR / "slide-040.html"
+SLIDE_041_PATH = SLIDES_DIR / "slide-041.html"
+SLIDE_042_PATH = SLIDES_DIR / "slide-042.html"
+SLIDE_043_PATH = SLIDES_DIR / "slide-043.html"
+SLIDE_044_PATH = SLIDES_DIR / "slide-044.html"
+SLIDE_045_PATH = SLIDES_DIR / "slide-045.html"
 
 
 def run_builder() -> None:
@@ -72,9 +90,9 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
         self.assertLessEqual(len(entrypoint.splitlines()), 12)
         self.assertNotIn("def build_all_specs", entrypoint)
         self.assertNotIn("make_slide(", entrypoint)
-        self.assertEqual(len(slide_modules), 27)
+        self.assertEqual(len(slide_modules), 45)
         self.assertEqual(slide_modules[0].name, "slide_001.py")
-        self.assertEqual(slide_modules[-1].name, "slide_027.py")
+        self.assertEqual(slide_modules[-1].name, "slide_045.py")
 
         for path in slide_modules:
             source = path.read_text(encoding="utf-8")
@@ -103,21 +121,21 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
         self.assertTrue(core.exists())
         self.assertLessEqual(len(core.read_text(encoding="utf-8").splitlines()), 80)
 
-    def test_builder_generates_27_slide_registry(self) -> None:
+    def test_builder_generates_45_slide_registry(self) -> None:
         run_builder()
 
         rows = manifest_rows()
-        self.assertEqual(len(rows), 27)
+        self.assertEqual(len(rows), 45)
         self.assertIn("`S001`", rows[0])
-        self.assertIn("`S027`", rows[-1])
+        self.assertIn("`S045`", rows[-1])
 
     def test_builder_uses_three_digit_slide_files(self) -> None:
         run_builder()
 
         slide_files = sorted(SLIDES_DIR.glob("slide-*.html"))
-        self.assertEqual(len(slide_files), 27)
+        self.assertEqual(len(slide_files), 45)
         self.assertEqual(slide_files[0].name, "slide-001.html")
-        self.assertEqual(slide_files[-1].name, "slide-027.html")
+        self.assertEqual(slide_files[-1].name, "slide-045.html")
 
     def test_builder_writes_outline_deck_and_script(self) -> None:
         run_builder()
@@ -128,10 +146,15 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
         self.assertIn("### S001.", outline)
         self.assertIn("### S014.", outline)
         self.assertIn("### S027.", outline)
+        self.assertIn("### S033.", outline)
+        self.assertIn("### S045.", outline)
+        self.assertIn("00/01/02/03/04 45-slide", outline)
         self.assertTrue(SCRIPT_PATH.exists())
         self.assertIn('data-slide-id="S001"', deck)
         self.assertIn('data-slide-id="S014"', deck)
         self.assertIn('data-slide-id="S027"', deck)
+        self.assertIn('data-slide-id="S033"', deck)
+        self.assertIn('data-slide-id="S045"', deck)
         self.assertIn("function goTo(index)", deck)
 
     def test_builder_applies_latest_slide_feedback(self) -> None:
@@ -155,6 +178,24 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
         slide_025 = SLIDE_025_PATH.read_text(encoding="utf-8")
         slide_026 = SLIDE_026_PATH.read_text(encoding="utf-8")
         slide_027 = SLIDE_027_PATH.read_text(encoding="utf-8")
+        slide_028 = SLIDE_028_PATH.read_text(encoding="utf-8")
+        slide_029 = SLIDE_029_PATH.read_text(encoding="utf-8")
+        slide_030 = SLIDE_030_PATH.read_text(encoding="utf-8")
+        slide_031 = SLIDE_031_PATH.read_text(encoding="utf-8")
+        slide_032 = SLIDE_032_PATH.read_text(encoding="utf-8")
+        slide_033 = SLIDE_033_PATH.read_text(encoding="utf-8")
+        slide_034 = SLIDE_034_PATH.read_text(encoding="utf-8")
+        slide_035 = SLIDE_035_PATH.read_text(encoding="utf-8")
+        slide_036 = SLIDE_036_PATH.read_text(encoding="utf-8")
+        slide_037 = SLIDE_037_PATH.read_text(encoding="utf-8")
+        slide_038 = SLIDE_038_PATH.read_text(encoding="utf-8")
+        slide_039 = SLIDE_039_PATH.read_text(encoding="utf-8")
+        slide_040 = SLIDE_040_PATH.read_text(encoding="utf-8")
+        slide_041 = SLIDE_041_PATH.read_text(encoding="utf-8")
+        slide_042 = SLIDE_042_PATH.read_text(encoding="utf-8")
+        slide_043 = SLIDE_043_PATH.read_text(encoding="utf-8")
+        slide_044 = SLIDE_044_PATH.read_text(encoding="utf-8")
+        slide_045 = SLIDE_045_PATH.read_text(encoding="utf-8")
 
         self.assertIn("<title>Harness 잘 사용하기</title>", deck)
         self.assertIn("<h1 class=\"title-placeholder\">Harness 잘 사용하기</h1>", slide_001)
@@ -212,14 +253,41 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
         self.assertIn("era-range", slide_017)
         self.assertIn("prompt-era-body", slide_017)
 
-        self.assertIn("<h1 class=\"title-placeholder\">Chain-of-Thought</h1>", slide_018)
-        self.assertIn("cot-native-body", slide_018)
-        self.assertIn("cot-example-diagram", slide_018)
-        self.assertIn("중간 추론 단계", slide_018)
-        self.assertIn("2캔 × 3개", slide_018)
-        self.assertIn("11개", slide_018)
+        self.assertIn("<h1 class=\"title-placeholder\">CoT / ReAct / ToT</h1>", slide_018)
+        self.assertIn("cot-triad-body", slide_018)
+        self.assertIn("cot-triad-card", slide_018)
+        self.assertIn("cot-triad-diagram", slide_018)
+        for snippet in [
+            "Chain-of-Thought",
+            "CoT",
+            "중간 추론 단계",
+            "ReAct",
+            "Reason + Act",
+            "추론과 행동 반복",
+            "Tree-of-Thought",
+            "ToT",
+            "여러 추론 경로",
+            "LM",
+            "Env",
+            "Reasoning Traces",
+            "Actions",
+            "Observations",
+            "ReAct (Reason + Act)",
+        ]:
+            self.assertIn(snippet, slide_018)
         self.assertNotIn("02-chain-of-thought.png", slide_018)
-        self.assertNotIn("ReAct", slide_018)
+        for forbidden in [
+            "Graph-of-Thought",
+            "GoT",
+            "Self-Refine",
+            "Reflexion",
+            "Thought 1",
+            "2캔 × 3개",
+            "11개",
+            "http://",
+            "https://",
+        ]:
+            self.assertNotIn(forbidden, slide_018)
 
         self.assertIn("<h1 class=\"title-placeholder\">ReAct / Tree-of-Thought</h1>", slide_019)
         self.assertIn("pattern-pair-body", slide_019)
@@ -292,6 +360,173 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
         self.assertNotIn("01-three-era-timeline.png", slide_027)
         for era in ["Prompt Engineering", "Context Engineering", "Harness Engineering"]:
             self.assertIn(era, slide_027)
+        self.assertIn("<h1 class=\"title-placeholder\">AI 시대의 개발 방법론</h1>", slide_028)
+        self.assertIn("CHAPTER 03", slide_028)
+        self.assertIn("chapter-03", slide_028)
+        self.assertIn("<h1 class=\"title-placeholder\">왜 지금 방법론</h1>", slide_029)
+        for snippet in ["2025.02", "Vibe Coding", "2025 중반", "구조화된 검토", "2025 하반기", "Spec-first", "2026 초", "Context Engineering"]:
+            self.assertIn(snippet, slide_029)
+        self.assertIn("AI에게 무엇을 시킬지, 어떻게 검증할 것인지", slide_029)
+        slide_029_content = slide_029.split('<footer class="footer">', maxsplit=1)[0]
+        for forbidden in ["Harness", "Agent", "Prompt", "Model", "Waterfall"]:
+            self.assertNotIn(forbidden, slide_029_content)
+        self.assertIn("<h1 class=\"title-placeholder\">SDD</h1>", slide_030)
+        for snippet in [
+            "Spec-Driven Development",
+            "GitHub Copilot icon",
+            "GitHub spec-kit",
+            "WHAT",
+            "WHY",
+            "HOW",
+            "/speckit.specify",
+            "/speckit.plan",
+            "/speckit.tasks",
+            "[NEEDS CLARIFICATION]",
+            "Constitution Check",
+        ]:
+            self.assertIn(snippet, slide_030)
+        self.assertNotIn("하네스", slide_030)
+        self.assertIn("<h1 class=\"title-placeholder statement-text\">TDD (Test-Driven Development)</h1>", slide_031)
+        self.assertIn("tdd-control-lead", slide_031)
+        for snippet in [
+            "테스트를 먼저 쓰고, 통과하는 코드를 나중에 쓴다",
+            "AI 시대에는 인간이 테스트, AI가 구현",
+            "Red",
+            "Green",
+            "Refactor",
+            "인간이 실패 테스트 작성",
+            "AI가 통과 코드 구현",
+            "인간 리뷰 → AI가 리팩토링",
+            "왜 AI에게 특히 중요한가",
+            'AI는 &quot;동작하는 것 같은&quot; 코드를 자신 있게 만듦',
+            "테스트 없으면 맞는지 틀린지 확인 불가.",
+            "AI의 치팅에 주의",
+            "테스트 수정 금지 규칙 필수",
+            "테스트 코드 임의 수정 금지",
+            "assert 조건 약화",
+            "실패 확인 전 구현 금지",
+        ]:
+            self.assertIn(snippet, slide_031)
+        self.assertIn("tdd-control-layers-body", slide_031)
+        self.assertIn("tdd-flow-stack", slide_031)
+        self.assertEqual(slide_031.count("tdd-flow-step"), 3)
+        self.assertIn("tdd-control-column", slide_031)
+        self.assertEqual(slide_031.count("tdd-control-block"), 2)
+        self.assertNotIn("AI 시대의 TDD는 권한 통제 기법", slide_031)
+        self.assertNotIn("권한 통제", slide_031)
+        self.assertNotIn("REFACTOR", slide_031)
+        self.assertNotIn("assert 약화 금지 · 구현 먼저 금지", slide_031)
+        self.assertNotIn("decision-map-body", slide_031)
+        self.assertIn("<h1 class=\"title-placeholder\">Waterfall vs SDD</h1>", slide_032)
+        for snippet in [
+            "Waterfall",
+            "SDD",
+            "개발 흐름",
+            "검증 시점",
+            "실행 산출물",
+            "요구사항 → 설계 → 코딩 → 테스트",
+            "테스트가 개발 후반에 실제 제약을 드러냄",
+            "스펙이 primary artifact",
+            "/speckit.specify",
+            "/speckit.plan",
+            "/speckit.tasks",
+            "요구사항 또는 설계를 다시 고침",
+            "spec · plan · tasks를 실행 산출물로 갱신",
+        ]:
+            self.assertIn(snippet, slide_032)
+        self.assertNotIn("Waterfall은 끝에서 제약이 드러나고, SDD는 스펙이 계획과 태스크를 만든다.", slide_032)
+        for forbidden in ["AI 시대 SDD + TDD", "앞단의 문서", "검증은", "실제 작동 원리", "문서의 성격", "검증 타이밍", "작동 방식", "검증 루프"]:
+            self.assertNotIn(forbidden, slide_032)
+        self.assertIn("waterfall-comparison-body", slide_032)
+        self.assertIn("comparison-row-grid", slide_032)
+        self.assertNotIn("comparison-synthesis", slide_032)
+        self.assertEqual(slide_032.count('<article class="comparison-row"'), 3)
+        self.assertNotIn("compare-grid", slide_032)
+        self.assertNotIn("하네스", slide_032)
+        self.assertIn("spec-tdd-subheading", slide_033)
+        for snippet in ["SDD + TDD가 Harness로 이어지는 이유", "스펙 템플릿", "계획 문서", "TDD 루프", "Skills", "Hooks", "하네스", "이 시스템이 곧 하네스 엔지니어링"]:
+            self.assertIn(snippet, slide_033)
+        self.assertIn("spec-tdd-bridge-body", slide_033)
+        self.assertNotIn("spec-tdd-thesis", slide_033)
+        self.assertNotIn("Spec + TDD", slide_033)
+        self.assertIn("spec-tdd-card-grid", slide_033)
+        self.assertIn("spec-tdd-plus", slide_033)
+        self.assertEqual(slide_033.count('<article class="spec-tdd-card"'), 2)
+        self.assertIn("spec-tdd-synthesis", slide_033)
+        self.assertNotIn("decision-map-body", slide_033)
+        tdd_card = slide_033.split("<h2>TDD</h2>", maxsplit=1)[1].split("</article>", maxsplit=1)[0]
+        self.assertNotIn("하네스", tdd_card)
+        self.assertIn("<h1 class=\"title-placeholder\">프롬프트를 넘어서</h1>", slide_034)
+        self.assertIn("section-keyword-plain", slide_034)
+        self.assertNotIn("<li class=\"section-keyword\">", slide_034)
+        for snippet in ["Prompt", "Context", "Harness"]:
+            self.assertIn(snippet, slide_034)
+        self.assertIn("<h1 class=\"title-placeholder\">Prompt, Context, Harness</h1>", slide_035)
+        for snippet in ["무엇을/어떻게 말할 것인가", "무엇을/어떻게 보여줄 것인가", "무엇을/어떻게 통제할 것인가", "Prompt ⊂ Context ⊂ Harness"]:
+            self.assertIn(snippet, slide_035)
+        self.assertIn("<h1 class=\"title-placeholder\">Agent = Model + Harness</h1>", slide_036)
+        for snippet in ["모델이 아닌 것은 전부 하네스입니다.", "LangChain, Vivek Trivedy", "Context Engineering", "Tool Orchestration", "State &amp; Memory", "Verification Loop", "Error Recovery", "Human-in-the-Loop Control"]:
+            self.assertIn(snippet, slide_036)
+        self.assertIn("quote-card-block", slide_036)
+        self.assertIn("agent-quote-block", slide_036)
+        self.assertIn("agent-component-grid", slide_036)
+        self.assertNotIn("table-callout", slide_036)
+        self.assertIn("<h1 class=\"title-placeholder\">에이전트 루프: 하네스의 심장</h1>", slide_037)
+        self.assertIn("loop-synthesis", slide_037)
+        self.assertNotIn("loop-center centered-claim", slide_037)
+        self.assertIn("이 네 지점을 신뢰성 있게 만드는 일", slide_037)
+        self.assertNotIn("하네스 엔지니어링 = 이 네 단계의 신뢰성", slide_037)
+        for snippet in ["gather context", "take action", "verify work", "repeat"]:
+            self.assertIn(snippet, slide_037)
+        self.assertIn("<h1 class=\"title-placeholder\">하네스의 책임</h1>", slide_038)
+        self.assertNotIn("먼저 책임을 정하고, 그다음 도구와 게이트를 배치", slide_038)
+        self.assertIn("<h1 class=\"title-placeholder\">하네스의 도구</h1>", slide_039)
+        self.assertNotIn("<h1 class=\"title-placeholder\">책임과 도구는 1:1이 아니다</h1>", slide_039)
+        self.assertNotIn("<table class=\"data-table\">", slide_039)
+        self.assertNotIn("N:N", slide_039)
+        self.assertNotIn("하네스의 책임 ↔ 하네스의 도구", slide_039)
+        self.assertIn("tool-network-line", slide_039)
+        self.assertIn("tool-network-synthesis", slide_039)
+        self.assertIn("<p class=\"tool-network-synthesis centered-claim\">책임과 도구는 1:1이 아니다</p>", slide_039)
+        self.assertNotIn("도구 이름보다 그 도구가 맡는 책임", slide_039)
+        self.assertIn("<h1 class=\"title-placeholder\">Context Engineering</h1>", slide_040)
+        for snippet in ["smallest set of high-signal tokens", "Anthropic Research", "Write", "Select", "Compress", "Isolate"]:
+            self.assertIn(snippet, slide_040)
+        self.assertIn("quote-card-block", slide_040)
+        self.assertIn("context-quote-block", slide_040)
+        self.assertNotIn("<p class=\"flow-thesis centered-claim\">smallest set of high-signal tokens</p>", slide_040)
+        self.assertNotIn("Antrophic", slide_040)
+        self.assertIn("<h1 class=\"title-placeholder\">MCP와 Context Hub</h1>", slide_041)
+        for snippet in ["MCP", "Context Hub", "Context Hub MCP", "GitHub", "Slack", "DB", "Filesystem", "Internal API", "최신 API 문서", "모델 기억 대신"]:
+            self.assertIn(snippet, slide_041)
+        self.assertIn("mcp-context-explainer-body", slide_041)
+        self.assertIn("mcp-usage-flow", slide_041)
+        self.assertIn("context-hub-explainer-card", slide_041)
+        self.assertIn("외부 도구·데이터 소스", slide_041)
+        self.assertNotIn("mcp-tool-chip", slide_041)
+        self.assertNotIn("connected tools", slide_041)
+        self.assertNotIn("process-track", slide_041)
+        self.assertIn("<h1 class=\"title-placeholder\">RAG vs Context Hub</h1>", slide_042)
+        for snippet in ["RAG", "Context Hub MCP", "passage", "벡터 인덱스", "retriever", "공식·버전별 API 문서", "SDK/API 변경", "Lewis et al. 2020", "MCP Docs"]:
+            self.assertIn(snippet, slide_042)
+        self.assertIn("rag-context-research-body", slide_042)
+        self.assertNotIn("<table class=\"data-table\">", slide_042)
+        self.assertIn("<h1 class=\"title-placeholder\">Memory: 세션을 넘어서는 기억</h1>", slide_043)
+        self.assertNotIn("<table class=\"data-table\">", slide_043)
+        self.assertIn("memory-artifact-map", slide_043)
+        self.assertLess(slide_043.find("memory-artifact-grid"), slide_043.find("memory-core-claim"))
+        self.assertIn("대화창을 기억 저장소로 착각하지 않는다", slide_043)
+        self.assertIn("<h1 class=\"title-placeholder\">Stable Prefix와 Variable Suffix</h1>", slide_044)
+        for snippet in ["cache-sequence-body", "stable-prefix-block", "variable-suffix-block", "KV-cache", "시스템 프롬프트", "도구 정의", "장기 규칙", "최신 사용자 입력", "도구 결과", "잘 쓰는 것 못지않게 안 바꾸는 것도 능력"]:
+            self.assertIn(snippet, slide_044)
+        self.assertIn("<h1 class=\"title-placeholder\">하네스는 환경 그 자체다</h1>", slide_045)
+        for snippet in ["필요한 파일", "필요한 도구", "필요한 규칙", "Harness Builder"]:
+            self.assertIn(snippet, slide_045)
+        for index in range(28, 34):
+            slide = (ROOT / f"docs/03-html/slides/slide-{index:03d}.html").read_text(encoding="utf-8")
+            self.assertIn("CHAPTER 03", slide)
+            self.assertIn("chapter-03", slide)
+            self.assertNotIn("SECTION 3", slide)
         for index in range(15, 28):
             slide = (ROOT / f"docs/03-html/slides/slide-{index:03d}.html").read_text(encoding="utf-8")
             self.assertIn("CHAPTER 02", slide)
@@ -300,6 +535,11 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
             self.assertNotIn("ACT 2", slide)
             self.assertNotIn("ACT 3", slide)
             self.assertNotIn("LIMIT", slide)
+        for index in range(34, 46):
+            slide = (ROOT / f"docs/03-html/slides/slide-{index:03d}.html").read_text(encoding="utf-8")
+            self.assertIn("CHAPTER 04", slide)
+            self.assertIn("chapter-04", slide)
+            self.assertNotIn("SECTION 4", slide)
 
         slide_011 = (ROOT / "docs/03-html/slides/slide-011.html").read_text(encoding="utf-8")
         self.assertIn("evidence-card-grid", slide_011)
@@ -309,52 +549,121 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
         self.assertIn("컴파일러가 만든 코드가 사람보다 효율적일 리 없다!", slide_005)
         self.assertNotIn("기계어를 직접 다루지 않으면 진정한 개발이 아니다!", slide_005)
         self.assertIn("<p class=\"table-question\">직접하는 일을 줄고, 설계하는 일은 늘어난다</p>", (ROOT / "docs/03-html/slides/slide-010.html").read_text(encoding="utf-8"))
-        self.assertIn("Point p = new Point(10, 20);", (ROOT / "docs/03-html/slides/slide-007.html").read_text(encoding="utf-8"))
-        self.assertNotIn("        Point p = new Point(10, 20);", (ROOT / "docs/03-html/slides/slide-007.html").read_text(encoding="utf-8"))
-        self.assertNotIn("<code>\n", (ROOT / "docs/03-html/slides/slide-007.html").read_text(encoding="utf-8"))
-        self.assertNotIn("\n</code>", (ROOT / "docs/03-html/slides/slide-007.html").read_text(encoding="utf-8"))
 
         css = (ROOT / "docs/03-html/shared/slide-base.css").read_text(encoding="utf-8")
-        tokens = (ROOT / "docs/03-html/shared/tokens.css").read_text(encoding="utf-8")
-        self.assertRegex(css, r"\.density-heavy\.family-agenda \.agenda-layout \{[^}]*grid-template-columns: minmax\(210px, 0\.82fr\) minmax\(0, 1\.18fr\);")
-        self.assertRegex(css, r"\.density-heavy\.family-agenda \.agenda-list \{[^}]*grid-template-columns: 1fr;")
-        self.assertRegex(css, r"\.density-heavy\.family-agenda \.agenda-item \{[^}]*grid-template-columns: 44px minmax\(0, 1\.12fr\) minmax\(0, 0\.98fr\);")
-        self.assertNotIn("<p class=\"prompt-label\">", slide_009)
-        self.assertRegex(css, r"\.prompt-only-body \{[^}]*align-content: start;")
-        self.assertRegex(css, r"\.prompt-card \{[^}]*justify-items: stretch;")
-        self.assertRegex(css, r"\.prompt-language-label \{[^}]*color: var\(--color-signal\);")
-        self.assertRegex(css, r"\.cot-example-diagram \{[^}]*grid-template-columns: 1fr;")
-        self.assertRegex(css, r"\.chapter-02 \.process-step \.step-title \{[^}]*font-size: 18px;")
-        self.assertRegex(css, r"\.chapter-02 \.step-copy \{[^}]*font-size: 13px;")
-        self.assertRegex(css, r"\.chapter-02 \.centered-claim \{[^}]*font-size: 20px;")
-        self.assertRegex(css, r"\.pattern-example-card \{[^}]*padding: 12px;")
-        self.assertRegex(css, r"\.cursor-architecture-example-canvas \{[^}]*grid-template-columns:")
-        self.assertRegex(css, r"\.component-tier-body \{[^}]*grid-template-columns: 84px minmax\(0, 1fr\);")
-        self.assertRegex(css, r"\.era-native-equation \{[^}]*font-size: 24px;")
-        self.assertRegex(css, r"\.evidence-card \{[^}]*min-height: 148px;")
-        self.assertRegex(css, r"\.evidence-card \{[^}]*padding: 20px 22px 22px;")
-        self.assertRegex(css, r"\.summary-card \{[^}]*background: var\(--color-surface\);")
-        self.assertRegex(css, r"\.summary-card \{[^}]*border: 1px solid var\(--color-line-soft\);")
-        self.assertRegex(css, r"\.evolution-step \{[^}]*background: var\(--color-surface\);")
-        self.assertRegex(css, r"\.evolution-step \{[^}]*border: 1px solid var\(--color-line-soft\);")
-        self.assertRegex(css, r"\.evolution-step\.is-final \{[^}]*background: var\(--color-dark-surface\);")
-        self.assertRegex(css, r"\.metric-impact-body\.is-tall-reference \{[^}]*top: 126px;")
-        self.assertRegex(css, r"\.metric-impact-body\.is-tall-reference \{[^}]*bottom: 72px;")
-        self.assertRegex(css, r"\.metric-impact-body\.is-tall-reference \.impact-card \{[^}]*min-height: 222px;")
-        self.assertRegex(css, r"\.cot-native-body \{[^}]*grid-template-columns:")
-        self.assertRegex(css, r"\.pattern-pair-body,\n\.feedback-loop-body \{[^}]*grid-template-columns: repeat\(2, minmax\(0, 1fr\)\);")
-        self.assertRegex(css, r"\.harness-era-signs-body \{[^}]*grid-template-rows: auto 1fr auto;")
-        self.assertNotIn("background: var(--color-dark-card);", css)
-        self.assertNotIn("border: 1px solid var(--color-dark-card-border);", css)
-        self.assertNotIn("background: var(--color-dark-surface-muted);", css)
-        self.assertNotIn("--color-dark-card", css + tokens)
-        self.assertNotIn("--color-dark-card-border", css + tokens)
-        self.assertNotIn("--color-dark-surface-muted", css + tokens)
-        self.assertNotIn("#f3efe7", css + tokens)
-        self.assertNotIn("#eee9e1", css + tokens)
-        self.assertNotIn("#e8e1d5", css + tokens)
-        self.assertNotIn("--color-dark-accent", css + tokens)
-        self.assertNotIn("#c76640", css + tokens)
+        self.assertNotRegex(css, r"\.section-keyword \{")
+        self.assertRegex(css, r"\.section-keyword-plain \{[^}]*color: rgba\(255, 255, 255, 0\.92\);")
+        self.assertRegex(css, r"\.tool-network-line \{[^}]*stroke: var\(--color-signal\);")
+        self.assertRegex(css, r"\.memory-artifact-grid \{[^}]*grid-template-columns:")
+        self.assertRegex(css, r"\.cache-sequence-body \{[^}]*grid-template-columns:")
+        self.assertRegex(css, r"\.quote-card-block \{[^}]*background: var\(--color-dark-surface\);")
+        self.assertRegex(css, r"\.agent-component-grid \{[^}]*max-width: 690px;")
+        self.assertRegex(css, r"\.context-quote-block \{[^}]*max-width: 640px;")
+        self.assertRegex(css, r"\.mcp-context-explainer-body \{[^}]*grid-template-columns:")
+        self.assertRegex(css, r"\.rag-context-research-body \{[^}]*top:")
+
+    def test_chapter_03_revision_5_focus(self) -> None:
+        run_builder()
+
+        slide_031 = SLIDE_031_PATH.read_text(encoding="utf-8")
+        slide_032 = SLIDE_032_PATH.read_text(encoding="utf-8")
+        slide_033 = SLIDE_033_PATH.read_text(encoding="utf-8")
+
+        self.assertIn("<h1 class=\"title-placeholder statement-text\">TDD (Test-Driven Development)</h1>", slide_031)
+        self.assertIn("tdd-control-lead", slide_031)
+        for snippet in [
+            "테스트를 먼저 쓰고, 통과하는 코드를 나중에 쓴다",
+            "AI 시대에는 인간이 테스트, AI가 구현",
+            "Red",
+            "Green",
+            "Refactor",
+            "인간이 실패 테스트 작성",
+            "AI가 통과 코드 구현",
+            "인간 리뷰 → AI가 리팩토링",
+            "왜 AI에게 특히 중요한가",
+            'AI는 &quot;동작하는 것 같은&quot; 코드를 자신 있게 만듦',
+            "테스트 없으면 맞는지 틀린지 확인 불가.",
+            "AI의 치팅에 주의",
+            "테스트 수정 금지 규칙 필수",
+            "테스트 코드 임의 수정 금지",
+            "assert 조건 약화",
+            "실패 확인 전 구현 금지",
+        ]:
+            self.assertIn(snippet, slide_031)
+
+        self.assertIn("<h1 class=\"title-placeholder\">Waterfall vs SDD</h1>", slide_032)
+        for snippet in [
+            "Waterfall",
+            "SDD",
+            "개발 흐름",
+            "검증 시점",
+            "실행 산출물",
+            "요구사항 → 설계 → 코딩 → 테스트",
+            "테스트가 개발 후반에 실제 제약을 드러냄",
+            "스펙이 primary artifact",
+            "/speckit.specify",
+            "/speckit.plan",
+            "/speckit.tasks",
+            "요구사항 또는 설계를 다시 고침",
+            "spec · plan · tasks를 실행 산출물로 갱신",
+        ]:
+            self.assertIn(snippet, slide_032)
+        self.assertNotIn("Waterfall은 끝에서 제약이 드러나고, SDD는 스펙이 계획과 태스크를 만든다.", slide_032)
+        self.assertNotIn("comparison-synthesis", slide_032)
+        for forbidden in ["AI 시대 SDD + TDD", "앞단의 문서", "검증은", "실제 작동 원리", "문서의 성격", "검증 타이밍", "작동 방식", "검증 루프", "timing · storage · I/O"]:
+            self.assertNotIn(forbidden, slide_032)
+
+        self.assertIn("spec-tdd-subheading", slide_033)
+        for snippet in [
+            "SDD + TDD가 Harness로 이어지는 이유",
+            "스펙 템플릿",
+            "계획 문서",
+            "TDD 루프",
+            "Skills",
+            "Hooks",
+            "하네스",
+            "이 시스템이 곧 하네스 엔지니어링",
+        ]:
+            self.assertIn(snippet, slide_033)
+        self.assertNotIn("spec-tdd-thesis", slide_033)
+        self.assertNotIn("Spec + TDD", slide_033)
+        tdd_card = slide_033.split("<h2>TDD</h2>", maxsplit=1)[1].split("</article>", maxsplit=1)[0]
+        self.assertNotIn("하네스", tdd_card)
+
+    def test_chapter_03_revision_6_focus(self) -> None:
+        run_builder()
+
+        slide_030 = SLIDE_030_PATH.read_text(encoding="utf-8")
+        slide_032 = SLIDE_032_PATH.read_text(encoding="utf-8")
+        slide_033 = SLIDE_033_PATH.read_text(encoding="utf-8")
+        css = (ROOT / "docs/03-html/shared/slide-base.css").read_text(encoding="utf-8")
+
+        for snippet in [
+            "spec-kit-workflow-body",
+            "GitHub Copilot icon",
+            "GitHub spec-kit",
+            "/speckit.specify",
+            "/speckit.plan",
+            "/speckit.tasks",
+        ]:
+            self.assertIn(snippet, slide_030)
+
+        self.assertIn("comparison-column-header is-focus", slide_032)
+        self.assertNotIn("comparison-synthesis", slide_032)
+        self.assertNotIn("Waterfall은 끝에서 제약이 드러나고, SDD는 스펙이 계획과 태스크를 만든다.", slide_032)
+
+        self.assertIn("spec-tdd-subheading", slide_033)
+        self.assertNotIn("spec-tdd-thesis", slide_033)
+        self.assertNotIn("Spec + TDD", slide_033)
+        tdd_card = slide_033.split("<h2>TDD</h2>", maxsplit=1)[1].split("</article>", maxsplit=1)[0]
+        self.assertNotIn("하네스", tdd_card)
+
+        self.assertRegex(css, r"\.spec-tdd-subheading \{[^}]*color: var\(--color-ink\);")
+        self.assertRegex(css, r"\.spec-tdd-card-grid \{[^}]*left: 72px;[^}]*right: 72px;[^}]*grid-template-columns: minmax\(0, 1fr\) 34px minmax\(0, 1fr\);[^}]*gap: 16px;")
+        self.assertRegex(css, r"\.spec-tdd-card \{[^}]*min-height: 88px;[^}]*padding: 16px 18px 14px;[^}]*gap: 10px;")
+        self.assertRegex(css, r"\.spec-tdd-card h2 \{[^}]*font-size: 24px;")
+        self.assertRegex(css, r"\.spec-tdd-card li \{[^}]*font-size: 16px;")
+        self.assertRegex(css, r"\.comparison-column-headers \{[^}]*grid-template-columns: minmax\(170px, 0\.62fr\) minmax\(0, 1fr\) 24pt minmax\(0, 1fr\);")
 
 
 if __name__ == "__main__":

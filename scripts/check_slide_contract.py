@@ -99,6 +99,16 @@ def main() -> int:
     errors: list[str] = []
     warnings: list[str] = []
 
+    css_text = ""
+    slide_base_css = ROOT / "docs/03-html/shared/slide-base.css"
+    if slide_base_css.exists():
+        css_text = slide_base_css.read_text(encoding="utf-8")
+
+    expected_slide_ids = [f"S{index:03d}" for index in range(1, 46)]
+    actual_slide_ids = [row["slide id"] for row in rows]
+    if actual_slide_ids != expected_slide_ids:
+        errors.append("manifest must register exactly S001-S045 in order")
+
     for css_path in [
         ROOT / "docs/03-html/shared/tokens.css",
         ROOT / "docs/03-html/shared/slide-base.css",
@@ -171,6 +181,10 @@ def main() -> int:
                     required_classes = ["top-band", "harness-layered-body", "harness-core", "harness-layer-row", "harness-decision", "footer"]
                 elif "decision-map-body" in html:
                     required_classes = ["top-band", "decision-map-body", "decision-thesis", "decision-grid", "decision-card", "footer"]
+                elif "tdd-control-layers-body" in html:
+                    required_classes = ["top-band", "tdd-control-layers-body", "tdd-control-grid", "tdd-flow-step", "tdd-control-block", "footer"]
+                elif "spec-tdd-bridge-body" in html:
+                    required_classes = ["statement-panel", "statement-tag", "statement-text", "spec-tdd-card-grid", "spec-tdd-plus", "statement-support", "footer"]
             elif shell == "evidence-table-shell" and "evidence-cards-body" in html:
                 required_classes = ["top-band", "table-wrap", "evidence-cards-body", "evidence-card-grid", "evidence-card", "footer"]
             elif shell == "evidence-table-shell" and "agentic-pattern-quadrant-body" in html:
@@ -179,6 +193,14 @@ def main() -> int:
                 required_classes = ["top-band", "asset-card-body", "reference-asset-figure", "evidence-card-grid", "evidence-card", "footer"]
             elif shell == "evidence-table-shell" and "era-native-body" in html:
                 required_classes = ["top-band", "era-native-body", "era-native-track", "era-native-card", "era-native-formula", "era-native-equation", "footer"]
+            elif shell == "evidence-table-shell" and "tool-relation-map" in html:
+                required_classes = ["top-band", "table-wrap", "tool-relation-map", "responsibility-column", "tool-cluster-grid", "relation-connector", "tool-network-line", "tool-network-synthesis", "footer"]
+            elif shell == "evidence-table-shell" and "memory-artifact-map" in html:
+                required_classes = ["top-band", "table-wrap", "memory-artifact-map", "memory-artifact-card", "memory-core-claim", "footer"]
+            elif shell == "evidence-table-shell" and "agent-harness-quote-body" in html:
+                required_classes = ["top-band", "table-wrap", "agent-harness-quote-body", "quote-card-block", "agent-quote-block", "agent-component-grid", "agent-component-card", "footer"]
+            elif shell == "evidence-table-shell" and "rag-context-research-body" in html:
+                required_classes = ["top-band", "table-wrap", "rag-context-research-body", "rag-context-grid", "rag-context-card", "rag-context-decision", "research-source-line", "footer"]
             elif shell == "process-flow-shell" and "prompt-era-body" in html:
                 required_classes = ["top-band", "prompt-era-body", "prompt-era-card", "prompt-era-arrow", "footer"]
             elif shell == "process-flow-shell" and "evolution-body" in html:
@@ -205,6 +227,14 @@ def main() -> int:
                 required_classes = ["top-band", "asset-process-body", "asset-process-figure", "asset-process-list", "process-step", "footer"]
             elif shell == "process-flow-shell" and "loop-cycle-body" in html:
                 required_classes = ["top-band", "loop-cycle-body", "loop-cycle-track", "process-step", "loop-cycle-arrow", "footer"]
+            elif shell == "process-flow-shell" and "context-engineering-body" in html:
+                required_classes = ["top-band", "context-engineering-body", "context-strategy-grid", "quote-card-block", "context-quote-block", "process-step", "footer"]
+            elif shell == "process-flow-shell" and "mcp-context-explainer-body" in html:
+                required_classes = ["top-band", "mcp-context-explainer-body", "mcp-usage-panel", "mcp-usage-flow", "mcp-usage-node", "context-hub-explainer-card", "context-hub-principle", "footer"]
+            elif shell == "split-compare-shell" and "waterfall-comparison-body" in html:
+                required_classes = ["top-band", "waterfall-comparison-body", "comparison-row-grid", "comparison-row", "footer"]
+            elif shell == "split-compare-shell" and "cache-sequence-body" in html:
+                required_classes = ["top-band", "cache-sequence-body", "stable-prefix-block", "variable-suffix-block", "cache-token-stack", "cache-synthesis", "footer"]
 
             for class_name in required_classes:
                 if not has_class(html, class_name):
@@ -215,6 +245,8 @@ def main() -> int:
                 step_count = len(re.findall(r'class="[^"]*\bevolution-step\b[^"]*"', html))
             elif "prompt-era-body" in html or "cursor-tools-body" in html:
                 step_count = 3
+            elif "mcp-architecture-body" in html or "mcp-context-explainer-body" in html:
+                step_count = 4
             elif "pattern-pair-body" in html or "feedback-loop-body" in html:
                 step_count = 3
             else:
@@ -222,12 +254,23 @@ def main() -> int:
             if step_count < 3:
                 errors.append(f"{slide_id}: process-flow-shell requires at least three steps")
 
+        if slide_id == "S032" and "comparison-synthesis" in html:
+            errors.append("S032: bottom one-line synthesis/dark bar must be removed")
+
+        if slide_id == "S033":
+            if "spec-tdd-thesis" in html or ">Spec + TDD<" in html:
+                errors.append("S033: central visible Spec + TDD thesis text must be removed")
+
         if shell == "evidence-table-shell":
             has_table = "<table class=\"data-table\">" in html
             has_cards = "evidence-card-grid" in html
             has_asset_cards = "asset-card-body" in html and has_cards
             has_era_native = "era-native-body" in html and "era-native-card" in html
-            if not has_table and not has_cards and not has_asset_cards and not has_era_native:
+            has_tool_relation_map = "tool-relation-map" in html
+            has_memory_artifact_map = "memory-artifact-map" in html
+            has_agent_harness_quote = "agent-harness-quote-body" in html
+            has_rag_context_research = "rag-context-research-body" in html
+            if not has_table and not has_cards and not has_asset_cards and not has_era_native and not has_tool_relation_map and not has_memory_artifact_map and not has_agent_harness_quote and not has_rag_context_research:
                 errors.append(f"{slide_id}: evidence-table-shell requires a data table or evidence cards")
             if has_cards and "원문 사실" in html:
                 errors.append(f"{slide_id}: evidence cards must not include a 원문 사실 column")
@@ -282,16 +325,41 @@ def main() -> int:
             if "SECTION 1" in html:
                 errors.append(f"{slide_id}: stale SECTION 1 label remains")
         if slide_id == "S018":
-            if '<h1 class="title-placeholder">Chain-of-Thought</h1>' not in html:
-                errors.append(f"{slide_id}: title must be Chain-of-Thought")
-            for class_name in ["cot-native-body", "cot-example-diagram", "cot-reasoning-step"]:
+            if '<h1 class="title-placeholder">CoT / ReAct / ToT</h1>' not in html:
+                errors.append(f"{slide_id}: title must be CoT / ReAct / ToT")
+            for class_name in ["cot-triad-body", "cot-triad-card", "cot-triad-diagram", "cot-diagram-svg", "cot-cot-svg", "cot-react-svg", "cot-tot-svg"]:
                 if not has_class(html, class_name):
-                    errors.append(f"{slide_id}: CoT slide requires native class '{class_name}'")
-            for snippet in ["중간 추론 단계", "2캔 × 3개", "11개"]:
+                    errors.append(f"{slide_id}: triad slide requires native class '{class_name}'")
+            for snippet in [
+                "Chain-of-Thought",
+                "CoT",
+                "중간 추론 단계",
+                "ReAct",
+                "Reason + Act",
+                "추론과 행동 반복",
+                "Tree-of-Thought",
+                "ToT",
+                "여러 추론 경로",
+                "LM",
+                "Env",
+                "Reasoning Traces",
+                "Actions",
+                "Observations",
+                "ReAct (Reason + Act)",
+            ]:
                 if snippet not in html:
-                    errors.append(f"{slide_id}: CoT example missing snippet {snippet}")
-            if "02-chain-of-thought.png" in html or "ReAct" in html:
-                errors.append(f"{slide_id}: CoT slide must not embed assets or include adjacent patterns")
+                    errors.append(f"{slide_id}: triad slide missing snippet {snippet}")
+            for forbidden in [
+                "2캔 × 3개",
+                "11개",
+                "Graph-of-Thought",
+                "GoT",
+                "02-chain-of-thought.png",
+                "http://",
+                "https://",
+            ]:
+                if forbidden in html:
+                    errors.append(f"{slide_id}: triad slide has forbidden visible/reference token {forbidden}")
         if slide_id == "S019":
             if '<h1 class="title-placeholder">ReAct / Tree-of-Thought</h1>' not in html:
                 errors.append(f"{slide_id}: title must be ReAct / Tree-of-Thought")
@@ -377,6 +445,224 @@ def main() -> int:
                 errors.append(f"{slide_id}: era nesting diagram must be removed")
             if "01-three-era-timeline.png" in html:
                 errors.append(f"{slide_id}: raw timeline reference asset is forbidden")
+        if slide_id == "S028":
+            if '<h1 class="title-placeholder">AI 시대의 개발 방법론</h1>' not in html:
+                errors.append(f"{slide_id}: chapter divider title must be fixed")
+            if "<li class=\"section-keyword\">" in html:
+                errors.append(f"{slide_id}: chapter divider must stay section-only without keyword chips")
+        if slide_id == "S029":
+            for snippet in ["2025.02", "Vibe Coding", "2025 중반", "구조화된 검토", "2025 하반기", "Spec-first", "2026 초", "Context Engineering"]:
+                if snippet not in html:
+                    errors.append(f"{slide_id}: method timeline missing snippet {snippet}")
+            if "AI에게 무엇을 시킬지, 어떻게 검증할 것인지" not in html:
+                errors.append(f"{slide_id}: method timeline question is missing")
+            content_without_footer = html.split('<footer class="footer">', maxsplit=1)[0]
+            for forbidden in ["Harness", "Agent", "Prompt", "Model", "Waterfall"]:
+                if forbidden in content_without_footer:
+                    errors.append(f"{slide_id}: topic creep label is forbidden: {forbidden}")
+        if slide_id == "S030":
+            for snippet in ["SDD", "Spec-Driven Development", "WHAT", "WHY", "HOW", "/speckit.specify", "/speckit.plan", "/speckit.tasks", "[NEEDS CLARIFICATION]", "Constitution Check"]:
+                if snippet not in html:
+                    errors.append(f"{slide_id}: SDD flow missing snippet {snippet}")
+            if "하네스" in html:
+                errors.append(f"{slide_id}: SDD page must not become a Harness summary")
+        if slide_id == "S031":
+            for snippet in [
+                "TDD (Test-Driven Development)",
+                "테스트를 먼저 쓰고, 통과하는 코드를 나중에 쓴다",
+                "AI 시대에는 인간이 테스트, AI가 구현",
+                "Red",
+                "Green",
+                "Refactor",
+                "인간이 실패 테스트 작성",
+                "AI가 통과 코드 구현",
+                "인간 리뷰 → AI가 리팩토링",
+                "왜 AI에게 특히 중요한가",
+                'AI는 &quot;동작하는 것 같은&quot; 코드를 자신 있게 만듦',
+                "테스트 없으면 맞는지 틀린지 확인 불가.",
+                "AI의 치팅에 주의",
+                "테스트 수정 금지 규칙 필수",
+                "테스트 코드 임의 수정 금지",
+                "assert 조건 약화",
+                "실패 확인 전 구현 금지",
+            ]:
+                if snippet not in html:
+                    errors.append(f"{slide_id}: TDD control map missing snippet {snippet}")
+            for class_name in ["tdd-control-layers-body", "tdd-flow-stack", "tdd-control-column", "tdd-control-lead"]:
+                if not has_class(html, class_name):
+                    errors.append(f"{slide_id}: TDD revision requires class '{class_name}'")
+            if len(re.findall(r'class="[^"]*\btdd-flow-step\b[^"]*"', html)) != 3:
+                errors.append(f"{slide_id}: TDD revision must render exactly three left flow steps")
+            if len(re.findall(r'class="[^"]*\btdd-control-block\b[^"]*"', html)) != 2:
+                errors.append(f"{slide_id}: TDD revision must render exactly two right control blocks")
+            if "AI 시대의 TDD는 권한 통제 기법" in html:
+                errors.append(f"{slide_id}: large TDD authority statement card must be removed")
+            for forbidden in ["REFACTOR", "권한 통제", "assert 약화 금지 · 구현 먼저 금지"]:
+                if forbidden in html:
+                    errors.append(f"{slide_id}: stale TDD control copy remains: {forbidden}")
+            if "decision-map-body" in html:
+                errors.append(f"{slide_id}: stale four-card decision map remains")
+        if slide_id == "S032":
+            for snippet in [
+                "Waterfall",
+                "SDD",
+                "Waterfall vs SDD",
+                "개발 흐름",
+                "검증 시점",
+                "실행 산출물",
+                "요구사항 → 설계 → 코딩 → 테스트",
+                "테스트가 개발 후반에 실제 제약을 드러냄",
+                "스펙이 primary artifact",
+                "/speckit.specify",
+                "/speckit.plan",
+                "/speckit.tasks",
+                "요구사항 또는 설계를 다시 고침",
+                "spec · plan · tasks를 실행 산출물로 갱신",
+            ]:
+                if snippet not in html:
+                    errors.append(f"{slide_id}: Waterfall comparison missing snippet {snippet}")
+            for class_name in ["waterfall-comparison-body", "comparison-column-spacer", "comparison-row-grid"]:
+                if not has_class(html, class_name):
+                    errors.append(f"{slide_id}: Waterfall comparison requires class '{class_name}'")
+            if len(re.findall(r'<article class="[^"]*\bcomparison-row\b[^"]*"', html)) != 3:
+                errors.append(f"{slide_id}: Waterfall comparison must render exactly three horizontal rows")
+            if "compare-grid" in html:
+                errors.append(f"{slide_id}: stale skewed split comparison layout remains")
+            for forbidden in ["AI 시대 SDD + TDD", "앞단의 문서", "검증은", "실제 작동 원리", "문서의 성격", "검증 타이밍", "작동 방식", "검증 루프", "timing · storage · I/O"]:
+                if forbidden in html:
+                    errors.append(f"{slide_id}: stale Waterfall comparison copy remains: {forbidden}")
+            if "Waterfall은 끝에서 제약이 드러나고, SDD는 스펙이 계획과 태스크를 만든다." in html:
+                errors.append(f"{slide_id}: stale bottom synthesis remains")
+            if "하네스" in html:
+                errors.append(f"{slide_id}: Waterfall comparison must not bridge to Harness")
+        if slide_id == "S033":
+            for snippet in ["SDD + TDD가 Harness로 이어지는 이유", "스펙 템플릿", "계획 문서", "TDD 루프", "Skills", "Hooks", "하네스", "이 시스템이 곧 하네스 엔지니어링"]:
+                if snippet not in html:
+                    errors.append(f"{slide_id}: Harness bridge missing snippet {snippet}")
+            for class_name in ["spec-tdd-bridge-body", "spec-tdd-subheading", "spec-tdd-card-grid", "spec-tdd-plus", "spec-tdd-synthesis"]:
+                if not has_class(html, class_name):
+                    errors.append(f"{slide_id}: Spec + TDD bridge requires class '{class_name}'")
+            if "spec-tdd-thesis" in html or "Spec + TDD" in html:
+                errors.append(f"{slide_id}: stale explicit Spec + TDD thesis remains")
+            if len(re.findall(r'<article class="[^"]*\bspec-tdd-card\b[^"]*"', html)) != 2:
+                errors.append(f"{slide_id}: Spec + TDD bridge must render exactly two large cards")
+            if "decision-map-body" in html:
+                errors.append(f"{slide_id}: stale four-card decision map remains")
+            tdd_card_match = re.search(
+                r'<article class="[^"]*\bspec-tdd-card\b[^"]*">\s*<h2>TDD</h2>(.*?)</article>',
+                html,
+                flags=re.DOTALL,
+            )
+            if tdd_card_match is None:
+                errors.append(f"{slide_id}: Spec + TDD bridge must render a TDD card")
+            elif "하네스" in tdd_card_match.group(1):
+                errors.append(f"{slide_id}: TDD card must not list 하네스 as an item")
+        if slide_id == "S034":
+            for snippet in ["프롬프트를 넘어서", "Prompt", "Context", "Harness"]:
+                if snippet not in html:
+                    errors.append(f"{slide_id}: chapter divider missing snippet {snippet}")
+            if '<li class="section-keyword">' in html or re.search(r"\.section-keyword\s*\{", css_text):
+                errors.append(f"{slide_id}: section divider keywords must not render as pill/chip elements")
+            if "section-keyword-plain" not in html:
+                errors.append(f"{slide_id}: section divider keywords must use plain text rail")
+        if slide_id == "S035":
+            for snippet in ["Prompt", "Context", "Harness", "무엇을/어떻게 말할 것인가", "무엇을/어떻게 보여줄 것인가", "무엇을/어떻게 통제할 것인가", "Prompt ⊂ Context ⊂ Harness"]:
+                if snippet not in html:
+                    errors.append(f"{slide_id}: hierarchy slide missing snippet {snippet}")
+        if slide_id == "S036":
+            for snippet in ["Agent = Model + Harness", "모델이 아닌 것은 전부 하네스입니다.", "LangChain, Vivek Trivedy", "Context Engineering", "Tool Orchestration", "State &amp; Memory", "Verification Loop", "Error Recovery", "Human-in-the-Loop Control"]:
+                if snippet not in html:
+                    errors.append(f"{slide_id}: agent formula slide missing snippet {snippet}")
+            if "quote-card-block" not in html or "agent-quote-block" not in html or "agent-component-grid" not in html:
+                errors.append(f"{slide_id}: quote must be emphasized in a dedicated quote card and components must render as cards")
+            if "table-callout" in html:
+                errors.append(f"{slide_id}: quote must not remain an unattributed table callout")
+        if slide_id == "S037":
+            for snippet in ["gather context", "take action", "verify work", "repeat", "이 네 지점을 신뢰성 있게 만드는 일"]:
+                if snippet not in html:
+                    errors.append(f"{slide_id}: loop slide missing snippet {snippet}")
+            if "하네스 엔지니어링 = 이 네 단계의 신뢰성" in html:
+                errors.append(f"{slide_id}: rejected non-source one-line statement remains")
+            if 'class="flow-thesis loop-center centered-claim"' in html:
+                errors.append(f"{slide_id}: center claim card must not remain in the loop")
+            if "loop-synthesis" not in html:
+                errors.append(f"{slide_id}: loop claim must move to synthesis strip")
+        if slide_id == "S038":
+            for snippet in ["Guardrails", "Specification", "Verification", "State Management", "Observability"]:
+                if snippet not in html:
+                    errors.append(f"{slide_id}: responsibilities slide missing snippet {snippet}")
+            if "먼저 책임을 정하고" in html:
+                errors.append(f"{slide_id}: awkward one-line thesis card must be removed")
+        if slide_id == "S039":
+            if '<h1 class="title-placeholder">하네스의 도구</h1>' not in html:
+                errors.append(f"{slide_id}: title must be 하네스의 도구")
+            if "<table class=\"data-table\">" in html:
+                errors.append(f"{slide_id}: tool relation map must not collapse into a data table")
+            if "<h1 class=\"title-placeholder\">책임과 도구는 1:1이 아니다</h1>" in html:
+                errors.append(f"{slide_id}: 1:1 statement must not be the title")
+            if "N:N" in html or "relation-tags" in html:
+                errors.append(f"{slide_id}: crude N:N badge/tag mapping must not remain")
+            if "tool-network-line" not in html or "tool-network-synthesis" not in html:
+                errors.append(f"{slide_id}: tool relation map must use native connector network")
+            if '<p class="tool-network-synthesis centered-claim">책임과 도구는 1:1이 아니다</p>' not in html:
+                errors.append(f"{slide_id}: bottom synthesis must be 책임과 도구는 1:1이 아니다")
+            if "도구 이름보다 그 도구가 맡는 책임" in html:
+                errors.append(f"{slide_id}: stale bottom synthesis remains")
+            if "하네스의 책임 ↔ 하네스의 도구" in html:
+                errors.append(f"{slide_id}: redundant responsibility/tool label must be removed")
+        if slide_id == "S040":
+            for snippet in ["Context Engineering", "smallest set of high-signal tokens", "Anthropic Research", "Write", "Select", "Compress", "Isolate"]:
+                if snippet not in html:
+                    errors.append(f"{slide_id}: context engineering slide missing snippet {snippet}")
+            if "context-quote-block" not in html or "quote-card-block" not in html:
+                errors.append(f"{slide_id}: Anthropic phrase must render as dedicated quote card treatment")
+            if 'class="flow-thesis centered-claim">smallest set of high-signal tokens' in html:
+                errors.append(f"{slide_id}: Anthropic phrase must not remain as oversized flow thesis")
+            if "Antrophic" in html:
+                errors.append(f"{slide_id}: misspelled Anthropic source label remains")
+        if slide_id == "S041":
+            for snippet in ["MCP", "Context Hub", "Context Hub MCP", "GitHub", "Slack", "DB", "Filesystem", "Internal API", "외부 도구·데이터 소스", "최신 API 문서", "모델 기억 대신"]:
+                if snippet not in html:
+                    errors.append(f"{slide_id}: MCP slide missing snippet {snippet}")
+            if "mcp-context-explainer-body" not in html:
+                errors.append(f"{slide_id}: MCP slide must use left/right explainer layout")
+            if "mcp-tool-grid" in html or "mcp-tool-chip" in html:
+                errors.append(f"{slide_id}: MCP slide must not remain a tool-chip pile")
+            if "process-track" in html:
+                errors.append(f"{slide_id}: MCP slide must not remain a generic process list")
+            if "connected tools" in html:
+                errors.append(f"{slide_id}: source-outside English helper label remains")
+        if slide_id == "S042":
+            for snippet in ["RAG", "Context Hub MCP", "passage", "벡터 인덱스", "retriever", "공식·버전별 API 문서", "SDK/API 변경", "Lewis et al. 2020", "MCP Docs"]:
+                if snippet not in html:
+                    errors.append(f"{slide_id}: RAG vs Context Hub slide missing snippet {snippet}")
+            if "<table class=\"data-table\">" in html:
+                errors.append(f"{slide_id}: researched RAG vs Context Hub slide must not remain the old rough table")
+            if "rag-context-research-body" not in html:
+                errors.append(f"{slide_id}: researched RAG vs Context Hub slide must use native research comparison cards")
+        if slide_id == "S043":
+            if "<table class=\"data-table\">" in html:
+                errors.append(f"{slide_id}: memory slide must not render as a two-column table")
+            if "memory-artifact-map" not in html:
+                errors.append(f"{slide_id}: memory slide must use native memory-artifact-map composition")
+            if html.find("memory-core-claim") < html.find("memory-artifact-grid"):
+                errors.append(f"{slide_id}: memory claim must sit below artifact grid")
+            for snippet in ["Memory: 세션을 넘어서는 기억", "CLAUDE.md / AGENTS.md", "프로젝트 노트와 결정 기록", "이슈와 PR 히스토리", "대화창을 기억 저장소로 착각하지 않는다"]:
+                if snippet not in html:
+                    errors.append(f"{slide_id}: memory slide missing snippet {snippet}")
+        if slide_id == "S044":
+            for class_name in ["cache-sequence-body", "stable-prefix-block", "variable-suffix-block", "cache-token-stack", "cache-synthesis"]:
+                if not has_class(html, class_name):
+                    errors.append(f"{slide_id}: Stable Prefix slide requires class '{class_name}'")
+            for snippet in ["Stable Prefix", "Variable Suffix", "KV-cache", "시스템 프롬프트", "도구 정의", "장기 규칙", "최신 사용자 입력", "도구 결과", "잘 쓰는 것 못지않게 안 바꾸는 것도 능력"]:
+                if snippet not in html:
+                    errors.append(f"{slide_id}: Stable Prefix slide missing snippet {snippet}")
+            if "<table class=\"data-table\">" in html:
+                errors.append(f"{slide_id}: Stable Prefix comparison must not be a table")
+        if slide_id == "S045":
+            for snippet in ["하네스는 환경 그 자체다", "필요한 파일", "필요한 도구", "필요한 규칙", "Harness Builder"]:
+                if snippet not in html:
+                    errors.append(f"{slide_id}: chapter conclusion missing snippet {snippet}")
         if slide_id >= "S015" and slide_id <= "S027":
             if "CHAPTER 02" not in html:
                 errors.append(f"{slide_id}: chapter label must be CHAPTER 02")
@@ -385,7 +671,20 @@ def main() -> int:
             for stale_label in ["ACT 1", "ACT 2", "ACT 3", "LIMIT"]:
                 if stale_label in html:
                     errors.append(f"{slide_id}: stale chapter helper label remains: {stale_label}")
-
+        if slide_id >= "S028" and slide_id <= "S033":
+            if "CHAPTER 03" not in html:
+                errors.append(f"{slide_id}: chapter label must be CHAPTER 03")
+            if "chapter-03" not in attrs:
+                errors.append(f"{slide_id}: main root must carry chapter-03 class")
+            if "SECTION 3" in html:
+                errors.append(f"{slide_id}: stale SECTION 3 label remains")
+        if slide_id >= "S034" and slide_id <= "S045":
+            if "CHAPTER 04" not in html:
+                errors.append(f"{slide_id}: chapter label must be CHAPTER 04")
+            if "chapter-04" not in attrs:
+                errors.append(f"{slide_id}: main root must carry chapter-04 class")
+            if "SECTION 4" in html:
+                errors.append(f"{slide_id}: stale SECTION 4 label remains")
         if slide_type == "comparison":
             compare_count = len(re.findall(r'class="[^"]*\bcompare-col\b[^"]*"', html))
             if compare_count != 2:

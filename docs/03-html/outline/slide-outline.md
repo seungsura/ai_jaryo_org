@@ -1,7 +1,7 @@
 # Slide Outline
 
-- status: 00/01/02 27-slide make-slide rebuild
-- canonical source: `docs/02-seminar/harness-rebuilt-md/00-overview.md`, `docs/02-seminar/harness-rebuilt-md/01-코딩은 사라지는가.md`, `docs/02-seminar/harness-rebuilt-md/02-왜 Claude Code인가, 그리고 왜 Harness 인가.md`
+- status: 00/01/02/03/04 45-slide make-slide rebuild
+- canonical source: `docs/02-seminar/harness-rebuilt-md/00-overview.md`, `docs/02-seminar/harness-rebuilt-md/01-코딩은 사라지는가.md`, `docs/02-seminar/harness-rebuilt-md/02-왜 Claude Code인가, 그리고 왜 Harness 인가.md`, `docs/02-seminar/harness-rebuilt-md/03-AI 시대의 개발 방법론.md`, `docs/02-seminar/harness-rebuilt-md/04-프롬프트를 넘어서: 에이전트를 움직이는 기술, Harness.md`
 - output deck: `docs/03-html/deck/index.html`
 - output script: `docs/03-html/deck/script.md`
 - theme: `minimal-light`
@@ -15,6 +15,8 @@
 | 00 | `docs/02-seminar/harness-rebuilt-md/00-overview.md` | 3 |
 | 01 | `docs/02-seminar/harness-rebuilt-md/01-코딩은 사라지는가.md` | 11 |
 | 02 | `docs/02-seminar/harness-rebuilt-md/02-왜 Claude Code인가, 그리고 왜 Harness 인가.md` | 13 |
+| 03 | `docs/02-seminar/harness-rebuilt-md/03-AI 시대의 개발 방법론.md` | 6 |
+| 04 | `docs/02-seminar/harness-rebuilt-md/04-프롬프트를 넘어서: 에이전트를 움직이는 기술, Harness.md` | 12 |
 
 ## Slide Registry
 
@@ -205,15 +207,15 @@
 - notes intent: 프롬프트 시대의 출발점 비교
 - notes status: `ready`
 
-### S018. Chain-of-Thought
+### S018. CoT / ReAct / ToT
 - file: `docs/03-html/slides/slide-018.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
 - source section: `02`
 - source paragraph block: `02-03`
-- key claim: 중간 추론 단계를 쓰게 한다
-- notes intent: Chain-of-Thought native example diagram
+- key claim: 세 추론 패턴의 구조 차이
+- notes intent: CoT / ReAct / ToT native three-card comparison
 - notes status: `ready`
 
 ### S019. ReAct / Tree-of-Thought
@@ -313,4 +315,202 @@
 - source paragraph block: `02-11`
 - key claim: Agent = Model + Harness
 - notes intent: final relationship page
+- notes status: `ready`
+
+### S028. AI 시대의 개발 방법론
+- file: `docs/03-html/slides/slide-028.html`
+- slide type: `section`
+- layout: `centered`
+- shell: `section-divider-shell`
+- source section: `03`
+- source paragraph block: `03-00`
+- key claim: TDD·SDD·Spec-first 재부상
+- notes intent: 03장 진입을 알리는 section divider
+- notes status: `ready`
+
+### S029. 왜 지금 방법론
+- file: `docs/03-html/slides/slide-029.html`
+- slide type: `table`
+- layout: `wide`
+- shell: `evidence-table-shell`
+- source section: `03`
+- source paragraph block: `03-01`
+- key claim: AI에게 무엇을 시킬지, 어떻게 검증할 것인지
+- notes intent: AI 코딩 방법론 재부상 연대기
+- notes status: `ready`
+
+### S030. SDD
+- file: `docs/03-html/slides/slide-030.html`
+- slide type: `process`
+- layout: `wide`
+- shell: `process-flow-shell`
+- source section: `03`
+- source paragraph block: `03-02`
+- key claim: 스펙이 진실의 원천
+- notes intent: GitHub Spec Kit의 세 단계와 멈춤 장치
+- notes status: `ready`
+
+### S031. TDD (Test-Driven Development)
+- file: `docs/03-html/slides/slide-031.html`
+- slide type: `statement`
+- layout: `editorial`
+- shell: `statement-editorial-shell`
+- source section: `03`
+- source paragraph block: `03-03`
+- key claim: 테스트를 먼저 쓰고, 통과하는 코드를 나중에 쓴다
+- notes intent: Page 028 TDD lead와 anti-cheat 규칙
+- notes status: `ready`
+
+### S032. Waterfall vs SDD
+- file: `docs/03-html/slides/slide-032.html`
+- slide type: `comparison`
+- layout: `split`
+- shell: `split-compare-shell`
+- source section: `03`
+- source paragraph block: `03-04`
+- key claim: Waterfall은 순차적으로 진행되고, SDD는 스펙을 실행 기준으로 둔다
+- notes intent: Royce 1970과 spec-driven.md evidence로 Waterfall vs SDD 비교
+- notes status: `ready`
+
+### S033. SDD + TDD가 Harness로 이어지는 이유
+- file: `docs/03-html/slides/slide-033.html`
+- slide type: `statement`
+- layout: `editorial`
+- shell: `statement-editorial-shell`
+- source section: `03`
+- source paragraph block: `03-05`
+- key claim: 이 시스템이 곧 하네스 엔지니어링
+- notes intent: 03장에서 04장 Harness 구조로 넘어가는 bridge
+- notes status: `ready`
+
+### S034. 프롬프트를 넘어서
+- file: `docs/03-html/slides/slide-034.html`
+- slide type: `section`
+- layout: `centered`
+- shell: `section-divider-shell`
+- source section: `04`
+- source paragraph block: `04-00`
+- key claim: Prompt, Context, Harness
+- notes intent: 04장 진입을 알리는 section divider
+- notes status: `ready`
+
+### S035. Prompt, Context, Harness
+- file: `docs/03-html/slides/slide-035.html`
+- slide type: `table`
+- layout: `wide`
+- shell: `evidence-table-shell`
+- source section: `04`
+- source paragraph block: `04-01`
+- key claim: Prompt ⊂ Context ⊂ Harness
+- notes intent: source page 36/37 의미를 한 장의 hierarchy로 압축
+- notes status: `ready`
+
+### S036. Agent = Model + Harness
+- file: `docs/03-html/slides/slide-036.html`
+- slide type: `table`
+- layout: `wide`
+- shell: `evidence-table-shell`
+- source section: `04`
+- source paragraph block: `04-02`
+- key claim: 모델이 아닌 것은 전부 하네스입니다.
+- notes intent: 공식, 인용구, 여섯 구성 요소를 한 장에 배치
+- notes status: `ready`
+
+### S037. 에이전트 루프: 하네스의 심장
+- file: `docs/03-html/slides/slide-037.html`
+- slide type: `process`
+- layout: `wide`
+- shell: `process-flow-shell`
+- source section: `04`
+- source paragraph block: `04-03`
+- key claim: 네 지점을 신뢰성 있게 만드는 일
+- notes intent: gather context, take action, verify work, repeat loop
+- notes status: `ready`
+
+### S038. 하네스의 책임
+- file: `docs/03-html/slides/slide-038.html`
+- slide type: `process`
+- layout: `wide`
+- shell: `process-flow-shell`
+- source section: `04`
+- source paragraph block: `04-04`
+- key claim: 다섯 개 기능 블록
+- notes intent: 5 responsibility cards와 설계 순서 rail
+- notes status: `ready`
+
+### S039. 하네스의 도구
+- file: `docs/03-html/slides/slide-039.html`
+- slide type: `table`
+- layout: `wide`
+- shell: `evidence-table-shell`
+- source section: `04`
+- source paragraph block: `04-05`
+- key claim: 책임과 도구는 1:1이 아니다
+- notes intent: 책임 anchor와 도구 node의 다대다 관계 지도
+- notes status: `ready`
+
+### S040. Context Engineering
+- file: `docs/03-html/slides/slide-040.html`
+- slide type: `process`
+- layout: `wide`
+- shell: `process-flow-shell`
+- source section: `04`
+- source paragraph block: `04-06`
+- key claim: smallest set of high-signal tokens
+- notes intent: Write, Select, Compress, Isolate 네 전략
+- notes status: `ready`
+
+### S041. MCP와 Context Hub
+- file: `docs/03-html/slides/slide-041.html`
+- slide type: `process`
+- layout: `wide`
+- shell: `process-flow-shell`
+- source section: `04`
+- source paragraph block: `04-07`
+- key claim: 연결 방식을 표준화
+- notes intent: MCP native architecture와 Context Hub 연결 의미
+- notes status: `ready`
+
+### S042. RAG vs Context Hub
+- file: `docs/03-html/slides/slide-042.html`
+- slide type: `table`
+- layout: `wide`
+- shell: `evidence-table-shell`
+- source section: `04`
+- source paragraph block: `04-08`
+- key claim: 넓게 찾는가, 지금 맞는 문서를 지정하는가
+- notes intent: RAG 논문과 MCP/Context Hub 문서 조사 기반 비교
+- notes status: `ready`
+
+### S043. Memory: 세션을 넘어서는 기억
+- file: `docs/03-html/slides/slide-043.html`
+- slide type: `table`
+- layout: `wide`
+- shell: `evidence-table-shell`
+- source section: `04`
+- source paragraph block: `04-09`
+- key claim: 대화창을 기억 저장소로 착각하지 않는다
+- notes intent: 외부 artifact map과 memory claim
+- notes status: `ready`
+
+### S044. Stable Prefix와 Variable Suffix
+- file: `docs/03-html/slides/slide-044.html`
+- slide type: `comparison`
+- layout: `split`
+- shell: `split-compare-shell`
+- source section: `04`
+- source paragraph block: `04-10`
+- key claim: 잘 쓰는 것 못지않게 안 바꾸는 것도 능력
+- notes intent: prefix/suffix diagram
+- notes status: `ready`
+
+### S045. 하네스는 환경 그 자체다
+- file: `docs/03-html/slides/slide-045.html`
+- slide type: `process`
+- layout: `wide`
+- shell: `process-flow-shell`
+- source section: `04`
+- source paragraph block: `04-11`
+- key claim: 필요한 파일, 필요한 도구, 필요한 규칙
+- notes intent: chapter 04 closing statement
 - notes status: `ready`

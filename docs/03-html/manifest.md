@@ -1,9 +1,9 @@
 # HTML Manifest
 
-- current status: 00/01/02 27-slide deck built
+- current status: 00/01/02/03/04 45-slide deck built
 - active theme: `theme-minimal-light`
-- slide id format: `S001`-`S027`
-- slide file format: `slide-001.html`-`slide-027.html`
+- slide id format: `S001`-`S045`
+- slide file format: `slide-001.html`-`slide-045.html`
 - output deck: `docs/03-html/deck/index.html`
 - output script: `docs/03-html/deck/script.md`
 
@@ -28,7 +28,7 @@
 | 15 | `S015` | `slide-015.html` | 왜 Claude Code인가 | `section` | `centered` | `section-divider-shell` | `02` | `02-00` | `ready` | built |
 | 16 | `S016` | `slide-016.html` | 에이전틱 코딩의 실제 성과 | `table` | `wide` | `evidence-table-shell` | `02` | `02-01` | `ready` | built |
 | 17 | `S017` | `slide-017.html` | 1막: Copilot과 ChatGPT, 프롬프트의 시대 | `process` | `wide` | `process-flow-shell` | `02` | `02-02` | `ready` | built |
-| 18 | `S018` | `slide-018.html` | Chain-of-Thought | `process` | `wide` | `process-flow-shell` | `02` | `02-03` | `ready` | built |
+| 18 | `S018` | `slide-018.html` | CoT / ReAct / ToT | `process` | `wide` | `process-flow-shell` | `02` | `02-03` | `ready` | built |
 | 19 | `S019` | `slide-019.html` | ReAct / Tree-of-Thought | `process` | `wide` | `process-flow-shell` | `02` | `02-03` | `ready` | built |
 | 20 | `S020` | `slide-020.html` | Self-Refine / Reflexion | `process` | `wide` | `process-flow-shell` | `02` | `02-03` | `ready` | built |
 | 21 | `S021` | `slide-021.html` | 네 가지 에이전틱 패턴 | `table` | `wide` | `evidence-table-shell` | `02` | `02-04` | `ready` | built |
@@ -38,3 +38,21 @@
 | 25 | `S025` | `slide-025.html` | 컨텍스트 시대의 벽 | `process` | `wide` | `process-flow-shell` | `02` | `02-08` | `ready` | built |
 | 26 | `S026` | `slide-026.html` | 3막: 하네스의 시대 | `process` | `wide` | `process-flow-shell` | `02` | `02-09` | `ready` | built |
 | 27 | `S027` | `slide-027.html` | 시대의 흐름 | `table` | `wide` | `evidence-table-shell` | `02` | `02-11` | `ready` | built |
+| 28 | `S028` | `slide-028.html` | AI 시대의 개발 방법론 | `section` | `centered` | `section-divider-shell` | `03` | `03-00` | `ready` | built |
+| 29 | `S029` | `slide-029.html` | 왜 지금 방법론 | `table` | `wide` | `evidence-table-shell` | `03` | `03-01` | `ready` | built |
+| 30 | `S030` | `slide-030.html` | SDD | `process` | `wide` | `process-flow-shell` | `03` | `03-02` | `ready` | built |
+| 31 | `S031` | `slide-031.html` | TDD (Test-Driven Development) | `statement` | `editorial` | `statement-editorial-shell` | `03` | `03-03` | `ready` | built |
+| 32 | `S032` | `slide-032.html` | Waterfall vs SDD | `comparison` | `split` | `split-compare-shell` | `03` | `03-04` | `ready` | built |
+| 33 | `S033` | `slide-033.html` | SDD + TDD가 Harness로 이어지는 이유 | `statement` | `editorial` | `statement-editorial-shell` | `03` | `03-05` | `ready` | built |
+| 34 | `S034` | `slide-034.html` | 프롬프트를 넘어서 | `section` | `centered` | `section-divider-shell` | `04` | `04-00` | `ready` | built |
+| 35 | `S035` | `slide-035.html` | Prompt, Context, Harness | `table` | `wide` | `evidence-table-shell` | `04` | `04-01` | `ready` | built |
+| 36 | `S036` | `slide-036.html` | Agent = Model + Harness | `table` | `wide` | `evidence-table-shell` | `04` | `04-02` | `ready` | built |
+| 37 | `S037` | `slide-037.html` | 에이전트 루프: 하네스의 심장 | `process` | `wide` | `process-flow-shell` | `04` | `04-03` | `ready` | built |
+| 38 | `S038` | `slide-038.html` | 하네스의 책임 | `process` | `wide` | `process-flow-shell` | `04` | `04-04` | `ready` | built |
+| 39 | `S039` | `slide-039.html` | 하네스의 도구 | `table` | `wide` | `evidence-table-shell` | `04` | `04-05` | `ready` | built |
+| 40 | `S040` | `slide-040.html` | Context Engineering | `process` | `wide` | `process-flow-shell` | `04` | `04-06` | `ready` | built |
+| 41 | `S041` | `slide-041.html` | MCP와 Context Hub | `process` | `wide` | `process-flow-shell` | `04` | `04-07` | `ready` | built |
+| 42 | `S042` | `slide-042.html` | RAG vs Context Hub | `table` | `wide` | `evidence-table-shell` | `04` | `04-08` | `ready` | built |
+| 43 | `S043` | `slide-043.html` | Memory: 세션을 넘어서는 기억 | `table` | `wide` | `evidence-table-shell` | `04` | `04-09` | `ready` | built |
+| 44 | `S044` | `slide-044.html` | Stable Prefix와 Variable Suffix | `comparison` | `split` | `split-compare-shell` | `04` | `04-10` | `ready` | built |
+| 45 | `S045` | `slide-045.html` | 하네스는 환경 그 자체다 | `process` | `wide` | `process-flow-shell` | `04` | `04-11` | `ready` | built |

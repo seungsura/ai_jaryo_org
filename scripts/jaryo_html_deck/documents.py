@@ -12,8 +12,8 @@ def render_outline(specs: list[SlideSpec]) -> str:
     lines = [
         "# Slide Outline",
         "",
-        "- status: 00/01/02 27-slide make-slide rebuild",
-        "- canonical source: `docs/02-seminar/harness-rebuilt-md/00-overview.md`, `docs/02-seminar/harness-rebuilt-md/01-코딩은 사라지는가.md`, `docs/02-seminar/harness-rebuilt-md/02-왜 Claude Code인가, 그리고 왜 Harness 인가.md`",
+        "- status: 00/01/02/03/04 45-slide make-slide rebuild",
+        "- canonical source: `docs/02-seminar/harness-rebuilt-md/00-overview.md`, `docs/02-seminar/harness-rebuilt-md/01-코딩은 사라지는가.md`, `docs/02-seminar/harness-rebuilt-md/02-왜 Claude Code인가, 그리고 왜 Harness 인가.md`, `docs/02-seminar/harness-rebuilt-md/03-AI 시대의 개발 방법론.md`, `docs/02-seminar/harness-rebuilt-md/04-프롬프트를 넘어서: 에이전트를 움직이는 기술, Harness.md`",
         "- output deck: `docs/03-html/deck/index.html`",
         "- output script: `docs/03-html/deck/script.md`",
         "- theme: `minimal-light`",
@@ -28,6 +28,8 @@ def render_outline(specs: list[SlideSpec]) -> str:
                 ["00", "`docs/02-seminar/harness-rebuilt-md/00-overview.md`", "3"],
                 ["01", "`docs/02-seminar/harness-rebuilt-md/01-코딩은 사라지는가.md`", "11"],
                 ["02", "`docs/02-seminar/harness-rebuilt-md/02-왜 Claude Code인가, 그리고 왜 Harness 인가.md`", "13"],
+                ["03", "`docs/02-seminar/harness-rebuilt-md/03-AI 시대의 개발 방법론.md`", "6"],
+                ["04", "`docs/02-seminar/harness-rebuilt-md/04-프롬프트를 넘어서: 에이전트를 움직이는 기술, Harness.md`", "12"],
             ],
         ),
         "",
@@ -76,10 +78,10 @@ def render_manifest(specs: list[SlideSpec]) -> str:
         [
             "# HTML Manifest",
             "",
-            "- current status: 00/01/02 27-slide deck built",
+            "- current status: 00/01/02/03/04 45-slide deck built",
             "- active theme: `theme-minimal-light`",
-            "- slide id format: `S001`-`S027`",
-            "- slide file format: `slide-001.html`-`slide-027.html`",
+            "- slide id format: `S001`-`S045`",
+            "- slide file format: `slide-001.html`-`slide-045.html`",
             "- output deck: `docs/03-html/deck/index.html`",
             "- output script: `docs/03-html/deck/script.md`",
             "",
@@ -110,7 +112,7 @@ def render_script(specs: list[SlideSpec]) -> str:
         "# Seminar Script",
         "",
         "- target deck: `docs/03-html/deck/index.html`",
-        "- scope: 00 overview + 01/02 chapters",
+        "- scope: 00 overview + 01/02/03/04 chapters",
         "",
     ]
     for spec in specs:

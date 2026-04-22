@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG vs Context Hub</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="../shared/slide-base.css">
+</head>
+<body class="theme-minimal-light">
+<main class="slide family-content layout-wide density-medium chapter-04" data-slide-id="S042" data-shell="evidence-table-shell" data-notes="RAG는 넓은 검색 인덱스, Context Hub MCP는 최신/버전 지정 문서 주입" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 04</p><h1 class="title-placeholder">RAG vs Context Hub</h1></section><section class="table-wrap rag-context-research-body"><div class="rag-context-grid"><article class="rag-context-card"><p class="compare-label">RAG</p><h2>넓은 저장소에서 passage 검색</h2><ul><li>질문마다 관련 조각을 생성 입력에 주입</li><li>벡터 인덱스와 retriever 품질이 결과를 좌우</li><li>내부 위키·정책·긴 참고 자료에 적합</li></ul></article><article class="rag-context-card"><p class="compare-label">Context Hub MCP</p><h2>지정한 최신 문서를 컨텍스트로 주입</h2><ul><li>공식·버전별 API 문서를 필요할 때 가져옴</li><li>라이브러리 ID·버전·언어로 범위를 좁힘</li><li>SDK/API 변경이 잦은 작업에 적합</li></ul></article></div><article class="rag-context-decision"><span>선택 기준</span><p>넓게 찾을 때는 RAG, 지금 맞는 문서를 확인할 때는 Context Hub</p></article><p class="research-source-line">Sources: Lewis et al. 2020 · MCP Docs · Context Hub / Context7</p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">42</span></footer></main>
+</body>
+</html>

@@ -1,7 +1,7 @@
 # Seminar Script
 
 - target deck: `docs/03-html/deck/index.html`
-- scope: 00 overview + 01/02 chapters
+- scope: 00 overview + 01/02/03/04 chapters
 
 ## S001 Harness 잘 사용하기
 - intent: 첫 장에서 제목, 부제, 발표자만 고정
@@ -88,10 +88,10 @@
 - opening: 자동완성에서 자연어 지시 인터페이스로
 - bridge: source markdown의 초기 Copilot과 ChatGPT 전환
 
-## S018 Chain-of-Thought
-- intent: Chain-of-Thought native example diagram
-- opening: 중간 추론 단계를 쓰게 한다
-- bridge: source markdown의 Chain-of-Thought row와 approved 02-chain-of-thought asset 구조
+## S018 CoT / ReAct / ToT
+- intent: CoT / ReAct / ToT native three-card comparison
+- opening: 세 추론 패턴의 구조 차이
+- bridge: source markdown의 CoT, ReAct, ToT row와 approved page-064 layout 구조
 
 ## S019 ReAct / Tree-of-Thought
 - intent: ReAct / Tree-of-Thought native diagrams
@@ -137,3 +137,93 @@
 - intent: final relationship page
 - opening: Agent = Model + Harness
 - bridge: source markdown의 Agent 공식과 프롬프트/컨텍스트/하네스 포함 관계
+
+## S028 AI 시대의 개발 방법론
+- intent: 03장 진입을 알리는 section divider
+- opening: TDD·SDD·Spec-first 재부상
+- bridge: AI 시대의 개발 방법론 장 진입
+
+## S029 왜 지금 방법론
+- intent: AI 코딩 방법론 재부상 연대기
+- opening: AI에게 무엇을 시킬지, 어떻게 검증할 것인지
+- bridge: 생성 속도에서 검증 절차로 생각이 이동한 흐름
+
+## S030 SDD
+- intent: GitHub Spec Kit의 세 단계와 멈춤 장치
+- opening: 스펙이 진실의 원천
+- bridge: 요구사항, 계획, 태스크를 파일로 고정하는 흐름
+
+## S031 TDD (Test-Driven Development)
+- intent: Page 028 TDD lead와 anti-cheat 규칙
+- opening: 테스트를 먼저 쓰고, 통과하는 코드를 나중에 쓴다
+- bridge: 테스트가 에이전트의 자유를 제한하는 통제선
+
+## S032 Waterfall vs SDD
+- intent: Royce 1970과 spec-driven.md evidence로 Waterfall vs SDD 비교
+- opening: Waterfall은 순차적으로 진행되고, SDD는 스펙을 실행 기준으로 둔다
+- bridge: 요구사항·설계·코딩·테스트 vs specification·plan·tasks
+
+## S033 SDD + TDD가 Harness로 이어지는 이유
+- intent: 03장에서 04장 Harness 구조로 넘어가는 bridge
+- opening: 이 시스템이 곧 하네스 엔지니어링
+- bridge: 스펙과 테스트 루프를 사람이 매번 손으로 굴리지 않도록 시스템화
+
+## S034 프롬프트를 넘어서
+- intent: 04장 진입을 알리는 section divider
+- opening: Prompt, Context, Harness
+- bridge: 프롬프트와 컨텍스트를 포함하는 하네스 구조로 진입
+
+## S035 Prompt, Context, Harness
+- intent: source page 36/37 의미를 한 장의 hierarchy로 압축
+- opening: Prompt ⊂ Context ⊂ Harness
+- bridge: 프롬프트, 컨텍스트, 하네스의 포함 관계
+
+## S036 Agent = Model + Harness
+- intent: 공식, 인용구, 여섯 구성 요소를 한 장에 배치
+- opening: 모델이 아닌 것은 전부 하네스입니다.
+- bridge: Agent 공식과 하네스의 여섯 구성 요소
+
+## S037 에이전트 루프: 하네스의 심장
+- intent: gather context, take action, verify work, repeat loop
+- opening: 네 지점을 신뢰성 있게 만드는 일
+- bridge: 거의 모든 코딩 에이전트가 반복하는 네 단계
+
+## S038 하네스의 책임
+- intent: 5 responsibility cards와 설계 순서 rail
+- opening: 다섯 개 기능 블록
+- bridge: 운영 관점에서 보는 하네스의 책임
+
+## S039 하네스의 도구
+- intent: 책임 anchor와 도구 node의 다대다 관계 지도
+- opening: 책임과 도구는 1:1이 아니다
+- bridge: 기능 블록과 도구 레이어는 1:1로 대응하지 않음
+
+## S040 Context Engineering
+- intent: Write, Select, Compress, Isolate 네 전략
+- opening: smallest set of high-signal tokens
+- bridge: 좋은 컨텍스트는 넓은 컨텍스트가 아니라 선별된 컨텍스트
+
+## S041 MCP와 Context Hub
+- intent: MCP native architecture와 Context Hub 연결 의미
+- opening: 연결 방식을 표준화
+- bridge: 외부 도구와 최신 문서 연결은 컨텍스트 엔지니어링의 핵심 인프라
+
+## S042 RAG vs Context Hub
+- intent: RAG 논문과 MCP/Context Hub 문서 조사 기반 비교
+- opening: 넓게 찾는가, 지금 맞는 문서를 지정하는가
+- bridge: RAG는 넓은 검색 인덱스, Context Hub MCP는 최신/버전 지정 문서 주입
+
+## S043 Memory: 세션을 넘어서는 기억
+- intent: 외부 artifact map과 memory claim
+- opening: 대화창을 기억 저장소로 착각하지 않는다
+- bridge: 상태와 근거는 파일 시스템, Git, 이슈, PR, 문서로 나가야 함
+
+## S044 Stable Prefix와 Variable Suffix
+- intent: prefix/suffix diagram
+- opening: 잘 쓰는 것 못지않게 안 바꾸는 것도 능력
+- bridge: 자주 변하지 않는 것은 앞쪽에, 최신 입력과 도구 결과는 뒤쪽에 둠
+
+## S045 하네스는 환경 그 자체다
+- intent: chapter 04 closing statement
+- opening: 필요한 파일, 필요한 도구, 필요한 규칙
+- bridge: Harness Builder는 에이전트가 쓸 수 있는 환경을 만드는 사람

@@ -558,17 +558,24 @@ ul {
 
 .section-keywords {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   flex-wrap: wrap;
+  align-items: center;
   margin-top: 24px;
+  color: rgba(255, 255, 255, 0.54);
 }
 
-.section-keyword {
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: 1px solid var(--color-line-strong);
-  background: var(--color-surface);
-  font-size: 12px;
+.section-keyword-plain {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 18px;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.section-keyword-separator {
+  color: rgba(255, 255, 255, 0.38);
+  font-size: 18px;
+  line-height: 1;
   font-weight: 700;
 }
 
@@ -617,6 +624,43 @@ ul {
   font-weight: 600;
 }
 
+.tdd-control-layers-body,
+.spec-tdd-bridge-body {
+  position: absolute;
+  left: 58px;
+  right: 58px;
+  top: 128px;
+  bottom: 72px;
+  display: grid;
+  gap: 14px;
+}
+
+.tdd-control-layers-body {
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+.chapter-03 .top-band .title-placeholder.statement-text {
+  max-width: 700px;
+}
+
+main[data-slide-id="S031"] .top-band .title-placeholder.statement-text {
+  font-size: 30px;
+  line-height: 1;
+  max-width: 640px;
+}
+
+.tdd-control-layers-body .statement-text {
+  max-width: none;
+  font-size: 26px;
+  line-height: 1.02;
+}
+
+.spec-tdd-bridge-body .statement-tag {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
 .statement-chips {
   display: flex;
   gap: 8px;
@@ -641,6 +685,216 @@ ul {
 .statement-basics .statement-text {
   max-width: 840px;
   font-size: 48px;
+}
+
+.tdd-control-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(252px, 0.88fr);
+  gap: 18px;
+  align-items: stretch;
+  height: 100%;
+}
+
+.tdd-flow-stack {
+  position: relative;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 12px;
+  padding-left: 18px;
+}
+
+.tdd-flow-stack::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: var(--color-line-soft);
+}
+
+.tdd-flow-step {
+  min-height: 0;
+  padding: 14px 18px;
+  border-radius: 8px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line-soft);
+  box-shadow: var(--shadow-card);
+  display: grid;
+  gap: 8px;
+  align-content: center;
+}
+
+.tdd-flow-step h2 {
+  color: var(--color-ink);
+  font-size: 22px;
+  line-height: 1.04;
+  font-weight: 900;
+}
+
+.tdd-flow-step p {
+  color: var(--color-mute);
+  font-size: 15px;
+  line-height: 1.26;
+  font-weight: 800;
+  word-break: keep-all;
+}
+
+.tdd-control-column {
+  display: grid;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  align-content: stretch;
+}
+
+.tdd-control-block {
+  min-height: 0;
+  padding: 18px 20px;
+  border-radius: 8px;
+  background: var(--color-dark-surface);
+  color: #ffffff;
+  display: grid;
+  gap: 10px;
+  align-content: center;
+  box-shadow: var(--shadow-card);
+}
+
+.tdd-control-block h2 {
+  font-size: 14px;
+  line-height: 1.1;
+  font-weight: 900;
+}
+
+.tdd-control-block p {
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 13px;
+  line-height: 1.2;
+  font-weight: 800;
+  word-break: keep-all;
+}
+
+.slide[data-slide-id="S031"] .tdd-control-column {
+  gap: 10px;
+}
+
+.slide[data-slide-id="S031"] .tdd-control-block {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line-soft);
+  color: var(--color-ink);
+  box-shadow: var(--shadow-card);
+}
+
+.slide[data-slide-id="S031"] .tdd-control-block h2 {
+  color: var(--color-signal);
+}
+
+.slide[data-slide-id="S031"] .tdd-control-block p {
+  color: var(--color-mute);
+}
+
+.slide[data-slide-id="S031"] .tdd-control-block:nth-child(2) p {
+  color: var(--color-ink);
+}
+
+.slide[data-slide-id="S031"] .tdd-control-block:nth-child(2) p strong {
+  color: var(--color-signal);
+}
+
+.tdd-control-lead {
+  grid-column: 1 / -1;
+  max-width: 760px;
+  color: var(--color-ink);
+  font-size: 19px;
+  line-height: 1.3;
+  font-weight: 800;
+  word-break: keep-all;
+}
+
+.spec-tdd-bridge-body {
+  display: block;
+  top: 118px;
+  bottom: 74px;
+}
+
+.spec-tdd-card-grid {
+  position: absolute;
+  left: 72px;
+  right: 72px;
+  top: 0;
+  bottom: 56px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 34px minmax(0, 1fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.spec-tdd-card {
+  min-height: 88px;
+  padding: 16px 18px 14px;
+  border-radius: 8px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line-soft);
+  box-shadow: var(--shadow-card);
+  display: grid;
+  gap: 10px;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+}
+
+.spec-tdd-card h2 {
+  color: var(--color-ink);
+  font-size: 24px;
+  line-height: 1.05;
+  font-weight: 900;
+}
+
+.spec-tdd-card ul {
+  display: grid;
+  gap: 8px;
+  justify-items: center;
+}
+
+.spec-tdd-card li {
+  color: var(--color-ink);
+  font-size: 16px;
+  line-height: 1.14;
+  font-weight: 850;
+  text-align: center;
+}
+
+.spec-tdd-subheading {
+  max-width: 760px;
+  font-size: 24px;
+  line-height: 1.12;
+  font-weight: 800;
+  color: var(--color-ink);
+}
+
+.spec-tdd-plus {
+  align-self: center;
+  justify-self: center;
+  color: var(--color-signal);
+  font-size: 38px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.spec-tdd-synthesis {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-self: center;
+  max-width: 860px;
+  color: var(--color-ink);
+  font-size: 19px;
+  line-height: 1.12;
+  font-weight: 900;
+  text-align: center;
+  padding-top: 14px;
+  padding-bottom: 2px;
+  border-top: 2px solid var(--color-line-soft);
 }
 
 .basics-grid {
@@ -814,6 +1068,127 @@ ul {
   gap: 10px;
 }
 
+.spec-kit-workflow-body {
+  top: 148px;
+  bottom: auto;
+  height: 298px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.32fr) minmax(218px, 0.68fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.spec-kit-stage-track {
+  display: grid;
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.spec-kit-stage {
+  min-height: 0;
+  padding: 12px 14px;
+  background: var(--color-dark-surface);
+  color: #ffffff;
+  align-content: center;
+}
+
+.spec-kit-stage .step-index {
+  color: var(--color-signal-soft);
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.spec-kit-stage .step-title {
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 18px;
+}
+
+.spec-kit-stage .step-copy {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.spec-kit-stage-notes {
+  display: grid;
+  gap: 4px;
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 11px;
+  line-height: 1.2;
+  font-weight: 700;
+  word-break: keep-all;
+}
+
+.spec-kit-side-stack {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) minmax(0, 0.78fr) auto;
+  gap: 10px;
+  min-height: 0;
+}
+
+.spec-kit-principle,
+.spec-kit-outcome {
+  min-height: 0;
+  padding: 16px 18px;
+  border-radius: 8px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line-soft);
+  box-shadow: var(--shadow-card);
+  display: grid;
+  gap: 10px;
+  align-content: center;
+}
+
+.spec-kit-principle h2,
+.spec-kit-outcome h2 {
+  color: var(--color-ink);
+  font-size: 18px;
+  line-height: 1.08;
+  font-weight: 900;
+}
+
+.spec-kit-principle p,
+.spec-kit-outcome p {
+  color: var(--color-mute);
+  font-size: 13px;
+  line-height: 1.28;
+  font-weight: 800;
+  word-break: keep-all;
+}
+
+.spec-kit-source {
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border-radius: 8px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line-soft);
+  color: var(--color-mute);
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.spec-kit-source-icon {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-ink);
+}
+
+.spec-kit-source-icon img {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
 .process-step {
   display: grid;
   gap: 8px;
@@ -840,6 +1215,41 @@ ul {
   font-size: 14px;
   line-height: 1.32;
   font-weight: 600;
+}
+
+.process-track.spec-kit-stage-track {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.process-step.spec-kit-stage {
+  min-height: 0;
+  padding: 9px 13px;
+  background: var(--color-dark-surface);
+  color: #ffffff;
+  align-content: center;
+}
+
+.process-step.spec-kit-stage .step-index {
+  color: var(--color-signal-soft);
+}
+
+.process-step.spec-kit-stage .step-title {
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.process-step.spec-kit-stage .step-copy {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 12px;
+}
+
+.process-step.spec-kit-stage .spec-kit-stage-notes {
+  gap: 2px;
+  font-size: 10px;
+  line-height: 1.16;
 }
 
 .document-grid {
@@ -904,6 +1314,334 @@ ul {
   font-size: 22px;
   line-height: 1.25;
   font-weight: 800;
+}
+
+.flow-source-label {
+  margin: -6px 0 0;
+  color: var(--color-mute);
+  font-size: 12px;
+  line-height: 1.15;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: 0;
+}
+
+.context-engineering-body {
+  top: 156px;
+  gap: 18px;
+}
+
+.context-strategy-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.context-strategy-card {
+  min-height: 122px;
+  align-content: start;
+}
+
+.quote-card-block {
+  margin: 0;
+  padding: 16px 24px 14px;
+  border-radius: 8px;
+  background: var(--color-dark-surface);
+  box-shadow: var(--shadow-card);
+  color: #ffffff;
+  display: grid;
+  gap: 7px;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+}
+
+.quote-card-block blockquote {
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.quote-card-block figcaption {
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1;
+  font-weight: 800;
+}
+
+.context-quote-block {
+  justify-self: center;
+  width: 100%;
+  max-width: 640px;
+  min-height: 78px;
+}
+
+.context-quote-block blockquote {
+  font-size: 24px;
+  line-height: 1.1;
+}
+
+.context-quote-block figcaption {
+  font-size: 12px;
+}
+
+.mcp-architecture-body {
+  position: absolute;
+  left: 58px;
+  right: 58px;
+  top: 126px;
+  bottom: 68px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr) minmax(0, 0.82fr);
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: stretch;
+}
+
+.mcp-architecture-flow {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) 18px minmax(0, 1fr) 18px minmax(0, 1fr);
+  gap: 6px;
+  min-height: 0;
+}
+
+.mcp-architecture-node,
+.context-hub-card {
+  border-radius: 8px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line-soft);
+  box-shadow: var(--shadow-card);
+  padding: 12px 14px;
+  display: grid;
+  gap: 7px;
+  align-content: center;
+}
+
+.mcp-architecture-node span,
+.context-hub-card span {
+  color: var(--color-ink);
+  font-size: 18px;
+  line-height: 1.08;
+  font-weight: 900;
+}
+
+.mcp-architecture-node p,
+.context-hub-card p {
+  color: var(--color-mute);
+  font-size: 12px;
+  line-height: 1.22;
+  font-weight: 800;
+  word-break: keep-all;
+}
+
+.mcp-architecture-node.is-client {
+  border-left: 4px solid var(--color-signal);
+}
+
+.mcp-architecture-node.is-server {
+  background: var(--color-signal-soft);
+}
+
+.mcp-architecture-arrow {
+  align-self: center;
+  justify-self: center;
+  color: var(--color-signal);
+  font-size: 21px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.mcp-tool-zone {
+  min-width: 0;
+  padding: 14px;
+  border-radius: 8px;
+  background: var(--color-surface-muted);
+  border: 1px solid var(--color-line-soft);
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 12px;
+}
+
+.mcp-zone-label {
+  color: var(--color-signal);
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.mcp-tool-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  align-content: center;
+}
+
+.mcp-tool-chip {
+  min-height: 38px;
+  padding: 9px 10px;
+  border-radius: 8px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line-soft);
+  color: var(--color-ink);
+  font-size: 13px;
+  line-height: 1.1;
+  font-weight: 900;
+  display: grid;
+  align-content: center;
+}
+
+.context-hub-card {
+  border-left: 4px solid var(--color-signal);
+}
+
+.mcp-architecture-synthesis {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 13px 18px;
+  border-radius: 8px;
+  background: var(--color-signal-soft);
+  color: var(--color-ink);
+  font-size: 18px;
+  line-height: 1.18;
+  font-weight: 900;
+}
+
+.mcp-context-explainer-body {
+  position: absolute;
+  left: 58px;
+  right: 58px;
+  top: 126px;
+  bottom: 70px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
+.mcp-usage-panel,
+.context-hub-explainer-card {
+  min-height: 0;
+  border-radius: 8px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line-soft);
+  box-shadow: var(--shadow-card);
+  padding: 18px 20px;
+  display: grid;
+  gap: 14px;
+}
+
+.mcp-usage-panel {
+  grid-template-rows: auto minmax(0, 1fr) auto auto;
+}
+
+.context-hub-explainer-card {
+  border-left: 5px solid var(--color-signal);
+  align-content: start;
+}
+
+.panel-kicker {
+  color: var(--color-signal);
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.mcp-usage-flow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr) 24px minmax(0, 1fr);
+  gap: 8px;
+  align-items: center;
+}
+
+.mcp-usage-node {
+  min-height: 116px;
+  padding: 14px 12px;
+  border-radius: 8px;
+  background: var(--color-surface-muted);
+  border: 1px solid var(--color-line-soft);
+  display: grid;
+  gap: 8px;
+  align-content: center;
+}
+
+.mcp-usage-node:nth-of-type(2) {
+  border-left: 4px solid var(--color-signal);
+  background: var(--color-surface);
+}
+
+.mcp-usage-node span,
+.context-hub-explainer-card h2 {
+  color: var(--color-ink);
+  font-weight: 900;
+  word-break: keep-all;
+}
+
+.mcp-usage-node span {
+  font-size: 18px;
+  line-height: 1.08;
+}
+
+.mcp-usage-node p,
+.mcp-usage-note,
+.mcp-connected-examples,
+.context-hub-principle p {
+  color: var(--color-mute);
+  font-weight: 800;
+  word-break: keep-all;
+}
+
+.mcp-usage-node p {
+  font-size: 12px;
+  line-height: 1.24;
+}
+
+.mcp-usage-arrow {
+  color: var(--color-signal);
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 900;
+  text-align: center;
+}
+
+.mcp-usage-note {
+  font-size: 15px;
+  line-height: 1.24;
+}
+
+.mcp-connected-examples {
+  padding-top: 2px;
+  color: var(--color-ink);
+  font-size: 13px;
+  line-height: 1.18;
+}
+
+.context-hub-explainer-card h2 {
+  font-size: 25px;
+  line-height: 1.1;
+}
+
+.context-hub-principles {
+  display: grid;
+  gap: 10px;
+}
+
+.context-hub-principle {
+  padding: 11px 12px;
+  border-radius: 8px;
+  background: var(--color-signal-soft);
+  display: grid;
+  gap: 5px;
+}
+
+.context-hub-principle span {
+  color: var(--color-signal);
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.context-hub-principle p {
+  color: var(--color-ink);
+  font-size: 13px;
+  line-height: 1.22;
 }
 
 .centered-claim {
@@ -1043,6 +1781,105 @@ ul {
   background: transparent;
 }
 
+.waterfall-comparison-body {
+  position: absolute;
+  left: 58px;
+  right: 58px;
+  top: 128px;
+  bottom: 72px;
+  display: grid;
+  gap: 18px;
+}
+
+.comparison-column-headers {
+  display: grid;
+  grid-template-columns: minmax(170px, 0.62fr) minmax(0, 1fr) 24pt minmax(0, 1fr);
+  gap: 16px;
+  align-items: end;
+}
+
+.comparison-column-spacer {
+  min-width: 0;
+}
+
+.comparison-column-gap {
+  width: 100%;
+  height: 1px;
+}
+
+.comparison-column-header {
+  color: var(--color-signal);
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 900;
+  text-transform: none;
+}
+
+.comparison-column-header.is-focus {
+  justify-self: start;
+}
+
+.comparison-row-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.comparison-row {
+  display: grid;
+  grid-template-columns: minmax(170px, 0.62fr) minmax(0, 1fr) 24pt minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+  min-height: 72px;
+  padding: 14px 0;
+  border-top: 1px solid var(--color-line-soft);
+}
+
+.comparison-row-gap {
+  min-width: 0;
+}
+
+.comparison-row:last-child {
+  border-bottom: 1px solid var(--color-line-soft);
+}
+
+.comparison-row-key {
+  color: var(--color-ink);
+  font-size: 16px;
+  line-height: 1.12;
+  font-weight: 900;
+}
+
+.comparison-row-left,
+.comparison-row-right {
+  color: var(--color-ink);
+  font-size: 14px;
+  line-height: 1.18;
+  font-weight: 800;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.comparison-row-left {
+  color: var(--color-mute);
+}
+
+.comparison-row-right {
+  color: var(--color-signal);
+}
+
+.comparison-synthesis {
+  margin-top: auto;
+  padding: 20px 28px;
+  border-radius: 8px;
+  background: var(--color-dark-surface);
+  color: #ffffff;
+  font-size: 22px;
+  line-height: 1.15;
+  font-weight: 900;
+  text-align: center;
+  word-break: keep-all;
+}
+
 .compare-label {
   font-size: 12px;
   text-transform: none;
@@ -1061,6 +1898,97 @@ ul {
   line-height: 1.25;
   font-weight: 700;
   overflow-wrap: anywhere;
+}
+
+.cache-sequence-body {
+  top: 132px;
+  bottom: 116px;
+  grid-template-columns: minmax(0, 1.44fr) 40px minmax(0, 1fr);
+  gap: 12px;
+  align-items: stretch;
+}
+
+.cache-segment {
+  min-height: 198px;
+  padding: 16px 18px;
+  border-radius: 8px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line-soft);
+  box-shadow: var(--shadow-card);
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  gap: 10px;
+}
+
+.stable-prefix-block {
+  border-left: 5px solid var(--color-signal);
+}
+
+.variable-suffix-block {
+  border-left: 5px solid var(--color-line-strong);
+}
+
+.cache-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cache-badge-row span {
+  color: var(--color-signal);
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.cache-badge-row span + span::before {
+  content: "/";
+  margin-right: 8px;
+  color: var(--color-line-strong);
+}
+
+.cache-token-stack {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.cache-token {
+  padding: 10px 12px;
+  border-radius: 7px;
+  background: var(--color-surface-muted);
+  border: 1px solid var(--color-line-soft);
+  color: var(--color-ink);
+  font-size: 16px;
+  line-height: 1.12;
+  font-weight: 850;
+  word-break: keep-all;
+}
+
+.cache-role-note {
+  color: var(--color-mute);
+  font-size: 13px;
+  line-height: 1.16;
+  font-weight: 800;
+}
+
+.cache-sequence-arrow {
+  align-self: center;
+  justify-self: center;
+}
+
+.cache-synthesis {
+  position: absolute;
+  left: 58px;
+  right: 58px;
+  bottom: 66px;
+  padding: 13px 20px;
+  border-radius: 8px;
+  background: var(--color-dark-surface);
+  color: #ffffff;
+  font-size: 23px;
+  line-height: 1.14;
+  font-weight: 900;
 }
 
 .code-block {
@@ -1109,6 +2037,149 @@ ul {
   font-size: 14px;
   line-height: 1.25;
   font-weight: 700;
+}
+
+.agent-harness-quote-body {
+  top: 126px;
+  bottom: 66px;
+  gap: 16px;
+  align-content: start;
+}
+
+.agent-quote-block {
+  justify-self: center;
+  width: calc(100% - 120px);
+  max-width: 640px;
+  min-height: 74px;
+}
+
+.agent-quote-block blockquote {
+  font-size: 26px;
+  line-height: 1.08;
+}
+
+.agent-quote-block figcaption {
+  font-size: 12px;
+}
+
+.agent-component-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(54px, 1fr));
+  gap: 12px 14px;
+  justify-self: center;
+  width: 100%;
+  max-width: 690px;
+}
+
+.agent-component-card {
+  min-height: 0;
+  padding: 9px 12px;
+  border-radius: 8px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line-soft);
+  box-shadow: var(--shadow-card);
+  display: grid;
+  gap: 4px;
+  align-content: center;
+}
+
+.agent-component-card h2 {
+  color: var(--color-signal);
+  font-size: 16px;
+  line-height: 1.08;
+  font-weight: 900;
+}
+
+.agent-component-card p {
+  color: var(--color-mute);
+  font-size: 11.5px;
+  line-height: 1.18;
+  font-weight: 800;
+  word-break: keep-all;
+}
+
+.rag-context-research-body {
+  top: 126px;
+  bottom: 66px;
+  gap: 12px;
+}
+
+.rag-context-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.rag-context-card {
+  min-height: 176px;
+  padding: 18px 20px;
+  border-radius: 8px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line-soft);
+  box-shadow: var(--shadow-card);
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.rag-context-card:nth-child(2) {
+  border-left: 5px solid var(--color-signal);
+}
+
+.rag-context-card h2 {
+  color: var(--color-ink);
+  font-size: 23px;
+  line-height: 1.1;
+  font-weight: 900;
+  word-break: keep-all;
+}
+
+.rag-context-card ul {
+  display: grid;
+  gap: 7px;
+}
+
+.rag-context-card li {
+  color: var(--color-mute);
+  font-size: 13px;
+  line-height: 1.2;
+  font-weight: 800;
+  word-break: keep-all;
+}
+
+.rag-context-decision {
+  padding: 12px 18px;
+  border-radius: 8px;
+  background: var(--color-signal-soft);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+}
+
+.rag-context-decision span {
+  color: var(--color-signal);
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.rag-context-decision p {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: 17px;
+  line-height: 1.18;
+  font-weight: 900;
+  word-break: keep-all;
+}
+
+.research-source-line {
+  justify-self: end;
+  color: var(--color-mute);
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 800;
 }
 
 .metric-grid {
@@ -1294,6 +2365,157 @@ ul {
   font-size: 16px;
   line-height: 1.22;
   font-weight: 700;
+  word-break: keep-all;
+}
+
+.tool-relation-map {
+  top: 116px;
+  gap: 9px;
+}
+
+.relation-claim {
+  justify-self: center;
+  color: var(--color-ink);
+  font-size: 20px;
+  line-height: 1.18;
+  font-weight: 900;
+}
+
+.tool-relation-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 192px) minmax(0, 308px) minmax(0, 1fr);
+  gap: 10px;
+  align-items: stretch;
+  min-height: 278px;
+}
+
+.responsibility-column {
+  display: grid;
+  grid-template-rows: repeat(5, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.responsibility-card,
+.tool-cluster-card,
+.memory-artifact-card {
+  border-radius: 8px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line-soft);
+  box-shadow: var(--shadow-card);
+}
+
+.responsibility-card {
+  display: grid;
+  align-content: center;
+  min-height: 48px;
+  padding: 8px 10px;
+  border-left: 3px solid var(--color-signal);
+}
+
+.responsibility-card h2 {
+  color: var(--color-ink);
+  font-size: 13px;
+  line-height: 1.05;
+  font-weight: 900;
+  word-break: keep-all;
+}
+
+.relation-connector {
+  display: block;
+  width: 100%;
+  height: 100%;
+  align-self: stretch;
+  overflow: visible;
+}
+
+.tool-network-line {
+  fill: none;
+  stroke: var(--color-signal);
+  stroke-width: 1.1;
+  stroke-linecap: round;
+  opacity: 0.34;
+}
+
+.tool-cluster-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(9, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.tool-cluster-card {
+  display: grid;
+  align-content: center;
+  min-height: 26px;
+  padding: 5px 9px;
+  border-left: 3px solid var(--color-line-strong);
+}
+
+.tool-cluster-card h2 {
+  color: var(--color-ink);
+  font-size: 11px;
+  line-height: 1.08;
+  font-weight: 900;
+  word-break: keep-all;
+}
+
+.tool-network-synthesis {
+  justify-self: center;
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: var(--color-signal-soft);
+  color: var(--color-ink);
+  font-size: 18px;
+  line-height: 1.16;
+  font-weight: 900;
+}
+
+.memory-artifact-map {
+  top: 124px;
+  gap: 14px;
+}
+
+.memory-core-claim {
+  justify-self: center;
+  width: 100%;
+  max-width: 650px;
+  padding: 13px 24px;
+  border-radius: 8px;
+  background: var(--color-dark-surface);
+  color: #ffffff;
+  font-size: 21px;
+  line-height: 1.18;
+  font-weight: 900;
+}
+
+.memory-artifact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.memory-artifact-card {
+  min-height: 76px;
+  padding: 12px 14px;
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.memory-artifact-card h2 {
+  color: var(--color-ink);
+  font-size: 16px;
+  line-height: 1.12;
+  font-weight: 900;
+  word-break: keep-all;
+}
+
+.memory-artifact-card p {
+  color: var(--color-mute);
+  font-size: 11px;
+  line-height: 1.22;
+  font-weight: 800;
   word-break: keep-all;
 }
 
@@ -1778,92 +3000,186 @@ ul {
   position: absolute;
   left: 58px;
   right: 58px;
-  top: 126px;
+  top: 142px;
   bottom: 72px;
   display: grid;
-  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.5fr) minmax(0, 0.82fr);
-  gap: 16px;
-  align-items: stretch;
-}
-
-.cot-claim-card,
-.cot-summary-card,
-.cot-example-card {
-  min-height: 0;
-  padding: 22px;
-  align-content: center;
-}
-
-.cot-claim-card h2,
-.cot-summary-card h2 {
-  color: var(--color-ink);
-  font-size: 24px;
-  line-height: 1.12;
-  font-weight: 900;
-  word-break: keep-all;
-}
-
-.cot-claim-card p,
-.cot-summary-card p {
-  color: var(--color-mute);
-  font-size: 15px;
-  line-height: 1.24;
-  font-weight: 800;
-  word-break: keep-all;
+  grid-template-columns: minmax(0, 1.18fr) minmax(210px, 0.52fr);
+  gap: 28px;
+  align-items: center;
 }
 
 .cot-native-body .cot-example-diagram {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: minmax(0, 0.85fr) minmax(0, 1.15fr);
-  gap: 12px;
+  justify-items: center;
   align-content: center;
+  gap: 9px;
   height: 100%;
 }
 
-.cot-example-panel {
+.cot-linear-stage {
+  position: relative;
   display: grid;
-  gap: 8px;
+  align-items: center;
+  justify-items: center;
   min-height: 0;
-  padding: 14px 16px;
-  border-radius: 8px;
+  height: 100%;
+}
+
+.cot-chain-node {
+  display: grid;
+  place-items: center;
+  width: 104px;
+  height: 62px;
+  min-height: 0;
+  gap: 0;
+  padding: 0 13px;
+  border: 2px solid var(--color-signal);
+  border-radius: 999px;
   background: var(--color-surface);
-  border: 1px solid var(--color-line-soft);
-  text-align: center;
-  align-content: center;
-}
-
-.cot-example-panel strong {
-  color: var(--color-signal);
-  font-size: 12px;
-  line-height: 1;
-  font-weight: 900;
-}
-
-.cot-example-panel p {
   color: var(--color-ink);
+  box-shadow: var(--shadow-card);
+  text-align: center;
   font-size: 17px;
-  line-height: 1.08;
+  line-height: 1.06;
   font-weight: 900;
   word-break: keep-all;
 }
 
-.cot-example-output {
-  background: var(--color-signal-soft);
-  border-color: transparent;
-}
-
-.cot-highlight {
-  background: rgba(0, 102, 204, 0.14);
-  padding: 8px 10px;
-  border-radius: 6px;
-}
-
-.cot-answer {
+.cot-chain-answer {
   background: var(--color-dark-surface);
+  border-color: var(--color-dark-surface);
   color: #ffffff;
-  padding: 9px 10px;
-  border-radius: 6px;
+}
+
+.cot-chain-arrow {
+  color: var(--color-signal);
+  font-size: 25px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.cot-minimal-card {
+  display: grid;
+  align-content: center;
+  min-height: 118px;
+  padding: 20px 22px;
+  border: 1px solid var(--color-line-soft);
+  border-radius: 8px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.cot-minimal-card h2 {
+  color: var(--color-ink);
+  font-size: 22px;
+  line-height: 1.14;
+  font-weight: 900;
+  word-break: keep-all;
+}
+
+.cot-triad-body {
+  position: absolute;
+  left: 58px;
+  right: 58px;
+  top: 126px;
+  bottom: 74px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  align-items: stretch;
+}
+
+.cot-triad-card {
+  min-height: 0;
+  padding: 16px 16px 14px;
+  display: grid;
+  grid-template-rows: auto auto minmax(110px, 1fr) auto;
+  gap: 6px;
+  align-content: stretch;
+}
+
+.cot-triad-card h2 {
+  color: var(--color-ink);
+  font-size: 18px;
+  line-height: 1.06;
+  font-weight: 900;
+  word-break: keep-all;
+}
+
+.cot-triad-acronym {
+  color: var(--color-signal);
+  font-size: 12px;
+  line-height: 1.05;
+  font-weight: 900;
+}
+
+.cot-triad-diagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 112px;
+}
+
+.cot-diagram-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.cot-svg-node {
+  stroke-width: 2.2;
+}
+
+.cot-svg-node-outline {
+  fill: var(--color-surface);
+  stroke: var(--color-signal);
+}
+
+.cot-svg-node-dark {
+  fill: var(--color-dark-surface);
+  stroke: var(--color-dark-surface);
+}
+
+.cot-svg-edge {
+  fill: none;
+  stroke: var(--color-signal);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.cot-svg-edge-muted {
+  stroke: var(--color-line-strong);
+}
+
+.cot-arrow-head {
+  fill: var(--color-signal);
+}
+
+.cot-svg-text {
+  fill: var(--color-ink);
+  font-family: var(--font-sans);
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.cot-svg-text-invert {
+  fill: #ffffff;
+}
+
+.cot-svg-caption {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.cot-svg-accent {
+  fill: var(--color-signal);
+}
+
+.cot-svg-muted {
+  fill: var(--color-mute);
 }
 
 .pattern-pair-body,
@@ -2532,12 +3848,14 @@ ul {
   top: 132px;
   bottom: 72px;
   display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 14px;
 }
 
 .loop-cycle-track {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 118px minmax(0, 1fr);
-  grid-template-rows: minmax(0, 1fr) 56px minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) 42px minmax(0, 1fr);
   grid-template-areas:
     "s1 east s2"
     "north center south"
@@ -2594,16 +3912,16 @@ ul {
   grid-area: south;
 }
 
-.loop-center {
+.loop-center-gap {
   grid-area: center;
-  align-self: stretch;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   min-height: 0;
-  padding: 12px 16px;
-  font-size: 18px;
-  word-break: keep-all;
+}
+
+.loop-synthesis {
+  justify-self: stretch;
+  padding: 13px 18px;
+  font-size: 21px;
+  line-height: 1.18;
 }
 
 .component-body {
@@ -3077,7 +4395,7 @@ body {
 </head>
 <body class="theme-minimal-light">
 <div class="deck">
-<section class="deck-slide active" data-slide-id="S001"><main class="slide family-title layout-centered density-light chapter-00" data-slide-id="S001" data-shell="title-hero-shell" data-notes="제목과 부제만 두고, 발표자는 게임플랫폼 1팀 라승수로 표시한다." data-footer="default"><aside class="tool-icons" aria-label="toolchain"><span class="tool-icon tool-icon-claude-code"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCEtLSBHZW5lcmF0ZWQgYnkgUGl4ZWxtYXRvciBQcm8gMy42LjE3IC0tPgo8c3ZnIHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjEyMDAiIHZpZXdCb3g9IjAgMCAxMjAwIDEyMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8ZyBpZD0iZzMxNCI+CiAgICAgICAgPHBhdGggaWQ9InBhdGgxNDciIGZpbGw9IiNkOTc3NTciIHN0cm9rZT0ibm9uZSIgZD0iTSAyMzMuOTU5NzkzIDgwMC4yMTQ5MDUgTCA0NjguNjQ0Mjg3IDY2OC41MzY5ODcgTCA0NzIuNTkwNjM3IDY1Ny4xMDA2NDcgTCA0NjguNjQ0Mjg3IDY1MC43Mzg0MDMgTCA0NTcuMjA4MDY5IDY1MC43Mzg0MDMgTCA0MTcuOTg2NjMzIDY0OC4zMjIxNDQgTCAyODMuODkyNjM5IDY0NC42OTgxMiBMIDE2Ny41OTczMjEgNjM5Ljg2NTg0NSBMIDU0LjkyNjIwOCA2MzMuODI1NjIzIEwgMjYuNTc3MjM4IDYyNy43ODUzMzkgTCAzLjNlLTA1IDU5Mi43NTE3MDkgTCAyLjczODMyIDU3NS4yNzUzMyBMIDI2LjU3NzIzOCA1NTkuMjQ4MzUyIEwgNjAuNzI0ODczIDU2Mi4yMjgxNDkgTCAxMzYuMTg3OTczIDU2Ny4zODI2MjkgTCAyNDkuNDIyODY3IDU3NS4xOTQ3NjMgTCAzMzEuNTcwNDk2IDU4MC4wMjY5NzggTCA0NTMuMjYxODQxIDU5Mi42NzEwODIgTCA0NzIuNTkwNjM3IDU5Mi42NzEwODIgTCA0NzUuMzI4ODU3IDU4NC44NTkwMDkgTCA0NjguNzI0OTE1IDU4MC4wMjY5NzggTCA0NjMuNTcwNTU3IDU3NS4xOTQ3NjMgTCAzNDYuMzg5MzEzIDQ5NS43ODUyMTcgTCAyMTkuNTQzNjcxIDQxMS44NjU5MDYgTCAxNTMuMTAwNzIzIDM2My41NDM3NjIgTCAxMTcuMTgxMjY3IDMzOS4wNjA0MjUgTCA5OS4wNjA0NTUgMzE2LjEwNzM2MSBMIDkxLjI0ODM2NyAyNjYuMDEzNTUgTCAxMjMuODY1Nzg0IDIzMC4wOTM5OTQgTCAxNjcuNjc3ODg3IDIzMy4wNzM4NTMgTCAxNzguODcyNTEzIDIzNi4wNTM3NzIgTCAyMjMuMjQ4MzY3IDI3MC4yMDE0NzcgTCAzMTguMDQwMjgzIDM0My41NzA0OTYgTCA0NDEuODI1NTkyIDQzNC43MzgzNDIgTCA0NTkuOTQ2NDExIDQ0OS43OTg3MDYgTCA0NjcuMTk0NjcyIDQ0NC42NDQ0NyBMIDQ2OC4wODA1OTcgNDQxLjAyMDIwMyBMIDQ1OS45NDY0MTEgNDI3LjQwOTQ4NSBMIDM5Mi42MTc0OTMgMzA1LjcxODMyMyBMIDMyMC43Nzg1NjQgMTgxLjkzMjk4MyBMIDI4OC44MDU0MiAxMzAuNjMwODU5IEwgMjgwLjM0ODk5OSA5OS44NjU4NDUgQyAyNzcuMzY5MTcxIDg3LjIyMTQzNiAyNzUuMTk0NjQxIDc2LjU5MDY5OCAyNzUuMTk0NjQxIDYzLjYyNDI2OCBMIDMxMi4zMjIxNzQgMTMuMjA4MTMgTCAzMzIuODU5MSA2LjYwNDEyNiBMIDM4Mi4zODkzMTMgMTMuMjA4MTMgTCA0MDMuMjQ4MzUyIDMxLjMyODk3OSBMIDQzNC4wMTM1MTkgMTAxLjcxODE0IEwgNDgzLjg2NTc1MyAyMTIuNTM3MDQ4IEwgNTYxLjE4MTI3NCAzNjMuMjIxNDk3IEwgNTgzLjgxMjEzNCA0MDcuOTE5NDM0IEwgNTk1Ljg5MjYzOSA0NDkuMzE1NDkxIEwgNjAwLjQwMjcxIDQ2MS45NTk4MzkgTCA2MDguMjE0NzgzIDQ2MS45NTk4MzkgTCA2MDguMjE0NzgzIDQ1NC43MTE2MDkgTCA2MTQuNTc3MjcxIDM2OS44MjU2MjMgTCA2MjYuMzM1NjMyIDI2NS42MTA4NCBMIDYzNy43NzE4NTEgMTMxLjUxNjg0NiBMIDY0MS43MTgyMDEgOTMuNzQ1MTE3IEwgNjYwLjQwMjgzMiA0OC40ODMyNzYgTCA2OTcuNTMwMzM0IDI0LjAwMDEyMiBMIDcyNi41MjM1NiAzNy44NTI0MTcgTCA3NTAuMzYyNTQ5IDcyIEwgNzQ3LjA2MDQ4NiA5NC4wNjcxMzkgTCA3MzIuODg2MDQ3IDE4Ni4yMDE0MTYgTCA3MDUuMTAwNzA4IDMzMC41MjM1NiBMIDY4Ni45Nzk5MTkgNDI3LjE2Nzg0NyBMIDY5Ny41MzAzMzQgNDI3LjE2Nzg0NyBMIDcwOS42MTA4NCA0MTUuMDg3MzQxIEwgNzU4LjQ5NjcwNCAzNTAuMTc0NTYxIEwgODQwLjY0NDM0OCAyNDcuNDkwMDUxIEwgODc2Ljg4NTkyNSAyMDYuNzM4MzQyIEwgOTE5LjE2Nzg0NyAxNjEuNzE4MTQgTCA5NDYuMzA4ODM4IDE0MC4yOTU0MSBMIDk5Ny42MTA4NCAxNDAuMjk1NDEgTCAxMDM1LjM4MjY5IDE5Ni40Mjk2MjYgTCAxMDE4LjQ2OTg0OSAyNTQuNDE2MTk5IEwgOTY1LjYzNzYzNCAzMjEuNDIyODUyIEwgOTIxLjgyNTU2MiAzNzguMjAxNTM4IEwgODU5LjAwNjcxNCA0NjIuNzY1MjU5IEwgODE5Ljc4NTI3OCA1MzAuNDE2MjYgTCA4MjMuNDA5NDI0IDUzNS44MTIwNzMgTCA4MzIuNzUxNzcgNTM0LjkyNjI3IEwgOTc0LjY1Nzc3NiA1MDQuNzI0OTE1IEwgMTA1MS4zMjg5NzkgNDkwLjg3MjU1OSBMIDExNDIuODE4ODQ4IDQ3NS4xNjc3ODYgTCAxMTg0LjIxNDg0NCA0OTQuNDk2NTgyIEwgMTE4OC43MjQ4NTQgNTE0LjE0NzY0NCBMIDExNzIuNDU2NDIxIDU1NC4zMzU2OTMgTCAxMDc0LjYwNDEyNiA1NzguNDk2NzY1IEwgOTU5LjgzODk4OSA2MDEuNDQ5ODI5IEwgNzg4LjkzOTYzNiA2NDEuODc5MjcyIEwgNzg2Ljg0NTc2NCA2NDMuNDA5NDg1IEwgNzg5LjI2MTg0MSA2NDYuMzg5MzQzIEwgODY2LjI1NTEyNyA2NTMuNjM3NjM0IEwgODk5LjE5NDcwMiA2NTUuNDA5NDI0IEwgOTc5LjgxMjEzNCA2NTUuNDA5NDI0IEwgMTEyOS45MzI4NjEgNjY2LjYwNDE4NyBMIDExNjkuMTU0NDE5IDY5Mi41MzcxMDkgTCAxMTkyLjY3MTI2NSA3MjQuMjY4Njc3IEwgMTE4OC43MjQ4NTQgNzQ4LjQyOTY4OCBMIDExMjguMzIyMTQ0IDc3OS4xOTQ2NDEgTCAxMDQ2LjgxODg0OCA3NTkuODY1ODQ1IEwgODU2LjU5MDc1OSA3MTQuNjA0MTI2IEwgNzkxLjM1NTc3NCA2OTguMzM1NzU0IEwgNzgyLjMzNTY5MyA2OTguMzM1NzU0IEwgNzgyLjMzNTY5MyA3MDMuNzMxNTY3IEwgODM2LjY5ODEyIDc1Ni44ODU5ODYgTCA5MzYuMzIyMjA1IDg0Ni44NDU1ODEgTCAxMDYxLjA3Mzk3NSA5NjIuODE4OTcgTCAxMDY3LjQzNjI3OSA5OTEuNDkwMTEyIEwgMTA1MS40MDk0MjQgMTAxNC4xMjA5MTEgTCAxMDM0LjQ5NjcwNCAxMDExLjcwNDcxMiBMIDkyNC44ODU5ODYgOTI5LjIzNDkyNCBMIDg4Mi42MDQxMjYgODkyLjEwNzU0NCBMIDc4Ni44NDU3NjQgODExLjQ4OTk5IEwgNzgwLjQ4MzI3NiA4MTEuNDg5OTkgTCA3ODAuNDgzMjc2IDgxOS45NDYyODkgTCA4MDIuNTUwNDE1IDg1Mi4yNDE2OTkgTCA5MTkuMDg3MzQxIDEwMjcuNDA5NDI0IEwgOTI1LjEyNzYyNSAxMDgxLjEyNzY4NiBMIDkxNi42NzEyMDQgMTA5OC42MDQxMjYgTCA4ODYuNDY5ODQ5IDExMDkuMTU0NDE5IEwgODUzLjI4ODY5NiAxMTAzLjExNDEzNiBMIDc4NS4wNzM5MTQgMTAwNy4zNTU4MzUgTCA3MTQuNjg0NjMxIDg5OS41MTY3ODUgTCA2NTcuOTA2MDY3IDgwMi44NzI0OTggTCA2NTAuOTc5ODU4IDgwNi44MTg5NyBMIDYxNy40NzY2MjQgMTE2Ny43MDQ4MzQgTCA2MDEuNzcxODUxIDExODYuMTQ3NzA1IEwgNTY1LjUzMDIxMiAxMjAwIEwgNTM1LjMyODg1NyAxMTc3LjA0Njk5NyBMIDUxOS4zMDIxMjQgMTEzOS45MTk1NTYgTCA1MzUuMzI4ODU3IDEwNjYuNTUwNTM3IEwgNTU0LjY1Nzc3NiA5NzAuNzkyMDUzIEwgNTcwLjM2MjQ4OCA4OTQuNjg0NTcgTCA1ODQuNTM2OTI2IDgwMC4xMzQyNzcgTCA1OTIuOTkzMzQ3IDc2OC43MjQ5NzYgTCA1OTIuNDI5NjI2IDc2Ni42MzA4NTkgTCA1ODUuNTAzNDc5IDc2Ny41MTY5NjggTCA1MTQuMjI4MjEgODY1LjM2OTI2MyBMIDQwNS44MjU1MzEgMTAxMS44NjU5MDYgTCAzMjAuMDUzNzExIDExMDMuNjc3OTc5IEwgMjk5LjUxNjgxNSAxMTExLjgxMjI1NiBMIDI2My45MTk1MjUgMTA5My4zNjkyNjMgTCAyNjcuMjIxNDk3IDEwNjAuNDI5Njg4IEwgMjg3LjExNDEzNiAxMDMxLjExNDEzNiBMIDQwNS44MjU1MzEgODgwLjEwNzM2MSBMIDQ3Ny40MjI5MTMgNzg2LjUyMzU2IEwgNTIzLjY1MTA2MiA3MzIuNDgzMjc2IEwgNTIzLjMyODkxOCA3MjQuNjcxMjY1IEwgNTIwLjU5MDY5OCA3MjQuNjcxMjY1IEwgMjA1LjI4ODYwNSA5MjkuMzk1OTM1IEwgMTQ5LjE1NDQzNCA5MzYuNjQ0NDA5IEwgMTI0Ljk5MzM1NSA5MTQuMDEzNTUgTCAxMjcuOTczMTgzIDg3Ni44ODU5ODYgTCAxMzkuNDA5NDA5IDg2NC44MDU0MiBMIDIzNC4yMDEzODUgNzk5LjU3MDQzNSBMIDIzMy44NzkyMjcgNzk5Ljg5MjcgWiIvPgogICAgPC9nPgo8L3N2Zz4K" alt="claude-code icon"></span><span class="tool-icon tool-icon-codex"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoAAAAKACAMAAAA7EzkRAAAAxlBMVEVMaXH////////////////////////4+f/////////////////////////////////////////s7f+vtv////+Anv96nP+En/92mP99nv+gpP+Rof+MoP+Uov+JoP9XbP9bcf+Xov+co/9zk/9UZ/+jpf+Pof9edf9xkP+Zo/9ujP+Gn/9RY/9mgf9hev9phf9sif9HVP9EUP9jff9PYP+mpv9geP9LW/+up/9JWP9ATP+qpv+opf88Rf9NXf/k6P+7w//R1v/QoPLFAAAAFHRSTlMAKZbBrDyD/NsRXURvd2ZOV0ij1YKcr9sAAAAJcEhZcwAACxMAAAsTAQCanBgAABxaSURBVHja7Z0LWxO7FkBHXqGIr+8LgsjjtAgiFSnWwR7x3CT//0/dAiLl1abtTHaSWWs4XI/ngpis7p29J80URShay2vrKwtLi6urq0opDZExnJTh1CwuLaysry23ioxoLa8vLK4yw2mxuriwnr6HrXcrS6iXsoZLK+9StbC1toB7eVi4sJachMsri0xcXhK+TCj0LVFj5FilLKUQCFtvsC9jYnfwJfblHwejzcWtVxQdzVgPrryIMvgxMw1KxbGFwTcUvU0Lg2vkXpBVcD2OgqS1jn5NLUhWIlDwNfo1WcFXLfQD0UT8WrLyRT/Qi8tSiz8aL3DTlBHpC64w8PC3Ggm/3YXsC6NLwbCd6dYCQw73WQhYD78j/IFgEGT1B4JB8AXhD54LggHK4XV2/MHz5fA6vT8QZalF+oVc0/Ab0i9MTsNvqX5BlJrui7D8A9+FYB3lB5vuwZvFFuUH5FSKvKD8AEEDl/EPpi2Gl/EPRA2sbHPCO/yDWQx8V5F/DCXMxjvyL6SehfEPJCsR+i8wl4Ev8A90sv3AFvc/YF4D57krx/1fmJtF9r+ATnJvDPv/QAvuD3zDyEE1vKUAhtSaMRTAIFoKU4CAZCGyzphBlayzAISEloEsAKHqZeA0/nH8H1TOAltQQZSXdGAgiV4MCRgkk/AyIwX1sEwFDNFXwuyBAS24L+YFowRasB3NPWDQgveEXzJGIFmHUIGAFnyHyGtGCOrlNQEQdKytGHYBghbcGchNYBC9JfyK0QHBENhiGzRIhkACIIiGQFaAIFkIrzEyoAVPSuAo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" alt="codex icon"></span><span class="tool-icon tool-icon-opencode"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAACgCAYAAACLz2ctAAAEE0lEQVR4nO3dv2pcRxTH8XNmrqq1TCJhohAEMqmSl7hVDK7zBi4TsHsXkZ0ifTCkdJV3sHEaLXkEp3chAmrkWH8csLQzE2YlE9UWuj/p8P0gtXt1mO8OrGBmzQAAAAAAAAAAuEJu0xjGcTSbzyd6HC5lHG1+tlaLy70QcM1NsgPe3dx8bCltWK1twl0Xn6ZZSm617r3Z3f3FrthgU3D/Iaf0VXPauwnc3Uprf5tZjADd7G0p5YtmVs0sTfFMfLLqZqmvmU1gkgBba9lTGqw1Arz+qrunVmue4mHsRpAiQEgRIKQIEFIECCkChBQBQooAIUWAkCJASBEgpAgQUgQIKQKEFAFCigAhRYCQIkBIESCkCBBSBAipac4FT6ud/0bk0Q72hwvQ+08/WR1Ra+HeWZECXF770fqB6lr3LCL3DTNb+zirBRAmwGZWckpDLeX3N7u7j7bN0tOzmxhuvO3zWe5ubv6acn5Yai0eZO0ifghZ7gw7gWbb+X+WELveRWEWCTcTAUKKACFFgJAiQEgRIKQIEFIECCkChBQBQooAIUWAkCJASBEgpAgQUgQIKQKEFAFCigAhRYCQIkBIESCkCBBSIQ43X+Qpef+G9of37+cfHzwIcZPFn8+f550XL9rXW1vhzgWHCrBfCfPv+/cf3L2YWXn28qUFUZ6525d37nyY3bplkYQJMKeUj4+P7bt7977/6cn2N+/e/uPDMITYAReLhX+29nn7+cnTb/949cpms1muNcStI3ECdHc/PT219fX1rdurq1tlsbCcs0VQSrHbq6t9Nusz9lktiDABdn1dTk5O2uHhYT06OgoVYM65z5YixRcuwK4vkLvnvk5R1srPZ4kyz0X8GwZSBAgpAoQUAUKKACFFgJAiQEgRIKQIEFIECCkChBQBQooAIUWAkCJASBEgpAgQUgQIKQKEFAFCigAhRYCQIkBIESCkCBBSBAgpAoQUAUKKACFFgJAiQEgRIKQIEFIECCkChBQBQooAIUWAkCJASBEgpAgQUgQIKQKEFAFCigAhRYCQIkBIESCkCBBSBAipwYJZfrV9ivUV935hpmjCBFhKsdlsZvOdHfvr9WsrtVqU5WpmllOy/f395Yx91ijCBNillOzg4GC5UBENw2A5Z4skVIAfF2llZcVa6/tGHO6+nCnaXOECjLhIXcSZOj4FQ4oAIUWAkCJASBEgpAgQUgQIKQKEFAFCigAhRYCQIkBIESCkCBBSBAgpAoQUAUKKACFFgJAiQEgRIOKfinP30lpbNLNK9NdetdZSX7MwATaztZzzEPVoYTTu3m9fWItzLri130qtG1ZrLzDKjRlRNUupn4LfU/8hwJWbajcaxnE0m88nehwuZRxtfrZWi8u9EAAAAAAAAAAApvUfIGngzJALNnkAAAAASUVORK5CYII=" alt="opencode icon"></span></aside><section class="cover-main"><div class="cover-rule"></div><h1 class="title-placeholder">Harness 잘 사용하기</h1><p class="lead-placeholder">챗봇과 싸우지 않고, 에이전트가 일할 환경을 설계하는 방법</p><ul class="hero-points cover-meta"></ul></section><p class="cover-presenter">게임플랫폼 1팀 라승수</p><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">1</span></footer></main></section><section class="deck-slide" data-slide-id="S002"><main class="slide family-content layout-wide density-medium chapter-00" data-slide-id="S002" data-shell="process-flow-shell" data-notes="좋은 결과는 한 번의 프롬프트보다 반복 가능한 구조에서 나온다는 흐름을 고정한다." data-footer="default"><section class="top-band"><p class="chapter-label">OPENING</p><h1 class="title-placeholder">시작하며</h1></section><section class="body-area flow-body"><ol class="process-track "><li class="process-step"><span class="step-index">01</span><span class="step-title">챗봇과 말씨름</span><span class="step-copy">맥락 충돌과 반복 설명</span></li><li class="process-step"><span class="step-index">02</span><span class="step-title">도구들의 수렴</span><span class="step-copy">자동완성·채팅 UI·터미널 에이전트</span></li><li class="process-step"><span class="step-index">03</span><span class="step-title">Harness</span><span class="step-copy">규칙·컨텍스트·권한·검증·상태 기록</span></li></ol><p class="flow-thesis centered-claim">개발자의 핵심 역량: AI에게 할 말 → AI가 안전하게 일할 환경</p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">2</span></footer></main></section><section class="deck-slide" data-slide-id="S003"><main class="slide family-agenda layout-wide density-heavy chapter-00" data-slide-id="S003" data-shell="agenda-list-shell" data-notes="전체 표를 한 장으로 보여 주고, 다음 장부터 각 항목을 순서대로 펼친다." data-footer="default"><section class="agenda-layout"><div class="agenda-side"><p class="chapter-label">OPENING</p><h1 class="title-placeholder">전체 목차</h1></div><ol class="agenda-list"><li class="agenda-item"><span class="agenda-number">01</span><span class="agenda-topic">코딩은 어디로 가고 있는가</span><span class="agenda-text">개발자의 숙련 이동</span></li><li class="agenda-item"><span class="agenda-number">02</span><span class="agenda-topic">왜 Claude Code인가</span><span class="agenda-text">AI 코딩 도구의 구조 수렴</span></li><li class="agenda-item"><span class="agenda-number">03</span><span class="agenda-topic">AI 시대의 개발 방법론</span><span class="agenda-text">TDD·SDD·Spec-first 재부상</span></li><li class="agenda-item"><span class="agenda-number">04</span><span class="agenda-topic">Harness</span><span class="agenda-text">Prompt 이후의 에이전트 운영 구조</span></li><li class="agenda-item"><span class="agenda-number">05</span><span class="agenda-topic">한계와 실패 패턴</span><span class="agenda-text">긴 작업·보안·신뢰 문제</span></li><li class="agenda-item"><span class="agenda-number">06</span><span class="agenda-topic">멀티 에이전트</span><span class="agenda-text">역할과 컨텍스트 분리</span></li><li class="agenda-item"><span class="agenda-number">07</span><span class="agenda-topic">워크플로우와 도구</span><span class="agenda-text">명령어·게이트·워크트리·이슈</span></li><li class="agenda-item"><span class="agenda-number">08</span><span class="agenda-topic">제작 과정</span><span class="agenda-text">발표 제작 파이프라인 해부</span></li><li class="agenda-item"><span class="agenda-number">09</span><span class="agenda-topic">다음에 해야 할 일</span><span class="agenda-text">개인과 팀의 첫 변화</span></li></ol></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">3</span></footer></main></section><section class="deck-slide" data-slide-id="S004"><main class="slide family-section layout-centered density-light chapter-01" data-slide-id="S004" data-shell="section-divider-shell" data-notes="코딩이 사라지는가보다 개발자가 직접 붙들 일이 어디로 이동하는가를 묻는다." data-footer="default"><section class="section-main"><p class="chapter-marker">CHAPTER 01</p><h1 class="title-placeholder">코딩은 사라지는가</h1><ul class="section-keywords"></ul></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">4</span></footer></main></section><section class="deck-slide" data-slide-id="S005"><main class="slide family-comparison layout-split density-medium chapter-01" data-slide-id="S005" data-shell="split-compare-shell" data-notes="source markdown의 기계어와 어셈블리 코드 블록" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 01</p><h1 class="title-placeholder">기계어 → 어셈블리</h1></section><section class="compare-grid with-arrow"><article class="compare-col"><p class="compare-label">기계어</p><pre class="code-block"><code>10111000 00000001 00000000 00000000 00000000</code></pre>
+<section class="deck-slide active" data-slide-id="S001"><main class="slide family-title layout-centered density-light chapter-00" data-slide-id="S001" data-shell="title-hero-shell" data-notes="제목과 부제만 두고, 발표자는 게임플랫폼 1팀 라승수로 표시한다." data-footer="default"><aside class="tool-icons" aria-label="toolchain"><span class="tool-icon tool-icon-claude-code"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCEtLSBHZW5lcmF0ZWQgYnkgUGl4ZWxtYXRvciBQcm8gMy42LjE3IC0tPgo8c3ZnIHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjEyMDAiIHZpZXdCb3g9IjAgMCAxMjAwIDEyMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8ZyBpZD0iZzMxNCI+CiAgICAgICAgPHBhdGggaWQ9InBhdGgxNDciIGZpbGw9IiNkOTc3NTciIHN0cm9rZT0ibm9uZSIgZD0iTSAyMzMuOTU5NzkzIDgwMC4yMTQ5MDUgTCA0NjguNjQ0Mjg3IDY2OC41MzY5ODcgTCA0NzIuNTkwNjM3IDY1Ny4xMDA2NDcgTCA0NjguNjQ0Mjg3IDY1MC43Mzg0MDMgTCA0NTcuMjA4MDY5IDY1MC43Mzg0MDMgTCA0MTcuOTg2NjMzIDY0OC4zMjIxNDQgTCAyODMuODkyNjM5IDY0NC42OTgxMiBMIDE2Ny41OTczMjEgNjM5Ljg2NTg0NSBMIDU0LjkyNjIwOCA2MzMuODI1NjIzIEwgMjYuNTc3MjM4IDYyNy43ODUzMzkgTCAzLjNlLTA1IDU5Mi43NTE3MDkgTCAyLjczODMyIDU3NS4yNzUzMyBMIDI2LjU3NzIzOCA1NTkuMjQ4MzUyIEwgNjAuNzI0ODczIDU2Mi4yMjgxNDkgTCAxMzYuMTg3OTczIDU2Ny4zODI2MjkgTCAyNDkuNDIyODY3IDU3NS4xOTQ3NjMgTCAzMzEuNTcwNDk2IDU4MC4wMjY5NzggTCA0NTMuMjYxODQxIDU5Mi42NzEwODIgTCA0NzIuNTkwNjM3IDU5Mi42NzEwODIgTCA0NzUuMzI4ODU3IDU4NC44NTkwMDkgTCA0NjguNzI0OTE1IDU4MC4wMjY5NzggTCA0NjMuNTcwNTU3IDU3NS4xOTQ3NjMgTCAzNDYuMzg5MzEzIDQ5NS43ODUyMTcgTCAyMTkuNTQzNjcxIDQxMS44NjU5MDYgTCAxNTMuMTAwNzIzIDM2My41NDM3NjIgTCAxMTcuMTgxMjY3IDMzOS4wNjA0MjUgTCA5OS4wNjA0NTUgMzE2LjEwNzM2MSBMIDkxLjI0ODM2NyAyNjYuMDEzNTUgTCAxMjMuODY1Nzg0IDIzMC4wOTM5OTQgTCAxNjcuNjc3ODg3IDIzMy4wNzM4NTMgTCAxNzguODcyNTEzIDIzNi4wNTM3NzIgTCAyMjMuMjQ4MzY3IDI3MC4yMDE0NzcgTCAzMTguMDQwMjgzIDM0My41NzA0OTYgTCA0NDEuODI1NTkyIDQzNC43MzgzNDIgTCA0NTkuOTQ2NDExIDQ0OS43OTg3MDYgTCA0NjcuMTk0NjcyIDQ0NC42NDQ0NyBMIDQ2OC4wODA1OTcgNDQxLjAyMDIwMyBMIDQ1OS45NDY0MTEgNDI3LjQwOTQ4NSBMIDM5Mi42MTc0OTMgMzA1LjcxODMyMyBMIDMyMC43Nzg1NjQgMTgxLjkzMjk4MyBMIDI4OC44MDU0MiAxMzAuNjMwODU5IEwgMjgwLjM0ODk5OSA5OS44NjU4NDUgQyAyNzcuMzY5MTcxIDg3LjIyMTQzNiAyNzUuMTk0NjQxIDc2LjU5MDY5OCAyNzUuMTk0NjQxIDYzLjYyNDI2OCBMIDMxMi4zMjIxNzQgMTMuMjA4MTMgTCAzMzIuODU5MSA2LjYwNDEyNiBMIDM4Mi4zODkzMTMgMTMuMjA4MTMgTCA0MDMuMjQ4MzUyIDMxLjMyODk3OSBMIDQzNC4wMTM1MTkgMTAxLjcxODE0IEwgNDgzLjg2NTc1MyAyMTIuNTM3MDQ4IEwgNTYxLjE4MTI3NCAzNjMuMjIxNDk3IEwgNTgzLjgxMjEzNCA0MDcuOTE5NDM0IEwgNTk1Ljg5MjYzOSA0NDkuMzE1NDkxIEwgNjAwLjQwMjcxIDQ2MS45NTk4MzkgTCA2MDguMjE0NzgzIDQ2MS45NTk4MzkgTCA2MDguMjE0NzgzIDQ1NC43MTE2MDkgTCA2MTQuNTc3MjcxIDM2OS44MjU2MjMgTCA2MjYuMzM1NjMyIDI2NS42MTA4NCBMIDYzNy43NzE4NTEgMTMxLjUxNjg0NiBMIDY0MS43MTgyMDEgOTMuNzQ1MTE3IEwgNjYwLjQwMjgzMiA0OC40ODMyNzYgTCA2OTcuNTMwMzM0IDI0LjAwMDEyMiBMIDcyNi41MjM1NiAzNy44NTI0MTcgTCA3NTAuMzYyNTQ5IDcyIEwgNzQ3LjA2MDQ4NiA5NC4wNjcxMzkgTCA3MzIuODg2MDQ3IDE4Ni4yMDE0MTYgTCA3MDUuMTAwNzA4IDMzMC41MjM1NiBMIDY4Ni45Nzk5MTkgNDI3LjE2Nzg0NyBMIDY5Ny41MzAzMzQgNDI3LjE2Nzg0NyBMIDcwOS42MTA4NCA0MTUuMDg3MzQxIEwgNzU4LjQ5NjcwNCAzNTAuMTc0NTYxIEwgODQwLjY0NDM0OCAyNDcuNDkwMDUxIEwgODc2Ljg4NTkyNSAyMDYuNzM4MzQyIEwgOTE5LjE2Nzg0NyAxNjEuNzE4MTQgTCA5NDYuMzA4ODM4IDE0MC4yOTU0MSBMIDk5Ny42MTA4NCAxNDAuMjk1NDEgTCAxMDM1LjM4MjY5IDE5Ni40Mjk2MjYgTCAxMDE4LjQ2OTg0OSAyNTQuNDE2MTk5IEwgOTY1LjYzNzYzNCAzMjEuNDIyODUyIEwgOTIxLjgyNTU2MiAzNzguMjAxNTM4IEwgODU5LjAwNjcxNCA0NjIuNzY1MjU5IEwgODE5Ljc4NTI3OCA1MzAuNDE2MjYgTCA4MjMuNDA5NDI0IDUzNS44MTIwNzMgTCA4MzIuNzUxNzcgNTM0LjkyNjI3IEwgOTc0LjY1Nzc3NiA1MDQuNzI0OTE1IEwgMTA1MS4zMjg5NzkgNDkwLjg3MjU1OSBMIDExNDIuODE4ODQ4IDQ3NS4xNjc3ODYgTCAxMTg0LjIxNDg0NCA0OTQuNDk2NTgyIEwgMTE4OC43MjQ4NTQgNTE0LjE0NzY0NCBMIDExNzIuNDU2NDIxIDU1NC4zMzU2OTMgTCAxMDc0LjYwNDEyNiA1NzguNDk2NzY1IEwgOTU5LjgzODk4OSA2MDEuNDQ5ODI5IEwgNzg4LjkzOTYzNiA2NDEuODc5MjcyIEwgNzg2Ljg0NTc2NCA2NDMuNDA5NDg1IEwgNzg5LjI2MTg0MSA2NDYuMzg5MzQzIEwgODY2LjI1NTEyNyA2NTMuNjM3NjM0IEwgODk5LjE5NDcwMiA2NTUuNDA5NDI0IEwgOTc5LjgxMjEzNCA2NTUuNDA5NDI0IEwgMTEyOS45MzI4NjEgNjY2LjYwNDE4NyBMIDExNjkuMTU0NDE5IDY5Mi41MzcxMDkgTCAxMTkyLjY3MTI2NSA3MjQuMjY4Njc3IEwgMTE4OC43MjQ4NTQgNzQ4LjQyOTY4OCBMIDExMjguMzIyMTQ0IDc3OS4xOTQ2NDEgTCAxMDQ2LjgxODg0OCA3NTkuODY1ODQ1IEwgODU2LjU5MDc1OSA3MTQuNjA0MTI2IEwgNzkxLjM1NTc3NCA2OTguMzM1NzU0IEwgNzgyLjMzNTY5MyA2OTguMzM1NzU0IEwgNzgyLjMzNTY5MyA3MDMuNzMxNTY3IEwgODM2LjY5ODEyIDc1Ni44ODU5ODYgTCA5MzYuMzIyMjA1IDg0Ni44NDU1ODEgTCAxMDYxLjA3Mzk3NSA5NjIuODE4OTcgTCAxMDY3LjQzNjI3OSA5OTEuNDkwMTEyIEwgMTA1MS40MDk0MjQgMTAxNC4xMjA5MTEgTCAxMDM0LjQ5NjcwNCAxMDExLjcwNDcxMiBMIDkyNC44ODU5ODYgOTI5LjIzNDkyNCBMIDg4Mi42MDQxMjYgODkyLjEwNzU0NCBMIDc4Ni44NDU3NjQgODExLjQ4OTk5IEwgNzgwLjQ4MzI3NiA4MTEuNDg5OTkgTCA3ODAuNDgzMjc2IDgxOS45NDYyODkgTCA4MDIuNTUwNDE1IDg1Mi4yNDE2OTkgTCA5MTkuMDg3MzQxIDEwMjcuNDA5NDI0IEwgOTI1LjEyNzYyNSAxMDgxLjEyNzY4NiBMIDkxNi42NzEyMDQgMTA5OC42MDQxMjYgTCA4ODYuNDY5ODQ5IDExMDkuMTU0NDE5IEwgODUzLjI4ODY5NiAxMTAzLjExNDEzNiBMIDc4NS4wNzM5MTQgMTAwNy4zNTU4MzUgTCA3MTQuNjg0NjMxIDg5OS41MTY3ODUgTCA2NTcuOTA2MDY3IDgwMi44NzI0OTggTCA2NTAuOTc5ODU4IDgwNi44MTg5NyBMIDYxNy40NzY2MjQgMTE2Ny43MDQ4MzQgTCA2MDEuNzcxODUxIDExODYuMTQ3NzA1IEwgNTY1LjUzMDIxMiAxMjAwIEwgNTM1LjMyODg1NyAxMTc3LjA0Njk5NyBMIDUxOS4zMDIxMjQgMTEzOS45MTk1NTYgTCA1MzUuMzI4ODU3IDEwNjYuNTUwNTM3IEwgNTU0LjY1Nzc3NiA5NzAuNzkyMDUzIEwgNTcwLjM2MjQ4OCA4OTQuNjg0NTcgTCA1ODQuNTM2OTI2IDgwMC4xMzQyNzcgTCA1OTIuOTkzMzQ3IDc2OC43MjQ5NzYgTCA1OTIuNDI5NjI2IDc2Ni42MzA4NTkgTCA1ODUuNTAzNDc5IDc2Ny41MTY5NjggTCA1MTQuMjI4MjEgODY1LjM2OTI2MyBMIDQwNS44MjU1MzEgMTAxMS44NjU5MDYgTCAzMjAuMDUzNzExIDExMDMuNjc3OTc5IEwgMjk5LjUxNjgxNSAxMTExLjgxMjI1NiBMIDI2My45MTk1MjUgMTA5My4zNjkyNjMgTCAyNjcuMjIxNDk3IDEwNjAuNDI5Njg4IEwgMjg3LjExNDEzNiAxMDMxLjExNDEzNiBMIDQwNS44MjU1MzEgODgwLjEwNzM2MSBMIDQ3Ny40MjI5MTMgNzg2LjUyMzU2IEwgNTIzLjY1MTA2MiA3MzIuNDgzMjc2IEwgNTIzLjMyODkxOCA3MjQuNjcxMjY1IEwgNTIwLjU5MDY5OCA3MjQuNjcxMjY1IEwgMjA1LjI4ODYwNSA5MjkuMzk1OTM1IEwgMTQ5LjE1NDQzNCA5MzYuNjQ0NDA5IEwgMTI0Ljk5MzM1NSA5MTQuMDEzNTUgTCAxMjcuOTczMTgzIDg3Ni44ODU5ODYgTCAxMzkuNDA5NDA5IDg2NC44MDU0MiBMIDIzNC4yMDEzODUgNzk5LjU3MDQzNSBMIDIzMy44NzkyMjcgNzk5Ljg5MjcgWiIvPgogICAgPC9nPgo8L3N2Zz4K" alt="claude-code icon"></span><span class="tool-icon tool-icon-codex"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoAAAAKACAMAAAA7EzkRAAAAxlBMVEVMaXH////////////////////////4+f/////////////////////////////////////////s7f+vtv////+Anv96nP+En/92mP99nv+gpP+Rof+MoP+Uov+JoP9XbP9bcf+Xov+co/9zk/9UZ/+jpf+Pof9edf9xkP+Zo/9ujP+Gn/9RY/9mgf9hev9phf9sif9HVP9EUP9jff9PYP+mpv9geP9LW/+up/9JWP9ATP+qpv+opf88Rf9NXf/k6P+7w//R1v/QoPLFAAAAFHRSTlMAKZbBrDyD/NsRXURvd2ZOV0ij1YKcr9sAAAAJcEhZcwAACxMAAAsTAQCanBgAABxaSURBVHja7Z0LWxO7FkBHXqGIr+8LgsjjtAgiFSnWwR7x3CT//0/dAiLl1abtTHaSWWs4XI/ngpis7p29J80URShay2vrKwtLi6urq0opDZExnJTh1CwuLaysry23ioxoLa8vLK4yw2mxuriwnr6HrXcrS6iXsoZLK+9StbC1toB7eVi4sJachMsri0xcXhK+TCj0LVFj5FilLKUQCFtvsC9jYnfwJfblHwejzcWtVxQdzVgPrryIMvgxMw1KxbGFwTcUvU0Lg2vkXpBVcD2OgqS1jn5NLUhWIlDwNfo1WcFXLfQD0UT8WrLyRT/Qi8tSiz8aL3DTlBHpC64w8PC3Ggm/3YXsC6NLwbCd6dYCQw73WQhYD78j/IFgEGT1B4JB8AXhD54LggHK4XV2/MHz5fA6vT8QZalF+oVc0/Ab0i9MTsNvqX5BlJrui7D8A9+FYB3lB5vuwZvFFuUH5FSKvKD8AEEDl/EPpi2Gl/EPRA2sbHPCO/yDWQx8V5F/DCXMxjvyL6SehfEPJCsR+i8wl4Ev8A90sv3AFvc/YF4D57krx/1fmJtF9r+ATnJvDPv/QAvuD3zDyEE1vKUAhtSaMRTAIFoKU4CAZCGyzphBlayzAISEloEsAKHqZeA0/nH8H1TOAltQQZSXdGAgiV4MCRgkk/AyIwX1sEwFDNFXwuyBAS24L+YFowRasB3NPWDQgveEXzJGIFmHUIGAFnyHyGtGCOrlNQEQdKytGHYBghbcGchNYBC9JfyK0QHBENhiGzRIhkACIIiGQFaAIFkIrzEyoAVPSuAo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" alt="codex icon"></span><span class="tool-icon tool-icon-opencode"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAACgCAYAAACLz2ctAAAEE0lEQVR4nO3dv2pcRxTH8XNmrqq1TCJhohAEMqmSl7hVDK7zBi4TsHsXkZ0ifTCkdJV3sHEaLXkEp3chAmrkWH8csLQzE2YlE9UWuj/p8P0gtXt1mO8OrGBmzQAAAAAAAAAAuEJu0xjGcTSbzyd6HC5lHG1+tlaLy70QcM1NsgPe3dx8bCltWK1twl0Xn6ZZSm617r3Z3f3FrthgU3D/Iaf0VXPauwnc3Uprf5tZjADd7G0p5YtmVs0sTfFMfLLqZqmvmU1gkgBba9lTGqw1Arz+qrunVmue4mHsRpAiQEgRIKQIEFIECCkChBQBQooAIUWAkCJASBEgpAgQUgQIKQKEFAFCigAhRYCQIkBIESCkCBBSBAipac4FT6ud/0bk0Q72hwvQ+08/WR1Ra+HeWZECXF770fqB6lr3LCL3DTNb+zirBRAmwGZWckpDLeX3N7u7j7bN0tOzmxhuvO3zWe5ubv6acn5Yai0eZO0ifghZ7gw7gWbb+X+WELveRWEWCTcTAUKKACFFgJAiQEgRIKQIEFIECCkChBQBQooAIUWAkCJASBEgpAgQUgQIKQKEFAFCigAhRYCQIkBIESCkCBBSIQ43X+Qpef+G9of37+cfHzwIcZPFn8+f550XL9rXW1vhzgWHCrBfCfPv+/cf3L2YWXn28qUFUZ6525d37nyY3bplkYQJMKeUj4+P7bt7977/6cn2N+/e/uPDMITYAReLhX+29nn7+cnTb/949cpms1muNcStI3ECdHc/PT219fX1rdurq1tlsbCcs0VQSrHbq6t9Nusz9lktiDABdn1dTk5O2uHhYT06OgoVYM65z5YixRcuwK4vkLvnvk5R1srPZ4kyz0X8GwZSBAgpAoQUAUKKACFFgJAiQEgRIKQIEFIECCkChBQBQooAIUWAkCJASBEgpAgQUgQIKQKEFAFCigAhRYCQIkBIESCkCBBSBAgpAoQUAUKKACFFgJAiQEgRIKQIEFIECCkChBQBQooAIUWAkCJASBEgpAgQUgQIKQKEFAFCigAhRYCQIkBIESCkCBBSBAipwYJZfrV9ivUV935hpmjCBFhKsdlsZvOdHfvr9WsrtVqU5WpmllOy/f395Yx91ijCBNillOzg4GC5UBENw2A5Z4skVIAfF2llZcVa6/tGHO6+nCnaXOECjLhIXcSZOj4FQ4oAIUWAkCJASBEgpAgQUgQIKQKEFAFCigAhRYCQIkBIESCkCBBSBAgpAoQUAUKKACFFgJAiQEgRIOKfinP30lpbNLNK9NdetdZSX7MwATaztZzzEPVoYTTu3m9fWItzLri130qtG1ZrLzDKjRlRNUupn4LfU/8hwJWbajcaxnE0m88nehwuZRxtfrZWi8u9EAAAAAAAAAAApvUfIGngzJALNnkAAAAASUVORK5CYII=" alt="opencode icon"></span></aside><section class="cover-main"><div class="cover-rule"></div><h1 class="title-placeholder">Harness 잘 사용하기</h1><p class="lead-placeholder">챗봇과 싸우지 않고, 에이전트가 일할 환경을 설계하는 방법</p><ul class="hero-points cover-meta"></ul></section><p class="cover-presenter">게임플랫폼 1팀 라승수</p><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">1</span></footer></main></section><section class="deck-slide" data-slide-id="S002"><main class="slide family-content layout-wide density-medium chapter-00" data-slide-id="S002" data-shell="process-flow-shell" data-notes="좋은 결과는 한 번의 프롬프트보다 반복 가능한 구조에서 나온다는 흐름을 고정한다." data-footer="default"><section class="top-band"><p class="chapter-label">OPENING</p><h1 class="title-placeholder">시작하며</h1></section><section class="body-area flow-body"><ol class="process-track "><li class="process-step"><span class="step-index">01</span><span class="step-title">챗봇과 말씨름</span><span class="step-copy">맥락 충돌과 반복 설명</span></li><li class="process-step"><span class="step-index">02</span><span class="step-title">도구들의 수렴</span><span class="step-copy">자동완성·채팅 UI·터미널 에이전트</span></li><li class="process-step"><span class="step-index">03</span><span class="step-title">Harness</span><span class="step-copy">규칙·컨텍스트·권한·검증·상태 기록</span></li></ol><p class="flow-thesis centered-claim">개발자의 핵심 역량: AI에게 할 말 → AI가 안전하게 일할 환경</p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">2</span></footer></main></section><section class="deck-slide" data-slide-id="S003"><main class="slide family-agenda layout-wide density-heavy chapter-00" data-slide-id="S003" data-shell="agenda-list-shell" data-notes="전체 표를 한 장으로 보여 주고, 다음 장부터 각 항목을 순서대로 펼친다." data-footer="default"><section class="agenda-layout"><div class="agenda-side"><p class="chapter-label">OPENING</p><h1 class="title-placeholder">전체 목차</h1></div><ol class="agenda-list"><li class="agenda-item"><span class="agenda-number">01</span><span class="agenda-topic">코딩은 어디로 가고 있는가</span><span class="agenda-text">개발자의 숙련 이동</span></li><li class="agenda-item"><span class="agenda-number">02</span><span class="agenda-topic">왜 Claude Code인가</span><span class="agenda-text">AI 코딩 도구의 구조 수렴</span></li><li class="agenda-item"><span class="agenda-number">03</span><span class="agenda-topic">AI 시대의 개발 방법론</span><span class="agenda-text">TDD·SDD·Spec-first 재부상</span></li><li class="agenda-item"><span class="agenda-number">04</span><span class="agenda-topic">Harness</span><span class="agenda-text">Prompt 이후의 에이전트 운영 구조</span></li><li class="agenda-item"><span class="agenda-number">05</span><span class="agenda-topic">한계와 실패 패턴</span><span class="agenda-text">긴 작업·보안·신뢰 문제</span></li><li class="agenda-item"><span class="agenda-number">06</span><span class="agenda-topic">멀티 에이전트</span><span class="agenda-text">역할과 컨텍스트 분리</span></li><li class="agenda-item"><span class="agenda-number">07</span><span class="agenda-topic">워크플로우와 도구</span><span class="agenda-text">명령어·게이트·워크트리·이슈</span></li><li class="agenda-item"><span class="agenda-number">08</span><span class="agenda-topic">제작 과정</span><span class="agenda-text">발표 제작 파이프라인 해부</span></li><li class="agenda-item"><span class="agenda-number">09</span><span class="agenda-topic">다음에 해야 할 일</span><span class="agenda-text">개인과 팀의 첫 변화</span></li></ol></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">3</span></footer></main></section><section class="deck-slide" data-slide-id="S004"><main class="slide family-section layout-centered density-light chapter-01" data-slide-id="S004" data-shell="section-divider-shell" data-notes="코딩이 사라지는가보다 개발자가 직접 붙들 일이 어디로 이동하는가를 묻는다." data-footer="default"><section class="section-main"><p class="chapter-marker">CHAPTER 01</p><h1 class="title-placeholder">코딩은 사라지는가</h1><p class="section-keywords section-keyword-rail"></p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">4</span></footer></main></section><section class="deck-slide" data-slide-id="S005"><main class="slide family-comparison layout-split density-medium chapter-01" data-slide-id="S005" data-shell="split-compare-shell" data-notes="source markdown의 기계어와 어셈블리 코드 블록" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 01</p><h1 class="title-placeholder">기계어 → 어셈블리</h1></section><section class="compare-grid with-arrow"><article class="compare-col"><p class="compare-label">기계어</p><pre class="code-block"><code>10111000 00000001 00000000 00000000 00000000</code></pre>
 </article><div class="compare-arrow" aria-hidden="true">→</div><article class="compare-col is-focus"><p class="compare-label">어셈블리</p><pre class="code-block"><code>MOV EAX, 1</code></pre>
 </article></section><p class="negative-opinion">컴파일러가 만든 코드가 사람보다 효율적일 리 없다!</p><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">5</span></footer></main></section><section class="deck-slide" data-slide-id="S006"><main class="slide family-comparison layout-split density-medium chapter-01" data-slide-id="S006" data-shell="split-compare-shell" data-notes="source markdown의 어셈블리와 C 코드 블록" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 01</p><h1 class="title-placeholder">어셈블리 → C/Pascal</h1></section><section class="compare-grid with-arrow"><article class="compare-col"><p class="compare-label">어셈블리</p><pre class="code-block"><code>section .data
   msg db &quot;Hello World&quot;
@@ -3128,7 +4446,7 @@ p = null;</code></pre>
     }
 }</code></pre>
 </article><div class="compare-arrow" aria-hidden="true">→</div><article class="compare-col is-focus"><p class="compare-label">Python</p><pre class="code-block"><code>print(&quot;Hello, World!&quot;)</code></pre>
-</article></section><p class="negative-opinion">장난감 언어로 무슨 개발을 하냐!</p><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">8</span></footer></main></section><section class="deck-slide" data-slide-id="S009"><main class="slide family-content layout-editorial density-medium chapter-01" data-slide-id="S009" data-shell="statement-editorial-shell" data-notes="source markdown의 AI 개발 prompt와 quote" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 01</p><h1 class="title-placeholder">AI 개발</h1></section><section class="prompt-only-body"><p class="prompt-language-label">자연어</p><article class="prompt-card"><p class="prompt-text">이 함수를 리펙토링하고 테스트 코드를 작성해줘.</p></article><p class="negative-opinion">자연어로 시키는 건 진짜 개발이 아니다!</p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">9</span></footer></main></section><section class="deck-slide" data-slide-id="S010"><main class="slide family-content layout-wide density-medium chapter-01" data-slide-id="S010" data-shell="evidence-table-shell" data-notes="시대별 전환을 표로 압축하고, 변경된 source 질문을 독립된 한 줄로 배치한다." data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 01</p><h1 class="title-placeholder">직접 하던 일의 감소</h1></section><section class="table-wrap"><table class="data-table"><thead><tr><th>시대</th><th>전환</th><th>위임한 것</th></tr></thead><tbody><tr><td>1950s</td><td>기계어 → 어셈블리</td><td>이진 코드를 직접 작성하는 부담</td></tr><tr><td>1960s</td><td>어셈블리 → C</td><td>레지스터와 명령어 최적화를 컴파일러에 위임</td></tr><tr><td>1990s</td><td>C/C++ → Java</td><td>메모리 해제를 가비지 컬렉터에 위임</td></tr><tr><td>2000s</td><td>언어 → 프레임워크</td><td>반복되는 보일러플레이트를 프레임워크에 위임</td></tr><tr><td>2010s</td><td>온프레미스 → 클라우드</td><td>서버 운영과 확장을 클라우드에 위임</td></tr><tr><td>2020s</td><td>직접 코딩 → AI 에이전트</td><td>코드 작성의 상당 부분과 작업 환경 설계</td></tr></tbody></table><p class="table-question">직접하는 일을 줄고, 설계하는 일은 늘어난다</p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">10</span></footer></main></section><section class="deck-slide" data-slide-id="S011"><main class="slide family-content layout-wide density-medium chapter-01" data-slide-id="S011" data-shell="evidence-table-shell" data-notes="source markdown의 YC W25, OpenAI Codex 팀, Meta 엔지니어 사례" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 01</p><h1 class="title-placeholder">숫자로 보는 변화</h1></section><section class="table-wrap evidence-cards-body"><div class="evidence-card-grid"><article class="evidence-card"><strong>25%</strong><span>YC W25</span><p>코드베이스 95% 이상 AI</p></article><article class="evidence-card"><strong>100만 줄</strong><span>OpenAI Codex 팀</span><p>수동 코드 한 줄 없음</p></article><article class="evidence-card"><strong>3개월+</strong><span>Meta 엔지니어</span><p>직접 코드 타이핑 없음</p></article></div></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">11</span></footer></main></section><section class="deck-slide" data-slide-id="S012"><main class="slide family-content layout-wide density-medium chapter-01" data-slide-id="S012" data-shell="process-flow-shell" data-notes="source markdown의 규칙 파일 네 가지" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 01</p><h1 class="title-placeholder">문서가 코드</h1><p class="lead-placeholder">이름은 다르지만 역할은 동일</p></section><section class="body-area flow-body"><ol class="process-track document-grid"><li class="process-step document-card"><span class="doc-icon" aria-hidden="true"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCEtLSBHZW5lcmF0ZWQgYnkgUGl4ZWxtYXRvciBQcm8gMy42LjE3IC0tPgo8c3ZnIHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjEyMDAiIHZpZXdCb3g9IjAgMCAxMjAwIDEyMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8ZyBpZD0iZzMxNCI+CiAgICAgICAgPHBhdGggaWQ9InBhdGgxNDciIGZpbGw9IiNkOTc3NTciIHN0cm9rZT0ibm9uZSIgZD0iTSAyMzMuOTU5NzkzIDgwMC4yMTQ5MDUgTCA0NjguNjQ0Mjg3IDY2OC41MzY5ODcgTCA0NzIuNTkwNjM3IDY1Ny4xMDA2NDcgTCA0NjguNjQ0Mjg3IDY1MC43Mzg0MDMgTCA0NTcuMjA4MDY5IDY1MC43Mzg0MDMgTCA0MTcuOTg2NjMzIDY0OC4zMjIxNDQgTCAyODMuODkyNjM5IDY0NC42OTgxMiBMIDE2Ny41OTczMjEgNjM5Ljg2NTg0NSBMIDU0LjkyNjIwOCA2MzMuODI1NjIzIEwgMjYuNTc3MjM4IDYyNy43ODUzMzkgTCAzLjNlLTA1IDU5Mi43NTE3MDkgTCAyLjczODMyIDU3NS4yNzUzMyBMIDI2LjU3NzIzOCA1NTkuMjQ4MzUyIEwgNjAuNzI0ODczIDU2Mi4yMjgxNDkgTCAxMzYuMTg3OTczIDU2Ny4zODI2MjkgTCAyNDkuNDIyODY3IDU3NS4xOTQ3NjMgTCAzMzEuNTcwNDk2IDU4MC4wMjY5NzggTCA0NTMuMjYxODQxIDU5Mi42NzEwODIgTCA0NzIuNTkwNjM3IDU5Mi42NzEwODIgTCA0NzUuMzI4ODU3IDU4NC44NTkwMDkgTCA0NjguNzI0OTE1IDU4MC4wMjY5NzggTCA0NjMuNTcwNTU3IDU3NS4xOTQ3NjMgTCAzNDYuMzg5MzEzIDQ5NS43ODUyMTcgTCAyMTkuNTQzNjcxIDQxMS44NjU5MDYgTCAxNTMuMTAwNzIzIDM2My41NDM3NjIgTCAxMTcuMTgxMjY3IDMzOS4wNjA0MjUgTCA5OS4wNjA0NTUgMzE2LjEwNzM2MSBMIDkxLjI0ODM2NyAyNjYuMDEzNTUgTCAxMjMuODY1Nzg0IDIzMC4wOTM5OTQgTCAxNjcuNjc3ODg3IDIzMy4wNzM4NTMgTCAxNzguODcyNTEzIDIzNi4wNTM3NzIgTCAyMjMuMjQ4MzY3IDI3MC4yMDE0NzcgTCAzMTguMDQwMjgzIDM0My41NzA0OTYgTCA0NDEuODI1NTkyIDQzNC43MzgzNDIgTCA0NTkuOTQ2NDExIDQ0OS43OTg3MDYgTCA0NjcuMTk0NjcyIDQ0NC42NDQ0NyBMIDQ2OC4wODA1OTcgNDQxLjAyMDIwMyBMIDQ1OS45NDY0MTEgNDI3LjQwOTQ4NSBMIDM5Mi42MTc0OTMgMzA1LjcxODMyMyBMIDMyMC43Nzg1NjQgMTgxLjkzMjk4MyBMIDI4OC44MDU0MiAxMzAuNjMwODU5IEwgMjgwLjM0ODk5OSA5OS44NjU4NDUgQyAyNzcuMzY5MTcxIDg3LjIyMTQzNiAyNzUuMTk0NjQxIDc2LjU5MDY5OCAyNzUuMTk0NjQxIDYzLjYyNDI2OCBMIDMxMi4zMjIxNzQgMTMuMjA4MTMgTCAzMzIuODU5MSA2LjYwNDEyNiBMIDM4Mi4zODkzMTMgMTMuMjA4MTMgTCA0MDMuMjQ4MzUyIDMxLjMyODk3OSBMIDQzNC4wMTM1MTkgMTAxLjcxODE0IEwgNDgzLjg2NTc1MyAyMTIuNTM3MDQ4IEwgNTYxLjE4MTI3NCAzNjMuMjIxNDk3IEwgNTgzLjgxMjEzNCA0MDcuOTE5NDM0IEwgNTk1Ljg5MjYzOSA0NDkuMzE1NDkxIEwgNjAwLjQwMjcxIDQ2MS45NTk4MzkgTCA2MDguMjE0NzgzIDQ2MS45NTk4MzkgTCA2MDguMjE0NzgzIDQ1NC43MTE2MDkgTCA2MTQuNTc3MjcxIDM2OS44MjU2MjMgTCA2MjYuMzM1NjMyIDI2NS42MTA4NCBMIDYzNy43NzE4NTEgMTMxLjUxNjg0NiBMIDY0MS43MTgyMDEgOTMuNzQ1MTE3IEwgNjYwLjQwMjgzMiA0OC40ODMyNzYgTCA2OTcuNTMwMzM0IDI0LjAwMDEyMiBMIDcyNi41MjM1NiAzNy44NTI0MTcgTCA3NTAuMzYyNTQ5IDcyIEwgNzQ3LjA2MDQ4NiA5NC4wNjcxMzkgTCA3MzIuODg2MDQ3IDE4Ni4yMDE0MTYgTCA3MDUuMTAwNzA4IDMzMC41MjM1NiBMIDY4Ni45Nzk5MTkgNDI3LjE2Nzg0NyBMIDY5Ny41MzAzMzQgNDI3LjE2Nzg0NyBMIDcwOS42MTA4NCA0MTUuMDg3MzQxIEwgNzU4LjQ5NjcwNCAzNTAuMTc0NTYxIEwgODQwLjY0NDM0OCAyNDcuNDkwMDUxIEwgODc2Ljg4NTkyNSAyMDYuNzM4MzQyIEwgOTE5LjE2Nzg0NyAxNjEuNzE4MTQgTCA5NDYuMzA4ODM4IDE0MC4yOTU0MSBMIDk5Ny42MTA4NCAxNDAuMjk1NDEgTCAxMDM1LjM4MjY5IDE5Ni40Mjk2MjYgTCAxMDE4LjQ2OTg0OSAyNTQuNDE2MTk5IEwgOTY1LjYzNzYzNCAzMjEuNDIyODUyIEwgOTIxLjgyNTU2MiAzNzguMjAxNTM4IEwgODU5LjAwNjcxNCA0NjIuNzY1MjU5IEwgODE5Ljc4NTI3OCA1MzAuNDE2MjYgTCA4MjMuNDA5NDI0IDUzNS44MTIwNzMgTCA4MzIuNzUxNzcgNTM0LjkyNjI3IEwgOTc0LjY1Nzc3NiA1MDQuNzI0OTE1IEwgMTA1MS4zMjg5NzkgNDkwLjg3MjU1OSBMIDExNDIuODE4ODQ4IDQ3NS4xNjc3ODYgTCAxMTg0LjIxNDg0NCA0OTQuNDk2NTgyIEwgMTE4OC43MjQ4NTQgNTE0LjE0NzY0NCBMIDExNzIuNDU2NDIxIDU1NC4zMzU2OTMgTCAxMDc0LjYwNDEyNiA1NzguNDk2NzY1IEwgOTU5LjgzODk4OSA2MDEuNDQ5ODI5IEwgNzg4LjkzOTYzNiA2NDEuODc5MjcyIEwgNzg2Ljg0NTc2NCA2NDMuNDA5NDg1IEwgNzg5LjI2MTg0MSA2NDYuMzg5MzQzIEwgODY2LjI1NTEyNyA2NTMuNjM3NjM0IEwgODk5LjE5NDcwMiA2NTUuNDA5NDI0IEwgOTc5LjgxMjEzNCA2NTUuNDA5NDI0IEwgMTEyOS45MzI4NjEgNjY2LjYwNDE4NyBMIDExNjkuMTU0NDE5IDY5Mi41MzcxMDkgTCAxMTkyLjY3MTI2NSA3MjQuMjY4Njc3IEwgMTE4OC43MjQ4NTQgNzQ4LjQyOTY4OCBMIDExMjguMzIyMTQ0IDc3OS4xOTQ2NDEgTCAxMDQ2LjgxODg0OCA3NTkuODY1ODQ1IEwgODU2LjU5MDc1OSA3MTQuNjA0MTI2IEwgNzkxLjM1NTc3NCA2OTguMzM1NzU0IEwgNzgyLjMzNTY5MyA2OTguMzM1NzU0IEwgNzgyLjMzNTY5MyA3MDMuNzMxNTY3IEwgODM2LjY5ODEyIDc1Ni44ODU5ODYgTCA5MzYuMzIyMjA1IDg0Ni44NDU1ODEgTCAxMDYxLjA3Mzk3NSA5NjIuODE4OTcgTCAxMDY3LjQzNjI3OSA5OTEuNDkwMTEyIEwgMTA1MS40MDk0MjQgMTAxNC4xMjA5MTEgTCAxMDM0LjQ5NjcwNCAxMDExLjcwNDcxMiBMIDkyNC44ODU5ODYgOTI5LjIzNDkyNCBMIDg4Mi42MDQxMjYgODkyLjEwNzU0NCBMIDc4Ni44NDU3NjQgODExLjQ4OTk5IEwgNzgwLjQ4MzI3NiA4MTEuNDg5OTkgTCA3ODAuNDgzMjc2IDgxOS45NDYyODkgTCA4MDIuNTUwNDE1IDg1Mi4yNDE2OTkgTCA5MTkuMDg3MzQxIDEwMjcuNDA5NDI0IEwgOTI1LjEyNzYyNSAxMDgxLjEyNzY4NiBMIDkxNi42NzEyMDQgMTA5OC42MDQxMjYgTCA4ODYuNDY5ODQ5IDExMDkuMTU0NDE5IEwgODUzLjI4ODY5NiAxMTAzLjExNDEzNiBMIDc4NS4wNzM5MTQgMTAwNy4zNTU4MzUgTCA3MTQuNjg0NjMxIDg5OS41MTY3ODUgTCA2NTcuOTA2MDY3IDgwMi44NzI0OTggTCA2NTAuOTc5ODU4IDgwNi44MTg5NyBMIDYxNy40NzY2MjQgMTE2Ny43MDQ4MzQgTCA2MDEuNzcxODUxIDExODYuMTQ3NzA1IEwgNTY1LjUzMDIxMiAxMjAwIEwgNTM1LjMyODg1NyAxMTc3LjA0Njk5NyBMIDUxOS4zMDIxMjQgMTEzOS45MTk1NTYgTCA1MzUuMzI4ODU3IDEwNjYuNTUwNTM3IEwgNTU0LjY1Nzc3NiA5NzAuNzkyMDUzIEwgNTcwLjM2MjQ4OCA4OTQuNjg0NTcgTCA1ODQuNTM2OTI2IDgwMC4xMzQyNzcgTCA1OTIuOTkzMzQ3IDc2OC43MjQ5NzYgTCA1OTIuNDI5NjI2IDc2Ni42MzA4NTkgTCA1ODUuNTAzNDc5IDc2Ny41MTY5NjggTCA1MTQuMjI4MjEgODY1LjM2OTI2MyBMIDQwNS44MjU1MzEgMTAxMS44NjU5MDYgTCAzMjAuMDUzNzExIDExMDMuNjc3OTc5IEwgMjk5LjUxNjgxNSAxMTExLjgxMjI1NiBMIDI2My45MTk1MjUgMTA5My4zNjkyNjMgTCAyNjcuMjIxNDk3IDEwNjAuNDI5Njg4IEwgMjg3LjExNDEzNiAxMDMxLjExNDEzNiBMIDQwNS44MjU1MzEgODgwLjEwNzM2MSBMIDQ3Ny40MjI5MTMgNzg2LjUyMzU2IEwgNTIzLjY1MTA2MiA3MzIuNDgzMjc2IEwgNTIzLjMyODkxOCA3MjQuNjcxMjY1IEwgNTIwLjU5MDY5OCA3MjQuNjcxMjY1IEwgMjA1LjI4ODYwNSA5MjkuMzk1OTM1IEwgMTQ5LjE1NDQzNCA5MzYuNjQ0NDA5IEwgMTI0Ljk5MzM1NSA5MTQuMDEzNTUgTCAxMjcuOTczMTgzIDg3Ni44ODU5ODYgTCAxMzkuNDA5NDA5IDg2NC44MDU0MiBMIDIzNC4yMDEzODUgNzk5LjU3MDQzNSBMIDIzMy44NzkyMjcgNzk5Ljg5MjcgWiIvPgogICAgPC9nPgo8L3N2Zz4K" alt="Claude Code icon"></span><span class="doc-product">Claude Code</span><span class="step-title">CLAUDE.md</span></li><li class="process-step document-card"><span class="doc-icon" aria-hidden="true"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSI2MDAgMzAwIDQwMCA0MDAiIGZpbGw9Im5vbmUiPgo8cGF0aCBmaWxsPSIjRjdGN0Y0IiBkPSJNMTAwMCAzMDBINjAwVjcwMEgxMDAwVjMwMFoiLz4KPHBhdGggZmlsbD0iIzI2MjUxRSIgZD0iTTkyNC4yMTMgNDIyLjMyOEw4MDYuMTIyIDM1NC4xNDdDODAyLjMyOSAzNTEuOTU2IDc5Ny42NTMgMzUxLjk1NiA3OTMuODYxIDM1NC4xNDdMNjc1Ljc3NSA0MjIuMzI4QzY3Mi41ODggNDI0LjE3IDY3MC42MTcgNDI3LjU3MiA2NzAuNjE3IDQzMS4yNTdWNTY4LjczOEM2NzAuNjE3IDU3Mi40MjMgNjcyLjU4MyA1NzUuODI5IDY3NS43NzUgNTc3LjY2N0w3OTMuODY2IDY0NS44NDdDNzk3LjY1OSA2NDguMDM4IDgwMi4zMzUgNjQ4LjAzOCA4MDYuMTI3IDY0NS44NDdMOTI0LjIxOCA1NzcuNjY3QzkyNy40MDUgNTc1LjgyNCA5MjkuMzc2IDU3Mi40MjMgOTI5LjM3NiA1NjguNzM4VjQzMS4yNTdDOTI5LjM3NiA0MjcuNTcyIDkyNy40MSA0MjQuMTY1IDkyNC4yMTggNDIyLjMyOEg5MjQuMjEzWk05MTYuNzk5IDQzNi43NjhMODAyLjgwMSA2MzQuMjE5QzgwMi4wMjkgNjM1LjU0NyA3OTkuOTk0IDYzNS4wMDYgNzk5Ljk5NCA2MzMuNDYzVjUwNC4xNzhDNzk5Ljk5NCA1MDEuNTk2IDc5OC42MTIgNDk5LjIwNyA3OTYuMzczIDQ5Ny45MDZMNjg0LjQxIDQzMy4yNjVDNjgzLjA4MSA0MzIuNDk0IDY4My42MjIgNDMwLjQ1OSA2ODUuMTY1IDQzMC40NTlIOTEzLjE2MkM5MTYuMzk4IDQzMC40NTkgOTE4LjQyMiA0MzMuOTY3IDkxNi44MDUgNDM2Ljc3NEg5MTYuNzk5VjQzNi43NjhaIi8+Cjwvc3ZnPgo=" alt="Cursor icon"></span><span class="doc-product">Cursor</span><span class="step-title">Cursor Rules</span></li><li class="process-step document-card"><span class="doc-icon" aria-hidden="true"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5NiIgaGVpZ2h0PSI5NiIgdmlld0JveD0iMCAwIDk2IDk2Ij48cGF0aCBkPSJNOTUuNjY3IDY3Ljk1NEM5Mi4yMjUgNzMuOTMzIDcyLjI0IDg4LjA0IDQ3Ljk5NyA4OC4wNCAyMy43NTQgODguMDQgMy43NjkgNzMuOTMzLjMyOCA2Ny45NTRjLS4yMTYtLjM3NS0uMzA3LS43OTYtLjMyOC0xLjIyNlY1NS42NjFjLjAxOS0uMzcxLjA4OS0uNzM2LjIyNi0xLjA4MSAxLjQ4OS0zLjczOCA1LjM4Ni05LjE2NiAxMC40MTctMTAuNjIzLjY2Ny0xLjcxMiAxLjY1NS00LjIxNSAyLjU3Ni02LjA2Mi0uMTU0LTEuNDE0LS4yMDgtMi44NzItLjIwOC00LjM0NSAwLTUuMzIyIDEuMTI4LTkuOTkgNC41MjctMTMuNDY2IDEuNTg3LTEuNjIzIDMuNTU3LTIuODY5IDUuODkzLTMuODA1IDUuNTk1LTQuNTQ1IDEzLjU2My04LjM2OSAyNC40OC04LjM2OXMxOS4wNTcgMy44MjQgMjQuNjUyIDguMzY5YzIuMzM3LjkzNiA0LjMwNiAyLjE4MiA1Ljg5NCAzLjgwNSAzLjM5OSAzLjQ3NiA0LjUyNyA4LjE0NCA0LjUyNyAxMy40NjYgMCAxLjQ3My0uMDU0IDIuOTMxLS4yMDggNC4zNDUuOTIxIDEuODQ3IDEuOTA5IDQuMzUgMi41NzYgNi4wNjIgNS4wMyAxLjQ1NyA4LjkyOCA2Ljg4NSAxMC40MTcgMTAuNjIzLjE2My40MS4yMzEuODQ4LjIzMSAxLjI4OXYxMC42NDRjMCAuNTA0LS4wODEgMS4wMDQtLjMzMyAxLjQ0MVpNNDguNjg2IDQzLjk5M2wtLjMuMDAxLTEuMDc3LS4wMDFjLS40MjMuNzA5LS44OTQgMS4zOS0xLjQxOCAyLjAzNS0zLjA3OCAzLjc4Ny03LjY3MiA1Ljk2NC0xNC4wMjYgNS45NjQtNi44OTcgMC0xMS45NTItMS40MzUtMTUuMTIzLTUuMDMyYTcuODg2IDcuODg2IDAgMCAxLS4zNDItLjQxOWwtLjM5LjQxOXYyNi4zMjZjNS43MzcgMy4xMTggMTguMDUgOC43MTMgMzEuOTg3IDguNzEzIDEzLjkzOCAwIDI2LjI1MS01LjU5NSAzMS45ODgtOC43MTNWNDYuOTZsLS4zOS0uNDE5cy0uMTMyLjE4MS0uMzQyLjQxOWMtMy4xNzEgMy41OTctOC4yMjYgNS4wMzItMTUuMTIzIDUuMDMyLTYuMzU0IDAtMTAuOTQ5LTIuMTc3LTE0LjAyNi01Ljk2NGExNy4xNzggMTcuMTc4IDAgMCAxLTEuNDE4LTIuMDM0aC0uMDY2bC4wNjYtLjAwMVptLTMuOTQtMTEuNzMzYy4xNy0xLjMyNi4yNTEtMi41MTMuMjUzLTMuNTczdi0uMDg0Yy0uMDA1LTMuMDc3LS42NzgtNS4wNzktMS43NTItNi4zMDgtMS4zNjUtMS41NjItNC4xODQtMi43NTgtMTAuMTI3LTIuMTE1LTYuMDIxLjY1Mi05LjM4NiAyLjE0Ni0xMS4yOTQgNC4wOTgtMS44NDcgMS44ODktMi44MTggNC43MTUtMi44MTggOS4yNzIgMCA0Ljg0Mi42OTggNy43MDMgMi4yMzIgOS40NDMgMS40NTkgMS42NTUgNC4zMzIgMy4wMDEgMTAuNjI1IDMuMDAxIDQuODM3IDAgNy42MDMtMS41NzMgOS4zNzEtMy43NDkgMS44OTktMi4zMzYgMi45NjctNS43NTkgMy41MS05Ljk4NVptNi41MDMgMGMuNTQzIDQuMjI2IDEuNjExIDcuNjQ5IDMuNTEgOS45ODUgMS43NjggMi4xNzYgNC41MzMgMy43NDkgOS4zNzEgMy43NDkgNi4yOTIgMCA5LjE2NS0xLjM0NiAxMC42MjQtMy4wMDEgMS41MzUtMS43NCAyLjIzMi00LjYwMSAyLjIzMi05LjQ0MyAwLTQuNTU3LS45Ny03LjM4My0yLjgxNy05LjI3Mi0xLjkwOC0xLjk1Mi01LjI3NC0zLjQ0Ni0xMS4yOTQtNC4wOTgtNS45NDMtLjY0My04Ljc2My41NTMtMTAuMTI3IDIuMTE1LTEuMDc0IDEuMjI5LTEuNzQ3IDMuMjMxLTEuNzUyIDYuMzA4di4wODRjLjAwMiAxLjA2LjA4MyAyLjI0Ny4yNTMgMy41NzNabS0yLjU2MyAxMS43MzRoLjA2NmwtLjA2Ni0uMDAxdi4wMDFaIi8+PHBhdGggZD0iTTM4LjUgNTUuNzVhMy41IDMuNSAwIDAgMSAzLjUgMy41djguNWEzLjUgMy41IDAgMSAxLTcgMHYtOC41YTMuNSAzLjUgMCAwIDEgMy41LTMuNVptMTkgMGEzLjUgMy41IDAgMCAxIDMuNSAzLjV2OC41YTMuNSAzLjUgMCAxIDEtNyAwdi04LjVhMy41IDMuNSAwIDAgMSAzLjUtMy41WiIvPjwvc3ZnPg==" alt="GitHub Copilot icon"></span><span class="doc-product">GitHub Copilot</span><span class="step-title">copilot-instructions.md</span></li><li class="process-step document-card"><span class="doc-icon" aria-hidden="true"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoAAAAKACAMAAAA7EzkRAAAAxlBMVEVMaXH////////////////////////4+f/////////////////////////////////////////s7f+vtv////+Anv96nP+En/92mP99nv+gpP+Rof+MoP+Uov+JoP9XbP9bcf+Xov+co/9zk/9UZ/+jpf+Pof9edf9xkP+Zo/9ujP+Gn/9RY/9mgf9hev9phf9sif9HVP9EUP9jff9PYP+mpv9geP9LW/+up/9JWP9ATP+qpv+opf88Rf9NXf/k6P+7w//R1v/QoPLFAAAAFHRSTlMAKZbBrDyD/NsRXURvd2ZOV0ij1YKcr9sAAAAJcEhZcwAACxMAAAsTAQCanBgAABxaSURBVHja7Z0LWxO7FkBHXqGIr+8LgsjjtAgiFSnWwR7x3CT//0/dAiLl1abtTHaSWWs4XI/ngpis7p29J80URShay2vrKwtLi6urq0opDZExnJTh1CwuLaysry23ioxoLa8vLK4yw2mxuriwnr6HrXcrS6iXsoZLK+9StbC1toB7eVi4sJachMsri0xcXhK+TCj0LVFj5FilLKUQCFtvsC9jYnfwJfblHwejzcWtVxQdzVgPrryIMvgxMw1KxbGFwTcUvU0Lg2vkXpBVcD2OgqS1jn5NLUhWIlDwNfo1WcFXLfQD0UT8WrLyRT/Qi8tSiz8aL3DTlBHpC64w8PC3Ggm/3YXsC6NLwbCd6dYCQw73WQhYD78j/IFgEGT1B4JB8AXhD54LggHK4XV2/MHz5fA6vT8QZalF+oVc0/Ab0i9MTsNvqX5BlJrui7D8A9+FYB3lB5vuwZvFFuUH5FSKvKD8AEEDl/EPpi2Gl/EPRA2sbHPCO/yDWQx8V5F/DCXMxjvyL6SehfEPJCsR+i8wl4Ev8A90sv3AFvc/YF4D57krx/1fmJtF9r+ATnJvDPv/QAvuD3zDyEE1vKUAhtSaMRTAIFoKU4CAZCGyzphBlayzAISEloEsAKHqZeA0/nH8H1TOAltQQZSXdGAgiV4MCRgkk/AyIwX1sEwFDNFXwuyBAS24L+YFowRasB3NPWDQgveEXzJGIFmHUIGAFnyHyGtGCOrlNQEQdKytGHYBghbcGchNYBC9JfyK0QHBENhiGzRIhkACIIiGQFaAIFkIrzEyoAVPSuAoLNCCt0O4Cwxa8o4w22BAC26KaTEqEI4WPRiQ5BU9GNAxdWIoQUBLvkudEgQkyxBuA0NYVIu7IM+MjDLGOXvF4A92MPwX55wxvE51PXdDyMBX6hl3J92zDE3Ew6pzcOMzsJd69zXEwgpz8FrD495gNoYWIlIlOXipwZFvMB/WEQnnz8GqofYNqoFAOFPqaXYX2thBleCgnmNLzAqxrwoHycV6xqOymnUfWDk7qAdLGNSz3A9ukXoJg1pwT9Ya+hEGJRsxC43JvYMgoKCe7tDyVfRDQcFFYAv9UFByEdiE5yIF1g8F9RS7Ulcaot/lzT9/P+rjz/e3VMTapxO41JjK94GCt9ecH4+vvwo6HNOTbwevNmLxd3lry52I9+LVbB9PR9KRCEsenliFtBqz+Lu8+3w5GNyPV09+Hjz9xXefR7/N/RD4V3by8KQqJOdHw6mR7Hv5IA5e3k/MT31+mFYvH3yjv//zQNN7oZY8rMfvR1jPOfxd3nKlxO3/3Px6MPpf/n66/+vRa/RrR3/r7s+4vPu32z+CYkRPPDJ/Id/w98ijx5XHkxl00vXUb4xUJIN7/7fhD0EQ1GPuheR6KpsZDU33Q9afXz4d6Wa5Hn3rh7YSBPWz57StZhv+KrJrjHUTfmt0BUk5/FwZ3IDwVw8Dr9/6+19Iw0+R6eNZ3eCxGXdlxDO5eOqPy/vf7LY8uf+H/P0Pv0nDT/ZhcuzCuLGh6HGoevB7A48vvV9HP/yt+9/w9t9Iw0/1YdbyXP49Zc/gkUN3fZV73ZVnlo+P9RuMNl5Gvsc97Ua+PWn4IWv5HUwZYvk3Mxbl9INHhqzgXzgGlywE9YP9MAu5Lf8ih4Wgvt+JXsK/eAy8OhpueDacuToKbngY3PA4OJX9hqxF/BM38OpEwqvjCJ9sKA6ujibM9mTCxaxuhNjLJBgphm+OJPT7qisPdX63QlbxLzzu9oSG6cvozM4lzEnAdPz7/dvOIt/1V17HwnwkXM3nZDb7Ox0u5/vq4ZfnchxXPgKm5F8FBl85mMMbP1UuAto5o0qapB8HVSa7sdzvhnKZ+nlcBf4l72DSqTgLAc3vZlMmHAZzENBc/m66gb8vU1UwAwHV4Dckm4kLGjD5kKKCBf5lpaBCwNAFcAl3/C5TUzB1AQ3SPSCxcqRIvQDBuEcktek6cQEtuj2ViBPKw0XiC8BDdHvMcFAcArIAFNPv6kolDxcsAPMz8Pd1XrAIyAJQLgIOy+EkgmBBAs4yAt6sjR0C1piALw9hEvGXw+kKaNHLg+jTcLICGuSaTDn8xyFgLQzQK4s0nKqADrG8w+BAIWDlFUiJWFMoaBCQCkTUQIeAVCCiOASkAhFje3hZBKQCETTwMFYDCwJgI/wbBkGLgARAWQMVAlYCN4GnXwJeKRilgQkK6LZhRiwCVrECRKQp+RMDozSwIAASAxGQABgmBEbYD0xOQINO8+EQcL67wCiUlYEFAbBxGAQkAEoS1e6sxARUh/gzPzHtUC3owTSPjkVAejAUIgkKSAlSUQjsGAQkA4u2phUCzkCJORWFwO0BAs6UgTtclVzRLAMLmoBNjH+dTieSfnRSApYdqIarOqRUCDhlBr4eOq4KruuRtAg4ZQ1M5KoWg4DTdaFRplpiSMIJCagwpmosApKBG56Ei4SagPhSOQME9LTPsQCsBYeAHvZZGoB1IX5PuMA+6hAEfLbwddiXeR1SxGyfRY/sQ2ARb+ql6m1CCIxUQIreYLQtAj7KvYdfIBwGAe/rt40TQRkg4L3jTzEiLB3REFjE9ghWhAiO6CqwiKvyxYamrQIjElChnxQWAcm+oqjGC0j4E61DbNMFNNS+omyrRgtI+BPHNVlAU7ZBmEGDBbRMvzxinZhCPv22vzD/8tiGCmgOmfso6KhGCuiIfrHgGiigYvkXDbu2eQKqAfMeEappArL8IwdLCmhY/lEHCwromPHIFoG7qkkC4h85WFJAyl/qYEkB7S7Ex5fGCIh/cWIaIiD+RYpthoD4Fyft3UEjBMS/eFENEBD/4uWjyV9AxzSzCBQUEP+ijoDZC2jazHLUdUjmApovzDGdQDkBVckMR47LWsABE0wVIiggDRgElBTQfYTo6eQroGkzvQmgchVQlUxuCphcBbTMbRK4TAVkAYiAkgKqL0xtGtg8BSQBJ8JRngK6j0fMbRqUOQqodplYGoGCAtojSIXdDAV0TGtCqOwEVG1mFQEFBSQBJ4XJTUDDnCKgpIAlc4qAggJSgSCgpICqw5QmxU5mAhIAU8NlJaDaZUYRUFBAWjAIKCkgARABRQUkACKgpIDq4w6kRk4CWqYTAQUFVLtMJwIKCujCj95H64zSShlnO7jUdAGDK9Bxo3uJDCuAGcioCAkdAB+f7GRKhJqafG7FBZ79UlEGIeBo+Ak7bjaadSgCxiFg0OCzZyOqhNImly356kg8/2LgLOhMBAw672N3UVKJTFXK5SJgGU3vKmwsTp1c3phuInrVUgpPsZjO5WgOuxcQN+mW4B74ksvhRJ2QgzapcHN41TQBTcgxO5z442wjVkXZJBUBbVwvWoNYvmRyRnQ7shetxayKljNpCGhie9GaHdTyYjeP54TY6LIGIdCPMg8BO9EJSCvGi24ej+pSEa6bacXEWQTXIqCLcdBoxfhEwDyeF2xj7J3SiomyCK5FwDLsq7aM8mWRYvzbC/+wzDoEVHG+bAmBEd6Iq0VA0w3LpufK2XZhAi4LAV3oYdv13aSNYRMwWQhoY33hOgyr5JUcu4Bl8IHzfbhFB8fGUuYh4F7wgdu0ca5OU+MwCwFNxIsX6pAGrAFNxMnD7CHZ2EVgDo1oF3MDgRA4nnYG+wFF5nivTSumErbTPxmh3BTBtxWzCWMpkxewLTNwvoeadHDseYYhcMOmLmBXaPB8WzFoNlZB74GMVUAlNnSePYQBlo1nwyUtoIl99WK6ODYBk7KAgqt831YMhk0g5LuDcxLQuxWDYhPoqHQFtPEvXmjFTBxJi4AzpQ5aMckVIlkJuEErprKhNKkKWG4mUL+VGDaJI5WogIeiw3YYebOSZWDtArZlx41WTFUCBloGZiXgxsam5442tYNimxXdXY9MwKMNQfxft24DJlEmKeDelQZS1xDvVozgj5nK5RIVUDAADh30bcUQ4SYS4j0ilQu4KT1q3q0YQtzEq0TAGTj07UYT4ibiELC+UbP4NXFJU//b5HIUsO3bikGxidjkBOxG8MK1tGKqGspNhYAzVG+eo9bGMPEQWLmAMeS1D7RiKhvKDya1W3FRjJt3KwYm0UHAGdimFVNZDDSJbceKYtBoxaQSAqvfkBrHqO3QikljFVj9lvw4Rm2DVkwaITBTAYcdLFoxSYTA6gX8EAm+rZgPMIlOUm9Mj2XUvFsxCDYRg4Az4NuK2UCwirJJHIcTxTNsLrFFQ8QoBJwhB/u2YroIJhcCqz8fML1hcwg2iZ2ETkjdjGfYvFsxGFbRciYGATvxjNp7WjFVLWcOE3pMQ4L9A1oxYp2YzAXs0IqJvAyp4UlJKa5daMVIlSE1PCsurnGjFRN3Dq7hca2bKaYOWjFCObgGATvvI+LDhm8r5j2MHcidZAS0cY2cbwjEsQmYVAR0aQ4cIbCaV7K8gCqygesQAithJxUB9U5cixfPVoz6gGPjB9KkIqCN7aWryMFV4FIRMLZk5tlBsCg2lnpOC6xDwKtF4IdoPq6GTvkK+IGPZ4dxayMVASNbBPoWcFQh4/NIPY2YWgSMLpl1ETDWRkwtApokl88IWFFDS15AvRnJiG1df7zf9o7bW3w8//H+vUpFQBuTfr5rF3v3ZXx+4vNWLYvAegR0Vz+u9PVn5LZ8ly47tz/03Sd+PfLr4YdLRUC9uRUJ77e2PN+aZG6/gOvpa/hhkxHQbsUzam6qHxnTns0oW1vtZAQ00QTA976D1r2NmPDsYH5IRkC9E82weS6cHYJVN5gRCGhjGTLr+wx17PKIgS4ZAVUkucx3R77FrgpfzhEIqMs4Rsz53rtBrswEjGNNdeT5027jlhfb6QgYRyuQCqRadhIS0CZUgXRRy5OEBFQRFG1UIFWj0hHwaloPRC/fAGikf9B0ruobgTUKaFJZsBwS2KruKkQhoO4cyOI5WG740oZqxzQOAY1suvB9E9fOcFzJrp6XTUlAfST5WvVdL1vC2hSkJaCTs897qNT7A1Kw/7iWSQmo23JD1fX8EUusmoZOWgKa6FfLBqemioA7aQkoVwh3pqhAwJ+9xASUCjC+DVMqkCnZTExAqSWWbwVC+TElG6kJKDPFvttQqUCm5UNqAmp7LIB3BXIM07GVnIBqM/ggHfi+Ee4IoaYe2+QE1C78IJlYfzIEFBBQd0IPkvc9EHxqhIBqK+wYeW9DRacmrAHDpzrfCgSbZnl1pyigboccIt83wu1i0wxsJClg0CRMBVInm0kKeLXcOgl0+VYgG+F+pJyuvTQF1J2TQHhvQz2BWThKVED1/iTIK/TE941wxydEs1nGt5OogNczHoC92CJyZhyXqQoYKOf5ViCoNCM2WQF1O8DwlL4VCCY1T8AAs35ABVI3Ll0Bh5ufInl5BlqPImBkAta+8tqkAollkR2ngHWnPkcFUjsqaQF12asR39M7N3swK+912gLq3frG5ti3AkGj2dlNXUC1U9vY+N4EPq5zgkK8L+hEUMAydQGHbxGpaWh83wh3WJt7pTNhhtC47WMZ/05s8gIO24H1jI3vNtS6/Hcq6Cja9yIGuvQFHB6cWsfIeD8RLpXIMFlBiVRsMhBQmxpGzrc/VU8FsmW0APW8kscvM3QOAtZQCp+JViCbSougur3ki2ARAY+GxlR69Xy3oV71Ic+qvjaE/LtZT58FvHo2DwFPzqrGuwI5q54To8UwJ2dBcVkIaM6qfmX67hPfO6shLjgtiD0LGQHPTBYC2qpfl761masjKOxqUXZCBsAaahAJAcuqx+XQc8V0UMekGFkBXUgBD/MQ8L2QA4M65mRHC9NNewkoIKCqelg2BCuQMystoA0ooMpCQCfkwFEyczJtSReKLZ2FgFYmMbh05mQ6joMJWOYhYEckCNVTgUjXwNf3lZJeAgoIuFH1uEgulUp5AQ9D+ddTeQjYOzut9DrxrEBO67isvICDev5mj66zts5CQHNaMT2vPHVaDwN5AcvTQLg8BHSnFb80T5XXH1pPWIggBW+fBgqBKg8BbeWvTONxQGZNQeHsSF7AvUAB8KPOQ8BSIDXY2mblWF7AXhj/6mq5Bxew+tVYOblXW9+8GGn/TKAAWFfLPbiAG+GjULvGeZG/FRdIwG2diYDHwcszV+e8HEgLeHyacg0sIGANYzPhWNStWifGNiMA1vZCC/7G9OCvzpqn6Fh0O4IKFQBtLgKa037l11gJriqQfo3XaSndhe4HuOortorwfejK6Z/ujnnjWLKrI7/R7AcJgPVtugguYL8Ong9DH/u1I7cr3531A2GyEdD268kRTxuojvr92vNTX+qNcdf+hcjA/U2dk4D1xMCjJ9aBZiNMfJAphe1pqPjXdwg4mUdv21cBZ2gjeBo2m8H+cv06m535CDgcJzsSBY096YdkN2gedkch/24WAX1z4Z51xhjnBhv94PQ613947TjbPgv6FztRCAiC1LrCDS1gyXymRq0BMLyA3yAx6i3xg6dgJjQxat5zi4AwHoeAIEjdZz8gIIyj7xAQBOnozAR0zGlKnKrsBLyAhKh/lwUCwvMEeNtz8C35zGo6fHP5CaiY1nQ41PkJqPvMayr0VI4CHjOxqRBkh2NwAbufIQ06OksB28xsGgR6AED449mY2iS4CPQWg/AHVDK3SfgX6sCH8Ef0MrkpEOwBKMEFVExuAvRNtgLqU6Y3fsK9017gQTVMLx0YSQEPP3/+hyvq60DlLKD9B+Im6HFfAo9r/YcQE/V1EfScG4EHVn8mxsTM57BHfYUXUB8wyTET+PF3AgIeMskRs62zF9Axy/Gyo/MX0DDN0dJVDRBQnzHRkbIV/qEnEgLuMtNxciDw0B0JAWlF45+ogOqffa74rg2Rh45JCKi3iDbUH5IC2n2IjSOtmyOg2SfjRXYd6iYJqHsYGNO1H/r+m7iAJSkvJv4RfOq2jICGSY+IvtFNE1CfMO3RcCzpn5SA1MHR0Fa6gQKSg1n+iQqoN5j7GDgzuqECkoNjYEfppgqoPjP90ny2WjdWQP1lf/8Tl+C1v2F0kwWkDCH8iQqoDz6BHF2jmy6gJQuKXd8iCX+iAqoL4pAM+9tKI+BwR8LVWHAFviLKvtICmn2CUXjOnNYIeMMuOoTm1GqNgH9DIEKEpW+VRsARujjR6OgnLqDDimD0otRPWECa0cH6zk5rBCQEyvC5NFoj4DOrwK9cNV5DDqyOGWEBzaevUCO9COveqATUX4hSNV1D+wZGR4+0gOofwlQdfNqyCdgXgYDaIkv17EefeeMRUHfxpXKs1ghIEhbjQiMgSViQEgGn2xWDMtViEHC6JHyGM5U2/zQCTtuO/gHVYRFw6mUg1lTHJ4WAU7ODN5XR1Qg4/TKwjziNzMCxCMgysDL2FQKyDBSkrRFwJj7iTiU4BJyRHvJUQF8j4Mw3hf8Hc2MRcGbcV/yZl7SagJEJqC0CzcuuRsA5OMSgOTEIOF8pjEJz0dMIOB8bP2EOHALOWwr3sGh2LjQCzm3gNzyaGYuAFdwVvkCkGUmuBxOlgMTAmSk1AmIgATB5ATFwNgYaATGQAJiDgMNuzL8wJUkGwFgF1KqLUdOxrxCwUkqcmgqrEbBaBkg1BX2NgLryt4nglTcOAeu4KYJYfpx3NQLWUYps4JYXXw0C1rQQ/IldHgHQagTUdT1K5Bwm0dMIWF8aPjj/l2vs9dMgYL3vVSLGjaXUCFhvNdxDsjwTcCICXt0WwbPn+GoQkCAoiNUIGGQlSDn8JF2NgIHK4Ta2PeZCIWC4nuApwj3gh9EIGFLBC5y7h9MIGHgpuP8d/jLQCBh8KTj4+v37Odfw+t7VCCiiIFHwmtQLkFQFvErE/e+EwX2jEVCuHOk1Pf79yMG/dAUc3hwpPzXZv3+dRkDxMHhw3lT/Er8Ddydg4utYM/jWTAEz8U8V6RdSjXRwoBEwKgcPfuJfiqwWq7n8Vdxhf/YF4aduex//EHDeeO7Kg0+/puXf3uC6odH9lQgZ+ZeZgDfp2B52L37ezNTYa8j5RXdw183YnvQVkVwZ+TcUcFFniXF2e6d38fX8qRBy/mP/20F7YB92cgffU4h/Nqd5WiyWdN4oY9wQa627wajn6y57Hn0QPM/KP71ULGgYqWR+Rh7//ufyGvCFYgXr7qXu/aj9+2QyG++V4hXSPTgcOGL/LlRuw71erOHcA9rR+neQnX96rVjGuKdKEdp/YVguXiBcGgvBHy7HoW4VBb49dSJXdP59M1kOdFHkdyukEq570v9F8/Grnecwrw4FXMS2p8+njsfAX19dpqO8OBSQTvQzbFP96vr70EWxjmr6udOBh+FH/srs5ts9Xg8FpA/z/BJ559d/4vRMxiO8PBSwhWjjzqIRjn8/bNbjO+zCUAZPKIfP/5Pz79eOynpwr4rgIvsNWXOfzSqWfb+ZzMd26VpA9sNMysP7EkHwv082+5FduRbwHYrpiY9NDB79/h00YFxfXgtIFeJRDx+eB9XvvFRNGNbrGoQqZCoFfwX457zdCP2u74MU3AvxVnA7TBT836VqyIgu/BGQPam+CtpPteu3b5sznm//CMgicIpy5Fud9v3quSYN5p8lIIvAqTA7dWXir6Vp1EjeLgHpBE6diWvoTf86cE0bx5W/Ar5EqqlPZ72o0r7vB1Y1bxCX/wpYKJSa4Ui4HvbNux3/Fm4Hz5iLD37OmXgvOq6po7c0IiCNmDmSce/fWTsubdfk1PN2RMAWOXi+E+F2Lr5P597wWLiGj7lqFeTgis8lPLiYGAzPLw62rWO07mfgonjLgFR1Gpyzh+2D3sWnH//7fhUVhw9U+PHj00Wv2y6HJ8SRaZ7MwORgkM3A5GAQzcD0okFL7EUdgfvBoEO/HWkUDqqEgLx6JCB7skAL7MSiDIEIShDKENBCG2Hu4Jw20KG3onI3BLT0XRA6MaCFezA3cFIg6DAPB3kabghDkADYekZAmtEgGQCHIZBVIAgGQFaBoMOcC/0shEAQKoFveM0Aga758YRj4XYI6PA3Qe7goQ2gg98FZlMMaLltMHSjIRTqxUQBOSoLdMCN0LRiQEfSgqEOAekKhEPLQdd/KPnEOoQkDIFvAvP2ENDB34tOEgYtcSQ0lTDEWgHf8oJ2NOjQLWh2BoIW2QXIPWHQ0veA6cVADB0YloEgvwC84Q0DB9XwppgJ9sWADt4BpBAB8QKEd4iADvYuEEphiK0AHimFMRDm8+9FMRc0YyB8AwYDoSL/lou5WcZAEPSvKN4xkKDr3oI6doM0MRBmiX8V+UcWBln/MBCk1n/0A0GL9P8wEGLyb3hXjvvC4M1iq6ge9saArvYIBPYHgo5p/9/EPdIUwzC5/H1T1AalCIQvP+6VIiwEYSxLraJe1knD8Hz6fV3Uzgv6MSCSfqmGQaT78sT2GGoReBz+XhbBaBEE4WH4axUhWSYIwmj4Wy5Cs0I5DLfF76tCAHqCcMPSi0KGZToyoBeXCzlesxRs+uJvrZAFBRut36tCHhRsbu3RKmKgtY6CTYx+63Hod7NTkHKkaaXHWhEXyzRlmtR4WS7io/WKTNyM3LvSKiLl5RK3R3IvPJZeFjHTeoODOdu31iqip/UWB/O0720C9t2WJCuUxXmt+xZeFonRertAUZKJfAmFvgcSvltZwsKU3VtaeZmqfHcWLr9eWETD1NRbXHi9nLx79z1cW19ZWFpcXV1ViiolvhpDqeHULC4trKyvBTTv//UwtvGlR/E2AAAAAElFTkSuQmCC" alt="Codex icon"></span><span class="doc-product">Codex</span><span class="step-title">AGENTS.md</span></li></ol></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">12</span></footer></main></section><section class="deck-slide" data-slide-id="S013"><main class="slide family-content layout-wide density-medium chapter-01" data-slide-id="S013" data-shell="process-flow-shell" data-notes="source markdown의 개발자 역할 bullet list" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 01</p><h1 class="title-placeholder">개발자의 새로운 역할</h1></section><section class="evolution-body"><div class="evolution-flow"><div class="evolution-step"><p>코드를 잘 짜는 능력</p></div><div class="evolution-arrow" aria-hidden="true">↓</div><div class="evolution-step"><p>문서를 잘 쓰는 능력</p></div><div class="evolution-arrow" aria-hidden="true">↓</div><div class="evolution-step is-final"><p>컨텍스트를 설계하는 능력</p></div></div><div class="analogy-stack"><article class="analogy-block"><p class="analogy-title">건축가</p><p>벽돌 쌓기 대신 설계도 작성</p><p>정확한 설계도 → 튼튼한 건물</p></article><article class="analogy-block"><p class="analogy-title">오케스트라 지휘자</p><p>직접 연주 대신 전체 조율</p><p>CLAUDE.md = 총보</p></article></div></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">13</span></footer></main></section><section class="deck-slide" data-slide-id="S014"><main class="slide family-content layout-editorial density-light chapter-01" data-slide-id="S014" data-shell="statement-editorial-shell" data-notes="source markdown의 기본기와 시스템 이해 문단" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 01</p><h1 class="title-placeholder">그래도 기초가 중요하다</h1></section><section class="summary-cards-body"><div class="summary-quote-panel"><p class="summary-quote summary-quote-dark">AI가 더 많이 해줄수록 기초 지식을 가진 사람의 경쟁력 상승</p></div><div class="summary-card-grid"><article class="summary-card"><p class="summary-card-eyebrow">변하는 것</p><h2 class="summary-card-title">직접 코드를 타이핑하는 비중</h2><div class="summary-card-lines"><p>줄어든 것은 타이핑의 비중</p></div></article><article class="summary-card"><p class="summary-card-eyebrow">변하지 않는 것</p><h2 class="summary-card-title">시스템을 이해하는 능력</h2><div class="summary-card-lines"><p>안전성 · 유지보수성 · 기존 시스템 적합성</p><p>인증과 권한 · 동시성 · 데이터베이스 스키마 · 캐싱</p></div></article></div></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">14</span></footer></main></section><section class="deck-slide" data-slide-id="S015"><main class="slide family-section layout-centered density-light chapter-02" data-slide-id="S015" data-shell="section-divider-shell" data-notes="Claude Code를 특정 제품 리뷰가 아니라 하네스 흐름의 대표 사례로 둔다." data-footer="default"><section class="section-main"><p class="chapter-marker">CHAPTER 02</p><h1 class="title-placeholder">왜 Claude Code인가</h1><ul class="section-keywords"></ul></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">15</span></footer></main></section><section class="deck-slide" data-slide-id="S016"><main class="slide family-content layout-wide density-medium chapter-02" data-slide-id="S016" data-shell="evidence-table-shell" data-notes="source markdown의 에이전틱 코딩 실제 성과와 page-017 reference" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 02</p><h1 class="title-placeholder">에이전틱 코딩의 실제 성과</h1></section><section class="table-wrap evidence-cards-body metric-impact-body is-tall-reference"><div class="evidence-card-grid impact-card-grid"><article class="evidence-card impact-card"><strong>2주</strong><span>CTO 추정 4~8개월</span><p>프로젝트 완료</p><small>카카오 AI 팀 내부 공유 사례</small></article><article class="evidence-card impact-card"><strong>1~2일</strong><span>신규 개발자 온보딩</span><p>기존 수주~수개월에서 단축</p><small>첫날부터 의미 있는 기여</small></article><article class="evidence-card impact-card"><strong>불가능하던 작업 실현</strong><span>기술 부채 해결</span><p>즉각 피드백과 작업 실현</p><small>문서화된 작업 환경</small></article></div></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">16</span></footer></main></section><section class="deck-slide" data-slide-id="S017"><main class="slide family-content layout-wide density-medium chapter-02" data-slide-id="S017" data-shell="process-flow-shell" data-notes="source markdown의 초기 Copilot과 ChatGPT 전환" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 02</p><h1 class="title-placeholder">1막: Copilot과 ChatGPT, 프롬프트의 시대</h1></section><section class="prompt-era-body"><p class="era-range">2022~2024</p><div class="prompt-era-flow"><article class="process-step prompt-era-card"><h2>GitHub Copilot</h2><p>현재 파일 기반 다음 줄 제안</p><ul><li>현재 파일</li><li>암묵적 프롬프트</li><li>자동완성</li></ul></article><div class="prompt-era-arrow" aria-hidden="true">→</div><article class="process-step prompt-era-card"><h2>ChatGPT</h2><p>자연어 지시 기반 코드 생성</p><ul><li>프롬프트 길이</li><li>역할 부여</li><li>단계별 지시</li></ul></article></div><p class="prompt-era-thesis centered-claim">자연어 지시문이 새로운 프로그래밍 인터페이스처럼 보이던 시기</p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">17</span></footer></main></section><section class="deck-slide" data-slide-id="S018"><main class="slide family-content layout-wide density-medium chapter-02" data-slide-id="S018" data-shell="process-flow-shell" data-notes="source markdown의 Chain-of-Thought row와 approved 02-chain-of-thought asset 구조" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 02</p><h1 class="title-placeholder">Chain-of-Thought</h1></section><section class="cot-native-body"><article class="process-step cot-claim-card"><h2>중간 추론 단계를 쓰게 한다</h2><p>답만 내던 모델을 reasoning path가 있는 모델처럼 다루기 시작</p></article><article class="process-step cot-example-card"><div class="cot-example-diagram"><div class="cot-example-panel cot-reasoning-step cot-example-input"><strong>문제</strong><p>5개 + 2캔 × 3개</p></div><div class="cot-example-panel cot-reasoning-step cot-example-output"><strong>중간 추론</strong><p class="cot-highlight">2캔 × 3개 = 6개</p><p class="cot-answer">5개 + 6개 = 11개</p></div></div></article><article class="process-step cot-summary-card"><h2>reasoning path</h2><p>답만 내던 모델을 reasoning path가 있는 모델처럼 다루기 시작</p></article></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">18</span></footer></main></section><section class="deck-slide" data-slide-id="S019"><main class="slide family-content layout-wide density-medium chapter-02" data-slide-id="S019" data-shell="process-flow-shell" data-notes="source markdown의 ReAct, Tree-of-Thought rows와 approved assets 구조" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 02</p><h1 class="title-placeholder">ReAct / Tree-of-Thought</h1></section><section class="pattern-pair-body"><article class="process-step pattern-pair-card"><span class="step-index">02</span><h2>ReAct</h2><p>추론과 행동을 번갈아 수행</p><div class="pattern-native-diagram react-diagram"><span class="react-node react-reasoning">Reasoning</span><span class="react-node react-action">Action</span><span class="react-node react-observation">Observation</span><i class="react-arrow react-arrow-action">→</i><i class="react-arrow react-arrow-observation">←</i><i class="react-arrow react-arrow-reasoning">↺</i></div><small>검색과 도구 호출이 루프 안으로 진입</small></article><article class="process-step pattern-pair-card"><span class="step-index">03</span><h2>Tree-of-Thought</h2><p>여러 추론 경로를 동시에 탐색</p><div class="pattern-native-diagram tot-diagram"><span class="tree-root">문제</span><span class="">경로 A</span><span class="selected">경로 B</span><span class="">경로 C</span><span class="tree-leaf">후보</span><span class="tree-leaf selected">후보</span><span class="tree-leaf">후보</span></div><small>하나의 답이 아니라 후보 경로를 비교</small></article></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">19</span></footer></main></section><section class="deck-slide" data-slide-id="S020"><main class="slide family-content layout-wide density-medium chapter-02" data-slide-id="S020" data-shell="process-flow-shell" data-notes="source markdown의 Self-Refine, Reflexion row" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 02</p><h1 class="title-placeholder">Self-Refine / Reflexion</h1></section><section class="feedback-loop-body"><article class="process-step feedback-loop-card"><h2>Self-Refine</h2><p>자기 출력을 다시 비판하고 수정</p><div class="pattern-native-diagram feedback-diagram self-refine-diagram"><span>자기 출력</span><i>→</i><span>비판</span><i>→</i><span>수정</span><i>→</i><span>피드백 루프</span></div><small>출력 이후의 피드백 루프</small></article><article class="process-step feedback-loop-card"><h2>Reflexion</h2><p>자기 출력을 다시 비판하고 수정</p><div class="pattern-native-diagram feedback-diagram reflexion-diagram"><span>자기 출력</span><i>→</i><span>비판</span><i>→</i><span>수정</span><i>→</i><span>피드백 루프</span></div><small>출력 이후의 피드백 루프</small></article></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">20</span></footer></main></section><section class="deck-slide" data-slide-id="S021"><main class="slide family-content layout-wide density-medium chapter-02" data-slide-id="S021" data-shell="evidence-table-shell" data-notes="source markdown의 Andrew Ng 네 가지 패턴과 approved 05 asset 구조" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 02</p><h1 class="title-placeholder">네 가지 에이전틱 패턴</h1></section><section class="agentic-pattern-quadrant-body"><div class="evidence-card-grid agentic-pattern-canvas"><p class="agentic-pattern-center centered-claim">모델 바깥 구조가 성능을 좌우</p><article class="evidence-card agentic-pattern-card"><h2>Reflection</h2><p>한 번 낸 답을 다시 보고 고침</p><div class="agentic-mini-diagram"><span>Generate</span><i>→</i><span>Critique</span><i>→</i><span>Revise</span></div><small>자기 수정 루프</small></article><article class="evidence-card agentic-pattern-card"><h2>Tool Use</h2><p>검색·계산·실행을 바깥 도구에 맡김</p><div class="agentic-mini-diagram"><span>Model</span><i>→</i><span>Search/API</span><i>→</i><span>Result</span></div><small>모델 바깥 세계 연결</small></article><article class="evidence-card agentic-pattern-card"><h2>Planning</h2><p>목표를 단계로 쪼갬</p><div class="agentic-mini-diagram"><span>Goal</span><i>→</i><span>Plan</span><i>→</i><span>Steps</span></div><small>긴 작업 추진</small></article><article class="evidence-card agentic-pattern-card"><h2>Multi-Agent Collaboration</h2><p>역할을 나눠 다른 관점으로 봄</p><div class="agentic-mini-diagram"><span>Writer</span><i>→</i><span>Reviewer</span><i>→</i><span>Merge</span></div><small>생성과 검증 분리</small></article></div></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">21</span></footer></main></section><section class="deck-slide" data-slide-id="S022"><main class="slide family-content layout-editorial density-medium chapter-02" data-slide-id="S022" data-shell="statement-editorial-shell" data-notes="source markdown의 Blind Prompting 문단" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 02</p><h1 class="title-placeholder">프롬프트 시대의 벽</h1></section><section class="blind-prompting-body blind-prompting-matrix-body"><p class="blind-prompting-claim centered-claim">모델은 보지 못한 것을 알 수 없음</p><div class="blind-prompting-grid"><article class="blind-prompting-card"><h2>관련 파일 부재</h2><p>기존 유틸리티 인식 불가</p></article><article class="blind-prompting-card"><h2>기존 설계 부재</h2><p>설계 결정 활용 불가</p></article><article class="blind-prompting-card"><h2>팀 컨벤션 부재</h2><p>내부 규칙 활용 불가</p></article></div><p class="blind-prompting-thesis centered-claim">문제는 지시문이 아니라 모델이 소비하는 정보</p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">22</span></footer></main></section><section class="deck-slide" data-slide-id="S023"><main class="slide family-content layout-wide density-medium chapter-02" data-slide-id="S023" data-shell="process-flow-shell" data-notes="source markdown의 Cursor 비교 표, Tools 문장, Context Engineering 문단" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 02</p><h1 class="title-placeholder">2막: Cursor와 컨텍스트의 시대</h1></section><section class="cursor-tools-body"><div class="cursor-tools-compare"><article class="process-step cursor-tool-panel is-before"><h2>초기 Copilot</h2><ul><li>현재 파일 중심</li><li>검색 없음 또는 제한</li><li>한 줄 또는 한 블록</li></ul></article><div class="cursor-tools-arrow" aria-hidden="true">→</div><article class="process-step cursor-tool-panel is-after"><h2>Cursor 계열 도구</h2><ul><li>전체 코드베이스</li><li>RAG · AST · 시맨틱 검색</li><li>멀티파일 수정과 Tools</li></ul></article></div><div class="cursor-tools-rail"><span>채팅</span><span>Composer</span><span>Agent Mode</span><span>Context Engineering</span></div></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">23</span></footer></main></section><section class="deck-slide" data-slide-id="S024"><main class="slide family-content layout-wide density-medium chapter-02" data-slide-id="S024" data-shell="process-flow-shell" data-notes="source markdown의 Cursor 아키텍처 text diagram과 approved 06 asset 구조" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 02</p><h1 class="title-placeholder">Cursor 아키텍처</h1></section><section class="cursor-architecture-redraw-body"><div class="cursor-architecture-canvas"><div class="cursor-architecture-example-canvas"><p class="architecture-request">사용자 요청</p><div class="architecture-arrow" aria-hidden="true">→</div><article class="architecture-boundary codebase-index-box"><h2>codebase index</h2><p>파일 · 심볼 · AST · 문서</p></article><div class="architecture-arrow" aria-hidden="true">→</div><article class="architecture-boundary context-bundle-box"><h2>context bundle</h2><p>관련 파일 · 규칙 · 히스토리</p></article><div class="architecture-arrow" aria-hidden="true">→</div><p class="architecture-editrun">edit/run</p><div class="architecture-arrow" aria-hidden="true">→</div><p class="architecture-feedback">verify</p></div><ol class="process-track cursor-architecture-flow"><li class="process-step cursor-architecture-step"><span class="step-index">01</span><span class="step-title">사용자 요청</span><span class="step-copy">질문 자체의 전환</span></li><li class="process-step cursor-architecture-step"><span class="step-index">02</span><span class="step-title">indexing</span><span class="step-copy">파일 · 심볼 · AST · 문서</span></li><li class="process-step cursor-architecture-step"><span class="step-index">03</span><span class="step-title">retrieval</span><span class="step-copy">관련 파일 · 규칙 · 히스토리</span></li><li class="process-step cursor-architecture-step"><span class="step-index">04</span><span class="step-title">context assembly</span><span class="step-copy">필요 정보 선별</span></li><li class="process-step cursor-architecture-step"><span class="step-index">05</span><span class="step-title">edit/run</span><span class="step-copy">편집과 명령 실행</span></li><li class="process-step cursor-architecture-step"><span class="step-index">06</span><span class="step-title">verify</span><span class="step-copy">테스트 · 린트 · 로그</span></li></ol></div><aside class="architecture-side-tools"><p>Tools</p><span>채팅</span><span>Composer</span><span>Agent Mode</span><span>명령 실행</span></aside></div></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">24</span></footer></main></section><section class="deck-slide" data-slide-id="S025"><main class="slide family-content layout-wide density-medium chapter-02" data-slide-id="S025" data-shell="process-flow-shell" data-notes="source markdown의 gather context to repeat loop" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 02</p><h1 class="title-placeholder">컨텍스트 시대의 벽</h1></section><section class="loop-cycle-body"><div class="loop-cycle-track"><article class="process-step loop-step loop-step-1"><span class="step-index">01</span><span class="step-title">gather context</span><span class="step-copy">컨텍스트 수집</span></article><div class="loop-cycle-arrow arrow-east" aria-hidden="true">→</div><article class="process-step loop-step loop-step-2"><span class="step-index">02</span><span class="step-title">take action</span><span class="step-copy">파일 수정과 명령 실행</span></article><div class="loop-cycle-arrow arrow-north" aria-hidden="true">↑</div><p class="flow-thesis loop-center centered-claim">하네스는 네 지점 각각에 개입</p><div class="loop-cycle-arrow arrow-south" aria-hidden="true">↓</div><article class="process-step loop-step loop-step-4"><span class="step-index">04</span><span class="step-title">repeat</span><span class="step-copy">실패 후 재수정</span></article><div class="loop-cycle-arrow arrow-west" aria-hidden="true">←</div><article class="process-step loop-step loop-step-3"><span class="step-index">03</span><span class="step-title">verify</span><span class="step-copy">테스트 · 린트 · 로그</span></article></div></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">25</span></footer></main></section><section class="deck-slide" data-slide-id="S026"><main class="slide family-content layout-wide density-medium chapter-02" data-slide-id="S026" data-shell="process-flow-shell" data-notes="source markdown의 Claude Code 구성 요소와 하네스 시대 전환" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 02</p><h1 class="title-placeholder">3막: 하네스의 시대</h1></section><section class="harness-era-signs-body"><p class="harness-era-claim centered-claim">작업 환경 전체를 품기 시작한 코딩 도구</p><div class="harness-era-system"><div class="harness-era-components"><span class="harness-era-component">Plan Mode</span><span class="harness-era-component">승인 체계</span><span class="harness-era-component">CLAUDE.md</span><span class="harness-era-component">Skills</span><span class="harness-era-component">Hooks</span><span class="harness-era-component">MCP</span><span class="harness-era-component">Plugins</span><span class="harness-era-component">Subagents</span></div><div class="harness-era-runtime centered-claim">실행 환경</div></div><div class="harness-era-grid"><article class="process-step harness-era-card"><h2>터미널 네이티브</h2><p>파일 읽기 · 셸 실행 · 테스트 확인</p></article><article class="process-step harness-era-card"><h2>구성 요소의 묶음</h2><p>독립 기능이 실행 환경으로 결합</p></article><article class="process-step harness-era-card"><h2>내 환경에 맞는 도구</h2><p>플러그인 · 스킬 · 노하우 · 교육자료</p></article></div></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">26</span></footer></main></section><section class="deck-slide" data-slide-id="S027"><main class="slide family-content layout-wide density-medium chapter-02" data-slide-id="S027" data-shell="evidence-table-shell" data-notes="source markdown의 Agent 공식과 프롬프트/컨텍스트/하네스 포함 관계" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 02</p><h1 class="title-placeholder">시대의 흐름</h1></section><section class="era-native-body"><div class="era-native-track"><article class="era-native-card"><span>2022~2024</span><h2>Prompt Engineering</h2><p>어떤 말을 해야 하나</p></article><article class="era-native-card"><span>2025 중반~</span><h2>Context Engineering</h2><p>어떤 정보를 넣어야 하나</p></article><article class="era-native-card"><span>2026~</span><h2>Harness Engineering</h2><p>어떤 시스템을 만들어야 하나</p></article></div><p class="era-native-formula centered-claim">Agent = Model + Harness</p><p class="era-native-equation centered-claim">Prompt ⊂ Context ⊂ Harness</p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">27</span></footer></main></section>
+</article></section><p class="negative-opinion">장난감 언어로 무슨 개발을 하냐!</p><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">8</span></footer></main></section><section class="deck-slide" data-slide-id="S009"><main class="slide family-content layout-editorial density-medium chapter-01" data-slide-id="S009" data-shell="statement-editorial-shell" data-notes="source markdown의 AI 개발 prompt와 quote" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 01</p><h1 class="title-placeholder">AI 개발</h1></section><section class="prompt-only-body"><p class="prompt-language-label">자연어</p><article class="prompt-card"><p class="prompt-text">이 함수를 리펙토링하고 테스트 코드를 작성해줘.</p></article><p class="negative-opinion">자연어로 시키는 건 진짜 개발이 아니다!</p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">9</span></footer></main></section><section class="deck-slide" data-slide-id="S010"><main class="slide family-content layout-wide density-medium chapter-01" data-slide-id="S010" data-shell="evidence-table-shell" data-notes="시대별 전환을 표로 압축하고, 변경된 source 질문을 독립된 한 줄로 배치한다." data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 01</p><h1 class="title-placeholder">직접 하던 일의 감소</h1></section><section class="table-wrap"><table class="data-table"><thead><tr><th>시대</th><th>전환</th><th>위임한 것</th></tr></thead><tbody><tr><td>1950s</td><td>기계어 → 어셈블리</td><td>이진 코드를 직접 작성하는 부담</td></tr><tr><td>1960s</td><td>어셈블리 → C</td><td>레지스터와 명령어 최적화를 컴파일러에 위임</td></tr><tr><td>1990s</td><td>C/C++ → Java</td><td>메모리 해제를 가비지 컬렉터에 위임</td></tr><tr><td>2000s</td><td>언어 → 프레임워크</td><td>반복되는 보일러플레이트를 프레임워크에 위임</td></tr><tr><td>2010s</td><td>온프레미스 → 클라우드</td><td>서버 운영과 확장을 클라우드에 위임</td></tr><tr><td>2020s</td><td>직접 코딩 → AI 에이전트</td><td>코드 작성의 상당 부분과 작업 환경 설계</td></tr></tbody></table><p class="table-question">직접하는 일을 줄고, 설계하는 일은 늘어난다</p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">10</span></footer></main></section><section class="deck-slide" data-slide-id="S011"><main class="slide family-content layout-wide density-medium chapter-01" data-slide-id="S011" data-shell="evidence-table-shell" data-notes="source markdown의 YC W25, OpenAI Codex 팀, Meta 엔지니어 사례" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 01</p><h1 class="title-placeholder">숫자로 보는 변화</h1></section><section class="table-wrap evidence-cards-body"><div class="evidence-card-grid"><article class="evidence-card"><strong>25%</strong><span>YC W25</span><p>코드베이스 95% 이상 AI</p></article><article class="evidence-card"><strong>100만 줄</strong><span>OpenAI Codex 팀</span><p>수동 코드 한 줄 없음</p></article><article class="evidence-card"><strong>3개월+</strong><span>Meta 엔지니어</span><p>직접 코드 타이핑 없음</p></article></div></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">11</span></footer></main></section><section class="deck-slide" data-slide-id="S012"><main class="slide family-content layout-wide density-medium chapter-01" data-slide-id="S012" data-shell="process-flow-shell" data-notes="source markdown의 규칙 파일 네 가지" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 01</p><h1 class="title-placeholder">문서가 코드</h1><p class="lead-placeholder">이름은 다르지만 역할은 동일</p></section><section class="body-area flow-body"><ol class="process-track document-grid"><li class="process-step document-card"><span class="doc-icon" aria-hidden="true"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPCEtLSBHZW5lcmF0ZWQgYnkgUGl4ZWxtYXRvciBQcm8gMy42LjE3IC0tPgo8c3ZnIHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjEyMDAiIHZpZXdCb3g9IjAgMCAxMjAwIDEyMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8ZyBpZD0iZzMxNCI+CiAgICAgICAgPHBhdGggaWQ9InBhdGgxNDciIGZpbGw9IiNkOTc3NTciIHN0cm9rZT0ibm9uZSIgZD0iTSAyMzMuOTU5NzkzIDgwMC4yMTQ5MDUgTCA0NjguNjQ0Mjg3IDY2OC41MzY5ODcgTCA0NzIuNTkwNjM3IDY1Ny4xMDA2NDcgTCA0NjguNjQ0Mjg3IDY1MC43Mzg0MDMgTCA0NTcuMjA4MDY5IDY1MC43Mzg0MDMgTCA0MTcuOTg2NjMzIDY0OC4zMjIxNDQgTCAyODMuODkyNjM5IDY0NC42OTgxMiBMIDE2Ny41OTczMjEgNjM5Ljg2NTg0NSBMIDU0LjkyNjIwOCA2MzMuODI1NjIzIEwgMjYuNTc3MjM4IDYyNy43ODUzMzkgTCAzLjNlLTA1IDU5Mi43NTE3MDkgTCAyLjczODMyIDU3NS4yNzUzMyBMIDI2LjU3NzIzOCA1NTkuMjQ4MzUyIEwgNjAuNzI0ODczIDU2Mi4yMjgxNDkgTCAxMzYuMTg3OTczIDU2Ny4zODI2MjkgTCAyNDkuNDIyODY3IDU3NS4xOTQ3NjMgTCAzMzEuNTcwNDk2IDU4MC4wMjY5NzggTCA0NTMuMjYxODQxIDU5Mi42NzEwODIgTCA0NzIuNTkwNjM3IDU5Mi42NzEwODIgTCA0NzUuMzI4ODU3IDU4NC44NTkwMDkgTCA0NjguNzI0OTE1IDU4MC4wMjY5NzggTCA0NjMuNTcwNTU3IDU3NS4xOTQ3NjMgTCAzNDYuMzg5MzEzIDQ5NS43ODUyMTcgTCAyMTkuNTQzNjcxIDQxMS44NjU5MDYgTCAxNTMuMTAwNzIzIDM2My41NDM3NjIgTCAxMTcuMTgxMjY3IDMzOS4wNjA0MjUgTCA5OS4wNjA0NTUgMzE2LjEwNzM2MSBMIDkxLjI0ODM2NyAyNjYuMDEzNTUgTCAxMjMuODY1Nzg0IDIzMC4wOTM5OTQgTCAxNjcuNjc3ODg3IDIzMy4wNzM4NTMgTCAxNzguODcyNTEzIDIzNi4wNTM3NzIgTCAyMjMuMjQ4MzY3IDI3MC4yMDE0NzcgTCAzMTguMDQwMjgzIDM0My41NzA0OTYgTCA0NDEuODI1NTkyIDQzNC43MzgzNDIgTCA0NTkuOTQ2NDExIDQ0OS43OTg3MDYgTCA0NjcuMTk0NjcyIDQ0NC42NDQ0NyBMIDQ2OC4wODA1OTcgNDQxLjAyMDIwMyBMIDQ1OS45NDY0MTEgNDI3LjQwOTQ4NSBMIDM5Mi42MTc0OTMgMzA1LjcxODMyMyBMIDMyMC43Nzg1NjQgMTgxLjkzMjk4MyBMIDI4OC44MDU0MiAxMzAuNjMwODU5IEwgMjgwLjM0ODk5OSA5OS44NjU4NDUgQyAyNzcuMzY5MTcxIDg3LjIyMTQzNiAyNzUuMTk0NjQxIDc2LjU5MDY5OCAyNzUuMTk0NjQxIDYzLjYyNDI2OCBMIDMxMi4zMjIxNzQgMTMuMjA4MTMgTCAzMzIuODU5MSA2LjYwNDEyNiBMIDM4Mi4zODkzMTMgMTMuMjA4MTMgTCA0MDMuMjQ4MzUyIDMxLjMyODk3OSBMIDQzNC4wMTM1MTkgMTAxLjcxODE0IEwgNDgzLjg2NTc1MyAyMTIuNTM3MDQ4IEwgNTYxLjE4MTI3NCAzNjMuMjIxNDk3IEwgNTgzLjgxMjEzNCA0MDcuOTE5NDM0IEwgNTk1Ljg5MjYzOSA0NDkuMzE1NDkxIEwgNjAwLjQwMjcxIDQ2MS45NTk4MzkgTCA2MDguMjE0NzgzIDQ2MS45NTk4MzkgTCA2MDguMjE0NzgzIDQ1NC43MTE2MDkgTCA2MTQuNTc3MjcxIDM2OS44MjU2MjMgTCA2MjYuMzM1NjMyIDI2NS42MTA4NCBMIDYzNy43NzE4NTEgMTMxLjUxNjg0NiBMIDY0MS43MTgyMDEgOTMuNzQ1MTE3IEwgNjYwLjQwMjgzMiA0OC40ODMyNzYgTCA2OTcuNTMwMzM0IDI0LjAwMDEyMiBMIDcyNi41MjM1NiAzNy44NTI0MTcgTCA3NTAuMzYyNTQ5IDcyIEwgNzQ3LjA2MDQ4NiA5NC4wNjcxMzkgTCA3MzIuODg2MDQ3IDE4Ni4yMDE0MTYgTCA3MDUuMTAwNzA4IDMzMC41MjM1NiBMIDY4Ni45Nzk5MTkgNDI3LjE2Nzg0NyBMIDY5Ny41MzAzMzQgNDI3LjE2Nzg0NyBMIDcwOS42MTA4NCA0MTUuMDg3MzQxIEwgNzU4LjQ5NjcwNCAzNTAuMTc0NTYxIEwgODQwLjY0NDM0OCAyNDcuNDkwMDUxIEwgODc2Ljg4NTkyNSAyMDYuNzM4MzQyIEwgOTE5LjE2Nzg0NyAxNjEuNzE4MTQgTCA5NDYuMzA4ODM4IDE0MC4yOTU0MSBMIDk5Ny42MTA4NCAxNDAuMjk1NDEgTCAxMDM1LjM4MjY5IDE5Ni40Mjk2MjYgTCAxMDE4LjQ2OTg0OSAyNTQuNDE2MTk5IEwgOTY1LjYzNzYzNCAzMjEuNDIyODUyIEwgOTIxLjgyNTU2MiAzNzguMjAxNTM4IEwgODU5LjAwNjcxNCA0NjIuNzY1MjU5IEwgODE5Ljc4NTI3OCA1MzAuNDE2MjYgTCA4MjMuNDA5NDI0IDUzNS44MTIwNzMgTCA4MzIuNzUxNzcgNTM0LjkyNjI3IEwgOTc0LjY1Nzc3NiA1MDQuNzI0OTE1IEwgMTA1MS4zMjg5NzkgNDkwLjg3MjU1OSBMIDExNDIuODE4ODQ4IDQ3NS4xNjc3ODYgTCAxMTg0LjIxNDg0NCA0OTQuNDk2NTgyIEwgMTE4OC43MjQ4NTQgNTE0LjE0NzY0NCBMIDExNzIuNDU2NDIxIDU1NC4zMzU2OTMgTCAxMDc0LjYwNDEyNiA1NzguNDk2NzY1IEwgOTU5LjgzODk4OSA2MDEuNDQ5ODI5IEwgNzg4LjkzOTYzNiA2NDEuODc5MjcyIEwgNzg2Ljg0NTc2NCA2NDMuNDA5NDg1IEwgNzg5LjI2MTg0MSA2NDYuMzg5MzQzIEwgODY2LjI1NTEyNyA2NTMuNjM3NjM0IEwgODk5LjE5NDcwMiA2NTUuNDA5NDI0IEwgOTc5LjgxMjEzNCA2NTUuNDA5NDI0IEwgMTEyOS45MzI4NjEgNjY2LjYwNDE4NyBMIDExNjkuMTU0NDE5IDY5Mi41MzcxMDkgTCAxMTkyLjY3MTI2NSA3MjQuMjY4Njc3IEwgMTE4OC43MjQ4NTQgNzQ4LjQyOTY4OCBMIDExMjguMzIyMTQ0IDc3OS4xOTQ2NDEgTCAxMDQ2LjgxODg0OCA3NTkuODY1ODQ1IEwgODU2LjU5MDc1OSA3MTQuNjA0MTI2IEwgNzkxLjM1NTc3NCA2OTguMzM1NzU0IEwgNzgyLjMzNTY5MyA2OTguMzM1NzU0IEwgNzgyLjMzNTY5MyA3MDMuNzMxNTY3IEwgODM2LjY5ODEyIDc1Ni44ODU5ODYgTCA5MzYuMzIyMjA1IDg0Ni44NDU1ODEgTCAxMDYxLjA3Mzk3NSA5NjIuODE4OTcgTCAxMDY3LjQzNjI3OSA5OTEuNDkwMTEyIEwgMTA1MS40MDk0MjQgMTAxNC4xMjA5MTEgTCAxMDM0LjQ5NjcwNCAxMDExLjcwNDcxMiBMIDkyNC44ODU5ODYgOTI5LjIzNDkyNCBMIDg4Mi42MDQxMjYgODkyLjEwNzU0NCBMIDc4Ni44NDU3NjQgODExLjQ4OTk5IEwgNzgwLjQ4MzI3NiA4MTEuNDg5OTkgTCA3ODAuNDgzMjc2IDgxOS45NDYyODkgTCA4MDIuNTUwNDE1IDg1Mi4yNDE2OTkgTCA5MTkuMDg3MzQxIDEwMjcuNDA5NDI0IEwgOTI1LjEyNzYyNSAxMDgxLjEyNzY4NiBMIDkxNi42NzEyMDQgMTA5OC42MDQxMjYgTCA4ODYuNDY5ODQ5IDExMDkuMTU0NDE5IEwgODUzLjI4ODY5NiAxMTAzLjExNDEzNiBMIDc4NS4wNzM5MTQgMTAwNy4zNTU4MzUgTCA3MTQuNjg0NjMxIDg5OS41MTY3ODUgTCA2NTcuOTA2MDY3IDgwMi44NzI0OTggTCA2NTAuOTc5ODU4IDgwNi44MTg5NyBMIDYxNy40NzY2MjQgMTE2Ny43MDQ4MzQgTCA2MDEuNzcxODUxIDExODYuMTQ3NzA1IEwgNTY1LjUzMDIxMiAxMjAwIEwgNTM1LjMyODg1NyAxMTc3LjA0Njk5NyBMIDUxOS4zMDIxMjQgMTEzOS45MTk1NTYgTCA1MzUuMzI4ODU3IDEwNjYuNTUwNTM3IEwgNTU0LjY1Nzc3NiA5NzAuNzkyMDUzIEwgNTcwLjM2MjQ4OCA4OTQuNjg0NTcgTCA1ODQuNTM2OTI2IDgwMC4xMzQyNzcgTCA1OTIuOTkzMzQ3IDc2OC43MjQ5NzYgTCA1OTIuNDI5NjI2IDc2Ni42MzA4NTkgTCA1ODUuNTAzNDc5IDc2Ny41MTY5NjggTCA1MTQuMjI4MjEgODY1LjM2OTI2MyBMIDQwNS44MjU1MzEgMTAxMS44NjU5MDYgTCAzMjAuMDUzNzExIDExMDMuNjc3OTc5IEwgMjk5LjUxNjgxNSAxMTExLjgxMjI1NiBMIDI2My45MTk1MjUgMTA5My4zNjkyNjMgTCAyNjcuMjIxNDk3IDEwNjAuNDI5Njg4IEwgMjg3LjExNDEzNiAxMDMxLjExNDEzNiBMIDQwNS44MjU1MzEgODgwLjEwNzM2MSBMIDQ3Ny40MjI5MTMgNzg2LjUyMzU2IEwgNTIzLjY1MTA2MiA3MzIuNDgzMjc2IEwgNTIzLjMyODkxOCA3MjQuNjcxMjY1IEwgNTIwLjU5MDY5OCA3MjQuNjcxMjY1IEwgMjA1LjI4ODYwNSA5MjkuMzk1OTM1IEwgMTQ5LjE1NDQzNCA5MzYuNjQ0NDA5IEwgMTI0Ljk5MzM1NSA5MTQuMDEzNTUgTCAxMjcuOTczMTgzIDg3Ni44ODU5ODYgTCAxMzkuNDA5NDA5IDg2NC44MDU0MiBMIDIzNC4yMDEzODUgNzk5LjU3MDQzNSBMIDIzMy44NzkyMjcgNzk5Ljg5MjcgWiIvPgogICAgPC9nPgo8L3N2Zz4K" alt="Claude Code icon"></span><span class="doc-product">Claude Code</span><span class="step-title">CLAUDE.md</span></li><li class="process-step document-card"><span class="doc-icon" aria-hidden="true"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSI2MDAgMzAwIDQwMCA0MDAiIGZpbGw9Im5vbmUiPgo8cGF0aCBmaWxsPSIjRjdGN0Y0IiBkPSJNMTAwMCAzMDBINjAwVjcwMEgxMDAwVjMwMFoiLz4KPHBhdGggZmlsbD0iIzI2MjUxRSIgZD0iTTkyNC4yMTMgNDIyLjMyOEw4MDYuMTIyIDM1NC4xNDdDODAyLjMyOSAzNTEuOTU2IDc5Ny42NTMgMzUxLjk1NiA3OTMuODYxIDM1NC4xNDdMNjc1Ljc3NSA0MjIuMzI4QzY3Mi41ODggNDI0LjE3IDY3MC42MTcgNDI3LjU3MiA2NzAuNjE3IDQzMS4yNTdWNTY4LjczOEM2NzAuNjE3IDU3Mi40MjMgNjcyLjU4MyA1NzUuODI5IDY3NS43NzUgNTc3LjY2N0w3OTMuODY2IDY0NS44NDdDNzk3LjY1OSA2NDguMDM4IDgwMi4zMzUgNjQ4LjAzOCA4MDYuMTI3IDY0NS44NDdMOTI0LjIxOCA1NzcuNjY3QzkyNy40MDUgNTc1LjgyNCA5MjkuMzc2IDU3Mi40MjMgOTI5LjM3NiA1NjguNzM4VjQzMS4yNTdDOTI5LjM3NiA0MjcuNTcyIDkyNy40MSA0MjQuMTY1IDkyNC4yMTggNDIyLjMyOEg5MjQuMjEzWk05MTYuNzk5IDQzNi43NjhMODAyLjgwMSA2MzQuMjE5QzgwMi4wMjkgNjM1LjU0NyA3OTkuOTk0IDYzNS4wMDYgNzk5Ljk5NCA2MzMuNDYzVjUwNC4xNzhDNzk5Ljk5NCA1MDEuNTk2IDc5OC42MTIgNDk5LjIwNyA3OTYuMzczIDQ5Ny45MDZMNjg0LjQxIDQzMy4yNjVDNjgzLjA4MSA0MzIuNDk0IDY4My42MjIgNDMwLjQ1OSA2ODUuMTY1IDQzMC40NTlIOTEzLjE2MkM5MTYuMzk4IDQzMC40NTkgOTE4LjQyMiA0MzMuOTY3IDkxNi44MDUgNDM2Ljc3NEg5MTYuNzk5VjQzNi43NjhaIi8+Cjwvc3ZnPgo=" alt="Cursor icon"></span><span class="doc-product">Cursor</span><span class="step-title">Cursor Rules</span></li><li class="process-step document-card"><span class="doc-icon" aria-hidden="true"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5NiIgaGVpZ2h0PSI5NiIgdmlld0JveD0iMCAwIDk2IDk2Ij48cGF0aCBkPSJNOTUuNjY3IDY3Ljk1NEM5Mi4yMjUgNzMuOTMzIDcyLjI0IDg4LjA0IDQ3Ljk5NyA4OC4wNCAyMy43NTQgODguMDQgMy43NjkgNzMuOTMzLjMyOCA2Ny45NTRjLS4yMTYtLjM3NS0uMzA3LS43OTYtLjMyOC0xLjIyNlY1NS42NjFjLjAxOS0uMzcxLjA4OS0uNzM2LjIyNi0xLjA4MSAxLjQ4OS0zLjczOCA1LjM4Ni05LjE2NiAxMC40MTctMTAuNjIzLjY2Ny0xLjcxMiAxLjY1NS00LjIxNSAyLjU3Ni02LjA2Mi0uMTU0LTEuNDE0LS4yMDgtMi44NzItLjIwOC00LjM0NSAwLTUuMzIyIDEuMTI4LTkuOTkgNC41MjctMTMuNDY2IDEuNTg3LTEuNjIzIDMuNTU3LTIuODY5IDUuODkzLTMuODA1IDUuNTk1LTQuNTQ1IDEzLjU2My04LjM2OSAyNC40OC04LjM2OXMxOS4wNTcgMy44MjQgMjQuNjUyIDguMzY5YzIuMzM3LjkzNiA0LjMwNiAyLjE4MiA1Ljg5NCAzLjgwNSAzLjM5OSAzLjQ3NiA0LjUyNyA4LjE0NCA0LjUyNyAxMy40NjYgMCAxLjQ3My0uMDU0IDIuOTMxLS4yMDggNC4zNDUuOTIxIDEuODQ3IDEuOTA5IDQuMzUgMi41NzYgNi4wNjIgNS4wMyAxLjQ1NyA4LjkyOCA2Ljg4NSAxMC40MTcgMTAuNjIzLjE2My40MS4yMzEuODQ4LjIzMSAxLjI4OXYxMC42NDRjMCAuNTA0LS4wODEgMS4wMDQtLjMzMyAxLjQ0MVpNNDguNjg2IDQzLjk5M2wtLjMuMDAxLTEuMDc3LS4wMDFjLS40MjMuNzA5LS44OTQgMS4zOS0xLjQxOCAyLjAzNS0zLjA3OCAzLjc4Ny03LjY3MiA1Ljk2NC0xNC4wMjYgNS45NjQtNi44OTcgMC0xMS45NTItMS40MzUtMTUuMTIzLTUuMDMyYTcuODg2IDcuODg2IDAgMCAxLS4zNDItLjQxOWwtLjM5LjQxOXYyNi4zMjZjNS43MzcgMy4xMTggMTguMDUgOC43MTMgMzEuOTg3IDguNzEzIDEzLjkzOCAwIDI2LjI1MS01LjU5NSAzMS45ODgtOC43MTNWNDYuOTZsLS4zOS0uNDE5cy0uMTMyLjE4MS0uMzQyLjQxOWMtMy4xNzEgMy41OTctOC4yMjYgNS4wMzItMTUuMTIzIDUuMDMyLTYuMzU0IDAtMTAuOTQ5LTIuMTc3LTE0LjAyNi01Ljk2NGExNy4xNzggMTcuMTc4IDAgMCAxLTEuNDE4LTIuMDM0aC0uMDY2bC4wNjYtLjAwMVptLTMuOTQtMTEuNzMzYy4xNy0xLjMyNi4yNTEtMi41MTMuMjUzLTMuNTczdi0uMDg0Yy0uMDA1LTMuMDc3LS42NzgtNS4wNzktMS43NTItNi4zMDgtMS4zNjUtMS41NjItNC4xODQtMi43NTgtMTAuMTI3LTIuMTE1LTYuMDIxLjY1Mi05LjM4NiAyLjE0Ni0xMS4yOTQgNC4wOTgtMS44NDcgMS44ODktMi44MTggNC43MTUtMi44MTggOS4yNzIgMCA0Ljg0Mi42OTggNy43MDMgMi4yMzIgOS40NDMgMS40NTkgMS42NTUgNC4zMzIgMy4wMDEgMTAuNjI1IDMuMDAxIDQuODM3IDAgNy42MDMtMS41NzMgOS4zNzEtMy43NDkgMS44OTktMi4zMzYgMi45NjctNS43NTkgMy41MS05Ljk4NVptNi41MDMgMGMuNTQzIDQuMjI2IDEuNjExIDcuNjQ5IDMuNTEgOS45ODUgMS43NjggMi4xNzYgNC41MzMgMy43NDkgOS4zNzEgMy43NDkgNi4yOTIgMCA5LjE2NS0xLjM0NiAxMC42MjQtMy4wMDEgMS41MzUtMS43NCAyLjIzMi00LjYwMSAyLjIzMi05LjQ0MyAwLTQuNTU3LS45Ny03LjM4My0yLjgxNy05LjI3Mi0xLjkwOC0xLjk1Mi01LjI3NC0zLjQ0Ni0xMS4yOTQtNC4wOTgtNS45NDMtLjY0My04Ljc2My41NTMtMTAuMTI3IDIuMTE1LTEuMDc0IDEuMjI5LTEuNzQ3IDMuMjMxLTEuNzUyIDYuMzA4di4wODRjLjAwMiAxLjA2LjA4MyAyLjI0Ny4yNTMgMy41NzNabS0yLjU2MyAxMS43MzRoLjA2NmwtLjA2Ni0uMDAxdi4wMDFaIi8+PHBhdGggZD0iTTM4LjUgNTUuNzVhMy41IDMuNSAwIDAgMSAzLjUgMy41djguNWEzLjUgMy41IDAgMSAxLTcgMHYtOC41YTMuNSAzLjUgMCAwIDEgMy41LTMuNVptMTkgMGEzLjUgMy41IDAgMCAxIDMuNSAzLjV2OC41YTMuNSAzLjUgMCAxIDEtNyAwdi04LjVhMy41IDMuNSAwIDAgMSAzLjUtMy41WiIvPjwvc3ZnPg==" alt="GitHub Copilot icon"></span><span class="doc-product">GitHub Copilot</span><span class="step-title">copilot-instructions.md</span></li><li class="process-step document-card"><span class="doc-icon" aria-hidden="true"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoAAAAKACAMAAAA7EzkRAAAAxlBMVEVMaXH////////////////////////4+f/////////////////////////////////////////s7f+vtv////+Anv96nP+En/92mP99nv+gpP+Rof+MoP+Uov+JoP9XbP9bcf+Xov+co/9zk/9UZ/+jpf+Pof9edf9xkP+Zo/9ujP+Gn/9RY/9mgf9hev9phf9sif9HVP9EUP9jff9PYP+mpv9geP9LW/+up/9JWP9ATP+qpv+opf88Rf9NXf/k6P+7w//R1v/QoPLFAAAAFHRSTlMAKZbBrDyD/NsRXURvd2ZOV0ij1YKcr9sAAAAJcEhZcwAACxMAAAsTAQCanBgAABxaSURBVHja7Z0LWxO7FkBHXqGIr+8LgsjjtAgiFSnWwR7x3CT//0/dAiLl1abtTHaSWWs4XI/ngpis7p29J80URShay2vrKwtLi6urq0opDZExnJTh1CwuLaysry23ioxoLa8vLK4yw2mxuriwnr6HrXcrS6iXsoZLK+9StbC1toB7eVi4sJachMsri0xcXhK+TCj0LVFj5FilLKUQCFtvsC9jYnfwJfblHwejzcWtVxQdzVgPrryIMvgxMw1KxbGFwTcUvU0Lg2vkXpBVcD2OgqS1jn5NLUhWIlDwNfo1WcFXLfQD0UT8WrLyRT/Qi8tSiz8aL3DTlBHpC64w8PC3Ggm/3YXsC6NLwbCd6dYCQw73WQhYD78j/IFgEGT1B4JB8AXhD54LggHK4XV2/MHz5fA6vT8QZalF+oVc0/Ab0i9MTsNvqX5BlJrui7D8A9+FYB3lB5vuwZvFFuUH5FSKvKD8AEEDl/EPpi2Gl/EPRA2sbHPCO/yDWQx8V5F/DCXMxjvyL6SehfEPJCsR+i8wl4Ev8A90sv3AFvc/YF4D57krx/1fmJtF9r+ATnJvDPv/QAvuD3zDyEE1vKUAhtSaMRTAIFoKU4CAZCGyzphBlayzAISEloEsAKHqZeA0/nH8H1TOAltQQZSXdGAgiV4MCRgkk/AyIwX1sEwFDNFXwuyBAS24L+YFowRasB3NPWDQgveEXzJGIFmHUIGAFnyHyGtGCOrlNQEQdKytGHYBghbcGchNYBC9JfyK0QHBENhiGzRIhkACIIiGQFaAIFkIrzEyoAVPSuAo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" alt="Codex icon"></span><span class="doc-product">Codex</span><span class="step-title">AGENTS.md</span></li></ol></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">12</span></footer></main></section><section class="deck-slide" data-slide-id="S013"><main class="slide family-content layout-wide density-medium chapter-01" data-slide-id="S013" data-shell="process-flow-shell" data-notes="source markdown의 개발자 역할 bullet list" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 01</p><h1 class="title-placeholder">개발자의 새로운 역할</h1></section><section class="evolution-body"><div class="evolution-flow"><div class="evolution-step"><p>코드를 잘 짜는 능력</p></div><div class="evolution-arrow" aria-hidden="true">↓</div><div class="evolution-step"><p>문서를 잘 쓰는 능력</p></div><div class="evolution-arrow" aria-hidden="true">↓</div><div class="evolution-step is-final"><p>컨텍스트를 설계하는 능력</p></div></div><div class="analogy-stack"><article class="analogy-block"><p class="analogy-title">건축가</p><p>벽돌 쌓기 대신 설계도 작성</p><p>정확한 설계도 → 튼튼한 건물</p></article><article class="analogy-block"><p class="analogy-title">오케스트라 지휘자</p><p>직접 연주 대신 전체 조율</p><p>CLAUDE.md = 총보</p></article></div></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">13</span></footer></main></section><section class="deck-slide" data-slide-id="S014"><main class="slide family-content layout-editorial density-light chapter-01" data-slide-id="S014" data-shell="statement-editorial-shell" data-notes="source markdown의 기본기와 시스템 이해 문단" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 01</p><h1 class="title-placeholder">그래도 기초가 중요하다</h1></section><section class="summary-cards-body"><div class="summary-quote-panel"><p class="summary-quote summary-quote-dark">AI가 더 많이 해줄수록 기초 지식을 가진 사람의 경쟁력 상승</p></div><div class="summary-card-grid"><article class="summary-card"><p class="summary-card-eyebrow">변하는 것</p><h2 class="summary-card-title">직접 코드를 타이핑하는 비중</h2><div class="summary-card-lines"><p>줄어든 것은 타이핑의 비중</p></div></article><article class="summary-card"><p class="summary-card-eyebrow">변하지 않는 것</p><h2 class="summary-card-title">시스템을 이해하는 능력</h2><div class="summary-card-lines"><p>안전성 · 유지보수성 · 기존 시스템 적합성</p><p>인증과 권한 · 동시성 · 데이터베이스 스키마 · 캐싱</p></div></article></div></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">14</span></footer></main></section><section class="deck-slide" data-slide-id="S015"><main class="slide family-section layout-centered density-light chapter-02" data-slide-id="S015" data-shell="section-divider-shell" data-notes="Claude Code를 특정 제품 리뷰가 아니라 하네스 흐름의 대표 사례로 둔다." data-footer="default"><section class="section-main"><p class="chapter-marker">CHAPTER 02</p><h1 class="title-placeholder">왜 Claude Code인가</h1><p class="section-keywords section-keyword-rail"></p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">15</span></footer></main></section><section class="deck-slide" data-slide-id="S016"><main class="slide family-content layout-wide density-medium chapter-02" data-slide-id="S016" data-shell="evidence-table-shell" data-notes="source markdown의 에이전틱 코딩 실제 성과와 page-017 reference" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 02</p><h1 class="title-placeholder">에이전틱 코딩의 실제 성과</h1></section><section class="table-wrap evidence-cards-body metric-impact-body is-tall-reference"><div class="evidence-card-grid impact-card-grid"><article class="evidence-card impact-card"><strong>2주</strong><span>CTO 추정 4~8개월</span><p>프로젝트 완료</p><small>카카오 AI 팀 내부 공유 사례</small></article><article class="evidence-card impact-card"><strong>1~2일</strong><span>신규 개발자 온보딩</span><p>기존 수주~수개월에서 단축</p><small>첫날부터 의미 있는 기여</small></article><article class="evidence-card impact-card"><strong>불가능하던 작업 실현</strong><span>기술 부채 해결</span><p>즉각 피드백과 작업 실현</p><small>문서화된 작업 환경</small></article></div></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">16</span></footer></main></section><section class="deck-slide" data-slide-id="S017"><main class="slide family-content layout-wide density-medium chapter-02" data-slide-id="S017" data-shell="process-flow-shell" data-notes="source markdown의 초기 Copilot과 ChatGPT 전환" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 02</p><h1 class="title-placeholder">1막: Copilot과 ChatGPT, 프롬프트의 시대</h1></section><section class="prompt-era-body"><p class="era-range">2022~2024</p><div class="prompt-era-flow"><article class="process-step prompt-era-card"><h2>GitHub Copilot</h2><p>현재 파일 기반 다음 줄 제안</p><ul><li>현재 파일</li><li>암묵적 프롬프트</li><li>자동완성</li></ul></article><div class="prompt-era-arrow" aria-hidden="true">→</div><article class="process-step prompt-era-card"><h2>ChatGPT</h2><p>자연어 지시 기반 코드 생성</p><ul><li>프롬프트 길이</li><li>역할 부여</li><li>단계별 지시</li></ul></article></div><p class="prompt-era-thesis centered-claim">자연어 지시문이 새로운 프로그래밍 인터페이스처럼 보이던 시기</p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">17</span></footer></main></section><section class="deck-slide" data-slide-id="S018"><main class="slide family-content layout-wide density-medium chapter-02" data-slide-id="S018" data-shell="process-flow-shell" data-notes="source markdown의 CoT, ReAct, ToT row와 approved page-064 layout 구조" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 02</p><h1 class="title-placeholder">CoT / ReAct / ToT</h1></section><section class="cot-triad-body process-track"><article class="process-step cot-triad-card"><h2>Chain-of-Thought</h2><p class="cot-triad-acronym">CoT</p><div class="cot-triad-diagram"><svg class="cot-diagram-svg cot-cot-svg" viewBox="0 0 240 160" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Chain-of-Thought diagram"><defs><marker id="cot-triad-cot-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path class="cot-arrow-head" d="M0,0 L8,4 L0,8 z"></path></marker></defs><line class="cot-svg-edge" x1="120" y1="41" x2="120" y2="56" marker-end="url(#cot-triad-cot-arrow)"></line><line class="cot-svg-edge" x1="120" y1="87" x2="120" y2="102" marker-end="url(#cot-triad-cot-arrow)"></line><rect class="cot-svg-node cot-svg-node-outline" x="56" y="10" rx="18" ry="18" width="128" height="30"></rect><text class="cot-svg-text" x="120" y="25" text-anchor="middle" dominant-baseline="middle" font-size="15">문제</text><rect class="cot-svg-node cot-svg-node-outline" x="46" y="56" rx="18" ry="18" width="148" height="30"></rect><text class="cot-svg-text" x="120" y="71" text-anchor="middle" dominant-baseline="middle" font-size="14">중간 추론</text><rect class="cot-svg-node cot-svg-node-dark" x="78" y="102" rx="18" ry="18" width="84" height="30"></rect><text class="cot-svg-text cot-svg-text-invert" x="120" y="117" text-anchor="middle" dominant-baseline="middle" font-size="15">답</text></svg></div><small>중간 추론 단계</small></article><article class="process-step cot-triad-card"><h2>ReAct</h2><p class="cot-triad-acronym">Reason + Act</p><div class="cot-triad-diagram"><svg class="cot-diagram-svg cot-react-svg" viewBox="0 0 246 164" preserveAspectRatio="xMidYMid meet" role="img" aria-label="ReAct diagram"><defs><marker id="cot-triad-react-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path class="cot-arrow-head" d="M0,0 L8,4 L0,8 z"></path></marker></defs><path class="cot-svg-edge" d="M66 54 C28 36, 22 128, 66 112" marker-end="url(#cot-triad-react-arrow)"></path><text class="cot-svg-caption cot-svg-accent" x="14" y="22" text-anchor="start" aria-label="Reasoning Traces"><tspan x="14" dy="0">Reasoning</tspan><tspan x="14" dy="13">Traces</tspan></text><rect class="cot-svg-node cot-svg-node-outline" x="70" y="54" rx="18" ry="18" width="70" height="42"></rect><text class="cot-svg-text" x="105" y="75" text-anchor="middle" dominant-baseline="middle" font-size="15">LM</text><rect class="cot-svg-node cot-svg-node-outline" x="164" y="54" rx="18" ry="18" width="70" height="42"></rect><text class="cot-svg-text" x="199" y="75" text-anchor="middle" dominant-baseline="middle" font-size="15">Env</text><path class="cot-svg-edge" d="M104 50 C122 28, 146 28, 164 50" marker-end="url(#cot-triad-react-arrow)"></path><text class="cot-svg-caption cot-svg-accent" x="134" y="26" text-anchor="middle">Actions</text><path class="cot-svg-edge" d="M164 100 C146 124, 122 124, 104 104" marker-end="url(#cot-triad-react-arrow)"></path><text class="cot-svg-caption cot-svg-accent" x="134" y="144" text-anchor="middle">Observations</text><text class="cot-svg-caption cot-svg-muted" x="124" y="156" text-anchor="middle">ReAct (Reason + Act)</text></svg></div><small>추론과 행동 반복</small></article><article class="process-step cot-triad-card"><h2>Tree-of-Thought</h2><p class="cot-triad-acronym">ToT</p><div class="cot-triad-diagram"><svg class="cot-diagram-svg cot-tot-svg" viewBox="0 0 240 160" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Tree-of-Thought diagram"><defs><marker id="cot-triad-tot-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path class="cot-arrow-head" d="M0,0 L8,4 L0,8 z"></path></marker></defs><line class="cot-svg-edge cot-svg-edge-muted" x1="120" y1="46" x2="62" y2="86"></line><line class="cot-svg-edge" x1="120" y1="46" x2="120" y2="86" marker-end="url(#cot-triad-tot-arrow)"></line><line class="cot-svg-edge cot-svg-edge-muted" x1="120" y1="46" x2="178" y2="86"></line><rect class="cot-svg-node cot-svg-node-outline" x="80" y="16" rx="18" ry="18" width="80" height="30"></rect><text class="cot-svg-text" x="120" y="31" text-anchor="middle" dominant-baseline="middle" font-size="15">문제</text><rect class="cot-svg-node cot-svg-node-outline" x="32" y="86" rx="18" ry="18" width="58" height="30"></rect><text class="cot-svg-text" x="61" y="101" text-anchor="middle" dominant-baseline="middle" font-size="12">경로 A</text><rect class="cot-svg-node cot-svg-node-dark" x="91" y="86" rx="18" ry="18" width="58" height="30"></rect><text class="cot-svg-text cot-svg-text-invert" x="120" y="101" text-anchor="middle" dominant-baseline="middle" font-size="12">경로 B</text><rect class="cot-svg-node cot-svg-node-outline" x="150" y="86" rx="18" ry="18" width="58" height="30"></rect><text class="cot-svg-text" x="179" y="101" text-anchor="middle" dominant-baseline="middle" font-size="12">경로 C</text></svg></div><small>여러 추론 경로</small></article></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">18</span></footer></main></section><section class="deck-slide" data-slide-id="S019"><main class="slide family-content layout-wide density-medium chapter-02" data-slide-id="S019" data-shell="process-flow-shell" data-notes="source markdown의 ReAct, Tree-of-Thought rows와 approved assets 구조" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 02</p><h1 class="title-placeholder">ReAct / Tree-of-Thought</h1></section><section class="pattern-pair-body"><article class="process-step pattern-pair-card"><span class="step-index">02</span><h2>ReAct</h2><p>추론과 행동을 번갈아 수행</p><div class="pattern-native-diagram react-diagram"><span class="react-node react-reasoning">Reasoning</span><span class="react-node react-action">Action</span><span class="react-node react-observation">Observation</span><i class="react-arrow react-arrow-action">→</i><i class="react-arrow react-arrow-observation">←</i><i class="react-arrow react-arrow-reasoning">↺</i></div><small>검색과 도구 호출이 루프 안으로 진입</small></article><article class="process-step pattern-pair-card"><span class="step-index">03</span><h2>Tree-of-Thought</h2><p>여러 추론 경로를 동시에 탐색</p><div class="pattern-native-diagram tot-diagram"><span class="tree-root">문제</span><span class="">경로 A</span><span class="selected">경로 B</span><span class="">경로 C</span><span class="tree-leaf">후보</span><span class="tree-leaf selected">후보</span><span class="tree-leaf">후보</span></div><small>하나의 답이 아니라 후보 경로를 비교</small></article></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">19</span></footer></main></section><section class="deck-slide" data-slide-id="S020"><main class="slide family-content layout-wide density-medium chapter-02" data-slide-id="S020" data-shell="process-flow-shell" data-notes="source markdown의 Self-Refine, Reflexion row" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 02</p><h1 class="title-placeholder">Self-Refine / Reflexion</h1></section><section class="feedback-loop-body"><article class="process-step feedback-loop-card"><h2>Self-Refine</h2><p>자기 출력을 다시 비판하고 수정</p><div class="pattern-native-diagram feedback-diagram self-refine-diagram"><span>자기 출력</span><i>→</i><span>비판</span><i>→</i><span>수정</span><i>→</i><span>피드백 루프</span></div><small>출력 이후의 피드백 루프</small></article><article class="process-step feedback-loop-card"><h2>Reflexion</h2><p>자기 출력을 다시 비판하고 수정</p><div class="pattern-native-diagram feedback-diagram reflexion-diagram"><span>자기 출력</span><i>→</i><span>비판</span><i>→</i><span>수정</span><i>→</i><span>피드백 루프</span></div><small>출력 이후의 피드백 루프</small></article></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">20</span></footer></main></section><section class="deck-slide" data-slide-id="S021"><main class="slide family-content layout-wide density-medium chapter-02" data-slide-id="S021" data-shell="evidence-table-shell" data-notes="source markdown의 Andrew Ng 네 가지 패턴과 approved 05 asset 구조" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 02</p><h1 class="title-placeholder">네 가지 에이전틱 패턴</h1></section><section class="agentic-pattern-quadrant-body"><div class="evidence-card-grid agentic-pattern-canvas"><p class="agentic-pattern-center centered-claim">모델 바깥 구조가 성능을 좌우</p><article class="evidence-card agentic-pattern-card"><h2>Reflection</h2><p>한 번 낸 답을 다시 보고 고침</p><div class="agentic-mini-diagram"><span>Generate</span><i>→</i><span>Critique</span><i>→</i><span>Revise</span></div><small>자기 수정 루프</small></article><article class="evidence-card agentic-pattern-card"><h2>Tool Use</h2><p>검색·계산·실행을 바깥 도구에 맡김</p><div class="agentic-mini-diagram"><span>Model</span><i>→</i><span>Search/API</span><i>→</i><span>Result</span></div><small>모델 바깥 세계 연결</small></article><article class="evidence-card agentic-pattern-card"><h2>Planning</h2><p>목표를 단계로 쪼갬</p><div class="agentic-mini-diagram"><span>Goal</span><i>→</i><span>Plan</span><i>→</i><span>Steps</span></div><small>긴 작업 추진</small></article><article class="evidence-card agentic-pattern-card"><h2>Multi-Agent Collaboration</h2><p>역할을 나눠 다른 관점으로 봄</p><div class="agentic-mini-diagram"><span>Writer</span><i>→</i><span>Reviewer</span><i>→</i><span>Merge</span></div><small>생성과 검증 분리</small></article></div></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">21</span></footer></main></section><section class="deck-slide" data-slide-id="S022"><main class="slide family-content layout-editorial density-medium chapter-02" data-slide-id="S022" data-shell="statement-editorial-shell" data-notes="source markdown의 Blind Prompting 문단" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 02</p><h1 class="title-placeholder">프롬프트 시대의 벽</h1></section><section class="blind-prompting-body blind-prompting-matrix-body"><p class="blind-prompting-claim centered-claim">모델은 보지 못한 것을 알 수 없음</p><div class="blind-prompting-grid"><article class="blind-prompting-card"><h2>관련 파일 부재</h2><p>기존 유틸리티 인식 불가</p></article><article class="blind-prompting-card"><h2>기존 설계 부재</h2><p>설계 결정 활용 불가</p></article><article class="blind-prompting-card"><h2>팀 컨벤션 부재</h2><p>내부 규칙 활용 불가</p></article></div><p class="blind-prompting-thesis centered-claim">문제는 지시문이 아니라 모델이 소비하는 정보</p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">22</span></footer></main></section><section class="deck-slide" data-slide-id="S023"><main class="slide family-content layout-wide density-medium chapter-02" data-slide-id="S023" data-shell="process-flow-shell" data-notes="source markdown의 Cursor 비교 표, Tools 문장, Context Engineering 문단" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 02</p><h1 class="title-placeholder">2막: Cursor와 컨텍스트의 시대</h1></section><section class="cursor-tools-body"><div class="cursor-tools-compare"><article class="process-step cursor-tool-panel is-before"><h2>초기 Copilot</h2><ul><li>현재 파일 중심</li><li>검색 없음 또는 제한</li><li>한 줄 또는 한 블록</li></ul></article><div class="cursor-tools-arrow" aria-hidden="true">→</div><article class="process-step cursor-tool-panel is-after"><h2>Cursor 계열 도구</h2><ul><li>전체 코드베이스</li><li>RAG · AST · 시맨틱 검색</li><li>멀티파일 수정과 Tools</li></ul></article></div><div class="cursor-tools-rail"><span>채팅</span><span>Composer</span><span>Agent Mode</span><span>Context Engineering</span></div></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">23</span></footer></main></section><section class="deck-slide" data-slide-id="S024"><main class="slide family-content layout-wide density-medium chapter-02" data-slide-id="S024" data-shell="process-flow-shell" data-notes="source markdown의 Cursor 아키텍처 text diagram과 approved 06 asset 구조" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 02</p><h1 class="title-placeholder">Cursor 아키텍처</h1></section><section class="cursor-architecture-redraw-body"><div class="cursor-architecture-canvas"><div class="cursor-architecture-example-canvas"><p class="architecture-request">사용자 요청</p><div class="architecture-arrow" aria-hidden="true">→</div><article class="architecture-boundary codebase-index-box"><h2>codebase index</h2><p>파일 · 심볼 · AST · 문서</p></article><div class="architecture-arrow" aria-hidden="true">→</div><article class="architecture-boundary context-bundle-box"><h2>context bundle</h2><p>관련 파일 · 규칙 · 히스토리</p></article><div class="architecture-arrow" aria-hidden="true">→</div><p class="architecture-editrun">edit/run</p><div class="architecture-arrow" aria-hidden="true">→</div><p class="architecture-feedback">verify</p></div><ol class="process-track cursor-architecture-flow"><li class="process-step cursor-architecture-step"><span class="step-index">01</span><span class="step-title">사용자 요청</span><span class="step-copy">질문 자체의 전환</span></li><li class="process-step cursor-architecture-step"><span class="step-index">02</span><span class="step-title">indexing</span><span class="step-copy">파일 · 심볼 · AST · 문서</span></li><li class="process-step cursor-architecture-step"><span class="step-index">03</span><span class="step-title">retrieval</span><span class="step-copy">관련 파일 · 규칙 · 히스토리</span></li><li class="process-step cursor-architecture-step"><span class="step-index">04</span><span class="step-title">context assembly</span><span class="step-copy">필요 정보 선별</span></li><li class="process-step cursor-architecture-step"><span class="step-index">05</span><span class="step-title">edit/run</span><span class="step-copy">편집과 명령 실행</span></li><li class="process-step cursor-architecture-step"><span class="step-index">06</span><span class="step-title">verify</span><span class="step-copy">테스트 · 린트 · 로그</span></li></ol></div><aside class="architecture-side-tools"><p>Tools</p><span>채팅</span><span>Composer</span><span>Agent Mode</span><span>명령 실행</span></aside></div></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">24</span></footer></main></section><section class="deck-slide" data-slide-id="S025"><main class="slide family-content layout-wide density-medium chapter-02" data-slide-id="S025" data-shell="process-flow-shell" data-notes="source markdown의 gather context to repeat loop" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 02</p><h1 class="title-placeholder">컨텍스트 시대의 벽</h1></section><section class="loop-cycle-body"><div class="loop-cycle-track"><article class="process-step loop-step loop-step-1"><span class="step-index">01</span><span class="step-title">gather context</span><span class="step-copy">컨텍스트 수집</span></article><div class="loop-cycle-arrow arrow-east" aria-hidden="true">→</div><article class="process-step loop-step loop-step-2"><span class="step-index">02</span><span class="step-title">take action</span><span class="step-copy">파일 수정과 명령 실행</span></article><div class="loop-cycle-arrow arrow-north" aria-hidden="true">↑</div><div class="loop-center-gap" aria-hidden="true"></div><div class="loop-cycle-arrow arrow-south" aria-hidden="true">↓</div><article class="process-step loop-step loop-step-4"><span class="step-index">04</span><span class="step-title">repeat</span><span class="step-copy">실패 후 재수정</span></article><div class="loop-cycle-arrow arrow-west" aria-hidden="true">←</div><article class="process-step loop-step loop-step-3"><span class="step-index">03</span><span class="step-title">verify</span><span class="step-copy">테스트 · 린트 · 로그</span></article></div><p class="flow-thesis loop-synthesis centered-claim">하네스는 네 지점 각각에 개입</p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">25</span></footer></main></section><section class="deck-slide" data-slide-id="S026"><main class="slide family-content layout-wide density-medium chapter-02" data-slide-id="S026" data-shell="process-flow-shell" data-notes="source markdown의 Claude Code 구성 요소와 하네스 시대 전환" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 02</p><h1 class="title-placeholder">3막: 하네스의 시대</h1></section><section class="harness-era-signs-body"><p class="harness-era-claim centered-claim">작업 환경 전체를 품기 시작한 코딩 도구</p><div class="harness-era-system"><div class="harness-era-components"><span class="harness-era-component">Plan Mode</span><span class="harness-era-component">승인 체계</span><span class="harness-era-component">CLAUDE.md</span><span class="harness-era-component">Skills</span><span class="harness-era-component">Hooks</span><span class="harness-era-component">MCP</span><span class="harness-era-component">Plugins</span><span class="harness-era-component">Subagents</span></div><div class="harness-era-runtime centered-claim">실행 환경</div></div><div class="harness-era-grid"><article class="process-step harness-era-card"><h2>터미널 네이티브</h2><p>파일 읽기 · 셸 실행 · 테스트 확인</p></article><article class="process-step harness-era-card"><h2>구성 요소의 묶음</h2><p>독립 기능이 실행 환경으로 결합</p></article><article class="process-step harness-era-card"><h2>내 환경에 맞는 도구</h2><p>플러그인 · 스킬 · 노하우 · 교육자료</p></article></div></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">26</span></footer></main></section><section class="deck-slide" data-slide-id="S027"><main class="slide family-content layout-wide density-medium chapter-02" data-slide-id="S027" data-shell="evidence-table-shell" data-notes="source markdown의 Agent 공식과 프롬프트/컨텍스트/하네스 포함 관계" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 02</p><h1 class="title-placeholder">시대의 흐름</h1></section><section class="era-native-body"><div class="era-native-track"><article class="era-native-card"><span>2022~2024</span><h2>Prompt Engineering</h2><p>어떤 말을 해야 하나</p></article><article class="era-native-card"><span>2025 중반~</span><h2>Context Engineering</h2><p>어떤 정보를 넣어야 하나</p></article><article class="era-native-card"><span>2026~</span><h2>Harness Engineering</h2><p>어떤 시스템을 만들어야 하나</p></article></div><p class="era-native-formula centered-claim">Agent = Model + Harness</p><p class="era-native-equation centered-claim">Prompt ⊂ Context ⊂ Harness</p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">27</span></footer></main></section><section class="deck-slide" data-slide-id="S028"><main class="slide family-section layout-centered density-medium chapter-03" data-slide-id="S028" data-shell="section-divider-shell" data-notes="AI 시대의 개발 방법론 장 진입" data-footer="default"><section class="section-main"><p class="chapter-marker">CHAPTER 03</p><h1 class="title-placeholder">AI 시대의 개발 방법론</h1><p class="section-keywords section-keyword-rail"></p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">28</span></footer></main></section><section class="deck-slide" data-slide-id="S029"><main class="slide family-content layout-wide density-medium chapter-03" data-slide-id="S029" data-shell="evidence-table-shell" data-notes="생성 속도에서 검증 절차로 생각이 이동한 흐름" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 03</p><h1 class="title-placeholder">왜 지금 방법론</h1></section><section class="table-wrap"><table class="data-table"><thead><tr><th>시기</th><th>현상</th><th>대표 키워드/도구</th><th>핵심 질문</th></tr></thead><tbody><tr><td>2025.02</td><td>AI 코딩의 대중화와 문화적 전환점</td><td>Vibe Coding</td><td>일단 빨리 만들어 보자</td></tr><tr><td>2025 중반</td><td>생성 코드의 품질, 보안, 유지보수 문제 부각</td><td>구조화된 검토, 검증 루프</td><td>이 결과를 믿어도 되나?</td></tr><tr><td>2025 하반기</td><td>구현 전에 방향을 고정하려는 업계 대응</td><td>SDD, Spec-first, GitHub Spec Kit</td><td>애초에 무엇을 만들라고 할 것인가?</td></tr><tr><td>2026 초</td><td>구현 뒤 검증 체계와 문맥 통제가 다시 중요해짐</td><td>TDD, Context Engineering</td><td>정말 그 스펙대로 동작하는가?</td></tr></tbody></table><p class="table-question">AI에게 무엇을 시킬지, 어떻게 검증할 것인지</p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">29</span></footer></main></section><section class="deck-slide" data-slide-id="S030"><main class="slide family-content layout-wide density-medium chapter-03" data-slide-id="S030" data-shell="process-flow-shell" data-notes="요구사항, 계획, 태스크를 파일로 고정하는 흐름" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 03</p><h1 class="title-placeholder">SDD</h1><p class="lead-placeholder">Spec-Driven Development</p></section><section class="body-area flow-body spec-kit-workflow-body"><ol class="process-track spec-kit-stage-track"><li class="process-step spec-kit-stage"><span class="step-index">SPECIFY</span><span class="step-title">/speckit.specify</span><span class="step-copy">WHAT / WHY 분리</span><ul class="spec-kit-stage-notes"><li>[NEEDS CLARIFICATION]</li></ul></li><li class="process-step spec-kit-stage"><span class="step-index">PLAN</span><span class="step-title">/speckit.plan</span><span class="step-copy">HOW 제안</span><ul class="spec-kit-stage-notes"><li>Constitution Check</li></ul></li><li class="process-step spec-kit-stage"><span class="step-index">TASKS</span><span class="step-title">/speckit.tasks</span><span class="step-copy">태스크 분해</span><ul class="spec-kit-stage-notes"><li>병렬 가능 작업 [P] 마킹</li></ul></li></ol><div class="spec-kit-side-stack"><article class="spec-kit-principle"><h2>강제되는 원칙</h2><p>WHAT/WHY와 HOW를 분리하고, 모호한 부분은 [NEEDS CLARIFICATION]에서 멈춘다.</p></article><article class="spec-kit-outcome"><h2>핵심</h2><p>모든 산출물이 파일로 저장되고 커밋되고 계속 참조된다.</p></article><p class="spec-kit-source"><span class="spec-kit-source-icon"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5NiIgaGVpZ2h0PSI5NiIgdmlld0JveD0iMCAwIDk2IDk2Ij48cGF0aCBkPSJNOTUuNjY3IDY3Ljk1NEM5Mi4yMjUgNzMuOTMzIDcyLjI0IDg4LjA0IDQ3Ljk5NyA4OC4wNCAyMy43NTQgODguMDQgMy43NjkgNzMuOTMzLjMyOCA2Ny45NTRjLS4yMTYtLjM3NS0uMzA3LS43OTYtLjMyOC0xLjIyNlY1NS42NjFjLjAxOS0uMzcxLjA4OS0uNzM2LjIyNi0xLjA4MSAxLjQ4OS0zLjczOCA1LjM4Ni05LjE2NiAxMC40MTctMTAuNjIzLjY2Ny0xLjcxMiAxLjY1NS00LjIxNSAyLjU3Ni02LjA2Mi0uMTU0LTEuNDE0LS4yMDgtMi44NzItLjIwOC00LjM0NSAwLTUuMzIyIDEuMTI4LTkuOTkgNC41MjctMTMuNDY2IDEuNTg3LTEuNjIzIDMuNTU3LTIuODY5IDUuODkzLTMuODA1IDUuNTk1LTQuNTQ1IDEzLjU2My04LjM2OSAyNC40OC04LjM2OXMxOS4wNTcgMy44MjQgMjQuNjUyIDguMzY5YzIuMzM3LjkzNiA0LjMwNiAyLjE4MiA1Ljg5NCAzLjgwNSAzLjM5OSAzLjQ3NiA0LjUyNyA4LjE0NCA0LjUyNyAxMy40NjYgMCAxLjQ3My0uMDU0IDIuOTMxLS4yMDggNC4zNDUuOTIxIDEuODQ3IDEuOTA5IDQuMzUgMi41NzYgNi4wNjIgNS4wMyAxLjQ1NyA4LjkyOCA2Ljg4NSAxMC40MTcgMTAuNjIzLjE2My40MS4yMzEuODQ4LjIzMSAxLjI4OXYxMC42NDRjMCAuNTA0LS4wODEgMS4wMDQtLjMzMyAxLjQ0MVpNNDguNjg2IDQzLjk5M2wtLjMuMDAxLTEuMDc3LS4wMDFjLS40MjMuNzA5LS44OTQgMS4zOS0xLjQxOCAyLjAzNS0zLjA3OCAzLjc4Ny03LjY3MiA1Ljk2NC0xNC4wMjYgNS45NjQtNi44OTcgMC0xMS45NTItMS40MzUtMTUuMTIzLTUuMDMyYTcuODg2IDcuODg2IDAgMCAxLS4zNDItLjQxOWwtLjM5LjQxOXYyNi4zMjZjNS43MzcgMy4xMTggMTguMDUgOC43MTMgMzEuOTg3IDguNzEzIDEzLjkzOCAwIDI2LjI1MS01LjU5NSAzMS45ODgtOC43MTNWNDYuOTZsLS4zOS0uNDE5cy0uMTMyLjE4MS0uMzQyLjQxOWMtMy4xNzEgMy41OTctOC4yMjYgNS4wMzItMTUuMTIzIDUuMDMyLTYuMzU0IDAtMTAuOTQ5LTIuMTc3LTE0LjAyNi01Ljk2NGExNy4xNzggMTcuMTc4IDAgMCAxLTEuNDE4LTIuMDM0aC0uMDY2bC4wNjYtLjAwMVptLTMuOTQtMTEuNzMzYy4xNy0xLjMyNi4yNTEtMi41MTMuMjUzLTMuNTczdi0uMDg0Yy0uMDA1LTMuMDc3LS42NzgtNS4wNzktMS43NTItNi4zMDgtMS4zNjUtMS41NjItNC4xODQtMi43NTgtMTAuMTI3LTIuMTE1LTYuMDIxLjY1Mi05LjM4NiAyLjE0Ni0xMS4yOTQgNC4wOTgtMS44NDcgMS44ODktMi44MTggNC43MTUtMi44MTggOS4yNzIgMCA0Ljg0Mi42OTggNy43MDMgMi4yMzIgOS40NDMgMS40NTkgMS42NTUgNC4zMzIgMy4wMDEgMTAuNjI1IDMuMDAxIDQuODM3IDAgNy42MDMtMS41NzMgOS4zNzEtMy43NDkgMS44OTktMi4zMzYgMi45NjctNS43NTkgMy41MS05Ljk4NVptNi41MDMgMGMuNTQzIDQuMjI2IDEuNjExIDcuNjQ5IDMuNTEgOS45ODUgMS43NjggMi4xNzYgNC41MzMgMy43NDkgOS4zNzEgMy43NDkgNi4yOTIgMCA5LjE2NS0xLjM0NiAxMC42MjQtMy4wMDEgMS41MzUtMS43NCAyLjIzMi00LjYwMSAyLjIzMi05LjQ0MyAwLTQuNTU3LS45Ny03LjM4My0yLjgxNy05LjI3Mi0xLjkwOC0xLjk1Mi01LjI3NC0zLjQ0Ni0xMS4yOTQtNC4wOTgtNS45NDMtLjY0My04Ljc2My41NTMtMTAuMTI3IDIuMTE1LTEuMDc0IDEuMjI5LTEuNzQ3IDMuMjMxLTEuNzUyIDYuMzA4di4wODRjLjAwMiAxLjA2LjA4MyAyLjI0Ny4yNTMgMy41NzNabS0yLjU2MyAxMS43MzRoLjA2NmwtLjA2Ni0uMDAxdi4wMDFaIi8+PHBhdGggZD0iTTM4LjUgNTUuNzVhMy41IDMuNSAwIDAgMSAzLjUgMy41djguNWEzLjUgMy41IDAgMSAxLTcgMHYtOC41YTMuNSAzLjUgMCAwIDEgMy41LTMuNVptMTkgMGEzLjUgMy41IDAgMCAxIDMuNSAzLjV2OC41YTMuNSAzLjUgMCAxIDEtNyAwdi04LjVhMy41IDMuNSAwIDAgMSAzLjUtMy41WiIvPjwvc3ZnPg==" alt="GitHub Copilot icon"></span><span>GitHub Copilot icon</span><span>GitHub spec-kit</span></p></div></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">30</span></footer></main></section><section class="deck-slide" data-slide-id="S031"><main class="slide family-content layout-editorial density-medium chapter-03" data-slide-id="S031" data-shell="statement-editorial-shell" data-notes="테스트가 에이전트의 자유를 제한하는 통제선" data-footer="default"><section class="top-band"><p class="chapter-label statement-tag">CHAPTER 03</p><h1 class="title-placeholder statement-text">TDD (Test-Driven Development)</h1></section><section class="statement-panel tdd-control-layers-body"><p class="tdd-control-lead">테스트를 먼저 쓰고, 통과하는 코드를 나중에 쓴다. AI 시대에는 인간이 테스트, AI가 구현.</p><div class="tdd-control-grid"><div class="tdd-flow-stack"><article class="tdd-flow-step"><h2>Red</h2><p>인간이 실패 테스트 작성</p></article><article class="tdd-flow-step"><h2>Green</h2><p>AI가 통과 코드 구현</p></article><article class="tdd-flow-step"><h2>Refactor</h2><p>인간 리뷰 → AI가 리팩토링</p></article></div><div class="tdd-control-column"><article class="tdd-control-block"><h2>왜 AI에게 특히 중요한가</h2><p>AI는 &quot;동작하는 것 같은&quot; 코드를 자신 있게 만듦. 테스트 없으면 맞는지 틀린지 확인 불가.</p></article><article class="tdd-control-block"><h2>AI의 치팅에 주의</h2><p>테스트 수정 금지 규칙 필수. 테스트 코드 임의 수정 금지 · assert 조건 약화 · 실패 확인 전 구현 금지.</p></article></div></div></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">31</span></footer></main></section><section class="deck-slide" data-slide-id="S032"><main class="slide family-comparison layout-split density-medium chapter-03" data-slide-id="S032" data-shell="split-compare-shell" data-notes="요구사항·설계·코딩·테스트 vs specification·plan·tasks" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 03</p><h1 class="title-placeholder">Waterfall vs SDD</h1></section><section class="waterfall-comparison-body"><div class="comparison-column-headers"><div class="comparison-column-spacer" aria-hidden="true"></div><div class="compare-col comparison-column-header">Waterfall</div><div class="comparison-column-gap" aria-hidden="true"></div><div class="compare-col comparison-column-header is-focus">SDD</div></div><div class="comparison-row-grid"><article class="comparison-row"><p class="comparison-row-key">개발 흐름</p><p class="comparison-row-left">요구사항 → 설계 → 코딩 → 테스트</p><div class="comparison-row-gap" aria-hidden="true"></div><p class="comparison-row-right">스펙이 primary artifact</p></article><article class="comparison-row"><p class="comparison-row-key">검증 시점</p><p class="comparison-row-left">테스트가 개발 후반에 실제 제약을 드러냄</p><div class="comparison-row-gap" aria-hidden="true"></div><p class="comparison-row-right">/speckit.specify​ → ​/speckit.plan​ → ​/speckit.tasks</p></article><article class="comparison-row"><p class="comparison-row-key">실행 산출물</p><p class="comparison-row-left">요구사항 또는 설계를 다시 고침</p><div class="comparison-row-gap" aria-hidden="true"></div><p class="comparison-row-right">spec · plan · tasks를 실행 산출물로 갱신</p></article></div></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">32</span></footer></main></section><section class="deck-slide" data-slide-id="S033"><main class="slide family-content layout-editorial density-medium chapter-03" data-slide-id="S033" data-shell="statement-editorial-shell" data-notes="스펙과 테스트 루프를 사람이 매번 손으로 굴리지 않도록 시스템화" data-footer="default"><section class="top-band"><p class="chapter-label statement-tag">CHAPTER 03</p><h1 class="title-placeholder statement-text spec-tdd-subheading">SDD + TDD가 Harness로 이어지는 이유</h1></section><section class="statement-panel spec-tdd-bridge-body"><div class="spec-tdd-card-grid"><article class="spec-tdd-card"><h2>Spec</h2><ul><li>스펙 템플릿</li><li>계획 문서</li></ul></article><div class="spec-tdd-plus" aria-hidden="true">+</div><article class="spec-tdd-card"><h2>TDD</h2><ul><li>TDD 루프</li><li>Skills</li><li>Hooks</li></ul></article></div><p class="statement-support spec-tdd-synthesis centered-claim">이 시스템이 곧 하네스 엔지니어링</p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">33</span></footer></main></section><section class="deck-slide" data-slide-id="S034"><main class="slide family-section layout-centered density-medium chapter-04" data-slide-id="S034" data-shell="section-divider-shell" data-notes="프롬프트와 컨텍스트를 포함하는 하네스 구조로 진입" data-footer="default"><section class="section-main"><p class="chapter-marker">CHAPTER 04</p><h1 class="title-placeholder">프롬프트를 넘어서</h1><p class="section-keywords section-keyword-rail"><span class="section-keyword-plain">Prompt</span><span class="section-keyword-separator" aria-hidden="true">/</span><span class="section-keyword-plain">Context</span><span class="section-keyword-separator" aria-hidden="true">/</span><span class="section-keyword-plain">Harness</span></p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">34</span></footer></main></section><section class="deck-slide" data-slide-id="S035"><main class="slide family-content layout-wide density-medium chapter-04" data-slide-id="S035" data-shell="evidence-table-shell" data-notes="프롬프트, 컨텍스트, 하네스의 포함 관계" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 04</p><h1 class="title-placeholder">Prompt, Context, Harness</h1></section><section class="table-wrap"><table class="data-table"><thead><tr><th>층위</th><th>핵심 질문</th><th>초점</th></tr></thead><tbody><tr><td>Prompt</td><td>무엇을/어떻게 말할 것인가</td><td>명령의 품질 / 단일 프롬프트 / 정적</td></tr><tr><td>Context</td><td>무엇을/어떻게 보여줄 것인가</td><td>정보의 품질 / 입력 파이프라인 / 동적</td></tr><tr><td>Harness</td><td>무엇을/어떻게 통제할 것인가</td><td>시스템의 안정성 / 실행 환경 전체</td></tr></tbody></table><p class="table-question">Prompt ⊂ Context ⊂ Harness</p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">35</span></footer></main></section><section class="deck-slide" data-slide-id="S036"><main class="slide family-content layout-wide density-medium chapter-04" data-slide-id="S036" data-shell="evidence-table-shell" data-notes="Agent 공식과 하네스의 여섯 구성 요소" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 04</p><h1 class="title-placeholder">Agent = Model + Harness</h1></section><section class="table-wrap agent-harness-quote-body"><figure class="quote-card-block agent-quote-block"><blockquote>모델이 아닌 것은 전부 하네스입니다.</blockquote><figcaption>LangChain, Vivek Trivedy</figcaption></figure><div class="agent-component-grid"><article class="agent-component-card"><h2>Context Engineering</h2><p>모델이 봐야 할 정보와 버려야 할 정보</p></article><article class="agent-component-card"><h2>Tool Orchestration</h2><p>도구 호출 순서와 권한</p></article><article class="agent-component-card"><h2>State &amp; Memory</h2><p>세션을 넘어 남는 파일과 기록</p></article><article class="agent-component-card"><h2>Verification Loop</h2><p>테스트, 린트, 리뷰</p></article><article class="agent-component-card"><h2>Error Recovery</h2><p>실패 감지와 재시도, 우회, 중단</p></article><article class="agent-component-card"><h2>Human-in-the-Loop Control</h2><p>사람 승인과 개입 지점</p></article></div></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">36</span></footer></main></section><section class="deck-slide" data-slide-id="S037"><main class="slide family-content layout-wide density-medium chapter-04" data-slide-id="S037" data-shell="process-flow-shell" data-notes="거의 모든 코딩 에이전트가 반복하는 네 단계" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 04</p><h1 class="title-placeholder">에이전트 루프: 하네스의 심장</h1></section><section class="loop-cycle-body"><div class="loop-cycle-track"><article class="process-step loop-step loop-step-1"><span class="step-index">01</span><span class="step-title">gather context</span><span class="step-copy">무엇을 안 보여줄지 설계</span></article><div class="loop-cycle-arrow arrow-east" aria-hidden="true">→</div><article class="process-step loop-step loop-step-2"><span class="step-index">02</span><span class="step-title">take action</span><span class="step-copy">되돌릴 수 있는 액션부터 허용</span></article><div class="loop-cycle-arrow arrow-north" aria-hidden="true">↑</div><div class="loop-center-gap" aria-hidden="true"></div><div class="loop-cycle-arrow arrow-south" aria-hidden="true">↓</div><article class="process-step loop-step loop-step-4"><span class="step-index">04</span><span class="step-title">repeat</span><span class="step-copy">현재 결론과 다음 행동만 남김</span></article><div class="loop-cycle-arrow arrow-west" aria-hidden="true">←</div><article class="process-step loop-step loop-step-3"><span class="step-index">03</span><span class="step-title">verify work</span><span class="step-copy">테스트, 린트, 리뷰</span></article></div><p class="flow-thesis loop-synthesis centered-claim">이 네 지점을 신뢰성 있게 만드는 일</p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">37</span></footer></main></section><section class="deck-slide" data-slide-id="S038"><main class="slide family-content layout-wide density-medium chapter-04" data-slide-id="S038" data-shell="process-flow-shell" data-notes="운영 관점에서 보는 하네스의 책임" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 04</p><h1 class="title-placeholder">하네스의 책임</h1></section><section class="body-area flow-body"><ol class="process-track "><li class="process-step"><span class="step-index">01</span><span class="step-title">Guardrails</span><span class="step-copy">위험한 행동과 권한 경계</span></li><li class="process-step"><span class="step-index">02</span><span class="step-title">Specification</span><span class="step-copy">작업 범위와 기준선</span></li><li class="process-step"><span class="step-index">03</span><span class="step-title">Verification</span><span class="step-copy">결정론적 결과 검증</span></li><li class="process-step"><span class="step-index">04</span><span class="step-title">State Management</span><span class="step-copy">파일, Git 이력, 진행 기록</span></li><li class="process-step"><span class="step-index">05</span><span class="step-title">Observability</span><span class="step-copy">실행 로그, trace, checkpoint</span></li></ol></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">38</span></footer></main></section><section class="deck-slide" data-slide-id="S039"><main class="slide family-content layout-wide density-medium chapter-04" data-slide-id="S039" data-shell="evidence-table-shell" data-notes="기능 블록과 도구 레이어는 1:1로 대응하지 않음" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 04</p><h1 class="title-placeholder">하네스의 도구</h1></section><section class="table-wrap tool-relation-map"><div class="tool-relation-grid"><div class="responsibility-column"><article class="responsibility-card"><h2>Guardrails</h2></article><article class="responsibility-card"><h2>Specification</h2></article><article class="responsibility-card"><h2>Verification</h2></article><article class="responsibility-card"><h2>State Management</h2></article><article class="responsibility-card"><h2>Observability</h2></article></div><svg class="relation-connector tool-network-lines" viewBox="0 0 340 284" preserveAspectRatio="none" aria-hidden="true"><path class="tool-network-line" d="M 6 18.0 C 96 18.0, 220 14.0, 334 14.0" /><path class="tool-network-line" d="M 6 18.0 C 96 18.0, 220 78.0, 334 78.0" /><path class="tool-network-line" d="M 6 18.0 C 96 18.0, 220 142.0, 334 142.0" /><path class="tool-network-line" d="M 6 80.0 C 96 80.0, 220 14.0, 334 14.0" /><path class="tool-network-line" d="M 6 80.0 C 96 80.0, 220 46.0, 334 46.0" /><path class="tool-network-line" d="M 6 80.0 C 96 80.0, 220 238.0, 334 238.0" /><path class="tool-network-line" d="M 6 142.0 C 96 142.0, 220 78.0, 334 78.0" /><path class="tool-network-line" d="M 6 142.0 C 96 142.0, 220 206.0, 334 206.0" /><path class="tool-network-line" d="M 6 142.0 C 96 142.0, 220 14.0, 334 14.0" /><path class="tool-network-line" d="M 6 204.0 C 96 204.0, 220 174.0, 334 174.0" /><path class="tool-network-line" d="M 6 204.0 C 96 204.0, 220 238.0, 334 238.0" /><path class="tool-network-line" d="M 6 204.0 C 96 204.0, 220 14.0, 334 14.0" /><path class="tool-network-line" d="M 6 266.0 C 96 266.0, 220 270.0, 334 270.0" /><path class="tool-network-line" d="M 6 266.0 C 96 266.0, 220 110.0, 334 110.0" /><path class="tool-network-line" d="M 6 266.0 C 96 266.0, 220 206.0, 334 206.0" /></svg><div class="tool-cluster-grid"><article class="tool-cluster-card"><h2>CLAUDE.md / AGENTS.md</h2></article><article class="tool-cluster-card"><h2>Skills</h2></article><article class="tool-cluster-card"><h2>Hooks</h2></article><article class="tool-cluster-card"><h2>MCP / Context Hub</h2></article><article class="tool-cluster-card"><h2>Plugins</h2></article><article class="tool-cluster-card"><h2>Git Worktree</h2></article><article class="tool-cluster-card"><h2>pytest / CI / PR 체크</h2></article><article class="tool-cluster-card"><h2>이슈 / PR / 진행 파일</h2></article><article class="tool-cluster-card"><h2>실행 로그 / trace</h2></article></div></div><p class="tool-network-synthesis centered-claim">책임과 도구는 1:1이 아니다</p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">39</span></footer></main></section><section class="deck-slide" data-slide-id="S040"><main class="slide family-content layout-wide density-medium chapter-04" data-slide-id="S040" data-shell="process-flow-shell" data-notes="좋은 컨텍스트는 넓은 컨텍스트가 아니라 선별된 컨텍스트" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 04</p><h1 class="title-placeholder">Context Engineering</h1></section><section class="body-area flow-body context-engineering-body"><ol class="process-track context-strategy-grid"><li class="process-step context-strategy-card"><span class="step-index">01</span><span class="step-title">Write</span><span class="step-copy">역할, 목표, 금지, 출력, 검증 기준을 구조화</span></li><li class="process-step context-strategy-card"><span class="step-index">02</span><span class="step-title">Select</span><span class="step-copy">지금 필요한 문서와 파일만 선택</span></li><li class="process-step context-strategy-card"><span class="step-index">03</span><span class="step-title">Compress</span><span class="step-copy">결정, 남은 일, 증거 중심으로 압축</span></li><li class="process-step context-strategy-card"><span class="step-index">04</span><span class="step-title">Isolate</span><span class="step-copy">대량 탐색과 로그 분석은 격리</span></li></ol><figure class="quote-card-block context-quote-block"><blockquote>smallest set of high-signal tokens</blockquote><figcaption>Anthropic Research</figcaption></figure></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">40</span></footer></main></section><section class="deck-slide" data-slide-id="S041"><main class="slide family-content layout-wide density-medium chapter-04" data-slide-id="S041" data-shell="process-flow-shell" data-notes="외부 도구와 최신 문서 연결은 컨텍스트 엔지니어링의 핵심 인프라" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 04</p><h1 class="title-placeholder">MCP와 Context Hub</h1></section><section class="mcp-context-explainer-body"><article class="mcp-usage-panel"><p class="panel-kicker">에이전트가 MCP를 쓰는 구조</p><div class="mcp-usage-flow"><article class="mcp-usage-node"><span>에이전트</span><p>필요한 외부 컨텍스트 판단</p></article><div class="mcp-usage-arrow" aria-hidden="true">→</div><article class="mcp-usage-node"><span>MCP 클라이언트</span><p>서버 연결과 결과 형식 유지</p></article><div class="mcp-usage-arrow" aria-hidden="true">→</div><article class="mcp-usage-node"><span>MCP 서버</span><p>외부 도구·데이터 소스 제공</p></article></div><p class="mcp-usage-note">도구 결과가 컨텍스트 윈도우로 돌아와 다음 판단의 재료가 됨</p><p class="mcp-connected-examples">GitHub · Slack · DB · Filesystem · Internal API</p></article><article class="context-hub-explainer-card"><p class="panel-kicker">Context Hub MCP</p><h2>최신 문서를 읽힌 뒤 답하게 하는 통로</h2><div class="context-hub-principles"><article class="context-hub-principle"><span>역할</span><p>최신 API 문서와 공식 자료를 필요할 때 가져옴</p></article><article class="context-hub-principle"><span>원리</span><p>모델 기억 대신 지금 기준 문서를 컨텍스트로 주입</p></article><article class="context-hub-principle"><span>효과</span><p>호출 방식과 결과 형식이 안정화</p></article></div></article></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">41</span></footer></main></section><section class="deck-slide" data-slide-id="S042"><main class="slide family-content layout-wide density-medium chapter-04" data-slide-id="S042" data-shell="evidence-table-shell" data-notes="RAG는 넓은 검색 인덱스, Context Hub MCP는 최신/버전 지정 문서 주입" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 04</p><h1 class="title-placeholder">RAG vs Context Hub</h1></section><section class="table-wrap rag-context-research-body"><div class="rag-context-grid"><article class="rag-context-card"><p class="compare-label">RAG</p><h2>넓은 저장소에서 passage 검색</h2><ul><li>질문마다 관련 조각을 생성 입력에 주입</li><li>벡터 인덱스와 retriever 품질이 결과를 좌우</li><li>내부 위키·정책·긴 참고 자료에 적합</li></ul></article><article class="rag-context-card"><p class="compare-label">Context Hub MCP</p><h2>지정한 최신 문서를 컨텍스트로 주입</h2><ul><li>공식·버전별 API 문서를 필요할 때 가져옴</li><li>라이브러리 ID·버전·언어로 범위를 좁힘</li><li>SDK/API 변경이 잦은 작업에 적합</li></ul></article></div><article class="rag-context-decision"><span>선택 기준</span><p>넓게 찾을 때는 RAG, 지금 맞는 문서를 확인할 때는 Context Hub</p></article><p class="research-source-line">Sources: Lewis et al. 2020 · MCP Docs · Context Hub / Context7</p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">42</span></footer></main></section><section class="deck-slide" data-slide-id="S043"><main class="slide family-content layout-wide density-medium chapter-04" data-slide-id="S043" data-shell="evidence-table-shell" data-notes="상태와 근거는 파일 시스템, Git, 이슈, PR, 문서로 나가야 함" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 04</p><h1 class="title-placeholder">Memory: 세션을 넘어서는 기억</h1></section><section class="table-wrap memory-artifact-map"><div class="memory-artifact-grid"><article class="memory-artifact-card"><h2>CLAUDE.md / AGENTS.md</h2><p>규칙 파일과 기준선</p></article><article class="memory-artifact-card"><h2>프로젝트 노트와 결정 기록</h2><p>설계 의도와 합의</p></article><article class="memory-artifact-card"><h2>이슈와 PR 히스토리</h2><p>작업 맥락과 리뷰 흔적</p></article><article class="memory-artifact-card"><h2>progress.txt / prd.json</h2><p>진행 상태와 요구사항</p></article><article class="memory-artifact-card"><h2>벡터 DB / 코드 그래프</h2><p>검색 가능한 프로젝트 지식</p></article><article class="memory-artifact-card"><h2>커밋 히스토리와 아키텍처 결정 기록</h2><p>변경 이유와 구조 결정</p></article></div><p class="memory-core-claim centered-claim">대화창을 기억 저장소로 착각하지 않는다</p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">43</span></footer></main></section><section class="deck-slide" data-slide-id="S044"><main class="slide family-comparison layout-split density-medium chapter-04" data-slide-id="S044" data-shell="split-compare-shell" data-notes="자주 변하지 않는 것은 앞쪽에, 최신 입력과 도구 결과는 뒤쪽에 둠" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 04</p><h1 class="title-placeholder">Stable Prefix와 Variable Suffix</h1></section><section class="compare-grid with-arrow cache-sequence-body"><article class="compare-col cache-segment stable-prefix-block"><p class="compare-label">Stable Prefix</p><div class="cache-badge-row"><span>KV-cache</span><span>고정</span><span>재사용</span></div><ul class="cache-token-stack"><li class="cache-token">시스템 프롬프트</li><li class="cache-token">도구 정의</li><li class="cache-token">장기 규칙</li></ul><p class="cache-role-note">앞쪽의 안정 접두어</p></article><div class="compare-arrow cache-sequence-arrow" aria-hidden="true">→</div><article class="compare-col cache-segment variable-suffix-block is-focus"><p class="compare-label">Variable Suffix</p><div class="cache-badge-row"><span>동적 접미어</span><span>갈아 끼움</span></div><ul class="cache-token-stack"><li class="cache-token">최신 사용자 입력</li><li class="cache-token">도구 결과</li><li class="cache-token">뒤에서 갈아 끼움</li></ul><p class="cache-role-note">최신 입력과 도구 결과</p></article></section><p class="cache-synthesis centered-claim">잘 쓰는 것 못지않게 안 바꾸는 것도 능력</p><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">44</span></footer></main></section><section class="deck-slide" data-slide-id="S045"><main class="slide family-content layout-wide density-medium chapter-04" data-slide-id="S045" data-shell="process-flow-shell" data-notes="Harness Builder는 에이전트가 쓸 수 있는 환경을 만드는 사람" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 04</p><h1 class="title-placeholder">하네스는 환경 그 자체다</h1></section><section class="body-area flow-body"><ol class="process-track "><li class="process-step"><span class="step-index">01</span><span class="step-title">필요한 파일</span><span class="step-copy">상태와 근거를 세션 밖에 남김</span></li><li class="process-step"><span class="step-index">02</span><span class="step-title">필요한 도구</span><span class="step-copy">에이전트가 실제 일을 할 수 있게 연결</span></li><li class="process-step"><span class="step-index">03</span><span class="step-title">필요한 규칙</span><span class="step-copy">권한, 검증, 중단 지점을 고정</span></li></ol><p class="flow-thesis centered-claim">Harness Builder는 에이전트가 쓸 수 있는 환경을 만드는 사람</p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">45</span></footer></main></section>
 </div>
 <script>
 const slides = Array.from(document.querySelectorAll('.deck-slide'));

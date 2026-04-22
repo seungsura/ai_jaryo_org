@@ -16,12 +16,21 @@
 - HTML 관련 작업은 subagent 위임 기반으로 진행한다. orchestrator는 규칙 확정, prompt 구성, 결과 검수, 후속 지시를 맡는다.
 - HTML 작업 subagent prompt에는 이 문서 사전 확인, 최신 피드백 기록, source/reference 밖 생성 금지, 필요한 검증 명령을 명시한다.
 - 새 사용자 피드백은 구현 전에 먼저 이 문서에 기록한다. 기록 위치는 active rule, reusable pattern, Decision Log, Traceability 중 가장 강제력이 높은 곳이다.
+- 사용자 피드백은 단순 작업 메모로 흘려보내지 않는다. 매번 문서에 남기고, fixed rule, reusable pattern, validation rule, Traceability history 중 어디로 승격할 수 있는지 먼저 검토한다.
+- 피드백을 규칙으로 승격하지 않을 때도 이유를 남긴다. one-off correction, 현재 slide 한정, source/reference 부족, 또는 다른 active rule과 충돌 같은 보류 사유를 Decision Log나 Traceability에 기록한다.
 - 최신 피드백을 규칙으로 승격하지 않은 상태에서 generator, CSS, renderer, tests, generated HTML, PDF를 수정하지 않는다.
+- 모든 사용자 피드백은 작업 지시이기 전에 rule-candidate다. slide-specific 수정 요청, visual reference 요청, 검증 누락 지적, workflow 지적을 모두 문서 기록 대상으로 본다.
+- 피드백 기록에는 적용 범위 판단을 함께 둔다: deck-wide rule, chapter/slide-specific rule, reusable pattern, validation rule, one-off exception 중 하나로 분류한다.
+- "기록만 하고 규칙화하지 않음"도 명시적 판단이다. 이 경우에도 이후 작업자가 같은 피드백을 재해석하지 않도록 보류 사유와 적용 한계를 남긴다.
 - 일반 구현 순서: 규칙 기록 -> subagent 위임 -> generator/CSS/test/check 갱신 -> HTML/PDF 재생성 -> 정적 검증 -> Playwright screenshot/PDF smoke 검증.
+- 병렬 worktree에서 slide numbering은 임시값이다. 다른 chapter 작업과 겹칠 수 있으므로 chapter 작업자는 전역 `SXXX`/`slide-XXX` 번호를 안정된 소유권으로 가정하지 않는다.
+- 병렬 HTML 작업은 chapter별 작업 폴더를 우선한다. chapter-local 폴더 아래에서 해당 chapter의 local slide order와 임시 slide number를 함께 관리하고, 전역 deck 번호는 마지막 main 통합 단계에서만 재부여한다.
 
 ## Source Discipline
 
 - local markdown과 사용자가 명시한 reference만 의미 source로 쓴다. source/reference 밖 비교 축, label, 의미, 예시, metric, 해설 문구를 만들지 않는다.
+- 모든 visible slide 요소는 source markdown, 사용자가 명시한 reference, 또는 사용자가 직접 지시한 문구로 추적 가능해야 한다. 원문에 없는 내용이나 문장을 보기 좋게 보이기 위해 창작해서 넣는 것은 deck-wide 실패다.
+- source에 없는 문구가 필요해 보이면 새로 만들지 않는다. 해당 요소를 제거하거나, 사용자 확인 전까지 open question으로 남긴다.
 - 사용자가 지정하지 않은 `assets/`, JPG, PNG, PDF는 content source로 보지 않는다. Visual Reference Baseline의 항목도 composition/layout/diagram soft reference일 뿐 content source가 아니다.
 - source markdown의 최신 문구가 stale generated phrasing보다 우선한다. 사용자가 페이지를 부정확하게 지칭해도 source markdown의 최신 문장을 따른다.
 - source 의미 보존 압축은 허용한다. source에 없는 해설축, 반복 설명, 분류 label, 보조 label, metric 재해석은 금지한다.
@@ -55,6 +64,7 @@
 
 - soft reference baseline은 다음 항목이다: `output/pdf/harness-00-01-current-720x405.pdf`, `assets/claude-code-seminar-kakao/page-028.png`, `assets/claude-code-seminar-kakao/page-032.png`, `assets/claude-code-seminar-kakao/page-037.png`, `assets/claude-code-seminar-kakao/page-053.png`, `assets/claude-code-seminar-kakao/page-064.png`, `assets/claude-code-seminar-kakao/page-067.png`.
 - CHAPTER 02 rebuild에서 사용자가 추가 승인한 reference는 `output/pdf/harness-00-02-current-720x405.pdf`의 S016-S018, `assets/evolution-of-ai-agentic-patterns/02-chain-of-thought.png`부터 `06-cursor-ai-code-editor-architecture.png`, `assets/claude-code-seminar-kakao/page-052.png`, `assets/claude-code-seminar-kakao/page-067.png`이다.
+- S018 feedback round 3에서 추가 승인한 reference는 `assets/claude-code-seminar-kakao/page-064.png`, 사용자가 첨부한 ReAct screenshot, `https://pub.towardsai.net/chain-of-thought-vs-tree-of-thought-vs-graph-of-thought-reasoning-method-comparison-1f19d238a005`의 CoT/ToT comparison structure다. S018은 `CoT`, `ReAct`, `ToT` 3개를 한 페이지에 모두 visible copy로 두고, `2캔 × 3개`, `11개` 같은 산수 예시는 쓰지 않는다. `Graph-of-Thought`, `GoT`는 S018 visible copy에 넣지 않는다.
 - 이 baseline은 composition, layout rhythm, diagram density, spatial hierarchy의 soft reference다.
 - 이 baseline은 content source가 아니다. 문구, 비교 축, label, metric, 사례, 해설 의미를 여기서 새로 가져오지 않는다.
 - baseline의 warm brown palette, section pill, character image, decorative mood를 복사하지 않는다.
@@ -95,6 +105,11 @@
 - 카드 label은 의도한 계층을 지켜야 한다. language/category label이 prompt/card 내부 장식으로 빨려 들어가면 실패다.
 - native diagram slide는 렌더링된 screenshot/PDF를 승인 reference와 직접 비교한다. contract text가 맞아도 시각 구조, 관계, density, spacing이 reference와 어긋나면 실패다.
 - 카드 내부 text는 카드 border 안에 완전히 들어와야 한다. overflow, clipping, border 밖 돌출, footer와 겹침은 실패다.
+- 카드 크기와 내부 글자 크기는 서로 맞아야 한다. 큰 카드 안에 작은 글자가 떠 보이거나, 작은 카드 안에서 글자가 과하게 커져 hierarchy가 무너지면 실패다.
+- 카드가 담는 정보량이 작으면 카드 자체도 작아져야 한다. 짧은 label/text를 큰 빈 카드에 띄워 놓아 답답한 비례가 생기면 실패다.
+- 카드 안에 다시 카드처럼 보이는 `article`/panel/card를 중첩하지 않는다. 한 패널 안의 보조 정보는 rail, row, list, divider, callout text로 처리하고 nested card로 렌더링하면 실패다.
+- 인용문은 전용 quote card/block으로 렌더링한다. 표의 callout, 일반 synthesis bar, 흐름 카드 안의 보조 문장처럼 섞어 넣지 않는다.
+- 인용구로 바꾸라는 피드백은 단순한 dark bar가 아니라 `blockquote`와 attribution을 갖춘 quote card/block으로 승격 가능한지 먼저 검토한다.
 - 결론 slide는 중복 정보를 피한다. 관계식/공식과 핵심 결론이 이미 의미를 전달하면 하단 table이나 반복 설명을 추가하지 않는다.
 
 ## Reusable Patterns
@@ -103,6 +118,7 @@
 - evidence cards without tables: 숫자와 사실만 카드로 압축하고, 해설 열이나 표는 쓰지 않는다.
 - role transition flow with right-side analogy: 왼쪽에는 위에서 아래로 이어지는 역할 이동 흐름, 오른쪽에는 비유 블록을 둔다.
 - dark quote + factual cards for closing: 어두운 quote 블록 하나와 그 아래 흰 surface + neutral border 사실 카드 두 개로 끝낸다.
+- dedicated quote card: 인용문은 `blockquote`와 `figcaption`을 가진 독립 figure/card로 둔다. 출처가 필요한 인용은 카드 안에서 attribution을 함께 보여준다.
 - metric card trio: 큰 숫자 / 짧은 label / 보조 문구 / 출처 meta 계층으로 분리하고, metric value는 카드 상단에 둔다.
 - example-first native diagram: pattern, architecture, workflow 설명은 이름/정의 나열보다 source-backed 예시와 관계를 보이는 native diagram으로 구성한다.
 - loop visual: 네 단계 사이 명시적 arrow로 순환을 보인다. dashed repeat label 또는 `↺ repeat`를 쓰지 않는다.
@@ -118,6 +134,10 @@
 ## Implementation Contract
 
 - deck 구조는 `docs/02-seminar/harness-rebuilt-md` source markdown과 승인된 outline을 따라야 한다.
+- chapter별 병렬 작업은 chapter-local staging 구조를 둔다. 예: `docs/03-html/chapters/chapter-03/`, `output/playwright/chapter-03/`, `output/pdf/chapter-03/`처럼 chapter 단위 산출물을 분리하고, 해당 폴더 안에서 local slide number와 source block을 함께 추적한다.
+- `docs/03-html/slides/slide-XXX.html`, `docs/03-html/deck/index.html`, global manifest/outline/spec JSON의 전역 번호는 integration artifact다. 여러 worktree가 동시에 작업 중일 때는 이 번호를 고정 계약으로 삼지 않는다.
+- 마지막 main 통합에서는 각 작업 브랜치의 chapter-local 산출물과 source-backed slide 정의를 먼저 병합한 뒤, 전역 slide number와 `SXXX`/`slide-XXX` 파일명만 일괄 재계산한다. 이 단계에서 내용, 문구, layout 의미를 함께 바꾸지 않는다.
+- 전역 번호 재부여 작업은 content/layout revision과 분리한다. renumbering-only pass에서는 numbering, manifest, outline, deck ordering, generated artifact path만 수정하고 slide copy나 visual structure는 건드리지 않는다.
 - 섹션마다 최소 1장을 둔다. 큰 섹션은 최대 5장까지 허용한다.
 - 패턴, 도표, architecture 설명은 시각 요소를 필수로 둔다.
 - 같은 인접 주제라도 같은 shell 반복을 금지 검토한다.
@@ -133,7 +153,7 @@
 - 규칙 문구가 바뀌면 테스트/contract/visual check 중 하나 이상으로 고정한다. 단, rules-document only 작업에서는 구조 검증과 범위 검증으로 제한한다.
 - 구조 검증은 통과해도 label 위치, 카드 내부/외부, font scale, footer와 본문 겹침, dark quote 대비 같은 visual rule은 screenshot review 없이는 놓칠 수 있다.
 - nested-card 위험은 contract 단계에서 탐지해야 한다. 렌더 결과만 믿고 넘기지 않는다.
-- 전체 deck 검증 기준은 27장 deck/manifest/outline/script/spec JSON과 generated HTML 존재 여부를 포함한다.
+- 전체 deck 검증 기준은 45장 deck/manifest/outline/script/spec JSON과 generated HTML 존재 여부를 포함한다.
 
 ## Decision Log
 
@@ -148,6 +168,28 @@
 - 2026-04-22 approved plan v5: 이 문서를 top-level HTML slide authority로 재정비하고, slide-number-specific active rules를 reusable meaning/design patterns와 Traceability로 분리하며, Visual Reference Baseline와 Reference Analysis Protocol을 추가하기로 확정했다.
 - 2026-04-22 chapter 02 rebuild start: S016-S018은 scale/spacing 조정 후 재사용하고, standalone `Agent = Model + Harness` page는 S027 결론 page로 통합하며, evolution assets 02-06은 page-052/page-067의 정돈된 구조 감각으로 native diagram 재구성하기로 확정했다.
 - 2026-04-22 feedback round 1: S009 `자연어` label 계층 복귀, S011/S016 3-card equal sizing, S016 metric 상단 배치, S013/S014 body typography CHAPTER 01 scale 통일, S018-S021 approved evolution references와 rendered visual 직접 비교, S024 rule conformance 재검토, S025 card overflow 수정, S027 하단 table 제거, S026 메시지 명확화를 확정했다.
+- 2026-04-22 feedback round 2: S018은 Towards AI CoT/ToT/GoT comparison image의 linear-chain 구조를 참고해 전면 개편한다. 정말 필요한 문장만 카드에 담고, 렌더링된 결과를 reference image와 직접 비교한다.
+- 2026-04-22 feedback round 3: S018은 `CoT`, `ReAct`, `ToT`를 모두 기재한다. layout은 `assets/claude-code-seminar-kakao/page-064.png`의 card row + mini diagram + 1-line meaning 구조를 따른다. CoT/ToT 그림은 Towards AI comparison의 native structure를 참고하고, ReAct 그림은 사용자 첨부 screenshot의 LM/Env loop, `Reasoning Traces`, `Actions`, `Observations`, `ReAct (Reason + Act)` 구조를 따른다. 산수 예시 `2캔 × 3개`, `11개`는 제거한다.
+- 2026-04-22 feedback discipline: 사용자의 모든 피드백은 먼저 문서에 기록하고, fixed rule, reusable pattern, validation rule, Traceability history로 승격 가능한지 검토한다. 규칙화하지 않는 피드백도 보류 사유를 남긴다.
+- 2026-04-22 feedback governance reinforcement: 사용자가 피드백은 항상 문서에 기록하고 규칙 적용 가능성을 검토해야 한다고 재확인했다. 이 원칙은 deck-wide Workflow Gate로 승격하며, 모든 피드백을 rule-candidate로 분류한다.
+- 2026-04-22 S018 Gemini CLI experiment: S018 전체 재구성은 `gemini` CLI의 `gemini-3.1-pro-preview` 모델에 맡겨본다. 이번 pass에서는 사용자 지시에 따라 validation command, Playwright screenshot, PDF export를 실행하지 않는다. 이 검증 생략은 현재 S018 실험에 한정된 one-off exception이다.
+- 2026-04-22 chapter 03 build start: S028-S033은 `CHAPTER 03`으로 묶고, S029 timeline table, S030 SDD flow, S031 TDD control map, S032 Waterfall split compare, S033 Harness bridge summary로 source-backed copy만 사용하기로 확정했다.
+- 2026-04-22 chapter 03 revision 1: S031은 S030과 유사한 process structure로 재구성하되 왼쪽은 수직 3단 `Red`/`Green`/`Refactor`, 오른쪽은 2개 `권한 통제` block으로 둔다. S032는 좌우로 치우친 split compare를 폐기하고 `assets/claude-code-seminar-kakao/page-032.png`의 row-based comparison + bottom synthesis 구조를 따른다. S033은 `assets/claude-code-seminar-kakao/page-033.png`처럼 `Spec + TDD` 두 카드와 하단 결론 구조를 따른다.
+- 2026-04-22 chapter 03 revision 2: S031의 `Red`/`Green`/`Refactor`는 카드 안에 source-backed 설명을 둔다. `Refactor`만 전부 대문자로 쓰지 않고 `Red`/`Green`과 같은 title case로 맞춘다. S031의 큰 `AI 시대의 TDD는 권한 통제 기법` statement card는 제거한다. 모든 slide 요소는 원문에 없는 내용이나 문장을 창작해서 넣지 않는 deck-wide source rule을 다시 강화한다. S033은 카드/결론/중앙 thesis가 안전 영역 안에서 균형 있게 정렬되도록 수정한다.
+- 2026-04-22 parallel numbering workflow: 병렬 worktree에서는 slide number가 다른 chapter 작업에 따라 조정될 수 있으므로 전역 `SXXX`/`slide-XXX` 번호를 안정된 소유권으로 보지 않는다. chapter별 작업 폴더 아래에서 local slide order와 임시 번호를 관리하고, 마지막 main 통합에서 모든 작업 브랜치의 진행사항을 병합한 뒤 numbering-only pass로 전역 번호만 재계산한다.
+- 2026-04-22 chapter 03 revision 3: S031은 카드 크기와 글자 크기 hierarchy를 맞춘다. S032는 번역투/추상 비교 축을 제거하고 원문에 존재하는 표현만 visible copy로 둔다. S033은 `하네스`를 TDD 카드 항목으로 넣지 않는다. `하네스`는 source-backed 결론/synthesis 레벨에만 둘 수 있다.
+- 2026-04-22 chapter 03 revision 4: S031의 TDD reference는 사용자가 명시한 `assets/claude-code-seminar-kakao/page-028.png`와 canonical transcription이다. S032는 사용자의 인터넷 검색 지시에 따라 Waterfall/SDD 차이를 Royce 1970 paper와 GitHub Spec Kit official docs로 재정리하되, visible copy는 source markdown, canonical transcription, 또는 해당 검색 근거로 추적 가능한 표현만 쓴다. S033에는 source-backed 소제목을 visible하게 둔다.
+- 2026-04-22 chapter 03 revision 5: S031은 `TDD (Test-Driven Development)`와 Page 028 lead를 함께 visible하게 두고, S032는 `Waterfall vs SDD` row comparison을 Royce 1970 paper와 `spec-driven.md` evidence로 다시 적는다. S033은 `SDD + TDD가 Harness로 이어지는 이유` subheading을 `Spec + TDD` 위에 명시한다.
+- 2026-04-22 chapter 03 revision 6: S030은 `assets/claude-code-seminar-kakao/page-031.png`의 spec-kit workflow 구조를 reference로 삼고, 출처에 `GitHub Copilot icon`과 `GitHub spec-kit`을 명시한다. S032는 `SDD` column header가 아래 row content column과 정렬되어야 하며 bottom one-line synthesis를 제거한다. S033은 title/subheading을 blue가 아닌 ink 계열로 두고, 중앙 `Spec + TDD` thesis text를 제거하며, `assets/claude-code-seminar-kakao/page-033.png`를 참고해 card size와 card 내부 text scale을 재조정한다.
+- 2026-04-22 chapter 03 revision 7: S033은 copy와 구조를 유지하고 카드 크기만 한 단계 줄인다. 카드가 담는 정보량이 작으므로 card width/height는 과하게 커 보이지 않아야 하며, card 내부 text hierarchy와 footer safe area는 유지한다.
+- 2026-04-22 chapter 04 build start: 모든 사용자 피드백은 구현 전에 규칙 적용 가능성을 검토하고 이 문서에 기록한다. CHAPTER 04는 source page 36/37을 별도 slide로 만들지 않고 `Prompt, Context, Harness` 한 장에서 설명한다. `Agent = Model + Harness`, LangChain/Vivek Trivedy 인용구, 6대 구성요소는 한 slide에 함께 배치한다. `책임과 도구는 1:1이 아니다`는 slide title이 아니라 `하네스의 도구` slide 내부 claim이다. `Right Altitude - 지시문의 고도`는 rebuilt 4장 소제목이 아니므로 독립 title로 쓰지 않고 `CLAUDE.md`/도구 운용 보조 원칙으로만 쓴다. Memory slide는 4장에 포함한다.
+- 2026-04-22 chapter 04 review 1: S034 keyword chips are blocked if the text is not visibly readable on screenshot/PDF. S039 must not collapse the responsibility/tool N:N relationship into a dense table; it needs a native relationship composition. S043 must not stay as a two-column list table; it needs an external-memory artifact map/card composition.
+- 2026-04-22 chapter folder handoff: 병렬 chapter 작업 폴더는 `docs/03-html/chapters/chapter-XX/`로 두며, CHAPTER 04는 `docs/03-html/chapters/chapter-04/`에 provisional S034-S045 인계 manifest를 둔다.
+- 2026-04-22 chapter 04 feedback round 2: S034 pill/al약 keyword rendering is rejected. S037 center card overflow is a blocker. S038 one-line statement must be replaced with a better source-backed line. S039 tool mapping is visually crude and needs a new native rendering strategy. S043 one-line claim must move lower. S044 comparison table is insufficient and needs a new rendering strategy.
+- 2026-04-22 chapter 04 lock feedback: S039 bottom synthesis uses `책임과 도구는 1:1이 아니다`, not `도구 이름보다 그 도구가 맡는 책임`. S040 one-line claim must use Anthropic's context engineering phrasing and show source as `Anthropic Research`.
+- 2026-04-22 chapter 04 feedback round 3: S037 one-line statement must be checked against source before reuse. Current `하네스 엔지니어링 = 이 네 단계의 신뢰성` is not a source sentence; use source-backed `이 네 지점을 신뢰성 있게 만드는 일`. S036 must emphasize the quote `모델이 아닌 것은 전부 하네스입니다.` and show attribution `LangChain, Vivek Trivedy`. S040 Anthropic phrase must not look like an arbitrary oversized string; render it as a quote/source treatment with appropriate typography. S041 must move away from a generic four-step list into a native MCP/Context Hub architecture layout.
+- 2026-04-22 chapter 04 feedback round 4: S036 component cards are too large for their copy and must be rearranged into smaller cards with more breathing room. S038 removes the awkward one-line thesis card. S040 quote must use a dedicated quote card/block, following the same quote-card rule as S036. S041 is split into left-side MCP usage structure and right-side Context Hub MCP role/principle explanation. S039 removes the visible `하네스의 책임 ↔ 하네스의 도구` label. S042 must be replaced after internet research, using RAG paper evidence plus MCP/Context Hub documentation rather than the earlier rough table.
+- 2026-04-22 chapter 04 feedback round 5: S036 and S043 body content must be optically centered in the slide body, not biased toward the top band. S040's Anthropic one-line phrase must be translated into natural Korean while keeping the source label. S041 nested-card layout is a validation miss and must be fixed with a contract rule that catches card-inside-card structures. S042 must use internet-researched sentences but avoid translationese; automatic Korean checks are necessary but not sufficient. S044 replaces the bottom one-line statement with a Manus source quote rendered as a dedicated quote block.
 
 ## Traceability
 
@@ -169,10 +211,62 @@
 - S013/S014 chapter label fixed value: `CHAPTER 01`; banned label: `SECTION 1`.
 - S014 title fixed value: `그래도 기초가 중요하다`; dark summary quote fixed value: `AI가 더 많이 해줄수록 기초 지식을 가진 사람의 경쟁력 상승`.
 - S015-S027 chapter label fixed value: `CHAPTER 02`; banned auxiliary labels include `ACT`, `LIMIT`.
+- S028-S033 chapter label fixed value: `CHAPTER 03`; banned auxiliary labels include `SECTION 3`.
+- S029 visible copy must stay source-backed timeline evidence only; `Harness`, `Agent`, `Prompt`, `Model`, `Waterfall` topic words are not visible labels on that slide.
+- S030 must show `SDD`, `Spec-Driven Development`, `WHAT`, `WHY`, `HOW`, `/speckit.specify`, `/speckit.plan`, `/speckit.tasks`, `[NEEDS CLARIFICATION]`, and `Constitution Check` without turning into a Harness summary page.
+- S030 latest layout: 사용자가 명시한 `assets/claude-code-seminar-kakao/page-031.png`의 spec-kit workflow 구조를 참고한다. Three command workflow must read as `SPECIFY` -> `PLAN` -> `TASKS` or equivalent staged command flow, with supporting principle/outcome cards where space permits. 출처에는 `GitHub Copilot icon`과 `GitHub spec-kit`을 visible하게 명시한다. Reference의 warm palette/section pill은 복사하지 않고 minimal-light native layout으로 재구성한다.
+- S031 must show `권한 통제`, `Red`, `Green`, `Refactor`, `테스트 코드 임의 수정 금지`, `assert 조건 약화`, and `실패 확인 전 구현 금지` as the TDD control surface.
+- S031 latest layout: 사용자가 명시한 `assets/claude-code-seminar-kakao/page-028.png`와 `docs/01-sources/local-canonical/claude-code-seminar-kakao.md` Page 028 transcription을 TDD reference로 쓴다. `TDD (Test-Driven Development)`, `테스트를 먼저 쓰고, 통과하는 코드를 나중에 쓴다`, `AI 시대에는 인간이 테스트, AI가 구현`, `Red`/`Green`/`인간 리뷰 → AI가 리팩토링`, `왜 AI에게 특히 중요한가`, `AI의 치팅에 주의`, `테스트 수정 금지 규칙 필수`를 reference-backed copy로 둘 수 있다. reference의 warm palette/section pill/character styling은 복사하지 않고 minimal-light native layout으로 재구성한다.
+- S032 compares `Waterfall` against AI 시대 `SDD + TDD` and does not bridge to Harness.
+- S032 latest layout: 좌우로 치우친 sparse split compare를 쓰지 않는다. `assets/claude-code-seminar-kakao/page-032.png`의 column headers + horizontal comparison rows + bottom synthesis 구조를 native layout으로 재구성한다.
+- S032 latest copy rule: 사용자가 인터넷 검색을 지시한 revision에서는 Waterfall/SDD 차이를 `Royce 1970 Managing the Development of Large Software Systems`와 GitHub `spec-kit/spec-driven.md` official docs로 보강한다. Waterfall은 요구사항/설계/코딩/테스트가 단계적으로 이어지고 testing이 개발 후반에 실제 제약을 드러낸다는 점, SDD는 specification이 primary artifact가 되고 `/speckit.specify` → `/speckit.plan` → `/speckit.tasks`로 spec/plan/tasks를 실행 기준으로 만든다는 점을 중심으로 압축한다. `문서의 성격`, `검증 타이밍`, `작동 방식`, `검증 루프`처럼 source/search 근거 밖으로 보이는 추상 label은 쓰지 않는다.
+- S032 latest alignment/content rule: `SDD` header는 아래 SDD row content column과 같은 column start/center에 맞춘다. Bottom one-line synthesis/dark bar는 제거한다.
+- S033 must include `스펙 템플릿`, `계획 문서`, `TDD 루프`, `Skills`, `Hooks`, and `하네스` as the bridge into chapter 4.
+- S033 latest layout: `assets/claude-code-seminar-kakao/page-033.png`의 conclusion/card scale 감각을 참고하되, 최신 지시에 따라 중앙 `Spec + TDD` thesis text는 제거한다. Two large cards and bottom synthesis 구조는 유지하고, card size와 내부 글자 크기는 reference처럼 카드 안에서 충분히 읽히도록 재조정한다. warm brown palette와 원본 문구 직접 복사는 금지한다.
+- S033 latest size adjustment: copy와 의미 구조는 유지하고 card size만 줄인다. 정보량이 작은 `Spec`/`TDD` 카드는 slide width를 과하게 점유하지 않아야 하며, plus sign과 bottom synthesis의 중심 정렬은 유지한다.
+- S033 latest alignment rule: two card columns and bottom synthesis must sit inside the footer safe area without vertical crowding, clipping, or off-center imbalance.
+- S033 latest copy rule: `하네스`는 TDD 카드의 종류나 항목으로 배치하지 않는다. TDD card에는 `TDD 루프`, `Skills`, `Hooks`까지만 둔다. `하네스`는 source line의 결론 의미에 따라 bottom synthesis 또는 bridge conclusion에서만 쓴다. S033에는 `SDD + TDD가 Harness로 이어지는 이유`처럼 source-backed 소제목을 visible하게 둔다. 이 소제목/title은 blue accent가 아니라 ink/neutral heading color로 렌더링한다.
+- S034-S045 chapter label fixed value: `CHAPTER 04`; banned label: `SECTION 4`.
+- S034 visible keywords `Prompt`, `Context`, `Harness` must be readable against the section divider background in screenshot/PDF, not merely present in HTML.
+- S034 must not render `Prompt`, `Context`, `Harness` as pill/chip/al약 elements. Use plain text grouping or a non-pill structural treatment on the divider.
+- S035 must absorb source page 36/37 meaning into one page: `Prompt`, `Context`, `Harness`, `무엇을/어떻게 말할 것인가`, `무엇을/어떻게 보여줄 것인가`, `무엇을/어떻게 통제할 것인가`, and `Prompt ⊂ Context ⊂ Harness`.
+- S036 must combine `Agent = Model + Harness`, `모델이 아닌 것은 전부 하네스입니다.`, and six components: `Context Engineering`, `Tool Orchestration`, `State & Memory`, `Verification Loop`, `Error Recovery`, `Human-in-the-Loop Control`.
+- S036 quote fixed value: `모델이 아닌 것은 전부 하네스입니다.`. The quote must be visually emphasized and attributed to `LangChain, Vivek Trivedy`; do not leave it as an unattributed table callout.
+- S036 component cards must not be large empty rectangles. Use a quote card plus compact component card arrangement; card size, title size, and body size must read as the same visual scale.
+- S036 body group must sit at the optical center of the slide body. If the quote/components group reads as pulled toward the top band, lower the group or center the `table-wrap` content vertically.
+- S037 center loop card must keep all text inside the card border at 720pt x 405pt screenshot/PDF size. Any escaped or clipped center-card text blocks acceptance.
+- S037 bottom synthesis must stay source-backed. `하네스 엔지니어링 = 이 네 단계의 신뢰성` is rejected because it is not in the source; use the source phrase `이 네 지점을 신뢰성 있게 만드는 일` or a direct source-preserving compression.
+- S038 one-line statement is not fixed; choose a stronger source-backed line from rebuilt chapter 4 that clarifies Harness responsibility without adding new semantics.
+- S038 latest rule: remove the bottom one-line thesis card. The five responsibility cards are enough; do not add an awkward synthesis sentence on this slide.
+- S039 title fixed value: `하네스의 도구`; banned title: `책임과 도구는 1:1이 아니다`. The 1:1 statement may appear only as an internal claim.
+- S039 must show the N:N relation between `하네스의 책임` and `하네스의 도구` as a native relationship composition. A dense 9-row table is not acceptable even if copy contract passes.
+- S039 rendering strategy must make the tool mapping feel deliberate: grouped responsibility side, grouped tool side, clear many-to-many connector paths, and a visible synthesis claim. Crude table-like mapping or tangled connector density is a blocker.
+- S039 bottom synthesis fixed value: `책임과 도구는 1:1이 아니다`. Do not use `도구 이름보다 그 도구가 맡는 책임` as the bottom synthesis on S039.
+- S039 must not show the standalone label `하네스의 책임 ↔ 하네스의 도구`. The relationship should be carried by layout and the bottom synthesis, not by a redundant top label.
+- S040 one-line claim must be an Anthropic context engineering quote/paraphrase from `Effective context engineering for AI agents`: `smallest set of high-signal tokens`. Visible source label fixed value: `Anthropic Research`.
+- S040 Anthropic phrase must be rendered as a quote/source line with restrained typography, not as an oversized bottom slogan that looks visually detached from the Korean slide.
+- S040 quote must use the reusable dedicated quote card/block pattern with `blockquote` and `figcaption`; do not render it as a generic flow thesis or plain table/card text.
+- S040 visible quote may translate the Anthropic phrase into Korean, but must preserve the meaning of keeping only the smallest high-signal context. Avoid literal translation that reads like machine translation.
+- S041 must not remain a plain process list. Render MCP/Context Hub as a native architecture composition: Agent -> MCP Client -> MCP Server -> connected tools, with Context Hub shown as the current-doc/source side of the same context infrastructure.
+- S041 latest rule: left side explains how an agent uses MCP; right side explains what `Context Hub MCP` does and why it works. Avoid a tool-chip pile or generic architecture strip that looks like decoration.
+- S041 must not place cards inside cards. Use one flat architecture surface with lanes/rows/arrows and one explanation surface with text blocks, not nested `article` cards inside a parent card.
+- S042 latest evidence rule: internet-researched replacement uses `Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks` for RAG and MCP/Context Hub or Context7 official docs for the current-doc side. Visible copy should distinguish indexed retrieval over a broad corpus from selected/current/versioned documentation injected into context.
+- S042 copy must be Korean-native. Phrases like `passage 검색`, `retriever 품질`, or stiff translated decision labels are not acceptable unless the English term is necessary and explained by the surrounding Korean rhythm.
+- `지시문의 고도` / `Right Altitude` is not a rebuilt chapter 4 heading. Do not use it as a slide title; if used, trace it to rebuilt line 115 and local-canonical Page 042 as a compact tool-writing principle.
+- CHAPTER 04 must include `Memory: 세션을 넘어서는 기억`; do not drop the Memory section when reducing slide count.
+- S043 must render Memory as an external artifact map/card composition around the claim `대화창을 기억 저장소로 착각하지 않는다`. A two-column list table is not acceptable.
+- S043 one-line claim must sit lower than the title band and read as a bottom or lower-middle synthesis, not as a crowded top subtitle.
+- S043 body group must be optically centered in the slide body while preserving the lower-middle synthesis position of the one-line claim.
+- S044 comparison table is not sufficient. Re-render Stable Prefix vs Variable Suffix as a deliberate comparison composition with stronger visual hierarchy than a plain table.
+- S044 Manus example must use a source quote, not a loose paraphrase. The quote should be rendered with the reusable dedicated quote card/block pattern and attributed to `Manus 사례`.
+- Parallel chapter worktree traceability: S034-S045 numbering is provisional for the current CHAPTER 04 worktree. If another chapter changes the final deck length, keep CHAPTER 04 content grouped and only change global numbering during final main integration.
+- CHAPTER 04 folder-scoped handoff lives at `docs/03-html/chapters/chapter-04/README.md`; final integration may change `S034`-`S045` to another contiguous range, but content order and chapter-local references should remain stable.
 - S016 metric fixed values: `2주`, `1~2일`, `불가능하던 작업 실현`; source에 없는 tool label `Augment Code + Vertex AI`는 visible copy로 쓰지 않는다.
 - S017 standalone formula page rule은 CHAPTER 02 rebuild에서 폐기됐다. `Agent = Model + Harness`는 S027 결론 page의 fixed value로 이동한다.
 - S017 title fixed value after rebuild: `1막: Copilot과 ChatGPT, 프롬프트의 시대`; `2022~2024`는 generated title이 아니라 body metadata/era badge/rail에 둔다.
-- S018 title fixed value after rebuild: `Chain-of-Thought`; required CoT example values include `2캔 × 3개`, `11개`; adjacent pattern names must not appear on this page.
+- S018 title fixed value after latest feedback: `CoT / ReAct / ToT`; required visible pattern names are `CoT`, `ReAct`, `ToT`, `Chain-of-Thought`, `Tree-of-Thought`. Required ReAct diagram labels are `LM`, `Env`, `Reasoning Traces`, `Actions`, `Observations`, `ReAct (Reason + Act)`.
+- S018 latest layout: page-064 style 3-card row, each card same width/height, mini native diagram centered, and one-line meaning only. Required source-backed meaning lines are `중간 추론 단계`, `추론과 행동 반복`, `여러 추론 경로`. Forbidden S018 visible copy includes `2캔 × 3개`, `11개`, `Graph-of-Thought`, `GoT`.
+- S018 Gemini CLI experiment scope: Gemini may restructure only S018 implementation/generator artifact. It must not run validation, screenshot, PDF export, deck-wide build, or touch chapter 3 work during this one-off experiment.
 - S019 title fixed value after rebuild: `ReAct / Tree-of-Thought`; required pattern names are `ReAct`, `Tree-of-Thought`; raw asset embeds are forbidden.
 - S020 title fixed value after rebuild: `Self-Refine / Reflexion`; required pattern names are `Self-Refine`, `Reflexion`; feedback-loop native diagram structure is required.
 - S021 Andrew Ng pattern visual은 네 패턴 관계가 보이는 native quadrant/diagram으로 남긴다.

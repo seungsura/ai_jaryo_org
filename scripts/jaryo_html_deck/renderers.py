@@ -4,8 +4,8 @@ import html
 import textwrap
 from pathlib import Path
 
-from .assets import render_asset_figure, render_document_icon, render_tool_icons
-from .config import BASE_CSS, THEME, TOKENS_CSS
+from .assets import asset_data_uri, render_asset_figure, render_document_icon, render_tool_icons
+from .config import BASE_CSS, THEME, TOKENS_CSS, TOOLCARD_ICON_ROOT
 from .model import SlideSpec
 
 def attr_escape(text: str) -> str:
@@ -79,13 +79,18 @@ def render_shell(spec: SlideSpec) -> str:
         )
 
     if spec.shell == "section-divider-shell":
-        keywords = "".join(f'<li class="section-keyword">{html.escape(keyword)}</li>' for keyword in spec.body.get("keywords", []))
+        keyword_items = [str(keyword) for keyword in spec.body.get("keywords", [])]
+        keywords = "".join(
+            f'<span class="section-keyword-plain">{html.escape(keyword)}</span>'
+            + ('<span class="section-keyword-separator" aria-hidden="true">/</span>' if index < len(keyword_items) - 1 else "")
+            for index, keyword in enumerate(keyword_items)
+        )
         return (
             '<section class="section-main">'
             f'<p class="chapter-marker">{html.escape(spec.chapter_label)}</p>'
             f'<h1 class="title-placeholder">{html.escape(spec.title)}</h1>'
             f"{render_short_line(spec.lead)}"
-            f'<ul class="section-keywords">{keywords}</ul>'
+            f'<p class="section-keywords section-keyword-rail">{keywords}</p>'
             "</section>"
         )
 
@@ -102,6 +107,42 @@ def render_shell(spec: SlideSpec) -> str:
                 f'<p class="prompt-text">{html.escape(str(spec.body.get("prompt", "")))}</p>'
                 "</article>"
                 '<p class="negative-opinion">자연어로 시키는 건 진짜 개발이 아니다!</p>'
+                "</section>"
+            )
+
+        if spec.body.get("variant") == "tdd-control-layers":
+            flow_steps = "".join(
+                '<article class="tdd-flow-step">'
+                f'<h2>{html.escape(step["title"])}</h2>'
+                f'<p>{html.escape(step["text"])}</p>'
+                "</article>"
+                for step in spec.body.get("flow", [])
+            )
+            control_blocks = "".join(
+                '<article class="tdd-control-block">'
+                f'<h2>{html.escape(block["title"])}</h2>'
+                f'<p>{html.escape(block["text"])}</p>'
+                "</article>"
+                for block in spec.body.get("controls", [])
+            )
+            lead = ""
+            if spec.lead:
+                lead = f'<p class="tdd-control-lead">{html.escape(spec.lead)}</p>'
+            return (
+                '<section class="top-band">'
+                f'<p class="chapter-label statement-tag">{html.escape(spec.chapter_label)}</p>'
+                f'<h1 class="title-placeholder statement-text">{html.escape(spec.title)}</h1>'
+                "</section>"
+                '<section class="statement-panel tdd-control-layers-body">'
+                f"{lead}"
+                '<div class="tdd-control-grid">'
+                '<div class="tdd-flow-stack">'
+                f"{flow_steps}"
+                "</div>"
+                '<div class="tdd-control-column">'
+                f"{control_blocks}"
+                "</div>"
+                "</div>"
                 "</section>"
             )
 
@@ -194,6 +235,31 @@ def render_shell(spec: SlideSpec) -> str:
                 "</section>"
             )
 
+        if spec.body.get("variant") == "spec-tdd-bridge":
+            cards = []
+            for card in spec.body.get("cards", []):
+                items = "".join(f'<li>{html.escape(item)}</li>' for item in card.get("items", []))
+                cards.append(
+                    '<article class="spec-tdd-card">'
+                    f'<h2>{html.escape(card["title"])}</h2>'
+                    f'<ul>{items}</ul>'
+                    "</article>"
+                )
+            return (
+                '<section class="top-band">'
+                f'<p class="chapter-label statement-tag">{html.escape(spec.chapter_label)}</p>'
+                f'<h1 class="title-placeholder statement-text spec-tdd-subheading">{html.escape(spec.body.get("subheading", spec.body.get("statement", "Spec + TDD")))}</h1>'
+                "</section>"
+                '<section class="statement-panel spec-tdd-bridge-body">'
+                '<div class="spec-tdd-card-grid">'
+                f"{cards[0] if cards else ''}"
+                '<div class="spec-tdd-plus" aria-hidden="true">+</div>'
+                f"{cards[1] if len(cards) > 1 else ''}"
+                "</div>"
+                f'<p class="statement-support spec-tdd-synthesis centered-claim">{html.escape(spec.body.get("synthesis", spec.key_claim))}</p>'
+                "</section>"
+            )
+
         if spec.body.get("variant") == "blind-prompting":
             cards = "".join(
                 '<article class="blind-prompting-card">'
@@ -274,6 +340,44 @@ def render_shell(spec: SlideSpec) -> str:
         )
 
     if spec.shell == "process-flow-shell":
+        if spec.body.get("variant") == "spec-kit-workflow":
+            stages = []
+            for step in spec.body.get("steps", []):
+                items = "".join(f'<li>{html.escape(item)}</li>' for item in step.get("items", []))
+                stages.append(
+                    '<li class="process-step spec-kit-stage">'
+                    f'<span class="step-index">{html.escape(step["index"])}</span>'
+                    f'<span class="step-title">{html.escape(step["title"])}</span>'
+                    f'<span class="step-copy">{html.escape(step["text"])}</span>'
+                    f'<ul class="spec-kit-stage-notes">{items}</ul>'
+                    "</li>"
+                )
+            source = spec.body.get("source", {})
+            icon_markup = ""
+            icon_label = str(source.get("icon_label", ""))
+            if icon_label:
+                icon_path = TOOLCARD_ICON_ROOT / "github-copilot-octicon.svg"
+                icon_markup = (
+                    '<span class="spec-kit-source-icon">'
+                    f'<img src="{asset_data_uri(icon_path)}" alt="{html.escape(icon_label)}">'
+                    "</span>"
+                )
+            return (
+                '<section class="top-band">'
+                f'<p class="chapter-label">{html.escape(spec.chapter_label)}</p>'
+                f'<h1 class="title-placeholder">{html.escape(spec.title)}</h1>'
+                f"{render_lead(spec.lead)}"
+                "</section>"
+                '<section class="body-area flow-body spec-kit-workflow-body">'
+                f'<ol class="process-track spec-kit-stage-track">{"".join(stages)}</ol>'
+                '<div class="spec-kit-side-stack">'
+                f'<article class="spec-kit-principle"><h2>{html.escape(str(spec.body.get("principle_title", "")))}</h2><p>{html.escape(str(spec.body.get("principle", "")))}</p></article>'
+                f'<article class="spec-kit-outcome"><h2>{html.escape(str(spec.body.get("outcome_title", "")))}</h2><p>{html.escape(str(spec.body.get("outcome", "")))}</p></article>'
+                f'<p class="spec-kit-source">{icon_markup}<span>{html.escape(icon_label)}</span><span>{html.escape(str(source.get("text", "")))}</span></p>'
+                "</div>"
+                "</section>"
+            )
+
         if spec.body.get("variant") == "prompt-era":
             cards = []
             stages = spec.body.get("stages", [])
@@ -300,37 +404,118 @@ def render_shell(spec: SlideSpec) -> str:
                 "</section>"
             )
 
+        if spec.body.get("variant") == "cot-triad":
+            marker_ids = {
+                "cot": "cot-triad-cot-arrow",
+                "react": "cot-triad-react-arrow",
+                "tot": "cot-triad-tot-arrow",
+            }
+
+            def render_card(card: dict[str, object]) -> str:
+                kind = str(card.get("kind", ""))
+                title = html.escape(str(card.get("title", "")))
+                acronym = html.escape(str(card.get("acronym", "")))
+                meaning = html.escape(str(card.get("meaning", "")))
+                marker_id = marker_ids.get(kind, "cot-triad-arrow")
+
+                if kind == "react":
+                    diagram = (
+                        '<div class="cot-triad-diagram">'
+                        '<svg class="cot-diagram-svg cot-react-svg" viewBox="0 0 246 164" preserveAspectRatio="xMidYMid meet" role="img" aria-label="ReAct diagram">'
+                        f'<defs><marker id="{marker_id}" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path class="cot-arrow-head" d="M0,0 L8,4 L0,8 z"></path></marker></defs>'
+                        '<path class="cot-svg-edge" d="M66 54 C28 36, 22 128, 66 112" marker-end="url(#cot-triad-react-arrow)"></path>'
+                        '<text class="cot-svg-caption cot-svg-accent" x="14" y="22" text-anchor="start" aria-label="Reasoning Traces">'
+                        '<tspan x="14" dy="0">Reasoning</tspan>'
+                        '<tspan x="14" dy="13">Traces</tspan>'
+                        '</text>'
+                        '<rect class="cot-svg-node cot-svg-node-outline" x="70" y="54" rx="18" ry="18" width="70" height="42"></rect>'
+                        '<text class="cot-svg-text" x="105" y="75" text-anchor="middle" dominant-baseline="middle" font-size="15">LM</text>'
+                        '<rect class="cot-svg-node cot-svg-node-outline" x="164" y="54" rx="18" ry="18" width="70" height="42"></rect>'
+                        '<text class="cot-svg-text" x="199" y="75" text-anchor="middle" dominant-baseline="middle" font-size="15">Env</text>'
+                        '<path class="cot-svg-edge" d="M104 50 C122 28, 146 28, 164 50" marker-end="url(#cot-triad-react-arrow)"></path>'
+                        '<text class="cot-svg-caption cot-svg-accent" x="134" y="26" text-anchor="middle">Actions</text>'
+                        '<path class="cot-svg-edge" d="M164 100 C146 124, 122 124, 104 104" marker-end="url(#cot-triad-react-arrow)"></path>'
+                        '<text class="cot-svg-caption cot-svg-accent" x="134" y="144" text-anchor="middle">Observations</text>'
+                        '<text class="cot-svg-caption cot-svg-muted" x="124" y="156" text-anchor="middle">ReAct (Reason + Act)</text>'
+                        "</svg>"
+                        "</div>"
+                    )
+                elif kind == "tot":
+                    diagram = (
+                        '<div class="cot-triad-diagram">'
+                        '<svg class="cot-diagram-svg cot-tot-svg" viewBox="0 0 240 160" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Tree-of-Thought diagram">'
+                        f'<defs><marker id="{marker_id}" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path class="cot-arrow-head" d="M0,0 L8,4 L0,8 z"></path></marker></defs>'
+                        '<line class="cot-svg-edge cot-svg-edge-muted" x1="120" y1="46" x2="62" y2="86"></line>'
+                        '<line class="cot-svg-edge" x1="120" y1="46" x2="120" y2="86" marker-end="url(#cot-triad-tot-arrow)"></line>'
+                        '<line class="cot-svg-edge cot-svg-edge-muted" x1="120" y1="46" x2="178" y2="86"></line>'
+                        '<rect class="cot-svg-node cot-svg-node-outline" x="80" y="16" rx="18" ry="18" width="80" height="30"></rect>'
+                        '<text class="cot-svg-text" x="120" y="31" text-anchor="middle" dominant-baseline="middle" font-size="15">문제</text>'
+                        '<rect class="cot-svg-node cot-svg-node-outline" x="32" y="86" rx="18" ry="18" width="58" height="30"></rect>'
+                        '<text class="cot-svg-text" x="61" y="101" text-anchor="middle" dominant-baseline="middle" font-size="12">경로 A</text>'
+                        '<rect class="cot-svg-node cot-svg-node-dark" x="91" y="86" rx="18" ry="18" width="58" height="30"></rect>'
+                        '<text class="cot-svg-text cot-svg-text-invert" x="120" y="101" text-anchor="middle" dominant-baseline="middle" font-size="12">경로 B</text>'
+                        '<rect class="cot-svg-node cot-svg-node-outline" x="150" y="86" rx="18" ry="18" width="58" height="30"></rect>'
+                        '<text class="cot-svg-text" x="179" y="101" text-anchor="middle" dominant-baseline="middle" font-size="12">경로 C</text>'
+                        "</svg>"
+                        "</div>"
+                    )
+                else:
+                    diagram = (
+                        '<div class="cot-triad-diagram">'
+                        '<svg class="cot-diagram-svg cot-cot-svg" viewBox="0 0 240 160" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Chain-of-Thought diagram">'
+                        f'<defs><marker id="{marker_id}" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path class="cot-arrow-head" d="M0,0 L8,4 L0,8 z"></path></marker></defs>'
+                        '<line class="cot-svg-edge" x1="120" y1="41" x2="120" y2="56" marker-end="url(#cot-triad-cot-arrow)"></line>'
+                        '<line class="cot-svg-edge" x1="120" y1="87" x2="120" y2="102" marker-end="url(#cot-triad-cot-arrow)"></line>'
+                        '<rect class="cot-svg-node cot-svg-node-outline" x="56" y="10" rx="18" ry="18" width="128" height="30"></rect>'
+                        '<text class="cot-svg-text" x="120" y="25" text-anchor="middle" dominant-baseline="middle" font-size="15">문제</text>'
+                        '<rect class="cot-svg-node cot-svg-node-outline" x="46" y="56" rx="18" ry="18" width="148" height="30"></rect>'
+                        '<text class="cot-svg-text" x="120" y="71" text-anchor="middle" dominant-baseline="middle" font-size="14">중간 추론</text>'
+                        '<rect class="cot-svg-node cot-svg-node-dark" x="78" y="102" rx="18" ry="18" width="84" height="30"></rect>'
+                        '<text class="cot-svg-text cot-svg-text-invert" x="120" y="117" text-anchor="middle" dominant-baseline="middle" font-size="15">답</text>'
+                        "</svg>"
+                        "</div>"
+                    )
+
+                return (
+                    '<article class="process-step cot-triad-card">'
+                    f'<h2>{title}</h2>'
+                    f'<p class="cot-triad-acronym">{acronym}</p>'
+                    f"{diagram}"
+                    f'<small>{meaning}</small>'
+                    "</article>"
+                )
+
+            cards = "".join(render_card(card) for card in spec.body.get("cards", []))
+            return (
+                '<section class="top-band">'
+                f'<p class="chapter-label">{html.escape(spec.chapter_label)}</p>'
+                f'<h1 class="title-placeholder">{html.escape(spec.title)}</h1>'
+                "</section>"
+                '<section class="cot-triad-body process-track">'
+                f"{cards}"
+                "</section>"
+            )
+
         if spec.body.get("variant") == "cot-native":
-            step_items = list(spec.body.get("steps", []))
-            problem = step_items[0] if len(step_items) > 0 else {"title": "", "text": ""}
-            reasoning = step_items[1] if len(step_items) > 1 else {"title": "", "text": ""}
-            answer = step_items[2] if len(step_items) > 2 else {"title": "", "text": ""}
+            nodes = [str(node) for node in spec.body.get("nodes", [])]
+            chain = "".join(
+                f'<span class="process-step cot-reasoning-step cot-chain-node{" cot-chain-answer" if index == len(nodes) - 1 else ""}">{html.escape(node)}</span>'
+                + ('<i class="cot-chain-arrow" aria-hidden="true">↓</i>' if index < len(nodes) - 1 else "")
+                for index, node in enumerate(nodes)
+            )
             return (
                 '<section class="top-band">'
                 f'<p class="chapter-label">{html.escape(spec.chapter_label)}</p>'
                 f'<h1 class="title-placeholder">{html.escape(spec.title)}</h1>'
                 "</section>"
                 '<section class="cot-native-body">'
-                '<article class="process-step cot-claim-card">'
-                f'<h2>{html.escape(spec.body.get("claim", spec.key_claim))}</h2>'
-                f'<p>{html.escape(spec.body.get("meaning", ""))}</p>'
-                "</article>"
-                '<article class="process-step cot-example-card">'
+                '<div class="cot-linear-stage">'
                 '<div class="cot-example-diagram">'
-                '<div class="cot-example-panel cot-reasoning-step cot-example-input">'
-                f'<strong>{html.escape(str(problem["title"]))}</strong>'
-                f'<p>{html.escape(str(problem["text"]))}</p>'
-                "</div>"
-                '<div class="cot-example-panel cot-reasoning-step cot-example-output">'
-                f'<strong>{html.escape(str(reasoning["title"]))}</strong>'
-                f'<p class="cot-highlight">{html.escape(str(reasoning["text"]))}</p>'
-                f'<p class="cot-answer">{html.escape(str(answer["text"]))}</p>'
+                f"{chain}"
                 "</div>"
                 "</div>"
-                "</article>"
-                '<article class="process-step cot-summary-card">'
-                '<h2>reasoning path</h2>'
-                f'<p>{html.escape(spec.body.get("meaning", ""))}</p>'
+                '<article class="cot-minimal-card">'
+                f'<h2>{html.escape(spec.body.get("claim", spec.key_claim))}</h2>'
                 "</article>"
                 "</section>"
             )
@@ -675,12 +860,84 @@ def render_shell(spec: SlideSpec) -> str:
                 '<div class="loop-cycle-arrow arrow-east" aria-hidden="true">→</div>'
                 f"{step_parts[1]}"
                 '<div class="loop-cycle-arrow arrow-north" aria-hidden="true">↑</div>'
-                f'<p class="flow-thesis loop-center centered-claim">{html.escape(spec.body.get("thesis", spec.key_claim))}</p>'
+                '<div class="loop-center-gap" aria-hidden="true"></div>'
                 '<div class="loop-cycle-arrow arrow-south" aria-hidden="true">↓</div>'
                 f"{step_parts[3]}"
                 '<div class="loop-cycle-arrow arrow-west" aria-hidden="true">←</div>'
                 f"{step_parts[2]}"
                 "</div>"
+                f'<p class="flow-thesis loop-synthesis centered-claim">{html.escape(spec.body.get("thesis", spec.key_claim))}</p>'
+                "</section>"
+            )
+
+        if spec.body.get("variant") == "context-quote":
+            steps = "".join(
+                '<li class="process-step context-strategy-card">'
+                f'<span class="step-index">{html.escape(step["index"])}</span>'
+                f'<span class="step-title">{html.escape(step["title"])}</span>'
+                f'<span class="step-copy">{html.escape(step["text"])}</span>'
+                "</li>"
+                for step in spec.body.get("steps", [])
+            )
+            return (
+                '<section class="top-band">'
+                f'<p class="chapter-label">{html.escape(spec.chapter_label)}</p>'
+                f'<h1 class="title-placeholder">{html.escape(spec.title)}</h1>'
+                "</section>"
+                '<section class="body-area flow-body context-engineering-body">'
+                f'<ol class="process-track context-strategy-grid">{steps}</ol>'
+                '<figure class="quote-card-block context-quote-block">'
+                f'<blockquote>{html.escape(str(spec.body.get("thesis", spec.key_claim)))}</blockquote>'
+                f'<figcaption>{html.escape(str(spec.body.get("source_label", "")))}</figcaption>'
+                "</figure>"
+                "</section>"
+            )
+
+        if spec.body.get("variant") == "mcp-context-architecture":
+            flow_nodes = "".join(
+                (
+                    '<article class="mcp-usage-node">'
+                    f'<span>{html.escape(str(node.get("title", "")))}</span>'
+                    f'<p>{html.escape(str(node.get("text", "")))}</p>'
+                    "</article>"
+                    + (
+                        '<div class="mcp-usage-arrow" aria-hidden="true">→</div>'
+                        if index < len(spec.body.get("flow", [])) - 1
+                        else ""
+                    )
+                )
+                for index, node in enumerate(spec.body.get("flow", []))
+            )
+            principles = "".join(
+                '<article class="context-hub-principle">'
+                f'<span>{html.escape(str(item.get("label", "")))}</span>'
+                f'<p>{html.escape(str(item.get("text", "")))}</p>'
+                "</article>"
+                for item in spec.body.get("principles", [])
+            )
+            examples = " · ".join(str(tool) for tool in spec.body.get("tools", []))
+            examples_html = (
+                f'<p class="mcp-connected-examples">{html.escape(examples)}</p>'
+                if examples
+                else ""
+            )
+            return (
+                '<section class="top-band">'
+                f'<p class="chapter-label">{html.escape(spec.chapter_label)}</p>'
+                f'<h1 class="title-placeholder">{html.escape(spec.title)}</h1>'
+                "</section>"
+                '<section class="mcp-context-explainer-body">'
+                '<article class="mcp-usage-panel">'
+                '<p class="panel-kicker">에이전트가 MCP를 쓰는 구조</p>'
+                f'<div class="mcp-usage-flow">{flow_nodes}</div>'
+                f'<p class="mcp-usage-note">{html.escape(str(spec.body.get("usage_note", "")))}</p>'
+                f"{examples_html}"
+                "</article>"
+                '<article class="context-hub-explainer-card">'
+                '<p class="panel-kicker">Context Hub MCP</p>'
+                f'<h2>{html.escape(str(spec.body.get("hub_title", "최신 문서 연결")))}</h2>'
+                f'<div class="context-hub-principles">{principles}</div>'
+                "</article>"
                 "</section>"
             )
 
@@ -805,6 +1062,9 @@ def render_shell(spec: SlideSpec) -> str:
         thesis = ""
         if spec.body.get("thesis"):
             thesis = f'<p class="flow-thesis centered-claim">{html.escape(spec.body["thesis"])}</p>'
+        source_label = ""
+        if spec.body.get("source_label"):
+            source_label = f'<p class="flow-source-label">{html.escape(spec.body["source_label"])}</p>'
         return (
             '<section class="top-band">'
             f'<p class="chapter-label">{html.escape(spec.chapter_label)}</p>'
@@ -814,10 +1074,80 @@ def render_shell(spec: SlideSpec) -> str:
             '<section class="body-area flow-body">'
             f'<ol class="process-track {html.escape(spec.body.get("variant", ""))}">{steps}</ol>'
             f"{thesis}"
+            f"{source_label}"
             "</section>"
         )
 
     if spec.shell == "split-compare-shell":
+        if spec.body.get("variant") == "prefix-suffix-cache":
+            def render_cache_tokens(points: list[str]) -> str:
+                return "".join(f'<li class="cache-token">{html.escape(point)}</li>' for point in points)
+
+            left_badges = "".join(
+                f'<span>{html.escape(str(badge))}</span>' for badge in spec.body.get("left_badges", [])
+            )
+            right_badges = "".join(
+                f'<span>{html.escape(str(badge))}</span>' for badge in spec.body.get("right_badges", [])
+            )
+            return (
+                '<section class="top-band">'
+                f'<p class="chapter-label">{html.escape(spec.chapter_label)}</p>'
+                f'<h1 class="title-placeholder">{html.escape(spec.title)}</h1>'
+                f"{render_lead(spec.lead)}"
+                "</section>"
+                '<section class="compare-grid with-arrow cache-sequence-body">'
+                '<article class="compare-col cache-segment stable-prefix-block">'
+                f'<p class="compare-label">{html.escape(spec.body.get("left_label", "Stable Prefix"))}</p>'
+                f'<div class="cache-badge-row">{left_badges}</div>'
+                f'<ul class="cache-token-stack">{render_cache_tokens([str(point) for point in spec.body.get("left_points", [])])}</ul>'
+                f'<p class="cache-role-note">{html.escape(str(spec.body.get("left_note", "")))}</p>'
+                "</article>"
+                '<div class="compare-arrow cache-sequence-arrow" aria-hidden="true">→</div>'
+                '<article class="compare-col cache-segment variable-suffix-block is-focus">'
+                f'<p class="compare-label">{html.escape(spec.body.get("right_label", "Variable Suffix"))}</p>'
+                f'<div class="cache-badge-row">{right_badges}</div>'
+                f'<ul class="cache-token-stack">{render_cache_tokens([str(point) for point in spec.body.get("right_points", [])])}</ul>'
+                f'<p class="cache-role-note">{html.escape(str(spec.body.get("right_note", "")))}</p>'
+                "</article>"
+                "</section>"
+                f'<p class="cache-synthesis centered-claim">{html.escape(str(spec.body.get("opinion", spec.key_claim)))}</p>'
+            )
+
+        if spec.body.get("variant") == "waterfall-comparison":
+            header = (
+                '<div class="comparison-column-headers">'
+                '<div class="comparison-column-spacer" aria-hidden="true"></div>'
+                '<div class="compare-col comparison-column-header">'
+                f'{html.escape(spec.body.get("left_label", "축 A"))}'
+                "</div>"
+                '<div class="comparison-column-gap" aria-hidden="true"></div>'
+                '<div class="compare-col comparison-column-header is-focus">'
+                f'{html.escape(spec.body.get("right_label", "축 B"))}'
+                "</div>"
+                "</div>"
+            )
+            rows = "".join(
+                '<article class="comparison-row">'
+                f'<p class="comparison-row-key">{html.escape(row["key"])}</p>'
+                f'<p class="comparison-row-left">{html.escape(row["left"])}</p>'
+                '<div class="comparison-row-gap" aria-hidden="true"></div>'
+                f'<p class="comparison-row-right">{html.escape(row["right"])}</p>'
+                "</article>"
+                for row in spec.body.get("rows", [])
+            )
+            return (
+                '<section class="top-band">'
+                f'<p class="chapter-label">{html.escape(spec.chapter_label)}</p>'
+                f'<h1 class="title-placeholder">{html.escape(spec.title)}</h1>'
+                "</section>"
+                '<section class="waterfall-comparison-body">'
+                f"{header}"
+                '<div class="comparison-row-grid">'
+                f"{rows}"
+                "</div>"
+                "</section>"
+            )
+
         left_content = render_compare_content(spec, "left")
         right_content = render_compare_content(spec, "right")
         arrow = '<div class="compare-arrow" aria-hidden="true">→</div>' if spec.body.get("arrow") else ""
@@ -846,6 +1176,54 @@ def render_shell(spec: SlideSpec) -> str:
         )
 
     if spec.shell == "evidence-table-shell":
+        if spec.body.get("variant") == "agent-harness-quote":
+            components = "".join(
+                '<article class="agent-component-card">'
+                f'<h2>{html.escape(item["title"])}</h2>'
+                f'<p>{html.escape(item["text"])}</p>'
+                "</article>"
+                for item in spec.body.get("components", [])
+            )
+            return (
+                '<section class="top-band">'
+                f'<p class="chapter-label">{html.escape(spec.chapter_label)}</p>'
+                f'<h1 class="title-placeholder">{html.escape(spec.title)}</h1>'
+                "</section>"
+                '<section class="table-wrap agent-harness-quote-body">'
+                '<figure class="quote-card-block agent-quote-block">'
+                f'<blockquote>{html.escape(str(spec.body.get("quote", spec.key_claim)))}</blockquote>'
+                f'<figcaption>{html.escape(str(spec.body.get("attribution", "")))}</figcaption>'
+                "</figure>"
+                f'<div class="agent-component-grid">{components}</div>'
+                "</section>"
+            )
+
+        if spec.body.get("variant") == "rag-context-researched":
+            cards = "".join(
+                '<article class="rag-context-card">'
+                f'<p class="compare-label">{html.escape(str(card.get("label", "")))}</p>'
+                f'<h2>{html.escape(str(card.get("title", "")))}</h2>'
+                "<ul>"
+                + "".join(f'<li>{html.escape(str(item))}</li>' for item in card.get("items", []))
+                + "</ul>"
+                "</article>"
+                for card in spec.body.get("cards", [])
+            )
+            return (
+                '<section class="top-band">'
+                f'<p class="chapter-label">{html.escape(spec.chapter_label)}</p>'
+                f'<h1 class="title-placeholder">{html.escape(spec.title)}</h1>'
+                "</section>"
+                '<section class="table-wrap rag-context-research-body">'
+                f'<div class="rag-context-grid">{cards}</div>'
+                '<article class="rag-context-decision">'
+                f'<span>{html.escape(str(spec.body.get("decision_label", "선택 기준")))}</span>'
+                f'<p>{html.escape(str(spec.body.get("decision", spec.key_claim)))}</p>'
+                "</article>"
+                f'<p class="research-source-line">{html.escape(str(spec.body.get("source_label", "")))}</p>'
+                "</section>"
+            )
+
         if spec.body.get("variant") == "metric-impact-cards":
             body_class = "table-wrap evidence-cards-body metric-impact-body"
             if spec.body.get("reference") == "tall":
@@ -939,6 +1317,84 @@ def render_shell(spec: SlideSpec) -> str:
                 f"{formula}"
                 f'<p class="era-native-equation centered-claim">{relationship}</p>'
                 f"{question}"
+                "</section>"
+            )
+
+        if spec.body.get("variant") == "tool-relation-map":
+            tool_items = [dict(item) for item in spec.body.get("tools", [])]
+            tool_titles = [str(item["title"]) for item in tool_items]
+            responsibility_items = [dict(item) for item in spec.body.get("responsibilities", [])]
+            resp_count = max(len(responsibility_items), 1)
+            tool_count = max(len(tool_items), 1)
+            resp_y = {
+                str(item["title"]): 18 + index * (248 / max(resp_count - 1, 1))
+                for index, item in enumerate(responsibility_items)
+            }
+            tool_y = {
+                title: 14 + index * (256 / max(tool_count - 1, 1))
+                for index, title in enumerate(tool_titles)
+            }
+            paths: list[str] = []
+            for item in responsibility_items:
+                source = str(item["title"])
+                source_y = resp_y[source]
+                for tool in item.get("tools", []):
+                    target = str(tool)
+                    target_y = tool_y.get(target, source_y)
+                    paths.append(
+                        '<path class="tool-network-line" '
+                        f'd="M 6 {source_y:.1f} C 96 {source_y:.1f}, 220 {target_y:.1f}, 334 {target_y:.1f}" />'
+                    )
+            connectors = "".join(paths)
+            responsibilities = "".join(
+                '<article class="responsibility-card">'
+                f'<h2>{html.escape(item["title"])}</h2>'
+                "</article>"
+                for item in responsibility_items
+            )
+            tools = "".join(
+                '<article class="tool-cluster-card">'
+                f'<h2>{html.escape(item["title"])}</h2>'
+                "</article>"
+                for item in tool_items
+            )
+            relation_claim = ""
+            if spec.body.get("question"):
+                relation_claim = f'<p class="relation-claim centered-claim">{html.escape(str(spec.body["question"]))}</p>'
+            return (
+                '<section class="top-band">'
+                f'<p class="chapter-label">{html.escape(spec.chapter_label)}</p>'
+                f'<h1 class="title-placeholder">{html.escape(spec.title)}</h1>'
+                "</section>"
+                '<section class="table-wrap tool-relation-map">'
+                f"{relation_claim}"
+                '<div class="tool-relation-grid">'
+                f'<div class="responsibility-column">{responsibilities}</div>'
+                '<svg class="relation-connector tool-network-lines" viewBox="0 0 340 284" preserveAspectRatio="none" aria-hidden="true">'
+                f"{connectors}"
+                "</svg>"
+                f'<div class="tool-cluster-grid">{tools}</div>'
+                "</div>"
+                f'<p class="tool-network-synthesis centered-claim">{html.escape(spec.key_claim)}</p>'
+                "</section>"
+            )
+
+        if spec.body.get("variant") == "memory-artifact-map":
+            artifacts = "".join(
+                '<article class="memory-artifact-card">'
+                f'<h2>{html.escape(item["title"])}</h2>'
+                f'<p>{html.escape(item["text"])}</p>'
+                "</article>"
+                for item in spec.body.get("artifacts", [])
+            )
+            return (
+                '<section class="top-band">'
+                f'<p class="chapter-label">{html.escape(spec.chapter_label)}</p>'
+                f'<h1 class="title-placeholder">{html.escape(spec.title)}</h1>'
+                "</section>"
+                '<section class="table-wrap memory-artifact-map">'
+                f'<div class="memory-artifact-grid">{artifacts}</div>'
+                f'<p class="memory-core-claim centered-claim">{html.escape(spec.body.get("question", spec.key_claim))}</p>'
                 "</section>"
             )
 
