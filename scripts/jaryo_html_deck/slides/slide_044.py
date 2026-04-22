@@ -24,6 +24,7 @@ def build() -> SlideSpec:
             "right_badges": ["동적 접미어", "갈아 끼움"],
             "right_points": ["최신 사용자 입력", "도구 결과", "뒤에서 갈아 끼움"],
             "right_note": "최신 입력과 도구 결과",
-            "opinion": "잘 쓰는 것 못지않게 안 바꾸는 것도 능력",
+            "quote": "최신 입력과 도구 결과만 뒤에서 갈아 끼워야 KV-cache hit rate가 살아납니다.",
+            "attribution": "Manus Research",
         },
     )

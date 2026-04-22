@@ -1,9 +1,9 @@
 # HTML Manifest
 
-- current status: 00/01/02/03/04 45-slide deck built
+- current status: 00/01/02/03/04/05/06/07/08/09 94-slide deck built
 - active theme: `theme-minimal-light`
-- slide id format: `S001`-`S045`
-- slide file format: `slide-001.html`-`slide-045.html`
+- slide id format: `S001`-`S094`
+- slide file format: `slide-001.html`-`slide-094.html`
 - output deck: `docs/03-html/deck/index.html`
 - output script: `docs/03-html/deck/script.md`
 
@@ -51,8 +51,57 @@
 | 38 | `S038` | `slide-038.html` | 하네스의 책임 | `process` | `wide` | `process-flow-shell` | `04` | `04-04` | `ready` | built |
 | 39 | `S039` | `slide-039.html` | 하네스의 도구 | `table` | `wide` | `evidence-table-shell` | `04` | `04-05` | `ready` | built |
 | 40 | `S040` | `slide-040.html` | Context Engineering | `process` | `wide` | `process-flow-shell` | `04` | `04-06` | `ready` | built |
-| 41 | `S041` | `slide-041.html` | MCP와 Context Hub | `process` | `wide` | `process-flow-shell` | `04` | `04-07` | `ready` | built |
-| 42 | `S042` | `slide-042.html` | RAG vs Context Hub | `table` | `wide` | `evidence-table-shell` | `04` | `04-08` | `ready` | built |
+| 41 | `S041` | `slide-041.html` | MCP와 Context 7 | `process` | `wide` | `process-flow-shell` | `04` | `04-07` | `ready` | built |
+| 42 | `S042` | `slide-042.html` | RAG vs Context 7 | `table` | `wide` | `evidence-table-shell` | `04` | `04-08` | `ready` | built |
 | 43 | `S043` | `slide-043.html` | Memory: 세션을 넘어서는 기억 | `table` | `wide` | `evidence-table-shell` | `04` | `04-09` | `ready` | built |
 | 44 | `S044` | `slide-044.html` | Stable Prefix와 Variable Suffix | `comparison` | `split` | `split-compare-shell` | `04` | `04-10` | `ready` | built |
 | 45 | `S045` | `slide-045.html` | 하네스는 환경 그 자체다 | `process` | `wide` | `process-flow-shell` | `04` | `04-11` | `ready` | built |
+| 46 | `S046` | `slide-046.html` | 이렇게 하면 망한다 | `section` | `centered` | `section-divider-shell` | `05` | `05-00` | `ready` | built |
+| 47 | `S047` | `slide-047.html` | 오류의 나비효과 | `table` | `wide` | `evidence-table-shell` | `05` | `05-01` | `ready` | built |
+| 48 | `S048` | `slide-048.html` | 작업이 길어질 때 특히 위험한 이유 | `statement` | `editorial` | `statement-editorial-shell` | `05` | `05-02` | `ready` | built |
+| 49 | `S049` | `slide-049.html` | 컨텍스트가 길수록 항상 좋은 것은 아니다 | `comparison` | `split` | `split-compare-shell` | `05` | `05-03` | `ready` | built |
+| 50 | `S050` | `slide-050.html` | 대표 실패 패턴 네 가지 | `statement` | `editorial` | `statement-editorial-shell` | `05` | `05-04` | `ready` | built |
+| 51 | `S051` | `slide-051.html` | 현실에서 보이는 증상들 | `statement` | `editorial` | `statement-editorial-shell` | `05` | `05-05` | `ready` | built |
+| 52 | `S052` | `slide-052.html` | Context Rot: 길어진 기억은 조용히 썩는다 | `statement` | `editorial` | `statement-editorial-shell` | `05` | `05-06` | `ready` | built |
+| 53 | `S053` | `slide-053.html` | 신뢰는 조율되어야 한다 | `statement` | `editorial` | `statement-editorial-shell` | `05` | `05-07` | `ready` | built |
+| 54 | `S054` | `slide-054.html` | 결정 제어와 확률 제어를 분리하라 | `comparison` | `split` | `split-compare-shell` | `05` | `05-08` | `ready` | built |
+| 55 | `S055` | `slide-055.html` | 더 긴 컨텍스트보다 더 좋은 게이트 | `statement` | `editorial` | `statement-editorial-shell` | `05` | `05-09` | `ready` | built |
+| 56 | `S056` | `slide-056.html` | 왜 하나의 에이전트만으로는 부족한가 | `table` | `wide` | `evidence-table-shell` | `06` | `06-01` | `ready` | built |
+| 57 | `S057` | `slide-057.html` | 하나의 에이전트 = 하나의 역할 | `process` | `wide` | `process-flow-shell` | `06` | `06-02` | `ready` | built |
+| 58 | `S058` | `slide-058.html` | 1. Sub-Agent: 중간 작업을 격리하는 기본형 | `process` | `wide` | `process-flow-shell` | `06` | `06-03` | `ready` | built |
+| 59 | `S059` | `slide-059.html` | Advisor 전략: 작은 실행자, 큰 자문 | `table` | `wide` | `evidence-table-shell` | `06` | `06-04` | `ready` | built |
+| 60 | `S060` | `slide-060.html` | 2. Orchestrator: 계획자 하나가 여러 실행자를 배치한다 | `process` | `wide` | `process-flow-shell` | `06` | `06-05` | `ready` | built |
+| 61 | `S061` | `slide-061.html` | 3. Parallel: 같은 목표를 평면으로 벌리고 나중에 합친다 | `process` | `wide` | `process-flow-shell` | `06` | `06-06` | `ready` | built |
+| 62 | `S062` | `slide-062.html` | 4. GAN-Style: 생성자와 평가자를 분리한다 | `process` | `wide` | `process-flow-shell` | `06` | `06-07` | `ready` | built |
+| 63 | `S063` | `slide-063.html` | 5. Agent Teams: 양방향 대화가 가능한 팀을 만든다 | `process` | `wide` | `process-flow-shell` | `06` | `06-08` | `ready` | built |
+| 64 | `S064` | `slide-064.html` | Sub-Agent와 Agent Team은 다르다 | `table` | `wide` | `evidence-table-shell` | `06` | `06-09` | `ready` | built |
+| 65 | `S065` | `slide-065.html` | 설계 원칙: 패턴보다 경계가 중요하다 | `table` | `wide` | `evidence-table-shell` | `06` | `06-10` | `ready` | built |
+| 66 | `S066` | `slide-066.html` | 설계 원칙: 패턴보다 경계가 중요하다 | `table` | `wide` | `evidence-table-shell` | `06` | `06-11` | `ready` | built |
+| 67 | `S067` | `slide-067.html` | 멀티 모델과 멀티 에이전트 | `table` | `wide` | `evidence-table-shell` | `06` | `06-12` | `ready` | built |
+| 68 | `S068` | `slide-068.html` | 결론: 더 많은 AI가 아니라 더 좁은 역할의 AI 여럿 | `table` | `wide` | `evidence-table-shell` | `06` | `06-13` | `ready` | built |
+| 69 | `S069` | `slide-069.html` | 시작하며: 두 가지 막다른 길 | `comparison` | `split` | `split-compare-shell` | `07` | `07-01` | `ready` | built |
+| 70 | `S070` | `slide-070.html` | OMC(Oh My Claude Code) | `process` | `wide` | `process-flow-shell` | `07` | `07-02` | `ready` | built |
+| 71 | `S071` | `slide-071.html` | Plan-Critic-Build | `process` | `wide` | `process-flow-shell` | `07` | `07-03` | `ready` | built |
+| 72 | `S072` | `slide-072.html` | 필요없는 도구는 덜어내라 | `table` | `wide` | `evidence-table-shell` | `07` | `07-04` | `ready` | built |
+| 73 | `S073` | `slide-073.html` | Approval, Auto-accept, Plan Mode | `table` | `wide` | `evidence-table-shell` | `07` | `07-05` | `ready` | built |
+| 74 | `S074` | `slide-074.html` | 반복의 자산화 | `process` | `wide` | `process-flow-shell` | `07` | `07-06` | `ready` | built |
+| 75 | `S075` | `slide-075.html` | Ralph Loop | `process` | `wide` | `process-flow-shell` | `07` | `07-07` | `ready` | built |
+| 76 | `S076` | `slide-076.html` | 암묵지를 파일로 뽑아내라 | `table` | `wide` | `evidence-table-shell` | `07` | `07-08` | `ready` | built |
+| 77 | `S077` | `slide-077.html` | 한 모델에만 기대지 않는다 | `table` | `wide` | `evidence-table-shell` | `07` | `07-09` | `ready` | built |
+| 78 | `S078` | `slide-078.html` | cmux와 Git Worktree | `process` | `wide` | `process-flow-shell` | `07` | `07-10` | `ready` | built |
+| 79 | `S079` | `slide-079.html` | 세션이 아니라 이슈가 상태를 들고 간다 | `process` | `wide` | `process-flow-shell` | `07` | `07-11` | `ready` | built |
+| 80 | `S080` | `slide-080.html` | 첫 주에 바로 세울 수 있는 최소 워크플로우 | `table` | `wide` | `evidence-table-shell` | `07` | `07-12` | `ready` | built |
+| 81 | `S081` | `slide-081.html` | 결론: 실전 워크플로우의 중심은 운영 구조다 | `table` | `wide` | `evidence-table-shell` | `07` | `07-13` | `ready` | built |
+| 82 | `S082` | `slide-082.html` | 이 글과 발표가 만들어진 과정 | `section` | `centered` | `section-divider-shell` | `08` | `08-00` | `ready` | built |
+| 83 | `S083` | `slide-083.html` | 이 글과 발표가 만들어진 과정 | `statement` | `editorial` | `statement-editorial-shell` | `08` | `08-01` | `ready` | built |
+| 84 | `S084` | `slide-084.html` | 이 발표를 만든 방법 | `process` | `wide` | `process-flow-shell` | `08` | `08-02` | `ready` | built |
+| 85 | `S085` | `slide-085.html` | 재료 1 source 수집 | `table` | `wide` | `evidence-table-shell` | `08` | `08-03` | `ready` | built |
+| 86 | `S086` | `slide-086.html` | 재료 2 단일 진실원 만들기 | `process` | `wide` | `process-flow-shell` | `08` | `08-04` | `ready` | built |
+| 87 | `S087` | `slide-087.html` | 재료 3- slides-grab, Skill 경계로 박힌 분리 | `process` | `wide` | `process-flow-shell` | `08` | `08-05` | `ready` | built |
+| 88 | `S088` | `slide-088.html` | 재료 4 규칙 세우기 | `table` | `wide` | `evidence-table-shell` | `08` | `08-06` | `ready` | built |
+| 89 | `S089` | `slide-089.html` | 생성과 검증을 같은 손에 쥐지 않았다 | `comparison` | `split` | `split-compare-shell` | `08` | `08-07` | `ready` | built |
+| 90 | `S090` | `slide-090.html` | 이 발표가 증거 | `process` | `wide` | `process-flow-shell` | `08` | `08-08` | `ready` | built |
+| 91 | `S091` | `slide-091.html` | 우리가 다음에 해야 할 일 | `section` | `centered` | `section-divider-shell` | `09` | `09-00` | `ready` | built |
+| 92 | `S092` | `slide-092.html` | 시작하며: FOMO 와 피로 | `statement` | `editorial` | `statement-editorial-shell` | `09` | `09-01` | `ready` | built |
+| 93 | `S093` | `slide-093.html` | 증폭되는 경험 - 세 개의 증언 | `statement` | `editorial` | `statement-editorial-shell` | `09` | `09-02` | `ready` | built |
+| 94 | `S094` | `slide-094.html` | 내일부터 | `statement` | `editorial` | `statement-editorial-shell` | `09` | `09-03` | `ready` | built |

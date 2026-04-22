@@ -42,13 +42,16 @@ def processed_icon_data_uri(path: Path) -> str:
 
 def asset_data_uri(path: Path) -> str:
     suffix = path.suffix.lower()
+    payload_bytes = path.read_bytes()
     if suffix == ".svg":
         mime = "image/svg+xml"
     elif suffix in {".jpg", ".jpeg"}:
         mime = "image/jpeg"
+    elif payload_bytes.startswith(b"RIFF") and payload_bytes[8:12] == b"WEBP":
+        mime = "image/webp"
     else:
         mime = "image/png"
-    payload = base64.b64encode(path.read_bytes()).decode("ascii")
+    payload = base64.b64encode(payload_bytes).decode("ascii")
     return f"data:{mime};base64,{payload}"
 
 def render_asset_figure(path: Path, class_name: str, alt: str | None = None) -> str:

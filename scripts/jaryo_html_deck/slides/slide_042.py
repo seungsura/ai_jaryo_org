@@ -6,38 +6,38 @@ from jaryo_html_deck.model import SlideSpec, make_slide
 def build() -> SlideSpec:
     return make_slide(
         42,
-        title="RAG vs Context Hub",
+        title="RAG vs Context 7",
         shell="evidence-table-shell",
         source_section="04",
         source_block="04-08",
-        key_claim="넓게 찾는가, 지금 맞는 문서를 지정하는가",
+        key_claim="검색 범위와 기준 시점의 차이",
         chapter_label="CHAPTER 04",
-        notes_intent="RAG 논문과 MCP/Context Hub 문서 조사 기반 비교",
-        notes="RAG는 넓은 검색 인덱스, Context Hub MCP는 최신/버전 지정 문서 주입",
+        notes_intent="RAG와 Context 7의 차이를 표로 비교",
+        notes="RAG는 넓은 저장소 검색, Context 7은 최신/버전 지정 문서 확인",
         body={
-            "variant": "rag-context-researched",
-            "cards": [
+            "variant": "rag-context-table",
+            "columns": ["구분", "RAG", "Context 7"],
+            "rows": [
                 {
-                    "label": "RAG",
-                    "title": "넓은 저장소에서 passage 검색",
-                    "items": [
-                        "질문마다 관련 조각을 생성 입력에 주입",
-                        "벡터 인덱스와 retriever 품질이 결과를 좌우",
-                        "내부 위키·정책·긴 참고 자료에 적합",
-                    ],
+                    "axis": "대상",
+                    "rag": "문서 저장소에서 검색된 관련 조각",
+                    "context": "지정한 최신 문서나 공식 자료",
                 },
                 {
-                    "label": "Context Hub MCP",
-                    "title": "지정한 최신 문서를 컨텍스트로 주입",
-                    "items": [
-                        "공식·버전별 API 문서를 필요할 때 가져옴",
-                        "라이브러리 ID·버전·언어로 범위를 좁힘",
-                        "SDK/API 변경이 잦은 작업에 적합",
-                    ],
+                    "axis": "강점",
+                    "rag": "내부 위키, 정책 문서, 긴 참고 자료를 넓게 훑음",
+                    "context": "최신 SDK, API, 변경이 잦은 공식 문서를 지금 기준으로 확인",
+                },
+                {
+                    "axis": "기대",
+                    "rag": "넓은 문서 집합에서 필요한 맥락을 찾음",
+                    "context": "출처와 기준 시점이 더 분명함",
+                },
+                {
+                    "axis": "문제점",
+                    "rag": "오래된 조각, 낮은 관련도, 중복 정보가 섞일 수 있음",
+                    "context": "연결 실패나 잘못된 소스 지정에 바로 흔들림",
                 },
             ],
-            "decision_label": "선택 기준",
-            "decision": "넓게 찾을 때는 RAG, 지금 맞는 문서를 확인할 때는 Context Hub",
-            "source_label": "Sources: Lewis et al. 2020 · MCP Docs · Context Hub / Context7",
         },
     )

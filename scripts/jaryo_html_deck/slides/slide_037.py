@@ -10,7 +10,7 @@ def build() -> SlideSpec:
         shell="process-flow-shell",
         source_section="04",
         source_block="04-03",
-        key_claim="네 지점을 신뢰성 있게 만드는 일",
+        key_claim="거의 모든 에이전트가 반복하는 4단계.",
         chapter_label="CHAPTER 04",
         notes_intent="gather context, take action, verify work, repeat loop",
         notes="거의 모든 코딩 에이전트가 반복하는 네 단계",
@@ -22,6 +22,6 @@ def build() -> SlideSpec:
                 {"index": "03", "title": "verify work", "text": "테스트, 린트, 리뷰"},
                 {"index": "04", "title": "repeat", "text": "현재 결론과 다음 행동만 남김"},
             ],
-            "thesis": "이 네 지점을 신뢰성 있게 만드는 일",
+            "thesis": "거의 모든 에이전트가 반복하는 4단계.",
         },
     )

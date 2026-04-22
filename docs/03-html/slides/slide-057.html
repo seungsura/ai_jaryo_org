@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>하나의 에이전트 = 하나의 역할</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="../shared/slide-base.css">
+</head>
+<body class="theme-minimal-light">
+<main class="slide family-content layout-wide density-medium chapter-06" data-slide-id="S057" data-shell="process-flow-shell" data-notes="source lines 15-24, page 064 layout reference" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 06</p><h1 class="title-placeholder">하나의 에이전트 = 하나의 역할</h1></section><section class="ch-pattern-row-body"><div class="ch-pattern-row"><article class="ch-card ch-pattern-card"><span class="ch-card-index">01</span><h2>Sub-Agent</h2><div class="ch-native-nodes "><span>Main</span><i aria-hidden="true">→</i><span>Sub</span></div><p>중간 작업을 격리하는 기본형</p><small>단일 심부름</small></article><article class="ch-card ch-pattern-card"><span class="ch-card-index">02</span><h2>Orchestrator</h2><div class="ch-native-nodes "><span>Plan</span><i aria-hidden="true">→</i><span>Exec</span><i aria-hidden="true">→</i><span>Exec</span></div><p>계획자 하나가 여러 실행자를 배치</p><small>1:N 위임</small></article><article class="ch-card ch-pattern-card"><span class="ch-card-index">03</span><h2>Parallel</h2><div class="ch-native-nodes "><span>A</span><i aria-hidden="true">→</i><span>shared repo</span><i aria-hidden="true">→</i><span>B</span></div><p>같은 목표를 평면으로 벌림</p><small>독립 lane</small></article><article class="ch-card ch-pattern-card"><span class="ch-card-index">04</span><h2>GAN-Style</h2><div class="ch-native-nodes "><span>Gen</span><i aria-hidden="true">→</i><span>Eval</span></div><p>생성과 평가를 분리</p><small>루브릭으로 평가</small></article><article class="ch-card ch-pattern-card"><span class="ch-card-index">05</span><h2>Agent Teams</h2><div class="ch-native-nodes "><span>R</span><i aria-hidden="true">→</i><span>C</span><i aria-hidden="true">→</i><span>E</span></div><p>양방향 대화와 합의</p><small>그래프 구조</small></article></div><p class="flow-source-label">Planner / Generator / Evaluator: 생성과 평가를 같은 손에 쥐지 않음</p><p class="ch-dark-conclusion centered-claim">메인 컨텍스트에 무엇을 남기고, 무엇을 밖으로 밀어낼 것인가</p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">57</span></footer></main>
+</body>
+</html>

@@ -31,3 +31,15 @@
 - CHAPTER 04 feedback round 3: S037의 한 줄 문장은 원문 대조 결과 verbatim이 아니므로 source-backed 표현으로 교체한다. S036은 quote와 attribution을 table callout보다 강하게 보이게 하고, S040의 Anthropic phrase는 과대 slogan이 아니라 quote/source typography로 낮춘다. S041은 네 단계 process list가 아니라 MCP/Context Hub native architecture layout으로 다시 만든다.
 - CHAPTER 04 feedback round 4: S036은 quote card와 compact component cards의 균형으로 재배치한다. S038은 한 문장 thesis card를 제거한다. S040은 S036과 같은 dedicated quote card rule을 따른다. S041은 좌측 MCP 사용 구조, 우측 Context Hub MCP 역할/원리 설명으로 재구성한다. S039의 `하네스의 책임 ↔ 하네스의 도구` label은 제거한다. S042는 인터넷 조사 근거로 RAG 논문, MCP 공식 문서, Context Hub/Context7 문서 기반 비교로 교체한다.
 - CHAPTER 04 feedback round 5: S036과 S043은 본문 그룹을 화면 중앙으로 재정렬한다. S040의 Anthropic 문장은 자연스러운 한국어 quote로 번역한다. S041은 nested card 금지 규칙을 contract에 추가하고 flat architecture/explanation 구조로 고친다. S042는 인터넷 조사 근거를 유지하되 번역투 문장을 제거한다. S044는 Manus 사례 문장을 source quote card로 교체한다.
+- CHAPTER 04 feedback round 6: S037의 한 줄 synthesis를 다시 바꾸고, S040은 `신호가 큰 토큰` 같은 설명이 필요한 표현을 제거한다. S041은 parent card/panel과 `card` class가 남지 않는 flat lane 구조로 고친다. S042는 여러 카드 layout으로 바꾸며 출처와 `선택 기준` 문구를 visible copy에서 제거한다. S044는 Manus 사례 quote를 더 이해 쉬운 한국어로 다시 쓴다.
+- CHAPTER 04 feedback round 7: S037 한 줄은 `거의 모든 에이전트가 반복하는 4단계.`로 고정한다. S040은 `Anthropic의 4가지 전략: 필요한 정보만 남기고 잡음은 덜어낸다.`로 바꾼다. S041은 좌우 모두 sibling card로 만들되 우측 card 내부에 또 card를 넣지 않고, `Context Hub`를 `Context 7`로 바꾼다. S042는 RAG와 Context 7 차이를 표 형태로 다시 구성한다. S044 출처는 `Manus Research`로 바꾼다.
+- CHAPTER 04 feedback round 8: S041은 좌우 sibling card만 card로 보고, 내부 단계/역할/원리/효과는 border/shadow/background 없는 flat typography로 낮춘다. S044 문구는 변경 churn을 멈추기 위해 source-backed KV-cache 문장 `최신 입력과 도구 결과만 뒤에서 갈아 끼워야 KV-cache hit rate가 살아납니다.`로 고정한다.
+- Final main integration: 1-4장은 현재 main의 S001-S045를 유지한다. CHAPTER 05 worktree는 S046-S055, CHAPTER 06-07 worktree는 S056-S081, CHAPTER 08-09 worktree는 S082-S094로 재번호화한다. 이 pass는 numbering/registry/generator/validation 통합만 수행하며 각 chapter worktree의 slide copy와 visual structure는 변경하지 않는다.
+
+## 2026-04-23
+
+- CHAPTER 06-07 worktree의 provisional S046-S071 작업물을 main 통합본의 S056-S081로 병합한다. main 브랜치는 이동하지 않고, 현재 main의 94장 registry에 맞춰 slide module number, generated HTML, manifest, outline, deck ordering을 재계산한다.
+- 병합 시 source heading drift를 main의 최신 `docs/02-seminar/harness-rebuilt-md` 기준으로 해결한다. S057 title은 `하나의 에이전트 = 하나의 역할`, S067 title은 `멀티 모델과 멀티 에이전트`, S072 title은 `필요없는 도구는 덜어내라`로 둔다.
+- CHAPTER 06-07에서 승인된 `assets/claude-code-seminar-kakao/page-062.png`부터 `page-068.png`까지의 structure-only reference와 QA blocker를 main 규칙에 흡수한다. 특히 dark split panel `small` contrast와 artifact/command column clipping은 통합 후에도 blocker로 본다.
+- Final main merge는 branch 이동 없이 현재 main checkout에서 수행한다. CHAPTER 05 local `S034`-`S043`은 global `S046`-`S055`로 매핑하고, 최신 feedback round 6 수정은 `S048`, `S049`, `S051`에만 반영한다.
+- Chapter-scoped preview artifacts는 flat global deck과 충돌하지 않는 namespaced path로만 병합한다. `ch06`, `ch07`, `chapter-08-09` preview deck/data/slides/source namespace는 보존하되, `docs/03-html/slides/slide-XXX.html`의 provisional 번호 파일로 덮어쓰지 않는다.

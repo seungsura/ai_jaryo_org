@@ -10,7 +10,7 @@ def build() -> SlideSpec:
         shell="process-flow-shell",
         source_section="04",
         source_block="04-06",
-        key_claim="smallest set of high-signal tokens",
+        key_claim="Anthropic의 4가지 전략: 필요한 정보만 남기고 잡음은 덜어낸다.",
         chapter_label="CHAPTER 04",
         notes_intent="Write, Select, Compress, Isolate 네 전략",
         notes="좋은 컨텍스트는 넓은 컨텍스트가 아니라 선별된 컨텍스트",
@@ -22,7 +22,7 @@ def build() -> SlideSpec:
                 {"index": "03", "title": "Compress", "text": "결정, 남은 일, 증거 중심으로 압축"},
                 {"index": "04", "title": "Isolate", "text": "대량 탐색과 로그 분석은 격리"},
             ],
-            "thesis": "smallest set of high-signal tokens",
+            "thesis": "Anthropic의 4가지 전략: 필요한 정보만 남기고 잡음은 덜어낸다.",
             "source_label": "Anthropic Research",
         },
     )

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1. Sub-Agent: 중간 작업을 격리하는 기본형</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../shared/tokens.css">
+<link rel="stylesheet" href="../shared/slide-base.css">
+</head>
+<body class="theme-minimal-light">
+<main class="slide family-content layout-wide density-medium chapter-06" data-slide-id="S058" data-shell="process-flow-shell" data-notes="source lines 28-51, page 066 structure reference" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 06</p><h1 class="title-placeholder">1. Sub-Agent: 중간 작업을 격리하는 기본형</h1></section><section class="ch-map-side-body"><div class="ch-main-sub-map"><article class="ch-map-node ch-map-main"><strong>Main</strong><span>결과 요약과 결론만 수신</span></article><div class="ch-map-arrow ch-map-arrow-out"><span>task</span></div><article class="ch-map-node ch-map-sub"><strong>Sub</strong><span>격리된 워커</span><div class="ch-map-artifacts"><span>file</span><span>log</span><span>test</span><span>api</span></div></article><div class="ch-map-arrow ch-map-arrow-back"><span>summary</span></div></div><div class="ch-side-stack"><article class="ch-card ch-side-card"><h2>컨텍스트 격리</h2><p>파일을 많이 읽고 수만 토큰을 써도 메인 컨텍스트는 오염되지 않음</p></article><article class="ch-card ch-side-card"><h2>least privilege</h2><p>필요한 파일, 질문, 출력 형식, 권한만 전달</p></article><article class="ch-card ch-side-card"><h2>좋은 지시</h2><p>목적, 읽을 범위, 출력 형식, 근거 표시 방식, 금지 행동</p></article></div><p class="ch-dark-conclusion centered-claim">Sub-Agent는 메인 컨텍스트를 지키는 데 특히 강함</p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">58</span></footer></main>
+</body>
+</html>

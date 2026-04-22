@@ -50,6 +50,15 @@ SLIDE_042_PATH = SLIDES_DIR / "slide-042.html"
 SLIDE_043_PATH = SLIDES_DIR / "slide-043.html"
 SLIDE_044_PATH = SLIDES_DIR / "slide-044.html"
 SLIDE_045_PATH = SLIDES_DIR / "slide-045.html"
+SLIDE_046_PATH = SLIDES_DIR / "slide-046.html"
+SLIDE_048_PATH = SLIDES_DIR / "slide-048.html"
+SLIDE_049_PATH = SLIDES_DIR / "slide-049.html"
+SLIDE_051_PATH = SLIDES_DIR / "slide-051.html"
+SLIDE_055_PATH = SLIDES_DIR / "slide-055.html"
+SLIDE_056_PATH = SLIDES_DIR / "slide-056.html"
+SLIDE_081_PATH = SLIDES_DIR / "slide-081.html"
+SLIDE_082_PATH = SLIDES_DIR / "slide-082.html"
+SLIDE_094_PATH = SLIDES_DIR / "slide-094.html"
 
 
 def run_builder() -> None:
@@ -90,9 +99,9 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
         self.assertLessEqual(len(entrypoint.splitlines()), 12)
         self.assertNotIn("def build_all_specs", entrypoint)
         self.assertNotIn("make_slide(", entrypoint)
-        self.assertEqual(len(slide_modules), 45)
+        self.assertEqual(len(slide_modules), 94)
         self.assertEqual(slide_modules[0].name, "slide_001.py")
-        self.assertEqual(slide_modules[-1].name, "slide_045.py")
+        self.assertEqual(slide_modules[-1].name, "slide_094.py")
 
         for path in slide_modules:
             source = path.read_text(encoding="utf-8")
@@ -121,21 +130,21 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
         self.assertTrue(core.exists())
         self.assertLessEqual(len(core.read_text(encoding="utf-8").splitlines()), 80)
 
-    def test_builder_generates_45_slide_registry(self) -> None:
+    def test_builder_generates_94_slide_registry(self) -> None:
         run_builder()
 
         rows = manifest_rows()
-        self.assertEqual(len(rows), 45)
+        self.assertEqual(len(rows), 94)
         self.assertIn("`S001`", rows[0])
-        self.assertIn("`S045`", rows[-1])
+        self.assertIn("`S094`", rows[-1])
 
     def test_builder_uses_three_digit_slide_files(self) -> None:
         run_builder()
 
         slide_files = sorted(SLIDES_DIR.glob("slide-*.html"))
-        self.assertEqual(len(slide_files), 45)
+        self.assertEqual(len(slide_files), 94)
         self.assertEqual(slide_files[0].name, "slide-001.html")
-        self.assertEqual(slide_files[-1].name, "slide-045.html")
+        self.assertEqual(slide_files[-1].name, "slide-094.html")
 
     def test_builder_writes_outline_deck_and_script(self) -> None:
         run_builder()
@@ -148,13 +157,15 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
         self.assertIn("### S027.", outline)
         self.assertIn("### S033.", outline)
         self.assertIn("### S045.", outline)
-        self.assertIn("00/01/02/03/04 45-slide", outline)
+        self.assertIn("### S094.", outline)
+        self.assertIn("00/01/02/03/04/05/06/07/08/09 94-slide", outline)
         self.assertTrue(SCRIPT_PATH.exists())
         self.assertIn('data-slide-id="S001"', deck)
         self.assertIn('data-slide-id="S014"', deck)
         self.assertIn('data-slide-id="S027"', deck)
         self.assertIn('data-slide-id="S033"', deck)
         self.assertIn('data-slide-id="S045"', deck)
+        self.assertIn('data-slide-id="S094"', deck)
         self.assertIn("function goTo(index)", deck)
 
     def test_builder_applies_latest_slide_feedback(self) -> None:
@@ -196,6 +207,16 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
         slide_043 = SLIDE_043_PATH.read_text(encoding="utf-8")
         slide_044 = SLIDE_044_PATH.read_text(encoding="utf-8")
         slide_045 = SLIDE_045_PATH.read_text(encoding="utf-8")
+        slide_046 = SLIDE_046_PATH.read_text(encoding="utf-8")
+        slide_048 = SLIDE_048_PATH.read_text(encoding="utf-8")
+        slide_049 = SLIDE_049_PATH.read_text(encoding="utf-8")
+        slide_051 = SLIDE_051_PATH.read_text(encoding="utf-8")
+        slide_055 = SLIDE_055_PATH.read_text(encoding="utf-8")
+        slide_056 = SLIDE_056_PATH.read_text(encoding="utf-8")
+        slide_081 = SLIDE_081_PATH.read_text(encoding="utf-8")
+        slide_082 = SLIDE_082_PATH.read_text(encoding="utf-8")
+        slide_094 = SLIDE_094_PATH.read_text(encoding="utf-8")
+        css = (ROOT / "docs/03-html/shared/slide-base.css").read_text(encoding="utf-8")
 
         self.assertIn("<title>Harness 잘 사용하기</title>", deck)
         self.assertIn("<h1 class=\"title-placeholder\">Harness 잘 사용하기</h1>", slide_001)
@@ -312,40 +333,61 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
 
         self.assertIn("<h1 class=\"title-placeholder\">네 가지 에이전틱 패턴</h1>", slide_021)
         self.assertIn("agentic-pattern-quadrant-body", slide_021)
-        self.assertIn("agentic-pattern-center", slide_021)
-        self.assertIn("agentic-mini-diagram", slide_021)
-        self.assertIn("Generate", slide_021)
-        self.assertIn("Critique", slide_021)
-        self.assertIn("Search/API", slide_021)
-        self.assertIn("Reviewer", slide_021)
+        self.assertIn("agentic-map-svg", slide_021)
+        for snippet in [
+            "Reflection",
+            "Tool Use",
+            "Planning",
+            "Multi-Agent Collaboration",
+            "자기 결과를 비판하고 반복 개선",
+            "외부 도구로 정보 수집과 실행",
+            "목표를 실행 순서로 나눠 추진",
+            "전문 역할로 나눠 복잡한 작업 수행",
+            "자기 수정 루프",
+            "모델 바깥 세계 연결",
+            "긴 작업 추진",
+            "생성과 검증 분리",
+            'cx="58" cy="44"',
+            'cx="116" cy="44"',
+            "M129 44 H172",
+            'cx="272" cy="65"',
+        ]:
+            self.assertIn(snippet, slide_021)
+        self.assertNotIn("agentic-pattern-center", slide_021)
+        self.assertNotIn("agentic-mini-diagram", slide_021)
         self.assertNotIn("05-andrew-ng-agentic-design-patterns.png", slide_021)
 
         self.assertIn("<h1 class=\"title-placeholder\">프롬프트 시대의 벽</h1>", slide_022)
-        self.assertIn("모델은 보지 못한 것을 알 수 없음", slide_022)
         self.assertIn("blind-prompting-matrix-body", slide_022)
+        self.assertIn("blind-prompting-quote-card", slide_022)
+        self.assertIn("모델은 컨텍스트 창 안에 들어온 지식만 다룰 수 있다.", slide_022)
+        self.assertIn("Vivek Trivedy, LangChain", slide_022)
+        self.assertNotIn("모델은 보지 못한 것을 알 수 없음", slide_022)
+        self.assertNotIn("문제는 지시문이 아니라 모델이 소비하는 정보", slide_022)
         self.assertIn("2막: Cursor와 컨텍스트의 시대", slide_023)
         self.assertIn("cursor-tools-body", slide_023)
         self.assertNotIn("linear-gradient", (ROOT / "docs/03-html/shared/slide-base.css").read_text(encoding="utf-8"))
         self.assertIn("Cursor 아키텍처", slide_024)
-        self.assertIn("cursor-architecture-redraw-body", slide_024)
-        self.assertIn("cursor-architecture-example-canvas", slide_024)
-        for flow_item in ["사용자 요청", "indexing", "retrieval", "context assembly", "edit/run", "verify"]:
+        self.assertIn("cursor-architecture-asset-body", slide_024)
+        self.assertIn("cursor-architecture-reference-figure", slide_024)
+        for flow_item in ["사용자 요청", "코드베이스 인덱싱", "(파일, 심볼, AST, 문서)", "관련 파일 / 규칙 / 히스토리 검색", "컨텍스트 조립", "Composer / Agent Mode", "멀티파일 수정 + 명령 실행", "테스트 / 린트 / 로그 확인"]:
             self.assertIn(flow_item, slide_024)
-        self.assertIn("codebase index", slide_024)
-        self.assertIn("context bundle", slide_024)
-        self.assertIn("architecture-side-tools", slide_024)
-        self.assertNotIn("06-cursor-ai-code-editor-architecture.png", slide_024)
-        for loop_step in ["gather context", "take action", "verify", "repeat"]:
-            self.assertIn(loop_step, slide_025)
+        self.assertIn("06-cursor-ai-code-editor-architecture.png", slide_024)
+        self.assertNotIn("cursor-architecture-redraw-body", slide_024)
+        self.assertNotIn("architecture-side-tools", slide_024)
+        for snippet in ["좋은 입력만으로는 루프를 통제할 수 없다", "도구 호출 실패", "테스트 오해", "비용 폭주", "위험 명령", "보안 경계", "목표 망각", "무엇을 보여줄 것인가", "무엇을 하게 할 것인가", "무엇을 못 하게 막을 것인가", "어디서 멈출 것인가", "어떻게 검증할 것인가"]:
+            self.assertIn(snippet, slide_025)
         self.assertIn("<h1 class=\"title-placeholder\">컨텍스트 시대의 벽</h1>", slide_025)
-        self.assertIn("loop-cycle-body", slide_025)
-        self.assertIn("loop-cycle-arrow", slide_025)
-        self.assertNotIn("loop-repeat-arc", slide_025)
-        self.assertNotIn("↺ repeat", slide_025)
+        self.assertIn("context-wall-body", slide_025)
+        for forbidden in ["gather context", "take action", "verify", "repeat", "loop-cycle-body", "loop-cycle-arrow", "loop-repeat-arc", "↺ repeat"]:
+            self.assertNotIn(forbidden, slide_025)
         self.assertIn("<h1 class=\"title-placeholder\">3막: 하네스의 시대</h1>", slide_026)
-        self.assertIn("harness-era-signs-body", slide_026)
-        for component in ["CLAUDE.md", "Skills", "Hooks", "MCP", "Plugins", "Subagents", "승인 체계"]:
-            self.assertIn(component, slide_026)
+        self.assertIn("harness-era-minimal-body", slide_026)
+        for snippet in ["코딩 도구는 이제 실행 환경을 품는다", "자동완성·채팅", "작업 환경 전체", "파일 · 셸 · 테스트", "Harness"]:
+            self.assertIn(snippet, slide_026)
+        for component in ["Plan Mode", "승인 체계", "CLAUDE.md", "Skills", "Hooks", "MCP", "Plugins", "Subagents", "허용", "차단", "기록"]:
+            self.assertNotIn(component, slide_026)
+        self.assertNotIn("harness-era-signs-body", slide_026)
         self.assertNotIn("component-tier-body", slide_026)
         self.assertNotIn("무엇을 보는지", slide_026)
         self.assertNotIn("기초", slide_026)
@@ -474,7 +516,9 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
         self.assertIn("<h1 class=\"title-placeholder\">에이전트 루프: 하네스의 심장</h1>", slide_037)
         self.assertIn("loop-synthesis", slide_037)
         self.assertNotIn("loop-center centered-claim", slide_037)
-        self.assertIn("이 네 지점을 신뢰성 있게 만드는 일", slide_037)
+        self.assertIn("거의 모든 에이전트가 반복하는 4단계.", slide_037)
+        self.assertNotIn("맥락을 모으고, 행동하고, 검증한 뒤, 다음 행동만 남긴다", slide_037)
+        self.assertNotIn("이 네 지점을 신뢰성 있게 만드는 일", slide_037)
         self.assertNotIn("하네스 엔지니어링 = 이 네 단계의 신뢰성", slide_037)
         for snippet in ["gather context", "take action", "verify work", "repeat"]:
             self.assertIn(snippet, slide_037)
@@ -490,35 +534,65 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
         self.assertIn("<p class=\"tool-network-synthesis centered-claim\">책임과 도구는 1:1이 아니다</p>", slide_039)
         self.assertNotIn("도구 이름보다 그 도구가 맡는 책임", slide_039)
         self.assertIn("<h1 class=\"title-placeholder\">Context Engineering</h1>", slide_040)
-        for snippet in ["smallest set of high-signal tokens", "Anthropic Research", "Write", "Select", "Compress", "Isolate"]:
+        for snippet in ["Anthropic의 4가지 전략: 필요한 정보만 남기고 잡음은 덜어낸다.", "Anthropic Research", "Write", "Select", "Compress", "Isolate"]:
             self.assertIn(snippet, slide_040)
         self.assertIn("quote-card-block", slide_040)
         self.assertIn("context-quote-block", slide_040)
         self.assertNotIn("<p class=\"flow-thesis centered-claim\">smallest set of high-signal tokens</p>", slide_040)
+        self.assertNotIn("smallest set of high-signal tokens", slide_040)
+        self.assertNotIn("신호가 큰 토큰", slide_040)
         self.assertNotIn("Antrophic", slide_040)
-        self.assertIn("<h1 class=\"title-placeholder\">MCP와 Context Hub</h1>", slide_041)
-        for snippet in ["MCP", "Context Hub", "Context Hub MCP", "GitHub", "Slack", "DB", "Filesystem", "Internal API", "최신 API 문서", "모델 기억 대신"]:
+        self.assertIn("<h1 class=\"title-placeholder\">MCP와 Context 7</h1>", slide_041)
+        for snippet in ["MCP", "Context 7", "Context 7 MCP", "GitHub", "Slack", "DB", "Filesystem", "Internal API", "최신 API 문서", "모델 기억 대신"]:
             self.assertIn(snippet, slide_041)
-        self.assertIn("mcp-context-explainer-body", slide_041)
+        self.assertIn("mcp-context-card-body", slide_041)
         self.assertIn("mcp-usage-flow", slide_041)
-        self.assertIn("context-hub-explainer-card", slide_041)
+        self.assertIn("mcp-usage-stage", slide_041)
+        self.assertIn("mcp-usage-card", slide_041)
+        self.assertIn("context7-mcp-card", slide_041)
+        self.assertIn("context7-note", slide_041)
+        self.assertIn("context7-notes", slide_041)
         self.assertIn("외부 도구·데이터 소스", slide_041)
+        self.assertNotIn("Context Hub", slide_041)
+        self.assertNotIn("context-hub", slide_041)
+        self.assertNotIn("context7-principle", slide_041)
+        self.assertNotIn("mcp-usage-lane", slide_041)
+        self.assertNotIn("context-hub-explainer-lane", slide_041)
+        self.assertNotIn("mcp-usage-panel", slide_041)
+        self.assertNotIn("context-hub-explainer-card", slide_041)
+        self.assertEqual(slide_041.count("<article"), 2)
+        self.assertNotIn("mcp-usage-node", slide_041)
+        self.assertNotIn("<article class=\"context7-note\">", slide_041)
         self.assertNotIn("mcp-tool-chip", slide_041)
         self.assertNotIn("connected tools", slide_041)
         self.assertNotIn("process-track", slide_041)
-        self.assertIn("<h1 class=\"title-placeholder\">RAG vs Context Hub</h1>", slide_042)
-        for snippet in ["RAG", "Context Hub MCP", "passage", "벡터 인덱스", "retriever", "공식·버전별 API 문서", "SDK/API 변경", "Lewis et al. 2020", "MCP Docs"]:
+        self.assertIn("<h1 class=\"title-placeholder\">RAG vs Context 7</h1>", slide_042)
+        for snippet in ["RAG", "Context 7", "대상", "강점", "기대", "문제점", "검색 범위와 기준 시점의 차이"]:
             self.assertIn(snippet, slide_042)
-        self.assertIn("rag-context-research-body", slide_042)
-        self.assertNotIn("<table class=\"data-table\">", slide_042)
+        self.assertIn("rag-context-table-body", slide_042)
+        self.assertIn("rag-context-table", slide_042)
+        self.assertNotIn("rag-context-research-body", slide_042)
+        self.assertNotIn("rag-context-card", slide_042)
+        self.assertNotIn("Context Hub", slide_042)
+        self.assertNotIn("선택 기준", slide_042)
+        self.assertNotIn("Sources:", slide_042)
+        self.assertNotIn("Lewis et al. 2020", slide_042)
+        self.assertNotIn("MCP Docs", slide_042)
+        self.assertNotIn("rag-context-decision", slide_042)
+        self.assertNotIn("research-source-line", slide_042)
+        self.assertNotIn("passage 검색", slide_042)
+        self.assertNotIn("retriever 품질", slide_042)
         self.assertIn("<h1 class=\"title-placeholder\">Memory: 세션을 넘어서는 기억</h1>", slide_043)
         self.assertNotIn("<table class=\"data-table\">", slide_043)
         self.assertIn("memory-artifact-map", slide_043)
         self.assertLess(slide_043.find("memory-artifact-grid"), slide_043.find("memory-core-claim"))
         self.assertIn("대화창을 기억 저장소로 착각하지 않는다", slide_043)
         self.assertIn("<h1 class=\"title-placeholder\">Stable Prefix와 Variable Suffix</h1>", slide_044)
-        for snippet in ["cache-sequence-body", "stable-prefix-block", "variable-suffix-block", "KV-cache", "시스템 프롬프트", "도구 정의", "장기 규칙", "최신 사용자 입력", "도구 결과", "잘 쓰는 것 못지않게 안 바꾸는 것도 능력"]:
+        for snippet in ["cache-sequence-body", "stable-prefix-block", "variable-suffix-block", "KV-cache", "시스템 프롬프트", "도구 정의", "장기 규칙", "최신 사용자 입력", "도구 결과", "최신 입력과 도구 결과만 뒤에서 갈아 끼워야 KV-cache hit rate가 살아납니다.", "Manus Research", "cache-quote-block"]:
             self.assertIn(snippet, slide_044)
+        self.assertNotIn("앞쪽 규칙은 고정하고, 최신 입력과 도구 결과만 뒤에서 바꾼다", slide_044)
+        self.assertNotIn("Manus 사례", slide_044)
+        self.assertNotIn("하네스 시대에는 잘 쓰는 것 못지않게 안 바꾸는 것도 능력", slide_044)
         self.assertIn("<h1 class=\"title-placeholder\">하네스는 환경 그 자체다</h1>", slide_045)
         for snippet in ["필요한 파일", "필요한 도구", "필요한 규칙", "Harness Builder"]:
             self.assertIn(snippet, slide_045)
@@ -541,6 +615,37 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
             self.assertIn("chapter-04", slide)
             self.assertNotIn("SECTION 4", slide)
 
+        for start, end, chapter, css_class, stale in [
+            (46, 55, "CHAPTER 05", "chapter-05", "SECTION 5"),
+            (56, 68, "CHAPTER 06", "chapter-06", "SECTION 6"),
+            (69, 81, "CHAPTER 07", "chapter-07", "SECTION 7"),
+            (82, 90, "CHAPTER 08", "chapter-08", "SECTION 8"),
+            (91, 94, "CHAPTER 09", "chapter-09", "SECTION 9"),
+        ]:
+            for index in range(start, end + 1):
+                slide = (ROOT / f"docs/03-html/slides/slide-{index:03d}.html").read_text(encoding="utf-8")
+                self.assertIn(chapter, slide)
+                self.assertIn(css_class, slide)
+                self.assertNotIn(stale, slide)
+
+        self.assertIn("이렇게 하면 망한다", slide_046)
+        self.assertIn("작업이 길어질 때 특히 위험한 이유", slide_048)
+        self.assertIn("progression-card-map", slide_048)
+        for snippet in ["1 단계", "95%", "첫 번째 결과물", "20 단계", "36%", "20 단계 뒤 결과물"]:
+            self.assertIn(snippet, slide_048)
+        for stale_snippet in ["긴 작업이 위험한 이유", "long-work-cost-map", "스무 단계 뒤 결과물", "긴 작업 사슬"]:
+            self.assertNotIn(stale_snippet, slide_048)
+        self.assertIn("컨텍스트가 길수록 항상 좋은 것은 아니다", slide_049)
+        self.assertNotIn("컨텍스트가 클수록 항상 좋은 것은 아니다", slide_049)
+        self.assertIn("AI Slop", slide_051)
+        self.assertIn("Doom Loop", slide_051)
+        self.assertIn("Shadow Agent", slide_051)
+        self.assertIn("더 긴 컨텍스트보다 더 좋은 게이트", slide_055)
+        self.assertIn("왜 하나의 에이전트만으로는 부족한가", slide_056)
+        self.assertIn("결론: 실전 워크플로우의 중심은 운영 구조다", slide_081)
+        self.assertIn("이 글과 발표가 만들어진 과정", slide_082)
+        self.assertIn("내일부터", slide_094)
+
         slide_011 = (ROOT / "docs/03-html/slides/slide-011.html").read_text(encoding="utf-8")
         self.assertIn("evidence-card-grid", slide_011)
         self.assertNotIn("<table class=\"data-table\">", slide_011)
@@ -558,9 +663,17 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
         self.assertRegex(css, r"\.cache-sequence-body \{[^}]*grid-template-columns:")
         self.assertRegex(css, r"\.quote-card-block \{[^}]*background: var\(--color-dark-surface\);")
         self.assertRegex(css, r"\.agent-component-grid \{[^}]*max-width: 690px;")
-        self.assertRegex(css, r"\.context-quote-block \{[^}]*max-width: 640px;")
-        self.assertRegex(css, r"\.mcp-context-explainer-body \{[^}]*grid-template-columns:")
-        self.assertRegex(css, r"\.rag-context-research-body \{[^}]*top:")
+        self.assertRegex(css, r"\.context-quote-block \{[^}]*max-width: 700px;")
+        self.assertRegex(css, r"\.mcp-context-card-body \{[^}]*grid-template-columns:")
+        self.assertRegex(css, r"\.mcp-usage-card,[^}]*\.context7-mcp-card \{[^}]*box-shadow: var\(--shadow-card\);")
+        self.assertNotIn(".mcp-usage-panel", css)
+        self.assertNotIn(".context-hub-explainer-card", css)
+        self.assertNotIn(".rag-context-decision", css)
+        self.assertNotIn(".research-source-line", css)
+        self.assertNotRegex(css, r"\.mcp-usage-stage \{[^}]*border-left:")
+        self.assertRegex(css, r"\.rag-context-table-body \{[^}]*top:")
+        self.assertRegex(css, r"\.rag-context-table \{[^}]*table-layout: fixed;")
+        self.assertRegex(css, r"\.cache-quote-block \{[^}]*bottom:")
 
     def test_chapter_03_revision_5_focus(self) -> None:
         run_builder()

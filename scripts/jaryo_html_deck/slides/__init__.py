@@ -45,6 +45,55 @@ from . import slide_042
 from . import slide_043
 from . import slide_044
 from . import slide_045
+from . import slide_046
+from . import slide_047
+from . import slide_048
+from . import slide_049
+from . import slide_050
+from . import slide_051
+from . import slide_052
+from . import slide_053
+from . import slide_054
+from . import slide_055
+from . import slide_056
+from . import slide_057
+from . import slide_058
+from . import slide_059
+from . import slide_060
+from . import slide_061
+from . import slide_062
+from . import slide_063
+from . import slide_064
+from . import slide_065
+from . import slide_066
+from . import slide_067
+from . import slide_068
+from . import slide_069
+from . import slide_070
+from . import slide_071
+from . import slide_072
+from . import slide_073
+from . import slide_074
+from . import slide_075
+from . import slide_076
+from . import slide_077
+from . import slide_078
+from . import slide_079
+from . import slide_080
+from . import slide_081
+from . import slide_082
+from . import slide_083
+from . import slide_084
+from . import slide_085
+from . import slide_086
+from . import slide_087
+from . import slide_088
+from . import slide_089
+from . import slide_090
+from . import slide_091
+from . import slide_092
+from . import slide_093
+from . import slide_094
 
 SLIDE_BUILDERS = [
     slide_001.build,
@@ -92,6 +141,55 @@ SLIDE_BUILDERS = [
     slide_043.build,
     slide_044.build,
     slide_045.build,
+    slide_046.build,
+    slide_047.build,
+    slide_048.build,
+    slide_049.build,
+    slide_050.build,
+    slide_051.build,
+    slide_052.build,
+    slide_053.build,
+    slide_054.build,
+    slide_055.build,
+    slide_056.build,
+    slide_057.build,
+    slide_058.build,
+    slide_059.build,
+    slide_060.build,
+    slide_061.build,
+    slide_062.build,
+    slide_063.build,
+    slide_064.build,
+    slide_065.build,
+    slide_066.build,
+    slide_067.build,
+    slide_068.build,
+    slide_069.build,
+    slide_070.build,
+    slide_071.build,
+    slide_072.build,
+    slide_073.build,
+    slide_074.build,
+    slide_075.build,
+    slide_076.build,
+    slide_077.build,
+    slide_078.build,
+    slide_079.build,
+    slide_080.build,
+    slide_081.build,
+    slide_082.build,
+    slide_083.build,
+    slide_084.build,
+    slide_085.build,
+    slide_086.build,
+    slide_087.build,
+    slide_088.build,
+    slide_089.build,
+    slide_090.build,
+    slide_091.build,
+    slide_092.build,
+    slide_093.build,
+    slide_094.build,
 ]
 
 __all__ = ["SLIDE_BUILDERS"]

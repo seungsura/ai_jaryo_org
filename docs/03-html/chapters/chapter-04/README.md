@@ -30,8 +30,8 @@
 | `S038` | `04-04` | 하네스의 책임 | `docs/03-html/slides/slide-038.html` | `scripts/jaryo_html_deck/slides/slide_038.py` | `output/playwright/chapter-04/current038.png` |
 | `S039` | `04-05` | 하네스의 도구 | `docs/03-html/slides/slide-039.html` | `scripts/jaryo_html_deck/slides/slide_039.py` | `output/playwright/chapter-04/current039.png` |
 | `S040` | `04-06` | Context Engineering | `docs/03-html/slides/slide-040.html` | `scripts/jaryo_html_deck/slides/slide_040.py` | `output/playwright/chapter-04/current040.png` |
-| `S041` | `04-07` | MCP와 Context Hub | `docs/03-html/slides/slide-041.html` | `scripts/jaryo_html_deck/slides/slide_041.py` | `output/playwright/chapter-04/current041.png` |
-| `S042` | `04-08` | RAG vs Context Hub | `docs/03-html/slides/slide-042.html` | `scripts/jaryo_html_deck/slides/slide_042.py` | `output/playwright/chapter-04/current042.png` |
+| `S041` | `04-07` | MCP와 Context 7 | `docs/03-html/slides/slide-041.html` | `scripts/jaryo_html_deck/slides/slide_041.py` | `output/playwright/chapter-04/current041.png` |
+| `S042` | `04-08` | RAG vs Context 7 | `docs/03-html/slides/slide-042.html` | `scripts/jaryo_html_deck/slides/slide_042.py` | `output/playwright/chapter-04/current042.png` |
 | `S043` | `04-09` | Memory: 세션을 넘어서는 기억 | `docs/03-html/slides/slide-043.html` | `scripts/jaryo_html_deck/slides/slide_043.py` | `output/playwright/chapter-04/current043.png` |
 | `S044` | `04-10` | Stable Prefix와 Variable Suffix | `docs/03-html/slides/slide-044.html` | `scripts/jaryo_html_deck/slides/slide_044.py` | `output/playwright/chapter-04/current044.png` |
 | `S045` | `04-11` | 하네스는 환경 그 자체다 | `docs/03-html/slides/slide-045.html` | `scripts/jaryo_html_deck/slides/slide_045.py` | `output/playwright/chapter-04/current045.png` |
