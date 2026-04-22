@@ -1,6 +1,6 @@
 # Outline Workspace
 
-이 폴더는 seminar prose를 slide 단위로 압축한 outline을 보관합니다.
+이 폴더는 `docs/02-seminar/harness-rebuilt-md` source markdown을 slide 단위로 압축한 outline을 보관합니다.
 
 - HTML 제작 전 승인 게이트로 사용합니다.
 - 기본 파일은 `slide-outline.md`입니다.

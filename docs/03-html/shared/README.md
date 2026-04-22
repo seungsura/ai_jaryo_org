@@ -17,6 +17,8 @@
 
 `slide-quality-rules.md`의 대화 기반 규칙은 이 폴더의 다른 shared 문서와 generator 기존 구현보다 우선한다. `decision-log.md`는 preserved Decision Log를 보충하지만 최상위 규칙을 대체하지 않는다. 새 사용자 피드백은 구현 전에 `slide-quality-rules.md`에 먼저 기록한다.
 
+현재 HTML deck source root는 `docs/02-seminar/harness-rebuilt-md`다. shared 문서와 generator 문구가 오래된 source path를 언급하면 이 root를 기준으로 고친다.
+
 HTML 작업은 orchestrator/subagent workflow가 필수다. subagent prompt에는 `slide-quality-rules.md` 사전 확인, source/reference 밖 생성 금지, 필요한 검증 명령을 명시한다.
 
 ## Validation

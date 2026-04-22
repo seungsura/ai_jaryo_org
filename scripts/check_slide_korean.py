@@ -19,6 +19,10 @@ IGNORED_BASENAMES = {
 POLITE_ENDING_RE = re.compile(r"(습니다|입니다|했습니다|되었습니다|하십시오|하세요|드립니다|합니다)(?:[.?!]|$)")
 PROSE_ENDING_RE = re.compile(r"(이다|한다|된다|있다|없다|보인다|의미한다|설명한다)(?:[.?!]|$)")
 REPORT_STYLE_RE = re.compile(r"(또한|따라서|그러나|한편|통하여|위하여|기반으로|관련하여)")
+TRANSLATIONESE_RE = re.compile(
+    r"(상류|하류|강하게\s*호출|의\s*측면에서|라고\s*볼\s*수\s*있다|라\s*볼\s*수\s*있다|핵심은\s*.{0,20}\s*데\s*있다)"
+)
+AWKWARD_VERB_RE = re.compile(r"(수행하|제공하|처리하|활용하)(?:는|고|며|면|다|기|게|도록|지|자|라|여|해)")
 IGNORE_LINE_RE = re.compile(
     r"^(S\d+\.)|^(CHAPTER\s+\d+)$|^Harness 잘 사용하기$|^\d+$|^(<!DOCTYPE|<html|<head|<meta|<link|<main|</|class=|data-)"
 )
@@ -65,6 +69,9 @@ def analyze_file(path: Path) -> tuple[list[str], list[str]]:
         if POLITE_ENDING_RE.search(text):
             errors.append(f"{path}:{line_no} 공손체 ending 감지: {text}")
 
+        if TRANSLATIONESE_RE.search(text):
+            errors.append(f"{path}:{line_no} 번역체/어색한 한국어 표현 감지: {text}")
+
         if len(text) > 52:
             errors.append(f"{path}:{line_no} slide copy가 너무 김: {text}")
         elif len(text) > 38:
@@ -75,6 +82,9 @@ def analyze_file(path: Path) -> tuple[list[str], list[str]]:
 
         if REPORT_STYLE_RE.search(text) and len(text) > 18:
             warnings.append(f"{path}:{line_no} 보고서형 연결어 의심: {text}")
+
+        if AWKWARD_VERB_RE.search(text) and len(text) > 14:
+            warnings.append(f"{path}:{line_no} 어색한 서술 동사 의심: {text}")
 
     return errors, warnings
 

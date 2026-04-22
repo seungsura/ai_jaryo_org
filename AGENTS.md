@@ -40,6 +40,8 @@ This repository uses project-local skills and subagent specs under `.codex/`. Ke
 - source에 없는 비교 축, label, 의미, 예시, metric, 해설 문구를 새로 만들지 않습니다.
 - deck은 `theme-minimal-light`, 기존/minimal-light palette, `720pt × 405pt`, Pretendard CDN, footer `Harness 잘 사용하기` 기준을 유지합니다.
 - slide 문구는 명사형·구 단위 중심으로 쓰고, 공손체·서술형·명령형을 피합니다.
+- 번역체와 어색한 한국어 표현은 구현 금지입니다. slide 문구는 자연스러운 한국어 압축문이어야 하며, `check_slide_korean.py`와 reviewer가 이를 검증합니다.
+- 한국문학적 어휘는 허용합니다. 단, source 의미와 발표 가독성을 살리는 압축어로만 쓰고, 과한 문예체나 장식적 수사는 피합니다.
 - HTML 수정 후 `check_slide_contract`, `check_slide_korean`, `check_deck_runtime`, 필요한 Playwright/PDF smoke를 규칙 기준으로 실행합니다.
 
 ## Local Skills

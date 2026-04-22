@@ -44,7 +44,7 @@
 
 ## Output Contract
 
-- canonical source: `docs/02-seminar/prose/`
+- canonical source: `docs/02-seminar/harness-rebuilt-md`
 - planning sync: `docs/03-html/outline/slide-outline.md`, `docs/03-html/manifest.md`
 - implementation unit: `scripts/jaryo_html_deck/slides/slide_XXX.py`
 - generated slide artifact: `docs/03-html/slides/slide-XX.html`

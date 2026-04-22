@@ -32,6 +32,10 @@
 
 - 문구는 한국어를 기본으로 쓰되, English terms/path/name, technical vocabulary, product name, API name, command는 그대로 둔다.
 - slide 문구는 명사형 또는 구 단위 중심이다. 공손체, 서술형, 명령형을 피한다.
+- 번역체와 어색한 한국어 표현은 구현 금지다. source 의미를 보존하더라도 한국어 리듬이 어색하면 REVISE 대상이다.
+- 금지 후보: `상류/하류`, `강하게 호출된다`, `핵심은 ~ 데 있다`, `~의 측면에서`, `~라고 볼 수 있다`, 보고서식 연결어를 붙인 장문 설명.
+- 한국문학적 어휘는 허용한다. 단, source 의미를 선명하게 압축하고 발표 리듬을 살릴 때만 쓰며, 과한 문예체, 감상적 수사, source 밖 은유는 금지한다.
+- 한국어 표현 검증은 `scripts/check_slide_korean.py`와 reviewer 판단을 함께 통과해야 한다. 자동 검사가 통과해도 어색한 한국어가 보이면 실패다.
 - slide title, lead, body copy는 압축 문구를 우선한다. 필요한 경우에도 source line으로 추적 가능해야 한다.
 - 제목 아래 subtitle/lead는 기본 금지다. 필요한 경우에만 예외로 둔다.
 - 제목은 한 줄 고정이다. 2줄 예상 시 생성 중단 후 사용자 확인. 긴 source heading은 핵심 source phrase만 title에 두고 날짜/부가절은 body metadata로 이동한다.
@@ -104,7 +108,7 @@
 
 ## Implementation Contract
 
-- deck 구조는 `docs/02-seminar/prose/`와 승인된 outline을 따라야 한다.
+- deck 구조는 `docs/02-seminar/harness-rebuilt-md` source markdown과 승인된 outline을 따라야 한다.
 - 섹션마다 최소 1장을 둔다. 큰 섹션은 최대 5장까지 허용한다.
 - 패턴, 도표, architecture 설명은 시각 요소를 필수로 둔다.
 - 같은 인접 주제라도 같은 shell 반복을 금지 검토한다.

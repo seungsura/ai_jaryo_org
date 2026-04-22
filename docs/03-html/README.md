@@ -1,10 +1,10 @@
 # HTML Stage
 
-이 디렉터리는 seminar prose를 HTML slide 산출물로 전환하는 단계입니다.
+이 디렉터리는 `docs/02-seminar/harness-rebuilt-md` source markdown을 HTML slide 산출물로 전환하는 단계입니다.
 
 ## 구성
 
-- `outline/`: prose를 slide-by-slide outline으로 압축한 계획
+- `outline/`: source markdown을 slide-by-slide outline으로 압축한 계획
 - `briefs/`: batch별 slide brief packet
 - `copy/`: batch별 Korean copy packet
 - `slides/`: 실제 `slide-XX.html` 파일
@@ -23,8 +23,8 @@
 - 사용자와 대화하며 확정한 `shared/slide-quality-rules.md`의 규칙은 이 README, shared design 문서, 기존 HTML stage 관례보다 우선합니다.
 - HTML 작업은 orchestrator/subagent workflow를 기본 실행 단위로 삼습니다.
 - HTML은 canonical source가 아닙니다.
-- deck 구조는 `docs/02-seminar/prose/`와 승인된 outline을 따라야 합니다.
-- 시각적 강조를 위해 표현은 바꿔도, 핵심 claim은 prose를 벗어나면 안 됩니다.
+- deck 구조와 문구는 `docs/02-seminar/harness-rebuilt-md` source markdown과 승인된 outline을 따라야 합니다.
+- 시각적 강조를 위해 표현은 압축할 수 있지만, 핵심 claim은 source markdown을 벗어나면 안 됩니다.
 - `shared/design.md`는 HTML stage의 design contract입니다.
 - `shared/layout-shell-reference.md`는 HTML stage의 reference shell contract입니다.
 - `shared/minimal-light-adaptation.md`는 active theme와 core runtime 적용 범위를 설명합니다.
