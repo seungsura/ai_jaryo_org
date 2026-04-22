@@ -178,7 +178,7 @@ def main() -> int:
             elif shell == "evidence-table-shell" and "asset-card-body" in html:
                 required_classes = ["top-band", "asset-card-body", "reference-asset-figure", "evidence-card-grid", "evidence-card", "footer"]
             elif shell == "evidence-table-shell" and "era-native-body" in html:
-                required_classes = ["top-band", "era-native-body", "era-native-track", "era-native-card", "data-table", "footer"]
+                required_classes = ["top-band", "era-native-body", "era-native-track", "era-native-card", "era-native-formula", "era-native-equation", "footer"]
             elif shell == "process-flow-shell" and "prompt-era-body" in html:
                 required_classes = ["top-band", "prompt-era-body", "prompt-era-card", "prompt-era-arrow", "footer"]
             elif shell == "process-flow-shell" and "evolution-body" in html:
@@ -226,7 +226,8 @@ def main() -> int:
             has_table = "<table class=\"data-table\">" in html
             has_cards = "evidence-card-grid" in html
             has_asset_cards = "asset-card-body" in html and has_cards
-            if not has_table and not has_cards and not has_asset_cards:
+            has_era_native = "era-native-body" in html and "era-native-card" in html
+            if not has_table and not has_cards and not has_asset_cards and not has_era_native:
                 errors.append(f"{slide_id}: evidence-table-shell requires a data table or evidence cards")
             if has_cards and "원문 사실" in html:
                 errors.append(f"{slide_id}: evidence cards must not include a 원문 사실 column")
@@ -237,7 +238,9 @@ def main() -> int:
                 errors.append(f"{slide_id}: prompt-only cards must not show '자연어 지시'")
             if slide_id == "S009":
                 if "prompt-language-label" not in html or "자연어" not in html:
-                    errors.append(f"{slide_id}: prompt-only card must show top-left 자연어 label")
+                    errors.append(f"{slide_id}: prompt-only page must show 자연어 language label")
+                if re.search(r'<article class="prompt-card">\s*<p class="prompt-language-label">', html):
+                    errors.append(f"{slide_id}: 자연어 label must sit outside the prompt card")
                 if "이 함수를 리펙토링하고 테스트 코드를 작성해줘." not in html:
                     errors.append(f"{slide_id}: prompt-only card must keep source prompt text")
                 if "자연어로 시키는 건 진짜 개발이 아니다!" not in html:
@@ -368,6 +371,8 @@ def main() -> int:
                 errors.append(f"{slide_id}: final conclusion must include Agent formula")
             if "Prompt ⊂ Context ⊂ Harness" not in html:
                 errors.append(f"{slide_id}: era relationship must use text equation")
+            if "<table class=\"data-table\">" in html:
+                errors.append(f"{slide_id}: final conclusion must not include a bottom data table")
             if "era-native-nesting" in html:
                 errors.append(f"{slide_id}: era nesting diagram must be removed")
             if "01-three-era-timeline.png" in html:

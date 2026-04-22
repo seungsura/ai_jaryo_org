@@ -97,8 +97,8 @@ def render_shell(spec: SlideSpec) -> str:
                 f'<h1 class="title-placeholder">{html.escape(spec.title)}</h1>'
                 "</section>"
                 '<section class="prompt-only-body">'
-                '<article class="prompt-card">'
                 '<p class="prompt-language-label">자연어</p>'
+                '<article class="prompt-card">'
                 f'<p class="prompt-text">{html.escape(str(spec.body.get("prompt", "")))}</p>'
                 "</article>"
                 '<p class="negative-opinion">자연어로 시키는 건 진짜 개발이 아니다!</p>'
@@ -301,13 +301,10 @@ def render_shell(spec: SlideSpec) -> str:
             )
 
         if spec.body.get("variant") == "cot-native":
-            steps = "".join(
-                '<span class="cot-reasoning-step">'
-                f'<strong>{html.escape(step["title"])}</strong>'
-                f'<em>{html.escape(step["text"])}</em>'
-                "</span>"
-                for step in spec.body.get("steps", [])
-            )
+            step_items = list(spec.body.get("steps", []))
+            problem = step_items[0] if len(step_items) > 0 else {"title": "", "text": ""}
+            reasoning = step_items[1] if len(step_items) > 1 else {"title": "", "text": ""}
+            answer = step_items[2] if len(step_items) > 2 else {"title": "", "text": ""}
             return (
                 '<section class="top-band">'
                 f'<p class="chapter-label">{html.escape(spec.chapter_label)}</p>'
@@ -319,7 +316,17 @@ def render_shell(spec: SlideSpec) -> str:
                 f'<p>{html.escape(spec.body.get("meaning", ""))}</p>'
                 "</article>"
                 '<article class="process-step cot-example-card">'
-                f'<div class="cot-example-diagram">{steps}</div>'
+                '<div class="cot-example-diagram">'
+                '<div class="cot-example-panel cot-reasoning-step cot-example-input">'
+                f'<strong>{html.escape(str(problem["title"]))}</strong>'
+                f'<p>{html.escape(str(problem["text"]))}</p>'
+                "</div>"
+                '<div class="cot-example-panel cot-reasoning-step cot-example-output">'
+                f'<strong>{html.escape(str(reasoning["title"]))}</strong>'
+                f'<p class="cot-highlight">{html.escape(str(reasoning["text"]))}</p>'
+                f'<p class="cot-answer">{html.escape(str(answer["text"]))}</p>'
+                "</div>"
+                "</div>"
                 "</article>"
                 '<article class="process-step cot-summary-card">'
                 '<h2>reasoning path</h2>'
@@ -340,14 +347,19 @@ def render_shell(spec: SlideSpec) -> str:
                         '<div class="pattern-native-diagram tot-diagram">'
                         '<span class="tree-root">문제</span>'
                         f"{branches}"
+                        '<span class="tree-leaf">후보</span>'
+                        '<span class="tree-leaf selected">후보</span>'
+                        '<span class="tree-leaf">후보</span>'
                         "</div>"
                     )
                 return (
                     '<div class="pattern-native-diagram react-diagram">'
-                    + "".join(
-                        f'<span>{html.escape(node)}</span>' + ("<i>→</i>" if index < len(nodes) - 1 else "")
-                        for index, node in enumerate(nodes)
-                    )
+                    f'<span class="react-node react-reasoning">{html.escape(nodes[0]) if len(nodes) > 0 else ""}</span>'
+                    f'<span class="react-node react-action">{html.escape(nodes[1]) if len(nodes) > 1 else ""}</span>'
+                    f'<span class="react-node react-observation">{html.escape(nodes[2]) if len(nodes) > 2 else ""}</span>'
+                    '<i class="react-arrow react-arrow-action">→</i>'
+                    '<i class="react-arrow react-arrow-observation">←</i>'
+                    '<i class="react-arrow react-arrow-reasoning">↺</i>'
                     + "</div>"
                 )
 
@@ -556,6 +568,8 @@ def render_shell(spec: SlideSpec) -> str:
                 f'<p>{html.escape(spec.body.get("context", ""))}</p>'
                 "</article>"
                 '<div class="architecture-arrow" aria-hidden="true">→</div>'
+                '<p class="architecture-editrun">edit/run</p>'
+                '<div class="architecture-arrow" aria-hidden="true">→</div>'
                 f'<p class="architecture-feedback">{html.escape(spec.body.get("feedback", spec.key_claim))}</p>'
                 "</div>"
                 f'<ol class="process-track cursor-architecture-flow">{steps}</ol>'
@@ -587,8 +601,11 @@ def render_shell(spec: SlideSpec) -> str:
                 "</section>"
                 '<section class="harness-era-signs-body">'
                 f'<p class="harness-era-claim centered-claim">{html.escape(spec.body.get("statement", spec.key_claim))}</p>'
-                f'<div class="harness-era-grid">{cards}</div>'
+                '<div class="harness-era-system">'
                 f'<div class="harness-era-components">{components}</div>'
+                '<div class="harness-era-runtime centered-claim">실행 환경</div>'
+                "</div>"
+                f'<div class="harness-era-grid">{cards}</div>'
                 "</section>"
             )
 
@@ -897,11 +914,6 @@ def render_shell(spec: SlideSpec) -> str:
             )
 
         if spec.body.get("variant") == "era-native":
-            headers = "".join(f"<th>{html.escape(header)}</th>" for header in spec.body.get("headers", []))
-            rows = "".join(
-                "<tr>" + "".join(f"<td>{html.escape(cell)}</td>" for cell in row) + "</tr>"
-                for row in spec.body.get("rows", [])
-            )
             cards = "".join(
                 '<article class="era-native-card">'
                 f'<span>{html.escape(card["range"])}</span>'
@@ -926,10 +938,6 @@ def render_shell(spec: SlideSpec) -> str:
                 f'<div class="era-native-track">{cards}</div>'
                 f"{formula}"
                 f'<p class="era-native-equation centered-claim">{relationship}</p>'
-                '<table class="data-table">'
-                f"<thead><tr>{headers}</tr></thead>"
-                f"<tbody>{rows}</tbody>"
-                "</table>"
                 f"{question}"
                 "</section>"
             )

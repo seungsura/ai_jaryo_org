@@ -91,6 +91,11 @@
 - code panel은 source/reference가 dark panel을 명시하지 않는 한 light code panel이다. renderer가 만든 leading/trailing artificial blank line, snippet clipping, `overflow:hidden`으로 인한 코드 잘림은 실패다.
 - dark quote block은 white text 대비를 확보한다.
 - CHAPTER 02 body typography는 CHAPTER 01 본문 크기 수준으로 제한한다. 큰 카드 제목, 본문, center claim, data-table text의 과대 확대를 금지한다.
+- 3-card row layout은 카드 높이와 폭을 동일하게 맞춘다. 강조 숫자/핵심어는 카드 상단에 배치하고, 카드 하단으로 밀려 내려가면 실패다.
+- 카드 label은 의도한 계층을 지켜야 한다. language/category label이 prompt/card 내부 장식으로 빨려 들어가면 실패다.
+- native diagram slide는 렌더링된 screenshot/PDF를 승인 reference와 직접 비교한다. contract text가 맞아도 시각 구조, 관계, density, spacing이 reference와 어긋나면 실패다.
+- 카드 내부 text는 카드 border 안에 완전히 들어와야 한다. overflow, clipping, border 밖 돌출, footer와 겹침은 실패다.
+- 결론 slide는 중복 정보를 피한다. 관계식/공식과 핵심 결론이 이미 의미를 전달하면 하단 table이나 반복 설명을 추가하지 않는다.
 
 ## Reusable Patterns
 
@@ -142,6 +147,7 @@
 - 2026-04-21 corrective revision: feedback-to-rule hard gate, one-line title, S018 date metadata 이동, S019/S020 example-first native diagrams, S021 압축, S022 gradient 금지, S023 native architecture canvas, S024 arrow-only loop, S025/S026 hierarchy, S027 relationship equation only, CHAPTER 02 body scale down을 확정했다.
 - 2026-04-22 approved plan v5: 이 문서를 top-level HTML slide authority로 재정비하고, slide-number-specific active rules를 reusable meaning/design patterns와 Traceability로 분리하며, Visual Reference Baseline와 Reference Analysis Protocol을 추가하기로 확정했다.
 - 2026-04-22 chapter 02 rebuild start: S016-S018은 scale/spacing 조정 후 재사용하고, standalone `Agent = Model + Harness` page는 S027 결론 page로 통합하며, evolution assets 02-06은 page-052/page-067의 정돈된 구조 감각으로 native diagram 재구성하기로 확정했다.
+- 2026-04-22 feedback round 1: S009 `자연어` label 계층 복귀, S011/S016 3-card equal sizing, S016 metric 상단 배치, S013/S014 body typography CHAPTER 01 scale 통일, S018-S021 approved evolution references와 rendered visual 직접 비교, S024 rule conformance 재검토, S025 card overflow 수정, S027 하단 table 제거, S026 메시지 명확화를 확정했다.
 
 ## Traceability
 
@@ -177,3 +183,12 @@
 - S026 fixed component values: `Plan Mode`, `승인 체계`, `CLAUDE.md`, `Skills`, `Hooks`, `MCP`, `Plugins`, `Subagents`; source-outside tier labels `기초`, `자동화`, `연결`, `확장` are forbidden after rebuild.
 - S027 relationship fixed value: `Prompt ⊂ Context ⊂ Harness`; banned structure/class: `era-native-nesting`.
 - S027 formula fixed value after rebuild: `Agent = Model + Harness`; relationship fixed value: `Prompt ⊂ Context ⊂ Harness`; both must appear on the same conclusion page.
+- S009 `자연어`는 prompt card 내부 장식 label이 아니라 language/category label이다. 카드 안으로 들어오면 실패다.
+- S011/S016 3-card layout은 카드 width/height를 동일하게 유지한다.
+- S016 metric fixed values `2주`, `1~2일`, `불가능하던 작업 실현`은 카드 상단 핵심 값으로 배치한다.
+- S013/S014 body copy는 CHAPTER 01 일반 본문 size와 맞춘다. CHAPTER 02 rebuild 과정의 oversized body는 실패다.
+- S018-S021 native diagrams는 approved evolution assets `02-chain-of-thought.png`부터 `05-andrew-ng-agentic-design-patterns.png`와 rendered screenshot/PDF를 직접 비교한다.
+- S024 Cursor architecture는 fixed flow와 codebase index/context bundle 경계를 지키며, nested card 또는 arbitrary label stack으로 보이면 실패다.
+- S025 loop card text는 card border 안에 완전히 들어와야 한다.
+- S026은 Harness 시대로 넘어온 징후가 한눈에 읽혀야 한다. source-backed component dump처럼 보이면 실패다.
+- S027은 하단 table을 제거한다. conclusion page는 `Agent = Model + Harness`와 `Prompt ⊂ Context ⊂ Harness` 중심으로 압축한다.

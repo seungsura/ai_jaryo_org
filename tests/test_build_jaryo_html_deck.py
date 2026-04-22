@@ -163,6 +163,7 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
 
         self.assertIn("<p class=\"prompt-text\">이 함수를 리펙토링하고 테스트 코드를 작성해줘.</p>", slide_009)
         self.assertIn("<p class=\"prompt-language-label\">자연어</p>", slide_009)
+        self.assertNotIn("<article class=\"prompt-card\"><p class=\"prompt-language-label\">", slide_009)
         self.assertNotIn("자연어 지시", slide_009)
         self.assertIn("자연어로 시키는 건 진짜 개발이 아니다!", slide_009)
         self.assertNotIn("<pre class=\"code-block\">", slide_009)
@@ -286,6 +287,7 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
         self.assertIn("era-native-body", slide_027)
         self.assertIn("Agent = Model + Harness", slide_027)
         self.assertIn("Prompt ⊂ Context ⊂ Harness", slide_027)
+        self.assertNotIn("<table class=\"data-table\">", slide_027)
         self.assertNotIn("era-native-nesting", slide_027)
         self.assertNotIn("01-three-era-timeline.png", slide_027)
         for era in ["Prompt Engineering", "Context Engineering", "Harness Engineering"]:

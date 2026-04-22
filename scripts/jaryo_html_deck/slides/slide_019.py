@@ -22,7 +22,7 @@ def build() -> SlideSpec:
                     "text": "추론과 행동을 번갈아 수행",
                     "kind": "react",
                     "meaning": "검색과 도구 호출이 루프 안으로 진입",
-                    "nodes": ["Reason", "Act", "Observe"],
+                    "nodes": ["Reasoning", "Action", "Observation"],
                 },
                 {
                     "index": "03",

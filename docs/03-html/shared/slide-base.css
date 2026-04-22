@@ -537,18 +537,20 @@ ul {
 
 .prompt-card {
   width: min(560px, 100%);
-  padding: 16px 24px 24px;
+  padding: 24px;
   border-radius: 8px;
   background: var(--color-surface);
   border: 1px solid var(--color-line-soft);
   box-shadow: var(--shadow-card);
   display: grid;
-  gap: 12px;
+  gap: 0;
   justify-items: stretch;
 }
 
 .prompt-language-label {
-  justify-self: start;
+  width: min(560px, 100%);
+  justify-self: center;
+  margin-bottom: 8px;
   color: var(--color-signal);
   font-size: 13px;
   line-height: 1.1;
@@ -594,9 +596,9 @@ ul {
 }
 
 .summary-quote-panel {
-  min-height: 150px;
-  padding: 22px 64px;
-  border-radius: 12px;
+  min-height: 130px;
+  padding: 20px 56px;
+  border-radius: 8px;
   background: var(--color-dark-surface);
   display: flex;
   align-items: center;
@@ -606,7 +608,7 @@ ul {
 .summary-quote.summary-quote-dark {
   max-width: 760px;
   color: #ffffff;
-  font-size: 25px;
+  font-size: 22px;
   line-height: 1.28;
   font-weight: 800;
   font-style: italic;
@@ -622,8 +624,8 @@ ul {
 
 .summary-card {
   min-height: 132px;
-  padding: 16px 24px;
-  border-radius: 10px;
+  padding: 15px 20px;
+  border-radius: 8px;
   background: var(--color-surface);
   border: 1px solid var(--color-line-soft);
   box-shadow: var(--shadow-card);
@@ -633,14 +635,14 @@ ul {
 
 .summary-card-eyebrow {
   color: var(--color-signal);
-  font-size: 17px;
+  font-size: 13px;
   line-height: 1.05;
   font-weight: 800;
 }
 
 .summary-card-title {
   color: var(--color-ink);
-  font-size: 25px;
+  font-size: 20px;
   line-height: 1.08;
   font-weight: 800;
   word-break: keep-all;
@@ -650,7 +652,7 @@ ul {
   display: grid;
   gap: 6px;
   color: var(--color-mute);
-  font-size: 15px;
+  font-size: 13px;
   line-height: 1.2;
   font-weight: 600;
 }
@@ -789,9 +791,9 @@ ul {
 }
 
 .evolution-step {
-  min-height: 74px;
-  padding: 0 24px;
-  border-radius: 14px;
+  min-height: 68px;
+  padding: 0 20px;
+  border-radius: 8px;
   background: var(--color-surface);
   border: 1px solid var(--color-line-soft);
   box-shadow: var(--shadow-card);
@@ -803,7 +805,7 @@ ul {
 
 .evolution-step p {
   color: var(--color-ink);
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1.12;
   font-weight: 800;
   word-break: keep-all;
@@ -851,14 +853,14 @@ ul {
 
 .analogy-title {
   color: var(--color-ink);
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1.08;
   font-weight: 800;
 }
 
 .analogy-block p:not(.analogy-title) {
   color: var(--color-mute);
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.35;
   font-weight: 600;
 }
@@ -1110,11 +1112,14 @@ ul {
 .evidence-card-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
   gap: 16px;
+  align-items: stretch;
 }
 
 .evidence-card {
   min-height: 148px;
+  height: 100%;
   padding: 20px 22px 22px;
   border-radius: 8px;
   background: var(--color-surface);
@@ -1481,12 +1486,14 @@ ul {
 
 .impact-card-grid {
   gap: 18px;
+  grid-auto-rows: 1fr;
 }
 
 .impact-card {
   min-height: 214px;
   padding: 24px 24px 22px;
-  align-content: end;
+  align-content: start;
+  grid-template-rows: auto auto 1fr auto;
   gap: 10px;
 }
 
@@ -1635,7 +1642,7 @@ ul {
   top: 126px;
   bottom: 72px;
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.26fr) minmax(0, 0.92fr);
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.5fr) minmax(0, 0.82fr);
   gap: 16px;
   align-items: stretch;
 }
@@ -1669,43 +1676,55 @@ ul {
 .cot-native-body .cot-example-diagram {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10px;
+  grid-template-rows: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 12px;
   align-content: center;
   height: 100%;
 }
 
-.cot-reasoning-step {
+.cot-example-panel {
   display: grid;
-  gap: 6px;
-  min-height: 54px;
-  padding: 12px 14px;
+  gap: 8px;
+  min-height: 0;
+  padding: 14px 16px;
   border-radius: 8px;
-  background: var(--color-signal-soft);
+  background: var(--color-surface);
+  border: 1px solid var(--color-line-soft);
   text-align: center;
+  align-content: center;
 }
 
-.cot-reasoning-step strong {
+.cot-example-panel strong {
   color: var(--color-signal);
   font-size: 12px;
   line-height: 1;
   font-weight: 900;
 }
 
-.cot-reasoning-step em {
+.cot-example-panel p {
   color: var(--color-ink);
   font-size: 17px;
   line-height: 1.08;
-  font-style: normal;
   font-weight: 900;
+  word-break: keep-all;
 }
 
-.cot-reasoning-step:last-child {
+.cot-example-output {
+  background: var(--color-signal-soft);
+  border-color: transparent;
+}
+
+.cot-highlight {
+  background: rgba(0, 102, 204, 0.14);
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+
+.cot-answer {
   background: var(--color-dark-surface);
-}
-
-.cot-reasoning-step:last-child strong,
-.cot-reasoning-step:last-child em {
   color: #ffffff;
+  padding: 9px 10px;
+  border-radius: 6px;
 }
 
 .pattern-pair-body,
@@ -1761,15 +1780,9 @@ ul {
   margin-top: 0;
 }
 
-.pattern-pair-card .react-diagram,
-.feedback-loop-card .feedback-diagram {
-  grid-template-columns: 1fr auto 1fr auto 1fr;
-  align-items: center;
-}
-
 .pattern-pair-card .tot-diagram {
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto 1fr 1fr;
 }
 
 .pattern-map-body {
@@ -1936,6 +1949,60 @@ ul {
   grid-template-columns: 1fr;
 }
 
+.pattern-pair-card .react-diagram {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  position: relative;
+  gap: 14px 24px;
+  align-content: stretch;
+}
+
+.react-node {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.react-reasoning {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.react-action {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.react-observation {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.react-arrow {
+  position: absolute;
+  color: var(--color-signal);
+}
+
+.react-arrow-action {
+  left: calc(50% - 16px);
+  top: 20%;
+}
+
+.react-arrow-observation {
+  left: calc(50% - 16px);
+  bottom: 20%;
+}
+
+.react-arrow-reasoning {
+  left: 22%;
+  bottom: 20%;
+}
+
+.feedback-loop-card .feedback-diagram {
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+  align-items: center;
+}
+
 .tot-diagram {
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
@@ -1951,6 +2018,11 @@ ul {
   width: 70%;
   background: var(--color-surface);
   border: 1px solid var(--color-line-soft);
+}
+
+.tot-diagram .tree-leaf {
+  min-height: 24px;
+  opacity: 0.76;
 }
 
 .tot-diagram .selected {
@@ -2178,7 +2250,7 @@ ul {
   left: 58px;
   right: 58px;
   top: 128px;
-  bottom: 74px;
+  bottom: 98px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 168px;
   gap: 18px;
@@ -2222,8 +2294,8 @@ ul {
 
 .cursor-architecture-example-canvas {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) 28px minmax(0, 1fr) 28px minmax(0, 1fr) 28px minmax(0, 0.9fr);
-  gap: 7px;
+  grid-template-columns: minmax(0, 0.82fr) 24px minmax(0, 1fr) 24px minmax(0, 1fr) 24px minmax(0, 0.78fr) 24px minmax(0, 0.72fr);
+  gap: 6px;
   align-items: center;
   min-height: 120px;
   padding: 16px;
@@ -2292,6 +2364,7 @@ ul {
 }
 
 .architecture-request,
+.architecture-editrun,
 .architecture-feedback {
   padding: 12px 12px;
   border-radius: 8px;
@@ -2308,6 +2381,11 @@ ul {
   color: var(--color-ink);
 }
 
+.architecture-editrun {
+  background: var(--color-surface-muted);
+  color: var(--color-ink);
+}
+
 .loop-cycle-body {
   position: absolute;
   left: 58px;
@@ -2319,8 +2397,8 @@ ul {
 
 .loop-cycle-track {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 132px minmax(0, 1fr);
-  grid-template-rows: minmax(0, 1fr) 62px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) 118px minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) 56px minmax(0, 1fr);
   grid-template-areas:
     "s1 east s2"
     "north center south"
@@ -2332,6 +2410,7 @@ ul {
 .loop-step {
   min-height: 104px;
   position: relative;
+  padding: 10px 12px;
 }
 
 .loop-step-1 {
@@ -2474,14 +2553,14 @@ ul {
   left: 58px;
   right: 58px;
   top: 126px;
-  bottom: 72px;
+  bottom: 104px;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  gap: 16px;
+  gap: 10px;
 }
 
 .harness-era-claim {
-  padding: 16px 22px;
+  padding: 12px 20px;
   border-radius: 8px;
   background: var(--color-dark-surface);
   color: #ffffff;
@@ -2491,22 +2570,29 @@ ul {
   word-break: keep-all;
 }
 
+.harness-era-system {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 156px;
+  gap: 16px;
+  align-items: stretch;
+}
+
 .harness-era-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+  gap: 12px;
 }
 
 .harness-era-card {
-  min-height: 0;
-  padding: 20px;
+  min-height: 72px;
+  padding: 12px 16px;
   align-content: center;
-  gap: 12px;
+  gap: 8px;
 }
 
 .harness-era-card h2 {
   color: var(--color-ink);
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1.1;
   font-weight: 900;
   word-break: keep-all;
@@ -2514,8 +2600,8 @@ ul {
 
 .harness-era-card p {
   color: var(--color-mute);
-  font-size: 15px;
-  line-height: 1.24;
+  font-size: 13px;
+  line-height: 1.2;
   font-weight: 800;
   word-break: keep-all;
 }
@@ -2526,8 +2612,20 @@ ul {
   gap: 8px;
 }
 
+.harness-era-runtime {
+  border-radius: 8px;
+  background: var(--color-dark-surface);
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 1.1;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .harness-era-component {
-  padding: 10px 8px;
+  padding: 8px 8px;
   border-radius: 8px;
   background: var(--color-signal-soft);
   color: var(--color-ink);
@@ -2655,8 +2753,8 @@ ul {
   top: 122px;
   bottom: 70px;
   display: grid;
-  grid-template-rows: minmax(76px, 1fr) auto auto auto;
-  gap: 10px;
+  grid-template-rows: minmax(92px, 1fr) auto auto;
+  gap: 14px;
 }
 
 .era-native-track {

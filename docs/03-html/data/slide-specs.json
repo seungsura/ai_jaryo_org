@@ -723,9 +723,9 @@
           "kind": "react",
           "meaning": "검색과 도구 호출이 루프 안으로 진입",
           "nodes": [
-            "Reason",
-            "Act",
-            "Observe"
+            "Reasoning",
+            "Action",
+            "Observation"
           ]
         },
         {
@@ -769,23 +769,25 @@
         {
           "title": "Self-Refine",
           "text": "자기 출력을 다시 비판하고 수정",
-          "meaning": "초안 이후의 개선 루프",
+          "meaning": "출력 이후의 피드백 루프",
           "class": "self-refine-diagram",
           "nodes": [
-            "초안",
+            "자기 출력",
             "비판",
-            "수정"
+            "수정",
+            "피드백 루프"
           ]
         },
         {
           "title": "Reflexion",
           "text": "자기 출력을 다시 비판하고 수정",
-          "meaning": "실패 이후의 피드백 루프",
+          "meaning": "출력 이후의 피드백 루프",
           "class": "reflexion-diagram",
           "nodes": [
-            "실패",
-            "기억",
-            "재시도"
+            "자기 출력",
+            "비판",
+            "수정",
+            "피드백 루프"
           ]
         }
       ]
