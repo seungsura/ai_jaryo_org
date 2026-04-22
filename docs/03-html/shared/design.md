@@ -16,6 +16,8 @@
 
 이 문서는 다음 로컬 파일과 함께 읽습니다.
 
+- `docs/03-html/shared/slide-quality-rules.md`
+- `docs/03-html/shared/decision-log.md`
 - `docs/03-html/outline/slide-outline.md`
 - `docs/03-html/manifest.md`
 - `docs/03-html/shared/make-slide-adoption.md`
@@ -43,6 +45,8 @@ HTML은 canonical source가 아닙니다. 문장과 논지는 항상 `docs/02-se
 
 ## Reference-Driven Build Model
 
+최상위 authority는 `docs/03-html/shared/slide-quality-rules.md`입니다. 이 문서의 shell, palette, typography 규칙이 최신 사용자 승인 규칙과 충돌하면 `slide-quality-rules.md`를 따릅니다.
+
 `make-slide`에서 가져오는 핵심은 매번 새 layout을 발명하지 않고, 승인된 reference를 따라 shell을 고정하는 방식입니다. 이 프로젝트에서는 이를 `layout family + reference shell` 모델로 적용합니다.
 
 - `layout family`
@@ -66,9 +70,12 @@ Rules:
 
 활성 shell 목록과 required structure는 `docs/03-html/shared/layout-shell-reference.md`를 기준으로 합니다.
 
+Current PDF와 Kakao reference pages는 visual/composition baseline입니다. slide 문구, 비교 축, label, metric, 해설의 content source가 아니며, 색상 theme를 새로 만들 근거도 아닙니다. Reference 적용은 structure-only이며 `theme-minimal-light` palette를 유지합니다.
+
 ## Generation Model
 
-- slide wording, outline, and HTML artifacts are maintained directly in this repository workflow
+- slide wording and outline are maintained directly in this repository workflow
+- generated slide HTML is an artifact; `scripts/jaryo_html_deck/slides/slide_XXX.py` is the implementation unit
 - HTML/CSS 생성 경로: Codex
 - Codex 책임: HTML generation, render 검증, outline/manifest 동기화
 - 최종 delivery는 `slide-XX.html` source와 `deck/index.html` artifact를 함께 유지하는 hybrid output입니다.
@@ -76,6 +83,8 @@ Rules:
 ## Producer-Reviewer Loop
 
 `revfactory/harness`에서 가져오는 핵심은 producer와 reviewer를 분리하고, 재작업 범위를 gate 결과로 고정하는 방식입니다. 이 프로젝트에서는 아래 loop를 deck 운영의 기본값으로 둡니다.
+
+HTML 작업은 orchestrator/subagent workflow로 진행합니다. 오케스트레이터는 규칙 확인, prompt 구성, 결과 검수를 맡고, 실제 HTML 관련 구현은 subagent에 위임합니다.
 
 1. `slide-outline.md`와 `manifest.md`를 먼저 잠금
 2. slide copy packet과 batch 메모를 정리

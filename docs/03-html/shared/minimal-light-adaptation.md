@@ -2,6 +2,8 @@
 
 이 문서는 `make-slide/themes/minimal-light`를 Jaryo seminar deck에 맞게 변환한 적용 기준입니다. 목표는 원본의 밝고 절제된 인상을 가져오되, Jaryo의 canonical prose, shell contract, 한국어 발표 톤을 깨지 않는 것입니다.
 
+`docs/03-html/shared/slide-quality-rules.md`가 최상위 authority입니다. 이 문서는 theme 적용을 보조하며, 최신 사용자 승인 규칙과 충돌하면 `slide-quality-rules.md`를 따릅니다. `docs/03-html/shared/decision-log.md`가 있으면 preserved Decision Log의 보충 기록으로 함께 확인합니다.
+
 ## What We Adopt
 
 - 밝은 background와 높은 text contrast
@@ -9,6 +11,7 @@
 - 얇은 border와 매우 약한 shadow
 - white surface card와 restrained accent blue
 - 장식보다 hierarchy와 spacing으로 읽히는 구성
+- Current PDF와 Kakao reference pages의 composition 감각은 visual baseline으로만 참고
 
 ## What We Reject
 
@@ -17,6 +20,7 @@
 - 큰 watermark 숫자 장식
 - 범용 demo deck에서 쓰는 카드/flow component의 무분별한 재사용
 - 한 장에 설명문이 길게 들어가는 body paragraph
+- Current PDF와 Kakao reference pages를 content source나 새 palette theme로 취급하는 방식
 
 ## What We Localize For Jaryo
 
@@ -26,6 +30,8 @@
 - section 흐름과 chapter label을 Jaryo deck rhythm에 맞춤
 
 ## Theme Mapping
+
+Reference 적용은 soft하고 structure-only입니다. 색은 `theme-minimal-light` palette와 token mapping을 유지합니다.
 
 | make-slide minimal-light | Jaryo adaptation |
 | --- | --- |

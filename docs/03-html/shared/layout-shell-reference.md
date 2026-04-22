@@ -2,6 +2,8 @@
 
 이 문서는 132장 `make-slide` 기반 상세본에서 사용하는 shell catalog입니다. 이번 버전은 `minimal-light`의 layout rhythm을 그대로 가져오되, Jaryo deck에 필요한 slide type만 좁혀서 고정합니다.
 
+`docs/03-html/shared/slide-quality-rules.md`가 최상위 authority입니다. 이 catalog는 shell 구조를 보조하며, 최신 규칙이나 `decision-log.md`의 보충 결정과 충돌하면 `slide-quality-rules.md`를 따릅니다.
+
 ## Shell Registry
 
 | shell id | slide type | layout | use when | required core structure |
