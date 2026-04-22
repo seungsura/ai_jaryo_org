@@ -590,7 +590,7 @@
           "value": "2주",
           "label": "CTO 추정 4~8개월",
           "text": "프로젝트 완료",
-          "meta": "Augment Code + Vertex AI"
+          "meta": "카카오 AI 팀 내부 공유 사례"
         },
         {
           "value": "1~2일",
@@ -611,48 +611,6 @@
     "order": 17,
     "slide_id": "S017",
     "file_name": "slide-017.html",
-    "title": "왜 Claude Code인가",
-    "slide_type": "statement",
-    "layout": "editorial",
-    "shell": "statement-editorial-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "02",
-    "source_block": "02-00",
-    "key_claim": "Agent = Model + Harness",
-    "notes_intent": "Agent = Model + Harness thesis와 명사형 quote",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 02",
-    "notes": "source markdown의 핵심 공식과 LangChain quote를 명사형으로 압축한다.",
-    "lead": "",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "variant": "thesis-harness",
-      "statement": "Agent = Model + Harness",
-      "quote": "모델이 아닌 것은 전부 하네스",
-      "meaning": "힘이 센 말을 원하는 방향으로 몰고 멈추게 만드는 장비 전체",
-      "mapping": [
-        {
-          "title": "무엇을 보는지",
-          "text": "컨텍스트"
-        },
-        {
-          "title": "무엇을 하게 할지",
-          "text": "도구 · 권한"
-        },
-        {
-          "title": "언제 멈출지",
-          "text": "제약 · 검증"
-        }
-      ],
-      "source": "LangChain · Vivek Trivedy"
-    }
-  },
-  {
-    "order": 18,
-    "slide_id": "S018",
-    "file_name": "slide-018.html",
     "title": "1막: Copilot과 ChatGPT, 프롬프트의 시대",
     "slide_type": "process",
     "layout": "wide",
@@ -686,9 +644,9 @@
           "title": "ChatGPT",
           "text": "자연어 지시 기반 코드 생성",
           "items": [
+            "프롬프트 길이",
             "역할 부여",
-            "예시",
-            "단계별 요청"
+            "단계별 지시"
           ]
         }
       ],
@@ -696,10 +654,10 @@
     }
   },
   {
-    "order": 19,
-    "slide_id": "S019",
-    "file_name": "slide-019.html",
-    "title": "프롬프트 패턴의 확장",
+    "order": 18,
+    "slide_id": "S018",
+    "file_name": "slide-018.html",
+    "title": "Chain-of-Thought",
     "slide_type": "process",
     "layout": "wide",
     "shell": "process-flow-shell",
@@ -707,86 +665,80 @@
     "density": "medium",
     "source_section": "02",
     "source_block": "02-03",
-    "key_claim": "프롬프트가 모델에게 추가로 맡긴 일",
-    "notes_intent": "CoT/ReAct/ToT/Self-Refine/Reflexion diagram",
+    "key_claim": "중간 추론 단계를 쓰게 한다",
+    "notes_intent": "Chain-of-Thought native example diagram",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "CHAPTER 02",
-    "notes": "source markdown의 prompt pattern table과 02-v01 assets",
+    "notes": "source markdown의 Chain-of-Thought row와 approved 02-chain-of-thought asset 구조",
     "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
-      "variant": "pattern-diagram",
-      "patterns": [
+      "variant": "cot-native",
+      "claim": "중간 추론 단계를 쓰게 한다",
+      "meaning": "답만 내던 모델을 reasoning path가 있는 모델처럼 다루기 시작",
+      "steps": [
         {
-          "index": "01",
-          "title": "Chain-of-Thought",
-          "text": "중간 추론 단계",
-          "kind": "cot",
-          "example": {
-            "label": "테니스공 산술",
-            "problem": "5개 + 2캔 × 3개",
-            "step": "2캔 × 3개 = 6개",
-            "answer": "5개 + 6개 = 11개"
-          }
+          "title": "문제",
+          "text": "5개 + 2캔 × 3개"
         },
+        {
+          "title": "중간 추론",
+          "text": "2캔 × 3개 = 6개"
+        },
+        {
+          "title": "답",
+          "text": "5개 + 6개 = 11개"
+        }
+      ]
+    }
+  },
+  {
+    "order": 19,
+    "slide_id": "S019",
+    "file_name": "slide-019.html",
+    "title": "ReAct / Tree-of-Thought",
+    "slide_type": "process",
+    "layout": "wide",
+    "shell": "process-flow-shell",
+    "family": "content",
+    "density": "medium",
+    "source_section": "02",
+    "source_block": "02-03",
+    "key_claim": "행동 루프와 경로 탐색",
+    "notes_intent": "ReAct / Tree-of-Thought native diagrams",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 02",
+    "notes": "source markdown의 ReAct, Tree-of-Thought rows와 approved assets 구조",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "variant": "pattern-pair",
+      "patterns": [
         {
           "index": "02",
           "title": "ReAct",
-          "text": "추론과 행동 교대",
+          "text": "추론과 행동을 번갈아 수행",
           "kind": "react",
-          "example": {
-            "label": "WebShop 검색",
-            "start": "WebShop",
-            "action": "Search",
-            "observation": "Observe"
-          }
+          "meaning": "검색과 도구 호출이 루프 안으로 진입",
+          "nodes": [
+            "Reason",
+            "Act",
+            "Observe"
+          ]
         },
         {
           "index": "03",
           "title": "Tree-of-Thought",
-          "text": "여러 추론 경로",
+          "text": "여러 추론 경로를 동시에 탐색",
           "kind": "tot",
-          "example": {
-            "label": "Game of 24",
-            "root": "Game of 24",
-            "branches": [
-              {
-                "text": "4 × 6"
-              },
-              {
-                "text": "8 + 16",
-                "class": "selected"
-              },
-              {
-                "text": "backtrack"
-              }
-            ]
-          }
-        },
-        {
-          "index": "04",
-          "title": "Self-Refine",
-          "text": "자기 출력 개선",
-          "kind": "refine",
-          "example": {
-            "label": "code feedback",
-            "draft": "초안 코드",
-            "feedback": "code feedback",
-            "refined": "개선 코드"
-          }
-        },
-        {
-          "index": "05",
-          "title": "Reflexion",
-          "text": "피드백 루프",
-          "kind": "reflexion",
-          "example": {
-            "label": "reflection memory",
-            "trial": "실패 로그",
-            "memory": "reflection memory",
-            "retry": "재시도"
-          }
+          "meaning": "하나의 답이 아니라 후보 경로를 비교",
+          "nodes": [
+            "경로 A",
+            "경로 B",
+            "경로 C"
+          ]
         }
       ]
     }
@@ -795,6 +747,54 @@
     "order": 20,
     "slide_id": "S020",
     "file_name": "slide-020.html",
+    "title": "Self-Refine / Reflexion",
+    "slide_type": "process",
+    "layout": "wide",
+    "shell": "process-flow-shell",
+    "family": "content",
+    "density": "medium",
+    "source_section": "02",
+    "source_block": "02-03",
+    "key_claim": "출력 이후의 피드백 루프",
+    "notes_intent": "Self-Refine / Reflexion native feedback-loop diagrams",
+    "notes_status": "ready",
+    "status": "built",
+    "chapter_label": "CHAPTER 02",
+    "notes": "source markdown의 Self-Refine, Reflexion row",
+    "lead": "",
+    "footer_left": "Harness 잘 사용하기",
+    "body": {
+      "variant": "feedback-pair",
+      "patterns": [
+        {
+          "title": "Self-Refine",
+          "text": "자기 출력을 다시 비판하고 수정",
+          "meaning": "초안 이후의 개선 루프",
+          "class": "self-refine-diagram",
+          "nodes": [
+            "초안",
+            "비판",
+            "수정"
+          ]
+        },
+        {
+          "title": "Reflexion",
+          "text": "자기 출력을 다시 비판하고 수정",
+          "meaning": "실패 이후의 피드백 루프",
+          "class": "reflexion-diagram",
+          "nodes": [
+            "실패",
+            "기억",
+            "재시도"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "order": 21,
+    "slide_id": "S021",
+    "file_name": "slide-021.html",
     "title": "네 가지 에이전틱 패턴",
     "slide_type": "table",
     "layout": "wide",
@@ -804,11 +804,11 @@
     "source_section": "02",
     "source_block": "02-04",
     "key_claim": "모델 바깥 구조가 성능을 좌우",
-    "notes_intent": "Andrew Ng 4 agentic patterns",
+    "notes_intent": "Andrew Ng four patterns native quadrant",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "CHAPTER 02",
-    "notes": "source markdown의 Andrew Ng 네 가지 패턴과 02-v02 asset",
+    "notes": "source markdown의 Andrew Ng 네 가지 패턴과 approved 05 asset 구조",
     "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
@@ -816,7 +816,7 @@
       "cards": [
         {
           "title": "Reflection",
-          "text": "자기 결과 검토와 수정",
+          "text": "한 번 낸 답을 다시 보고 고침",
           "effect": "자기 수정 루프",
           "example": [
             "Generate",
@@ -826,8 +826,8 @@
         },
         {
           "title": "Tool Use",
-          "text": "검색·계산·실행 도구 호출",
-          "effect": "바깥 세계 연결",
+          "text": "검색·계산·실행을 바깥 도구에 맡김",
+          "effect": "모델 바깥 세계 연결",
           "example": [
             "Model",
             "Search/API",
@@ -836,7 +836,7 @@
         },
         {
           "title": "Planning",
-          "text": "큰 목표의 단계 분해",
+          "text": "목표를 단계로 쪼갬",
           "effect": "긴 작업 추진",
           "example": [
             "Goal",
@@ -846,7 +846,7 @@
         },
         {
           "title": "Multi-Agent Collaboration",
-          "text": "역할 분리와 협업",
+          "text": "역할을 나눠 다른 관점으로 봄",
           "effect": "생성과 검증 분리",
           "example": [
             "Writer",
@@ -859,9 +859,9 @@
     }
   },
   {
-    "order": 21,
-    "slide_id": "S021",
-    "file_name": "slide-021.html",
+    "order": 22,
+    "slide_id": "S022",
+    "file_name": "slide-022.html",
     "title": "프롬프트 시대의 벽",
     "slide_type": "statement",
     "layout": "editorial",
@@ -888,20 +888,20 @@
         },
         {
           "title": "기존 설계 부재",
-          "text": "아키텍처 결정 활용 불가"
+          "text": "설계 결정 활용 불가"
         },
         {
           "title": "팀 컨벤션 부재",
-          "text": "규칙 없는 문장 수정"
+          "text": "내부 규칙 활용 불가"
         }
       ],
       "thesis": "문제는 지시문이 아니라 모델이 소비하는 정보"
     }
   },
   {
-    "order": 22,
-    "slide_id": "S022",
-    "file_name": "slide-022.html",
+    "order": 23,
+    "slide_id": "S023",
+    "file_name": "slide-023.html",
     "title": "2막: Cursor와 컨텍스트의 시대",
     "slide_type": "process",
     "layout": "wide",
@@ -915,7 +915,7 @@
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "CHAPTER 02",
-    "notes": "source markdown의 Cursor 비교 표와 Tools 문장",
+    "notes": "source markdown의 Cursor 비교 표, Tools 문장, Context Engineering 문단",
     "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
@@ -940,14 +940,14 @@
         "채팅",
         "Composer",
         "Agent Mode",
-        "명령 실행"
+        "Context Engineering"
       ]
     }
   },
   {
-    "order": 23,
-    "slide_id": "S023",
-    "file_name": "slide-023.html",
+    "order": 24,
+    "slide_id": "S024",
+    "file_name": "slide-024.html",
     "title": "Cursor 아키텍처",
     "slide_type": "process",
     "layout": "wide",
@@ -957,58 +957,63 @@
     "source_section": "02",
     "source_block": "02-07",
     "key_claim": "긴 프롬프트가 아니라 검색기와 편집기",
-    "notes_intent": "Cursor architecture asset and process",
+    "notes_intent": "Cursor architecture native system map",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "CHAPTER 02",
-    "notes": "source markdown의 Cursor 아키텍처 text diagram과 02-v04 asset",
+    "notes": "source markdown의 Cursor 아키텍처 text diagram과 approved 06 asset 구조",
     "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
       "variant": "cursor-architecture-native",
       "request": "사용자 요청",
-      "index": "파일 · 심볼 · 문서 · PR",
-      "context": "관련 파일 · 규칙 · 변경 이력",
+      "index": "파일 · 심볼 · AST · 문서",
+      "context": "관련 파일 · 규칙 · 히스토리",
       "tools": [
-        "SearchCode",
-        "Read",
-        "EditFile",
+        "채팅",
+        "Composer",
+        "Agent Mode",
         "명령 실행"
       ],
-      "feedback": "테스트 · 린트 · 로그 확인",
+      "feedback": "verify",
       "steps": [
         {
           "index": "01",
-          "title": "인덱싱",
-          "text": "파일 · 심볼 · AST · 문서"
+          "title": "사용자 요청",
+          "text": "질문 자체의 전환"
         },
         {
           "index": "02",
-          "title": "검색",
-          "text": "파일 · 규칙 · 히스토리"
+          "title": "indexing",
+          "text": "파일 · 심볼 · AST · 문서"
         },
         {
           "index": "03",
-          "title": "조립",
-          "text": "Composer · Agent Mode"
+          "title": "retrieval",
+          "text": "관련 파일 · 규칙 · 히스토리"
         },
         {
           "index": "04",
-          "title": "수정·실행",
-          "text": "멀티파일 수정 · 명령 실행"
+          "title": "context assembly",
+          "text": "필요 정보 선별"
         },
         {
           "index": "05",
-          "title": "검증",
+          "title": "edit/run",
+          "text": "편집과 명령 실행"
+        },
+        {
+          "index": "06",
+          "title": "verify",
           "text": "테스트 · 린트 · 로그"
         }
       ]
     }
   },
   {
-    "order": 24,
-    "slide_id": "S024",
-    "file_name": "slide-024.html",
+    "order": 25,
+    "slide_id": "S025",
+    "file_name": "slide-025.html",
     "title": "컨텍스트 시대의 벽",
     "slide_type": "process",
     "layout": "wide",
@@ -1049,13 +1054,13 @@
           "text": "실패 후 재수정"
         }
       ],
-      "thesis": "목표 달성까지 반복"
+      "thesis": "하네스는 네 지점 각각에 개입"
     }
   },
   {
-    "order": 25,
-    "slide_id": "S025",
-    "file_name": "slide-025.html",
+    "order": 26,
+    "slide_id": "S026",
+    "file_name": "slide-026.html",
     "title": "3막: 하네스의 시대",
     "slide_type": "process",
     "layout": "wide",
@@ -1064,138 +1069,40 @@
     "density": "medium",
     "source_section": "02",
     "source_block": "02-09",
-    "key_claim": "터미널 네이티브 실행 환경",
-    "notes_intent": "Claude Code harness components",
+    "key_claim": "작업 환경 전체를 품기 시작한 코딩 도구",
+    "notes_intent": "Harness era signs without chapter 4 mechanics",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "CHAPTER 02",
-    "notes": "source markdown의 Claude Code 구성 요소 bullet list",
+    "notes": "source markdown의 Claude Code 구성 요소와 하네스 시대 전환",
     "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
-      "variant": "component-clusters",
-      "context": "Claude Code · Codex · OpenCode",
-      "tiers": [
+      "variant": "harness-era-signs",
+      "statement": "작업 환경 전체를 품기 시작한 코딩 도구",
+      "cards": [
         {
-          "label": "기초",
-          "items": [
-            {
-              "title": "CLAUDE.md",
-              "text": "모든 세션에서 로드되는 프로젝트 컨텍스트",
-              "primary": true
-            }
-          ]
+          "title": "터미널 네이티브",
+          "text": "파일 읽기 · 셸 실행 · 테스트 확인"
         },
         {
-          "label": "자동화",
-          "items": [
-            {
-              "title": "Skills",
-              "text": "재사용 가능한 워크플로우"
-            },
-            {
-              "title": "Hooks",
-              "text": "이벤트 기반 검증과 차단"
-            }
-          ]
+          "title": "구성 요소의 묶음",
+          "text": "독립 기능이 실행 환경으로 결합"
         },
         {
-          "label": "연결",
-          "items": [
-            {
-              "title": "MCP",
-              "text": "외부 도구와 데이터 연결"
-            }
-          ]
-        },
-        {
-          "label": "확장",
-          "items": [
-            {
-              "title": "Subagents",
-              "text": "역할과 컨텍스트 분리"
-            },
-            {
-              "title": "승인/샌드박스",
-              "text": "위험 행동 권한 경계"
-            }
-          ]
+          "title": "내 환경에 맞는 도구",
+          "text": "플러그인 · 스킬 · 노하우 · 교육자료"
         }
       ],
-      "steps": [
-        {
-          "index": "01",
-          "title": "CLAUDE.md",
-          "text": "프로젝트 상시 규칙"
-        },
-        {
-          "index": "02",
-          "title": "Skills",
-          "text": "재사용 작업 지식"
-        },
-        {
-          "index": "03",
-          "title": "Hooks",
-          "text": "이벤트 기반 검증과 차단"
-        },
-        {
-          "index": "04",
-          "title": "MCP",
-          "text": "외부 도구와 데이터 연결"
-        },
-        {
-          "index": "05",
-          "title": "Subagents",
-          "text": "역할과 컨텍스트 분리"
-        },
-        {
-          "index": "06",
-          "title": "승인/샌드박스",
-          "text": "위험 행동 권한 경계"
-        }
-      ]
-    }
-  },
-  {
-    "order": 26,
-    "slide_id": "S026",
-    "file_name": "slide-026.html",
-    "title": "Agent = Model + Harness",
-    "slide_type": "statement",
-    "layout": "editorial",
-    "shell": "statement-editorial-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "02",
-    "source_block": "02-10",
-    "key_claim": "하네스가 결정하는 네 지점",
-    "notes_intent": "02-v05 decision points",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 02",
-    "notes": "source markdown의 하네스가 결정하는 것",
-    "lead": "",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "variant": "harness-layered",
-      "statement": "Agent = Model + Harness",
-      "decisions": [
-        {
-          "title": "무엇을 보는지",
-          "text": "컨텍스트"
-        },
-        {
-          "title": "무엇을 할 수 있는지",
-          "text": "도구 · 권한"
-        },
-        {
-          "title": "언제 멈추는지",
-          "text": "검증 · 중단 조건"
-        },
-        {
-          "title": "잘못되었을 때",
-          "text": "오류 시나리오와 재시도"
-        }
+      "components": [
+        "Plan Mode",
+        "승인 체계",
+        "CLAUDE.md",
+        "Skills",
+        "Hooks",
+        "MCP",
+        "Plugins",
+        "Subagents"
       ]
     }
   },
@@ -1211,12 +1118,12 @@
     "density": "medium",
     "source_section": "02",
     "source_block": "02-11",
-    "key_claim": "프롬프트, 컨텍스트, 하네스의 포함 관계",
-    "notes_intent": "three-era timeline and table",
+    "key_claim": "Agent = Model + Harness",
+    "notes_intent": "final relationship page",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "CHAPTER 02",
-    "notes": "source markdown의 시대 구분 표와 02-v05 asset",
+    "notes": "source markdown의 Agent 공식과 프롬프트/컨텍스트/하네스 포함 관계",
     "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
@@ -1261,6 +1168,7 @@
         }
       ],
       "question": "",
+      "formula": "Agent = Model + Harness",
       "relationship": "Prompt ⊂ Context ⊂ Harness"
     }
   }

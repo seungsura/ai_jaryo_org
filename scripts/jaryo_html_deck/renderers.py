@@ -300,6 +300,102 @@ def render_shell(spec: SlideSpec) -> str:
                 "</section>"
             )
 
+        if spec.body.get("variant") == "cot-native":
+            steps = "".join(
+                '<span class="cot-reasoning-step">'
+                f'<strong>{html.escape(step["title"])}</strong>'
+                f'<em>{html.escape(step["text"])}</em>'
+                "</span>"
+                for step in spec.body.get("steps", [])
+            )
+            return (
+                '<section class="top-band">'
+                f'<p class="chapter-label">{html.escape(spec.chapter_label)}</p>'
+                f'<h1 class="title-placeholder">{html.escape(spec.title)}</h1>'
+                "</section>"
+                '<section class="cot-native-body">'
+                '<article class="process-step cot-claim-card">'
+                f'<h2>{html.escape(spec.body.get("claim", spec.key_claim))}</h2>'
+                f'<p>{html.escape(spec.body.get("meaning", ""))}</p>'
+                "</article>"
+                '<article class="process-step cot-example-card">'
+                f'<div class="cot-example-diagram">{steps}</div>'
+                "</article>"
+                '<article class="process-step cot-summary-card">'
+                '<h2>reasoning path</h2>'
+                f'<p>{html.escape(spec.body.get("meaning", ""))}</p>'
+                "</article>"
+                "</section>"
+            )
+
+        if spec.body.get("variant") == "pattern-pair":
+            def render_pair_diagram(item: dict[str, object]) -> str:
+                nodes = [str(node) for node in item.get("nodes", [])]
+                if item.get("kind") == "tot":
+                    branches = "".join(
+                        f'<span class="{"selected" if index == 1 else ""}">{html.escape(node)}</span>'
+                        for index, node in enumerate(nodes)
+                    )
+                    return (
+                        '<div class="pattern-native-diagram tot-diagram">'
+                        '<span class="tree-root">문제</span>'
+                        f"{branches}"
+                        "</div>"
+                    )
+                return (
+                    '<div class="pattern-native-diagram react-diagram">'
+                    + "".join(
+                        f'<span>{html.escape(node)}</span>' + ("<i>→</i>" if index < len(nodes) - 1 else "")
+                        for index, node in enumerate(nodes)
+                    )
+                    + "</div>"
+                )
+
+            cards = "".join(
+                '<article class="process-step pattern-pair-card">'
+                f'<span class="step-index">{html.escape(item["index"])}</span>'
+                f'<h2>{html.escape(item["title"])}</h2>'
+                f'<p>{html.escape(item["text"])}</p>'
+                f'{render_pair_diagram(item)}'
+                f'<small>{html.escape(item["meaning"])}</small>'
+                "</article>"
+                for item in spec.body.get("patterns", [])
+            )
+            return (
+                '<section class="top-band">'
+                f'<p class="chapter-label">{html.escape(spec.chapter_label)}</p>'
+                f'<h1 class="title-placeholder">{html.escape(spec.title)}</h1>'
+                "</section>"
+                '<section class="pattern-pair-body">'
+                f"{cards}"
+                "</section>"
+            )
+
+        if spec.body.get("variant") == "feedback-pair":
+            cards = "".join(
+                '<article class="process-step feedback-loop-card">'
+                f'<h2>{html.escape(item["title"])}</h2>'
+                f'<p>{html.escape(item["text"])}</p>'
+                f'<div class="pattern-native-diagram feedback-diagram {html.escape(item["class"])}">'
+                + "".join(
+                    f'<span>{html.escape(str(node))}</span>' + ("<i>→</i>" if index < len(item.get("nodes", [])) - 1 else "")
+                    for index, node in enumerate(item.get("nodes", []))
+                )
+                + "</div>"
+                f'<small>{html.escape(item["meaning"])}</small>'
+                "</article>"
+                for item in spec.body.get("patterns", [])
+            )
+            return (
+                '<section class="top-band">'
+                f'<p class="chapter-label">{html.escape(spec.chapter_label)}</p>'
+                f'<h1 class="title-placeholder">{html.escape(spec.title)}</h1>'
+                "</section>"
+                '<section class="feedback-loop-body">'
+                f"{cards}"
+                "</section>"
+            )
+
         if spec.body.get("variant") == "pattern-diagram":
             def render_pattern_diagram(item: dict[str, object]) -> str:
                 kind = str(item.get("kind", "cot"))
@@ -469,6 +565,30 @@ def render_shell(spec: SlideSpec) -> str:
                 f"{tools}"
                 "</aside>"
                 "</div>"
+                "</section>"
+            )
+
+        if spec.body.get("variant") == "harness-era-signs":
+            cards = "".join(
+                '<article class="process-step harness-era-card">'
+                f'<h2>{html.escape(card["title"])}</h2>'
+                f'<p>{html.escape(card["text"])}</p>'
+                "</article>"
+                for card in spec.body.get("cards", [])
+            )
+            components = "".join(
+                f'<span class="harness-era-component">{html.escape(component)}</span>'
+                for component in spec.body.get("components", [])
+            )
+            return (
+                '<section class="top-band">'
+                f'<p class="chapter-label">{html.escape(spec.chapter_label)}</p>'
+                f'<h1 class="title-placeholder">{html.escape(spec.title)}</h1>'
+                "</section>"
+                '<section class="harness-era-signs-body">'
+                f'<p class="harness-era-claim centered-claim">{html.escape(spec.body.get("statement", spec.key_claim))}</p>'
+                f'<div class="harness-era-grid">{cards}</div>'
+                f'<div class="harness-era-components">{components}</div>'
                 "</section>"
             )
 
@@ -793,6 +913,9 @@ def render_shell(spec: SlideSpec) -> str:
             question = ""
             if spec.body.get("question"):
                 question = f'<p class="table-question">{html.escape(spec.body["question"])}</p>'
+            formula = ""
+            if spec.body.get("formula"):
+                formula = f'<p class="era-native-formula centered-claim">{html.escape(str(spec.body["formula"]))}</p>'
             relationship = html.escape(str(spec.body.get("relationship", "Prompt ⊂ Context ⊂ Harness")))
             return (
                 '<section class="top-band">'
@@ -801,6 +924,7 @@ def render_shell(spec: SlideSpec) -> str:
                 "</section>"
                 '<section class="era-native-body">'
                 f'<div class="era-native-track">{cards}</div>'
+                f"{formula}"
                 f'<p class="era-native-equation centered-claim">{relationship}</p>'
                 '<table class="data-table">'
                 f"<thead><tr>{headers}</tr></thead>"

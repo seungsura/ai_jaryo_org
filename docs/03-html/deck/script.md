@@ -83,57 +83,57 @@
 - opening: 속도, 온보딩, 불가능하던 작업의 변화
 - bridge: source markdown의 에이전틱 코딩 실제 성과와 page-017 reference
 
-## S017 왜 Claude Code인가
-- intent: Agent = Model + Harness thesis와 명사형 quote
-- opening: Agent = Model + Harness
-- bridge: source markdown의 핵심 공식과 LangChain quote를 명사형으로 압축한다.
-
-## S018 1막: Copilot과 ChatGPT, 프롬프트의 시대
+## S017 1막: Copilot과 ChatGPT, 프롬프트의 시대
 - intent: 프롬프트 시대의 출발점 비교
 - opening: 자동완성에서 자연어 지시 인터페이스로
 - bridge: source markdown의 초기 Copilot과 ChatGPT 전환
 
-## S019 프롬프트 패턴의 확장
-- intent: CoT/ReAct/ToT/Self-Refine/Reflexion diagram
-- opening: 프롬프트가 모델에게 추가로 맡긴 일
-- bridge: source markdown의 prompt pattern table과 02-v01 assets
+## S018 Chain-of-Thought
+- intent: Chain-of-Thought native example diagram
+- opening: 중간 추론 단계를 쓰게 한다
+- bridge: source markdown의 Chain-of-Thought row와 approved 02-chain-of-thought asset 구조
 
-## S020 네 가지 에이전틱 패턴
-- intent: Andrew Ng 4 agentic patterns
+## S019 ReAct / Tree-of-Thought
+- intent: ReAct / Tree-of-Thought native diagrams
+- opening: 행동 루프와 경로 탐색
+- bridge: source markdown의 ReAct, Tree-of-Thought rows와 approved assets 구조
+
+## S020 Self-Refine / Reflexion
+- intent: Self-Refine / Reflexion native feedback-loop diagrams
+- opening: 출력 이후의 피드백 루프
+- bridge: source markdown의 Self-Refine, Reflexion row
+
+## S021 네 가지 에이전틱 패턴
+- intent: Andrew Ng four patterns native quadrant
 - opening: 모델 바깥 구조가 성능을 좌우
-- bridge: source markdown의 Andrew Ng 네 가지 패턴과 02-v02 asset
+- bridge: source markdown의 Andrew Ng 네 가지 패턴과 approved 05 asset 구조
 
-## S021 프롬프트 시대의 벽
+## S022 프롬프트 시대의 벽
 - intent: 프롬프트 시대의 한계
 - opening: 모델은 보지 못한 것을 알 수 없음
 - bridge: source markdown의 Blind Prompting 문단
 
-## S022 2막: Cursor와 컨텍스트의 시대
+## S023 2막: Cursor와 컨텍스트의 시대
 - intent: 초기 Copilot과 Cursor 계열 도구 비교
 - opening: 현재 파일에서 전체 코드베이스로
-- bridge: source markdown의 Cursor 비교 표와 Tools 문장
+- bridge: source markdown의 Cursor 비교 표, Tools 문장, Context Engineering 문단
 
-## S023 Cursor 아키텍처
-- intent: Cursor architecture asset and process
+## S024 Cursor 아키텍처
+- intent: Cursor architecture native system map
 - opening: 긴 프롬프트가 아니라 검색기와 편집기
-- bridge: source markdown의 Cursor 아키텍처 text diagram과 02-v04 asset
+- bridge: source markdown의 Cursor 아키텍처 text diagram과 approved 06 asset 구조
 
-## S024 컨텍스트 시대의 벽
+## S025 컨텍스트 시대의 벽
 - intent: 컨텍스트 시대의 한계와 에이전트 루프
 - opening: 좋은 입력만으로는 루프 통제 불가
 - bridge: source markdown의 gather context to repeat loop
 
-## S025 3막: 하네스의 시대
-- intent: Claude Code harness components
-- opening: 터미널 네이티브 실행 환경
-- bridge: source markdown의 Claude Code 구성 요소 bullet list
-
-## S026 Agent = Model + Harness
-- intent: 02-v05 decision points
-- opening: 하네스가 결정하는 네 지점
-- bridge: source markdown의 하네스가 결정하는 것
+## S026 3막: 하네스의 시대
+- intent: Harness era signs without chapter 4 mechanics
+- opening: 작업 환경 전체를 품기 시작한 코딩 도구
+- bridge: source markdown의 Claude Code 구성 요소와 하네스 시대 전환
 
 ## S027 시대의 흐름
-- intent: three-era timeline and table
-- opening: 프롬프트, 컨텍스트, 하네스의 포함 관계
-- bridge: source markdown의 시대 구분 표와 02-v05 asset
+- intent: final relationship page
+- opening: Agent = Model + Harness
+- bridge: source markdown의 Agent 공식과 프롬프트/컨텍스트/하네스 포함 관계

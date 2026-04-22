@@ -54,6 +54,7 @@
 ## Visual Reference Baseline
 
 - soft reference baseline은 다음 항목이다: `output/pdf/harness-00-01-current-720x405.pdf`, `assets/claude-code-seminar-kakao/page-028.png`, `assets/claude-code-seminar-kakao/page-032.png`, `assets/claude-code-seminar-kakao/page-037.png`, `assets/claude-code-seminar-kakao/page-053.png`, `assets/claude-code-seminar-kakao/page-064.png`, `assets/claude-code-seminar-kakao/page-067.png`.
+- CHAPTER 02 rebuild에서 사용자가 추가 승인한 reference는 `output/pdf/harness-00-02-current-720x405.pdf`의 S016-S018, `assets/evolution-of-ai-agentic-patterns/02-chain-of-thought.png`부터 `06-cursor-ai-code-editor-architecture.png`, `assets/claude-code-seminar-kakao/page-052.png`, `assets/claude-code-seminar-kakao/page-067.png`이다.
 - 이 baseline은 composition, layout rhythm, diagram density, spatial hierarchy의 soft reference다.
 - 이 baseline은 content source가 아니다. 문구, 비교 축, label, metric, 사례, 해설 의미를 여기서 새로 가져오지 않는다.
 - baseline의 warm brown palette, section pill, character image, decorative mood를 복사하지 않는다.
@@ -105,6 +106,9 @@
 - reference-derived soft patterns: `main process + rationale card + bottom takeaway`, `axis rows + column headers + final synthesis`, `quote/counter-claim + taxonomy cards + caution takeaway`, `dominant native diagram + outcome cards`, `card row + mini diagram + 1-line meaning`, `dominant system map + side explanation + bottom conclusion`를 후보 grammar로 둔다.
 - reference-derived soft patterns는 source-backed content를 배치하는 구조 후보일 뿐이다. source에 없는 문구, 비교 축, label, metric, 해설을 채우는 근거로 쓰지 않는다.
 - future source-backed slides는 위 패턴을 먼저 검토하고, source-backed label과 copy만 바꾼다.
+- CHAPTER 02 pattern/architecture slides는 approved evolution assets 02-06을 raw image로 붙이지 않고 native diagram으로 재작성한다. `assets/claude-code-seminar-kakao/page-052.png`와 `page-067.png`는 큰 제목, 여백, native diagram, 요약 card 배치의 structure-only reference로만 쓴다.
+- CHAPTER 02 S016-S018 기존 화면은 재사용하되 중앙 claim/card typography를 CHAPTER 01 수준으로 낮추고, 카드 내부 줄간격과 footer safe margin을 다시 검증한다.
+- CHAPTER 02 rebuild에서는 standalone `Agent = Model + Harness` statement page를 두지 않는다. 이 공식은 S027의 `Prompt ⊂ Context ⊂ Harness` 결론 page 안에서 함께 보여준다.
 
 ## Implementation Contract
 
@@ -137,6 +141,7 @@
 - 2026-04-21 visual correction: S016 tall metric card, S017 title + dark thesis + Harness 원의미 구조, S015-S027 `CHAPTER 02`, pattern/architecture raw crop 금지, S026 hierarchy를 확정했다.
 - 2026-04-21 corrective revision: feedback-to-rule hard gate, one-line title, S018 date metadata 이동, S019/S020 example-first native diagrams, S021 압축, S022 gradient 금지, S023 native architecture canvas, S024 arrow-only loop, S025/S026 hierarchy, S027 relationship equation only, CHAPTER 02 body scale down을 확정했다.
 - 2026-04-22 approved plan v5: 이 문서를 top-level HTML slide authority로 재정비하고, slide-number-specific active rules를 reusable meaning/design patterns와 Traceability로 분리하며, Visual Reference Baseline와 Reference Analysis Protocol을 추가하기로 확정했다.
+- 2026-04-22 chapter 02 rebuild start: S016-S018은 scale/spacing 조정 후 재사용하고, standalone `Agent = Model + Harness` page는 S027 결론 page로 통합하며, evolution assets 02-06은 page-052/page-067의 정돈된 구조 감각으로 native diagram 재구성하기로 확정했다.
 
 ## Traceability
 
@@ -158,15 +163,17 @@
 - S013/S014 chapter label fixed value: `CHAPTER 01`; banned label: `SECTION 1`.
 - S014 title fixed value: `그래도 기초가 중요하다`; dark summary quote fixed value: `AI가 더 많이 해줄수록 기초 지식을 가진 사람의 경쟁력 상승`.
 - S015-S027 chapter label fixed value: `CHAPTER 02`; banned auxiliary labels include `ACT`, `LIMIT`.
-- S016 metric fixed values: `2주`, `1~2일`, `불가능하던 작업 실현`.
-- S017 formula fixed value: `Agent = Model + Harness`; thesis fixed value: `모델이 아닌 것은 전부 하네스`; banned ending in generated visible copy: `입니다`.
-- S018 title fixed value: `1막: Copilot과 ChatGPT, 프롬프트의 시대`; `2022~2024`는 generated title이 아니라 body metadata/era badge/rail에 둔다.
-- S019 required pattern names: `Chain-of-Thought`, `ReAct`, `Tree-of-Thought`, `Self-Refine`, `Reflexion`; required CoT example values include `2캔 × 3개`, `11개`.
-- S020 Andrew Ng pattern visual은 네 패턴 관계가 보이는 native quadrant/diagram으로 남긴다.
-- S021 Blind Prompting은 중앙 주장 + 원인 카드 구조로 남긴다.
-- S022 gradient 배경은 금지하고 neutral surface와 border, `--color-surface`, `--color-line-soft`, `--color-signal-soft`만 사용한다.
-- S023 Cursor architecture fixed flow: 사용자 요청, indexing, retrieval, context assembly, edit/run, verify; codebase index와 context bundle 경계를 시각화한다.
-- S024 loop fixed values: `gather context`, `take action`, `verify`, `repeat`, `loop-cycle-arrow`; banned values: `loop-repeat-arc`, `↺ repeat`.
-- S025 fixed component values: `CLAUDE.md`, `Skills`, `Hooks`, `MCP`, `Subagents`, `승인/샌드박스`; tier label fixed values: `기초`, `자동화`, `연결`, `확장`.
-- S026 fixed question values: `무엇을 보는지`, `무엇을 할 수 있는지`, `언제 멈추는지`, `잘못되었을 때`; banned source-outside labels include `기초`, `권한`, `제약`, `복구`.
+- S016 metric fixed values: `2주`, `1~2일`, `불가능하던 작업 실현`; source에 없는 tool label `Augment Code + Vertex AI`는 visible copy로 쓰지 않는다.
+- S017 standalone formula page rule은 CHAPTER 02 rebuild에서 폐기됐다. `Agent = Model + Harness`는 S027 결론 page의 fixed value로 이동한다.
+- S017 title fixed value after rebuild: `1막: Copilot과 ChatGPT, 프롬프트의 시대`; `2022~2024`는 generated title이 아니라 body metadata/era badge/rail에 둔다.
+- S018 title fixed value after rebuild: `Chain-of-Thought`; required CoT example values include `2캔 × 3개`, `11개`; adjacent pattern names must not appear on this page.
+- S019 title fixed value after rebuild: `ReAct / Tree-of-Thought`; required pattern names are `ReAct`, `Tree-of-Thought`; raw asset embeds are forbidden.
+- S020 title fixed value after rebuild: `Self-Refine / Reflexion`; required pattern names are `Self-Refine`, `Reflexion`; feedback-loop native diagram structure is required.
+- S021 Andrew Ng pattern visual은 네 패턴 관계가 보이는 native quadrant/diagram으로 남긴다.
+- S022 Blind Prompting은 중앙 주장 + 원인 카드 구조로 남긴다. gradient 배경은 금지하고 neutral surface와 border, `--color-surface`, `--color-line-soft`, `--color-signal-soft`만 사용한다.
+- S023 title fixed value after rebuild: `2막: Cursor와 컨텍스트의 시대`; 초기 Copilot과 Cursor 계열 도구 비교 구조를 유지한다.
+- S024 Cursor architecture fixed flow: 사용자 요청, indexing, retrieval, context assembly, edit/run, verify; codebase index와 context bundle 경계를 시각화한다.
+- S025 loop fixed values: `gather context`, `take action`, `verify`, `repeat`, `loop-cycle-arrow`; banned values: `loop-repeat-arc`, `↺ repeat`.
+- S026 fixed component values: `Plan Mode`, `승인 체계`, `CLAUDE.md`, `Skills`, `Hooks`, `MCP`, `Plugins`, `Subagents`; source-outside tier labels `기초`, `자동화`, `연결`, `확장` are forbidden after rebuild.
 - S027 relationship fixed value: `Prompt ⊂ Context ⊂ Harness`; banned structure/class: `era-native-nesting`.
+- S027 formula fixed value after rebuild: `Agent = Model + Harness`; relationship fixed value: `Prompt ⊂ Context ⊂ Harness`; both must appear on the same conclusion page.

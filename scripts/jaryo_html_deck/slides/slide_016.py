@@ -22,7 +22,7 @@ def build() -> SlideSpec:
                     "value": "2주",
                     "label": "CTO 추정 4~8개월",
                     "text": "프로젝트 완료",
-                    "meta": "Augment Code + Vertex AI",
+                    "meta": "카카오 AI 팀 내부 공유 사례",
                 },
                 {
                     "value": "1~2일",

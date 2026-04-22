@@ -163,8 +163,6 @@ def main() -> int:
             if shell == "statement-editorial-shell":
                 if "prompt-only-body" in html:
                     required_classes = ["top-band", "prompt-only-body", "prompt-card", "prompt-text", "negative-opinion", "footer"]
-                elif "thesis-harness-body" in html:
-                    required_classes = ["top-band", "thesis-harness-body", "thesis-harness-equation-body", "harness-equation", "harness-definition-card", "harness-mapping-card", "footer"]
                 elif "summary-cards-body" in html:
                     required_classes = ["top-band", "summary-cards-body", "summary-quote-panel", "summary-card-grid", "summary-card", "footer"]
                 elif "blind-prompting-body" in html:
@@ -187,12 +185,20 @@ def main() -> int:
                 required_classes = ["top-band", "evolution-body", "evolution-flow", "evolution-step", "analogy-block", "footer"]
             elif shell == "process-flow-shell" and "prompt-pattern-lab-body" in html:
                 required_classes = ["top-band", "prompt-pattern-lab-body", "pattern-diagram-card", "pattern-example-card", "cot-diagram", "react-diagram", "tot-diagram", "feedback-diagram", "footer"]
+            elif shell == "process-flow-shell" and "cot-native-body" in html:
+                required_classes = ["top-band", "cot-native-body", "cot-example-diagram", "cot-reasoning-step", "footer"]
+            elif shell == "process-flow-shell" and "pattern-pair-body" in html:
+                required_classes = ["top-band", "pattern-pair-body", "pattern-pair-card", "react-diagram", "tot-diagram", "footer"]
+            elif shell == "process-flow-shell" and "feedback-loop-body" in html:
+                required_classes = ["top-band", "feedback-loop-body", "feedback-loop-card", "self-refine-diagram", "reflexion-diagram", "footer"]
             elif shell == "process-flow-shell" and "pattern-map-body" in html:
                 required_classes = ["top-band", "pattern-map-body", "process-track", "process-step", "pattern-assets", "footer"]
             elif shell == "process-flow-shell" and "cursor-tools-body" in html:
                 required_classes = ["top-band", "cursor-tools-body", "cursor-tool-panel", "cursor-tools-rail", "footer"]
             elif shell == "process-flow-shell" and "cursor-architecture-redraw-body" in html:
                 required_classes = ["top-band", "cursor-architecture-redraw-body", "cursor-architecture-flow", "cursor-architecture-step", "cursor-architecture-example-canvas", "architecture-side-tools", "footer"]
+            elif shell == "process-flow-shell" and "harness-era-signs-body" in html:
+                required_classes = ["top-band", "harness-era-signs-body", "harness-era-claim", "harness-era-card", "harness-era-component", "footer"]
             elif shell == "process-flow-shell" and "component-tier-body" in html:
                 required_classes = ["top-band", "component-tier-body", "component-tier-label", "component-tier-row", "component-main-block", "process-step", "footer"]
             elif shell == "process-flow-shell" and "asset-process-body" in html:
@@ -208,6 +214,8 @@ def main() -> int:
             if "evolution-body" in html:
                 step_count = len(re.findall(r'class="[^"]*\bevolution-step\b[^"]*"', html))
             elif "prompt-era-body" in html or "cursor-tools-body" in html:
+                step_count = 3
+            elif "pattern-pair-body" in html or "feedback-loop-body" in html:
                 step_count = 3
             else:
                 step_count = len(re.findall(r'class="[^"]*\bprocess-step\b[^"]*"', html))
@@ -250,43 +258,62 @@ def main() -> int:
             for snippet in ["2주", "1~2일", "불가능하던 작업 실현"]:
                 if snippet not in html:
                     errors.append(f"{slide_id}: missing metric impact snippet {snippet}")
+            if "카카오 AI 팀 내부 공유 사례" not in html:
+                errors.append(f"{slide_id}: missing source-backed internal sharing case meta")
+            if "Augment Code + Vertex AI" in html:
+                errors.append(f"{slide_id}: source-outside tool label remains visible")
             if "metric-impact-body is-tall-reference" not in html:
                 errors.append(f"{slide_id}: metric impact slide must use tall reference layout")
         if slide_id == "S017":
-            for snippet in ["Agent = Model + Harness", "모델이 아닌 것은 전부 하네스", "힘이 센 말을 원하는 방향으로 몰고 멈추게 만드는 장비 전체"]:
-                if snippet not in html:
-                    errors.append(f"{slide_id}: missing thesis quote snippet {snippet}")
-            if "입니다" in html:
-                errors.append(f"{slide_id}: thesis quote must use noun phrase, not polite ending")
-            if "thesis-harness-body" not in html:
-                errors.append(f"{slide_id}: thesis slide must use harness definition layout")
+            if '<h1 class="title-placeholder">1막: Copilot과 ChatGPT, 프롬프트의 시대</h1>' not in html:
+                errors.append(f"{slide_id}: title must be prompt-era act heading")
+            if "Agent = Model + Harness" in html:
+                errors.append(f"{slide_id}: standalone Agent formula page must be removed")
+            if "2022~2024" not in html or "era-range" not in html:
+                errors.append(f"{slide_id}: date range must remain body metadata")
+            if "prompt-era-body" not in html:
+                errors.append(f"{slide_id}: prompt era slide must use prompt-era-body")
         if slide_id in {"S013", "S014"}:
             if "CHAPTER 01" not in html:
                 errors.append(f"{slide_id}: chapter label must be CHAPTER 01")
             if "SECTION 1" in html:
                 errors.append(f"{slide_id}: stale SECTION 1 label remains")
         if slide_id == "S018":
-            if '<h1 class="title-placeholder">1막: Copilot과 ChatGPT, 프롬프트의 시대</h1>' not in html:
-                errors.append(f"{slide_id}: title must be one-line source heading without date")
-            if '<h1 class="title-placeholder">1막: Copilot과 ChatGPT, 프롬프트의 시대 (2022~2024)</h1>' in html:
-                errors.append(f"{slide_id}: date range must not remain in title")
-            if "2022~2024" not in html or "era-range" not in html:
-                errors.append(f"{slide_id}: date range must move into body metadata")
-            if "prompt-era-body" not in html:
-                errors.append(f"{slide_id}: prompt era slide must use prompt-era-body")
-        if slide_id == "S019":
-            for snippet in ["Chain-of-Thought", "ReAct", "Tree-of-Thought", "Self-Refine", "Reflexion"]:
-                if snippet not in html:
-                    errors.append(f"{slide_id}: missing prompt pattern {snippet}")
-            for class_name in ["prompt-pattern-lab-body", "pattern-example-card", "cot-diagram", "cot-example-diagram", "react-diagram", "tot-diagram", "feedback-diagram"]:
+            if '<h1 class="title-placeholder">Chain-of-Thought</h1>' not in html:
+                errors.append(f"{slide_id}: title must be Chain-of-Thought")
+            for class_name in ["cot-native-body", "cot-example-diagram", "cot-reasoning-step"]:
                 if not has_class(html, class_name):
-                    errors.append(f"{slide_id}: prompt pattern slide requires native diagram class '{class_name}'")
-            for snippet in ["5개", "2캔 × 3개", "11개", "WebShop", "Game of 24", "code feedback", "reflection memory"]:
+                    errors.append(f"{slide_id}: CoT slide requires native class '{class_name}'")
+            for snippet in ["중간 추론 단계", "2캔 × 3개", "11개"]:
                 if snippet not in html:
-                    errors.append(f"{slide_id}: prompt pattern example missing snippet {snippet}")
-            if "pattern-assets" in html:
-                errors.append(f"{slide_id}: prompt pattern slide must not use asset crops")
+                    errors.append(f"{slide_id}: CoT example missing snippet {snippet}")
+            if "02-chain-of-thought.png" in html or "ReAct" in html:
+                errors.append(f"{slide_id}: CoT slide must not embed assets or include adjacent patterns")
+        if slide_id == "S019":
+            if '<h1 class="title-placeholder">ReAct / Tree-of-Thought</h1>' not in html:
+                errors.append(f"{slide_id}: title must be ReAct / Tree-of-Thought")
+            for class_name in ["pattern-pair-body", "pattern-pair-card", "react-diagram", "tot-diagram"]:
+                if not has_class(html, class_name):
+                    errors.append(f"{slide_id}: ReAct/ToT slide requires native class '{class_name}'")
+            for snippet in ["ReAct", "Tree-of-Thought", "추론과 행동", "여러 추론 경로"]:
+                if snippet not in html:
+                    errors.append(f"{slide_id}: ReAct/ToT slide missing snippet {snippet}")
+            for forbidden in ["Chain-of-Thought", "Self-Refine", "Reflexion", "03-react-pattern.png", "04-tree-of-thought.png"]:
+                if forbidden in html:
+                    errors.append(f"{slide_id}: ReAct/ToT slide has stale combined content {forbidden}")
         if slide_id == "S020":
+            if '<h1 class="title-placeholder">Self-Refine / Reflexion</h1>' not in html:
+                errors.append(f"{slide_id}: title must be Self-Refine / Reflexion")
+            for class_name in ["feedback-loop-body", "feedback-loop-card", "self-refine-diagram", "reflexion-diagram"]:
+                if not has_class(html, class_name):
+                    errors.append(f"{slide_id}: feedback slide requires native class '{class_name}'")
+            for snippet in ["Self-Refine", "Reflexion", "자기 출력", "피드백 루프"]:
+                if snippet not in html:
+                    errors.append(f"{slide_id}: feedback slide missing snippet {snippet}")
+            for forbidden in ["ReAct", "Tree-of-Thought"]:
+                if forbidden in html:
+                    errors.append(f"{slide_id}: feedback slide has stale adjacent pattern {forbidden}")
+        if slide_id == "S021":
             if "agentic-pattern-quadrant-body" not in html or "agentic-pattern-center" not in html:
                 errors.append(f"{slide_id}: agentic pattern slide must use native quadrant layout")
             for snippet in ["agentic-mini-diagram", "Generate", "Critique", "Search/API", "Reviewer"]:
@@ -294,27 +321,27 @@ def main() -> int:
                     errors.append(f"{slide_id}: agentic pattern examples missing snippet {snippet}")
             if "05-andrew-ng-agentic-design-patterns.png" in html:
                 errors.append(f"{slide_id}: agentic pattern slide must not embed cropped reference asset")
-        if slide_id == "S021":
+        if slide_id == "S022":
             if '<h1 class="title-placeholder">프롬프트 시대의 벽</h1>' not in html:
                 errors.append(f"{slide_id}: title must be shortened to avoid two-line title")
             if "모델은 보지 못한 것을 알 수 없음" not in html:
                 errors.append(f"{slide_id}: blind prompting claim is missing")
             if "blind-prompting-matrix-body" not in html:
                 errors.append(f"{slide_id}: blind prompting slide must use matrix body")
-        if slide_id == "S022":
+        if slide_id == "S023":
             if "2막: Cursor와 컨텍스트의 시대" not in html:
                 errors.append(f"{slide_id}: title must follow source heading")
             if "cursor-tools-body" not in html:
                 errors.append(f"{slide_id}: cursor tools slide must use cursor-tools-body")
-        if slide_id == "S023":
+        if slide_id == "S024":
             if "cursor-architecture-redraw-body" not in html or "architecture-side-tools" not in html:
                 errors.append(f"{slide_id}: Cursor architecture must use native redraw pipeline layout")
-            for snippet in ["cursor-architecture-example-canvas", "codebase index", "context bundle"]:
+            for snippet in ["cursor-architecture-example-canvas", "codebase index", "context bundle", "사용자 요청", "indexing", "retrieval", "context assembly", "edit/run", "verify"]:
                 if snippet not in html:
                     errors.append(f"{slide_id}: Cursor architecture example missing snippet {snippet}")
             if "06-cursor-ai-code-editor-architecture.png" in html:
                 errors.append(f"{slide_id}: Cursor architecture must not embed cropped reference asset")
-        if slide_id == "S024":
+        if slide_id == "S025":
             for snippet in ["gather context", "take action", "verify", "repeat"]:
                 if snippet not in html:
                     errors.append(f"{slide_id}: missing loop step {snippet}")
@@ -326,19 +353,19 @@ def main() -> int:
             if '<h1 class="title-placeholder">컨텍스트 시대의 벽</h1>' not in html:
                 errors.append(f"{slide_id}: long loop title must be shortened")
         if slide_id == "S026":
-            if "harness-layered-body" not in html:
-                errors.append(f"{slide_id}: harness decision slide must use layered hierarchy layout")
-            if "harness-level" in html:
-                errors.append(f"{slide_id}: source-external hierarchy labels are forbidden")
-        if slide_id == "S025":
-            if "component-tier-body" not in html:
-                errors.append(f"{slide_id}: component slide must use page-021-like tier hierarchy")
-            for snippet in ["기초", "자동화", "연결", "확장"]:
+            if "harness-era-signs-body" not in html:
+                errors.append(f"{slide_id}: harness era slide must use era signs layout")
+            for snippet in ["CLAUDE.md", "Skills", "Hooks", "MCP", "Plugins", "Subagents", "승인 체계"]:
                 if snippet not in html:
-                    errors.append(f"{slide_id}: component hierarchy missing tier {snippet}")
+                    errors.append(f"{slide_id}: harness era component sign missing {snippet}")
+            for forbidden in ["component-tier-body", "무엇을 보는지", "기초", "자동화", "연결", "확장"]:
+                if forbidden in html:
+                    errors.append(f"{slide_id}: harness era slide over-expands mechanics with {forbidden}")
         if slide_id == "S027":
             if "era-native-body" not in html:
                 errors.append(f"{slide_id}: era flow must use native timeline/table layout")
+            if "Agent = Model + Harness" not in html:
+                errors.append(f"{slide_id}: final conclusion must include Agent formula")
             if "Prompt ⊂ Context ⊂ Harness" not in html:
                 errors.append(f"{slide_id}: era relationship must use text equation")
             if "era-native-nesting" in html:

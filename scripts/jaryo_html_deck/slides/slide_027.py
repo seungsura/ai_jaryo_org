@@ -9,10 +9,10 @@ def build() -> SlideSpec:
         shell="evidence-table-shell",
         source_section="02",
         source_block="02-11",
-        key_claim="프롬프트, 컨텍스트, 하네스의 포함 관계",
+        key_claim="Agent = Model + Harness",
         chapter_label="CHAPTER 02",
-        notes_intent="three-era timeline and table",
-        notes="source markdown의 시대 구분 표와 02-v05 asset",
+        notes_intent="final relationship page",
+        notes="source markdown의 Agent 공식과 프롬프트/컨텍스트/하네스 포함 관계",
         body={
             "variant": "era-native",
             "headers": ["시대", "핵심 질문", "주안점"],
@@ -27,6 +27,7 @@ def build() -> SlideSpec:
                 {"range": "2026~", "title": "Harness Engineering", "question": "어떤 시스템을 만들어야 하나"},
             ],
             "question": "",
+            "formula": "Agent = Model + Harness",
             "relationship": "Prompt ⊂ Context ⊂ Harness",
         },
     )

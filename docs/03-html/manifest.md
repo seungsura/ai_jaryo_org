@@ -27,14 +27,14 @@
 | 14 | `S014` | `slide-014.html` | 그래도 기초가 중요하다 | `statement` | `editorial` | `statement-editorial-shell` | `01` | `01-06` | `ready` | built |
 | 15 | `S015` | `slide-015.html` | 왜 Claude Code인가 | `section` | `centered` | `section-divider-shell` | `02` | `02-00` | `ready` | built |
 | 16 | `S016` | `slide-016.html` | 에이전틱 코딩의 실제 성과 | `table` | `wide` | `evidence-table-shell` | `02` | `02-01` | `ready` | built |
-| 17 | `S017` | `slide-017.html` | 왜 Claude Code인가 | `statement` | `editorial` | `statement-editorial-shell` | `02` | `02-00` | `ready` | built |
-| 18 | `S018` | `slide-018.html` | 1막: Copilot과 ChatGPT, 프롬프트의 시대 | `process` | `wide` | `process-flow-shell` | `02` | `02-02` | `ready` | built |
-| 19 | `S019` | `slide-019.html` | 프롬프트 패턴의 확장 | `process` | `wide` | `process-flow-shell` | `02` | `02-03` | `ready` | built |
-| 20 | `S020` | `slide-020.html` | 네 가지 에이전틱 패턴 | `table` | `wide` | `evidence-table-shell` | `02` | `02-04` | `ready` | built |
-| 21 | `S021` | `slide-021.html` | 프롬프트 시대의 벽 | `statement` | `editorial` | `statement-editorial-shell` | `02` | `02-05` | `ready` | built |
-| 22 | `S022` | `slide-022.html` | 2막: Cursor와 컨텍스트의 시대 | `process` | `wide` | `process-flow-shell` | `02` | `02-06` | `ready` | built |
-| 23 | `S023` | `slide-023.html` | Cursor 아키텍처 | `process` | `wide` | `process-flow-shell` | `02` | `02-07` | `ready` | built |
-| 24 | `S024` | `slide-024.html` | 컨텍스트 시대의 벽 | `process` | `wide` | `process-flow-shell` | `02` | `02-08` | `ready` | built |
-| 25 | `S025` | `slide-025.html` | 3막: 하네스의 시대 | `process` | `wide` | `process-flow-shell` | `02` | `02-09` | `ready` | built |
-| 26 | `S026` | `slide-026.html` | Agent = Model + Harness | `statement` | `editorial` | `statement-editorial-shell` | `02` | `02-10` | `ready` | built |
+| 17 | `S017` | `slide-017.html` | 1막: Copilot과 ChatGPT, 프롬프트의 시대 | `process` | `wide` | `process-flow-shell` | `02` | `02-02` | `ready` | built |
+| 18 | `S018` | `slide-018.html` | Chain-of-Thought | `process` | `wide` | `process-flow-shell` | `02` | `02-03` | `ready` | built |
+| 19 | `S019` | `slide-019.html` | ReAct / Tree-of-Thought | `process` | `wide` | `process-flow-shell` | `02` | `02-03` | `ready` | built |
+| 20 | `S020` | `slide-020.html` | Self-Refine / Reflexion | `process` | `wide` | `process-flow-shell` | `02` | `02-03` | `ready` | built |
+| 21 | `S021` | `slide-021.html` | 네 가지 에이전틱 패턴 | `table` | `wide` | `evidence-table-shell` | `02` | `02-04` | `ready` | built |
+| 22 | `S022` | `slide-022.html` | 프롬프트 시대의 벽 | `statement` | `editorial` | `statement-editorial-shell` | `02` | `02-05` | `ready` | built |
+| 23 | `S023` | `slide-023.html` | 2막: Cursor와 컨텍스트의 시대 | `process` | `wide` | `process-flow-shell` | `02` | `02-06` | `ready` | built |
+| 24 | `S024` | `slide-024.html` | Cursor 아키텍처 | `process` | `wide` | `process-flow-shell` | `02` | `02-07` | `ready` | built |
+| 25 | `S025` | `slide-025.html` | 컨텍스트 시대의 벽 | `process` | `wide` | `process-flow-shell` | `02` | `02-08` | `ready` | built |
+| 26 | `S026` | `slide-026.html` | 3막: 하네스의 시대 | `process` | `wide` | `process-flow-shell` | `02` | `02-09` | `ready` | built |
 | 27 | `S027` | `slide-027.html` | 시대의 흐름 | `table` | `wide` | `evidence-table-shell` | `02` | `02-11` | `ready` | built |

@@ -5,27 +5,24 @@ from jaryo_html_deck.model import SlideSpec, make_slide
 def build() -> SlideSpec:
     return make_slide(
         23,
-        title="Cursor 아키텍처",
+        title="2막: Cursor와 컨텍스트의 시대",
         shell="process-flow-shell",
         source_section="02",
-        source_block="02-07",
-        key_claim="긴 프롬프트가 아니라 검색기와 편집기",
+        source_block="02-06",
+        key_claim="현재 파일에서 전체 코드베이스로",
         chapter_label="CHAPTER 02",
-        notes_intent="Cursor architecture asset and process",
-        notes="source markdown의 Cursor 아키텍처 text diagram과 02-v04 asset",
+        notes_intent="초기 Copilot과 Cursor 계열 도구 비교",
+        notes="source markdown의 Cursor 비교 표, Tools 문장, Context Engineering 문단",
         body={
-            "variant": "cursor-architecture-native",
-            "request": "사용자 요청",
-            "index": "파일 · 심볼 · 문서 · PR",
-            "context": "관련 파일 · 규칙 · 변경 이력",
-            "tools": ["SearchCode", "Read", "EditFile", "명령 실행"],
-            "feedback": "테스트 · 린트 · 로그 확인",
-            "steps": [
-                {"index": "01", "title": "인덱싱", "text": "파일 · 심볼 · AST · 문서"},
-                {"index": "02", "title": "검색", "text": "파일 · 규칙 · 히스토리"},
-                {"index": "03", "title": "조립", "text": "Composer · Agent Mode"},
-                {"index": "04", "title": "수정·실행", "text": "멀티파일 수정 · 명령 실행"},
-                {"index": "05", "title": "검증", "text": "테스트 · 린트 · 로그"},
-            ],
+            "variant": "cursor-tools",
+            "left": {
+                "title": "초기 Copilot",
+                "items": ["현재 파일 중심", "검색 없음 또는 제한", "한 줄 또는 한 블록"],
+            },
+            "right": {
+                "title": "Cursor 계열 도구",
+                "items": ["전체 코드베이스", "RAG · AST · 시맨틱 검색", "멀티파일 수정과 Tools"],
+            },
+            "tools": ["채팅", "Composer", "Agent Mode", "Context Engineering"],
         },
     )

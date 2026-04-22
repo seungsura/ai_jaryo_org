@@ -194,19 +194,8 @@
 - notes intent: page-017 reference 기반 성과 metric cards
 - notes status: `ready`
 
-### S017. 왜 Claude Code인가
+### S017. 1막: Copilot과 ChatGPT, 프롬프트의 시대
 - file: `docs/03-html/slides/slide-017.html`
-- slide type: `statement`
-- layout: `editorial`
-- shell: `statement-editorial-shell`
-- source section: `02`
-- source paragraph block: `02-00`
-- key claim: Agent = Model + Harness
-- notes intent: Agent = Model + Harness thesis와 명사형 quote
-- notes status: `ready`
-
-### S018. 1막: Copilot과 ChatGPT, 프롬프트의 시대
-- file: `docs/03-html/slides/slide-018.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
@@ -216,30 +205,52 @@
 - notes intent: 프롬프트 시대의 출발점 비교
 - notes status: `ready`
 
-### S019. 프롬프트 패턴의 확장
+### S018. Chain-of-Thought
+- file: `docs/03-html/slides/slide-018.html`
+- slide type: `process`
+- layout: `wide`
+- shell: `process-flow-shell`
+- source section: `02`
+- source paragraph block: `02-03`
+- key claim: 중간 추론 단계를 쓰게 한다
+- notes intent: Chain-of-Thought native example diagram
+- notes status: `ready`
+
+### S019. ReAct / Tree-of-Thought
 - file: `docs/03-html/slides/slide-019.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
 - source section: `02`
 - source paragraph block: `02-03`
-- key claim: 프롬프트가 모델에게 추가로 맡긴 일
-- notes intent: CoT/ReAct/ToT/Self-Refine/Reflexion diagram
+- key claim: 행동 루프와 경로 탐색
+- notes intent: ReAct / Tree-of-Thought native diagrams
 - notes status: `ready`
 
-### S020. 네 가지 에이전틱 패턴
+### S020. Self-Refine / Reflexion
 - file: `docs/03-html/slides/slide-020.html`
+- slide type: `process`
+- layout: `wide`
+- shell: `process-flow-shell`
+- source section: `02`
+- source paragraph block: `02-03`
+- key claim: 출력 이후의 피드백 루프
+- notes intent: Self-Refine / Reflexion native feedback-loop diagrams
+- notes status: `ready`
+
+### S021. 네 가지 에이전틱 패턴
+- file: `docs/03-html/slides/slide-021.html`
 - slide type: `table`
 - layout: `wide`
 - shell: `evidence-table-shell`
 - source section: `02`
 - source paragraph block: `02-04`
 - key claim: 모델 바깥 구조가 성능을 좌우
-- notes intent: Andrew Ng 4 agentic patterns
+- notes intent: Andrew Ng four patterns native quadrant
 - notes status: `ready`
 
-### S021. 프롬프트 시대의 벽
-- file: `docs/03-html/slides/slide-021.html`
+### S022. 프롬프트 시대의 벽
+- file: `docs/03-html/slides/slide-022.html`
 - slide type: `statement`
 - layout: `editorial`
 - shell: `statement-editorial-shell`
@@ -249,8 +260,8 @@
 - notes intent: 프롬프트 시대의 한계
 - notes status: `ready`
 
-### S022. 2막: Cursor와 컨텍스트의 시대
-- file: `docs/03-html/slides/slide-022.html`
+### S023. 2막: Cursor와 컨텍스트의 시대
+- file: `docs/03-html/slides/slide-023.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
@@ -260,19 +271,19 @@
 - notes intent: 초기 Copilot과 Cursor 계열 도구 비교
 - notes status: `ready`
 
-### S023. Cursor 아키텍처
-- file: `docs/03-html/slides/slide-023.html`
+### S024. Cursor 아키텍처
+- file: `docs/03-html/slides/slide-024.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
 - source section: `02`
 - source paragraph block: `02-07`
 - key claim: 긴 프롬프트가 아니라 검색기와 편집기
-- notes intent: Cursor architecture asset and process
+- notes intent: Cursor architecture native system map
 - notes status: `ready`
 
-### S024. 컨텍스트 시대의 벽
-- file: `docs/03-html/slides/slide-024.html`
+### S025. 컨텍스트 시대의 벽
+- file: `docs/03-html/slides/slide-025.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
@@ -282,26 +293,15 @@
 - notes intent: 컨텍스트 시대의 한계와 에이전트 루프
 - notes status: `ready`
 
-### S025. 3막: 하네스의 시대
-- file: `docs/03-html/slides/slide-025.html`
+### S026. 3막: 하네스의 시대
+- file: `docs/03-html/slides/slide-026.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
 - source section: `02`
 - source paragraph block: `02-09`
-- key claim: 터미널 네이티브 실행 환경
-- notes intent: Claude Code harness components
-- notes status: `ready`
-
-### S026. Agent = Model + Harness
-- file: `docs/03-html/slides/slide-026.html`
-- slide type: `statement`
-- layout: `editorial`
-- shell: `statement-editorial-shell`
-- source section: `02`
-- source paragraph block: `02-10`
-- key claim: 하네스가 결정하는 네 지점
-- notes intent: 02-v05 decision points
+- key claim: 작업 환경 전체를 품기 시작한 코딩 도구
+- notes intent: Harness era signs without chapter 4 mechanics
 - notes status: `ready`
 
 ### S027. 시대의 흐름
@@ -311,6 +311,6 @@
 - shell: `evidence-table-shell`
 - source section: `02`
 - source paragraph block: `02-11`
-- key claim: 프롬프트, 컨텍스트, 하네스의 포함 관계
-- notes intent: three-era timeline and table
+- key claim: Agent = Model + Harness
+- notes intent: final relationship page
 - notes status: `ready`

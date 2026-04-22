@@ -1475,8 +1475,8 @@ ul {
 }
 
 .metric-impact-body.is-tall-reference {
-  top: 112px;
-  bottom: 54px;
+  top: 126px;
+  bottom: 72px;
 }
 
 .impact-card-grid {
@@ -1491,8 +1491,8 @@ ul {
 }
 
 .metric-impact-body.is-tall-reference .impact-card {
-  min-height: 300px;
-  padding: 34px 28px 30px;
+  min-height: 222px;
+  padding: 24px 24px 22px;
 }
 
 .impact-card strong {
@@ -1502,8 +1502,8 @@ ul {
 }
 
 .metric-impact-body.is-tall-reference .impact-card strong {
-  font-size: 64px;
-  line-height: 1.05;
+  font-size: 46px;
+  line-height: 1.02;
 }
 
 .impact-card:nth-child(3) {
@@ -1522,7 +1522,7 @@ ul {
 }
 
 .metric-impact-body.is-tall-reference .impact-card:nth-child(3) strong {
-  font-size: 42px;
+  font-size: 30px;
   line-height: 1.12;
 }
 
@@ -1626,6 +1626,150 @@ ul {
   line-height: 1.15;
   font-weight: 900;
   word-break: keep-all;
+}
+
+.cot-native-body {
+  position: absolute;
+  left: 58px;
+  right: 58px;
+  top: 126px;
+  bottom: 72px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.26fr) minmax(0, 0.92fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.cot-claim-card,
+.cot-summary-card,
+.cot-example-card {
+  min-height: 0;
+  padding: 22px;
+  align-content: center;
+}
+
+.cot-claim-card h2,
+.cot-summary-card h2 {
+  color: var(--color-ink);
+  font-size: 24px;
+  line-height: 1.12;
+  font-weight: 900;
+  word-break: keep-all;
+}
+
+.cot-claim-card p,
+.cot-summary-card p {
+  color: var(--color-mute);
+  font-size: 15px;
+  line-height: 1.24;
+  font-weight: 800;
+  word-break: keep-all;
+}
+
+.cot-native-body .cot-example-diagram {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  align-content: center;
+  height: 100%;
+}
+
+.cot-reasoning-step {
+  display: grid;
+  gap: 6px;
+  min-height: 54px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: var(--color-signal-soft);
+  text-align: center;
+}
+
+.cot-reasoning-step strong {
+  color: var(--color-signal);
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.cot-reasoning-step em {
+  color: var(--color-ink);
+  font-size: 17px;
+  line-height: 1.08;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.cot-reasoning-step:last-child {
+  background: var(--color-dark-surface);
+}
+
+.cot-reasoning-step:last-child strong,
+.cot-reasoning-step:last-child em {
+  color: #ffffff;
+}
+
+.pattern-pair-body,
+.feedback-loop-body {
+  position: absolute;
+  left: 58px;
+  right: 58px;
+  top: 126px;
+  bottom: 72px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.pattern-pair-card,
+.feedback-loop-card {
+  min-height: 0;
+  padding: 22px 24px;
+  align-content: stretch;
+  grid-template-rows: auto auto minmax(96px, 1fr) auto;
+  gap: 12px;
+}
+
+.pattern-pair-card h2,
+.feedback-loop-card h2 {
+  color: var(--color-ink);
+  font-size: 28px;
+  line-height: 1.08;
+  font-weight: 900;
+}
+
+.pattern-pair-card p,
+.feedback-loop-card p {
+  color: var(--color-mute);
+  font-size: 16px;
+  line-height: 1.22;
+  font-weight: 800;
+  word-break: keep-all;
+}
+
+.pattern-pair-card small,
+.feedback-loop-card small {
+  color: var(--color-signal);
+  font-size: 14px;
+  line-height: 1.18;
+  font-weight: 900;
+  word-break: keep-all;
+}
+
+.pattern-pair-card .pattern-native-diagram,
+.feedback-loop-card .pattern-native-diagram {
+  min-height: 116px;
+  margin-top: 0;
+}
+
+.pattern-pair-card .react-diagram,
+.feedback-loop-card .feedback-diagram {
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: center;
+}
+
+.pattern-pair-card .tot-diagram {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto 1fr;
 }
 
 .pattern-map-body {
@@ -2123,13 +2267,13 @@ ul {
 }
 
 .cursor-architecture-flow {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 8px;
 }
 
 .cursor-architecture-step {
   min-height: 74px;
-  padding: 10px 9px;
+  padding: 10px 7px;
   align-content: center;
   position: relative;
 }
@@ -2325,6 +2469,74 @@ ul {
   grid-template-columns: 1fr;
 }
 
+.harness-era-signs-body {
+  position: absolute;
+  left: 58px;
+  right: 58px;
+  top: 126px;
+  bottom: 72px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 16px;
+}
+
+.harness-era-claim {
+  padding: 16px 22px;
+  border-radius: 8px;
+  background: var(--color-dark-surface);
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 1.12;
+  font-weight: 900;
+  word-break: keep-all;
+}
+
+.harness-era-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.harness-era-card {
+  min-height: 0;
+  padding: 20px;
+  align-content: center;
+  gap: 12px;
+}
+
+.harness-era-card h2 {
+  color: var(--color-ink);
+  font-size: 22px;
+  line-height: 1.1;
+  font-weight: 900;
+  word-break: keep-all;
+}
+
+.harness-era-card p {
+  color: var(--color-mute);
+  font-size: 15px;
+  line-height: 1.24;
+  font-weight: 800;
+  word-break: keep-all;
+}
+
+.harness-era-components {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.harness-era-component {
+  padding: 10px 8px;
+  border-radius: 8px;
+  background: var(--color-signal-soft);
+  color: var(--color-ink);
+  font-size: 14px;
+  line-height: 1.05;
+  font-weight: 900;
+  text-align: center;
+}
+
 .decision-map-body {
   position: absolute;
   left: 58px;
@@ -2443,7 +2655,7 @@ ul {
   top: 122px;
   bottom: 70px;
   display: grid;
-  grid-template-rows: minmax(86px, 1fr) auto auto;
+  grid-template-rows: minmax(76px, 1fr) auto auto auto;
   gap: 10px;
 }
 
@@ -2505,6 +2717,16 @@ ul {
   border-radius: 8px;
   background: var(--color-dark-surface);
   color: #ffffff;
+  font-size: 24px;
+  line-height: 1.1;
+  font-weight: 900;
+}
+
+.era-native-formula {
+  padding: 12px 18px;
+  border-radius: 8px;
+  background: var(--color-signal-soft);
+  color: var(--color-ink);
   font-size: 24px;
   line-height: 1.1;
   font-weight: 900;
