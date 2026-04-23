@@ -6,17 +6,18 @@ from jaryo_html_deck.model import SlideSpec, make_slide
 def build() -> SlideSpec:
     return make_slide(
         29,
-        title="TDD (Test-Driven Development)",
+        title="TDD",
         shell="statement-editorial-shell",
         source_section="03",
         source_block="03-03",
         key_claim="테스트를 먼저 쓰고, 통과하는 코드를 나중에 쓴다",
         chapter_label="CHAPTER 03",
-        lead="테스트를 먼저 쓰고, 통과하는 코드를 나중에 쓴다. AI 시대에는 인간이 테스트, AI가 구현.",
+        lead="Test-Driven Development",
         notes_intent="Page 028 TDD lead와 anti-cheat 규칙",
         notes="테스트가 에이전트의 자유를 제한하는 통제선",
         body={
             "variant": "tdd-control-layers",
+            "hide_chapter_label": True,
             "flow": [
                 {"title": "Red", "text": "인간이 실패 테스트 작성"},
                 {"title": "Green", "text": "AI가 통과 코드 구현"},

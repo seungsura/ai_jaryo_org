@@ -589,6 +589,10 @@ main[data-slide-id="S031"] .top-band .title-placeholder.statement-text {
   background: var(--color-line-soft);
 }
 
+.slide[data-slide-id="S029"] .tdd-flow-stack::before {
+  background: var(--color-signal);
+}
+
 .tdd-flow-step {
   min-height: 0;
   padding: 14px 18px;
@@ -2407,6 +2411,10 @@ main[data-slide-id="S031"] .top-band .title-placeholder.statement-text {
   gap: 7px;
 }
 
+.responsibility-count-4 {
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+
 .responsibility-card,
 .tool-cluster-card,
 .memory-artifact-card {
@@ -2429,6 +2437,15 @@ main[data-slide-id="S031"] .top-band .title-placeholder.statement-text {
   font-size: 13px;
   line-height: 1.05;
   font-weight: 900;
+  word-break: keep-all;
+}
+
+.responsibility-card p {
+  margin: 4px 0 0;
+  color: var(--color-mute);
+  font-size: 11px;
+  line-height: 1.14;
+  font-weight: 800;
   word-break: keep-all;
 }
 
@@ -2455,6 +2472,11 @@ main[data-slide-id="S031"] .top-band .title-placeholder.statement-text {
   gap: 5px;
 }
 
+.tool-cluster-count-3 {
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
 .tool-cluster-card {
   display: grid;
   align-content: center;
@@ -2469,6 +2491,17 @@ main[data-slide-id="S031"] .top-band .title-placeholder.statement-text {
   line-height: 1.08;
   font-weight: 900;
   word-break: keep-all;
+}
+
+.tool-cluster-count-3 .tool-cluster-card {
+  min-height: 0;
+  padding: 12px 12px;
+  border-left-width: 4px;
+}
+
+.tool-cluster-count-3 .tool-cluster-card h2 {
+  font-size: 14px;
+  line-height: 1.14;
 }
 
 .tool-network-synthesis {
