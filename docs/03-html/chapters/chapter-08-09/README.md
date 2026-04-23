@@ -15,7 +15,7 @@
 - screenshot artifacts: `output/playwright/chapter-08-09/`
 - PDF artifact: `output/pdf/harness-chapter-08-09-current-720x405.pdf`
 - final main range: `S082`-`S094`
-- final main source modules: `scripts/jaryo_html_deck/slides/slide_082.py`-`slide_094.py`
+- final main source modules: `scripts/jaryo_html_deck/slides/chapter_08/slide_082.py`-`slide_094.py`
 
 ## Integration Rule
 

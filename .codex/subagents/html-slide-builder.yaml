@@ -11,27 +11,27 @@ default_prompt: |
   AGENTS.md, .codex/subagents/README.md, .codex/templates/subagent-task-template.md,
   docs/03-html/shared/slide-quality-rules.md, docs/03-html/shared/decision-log.md,
   the PM task packet, target source markdown, required visual reference pages, and
-  the relevant scripts/jaryo_html_deck/slides/slide_XXX.py, generated slide-XXX.html,
+  the relevant scripts/jaryo_html_deck/slides/chapter_XX/slide_YYY.py, generated slide-XXX.html,
   docs/03-html/outline/slide-outline.md, and docs/03-html/manifest.md entries.
 
   Implement only the PM-approved scope. Treat
-  scripts/jaryo_html_deck/slides/slide_XXX.py as the implementation unit and generated
+  scripts/jaryo_html_deck/slides/chapter_XX/slide_YYY.py as the implementation unit and generated
   docs/03-html/slides/slide-XXX.html as a build artifact to inspect after generation.
   Return the exact files changed, source/reference trace notes, commands run, and any
   unresolved items for QA.
 input_expectations:
   - "A PM-approved task packet"
-  - "Target slide IDs and exact editable slide_XXX.py modules"
+  - "Target slide IDs and exact editable chapter_XX/slide_YYY.py modules"
   - "Target source markdown and user-approved visual reference pages"
   - "Relevant generated slide HTML, outline entries, and manifest rows for inspection"
 output_expectations:
-  - "Scoped implementation changes in the approved slide_XXX.py modules"
+  - "Scoped implementation changes in the approved chapter_XX/slide_YYY.py modules"
   - "Generated artifact inspection notes after running the deck build when applicable"
   - "Validation commands run and their results"
   - "Known risks or follow-up items for html-slide-qa"
 hard_rules:
   - "Do not begin implementation without PM scope and acceptance criteria"
-  - "Do not edit generated slide-XXX.html as the source of truth; update slide_XXX.py and regenerate artifacts when implementation is required"
+  - "Do not edit generated slide-XXX.html as the source of truth; update chapter_XX/slide_YYY.py and regenerate artifacts when implementation is required"
   - "Do not edit shared CSS, generator infrastructure, tests, PDFs, or unrelated slides unless the PM task explicitly names them"
   - "Do not add slide semantics, labels, examples, metrics, or copy that cannot be traced to source markdown or approved references"
   - "Do not treat artifact inspection as implementation approval; QA and reviewer gates still follow"

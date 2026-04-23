@@ -11,7 +11,7 @@ default_prompt: |
   AGENTS.md, .codex/subagents/README.md, .codex/templates/subagent-task-template.md,
   docs/03-html/shared/slide-quality-rules.md, docs/03-html/shared/decision-log.md,
   the PM task packet, builder notes, target source markdown, required visual reference
-  pages, and the relevant scripts/jaryo_html_deck/slides/slide_XXX.py, generated
+  pages, and the relevant scripts/jaryo_html_deck/slides/chapter_XX/slide_YYY.py, generated
   slide-XXX.html, docs/03-html/outline/slide-outline.md, and docs/03-html/manifest.md
   entries.
 
@@ -21,7 +21,7 @@ default_prompt: |
   recommended fix scope.
 input_expectations:
   - "PM task packet and builder completion notes"
-  - "Changed slide_XXX.py modules and generated slide HTML artifacts"
+  - "Changed chapter_XX/slide_YYY.py modules and generated slide HTML artifacts"
   - "Relevant source markdown, visual references, outline entries, and manifest rows"
   - "Expected validation command list and any screenshot/PDF smoke requirements"
 output_expectations:

@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>왜 하나의 에이전트만으로는 부족한가</title>
+<title>1. Sub-Agent: 중간 작업을 격리하는 기본형</title>
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="../shared/tokens.css">
 <link rel="stylesheet" href="../shared/slide-base.css">
 </head>
 <body class="theme-minimal-light">
-<main class="slide family-content layout-wide density-medium chapter-06" data-slide-id="S056" data-shell="evidence-table-shell" data-notes="source lines 3-11, page 063 structure-only reference" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 06</p><h1 class="title-placeholder">왜 하나의 에이전트만으로는 부족한가</h1></section><section class="ch-wall-body"><div class="ch-wall-grid"><article class="ch-card ch-wall-card"><span class="ch-card-index">01</span><h2>컨텍스트의 벽</h2><p>탐색·구현·로그 분석·리뷰·문서 작성이 같은 창에 쌓임</p><small>무관한 정보가 판단을 오염</small></article><article class="ch-card ch-wall-card"><span class="ch-card-index">02</span><h2>역할의 벽</h2><p>계획·구현·리뷰·테스트 해석이 한 손에 집중</p><small>자기 답을 자기가 채점</small></article><article class="ch-card ch-wall-card"><span class="ch-card-index">03</span><h2>신뢰성의 벽</h2><p>탐색만 해야 하는 작업에 쓰기 권한까지 열림</p><small>민감 데이터를 볼 필요가 없는 작업까지 전체 컨텍스트 수신</small></article></div><p class="ch-dark-conclusion centered-claim">멀티 에이전트는 이 문제를 줄이기 위한 구조</p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">56</span></footer></main>
+<main class="slide family-content layout-wide density-medium chapter-06" data-slide-id="S056" data-shell="process-flow-shell" data-notes="source lines 28-51, page 066 structure reference" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 06</p><h1 class="title-placeholder">1. Sub-Agent: 중간 작업을 격리하는 기본형</h1></section><section class="ch-map-side-body"><div class="ch-main-sub-map"><article class="ch-map-node ch-map-main"><strong>Main</strong><span>결과 요약과 결론만 수신</span></article><div class="ch-map-arrow ch-map-arrow-out"><span>task</span></div><article class="ch-map-node ch-map-sub"><strong>Sub</strong><span>격리된 워커</span><div class="ch-map-artifacts"><span>file</span><span>log</span><span>test</span><span>api</span></div></article><div class="ch-map-arrow ch-map-arrow-back"><span>summary</span></div></div><div class="ch-side-stack"><article class="ch-card ch-side-card"><h2>컨텍스트 격리</h2><p>파일을 많이 읽고 수만 토큰을 써도 메인 컨텍스트는 오염되지 않음</p></article><article class="ch-card ch-side-card"><h2>least privilege</h2><p>필요한 파일, 질문, 출력 형식, 권한만 전달</p></article><article class="ch-card ch-side-card"><h2>좋은 지시</h2><p>목적, 읽을 범위, 출력 형식, 근거 표시 방식, 금지 행동</p></article></div><p class="ch-dark-conclusion centered-claim">Sub-Agent는 메인 컨텍스트를 지키는 데 특히 강함</p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">56</span></footer></main>
 </body>
 </html>

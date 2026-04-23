@@ -12,7 +12,7 @@
 6. `docs/03-html/shared/minimal-light-adaptation.md`
 7. `docs/03-html/shared/make-slide-adoption.md`
 
-HTML은 canonical source가 아니다. 문장, claim, 구조 의미는 `docs/02-seminar/harness-rebuilt-md` source markdown과 승인된 outline에서만 온다. `docs/03-html/slides/*.html`과 `docs/03-html/deck/index.html`은 artifact이고, 실제 구현 단위는 `scripts/jaryo_html_deck/slides/slide_XXX.py`다.
+HTML은 canonical source가 아니다. 문장, claim, 구조 의미는 `docs/02-seminar/harness-rebuilt-md` source markdown과 승인된 outline에서만 온다. `docs/03-html/slides/*.html`과 `docs/03-html/deck/index.html`은 artifact이고, 실제 구현 단위는 `scripts/jaryo_html_deck/slides/chapter_XX/slide_YYY.py`다.
 
 ## 현재 Deck 계약
 

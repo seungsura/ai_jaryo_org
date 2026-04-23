@@ -1,6 +1,6 @@
 # Slide Outline
 
-- status: 00/01/02/03/04/05/06/07/08/09 94-slide make-slide rebuild
+- status: 00/01/02/03/04/05/06/07/08/09 92-slide make-slide rebuild
 - canonical source: `docs/02-seminar/harness-rebuilt-md/00-*.md`, `docs/02-seminar/harness-rebuilt-md/01-*.md`, `docs/02-seminar/harness-rebuilt-md/02-*.md`, `docs/02-seminar/harness-rebuilt-md/03-*.md`, `docs/02-seminar/harness-rebuilt-md/04-*.md`, `docs/02-seminar/harness-rebuilt-md/05-*.md`, `docs/02-seminar/harness-rebuilt-md/06-*.md`, `docs/02-seminar/harness-rebuilt-md/07-*.md`, `docs/02-seminar/harness-rebuilt-md/08-*.md`, `docs/02-seminar/harness-rebuilt-md/09-*.md`
 - output deck: `docs/03-html/deck/index.html`
 - output script: `docs/03-html/deck/script.md`
@@ -218,30 +218,8 @@
 - notes intent: CoT / ReAct / ToT native three-card comparison
 - notes status: `ready`
 
-### S019. ReAct / Tree-of-Thought
+### S019. 네 가지 에이전틱 패턴
 - file: `docs/03-html/slides/slide-019.html`
-- slide type: `process`
-- layout: `wide`
-- shell: `process-flow-shell`
-- source section: `02`
-- source paragraph block: `02-03`
-- key claim: 행동 루프와 경로 탐색
-- notes intent: ReAct / Tree-of-Thought native diagrams
-- notes status: `ready`
-
-### S020. Self-Refine / Reflexion
-- file: `docs/03-html/slides/slide-020.html`
-- slide type: `process`
-- layout: `wide`
-- shell: `process-flow-shell`
-- source section: `02`
-- source paragraph block: `02-03`
-- key claim: 출력 이후의 피드백 루프
-- notes intent: Self-Refine / Reflexion native feedback-loop diagrams
-- notes status: `ready`
-
-### S021. 네 가지 에이전틱 패턴
-- file: `docs/03-html/slides/slide-021.html`
 - slide type: `table`
 - layout: `wide`
 - shell: `evidence-table-shell`
@@ -251,8 +229,8 @@
 - notes intent: Andrew Ng four patterns node-only native quadrant
 - notes status: `ready`
 
-### S022. 프롬프트 시대의 벽
-- file: `docs/03-html/slides/slide-022.html`
+### S020. 프롬프트 시대의 벽
+- file: `docs/03-html/slides/slide-020.html`
 - slide type: `statement`
 - layout: `editorial`
 - shell: `statement-editorial-shell`
@@ -262,8 +240,8 @@
 - notes intent: 프롬프트 시대의 한계
 - notes status: `ready`
 
-### S023. 2막: Cursor와 컨텍스트의 시대
-- file: `docs/03-html/slides/slide-023.html`
+### S021. 2막: Cursor와 컨텍스트의 시대
+- file: `docs/03-html/slides/slide-021.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
@@ -273,8 +251,8 @@
 - notes intent: 초기 Copilot과 Cursor 계열 도구 비교
 - notes status: `ready`
 
-### S024. Cursor 아키텍처
-- file: `docs/03-html/slides/slide-024.html`
+### S022. Cursor 아키텍처
+- file: `docs/03-html/slides/slide-022.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
@@ -284,19 +262,19 @@
 - notes intent: Cursor architecture raw asset with source-backed arrow flow
 - notes status: `ready`
 
-### S025. 컨텍스트 시대의 벽
-- file: `docs/03-html/slides/slide-025.html`
+### S023. 컨텍스트만으로는 부족하다
+- file: `docs/03-html/slides/slide-023.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
 - source section: `02`
 - source paragraph block: `02-08`
 - key claim: 좋은 입력만으로는 루프 통제 불가
-- notes intent: 컨텍스트 시대의 한계와 실행 통제 필요성
+- notes intent: 컨텍스트 시대의 벽을 통제 관점으로 재구성
 - notes status: `ready`
 
-### S026. 3막: 하네스의 시대
-- file: `docs/03-html/slides/slide-026.html`
+### S024. 3막: 하네스의 시대
+- file: `docs/03-html/slides/slide-024.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
@@ -306,30 +284,30 @@
 - notes intent: Harness era minimal transition
 - notes status: `ready`
 
-### S027. 시대의 흐름
-- file: `docs/03-html/slides/slide-027.html`
+### S025. 3막: Claude Code, Codex, OpenCode 와 하네스의 시대
+- file: `docs/03-html/slides/slide-025.html`
 - slide type: `table`
 - layout: `wide`
 - shell: `evidence-table-shell`
 - source section: `02`
 - source paragraph block: `02-11`
 - key claim: Agent = Model + Harness
-- notes intent: final relationship page
+- notes intent: 2장 결론 관계식을 source heading 중심으로 고정
 - notes status: `ready`
 
-### S028. AI 시대의 개발 방법론
-- file: `docs/03-html/slides/slide-028.html`
+### S026. AI 시대의 개발 방법론
+- file: `docs/03-html/slides/slide-026.html`
 - slide type: `section`
 - layout: `centered`
 - shell: `section-divider-shell`
 - source section: `03`
 - source paragraph block: `03-00`
 - key claim: TDD·SDD·Spec-first 재부상
-- notes intent: 03장 진입을 알리는 section divider
+- notes intent: 03장 진입을 source heading 키워드와 함께 고정
 - notes status: `ready`
 
-### S029. 왜 지금 방법론
-- file: `docs/03-html/slides/slide-029.html`
+### S027. 왜 지금 방법론
+- file: `docs/03-html/slides/slide-027.html`
 - slide type: `table`
 - layout: `wide`
 - shell: `evidence-table-shell`
@@ -339,8 +317,8 @@
 - notes intent: AI 코딩 방법론 재부상 연대기
 - notes status: `ready`
 
-### S030. SDD
-- file: `docs/03-html/slides/slide-030.html`
+### S028. SDD
+- file: `docs/03-html/slides/slide-028.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
@@ -350,8 +328,8 @@
 - notes intent: GitHub Spec Kit의 세 단계와 멈춤 장치
 - notes status: `ready`
 
-### S031. TDD (Test-Driven Development)
-- file: `docs/03-html/slides/slide-031.html`
+### S029. TDD (Test-Driven Development)
+- file: `docs/03-html/slides/slide-029.html`
 - slide type: `statement`
 - layout: `editorial`
 - shell: `statement-editorial-shell`
@@ -361,8 +339,8 @@
 - notes intent: Page 028 TDD lead와 anti-cheat 규칙
 - notes status: `ready`
 
-### S032. Waterfall vs SDD
-- file: `docs/03-html/slides/slide-032.html`
+### S030. Waterfall vs SDD
+- file: `docs/03-html/slides/slide-030.html`
 - slide type: `comparison`
 - layout: `split`
 - shell: `split-compare-shell`
@@ -372,8 +350,8 @@
 - notes intent: Royce 1970과 spec-driven.md evidence로 Waterfall vs SDD 비교
 - notes status: `ready`
 
-### S033. SDD + TDD가 Harness로 이어지는 이유
-- file: `docs/03-html/slides/slide-033.html`
+### S031. SDD + TDD가 Harness로 이어지는 이유
+- file: `docs/03-html/slides/slide-031.html`
 - slide type: `statement`
 - layout: `editorial`
 - shell: `statement-editorial-shell`
@@ -383,8 +361,8 @@
 - notes intent: 03장에서 04장 Harness 구조로 넘어가는 bridge
 - notes status: `ready`
 
-### S034. 프롬프트를 넘어서
-- file: `docs/03-html/slides/slide-034.html`
+### S032. 프롬프트를 넘어서
+- file: `docs/03-html/slides/slide-032.html`
 - slide type: `section`
 - layout: `centered`
 - shell: `section-divider-shell`
@@ -394,8 +372,8 @@
 - notes intent: 04장 진입을 알리는 section divider
 - notes status: `ready`
 
-### S035. Prompt, Context, Harness
-- file: `docs/03-html/slides/slide-035.html`
+### S033. Prompt, Context, Harness
+- file: `docs/03-html/slides/slide-033.html`
 - slide type: `table`
 - layout: `wide`
 - shell: `evidence-table-shell`
@@ -405,8 +383,8 @@
 - notes intent: source page 36/37 의미를 한 장의 hierarchy로 압축
 - notes status: `ready`
 
-### S036. Agent = Model + Harness
-- file: `docs/03-html/slides/slide-036.html`
+### S034. Agent = Model + Harness
+- file: `docs/03-html/slides/slide-034.html`
 - slide type: `table`
 - layout: `wide`
 - shell: `evidence-table-shell`
@@ -416,8 +394,8 @@
 - notes intent: 공식, 인용구, 여섯 구성 요소를 한 장에 배치
 - notes status: `ready`
 
-### S037. 에이전트 루프: 하네스의 심장
-- file: `docs/03-html/slides/slide-037.html`
+### S035. 에이전트 루프: 하네스의 심장
+- file: `docs/03-html/slides/slide-035.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
@@ -427,8 +405,8 @@
 - notes intent: gather context, take action, verify work, repeat loop
 - notes status: `ready`
 
-### S038. 하네스의 책임
-- file: `docs/03-html/slides/slide-038.html`
+### S036. 하네스의 책임
+- file: `docs/03-html/slides/slide-036.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
@@ -438,8 +416,8 @@
 - notes intent: 5 responsibility cards와 설계 순서 rail
 - notes status: `ready`
 
-### S039. 하네스의 도구
-- file: `docs/03-html/slides/slide-039.html`
+### S037. 하네스의 도구
+- file: `docs/03-html/slides/slide-037.html`
 - slide type: `table`
 - layout: `wide`
 - shell: `evidence-table-shell`
@@ -449,8 +427,8 @@
 - notes intent: 책임 anchor와 도구 node의 다대다 관계 지도
 - notes status: `ready`
 
-### S040. Context Engineering
-- file: `docs/03-html/slides/slide-040.html`
+### S038. Context Engineering
+- file: `docs/03-html/slides/slide-038.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
@@ -460,8 +438,8 @@
 - notes intent: Write, Select, Compress, Isolate 네 전략
 - notes status: `ready`
 
-### S041. MCP와 Context 7
-- file: `docs/03-html/slides/slide-041.html`
+### S039. MCP와 Context 7
+- file: `docs/03-html/slides/slide-039.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
@@ -471,8 +449,8 @@
 - notes intent: MCP 원리와 Context 7 MCP 서버 연결 의미
 - notes status: `ready`
 
-### S042. RAG vs Context 7
-- file: `docs/03-html/slides/slide-042.html`
+### S040. RAG vs Context 7
+- file: `docs/03-html/slides/slide-040.html`
 - slide type: `table`
 - layout: `wide`
 - shell: `evidence-table-shell`
@@ -482,8 +460,8 @@
 - notes intent: RAG와 Context 7의 차이를 표로 비교
 - notes status: `ready`
 
-### S043. Memory: 세션을 넘어서는 기억
-- file: `docs/03-html/slides/slide-043.html`
+### S041. Memory: 세션을 넘어서는 기억
+- file: `docs/03-html/slides/slide-041.html`
 - slide type: `table`
 - layout: `wide`
 - shell: `evidence-table-shell`
@@ -493,8 +471,8 @@
 - notes intent: 외부 artifact map과 memory claim
 - notes status: `ready`
 
-### S044. Stable Prefix와 Variable Suffix
-- file: `docs/03-html/slides/slide-044.html`
+### S042. Stable Prefix와 Variable Suffix
+- file: `docs/03-html/slides/slide-042.html`
 - slide type: `comparison`
 - layout: `split`
 - shell: `split-compare-shell`
@@ -504,8 +482,8 @@
 - notes intent: prefix/suffix diagram
 - notes status: `ready`
 
-### S045. 하네스는 환경 그 자체다
-- file: `docs/03-html/slides/slide-045.html`
+### S043. 하네스는 환경 그 자체다
+- file: `docs/03-html/slides/slide-043.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
@@ -515,8 +493,8 @@
 - notes intent: chapter 04 closing statement
 - notes status: `ready`
 
-### S046. 이렇게 하면 망한다
-- file: `docs/03-html/slides/slide-046.html`
+### S044. 이렇게 하면 망한다
+- file: `docs/03-html/slides/slide-044.html`
 - slide type: `section`
 - layout: `centered`
 - shell: `section-divider-shell`
@@ -526,8 +504,8 @@
 - notes intent: chapter 05 opener
 - notes status: `ready`
 
-### S047. 오류의 나비효과
-- file: `docs/03-html/slides/slide-047.html`
+### S045. 오류의 나비효과
+- file: `docs/03-html/slides/slide-045.html`
 - slide type: `table`
 - layout: `wide`
 - shell: `evidence-table-shell`
@@ -537,8 +515,8 @@
 - notes intent: 작은 오해가 루프 전체로 누적되는 구조
 - notes status: `ready`
 
-### S048. 작업이 길어질 때 특히 위험한 이유
-- file: `docs/03-html/slides/slide-048.html`
+### S046. 작업이 길어질 때 특히 위험한 이유
+- file: `docs/03-html/slides/slide-046.html`
 - slide type: `statement`
 - layout: `editorial`
 - shell: `statement-editorial-shell`
@@ -548,8 +526,8 @@
 - notes intent: 첫 번째 결과물에서 20 단계 결과물까지의 성공률 하락
 - notes status: `ready`
 
-### S049. 컨텍스트가 길수록 항상 좋은 것은 아니다
-- file: `docs/03-html/slides/slide-049.html`
+### S047. 컨텍스트가 길수록 항상 좋은 것은 아니다
+- file: `docs/03-html/slides/slide-047.html`
 - slide type: `comparison`
 - layout: `split`
 - shell: `split-compare-shell`
@@ -559,8 +537,8 @@
 - notes intent: 길어진 컨텍스트의 잡음 문제
 - notes status: `ready`
 
-### S050. 대표 실패 패턴 네 가지
-- file: `docs/03-html/slides/slide-050.html`
+### S048. 대표 실패 패턴 네 가지
+- file: `docs/03-html/slides/slide-048.html`
 - slide type: `statement`
 - layout: `editorial`
 - shell: `statement-editorial-shell`
@@ -570,8 +548,8 @@
 - notes intent: 컨텍스트 실패 모드 네 가지 정리
 - notes status: `ready`
 
-### S051. 현실에서 보이는 증상들
-- file: `docs/03-html/slides/slide-051.html`
+### S049. 현실에서 보이는 증상들
+- file: `docs/03-html/slides/slide-049.html`
 - slide type: `statement`
 - layout: `editorial`
 - shell: `statement-editorial-shell`
@@ -581,8 +559,8 @@
 - notes intent: 실전 증상 3종을 source-backed 카드로 압축
 - notes status: `ready`
 
-### S052. Context Rot: 길어진 기억은 조용히 썩는다
-- file: `docs/03-html/slides/slide-052.html`
+### S050. Context Rot: 길어진 기억은 조용히 썩는다
+- file: `docs/03-html/slides/slide-050.html`
 - slide type: `statement`
 - layout: `editorial`
 - shell: `statement-editorial-shell`
@@ -592,8 +570,8 @@
 - notes intent: Context Rot의 길이 문제와 외부 아티팩트 전환
 - notes status: `ready`
 
-### S053. 신뢰는 조율되어야 한다
-- file: `docs/03-html/slides/slide-053.html`
+### S051. 신뢰는 조율되어야 한다
+- file: `docs/03-html/slides/slide-051.html`
 - slide type: `statement`
 - layout: `editorial`
 - shell: `statement-editorial-shell`
@@ -603,8 +581,8 @@
 - notes intent: Calibrated Trust를 비용 구간으로 압축
 - notes status: `ready`
 
-### S054. 결정 제어와 확률 제어를 분리하라
-- file: `docs/03-html/slides/slide-054.html`
+### S052. 결정 제어와 확률 제어를 분리하라
+- file: `docs/03-html/slides/slide-052.html`
 - slide type: `comparison`
 - layout: `split`
 - shell: `split-compare-shell`
@@ -614,8 +592,8 @@
 - notes intent: 결정론적 제어와 확률적 제어의 분리
 - notes status: `ready`
 
-### S055. 더 긴 컨텍스트보다 더 좋은 게이트
-- file: `docs/03-html/slides/slide-055.html`
+### S053. 더 긴 컨텍스트보다 더 좋은 게이트
+- file: `docs/03-html/slides/slide-053.html`
 - slide type: `statement`
 - layout: `editorial`
 - shell: `statement-editorial-shell`
@@ -625,8 +603,8 @@
 - notes intent: 05장 결론을 source-backed gate principle로 마무리
 - notes status: `ready`
 
-### S056. 왜 하나의 에이전트만으로는 부족한가
-- file: `docs/03-html/slides/slide-056.html`
+### S054. 왜 하나의 에이전트만으로는 부족한가
+- file: `docs/03-html/slides/slide-054.html`
 - slide type: `table`
 - layout: `wide`
 - shell: `evidence-table-shell`
@@ -636,8 +614,8 @@
 - notes intent: 단일 에이전트의 세 가지 문제를 3-card 구조로 압축
 - notes status: `ready`
 
-### S057. 하나의 에이전트 = 하나의 역할
-- file: `docs/03-html/slides/slide-057.html`
+### S055. 하나의 에이전트 = 하나의 역할
+- file: `docs/03-html/slides/slide-055.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
@@ -647,8 +625,8 @@
 - notes intent: 다섯 패턴과 Planner/Generator/Evaluator 원칙 연결
 - notes status: `ready`
 
-### S058. 1. Sub-Agent: 중간 작업을 격리하는 기본형
-- file: `docs/03-html/slides/slide-058.html`
+### S056. 1. Sub-Agent: 중간 작업을 격리하는 기본형
+- file: `docs/03-html/slides/slide-056.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
@@ -658,8 +636,8 @@
 - notes intent: Main -> Sub-Agent -> summary 흐름과 least privilege 원칙
 - notes status: `ready`
 
-### S059. Advisor 전략: 작은 실행자, 큰 자문
-- file: `docs/03-html/slides/slide-059.html`
+### S057. Advisor 전략: 작은 실행자, 큰 자문
+- file: `docs/03-html/slides/slide-057.html`
 - slide type: `table`
 - layout: `wide`
 - shell: `evidence-table-shell`
@@ -669,8 +647,8 @@
 - notes intent: executor와 advisor의 결정 책임 분리
 - notes status: `ready`
 
-### S060. 2. Orchestrator: 계획자 하나가 여러 실행자를 배치한다
-- file: `docs/03-html/slides/slide-060.html`
+### S058. 2. Orchestrator: 계획자 하나가 여러 실행자를 배치한다
+- file: `docs/03-html/slides/slide-058.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
@@ -680,8 +658,8 @@
 - notes intent: source numbered flow를 1:N chain으로 구현
 - notes status: `ready`
 
-### S061. 3. Parallel: 같은 목표를 평면으로 벌리고 나중에 합친다
-- file: `docs/03-html/slides/slide-061.html`
+### S059. 3. Parallel: 같은 목표를 평면으로 벌리고 나중에 합친다
+- file: `docs/03-html/slides/slide-059.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
@@ -691,8 +669,8 @@
 - notes intent: 독립 lane과 merge 조건을 source 예시로 압축
 - notes status: `ready`
 
-### S062. 4. GAN-Style: 생성자와 평가자를 분리한다
-- file: `docs/03-html/slides/slide-062.html`
+### S060. 4. GAN-Style: 생성자와 평가자를 분리한다
+- file: `docs/03-html/slides/slide-060.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
@@ -702,8 +680,8 @@
 - notes intent: Planner/Generator/Evaluator loop
 - notes status: `ready`
 
-### S063. 5. Agent Teams: 양방향 대화가 가능한 팀을 만든다
-- file: `docs/03-html/slides/slide-063.html`
+### S061. 5. Agent Teams: 양방향 대화가 가능한 팀을 만든다
+- file: `docs/03-html/slides/slide-061.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
@@ -713,8 +691,8 @@
 - notes intent: team graph reference를 role cards로 재구성
 - notes status: `ready`
 
-### S064. Sub-Agent와 Agent Team은 다르다
-- file: `docs/03-html/slides/slide-064.html`
+### S062. Sub-Agent와 Agent Team은 다르다
+- file: `docs/03-html/slides/slide-062.html`
 - slide type: `table`
 - layout: `wide`
 - shell: `evidence-table-shell`
@@ -724,8 +702,8 @@
 - notes intent: source table을 그대로 비교 표로 구성
 - notes status: `ready`
 
-### S065. 설계 원칙: 패턴보다 경계가 중요하다
-- file: `docs/03-html/slides/slide-065.html`
+### S063. 설계 원칙: 패턴보다 경계가 중요하다
+- file: `docs/03-html/slides/slide-063.html`
 - slide type: `table`
 - layout: `wide`
 - shell: `evidence-table-shell`
@@ -735,8 +713,8 @@
 - notes intent: 다섯 설계 원칙을 source 문구로 카드화
 - notes status: `ready`
 
-### S066. 설계 원칙: 패턴보다 경계가 중요하다
-- file: `docs/03-html/slides/slide-066.html`
+### S064. 설계 원칙: 패턴보다 경계가 중요하다
+- file: `docs/03-html/slides/slide-064.html`
 - slide type: `table`
 - layout: `wide`
 - shell: `evidence-table-shell`
@@ -746,8 +724,8 @@
 - notes intent: SOLID reinterpretation table
 - notes status: `ready`
 
-### S067. 멀티 모델과 멀티 에이전트
-- file: `docs/03-html/slides/slide-067.html`
+### S065. 멀티 모델과 멀티 에이전트
+- file: `docs/03-html/slides/slide-065.html`
 - slide type: `table`
 - layout: `wide`
 - shell: `evidence-table-shell`
@@ -757,8 +735,8 @@
 - notes intent: 멀티 모델 distinction과 Claude/Codex/Gemini 역할
 - notes status: `ready`
 
-### S068. 결론: 더 많은 AI가 아니라 더 좁은 역할의 AI 여럿
-- file: `docs/03-html/slides/slide-068.html`
+### S066. 결론: 더 많은 AI가 아니라 더 좁은 역할의 AI 여럿
+- file: `docs/03-html/slides/slide-066.html`
 - slide type: `table`
 - layout: `wide`
 - shell: `evidence-table-shell`
@@ -768,8 +746,8 @@
 - notes intent: chapter 06 closing lines
 - notes status: `ready`
 
-### S069. 시작하며: 두 가지 막다른 길
-- file: `docs/03-html/slides/slide-069.html`
+### S067. 시작하며: 두 가지 막다른 길
+- file: `docs/03-html/slides/slide-067.html`
 - slide type: `comparison`
 - layout: `split`
 - shell: `split-compare-shell`
@@ -779,8 +757,8 @@
 - notes intent: 두 dead-end split comparison
 - notes status: `ready`
 
-### S070. OMC(Oh My Claude Code)
-- file: `docs/03-html/slides/slide-070.html`
+### S068. OMC(Oh My Claude Code)
+- file: `docs/03-html/slides/slide-068.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
@@ -790,8 +768,8 @@
 - notes intent: preset command/routing map without canonical-only claims
 - notes status: `ready`
 
-### S071. Plan-Critic-Build
-- file: `docs/03-html/slides/slide-071.html`
+### S069. Plan-Critic-Build
+- file: `docs/03-html/slides/slide-069.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
@@ -801,8 +779,8 @@
 - notes intent: Plan/Critic/Build와 Explore/Plan/Code/Commit 연결
 - notes status: `ready`
 
-### S072. 필요없는 도구는 덜어내라
-- file: `docs/03-html/slides/slide-072.html`
+### S070. 필요없는 도구는 덜어내라
+- file: `docs/03-html/slides/slide-070.html`
 - slide type: `table`
 - layout: `wide`
 - shell: `evidence-table-shell`
@@ -812,8 +790,8 @@
 - notes intent: tool curation과 gate 목록
 - notes status: `ready`
 
-### S073. Approval, Auto-accept, Plan Mode
-- file: `docs/03-html/slides/slide-073.html`
+### S071. Approval, Auto-accept, Plan Mode
+- file: `docs/03-html/slides/slide-071.html`
 - slide type: `table`
 - layout: `wide`
 - shell: `evidence-table-shell`
@@ -823,8 +801,8 @@
 - notes intent: source table exact-mode mapping
 - notes status: `ready`
 
-### S074. 반복의 자산화
-- file: `docs/03-html/slides/slide-074.html`
+### S072. 반복의 자산화
+- file: `docs/03-html/slides/slide-072.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
@@ -834,8 +812,8 @@
 - notes intent: /context, /compact, /clear와 Skills/Hooks/Commands/AGENTS mapping
 - notes status: `ready`
 
-### S075. Ralph Loop
-- file: `docs/03-html/slides/slide-075.html`
+### S073. Ralph Loop
+- file: `docs/03-html/slides/slide-073.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
@@ -845,8 +823,8 @@
 - notes intent: PROMPT.md loop
 - notes status: `ready`
 
-### S076. 암묵지를 파일로 뽑아내라
-- file: `docs/03-html/slides/slide-076.html`
+### S074. 암묵지를 파일로 뽑아내라
+- file: `docs/03-html/slides/slide-074.html`
 - slide type: `table`
 - layout: `wide`
 - shell: `evidence-table-shell`
@@ -856,8 +834,8 @@
 - notes intent: four numbered steps and closing source
 - notes status: `ready`
 
-### S077. 한 모델에만 기대지 않는다
-- file: `docs/03-html/slides/slide-077.html`
+### S075. 한 모델에만 기대지 않는다
+- file: `docs/03-html/slides/slide-075.html`
 - slide type: `table`
 - layout: `wide`
 - shell: `evidence-table-shell`
@@ -867,8 +845,8 @@
 - notes intent: Claude/Codex/Gemini cross-check roles
 - notes status: `ready`
 
-### S078. cmux와 Git Worktree
-- file: `docs/03-html/slides/slide-078.html`
+### S076. cmux와 Git Worktree
+- file: `docs/03-html/slides/slide-076.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
@@ -878,8 +856,8 @@
 - notes intent: four-window workspace map
 - notes status: `ready`
 
-### S079. 세션이 아니라 이슈가 상태를 들고 간다
-- file: `docs/03-html/slides/slide-079.html`
+### S077. 세션이 아니라 이슈가 상태를 들고 간다
+- file: `docs/03-html/slides/slide-077.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
@@ -889,8 +867,8 @@
 - notes intent: issue -> worktree -> session -> PR -> verification chain
 - notes status: `ready`
 
-### S080. 첫 주에 바로 세울 수 있는 최소 워크플로우
-- file: `docs/03-html/slides/slide-080.html`
+### S078. 첫 주에 바로 세울 수 있는 최소 워크플로우
+- file: `docs/03-html/slides/slide-078.html`
 - slide type: `table`
 - layout: `wide`
 - shell: `evidence-table-shell`
@@ -900,8 +878,8 @@
 - notes intent: six minimal habits
 - notes status: `ready`
 
-### S081. 결론: 실전 워크플로우의 중심은 운영 구조다
-- file: `docs/03-html/slides/slide-081.html`
+### S079. 결론: 실전 워크플로우의 중심은 운영 구조다
+- file: `docs/03-html/slides/slide-079.html`
 - slide type: `table`
 - layout: `wide`
 - shell: `evidence-table-shell`
@@ -911,8 +889,8 @@
 - notes intent: chapter 07 closing lines
 - notes status: `ready`
 
-### S082. 이 글과 발표가 만들어진 과정
-- file: `docs/03-html/slides/slide-082.html`
+### S080. 이 글과 발표가 만들어진 과정
+- file: `docs/03-html/slides/slide-080.html`
 - slide type: `section`
 - layout: `centered`
 - shell: `section-divider-shell`
@@ -922,8 +900,8 @@
 - notes intent: 08장 chapter divider
 - notes status: `ready`
 
-### S083. 이 글과 발표가 만들어진 과정
-- file: `docs/03-html/slides/slide-083.html`
+### S081. 이 글과 발표가 만들어진 과정
+- file: `docs/03-html/slides/slide-081.html`
 - slide type: `statement`
 - layout: `editorial`
 - shell: `statement-editorial-shell`
@@ -933,8 +911,8 @@
 - notes intent: 코드/PPT 직접 제작이 아니라 하네스 설계였다는 증거 진입
 - notes status: `ready`
 
-### S084. 이 발표를 만든 방법
-- file: `docs/03-html/slides/slide-084.html`
+### S082. 이 발표를 만든 방법
+- file: `docs/03-html/slides/slide-082.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
@@ -944,8 +922,8 @@
 - notes intent: source에서 pdf까지 이어지는 제작 pipeline
 - notes status: `ready`
 
-### S085. 재료 1 source 수집
-- file: `docs/03-html/slides/slide-085.html`
+### S083. 재료 1 source 수집
+- file: `docs/03-html/slides/slide-083.html`
 - slide type: `table`
 - layout: `wide`
 - shell: `evidence-table-shell`
@@ -955,8 +933,8 @@
 - notes intent: source 계층과 중요도 분리
 - notes status: `ready`
 
-### S086. 재료 2 단일 진실원 만들기
-- file: `docs/03-html/slides/slide-086.html`
+### S084. 재료 2 단일 진실원 만들기
+- file: `docs/03-html/slides/slide-084.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
@@ -966,8 +944,8 @@
 - notes intent: prose를 기준 문장과 판단 기준으로 세운 과정
 - notes status: `ready`
 
-### S087. 재료 3- slides-grab, Skill 경계로 박힌 분리
-- file: `docs/03-html/slides/slide-087.html`
+### S085. 재료 3- slides-grab, Skill 경계로 박힌 분리
+- file: `docs/03-html/slides/slide-085.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
@@ -977,8 +955,8 @@
 - notes intent: outline, manifest, slides-grab의 단계 분리와 승인 관문
 - notes status: `ready`
 
-### S088. 재료 4 규칙 세우기
-- file: `docs/03-html/slides/slide-088.html`
+### S086. 재료 4 규칙 세우기
+- file: `docs/03-html/slides/slide-086.html`
 - slide type: `table`
 - layout: `wide`
 - shell: `evidence-table-shell`
@@ -988,8 +966,8 @@
 - notes intent: design contract와 validation contract를 한 장에 압축
 - notes status: `ready`
 
-### S089. 생성과 검증을 같은 손에 쥐지 않았다
-- file: `docs/03-html/slides/slide-089.html`
+### S087. 생성과 검증을 같은 손에 쥐지 않았다
+- file: `docs/03-html/slides/slide-087.html`
 - slide type: `comparison`
 - layout: `split`
 - shell: `split-compare-shell`
@@ -999,8 +977,8 @@
 - notes intent: HTML generation 이후 기계적 검증과 사람 검토 분리
 - notes status: `ready`
 
-### S090. 이 발표가 증거
-- file: `docs/03-html/slides/slide-090.html`
+### S088. 이 발표가 증거
+- file: `docs/03-html/slides/slide-088.html`
 - slide type: `process`
 - layout: `wide`
 - shell: `process-flow-shell`
@@ -1010,8 +988,8 @@
 - notes intent: 제작 과정 자체가 Harness 방식으로 만들어진 사례
 - notes status: `ready`
 
-### S091. 우리가 다음에 해야 할 일
-- file: `docs/03-html/slides/slide-091.html`
+### S089. 우리가 다음에 해야 할 일
+- file: `docs/03-html/slides/slide-089.html`
 - slide type: `section`
 - layout: `centered`
 - shell: `section-divider-shell`
@@ -1021,8 +999,8 @@
 - notes intent: 09장 chapter divider
 - notes status: `ready`
 
-### S092. 시작하며: FOMO 와 피로
-- file: `docs/03-html/slides/slide-092.html`
+### S090. 시작하며: FOMO 와 피로
+- file: `docs/03-html/slides/slide-090.html`
 - slide type: `statement`
 - layout: `editorial`
 - shell: `statement-editorial-shell`
@@ -1032,8 +1010,8 @@
 - notes intent: FOMO와 피로를 직접 써 보기로 연결
 - notes status: `ready`
 
-### S093. 증폭되는 경험 - 세 개의 증언
-- file: `docs/03-html/slides/slide-093.html`
+### S091. 증폭되는 경험 - 세 개의 증언
+- file: `docs/03-html/slides/slide-091.html`
 - slide type: `statement`
 - layout: `editorial`
 - shell: `statement-editorial-shell`
@@ -1043,8 +1021,8 @@
 - notes intent: Page 085 testimony cards and bottom support line
 - notes status: `ready`
 
-### S094. 내일부터
-- file: `docs/03-html/slides/slide-094.html`
+### S092. 내일부터
+- file: `docs/03-html/slides/slide-092.html`
 - slide type: `statement`
 - layout: `editorial`
 - shell: `statement-editorial-shell`

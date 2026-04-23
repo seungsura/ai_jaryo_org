@@ -24,7 +24,7 @@ SOURCE_ROOT = ROOT / "docs/02-seminar/harness-rebuilt-md"
 SECTION_TARGETS = {
     "00": 3,
     "01": 11,
-    "02": 13,
+    "02": 11,
     "03": 6,
     "04": 12,
     "05": 10,

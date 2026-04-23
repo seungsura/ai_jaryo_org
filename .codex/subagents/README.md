@@ -26,7 +26,7 @@ HTML slide work is a separate subagent system. The main session acts only as HTM
   - Use before any builder work to create the source-backed task packet, editable-file list, visual-reference obligations, QA checks, and reviewer acceptance criteria.
 - `html-slide-builder.yaml`
   - Implementation agent.
-  - Use only after PM scope is ready. Actual HTML editing goes through `scripts/jaryo_html_deck/slides/slide_XXX.py`; generated `docs/03-html/slides/slide-XXX.html` is an artifact for inspection.
+  - Use only after PM scope is ready. Actual HTML editing goes through `scripts/jaryo_html_deck/slides/chapter_XX/slide_YYY.py`; generated `docs/03-html/slides/slide-XXX.html` is an artifact for inspection.
 - `html-slide-qa.yaml`
   - Verification agent.
   - Use after builder work to run the required static checks, runtime checks, screenshot checks, and PDF smoke checks for the assigned scope.
@@ -45,7 +45,7 @@ HTML slide work is a separate subagent system. The main session acts only as HTM
 
 1. The orchestrator confirms the HTML task scope and writes any new user feedback into `docs/03-html/shared/slide-quality-rules.md` before implementation.
 2. Dispatch `html-slide-pm` and wait for its task packet. Do not send builder work before PM scope, required inputs, and acceptance criteria are clear.
-3. Dispatch `html-slide-builder` with the PM packet. Builder edits `scripts/jaryo_html_deck/slides/slide_XXX.py`; generated slide HTML is regenerated/inspected as an artifact, not hand-edited as source.
+3. Dispatch `html-slide-builder` with the PM packet. Builder edits `scripts/jaryo_html_deck/slides/chapter_XX/slide_YYY.py`; generated slide HTML is regenerated/inspected as an artifact, not hand-edited as source.
 4. Dispatch `html-slide-qa` with builder notes and generated artifacts. QA reports pass/fail evidence and any missing checks.
 5. Dispatch `html-slide-reviewer` with the PM packet, builder notes, QA evidence, source markdown, visual references, and relevant artifacts. The orchestrator waits for reviewer output and does not skip this gate.
 6. The orchestrator either closes the task from reviewer acceptance or issues a narrow follow-up task through the same PM -> builder -> QA -> reviewer chain.
@@ -72,7 +72,7 @@ For any HTML-related task, every spawned subagent must read the following before
 - `docs/03-html/shared/decision-log.md`
 - target source markdown
 - required visual reference pages approved for the task
-- relevant `scripts/jaryo_html_deck/slides/slide_XXX.py`
+- relevant `scripts/jaryo_html_deck/slides/chapter_XX/slide_YYY.py`
 - relevant generated `docs/03-html/slides/slide-XXX.html`
 - relevant `docs/03-html/outline/slide-outline.md` entries
 - relevant `docs/03-html/manifest.md` rows

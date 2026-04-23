@@ -11,7 +11,7 @@ default_prompt: |
   AGENTS.md, .codex/subagents/README.md, .codex/templates/subagent-task-template.md,
   docs/03-html/shared/slide-quality-rules.md, docs/03-html/shared/decision-log.md,
   the target source markdown, required visual reference pages, and the relevant
-  scripts/jaryo_html_deck/slides/slide_XXX.py, generated slide-XXX.html,
+  scripts/jaryo_html_deck/slides/chapter_XX/slide_YYY.py, generated slide-XXX.html,
   docs/03-html/outline/slide-outline.md, and docs/03-html/manifest.md entries.
 
   Return a builder-ready task packet with slide IDs, source-backed copy boundaries,
@@ -21,7 +21,7 @@ default_prompt: |
 input_expectations:
   - "Approved user goal and target slide IDs"
   - "Target source markdown paths and any user-approved visual reference pages"
-  - "Relevant slide_XXX.py paths, generated slide HTML paths, outline entries, and manifest rows"
+  - "Relevant chapter_XX/slide_YYY.py paths, generated slide HTML paths, outline entries, and manifest rows"
   - "Current quality rules, decision log, and known user feedback"
 output_expectations:
   - "A source-backed execution packet for html-slide-builder"
@@ -31,6 +31,6 @@ output_expectations:
 hard_rules:
   - "The main session remains the HTML orchestrator; do not perform implementation work in the PM role"
   - "Do not skip PM dispatch before builder work, and do not allow final acceptance without reviewer review"
-  - "Actual HTML editing must go through scripts/jaryo_html_deck/slides/slide_XXX.py; generated slide-XXX.html is an artifact for inspection"
+  - "Actual HTML editing must go through scripts/jaryo_html_deck/slides/chapter_XX/slide_YYY.py; generated slide-XXX.html is an artifact for inspection"
   - "Do not invent slide wording, comparison axes, labels, examples, metrics, or visual meanings outside source markdown or user-approved references"
   - "Do not inspect JPG, PNG, or PDF assets unless the user explicitly approved them for the current HTML task"

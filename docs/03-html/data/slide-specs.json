@@ -701,106 +701,6 @@
     "order": 19,
     "slide_id": "S019",
     "file_name": "slide-019.html",
-    "title": "ReAct / Tree-of-Thought",
-    "slide_type": "process",
-    "layout": "wide",
-    "shell": "process-flow-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "02",
-    "source_block": "02-03",
-    "key_claim": "행동 루프와 경로 탐색",
-    "notes_intent": "ReAct / Tree-of-Thought native diagrams",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 02",
-    "notes": "source markdown의 ReAct, Tree-of-Thought rows와 approved assets 구조",
-    "lead": "",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "variant": "pattern-pair",
-      "patterns": [
-        {
-          "index": "02",
-          "title": "ReAct",
-          "text": "추론과 행동을 번갈아 수행",
-          "kind": "react",
-          "meaning": "검색과 도구 호출이 루프 안으로 진입",
-          "nodes": [
-            "Reasoning",
-            "Action",
-            "Observation"
-          ]
-        },
-        {
-          "index": "03",
-          "title": "Tree-of-Thought",
-          "text": "여러 추론 경로를 동시에 탐색",
-          "kind": "tot",
-          "meaning": "하나의 답이 아니라 후보 경로를 비교",
-          "nodes": [
-            "경로 A",
-            "경로 B",
-            "경로 C"
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "order": 20,
-    "slide_id": "S020",
-    "file_name": "slide-020.html",
-    "title": "Self-Refine / Reflexion",
-    "slide_type": "process",
-    "layout": "wide",
-    "shell": "process-flow-shell",
-    "family": "content",
-    "density": "medium",
-    "source_section": "02",
-    "source_block": "02-03",
-    "key_claim": "출력 이후의 피드백 루프",
-    "notes_intent": "Self-Refine / Reflexion native feedback-loop diagrams",
-    "notes_status": "ready",
-    "status": "built",
-    "chapter_label": "CHAPTER 02",
-    "notes": "source markdown의 Self-Refine, Reflexion row",
-    "lead": "",
-    "footer_left": "Harness 잘 사용하기",
-    "body": {
-      "variant": "feedback-pair",
-      "patterns": [
-        {
-          "title": "Self-Refine",
-          "text": "자기 출력을 다시 비판하고 수정",
-          "meaning": "출력 이후의 피드백 루프",
-          "class": "self-refine-diagram",
-          "nodes": [
-            "자기 출력",
-            "비판",
-            "수정",
-            "피드백 루프"
-          ]
-        },
-        {
-          "title": "Reflexion",
-          "text": "자기 출력을 다시 비판하고 수정",
-          "meaning": "출력 이후의 피드백 루프",
-          "class": "reflexion-diagram",
-          "nodes": [
-            "자기 출력",
-            "비판",
-            "수정",
-            "피드백 루프"
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "order": 21,
-    "slide_id": "S021",
-    "file_name": "slide-021.html",
     "title": "네 가지 에이전틱 패턴",
     "slide_type": "table",
     "layout": "wide",
@@ -849,9 +749,9 @@
     }
   },
   {
-    "order": 22,
-    "slide_id": "S022",
-    "file_name": "slide-022.html",
+    "order": 20,
+    "slide_id": "S020",
+    "file_name": "slide-020.html",
     "title": "프롬프트 시대의 벽",
     "slide_type": "statement",
     "layout": "editorial",
@@ -889,9 +789,9 @@
     }
   },
   {
-    "order": 23,
-    "slide_id": "S023",
-    "file_name": "slide-023.html",
+    "order": 21,
+    "slide_id": "S021",
+    "file_name": "slide-021.html",
     "title": "2막: Cursor와 컨텍스트의 시대",
     "slide_type": "process",
     "layout": "wide",
@@ -935,9 +835,9 @@
     }
   },
   {
-    "order": 24,
-    "slide_id": "S024",
-    "file_name": "slide-024.html",
+    "order": 22,
+    "slide_id": "S022",
+    "file_name": "slide-022.html",
     "title": "Cursor 아키텍처",
     "slide_type": "process",
     "layout": "wide",
@@ -984,10 +884,10 @@
     }
   },
   {
-    "order": 25,
-    "slide_id": "S025",
-    "file_name": "slide-025.html",
-    "title": "컨텍스트 시대의 벽",
+    "order": 23,
+    "slide_id": "S023",
+    "file_name": "slide-023.html",
+    "title": "컨텍스트만으로는 부족하다",
     "slide_type": "process",
     "layout": "wide",
     "shell": "process-flow-shell",
@@ -996,11 +896,11 @@
     "source_section": "02",
     "source_block": "02-08",
     "key_claim": "좋은 입력만으로는 루프 통제 불가",
-    "notes_intent": "컨텍스트 시대의 한계와 실행 통제 필요성",
+    "notes_intent": "컨텍스트 시대의 벽을 통제 관점으로 재구성",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "CHAPTER 02",
-    "notes": "source markdown의 context-only wall, risk list, control questions",
+    "notes": "source heading + risk list + control question 4개를 context-wall 구조로 압축",
     "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
@@ -1014,7 +914,7 @@
         "보안 경계",
         "목표 망각"
       ],
-      "source": "무엇을 보여줄 것인가",
+      "source": "어떤 정보를 넣어야 하나",
       "controls": [
         "무엇을 하게 할 것인가",
         "무엇을 못 하게 막을 것인가",
@@ -1024,9 +924,9 @@
     }
   },
   {
-    "order": 26,
-    "slide_id": "S026",
-    "file_name": "slide-026.html",
+    "order": 24,
+    "slide_id": "S024",
+    "file_name": "slide-024.html",
     "title": "3막: 하네스의 시대",
     "slide_type": "process",
     "layout": "wide",
@@ -1062,10 +962,10 @@
     }
   },
   {
-    "order": 27,
-    "slide_id": "S027",
-    "file_name": "slide-027.html",
-    "title": "시대의 흐름",
+    "order": 25,
+    "slide_id": "S025",
+    "file_name": "slide-025.html",
+    "title": "3막: Claude Code, Codex, OpenCode 와 하네스의 시대",
     "slide_type": "table",
     "layout": "wide",
     "shell": "evidence-table-shell",
@@ -1074,11 +974,11 @@
     "source_section": "02",
     "source_block": "02-11",
     "key_claim": "Agent = Model + Harness",
-    "notes_intent": "final relationship page",
+    "notes_intent": "2장 결론 관계식을 source heading 중심으로 고정",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "CHAPTER 02",
-    "notes": "source markdown의 Agent 공식과 프롬프트/컨텍스트/하네스 포함 관계",
+    "notes": "source markdown 3막 heading + 시대 구분 표 + 포함 관계 문장",
     "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
@@ -1122,15 +1022,15 @@
           "question": "어떤 시스템을 만들어야 하나"
         }
       ],
-      "question": "",
+      "question": "하네스 안에 컨텍스트가 있고, 컨텍스트 안에 프롬프트가 있다",
       "formula": "Agent = Model + Harness",
       "relationship": "Prompt ⊂ Context ⊂ Harness"
     }
   },
   {
-    "order": 28,
-    "slide_id": "S028",
-    "file_name": "slide-028.html",
+    "order": 26,
+    "slide_id": "S026",
+    "file_name": "slide-026.html",
     "title": "AI 시대의 개발 방법론",
     "slide_type": "section",
     "layout": "centered",
@@ -1140,21 +1040,25 @@
     "source_section": "03",
     "source_block": "03-00",
     "key_claim": "TDD·SDD·Spec-first 재부상",
-    "notes_intent": "03장 진입을 알리는 section divider",
+    "notes_intent": "03장 진입을 source heading 키워드와 함께 고정",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "CHAPTER 03",
-    "notes": "AI 시대의 개발 방법론 장 진입",
+    "notes": "03장 source heading의 핵심 축(SDD/TDD/Waterfall)만 keyword rail로 노출",
     "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
-      "keywords": []
+      "keywords": [
+        "SDD",
+        "TDD",
+        "Waterfall"
+      ]
     }
   },
   {
-    "order": 29,
-    "slide_id": "S029",
-    "file_name": "slide-029.html",
+    "order": 27,
+    "slide_id": "S027",
+    "file_name": "slide-027.html",
     "title": "왜 지금 방법론",
     "slide_type": "table",
     "layout": "wide",
@@ -1208,9 +1112,9 @@
     }
   },
   {
-    "order": 30,
-    "slide_id": "S030",
-    "file_name": "slide-030.html",
+    "order": 28,
+    "slide_id": "S028",
+    "file_name": "slide-028.html",
     "title": "SDD",
     "slide_type": "process",
     "layout": "wide",
@@ -1266,9 +1170,9 @@
     }
   },
   {
-    "order": 31,
-    "slide_id": "S031",
-    "file_name": "slide-031.html",
+    "order": 29,
+    "slide_id": "S029",
+    "file_name": "slide-029.html",
     "title": "TDD (Test-Driven Development)",
     "slide_type": "statement",
     "layout": "editorial",
@@ -1314,9 +1218,9 @@
     }
   },
   {
-    "order": 32,
-    "slide_id": "S032",
-    "file_name": "slide-032.html",
+    "order": 30,
+    "slide_id": "S030",
+    "file_name": "slide-030.html",
     "title": "Waterfall vs SDD",
     "slide_type": "comparison",
     "layout": "split",
@@ -1357,9 +1261,9 @@
     }
   },
   {
-    "order": 33,
-    "slide_id": "S033",
-    "file_name": "slide-033.html",
+    "order": 31,
+    "slide_id": "S031",
+    "file_name": "slide-031.html",
     "title": "SDD + TDD가 Harness로 이어지는 이유",
     "slide_type": "statement",
     "layout": "editorial",
@@ -1400,9 +1304,9 @@
     }
   },
   {
-    "order": 34,
-    "slide_id": "S034",
-    "file_name": "slide-034.html",
+    "order": 32,
+    "slide_id": "S032",
+    "file_name": "slide-032.html",
     "title": "프롬프트를 넘어서",
     "slide_type": "section",
     "layout": "centered",
@@ -1428,9 +1332,9 @@
     }
   },
   {
-    "order": 35,
-    "slide_id": "S035",
-    "file_name": "slide-035.html",
+    "order": 33,
+    "slide_id": "S033",
+    "file_name": "slide-033.html",
     "title": "Prompt, Context, Harness",
     "slide_type": "table",
     "layout": "wide",
@@ -1474,9 +1378,9 @@
     }
   },
   {
-    "order": 36,
-    "slide_id": "S036",
-    "file_name": "slide-036.html",
+    "order": 34,
+    "slide_id": "S034",
+    "file_name": "slide-034.html",
     "title": "Agent = Model + Harness",
     "slide_type": "table",
     "layout": "wide",
@@ -1526,9 +1430,9 @@
     }
   },
   {
-    "order": 37,
-    "slide_id": "S037",
-    "file_name": "slide-037.html",
+    "order": 35,
+    "slide_id": "S035",
+    "file_name": "slide-035.html",
     "title": "에이전트 루프: 하네스의 심장",
     "slide_type": "process",
     "layout": "wide",
@@ -1573,9 +1477,9 @@
     }
   },
   {
-    "order": 38,
-    "slide_id": "S038",
-    "file_name": "slide-038.html",
+    "order": 36,
+    "slide_id": "S036",
+    "file_name": "slide-036.html",
     "title": "하네스의 책임",
     "slide_type": "process",
     "layout": "wide",
@@ -1623,9 +1527,9 @@
     }
   },
   {
-    "order": 39,
-    "slide_id": "S039",
-    "file_name": "slide-039.html",
+    "order": 37,
+    "slide_id": "S037",
+    "file_name": "slide-037.html",
     "title": "하네스의 도구",
     "slide_type": "table",
     "layout": "wide",
@@ -1718,9 +1622,9 @@
     }
   },
   {
-    "order": 40,
-    "slide_id": "S040",
-    "file_name": "slide-040.html",
+    "order": 38,
+    "slide_id": "S038",
+    "file_name": "slide-038.html",
     "title": "Context Engineering",
     "slide_type": "process",
     "layout": "wide",
@@ -1766,9 +1670,9 @@
     }
   },
   {
-    "order": 41,
-    "slide_id": "S041",
-    "file_name": "slide-041.html",
+    "order": 39,
+    "slide_id": "S039",
+    "file_name": "slide-039.html",
     "title": "MCP와 Context 7",
     "slide_type": "process",
     "layout": "wide",
@@ -1828,9 +1732,9 @@
     }
   },
   {
-    "order": 42,
-    "slide_id": "S042",
-    "file_name": "slide-042.html",
+    "order": 40,
+    "slide_id": "S040",
+    "file_name": "slide-040.html",
     "title": "RAG vs Context 7",
     "slide_type": "table",
     "layout": "wide",
@@ -1879,9 +1783,9 @@
     }
   },
   {
-    "order": 43,
-    "slide_id": "S043",
-    "file_name": "slide-043.html",
+    "order": 41,
+    "slide_id": "S041",
+    "file_name": "slide-041.html",
     "title": "Memory: 세션을 넘어서는 기억",
     "slide_type": "table",
     "layout": "wide",
@@ -1930,9 +1834,9 @@
     }
   },
   {
-    "order": 44,
-    "slide_id": "S044",
-    "file_name": "slide-044.html",
+    "order": 42,
+    "slide_id": "S042",
+    "file_name": "slide-042.html",
     "title": "Stable Prefix와 Variable Suffix",
     "slide_type": "comparison",
     "layout": "split",
@@ -1979,9 +1883,9 @@
     }
   },
   {
-    "order": 45,
-    "slide_id": "S045",
-    "file_name": "slide-045.html",
+    "order": 43,
+    "slide_id": "S043",
+    "file_name": "slide-043.html",
     "title": "하네스는 환경 그 자체다",
     "slide_type": "process",
     "layout": "wide",
@@ -2020,9 +1924,9 @@
     }
   },
   {
-    "order": 46,
-    "slide_id": "S046",
-    "file_name": "slide-046.html",
+    "order": 44,
+    "slide_id": "S044",
+    "file_name": "slide-044.html",
     "title": "이렇게 하면 망한다",
     "slide_type": "section",
     "layout": "centered",
@@ -2044,9 +1948,9 @@
     }
   },
   {
-    "order": 47,
-    "slide_id": "S047",
-    "file_name": "slide-047.html",
+    "order": 45,
+    "slide_id": "S045",
+    "file_name": "slide-045.html",
     "title": "오류의 나비효과",
     "slide_type": "table",
     "layout": "wide",
@@ -2095,9 +1999,9 @@
     }
   },
   {
-    "order": 48,
-    "slide_id": "S048",
-    "file_name": "slide-048.html",
+    "order": 46,
+    "slide_id": "S046",
+    "file_name": "slide-046.html",
     "title": "작업이 길어질 때 특히 위험한 이유",
     "slide_type": "statement",
     "layout": "editorial",
@@ -2146,9 +2050,9 @@
     }
   },
   {
-    "order": 49,
-    "slide_id": "S049",
-    "file_name": "slide-049.html",
+    "order": 47,
+    "slide_id": "S047",
+    "file_name": "slide-047.html",
     "title": "컨텍스트가 길수록 항상 좋은 것은 아니다",
     "slide_type": "comparison",
     "layout": "split",
@@ -2179,9 +2083,9 @@
     }
   },
   {
-    "order": 50,
-    "slide_id": "S050",
-    "file_name": "slide-050.html",
+    "order": 48,
+    "slide_id": "S048",
+    "file_name": "slide-048.html",
     "title": "대표 실패 패턴 네 가지",
     "slide_type": "statement",
     "layout": "editorial",
@@ -2230,9 +2134,9 @@
     }
   },
   {
-    "order": 51,
-    "slide_id": "S051",
-    "file_name": "slide-051.html",
+    "order": 49,
+    "slide_id": "S049",
+    "file_name": "slide-049.html",
     "title": "현실에서 보이는 증상들",
     "slide_type": "statement",
     "layout": "editorial",
@@ -2275,9 +2179,9 @@
     }
   },
   {
-    "order": 52,
-    "slide_id": "S052",
-    "file_name": "slide-052.html",
+    "order": 50,
+    "slide_id": "S050",
+    "file_name": "slide-050.html",
     "title": "Context Rot: 길어진 기억은 조용히 썩는다",
     "slide_type": "statement",
     "layout": "editorial",
@@ -2319,9 +2223,9 @@
     }
   },
   {
-    "order": 53,
-    "slide_id": "S053",
-    "file_name": "slide-053.html",
+    "order": 51,
+    "slide_id": "S051",
+    "file_name": "slide-051.html",
     "title": "신뢰는 조율되어야 한다",
     "slide_type": "statement",
     "layout": "editorial",
@@ -2366,9 +2270,9 @@
     }
   },
   {
-    "order": 54,
-    "slide_id": "S054",
-    "file_name": "slide-054.html",
+    "order": 52,
+    "slide_id": "S052",
+    "file_name": "slide-052.html",
     "title": "결정 제어와 확률 제어를 분리하라",
     "slide_type": "comparison",
     "layout": "split",
@@ -2412,9 +2316,9 @@
     }
   },
   {
-    "order": 55,
-    "slide_id": "S055",
-    "file_name": "slide-055.html",
+    "order": 53,
+    "slide_id": "S053",
+    "file_name": "slide-053.html",
     "title": "더 긴 컨텍스트보다 더 좋은 게이트",
     "slide_type": "statement",
     "layout": "editorial",
@@ -2451,9 +2355,9 @@
     }
   },
   {
-    "order": 56,
-    "slide_id": "S056",
-    "file_name": "slide-056.html",
+    "order": 54,
+    "slide_id": "S054",
+    "file_name": "slide-054.html",
     "title": "왜 하나의 에이전트만으로는 부족한가",
     "slide_type": "table",
     "layout": "wide",
@@ -2496,9 +2400,9 @@
     }
   },
   {
-    "order": 57,
-    "slide_id": "S057",
-    "file_name": "slide-057.html",
+    "order": 55,
+    "slide_id": "S055",
+    "file_name": "slide-055.html",
     "title": "하나의 에이전트 = 하나의 역할",
     "slide_type": "process",
     "layout": "wide",
@@ -2577,9 +2481,9 @@
     }
   },
   {
-    "order": 58,
-    "slide_id": "S058",
-    "file_name": "slide-058.html",
+    "order": 56,
+    "slide_id": "S056",
+    "file_name": "slide-056.html",
     "title": "1. Sub-Agent: 중간 작업을 격리하는 기본형",
     "slide_type": "process",
     "layout": "wide",
@@ -2630,9 +2534,9 @@
     }
   },
   {
-    "order": 59,
-    "slide_id": "S059",
-    "file_name": "slide-059.html",
+    "order": 57,
+    "slide_id": "S057",
+    "file_name": "slide-057.html",
     "title": "Advisor 전략: 작은 실행자, 큰 자문",
     "slide_type": "table",
     "layout": "wide",
@@ -2667,9 +2571,9 @@
     }
   },
   {
-    "order": 60,
-    "slide_id": "S060",
-    "file_name": "slide-060.html",
+    "order": 58,
+    "slide_id": "S058",
+    "file_name": "slide-058.html",
     "title": "2. Orchestrator: 계획자 하나가 여러 실행자를 배치한다",
     "slide_type": "process",
     "layout": "wide",
@@ -2713,9 +2617,9 @@
     }
   },
   {
-    "order": 61,
-    "slide_id": "S061",
-    "file_name": "slide-061.html",
+    "order": 59,
+    "slide_id": "S059",
+    "file_name": "slide-059.html",
     "title": "3. Parallel: 같은 목표를 평면으로 벌리고 나중에 합친다",
     "slide_type": "process",
     "layout": "wide",
@@ -2756,9 +2660,9 @@
     }
   },
   {
-    "order": 62,
-    "slide_id": "S062",
-    "file_name": "slide-062.html",
+    "order": 60,
+    "slide_id": "S060",
+    "file_name": "slide-060.html",
     "title": "4. GAN-Style: 생성자와 평가자를 분리한다",
     "slide_type": "process",
     "layout": "wide",
@@ -2799,9 +2703,9 @@
     }
   },
   {
-    "order": 63,
-    "slide_id": "S063",
-    "file_name": "slide-063.html",
+    "order": 61,
+    "slide_id": "S061",
+    "file_name": "slide-061.html",
     "title": "5. Agent Teams: 양방향 대화가 가능한 팀을 만든다",
     "slide_type": "process",
     "layout": "wide",
@@ -2856,9 +2760,9 @@
     }
   },
   {
-    "order": 64,
-    "slide_id": "S064",
-    "file_name": "slide-064.html",
+    "order": 62,
+    "slide_id": "S062",
+    "file_name": "slide-062.html",
     "title": "Sub-Agent와 Agent Team은 다르다",
     "slide_type": "table",
     "layout": "wide",
@@ -2893,9 +2797,9 @@
     }
   },
   {
-    "order": 65,
-    "slide_id": "S065",
-    "file_name": "slide-065.html",
+    "order": 63,
+    "slide_id": "S063",
+    "file_name": "slide-063.html",
     "title": "설계 원칙: 패턴보다 경계가 중요하다",
     "slide_type": "table",
     "layout": "wide",
@@ -2945,9 +2849,9 @@
     }
   },
   {
-    "order": 66,
-    "slide_id": "S066",
-    "file_name": "slide-066.html",
+    "order": 64,
+    "slide_id": "S064",
+    "file_name": "slide-064.html",
     "title": "설계 원칙: 패턴보다 경계가 중요하다",
     "slide_type": "table",
     "layout": "wide",
@@ -2995,9 +2899,9 @@
     }
   },
   {
-    "order": 67,
-    "slide_id": "S067",
-    "file_name": "slide-067.html",
+    "order": 65,
+    "slide_id": "S065",
+    "file_name": "slide-065.html",
     "title": "멀티 모델과 멀티 에이전트",
     "slide_type": "table",
     "layout": "wide",
@@ -3037,9 +2941,9 @@
     }
   },
   {
-    "order": 68,
-    "slide_id": "S068",
-    "file_name": "slide-068.html",
+    "order": 66,
+    "slide_id": "S066",
+    "file_name": "slide-066.html",
     "title": "결론: 더 많은 AI가 아니라 더 좁은 역할의 AI 여럿",
     "slide_type": "table",
     "layout": "wide",
@@ -3079,9 +2983,9 @@
     }
   },
   {
-    "order": 69,
-    "slide_id": "S069",
-    "file_name": "slide-069.html",
+    "order": 67,
+    "slide_id": "S067",
+    "file_name": "slide-067.html",
     "title": "시작하며: 두 가지 막다른 길",
     "slide_type": "comparison",
     "layout": "split",
@@ -3115,9 +3019,9 @@
     }
   },
   {
-    "order": 70,
-    "slide_id": "S070",
-    "file_name": "slide-070.html",
+    "order": 68,
+    "slide_id": "S068",
+    "file_name": "slide-068.html",
     "title": "OMC(Oh My Claude Code)",
     "slide_type": "process",
     "layout": "wide",
@@ -3172,9 +3076,9 @@
     }
   },
   {
-    "order": 71,
-    "slide_id": "S071",
-    "file_name": "slide-071.html",
+    "order": 69,
+    "slide_id": "S069",
+    "file_name": "slide-069.html",
     "title": "Plan-Critic-Build",
     "slide_type": "process",
     "layout": "wide",
@@ -3208,9 +3112,9 @@
     }
   },
   {
-    "order": 72,
-    "slide_id": "S072",
-    "file_name": "slide-072.html",
+    "order": 70,
+    "slide_id": "S070",
+    "file_name": "slide-070.html",
     "title": "필요없는 도구는 덜어내라",
     "slide_type": "table",
     "layout": "wide",
@@ -3255,9 +3159,9 @@
     }
   },
   {
-    "order": 73,
-    "slide_id": "S073",
-    "file_name": "slide-073.html",
+    "order": 71,
+    "slide_id": "S071",
+    "file_name": "slide-071.html",
     "title": "Approval, Auto-accept, Plan Mode",
     "slide_type": "table",
     "layout": "wide",
@@ -3306,9 +3210,9 @@
     }
   },
   {
-    "order": 74,
-    "slide_id": "S074",
-    "file_name": "slide-074.html",
+    "order": 72,
+    "slide_id": "S072",
+    "file_name": "slide-072.html",
     "title": "반복의 자산화",
     "slide_type": "process",
     "layout": "wide",
@@ -3370,9 +3274,9 @@
     }
   },
   {
-    "order": 75,
-    "slide_id": "S075",
-    "file_name": "slide-075.html",
+    "order": 73,
+    "slide_id": "S073",
+    "file_name": "slide-073.html",
     "title": "Ralph Loop",
     "slide_type": "process",
     "layout": "wide",
@@ -3417,9 +3321,9 @@
     }
   },
   {
-    "order": 76,
-    "slide_id": "S076",
-    "file_name": "slide-076.html",
+    "order": 74,
+    "slide_id": "S074",
+    "file_name": "slide-074.html",
     "title": "암묵지를 파일로 뽑아내라",
     "slide_type": "table",
     "layout": "wide",
@@ -3464,9 +3368,9 @@
     }
   },
   {
-    "order": 77,
-    "slide_id": "S077",
-    "file_name": "slide-077.html",
+    "order": 75,
+    "slide_id": "S075",
+    "file_name": "slide-075.html",
     "title": "한 모델에만 기대지 않는다",
     "slide_type": "table",
     "layout": "wide",
@@ -3511,9 +3415,9 @@
     }
   },
   {
-    "order": 78,
-    "slide_id": "S078",
-    "file_name": "slide-078.html",
+    "order": 76,
+    "slide_id": "S076",
+    "file_name": "slide-076.html",
     "title": "cmux와 Git Worktree",
     "slide_type": "process",
     "layout": "wide",
@@ -3558,9 +3462,9 @@
     }
   },
   {
-    "order": 79,
-    "slide_id": "S079",
-    "file_name": "slide-079.html",
+    "order": 77,
+    "slide_id": "S077",
+    "file_name": "slide-077.html",
     "title": "세션이 아니라 이슈가 상태를 들고 간다",
     "slide_type": "process",
     "layout": "wide",
@@ -3617,9 +3521,9 @@
     }
   },
   {
-    "order": 80,
-    "slide_id": "S080",
-    "file_name": "slide-080.html",
+    "order": 78,
+    "slide_id": "S078",
+    "file_name": "slide-078.html",
     "title": "첫 주에 바로 세울 수 있는 최소 워크플로우",
     "slide_type": "table",
     "layout": "wide",
@@ -3674,9 +3578,9 @@
     }
   },
   {
-    "order": 81,
-    "slide_id": "S081",
-    "file_name": "slide-081.html",
+    "order": 79,
+    "slide_id": "S079",
+    "file_name": "slide-079.html",
     "title": "결론: 실전 워크플로우의 중심은 운영 구조다",
     "slide_type": "table",
     "layout": "wide",
@@ -3716,9 +3620,9 @@
     }
   },
   {
-    "order": 82,
-    "slide_id": "S082",
-    "file_name": "slide-082.html",
+    "order": 80,
+    "slide_id": "S080",
+    "file_name": "slide-080.html",
     "title": "이 글과 발표가 만들어진 과정",
     "slide_type": "section",
     "layout": "centered",
@@ -3740,9 +3644,9 @@
     }
   },
   {
-    "order": 83,
-    "slide_id": "S083",
-    "file_name": "slide-083.html",
+    "order": 81,
+    "slide_id": "S081",
+    "file_name": "slide-081.html",
     "title": "이 글과 발표가 만들어진 과정",
     "slide_type": "statement",
     "layout": "editorial",
@@ -3771,9 +3675,9 @@
     }
   },
   {
-    "order": 84,
-    "slide_id": "S084",
-    "file_name": "slide-084.html",
+    "order": 82,
+    "slide_id": "S082",
+    "file_name": "slide-082.html",
     "title": "이 발표를 만든 방법",
     "slide_type": "process",
     "layout": "wide",
@@ -3822,9 +3726,9 @@
     }
   },
   {
-    "order": 85,
-    "slide_id": "S085",
-    "file_name": "slide-085.html",
+    "order": 83,
+    "slide_id": "S083",
+    "file_name": "slide-083.html",
     "title": "재료 1 source 수집",
     "slide_type": "table",
     "layout": "wide",
@@ -3863,9 +3767,9 @@
     }
   },
   {
-    "order": 86,
-    "slide_id": "S086",
-    "file_name": "slide-086.html",
+    "order": 84,
+    "slide_id": "S084",
+    "file_name": "slide-084.html",
     "title": "재료 2 단일 진실원 만들기",
     "slide_type": "process",
     "layout": "wide",
@@ -3908,9 +3812,9 @@
     }
   },
   {
-    "order": 87,
-    "slide_id": "S087",
-    "file_name": "slide-087.html",
+    "order": 85,
+    "slide_id": "S085",
+    "file_name": "slide-085.html",
     "title": "재료 3- slides-grab, Skill 경계로 박힌 분리",
     "slide_type": "process",
     "layout": "wide",
@@ -3949,9 +3853,9 @@
     }
   },
   {
-    "order": 88,
-    "slide_id": "S088",
-    "file_name": "slide-088.html",
+    "order": 86,
+    "slide_id": "S086",
+    "file_name": "slide-086.html",
     "title": "재료 4 규칙 세우기",
     "slide_type": "table",
     "layout": "wide",
@@ -4000,9 +3904,9 @@
     }
   },
   {
-    "order": 89,
-    "slide_id": "S089",
-    "file_name": "slide-089.html",
+    "order": 87,
+    "slide_id": "S087",
+    "file_name": "slide-087.html",
     "title": "생성과 검증을 같은 손에 쥐지 않았다",
     "slide_type": "comparison",
     "layout": "split",
@@ -4041,9 +3945,9 @@
     }
   },
   {
-    "order": 90,
-    "slide_id": "S090",
-    "file_name": "slide-090.html",
+    "order": 88,
+    "slide_id": "S088",
+    "file_name": "slide-088.html",
     "title": "이 발표가 증거",
     "slide_type": "process",
     "layout": "wide",
@@ -4082,9 +3986,9 @@
     }
   },
   {
-    "order": 91,
-    "slide_id": "S091",
-    "file_name": "slide-091.html",
+    "order": 89,
+    "slide_id": "S089",
+    "file_name": "slide-089.html",
     "title": "우리가 다음에 해야 할 일",
     "slide_type": "section",
     "layout": "centered",
@@ -4106,9 +4010,9 @@
     }
   },
   {
-    "order": 92,
-    "slide_id": "S092",
-    "file_name": "slide-092.html",
+    "order": 90,
+    "slide_id": "S090",
+    "file_name": "slide-090.html",
     "title": "시작하며: FOMO 와 피로",
     "slide_type": "statement",
     "layout": "editorial",
@@ -4151,9 +4055,9 @@
     }
   },
   {
-    "order": 93,
-    "slide_id": "S093",
-    "file_name": "slide-093.html",
+    "order": 91,
+    "slide_id": "S091",
+    "file_name": "slide-091.html",
     "title": "증폭되는 경험 - 세 개의 증언",
     "slide_type": "statement",
     "layout": "editorial",
@@ -4195,9 +4099,9 @@
     }
   },
   {
-    "order": 94,
-    "slide_id": "S094",
-    "file_name": "slide-094.html",
+    "order": 92,
+    "slide_id": "S092",
+    "file_name": "slide-092.html",
     "title": "내일부터",
     "slide_type": "statement",
     "layout": "editorial",

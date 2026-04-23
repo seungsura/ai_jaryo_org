@@ -5,7 +5,7 @@
 - worktree: `/Users/seungsu/Desktop/project/jaryo-ch05-html`
 - numbering: provisional, subject to final main integration
 - final main range: `S046`-`S055`
-- final main source modules: `scripts/jaryo_html_deck/slides/slide_046.py`-`slide_055.py`
+- final main source modules: `scripts/jaryo_html_deck/slides/chapter_05/slide_046.py`-`slide_055.py`
 - review artifact: `pdf/harness-chapter-05-current-720x405.pdf`
 
 | local order | provisional slide id | file | source heading | source block | status |

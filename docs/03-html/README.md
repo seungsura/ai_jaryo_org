@@ -33,7 +33,7 @@
 - `manifest.md`는 slide 제작이 끝난 뒤 작성하는 회고 문서가 아니라, 작업 시작 전에 골격을 만들고 진행 중 계속 갱신하는 운영 문서입니다.
 - `slide-outline.md`와 `manifest.md`에는 승인된 결과만 반영합니다. 작업 중 메모와 재작업 범위는 별도 작업 로그로 관리합니다.
 - HTML/CSS generation은 Codex가 담당합니다.
-- generated slide HTML과 `deck/index.html`은 artifact입니다. 실제 slide 구현 단위는 `scripts/jaryo_html_deck/slides/slide_XXX.py`입니다.
+- generated slide HTML과 `deck/index.html`은 artifact입니다. 실제 slide 구현 단위는 `scripts/jaryo_html_deck/slides/chapter_XX/slide_YYY.py`입니다.
 - chapter batch는 review와 점검을 거친 뒤 HTML generation으로 넘어갑니다.
 - built HTML deck는 최종 review와 점검을 거친 뒤 PDF export나 notes 단계로 넘어갑니다.
 

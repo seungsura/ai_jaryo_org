@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>왜 지금 방법론</title>
+<title>TDD (Test-Driven Development)</title>
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="../shared/tokens.css">
 <link rel="stylesheet" href="../shared/slide-base.css">
 </head>
 <body class="theme-minimal-light">
-<main class="slide family-content layout-wide density-medium chapter-03" data-slide-id="S029" data-shell="evidence-table-shell" data-notes="생성 속도에서 검증 절차로 생각이 이동한 흐름" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 03</p><h1 class="title-placeholder">왜 지금 방법론</h1></section><section class="table-wrap "><table class="data-table"><thead><tr><th>시기</th><th>현상</th><th>대표 키워드/도구</th><th>핵심 질문</th></tr></thead><tbody><tr><td>2025.02</td><td>AI 코딩의 대중화와 문화적 전환점</td><td>Vibe Coding</td><td>일단 빨리 만들어 보자</td></tr><tr><td>2025 중반</td><td>생성 코드의 품질, 보안, 유지보수 문제 부각</td><td>구조화된 검토, 검증 루프</td><td>이 결과를 믿어도 되나?</td></tr><tr><td>2025 하반기</td><td>구현 전에 방향을 고정하려는 업계 대응</td><td>SDD, Spec-first, GitHub Spec Kit</td><td>애초에 무엇을 만들라고 할 것인가?</td></tr><tr><td>2026 초</td><td>구현 뒤 검증 체계와 문맥 통제가 다시 중요해짐</td><td>TDD, Context Engineering</td><td>정말 그 스펙대로 동작하는가?</td></tr></tbody></table><p class="table-question">AI에게 무엇을 시킬지, 어떻게 검증할 것인지</p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">29</span></footer></main>
+<main class="slide family-content layout-editorial density-medium chapter-03" data-slide-id="S029" data-shell="statement-editorial-shell" data-notes="테스트가 에이전트의 자유를 제한하는 통제선" data-footer="default"><section class="top-band"><p class="chapter-label statement-tag">CHAPTER 03</p><h1 class="title-placeholder statement-text">TDD (Test-Driven Development)</h1></section><section class="statement-panel tdd-control-layers-body"><p class="tdd-control-lead">테스트를 먼저 쓰고, 통과하는 코드를 나중에 쓴다. AI 시대에는 인간이 테스트, AI가 구현.</p><div class="tdd-control-grid"><div class="tdd-flow-stack"><article class="tdd-flow-step"><h2>Red</h2><p>인간이 실패 테스트 작성</p></article><article class="tdd-flow-step"><h2>Green</h2><p>AI가 통과 코드 구현</p></article><article class="tdd-flow-step"><h2>Refactor</h2><p>인간 리뷰 → AI가 리팩토링</p></article></div><div class="tdd-control-column"><article class="tdd-control-block"><h2>왜 AI에게 특히 중요한가</h2><p>AI는 &quot;동작하는 것 같은&quot; 코드를 자신 있게 만듦. 테스트 없으면 맞는지 틀린지 확인 불가.</p></article><article class="tdd-control-block"><h2>AI의 치팅에 주의</h2><p>테스트 수정 금지 규칙 필수. 테스트 코드 임의 수정 금지 · assert 조건 약화 · 실패 확인 전 구현 금지.</p></article></div></div></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">29</span></footer></main>
 </body>
 </html>

@@ -25,40 +25,40 @@ SLIDE_017_PATH = SLIDES_DIR / "slide-017.html"
 SLIDE_018_PATH = SLIDES_DIR / "slide-018.html"
 SLIDE_019_PATH = SLIDES_DIR / "slide-019.html"
 SLIDE_020_PATH = SLIDES_DIR / "slide-020.html"
-SLIDE_021_PATH = SLIDES_DIR / "slide-021.html"
-SLIDE_022_PATH = SLIDES_DIR / "slide-022.html"
-SLIDE_023_PATH = SLIDES_DIR / "slide-023.html"
-SLIDE_024_PATH = SLIDES_DIR / "slide-024.html"
-SLIDE_025_PATH = SLIDES_DIR / "slide-025.html"
-SLIDE_026_PATH = SLIDES_DIR / "slide-026.html"
-SLIDE_027_PATH = SLIDES_DIR / "slide-027.html"
-SLIDE_028_PATH = SLIDES_DIR / "slide-028.html"
-SLIDE_029_PATH = SLIDES_DIR / "slide-029.html"
-SLIDE_030_PATH = SLIDES_DIR / "slide-030.html"
-SLIDE_031_PATH = SLIDES_DIR / "slide-031.html"
-SLIDE_032_PATH = SLIDES_DIR / "slide-032.html"
-SLIDE_033_PATH = SLIDES_DIR / "slide-033.html"
-SLIDE_034_PATH = SLIDES_DIR / "slide-034.html"
-SLIDE_035_PATH = SLIDES_DIR / "slide-035.html"
-SLIDE_036_PATH = SLIDES_DIR / "slide-036.html"
-SLIDE_037_PATH = SLIDES_DIR / "slide-037.html"
-SLIDE_038_PATH = SLIDES_DIR / "slide-038.html"
-SLIDE_039_PATH = SLIDES_DIR / "slide-039.html"
-SLIDE_040_PATH = SLIDES_DIR / "slide-040.html"
-SLIDE_041_PATH = SLIDES_DIR / "slide-041.html"
-SLIDE_042_PATH = SLIDES_DIR / "slide-042.html"
-SLIDE_043_PATH = SLIDES_DIR / "slide-043.html"
-SLIDE_044_PATH = SLIDES_DIR / "slide-044.html"
-SLIDE_045_PATH = SLIDES_DIR / "slide-045.html"
-SLIDE_046_PATH = SLIDES_DIR / "slide-046.html"
-SLIDE_048_PATH = SLIDES_DIR / "slide-048.html"
-SLIDE_049_PATH = SLIDES_DIR / "slide-049.html"
-SLIDE_051_PATH = SLIDES_DIR / "slide-051.html"
-SLIDE_055_PATH = SLIDES_DIR / "slide-055.html"
-SLIDE_056_PATH = SLIDES_DIR / "slide-056.html"
-SLIDE_081_PATH = SLIDES_DIR / "slide-081.html"
-SLIDE_082_PATH = SLIDES_DIR / "slide-082.html"
-SLIDE_094_PATH = SLIDES_DIR / "slide-094.html"
+SLIDE_021_PATH = SLIDES_DIR / "slide-019.html"
+SLIDE_022_PATH = SLIDES_DIR / "slide-020.html"
+SLIDE_023_PATH = SLIDES_DIR / "slide-021.html"
+SLIDE_024_PATH = SLIDES_DIR / "slide-022.html"
+SLIDE_025_PATH = SLIDES_DIR / "slide-023.html"
+SLIDE_026_PATH = SLIDES_DIR / "slide-024.html"
+SLIDE_027_PATH = SLIDES_DIR / "slide-025.html"
+SLIDE_028_PATH = SLIDES_DIR / "slide-026.html"
+SLIDE_029_PATH = SLIDES_DIR / "slide-027.html"
+SLIDE_030_PATH = SLIDES_DIR / "slide-028.html"
+SLIDE_031_PATH = SLIDES_DIR / "slide-029.html"
+SLIDE_032_PATH = SLIDES_DIR / "slide-030.html"
+SLIDE_033_PATH = SLIDES_DIR / "slide-031.html"
+SLIDE_034_PATH = SLIDES_DIR / "slide-032.html"
+SLIDE_035_PATH = SLIDES_DIR / "slide-033.html"
+SLIDE_036_PATH = SLIDES_DIR / "slide-034.html"
+SLIDE_037_PATH = SLIDES_DIR / "slide-035.html"
+SLIDE_038_PATH = SLIDES_DIR / "slide-036.html"
+SLIDE_039_PATH = SLIDES_DIR / "slide-037.html"
+SLIDE_040_PATH = SLIDES_DIR / "slide-038.html"
+SLIDE_041_PATH = SLIDES_DIR / "slide-039.html"
+SLIDE_042_PATH = SLIDES_DIR / "slide-040.html"
+SLIDE_043_PATH = SLIDES_DIR / "slide-041.html"
+SLIDE_044_PATH = SLIDES_DIR / "slide-042.html"
+SLIDE_045_PATH = SLIDES_DIR / "slide-043.html"
+SLIDE_046_PATH = SLIDES_DIR / "slide-044.html"
+SLIDE_048_PATH = SLIDES_DIR / "slide-046.html"
+SLIDE_049_PATH = SLIDES_DIR / "slide-047.html"
+SLIDE_051_PATH = SLIDES_DIR / "slide-049.html"
+SLIDE_055_PATH = SLIDES_DIR / "slide-053.html"
+SLIDE_056_PATH = SLIDES_DIR / "slide-054.html"
+SLIDE_081_PATH = SLIDES_DIR / "slide-079.html"
+SLIDE_082_PATH = SLIDES_DIR / "slide-080.html"
+SLIDE_094_PATH = SLIDES_DIR / "slide-092.html"
 
 
 def run_builder() -> None:
@@ -94,14 +94,16 @@ def manifest_rows() -> list[str]:
 class BuildJaryoHtmlDeckTest(unittest.TestCase):
     def test_builder_is_split_into_per_slide_modules(self) -> None:
         entrypoint = BUILD_SCRIPT.read_text(encoding="utf-8")
-        slide_modules = sorted(SLIDE_MODULES_DIR.glob("slide_*.py"))
+        chapter_dirs = sorted(SLIDE_MODULES_DIR.glob("chapter_[0-9][0-9]"))
+        slide_modules = sorted(SLIDE_MODULES_DIR.glob("chapter_[0-9][0-9]/slide_*.py"))
 
         self.assertLessEqual(len(entrypoint.splitlines()), 12)
         self.assertNotIn("def build_all_specs", entrypoint)
         self.assertNotIn("make_slide(", entrypoint)
-        self.assertEqual(len(slide_modules), 94)
-        self.assertEqual(slide_modules[0].name, "slide_001.py")
-        self.assertEqual(slide_modules[-1].name, "slide_094.py")
+        self.assertEqual(len(chapter_dirs), 10)
+        self.assertEqual(len(slide_modules), 92)
+        self.assertEqual(slide_modules[0].relative_to(SLIDE_MODULES_DIR).as_posix(), "chapter_00/slide_001.py")
+        self.assertEqual(slide_modules[-1].relative_to(SLIDE_MODULES_DIR).as_posix(), "chapter_09/slide_092.py")
 
         for path in slide_modules:
             source = path.read_text(encoding="utf-8")
@@ -130,21 +132,21 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
         self.assertTrue(core.exists())
         self.assertLessEqual(len(core.read_text(encoding="utf-8").splitlines()), 80)
 
-    def test_builder_generates_94_slide_registry(self) -> None:
+    def test_builder_generates_92_slide_registry(self) -> None:
         run_builder()
 
         rows = manifest_rows()
-        self.assertEqual(len(rows), 94)
+        self.assertEqual(len(rows), 92)
         self.assertIn("`S001`", rows[0])
-        self.assertIn("`S094`", rows[-1])
+        self.assertIn("`S092`", rows[-1])
 
     def test_builder_uses_three_digit_slide_files(self) -> None:
         run_builder()
 
         slide_files = sorted(SLIDES_DIR.glob("slide-*.html"))
-        self.assertEqual(len(slide_files), 94)
+        self.assertEqual(len(slide_files), 92)
         self.assertEqual(slide_files[0].name, "slide-001.html")
-        self.assertEqual(slide_files[-1].name, "slide-094.html")
+        self.assertEqual(slide_files[-1].name, "slide-092.html")
 
     def test_builder_writes_outline_deck_and_script(self) -> None:
         run_builder()
@@ -157,15 +159,15 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
         self.assertIn("### S027.", outline)
         self.assertIn("### S033.", outline)
         self.assertIn("### S045.", outline)
-        self.assertIn("### S094.", outline)
-        self.assertIn("00/01/02/03/04/05/06/07/08/09 94-slide", outline)
+        self.assertIn("### S092.", outline)
+        self.assertIn("00/01/02/03/04/05/06/07/08/09 92-slide", outline)
         self.assertTrue(SCRIPT_PATH.exists())
         self.assertIn('data-slide-id="S001"', deck)
         self.assertIn('data-slide-id="S014"', deck)
         self.assertIn('data-slide-id="S027"', deck)
         self.assertIn('data-slide-id="S033"', deck)
         self.assertIn('data-slide-id="S045"', deck)
-        self.assertIn('data-slide-id="S094"', deck)
+        self.assertIn('data-slide-id="S092"', deck)
         self.assertIn("function goTo(index)", deck)
 
     def test_builder_applies_latest_slide_feedback(self) -> None:
@@ -310,26 +312,13 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
         ]:
             self.assertNotIn(forbidden, slide_018)
 
-        self.assertIn("<h1 class=\"title-placeholder\">ReAct / Tree-of-Thought</h1>", slide_019)
-        self.assertIn("pattern-pair-body", slide_019)
-        self.assertIn("ReAct", slide_019)
-        self.assertIn("Tree-of-Thought", slide_019)
-        self.assertIn("react-diagram", slide_019)
-        self.assertIn("tot-diagram", slide_019)
-        self.assertNotIn("Chain-of-Thought", slide_019)
-        self.assertNotIn("Self-Refine", slide_019)
-        self.assertNotIn("Reflexion", slide_019)
-        self.assertNotIn("03-react-pattern.png", slide_019)
-        self.assertNotIn("04-tree-of-thought.png", slide_019)
+        self.assertIn("<h1 class=\"title-placeholder\">네 가지 에이전틱 패턴</h1>", slide_019)
+        self.assertIn("agentic-pattern-quadrant-body", slide_019)
+        self.assertIn("agentic-map-svg", slide_019)
 
-        self.assertIn("<h1 class=\"title-placeholder\">Self-Refine / Reflexion</h1>", slide_020)
-        self.assertIn("feedback-loop-body", slide_020)
-        self.assertIn("Self-Refine", slide_020)
-        self.assertIn("Reflexion", slide_020)
-        self.assertIn("self-refine-diagram", slide_020)
-        self.assertIn("reflexion-diagram", slide_020)
-        self.assertNotIn("ReAct", slide_020)
-        self.assertNotIn("Tree-of-Thought", slide_020)
+        self.assertIn("<h1 class=\"title-placeholder\">프롬프트 시대의 벽</h1>", slide_020)
+        self.assertIn("blind-prompting-matrix-body", slide_020)
+        self.assertIn("blind-prompting-quote-card", slide_020)
 
         self.assertIn("<h1 class=\"title-placeholder\">네 가지 에이전틱 패턴</h1>", slide_021)
         self.assertIn("agentic-pattern-quadrant-body", slide_021)
@@ -375,9 +364,9 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
         self.assertIn("06-cursor-ai-code-editor-architecture.png", slide_024)
         self.assertNotIn("cursor-architecture-redraw-body", slide_024)
         self.assertNotIn("architecture-side-tools", slide_024)
-        for snippet in ["좋은 입력만으로는 루프를 통제할 수 없다", "도구 호출 실패", "테스트 오해", "비용 폭주", "위험 명령", "보안 경계", "목표 망각", "무엇을 보여줄 것인가", "무엇을 하게 할 것인가", "무엇을 못 하게 막을 것인가", "어디서 멈출 것인가", "어떻게 검증할 것인가"]:
+        for snippet in ["좋은 입력만으로는 루프를 통제할 수 없다", "도구 호출 실패", "테스트 오해", "비용 폭주", "위험 명령", "보안 경계", "목표 망각", "어떤 정보를 넣어야 하나", "무엇을 하게 할 것인가", "무엇을 못 하게 막을 것인가", "어디서 멈출 것인가", "어떻게 검증할 것인가"]:
             self.assertIn(snippet, slide_025)
-        self.assertIn("<h1 class=\"title-placeholder\">컨텍스트 시대의 벽</h1>", slide_025)
+        self.assertIn("<h1 class=\"title-placeholder\">컨텍스트만으로는 부족하다</h1>", slide_025)
         self.assertIn("context-wall-body", slide_025)
         for forbidden in ["gather context", "take action", "verify", "repeat", "loop-cycle-body", "loop-cycle-arrow", "loop-repeat-arc", "↺ repeat"]:
             self.assertNotIn(forbidden, slide_025)
@@ -596,12 +585,12 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
         self.assertIn("<h1 class=\"title-placeholder\">하네스는 환경 그 자체다</h1>", slide_045)
         for snippet in ["필요한 파일", "필요한 도구", "필요한 규칙", "Harness Builder"]:
             self.assertIn(snippet, slide_045)
-        for index in range(28, 34):
+        for index in range(26, 32):
             slide = (ROOT / f"docs/03-html/slides/slide-{index:03d}.html").read_text(encoding="utf-8")
             self.assertIn("CHAPTER 03", slide)
             self.assertIn("chapter-03", slide)
             self.assertNotIn("SECTION 3", slide)
-        for index in range(15, 28):
+        for index in range(15, 26):
             slide = (ROOT / f"docs/03-html/slides/slide-{index:03d}.html").read_text(encoding="utf-8")
             self.assertIn("CHAPTER 02", slide)
             self.assertIn("chapter-02", slide)
@@ -609,18 +598,18 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
             self.assertNotIn("ACT 2", slide)
             self.assertNotIn("ACT 3", slide)
             self.assertNotIn("LIMIT", slide)
-        for index in range(34, 46):
+        for index in range(32, 44):
             slide = (ROOT / f"docs/03-html/slides/slide-{index:03d}.html").read_text(encoding="utf-8")
             self.assertIn("CHAPTER 04", slide)
             self.assertIn("chapter-04", slide)
             self.assertNotIn("SECTION 4", slide)
 
         for start, end, chapter, css_class, stale in [
-            (46, 55, "CHAPTER 05", "chapter-05", "SECTION 5"),
-            (56, 68, "CHAPTER 06", "chapter-06", "SECTION 6"),
-            (69, 81, "CHAPTER 07", "chapter-07", "SECTION 7"),
-            (82, 90, "CHAPTER 08", "chapter-08", "SECTION 8"),
-            (91, 94, "CHAPTER 09", "chapter-09", "SECTION 9"),
+            (44, 53, "CHAPTER 05", "chapter-05", "SECTION 5"),
+            (54, 66, "CHAPTER 06", "chapter-06", "SECTION 6"),
+            (67, 79, "CHAPTER 07", "chapter-07", "SECTION 7"),
+            (80, 88, "CHAPTER 08", "chapter-08", "SECTION 8"),
+            (89, 92, "CHAPTER 09", "chapter-09", "SECTION 9"),
         ]:
             for index in range(start, end + 1):
                 slide = (ROOT / f"docs/03-html/slides/slide-{index:03d}.html").read_text(encoding="utf-8")

@@ -20,7 +20,7 @@ HTML 관련 작업 필수 입력
 - `docs/03-html/shared/decision-log.md`
 - 대상 source markdown
 - 작업에 필요한 사용자 승인 visual reference page
-- 관련 `scripts/jaryo_html_deck/slides/slide_XXX.py`
+- 관련 `scripts/jaryo_html_deck/slides/chapter_XX/slide_YYY.py`
 - 관련 generated `docs/03-html/slides/slide-XXX.html`
 - 관련 `docs/03-html/outline/slide-outline.md` entry
 - 관련 `docs/03-html/manifest.md` row
@@ -29,7 +29,7 @@ HTML orchestration gate
 - main session은 HTML orchestrator 역할만 수행
 - `html-slide-pm` 결과를 기다린 뒤 builder 작업 지시
 - `html-slide-reviewer` 결과를 기다린 뒤 종료/승인 판단
-- 실제 HTML 구현은 `scripts/jaryo_html_deck/slides/slide_XXX.py`에서 수행
+- 실제 HTML 구현은 `scripts/jaryo_html_deck/slides/chapter_XX/slide_YYY.py`에서 수행
 - generated `slide-XXX.html`은 artifact inspection 대상이며 구현 source로 직접 수정하지 않음
 
 출력 형식

@@ -33,8 +33,8 @@ This repository uses project-local skills and subagent specs under `.codex/`. Ke
 - 사용자와 대화하며 확정한 HTML slide 규칙은 기존 HTML stage 관례, design 문서, generator 관성보다 우선합니다.
 - main session은 HTML orchestrator 역할만 수행합니다. 실제 HTML 작업은 project-local subagent `html-slide-pm`, `html-slide-builder`, `html-slide-qa`, `html-slide-reviewer`를 통해 조율합니다.
 - HTML orchestrator는 `html-slide-pm` 결과를 기다린 뒤 builder 작업을 지시하고, `html-slide-reviewer` 결과를 기다린 뒤 종료/승인합니다. PM 또는 reviewer gate를 건너뛰지 않습니다.
-- HTML 작업 subagent prompt에는 `docs/03-html/shared/slide-quality-rules.md`, `docs/03-html/shared/decision-log.md`, 대상 source markdown, 필요한 visual reference page, 관련 `scripts/jaryo_html_deck/slides/slide_XXX.py`, generated `slide-XXX.html`, outline, manifest 사전 확인을 명시합니다.
-- 실제 HTML 구현 단위는 `scripts/jaryo_html_deck/slides/slide_XXX.py`입니다. generated `docs/03-html/slides/slide-XXX.html`은 artifact inspection 대상이며, 구현 source로 직접 수정하지 않습니다.
+- HTML 작업 subagent prompt에는 `docs/03-html/shared/slide-quality-rules.md`, `docs/03-html/shared/decision-log.md`, 대상 source markdown, 필요한 visual reference page, 관련 `scripts/jaryo_html_deck/slides/chapter_XX/slide_YYY.py`, generated `slide-XXX.html`, outline, manifest 사전 확인을 명시합니다.
+- 실제 HTML 구현 단위는 `scripts/jaryo_html_deck/slides/chapter_XX/slide_YYY.py`입니다. generated `docs/03-html/slides/slide-XXX.html`은 artifact inspection 대상이며, 구현 source로 직접 수정하지 않습니다.
 - `Kuneosu/make-slide`의 outline-first, theme/layout 분리, shell reuse, standalone deck, keyboard/touch, print/PDF 구조를 우선 적용합니다.
 - HTML slide 문구와 시각 구조의 의미 단위는 source markdown 또는 사용자가 명시한 reference에서만 가져옵니다.
 - source에 없는 비교 축, label, 의미, 예시, metric, 해설 문구를 새로 만들지 않습니다.

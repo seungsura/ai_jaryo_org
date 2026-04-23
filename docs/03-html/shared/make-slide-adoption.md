@@ -26,7 +26,7 @@
 
 - 자유 layout 조합은 `layout family + reference shell`로 좁혀 번역
 - single-file output은 최종 artifact인 `docs/03-html/deck/index.html`에만 적용
-- generated slide HTML은 artifact로 유지하고, 실제 slide 구현 단위는 `scripts/jaryo_html_deck/slides/slide_XXX.py`로 둠
+- generated slide HTML은 artifact로 유지하고, 실제 slide 구현 단위는 `scripts/jaryo_html_deck/slides/chapter_XX/slide_YYY.py`로 둠
 - speaker notes는 runtime UI가 아니라 후속 notes 문서 단계로 분리
 - upstream main에는 Jaryo가 그대로 사용할 `make-slide` subagent 파일이 없으므로, workflow/runtime 원칙을 project-local subagents와 prompt template로 번역
 
@@ -46,7 +46,7 @@
 
 - canonical source: `docs/02-seminar/harness-rebuilt-md`
 - planning sync: `docs/03-html/outline/slide-outline.md`, `docs/03-html/manifest.md`
-- implementation unit: `scripts/jaryo_html_deck/slides/slide_XXX.py`
+- implementation unit: `scripts/jaryo_html_deck/slides/chapter_XX/slide_YYY.py`
 - generated slide artifact: `docs/03-html/slides/slide-XX.html`
 - final deck artifact: `docs/03-html/deck/index.html`
 - every slide root:

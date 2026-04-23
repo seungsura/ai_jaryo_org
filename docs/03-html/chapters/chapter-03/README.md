@@ -25,12 +25,12 @@
 
 | local order | provisional id | chapter key | title | generated HTML | generator source | QA artifact |
 | --- | --- | --- | --- | --- | --- | --- |
-| 01 | `S028` | `03-00` | AI 시대의 개발 방법론 | `docs/03-html/slides/slide-028.html` | `scripts/jaryo_html_deck/slides/slide_028.py` | `output/playwright/chapter-03/current028.png` |
-| 02 | `S029` | `03-01` | 왜 지금 방법론 | `docs/03-html/slides/slide-029.html` | `scripts/jaryo_html_deck/slides/slide_029.py` | `output/playwright/chapter-03/current029.png` |
-| 03 | `S030` | `03-02` | SDD | `docs/03-html/slides/slide-030.html` | `scripts/jaryo_html_deck/slides/slide_030.py` | `output/playwright/chapter-03/current030.png` |
-| 04 | `S031` | `03-03` | TDD (Test-Driven Development) | `docs/03-html/slides/slide-031.html` | `scripts/jaryo_html_deck/slides/slide_031.py` | `output/playwright/chapter-03/current031.png` |
-| 05 | `S032` | `03-04` | Waterfall vs SDD | `docs/03-html/slides/slide-032.html` | `scripts/jaryo_html_deck/slides/slide_032.py` | `output/playwright/chapter-03/current032.png` |
-| 06 | `S033` | `03-05` | SDD + TDD가 Harness로 이어지는 이유 | `docs/03-html/slides/slide-033.html` | `scripts/jaryo_html_deck/slides/slide_033.py` | `output/playwright/chapter-03/current033.png` |
+| 01 | `S028` | `03-00` | AI 시대의 개발 방법론 | `docs/03-html/slides/slide-028.html` | `scripts/jaryo_html_deck/slides/chapter_03/slide_028.py` | `output/playwright/chapter-03/current028.png` |
+| 02 | `S029` | `03-01` | 왜 지금 방법론 | `docs/03-html/slides/slide-029.html` | `scripts/jaryo_html_deck/slides/chapter_03/slide_029.py` | `output/playwright/chapter-03/current029.png` |
+| 03 | `S030` | `03-02` | SDD | `docs/03-html/slides/slide-030.html` | `scripts/jaryo_html_deck/slides/chapter_03/slide_030.py` | `output/playwright/chapter-03/current030.png` |
+| 04 | `S031` | `03-03` | TDD (Test-Driven Development) | `docs/03-html/slides/slide-031.html` | `scripts/jaryo_html_deck/slides/chapter_03/slide_031.py` | `output/playwright/chapter-03/current031.png` |
+| 05 | `S032` | `03-04` | Waterfall vs SDD | `docs/03-html/slides/slide-032.html` | `scripts/jaryo_html_deck/slides/chapter_03/slide_032.py` | `output/playwright/chapter-03/current032.png` |
+| 06 | `S033` | `03-05` | SDD + TDD가 Harness로 이어지는 이유 | `docs/03-html/slides/slide-033.html` | `scripts/jaryo_html_deck/slides/chapter_03/slide_033.py` | `output/playwright/chapter-03/current033.png` |
 
 ## Current Validation
 

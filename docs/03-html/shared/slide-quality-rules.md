@@ -25,6 +25,8 @@
 - 일반 구현 순서: 규칙 기록 -> subagent 위임 -> generator/CSS/test/check 갱신 -> HTML/PDF 재생성 -> 정적 검증 -> Playwright screenshot/PDF smoke 검증.
 - 병렬 worktree에서 slide numbering은 임시값이다. 다른 chapter 작업과 겹칠 수 있으므로 chapter 작업자는 전역 `SXXX`/`slide-XXX` 번호를 안정된 소유권으로 가정하지 않는다.
 - 병렬 HTML 작업은 chapter별 작업 폴더를 우선한다. chapter-local 폴더 아래에서 해당 chapter의 local slide order와 임시 slide number를 함께 관리하고, 전역 deck 번호는 마지막 main 통합 단계에서만 재부여한다.
+- 사용자가 선호 페이지 baseline을 지정하면 즉시 deck-wide reference set으로 고정한다. 2026-04-23 기준 고정 baseline은 page `1-18`, `21`, `24`, `37`, `39`, `40`, `52`, `53`이다.
+- page 번호는 `output/pdf/harness-full-main-94-current-720x405.pdf`의 1-based PDF export page를 기준으로 해석한다.
 
 ## Source Discipline
 
@@ -67,6 +69,7 @@
 - CHAPTER 02 rebuild에서 사용자가 추가 승인한 reference는 `output/pdf/harness-00-02-current-720x405.pdf`의 S016-S018, `assets/evolution-of-ai-agentic-patterns/02-chain-of-thought.png`부터 `06-cursor-ai-code-editor-architecture.png`, `assets/claude-code-seminar-kakao/page-052.png`, `assets/claude-code-seminar-kakao/page-067.png`이다.
 - S018 feedback round 3에서 추가 승인한 reference는 `assets/claude-code-seminar-kakao/page-064.png`, 사용자가 첨부한 ReAct screenshot, `https://pub.towardsai.net/chain-of-thought-vs-tree-of-thought-vs-graph-of-thought-reasoning-method-comparison-1f19d238a005`의 CoT/ToT comparison structure다. S018은 `CoT`, `ReAct`, `ToT` 3개를 한 페이지에 모두 visible copy로 두고, `2캔 × 3개`, `11개` 같은 산수 예시는 쓰지 않는다. `Graph-of-Thought`, `GoT`는 S018 visible copy에 넣지 않는다.
 - CHAPTER 06-07 revision에서 사용자가 승인한 primary visual reference는 `assets/claude-code-seminar-kakao/page-062.png`, `page-063.png`, `page-064.png`, `page-065.png`, `page-066.png`, `page-067.png`, `page-068.png`다. 이 묶음은 CHAPTER 06뿐 아니라 CHAPTER 07의 재구성에도 structure-only reference로 쓴다.
+- 2026-04-23 사용자 고정 baseline은 `output/pdf/harness-full-main-94-current-720x405.pdf` 기준 page `1-18`, `21`, `24`, `37`, `39`, `40`, `52`, `53`이다. 이 묶음은 향후 피드백 루프에서 우선 비교군으로 사용한다.
 - 이 baseline은 composition, layout rhythm, diagram density, spatial hierarchy의 soft reference다.
 - 이 baseline은 content source가 아니다. 문구, 비교 축, label, metric, 사례, 해설 의미를 여기서 새로 가져오지 않는다.
 - baseline의 warm brown palette, section pill, character image, decorative mood를 복사하지 않는다.
@@ -87,6 +90,7 @@
 - page-064: card row + mini diagram + 1-line meaning 구조를 참고한다.
 - page-067: dominant system map + side explanation + bottom conclusion 구조를 참고한다.
 - CHAPTER 06-07 approved references: page-062는 dark chapter divider, page-063은 3-wall card composition, page-064는 5-pattern card row, page-065는 high-contrast split comparison, page-066은 Main/Sub relationship map with side cards, page-067은 system map + side explanation + bottom conclusion, page-068은 4-principle grid + dark conclusion 구조를 참고한다.
+- 고정 선호 page cluster 해석: `1-3`(opening cadence), `4-14`(chapter 01 narrative rhythm), `15-18/21/24`(chapter 02 정보-구조 혼합), `37/39/40`(chapter 04 핵심 도식), `52/53`(chapter 05 statement 밀도) 구조를 우선 패턴으로 둔다.
 
 ## Layout Grammar
 
@@ -148,8 +152,9 @@
 - 패턴, 도표, architecture 설명은 시각 요소를 필수로 둔다.
 - 같은 인접 주제라도 같은 shell 반복을 금지 검토한다.
 - source-sync slide는 source markdown과 generated copy의 drift를 확인한다.
-- generated slide HTML과 `deck/index.html`은 artifact다. 실제 slide 구현 단위는 `scripts/jaryo_html_deck/slides/slide_XXX.py`다.
-- HTML deck generator는 얇은 entrypoint와 `scripts/jaryo_html_deck/slides/slide_XXX.py` slide module 구조를 유지하고, 공용 렌더링/파일 출력은 slide module에 두지 않는다.
+- generated slide HTML과 `deck/index.html`은 artifact다. 실제 slide 구현 단위는 `scripts/jaryo_html_deck/slides/chapter_XX/slide_YYY.py`다.
+- HTML deck generator는 얇은 entrypoint를 유지하고, slide source는 chapter package(`chapter_00`~`chapter_09`)로 분리한다. 전체 deck은 한 번의 build에서 chapter package 순서대로 렌더링한다.
+- chapter별 파일명은 겹칠 수 있지만 전역 `spec.order`는 중복 없이 contiguous range를 유지해야 한다.
 - 실패한 review 결과는 실패 slide id와 수정 범위만 다음 작업자에게 전달한다.
 
 ## Validation Contract
@@ -160,6 +165,7 @@
 - 구조 검증은 통과해도 label 위치, 카드 내부/외부, font scale, footer와 본문 겹침, dark quote 대비 같은 visual rule은 screenshot review 없이는 놓칠 수 있다.
 - nested-card 위험은 contract 단계에서 탐지해야 한다. 렌더 결과만 믿고 넘기지 않는다.
 - 전체 deck 검증 기준은 현재 main 통합본의 contiguous deck/manifest/outline/script/spec JSON과 generated HTML 존재 여부를 포함한다.
+- 반복 루프(`html 생성 -> pdf 생성 -> 피드백 -> html 수정 -> html 생성`)마다 footer 우하단 page number의 중복/누락/역순 여부를 전역으로 확인한다.
 
 ## Decision Log
 
@@ -204,6 +210,8 @@
 - 2026-04-22 final main integration: 전역 번호는 main 통합본에서 S001-S094로 확정한다. 기존 1-4장은 S001-S045를 유지하고, 5장은 S046-S055, 6장은 S056-S068, 7장은 S069-S081, 8장은 S082-S090, 9장은 S091-S094로 배치한다. 이 통합은 numbering/registry/generator/validation 확장 작업이며 slide copy와 visual meaning을 함께 수정하지 않는다.
 - 2026-04-23 chapter 06-07 main merge: CHAPTER 06-07 worktree의 provisional S046-S071을 main 통합본의 S056-S081로 재번호화한다. main의 최신 source heading을 기준으로 S057은 `하나의 에이전트 = 하나의 역할`, S067은 `멀티 모델과 멀티 에이전트`, S072는 `필요없는 도구는 덜어내라`를 title fixed value로 둔다.
 - 2026-04-23 chapter 06-07 reference merge: 사용자가 지정한 page-062~068 reference 문법과 QA blocker를 main 규칙으로 흡수한다. dark split panel `small` contrast와 5-item artifact column clipping은 main 통합 후에도 blocker다.
+- 2026-04-23 design/workflow freeze: 사용자가 선호한 page `1-18`, `21`, `24`, `37`, `39`, `40`, `52`, `53`을 deck-wide baseline으로 고정한다. 향후 HTML 피드백 루프에서는 이 묶음을 우선 비교군으로 유지한다.
+- 2026-04-23 chapter source split: slide Python source를 chapter folder(`scripts/jaryo_html_deck/slides/chapter_XX/`)로 분리하고, 전체 deck은 one-pass build로 유지한다. 번호 충돌 방지는 파일 경로 분리 + 전역 `spec.order` contiguous 검증으로 강제한다.
 
 ## Traceability
 

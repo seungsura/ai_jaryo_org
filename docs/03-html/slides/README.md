@@ -1,6 +1,6 @@
 # HTML Slides
 
-이 폴더는 generated slide HTML artifact를 보관합니다. 실제 구현 단위는 `scripts/jaryo_html_deck/slides/slide_XXX.py`입니다.
+이 폴더는 generated slide HTML artifact를 보관합니다. 실제 구현 단위는 `scripts/jaryo_html_deck/slides/chapter_XX/slide_YYY.py`입니다.
 
 - 현재 규칙: `slide-001.html`-`slide-027.html`
 - deck order가 바뀌면 `../manifest.md`와 함께 갱신합니다.
