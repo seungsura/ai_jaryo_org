@@ -365,41 +365,72 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
         self.assertNotIn("cursor-architecture-redraw-body", slide_024)
         self.assertNotIn("architecture-side-tools", slide_024)
         for snippet in [
-            "폭주를 만드는 것",
-            "잘못된 결과나 응답 유입",
-            "느슨한 실행 권한",
-            "잘못된 검증",
-            "먼저 고정할 것",
-            "허용/차단 범위",
-            "멈춤 기준",
-            "검증 경로",
-            "멈춤 기준과 검증 경로를 먼저 설계해야 한다",
+            "루프",
+            "도구 호출 실패",
+            "목표 망각",
+            "테스트 오해",
+            "보안 경계",
+            "잘못된 방향으로 전력질주",
         ]:
             self.assertIn(snippet, slide_025)
         self.assertIn("<h1 class=\"title-placeholder\">컨텍스트만으로는 부족하다</h1>", slide_025)
-        self.assertIn("cache-sequence-body", slide_025)
+        self.assertIn("context-loop-injection-body", slide_025)
+        self.assertIn("context-loop-panel", slide_025)
+        self.assertIn("loop-cycle-track", slide_025)
+        for snippet in ["gather context", "take action", "verify work", "repeat"]:
+            self.assertIn(snippet, slide_025)
+        self.assertIn("context-injection-rail", slide_025)
+        self.assertIn("context-injection-plus", slide_025)
+        self.assertIn("context-issue-grid", slide_025)
         self.assertIn("compare-grid with-arrow", slide_025)
+        self.assertIn("context-loop-synthesis", slide_025)
+        self.assertNotIn("cache-sequence-body", slide_025)
         self.assertNotIn("context-failure-body", slide_025)
         self.assertNotIn("context-wall-body", slide_025)
-        for forbidden in ["gather context", "take action", "verify", "repeat", "loop-cycle-body", "loop-cycle-arrow", "loop-repeat-arc", "↺ repeat"]:
+        self.assertNotIn("잘못된 응답 주입", slide_025)
+        for forbidden in ["loop-cycle-body", "loop-repeat-arc", "↺ repeat"]:
             self.assertNotIn(forbidden, slide_025)
         self.assertIn("<h1 class=\"title-placeholder\">3막: 하네스의 시대</h1>", slide_026)
-        self.assertIn("harness-era-minimal-body", slide_026)
-        for snippet in ["코딩 도구는 이제 실행 환경을 품는다", "자동완성·채팅", "작업 환경 전체", "파일 · 셸 · 테스트", "Harness"]:
+        self.assertIn("harness-environment-map-body", slide_026)
+        self.assertIn("harness-decision-column", slide_026)
+        self.assertIn("harness-runtime-column", slide_026)
+        self.assertIn("harness-runtime-flow", slide_026)
+        self.assertIn("harness-support-grid", slide_026)
+        for snippet in [
+            "무엇을 보는지",
+            "컨텍스트",
+            "무엇을 할 수 있는지",
+            "도구, 권한",
+            "언제 멈추는지",
+            "제약",
+            "잘못되었을 때",
+            "복구",
+            "파일 읽기",
+            "셸 실행",
+            "테스트 결과",
+            "다시 수정",
+            "Plan Mode",
+            "승인 체계",
+            "CLAUDE.md",
+            "Skills",
+            "Hooks",
+            "MCP",
+            "Plugins",
+            "Subagents",
+        ]:
             self.assertIn(snippet, slide_026)
-        for component in ["Plan Mode", "승인 체계", "CLAUDE.md", "Skills", "Hooks", "MCP", "Plugins", "Subagents", "허용", "차단", "기록"]:
-            self.assertNotIn(component, slide_026)
+        self.assertNotIn("harness-era-minimal-body", slide_026)
         self.assertNotIn("harness-era-signs-body", slide_026)
         self.assertNotIn("component-tier-body", slide_026)
-        self.assertNotIn("무엇을 보는지", slide_026)
-        self.assertNotIn("기초", slide_026)
-        self.assertNotIn("자동화", slide_026)
-        self.assertNotIn("연결", slide_026)
-        self.assertNotIn("확장", slide_026)
+        self.assertNotIn("Agent = Model + Harness", slide_026)
+        self.assertNotIn("Prompt ⊂ Context ⊂ Harness", slide_026)
+        self.assertNotIn("ch-dark-conclusion", slide_026)
+        self.assertIn("<h1 class=\"title-placeholder\">하네스의 시대로</h1>", slide_027)
         self.assertIn("era-native-body", slide_027)
         self.assertIn("Agent = Model + Harness", slide_027)
         self.assertIn("Prompt ⊂ Context ⊂ Harness", slide_027)
         self.assertNotIn("<table class=\"data-table\">", slide_027)
+        self.assertNotIn("<p class=\"table-question\">", slide_027)
         self.assertNotIn("era-native-nesting", slide_027)
         self.assertNotIn("01-three-era-timeline.png", slide_027)
         for era in ["Prompt Engineering", "Context Engineering", "Harness Engineering"]:
@@ -429,12 +460,19 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
             "Constitution Check",
         ]:
             self.assertIn(snippet, slide_030)
-        self.assertNotIn("하네스", slide_030)
-        self.assertIn("<h1 class=\"title-placeholder statement-text\">TDD (Test-Driven Development)</h1>", slide_031)
-        self.assertIn("tdd-control-lead", slide_031)
         for snippet in [
-            "테스트를 먼저 쓰고, 통과하는 코드를 나중에 쓴다",
-            "AI 시대에는 인간이 테스트, AI가 구현",
+            'class="step-index spec-kit-stage-label">SPECIFY</span>',
+            'class="step-index spec-kit-stage-label">PLAN</span>',
+            'class="step-index spec-kit-stage-label">TASKS</span>',
+        ]:
+            self.assertIn(snippet, slide_030)
+        self.assertIn(".spec-kit-stage-label", css)
+        self.assertNotIn("하네스", slide_030)
+        self.assertIn("<h1 class=\"title-placeholder statement-text\">TDD</h1>", slide_031)
+        self.assertIn("<p class=\"lead-placeholder\">Test-Driven Development</p>", slide_031)
+        self.assertNotIn("chapter-label statement-tag", slide_031)
+        self.assertNotIn("tdd-control-lead", slide_031)
+        for snippet in [
             "Red",
             "Green",
             "Refactor",
@@ -451,6 +489,13 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
             "실패 확인 전 구현 금지",
         ]:
             self.assertIn(snippet, slide_031)
+        for forbidden in [
+            "테스트를 먼저 쓰고, 통과하는 코드를 나중에 쓴다",
+            "AI 시대에는 인간이 테스트, AI가 구현",
+            "TDD (Test-Driven Development)",
+            "CHAPTER 03",
+        ]:
+            self.assertNotIn(forbidden, slide_031)
         self.assertIn("tdd-control-layers-body", slide_031)
         self.assertIn("tdd-flow-stack", slide_031)
         self.assertEqual(slide_031.count("tdd-flow-step"), 3)
@@ -685,7 +730,10 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
         slide_033 = SLIDE_033_PATH.read_text(encoding="utf-8")
 
         self.assertIn("<h1 class=\"title-placeholder statement-text\">TDD (Test-Driven Development)</h1>", slide_031)
-        self.assertIn("tdd-control-lead", slide_031)
+        self.assertIn("<h1 class=\"title-placeholder statement-text\">TDD</h1>", slide_031)
+        self.assertIn("<p class=\"lead-placeholder\">Test-Driven Development</p>", slide_031)
+        self.assertNotIn("chapter-label statement-tag", slide_031)
+        self.assertNotIn("tdd-control-lead", slide_031)
         for snippet in [
             "테스트를 먼저 쓰고, 통과하는 코드를 나중에 쓴다",
             "AI 시대에는 인간이 테스트, AI가 구현",
@@ -762,6 +810,13 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
             "/speckit.tasks",
         ]:
             self.assertIn(snippet, slide_030)
+        for snippet in [
+            'class="step-index spec-kit-stage-label">SPECIFY</span>',
+            'class="step-index spec-kit-stage-label">PLAN</span>',
+            'class="step-index spec-kit-stage-label">TASKS</span>',
+        ]:
+            self.assertIn(snippet, slide_030)
+        self.assertIn(".spec-kit-stage-label", css)
 
         self.assertIn("comparison-column-header is-focus", slide_032)
         self.assertNotIn("comparison-synthesis", slide_032)
@@ -779,6 +834,66 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
         self.assertRegex(css, r"\.spec-tdd-card h2 \{[^}]*font-size: 24px;")
         self.assertRegex(css, r"\.spec-tdd-card li \{[^}]*font-size: 16px;")
         self.assertRegex(css, r"\.comparison-column-headers \{[^}]*grid-template-columns: minmax\(170px, 0\.62fr\) minmax\(0, 1fr\) 24pt minmax\(0, 1fr\);")
+
+    def test_chapter_03_tdd_title_reflow(self) -> None:
+        run_builder()
+
+        slide_031 = SLIDE_031_PATH.read_text(encoding="utf-8")
+        css = (ROOT / "docs/03-html/shared/slide-base.css").read_text(encoding="utf-8")
+
+        self.assertIn("<h1 class=\"title-placeholder statement-text\">TDD</h1>", slide_031)
+        self.assertIn("<p class=\"lead-placeholder\">Test-Driven Development</p>", slide_031)
+        self.assertNotIn("chapter-label statement-tag", slide_031)
+        self.assertNotIn("tdd-control-lead", slide_031)
+        self.assertNotIn("TDD (Test-Driven Development)", slide_031)
+        self.assertNotIn("테스트를 먼저 쓰고, 통과하는 코드를 나중에 쓴다", slide_031)
+        self.assertNotIn("AI 시대에는 인간이 테스트, AI가 구현", slide_031)
+        self.assertRegex(css, r'main\[data-slide-id="S029"\] \.tdd-control-layers-body \{[^}]*top: 146px;[^}]*gap: 12px;')
+        self.assertRegex(css, r'\.slide\[data-slide-id="S029"\] \.tdd-flow-step h2 \{[^}]*font-size: 20px;')
+        self.assertRegex(css, r'\.slide\[data-slide-id="S029"\] \.tdd-flow-step p \{[^}]*font-size: 14px;')
+        self.assertRegex(css, r'\.slide\[data-slide-id="S029"\] \.tdd-control-block h2 \{[^}]*font-size: 13px;')
+        self.assertRegex(css, r'\.slide\[data-slide-id="S029"\] \.tdd-control-block p \{[^}]*font-size: 12px;')
+
+    def test_chapter_02_harness_environment_map(self) -> None:
+        run_builder()
+
+        slide_026 = SLIDE_026_PATH.read_text(encoding="utf-8")
+
+        for class_name in [
+            "harness-environment-map-body",
+            "harness-decision-column",
+            "harness-runtime-column",
+            "harness-runtime-flow",
+            "harness-support-grid",
+            "harness-support-stack",
+            "harness-support-card",
+        ]:
+            self.assertIn(class_name, slide_026)
+
+        for snippet in [
+            "무엇을 보는지",
+            "무엇을 할 수 있는지",
+            "언제 멈추는지",
+            "잘못되었을 때",
+            "파일 읽기",
+            "셸 실행",
+            "테스트 결과",
+            "다시 수정",
+            "Plan Mode",
+            "승인 체계",
+            "CLAUDE.md",
+            "Skills",
+            "Hooks",
+            "MCP",
+            "Plugins",
+            "Subagents",
+        ]:
+            self.assertIn(snippet, slide_026)
+
+        self.assertNotIn("harness-era-minimal-body", slide_026)
+        self.assertNotIn("Agent = Model + Harness", slide_026)
+        self.assertNotIn("Prompt ⊂ Context ⊂ Harness", slide_026)
+        self.assertNotIn("ch-dark-conclusion", slide_026)
 
 
 if __name__ == "__main__":

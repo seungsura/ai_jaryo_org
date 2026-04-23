@@ -269,6 +269,8 @@ def main() -> int:
                 required_classes = ["top-band", "feedback-loop-body", "feedback-loop-card", "self-refine-diagram", "reflexion-diagram", "footer"]
             elif shell == "process-flow-shell" and "pattern-map-body" in html:
                 required_classes = ["top-band", "pattern-map-body", "process-track", "process-step", "pattern-assets", "footer"]
+            elif shell == "process-flow-shell" and "spec-kit-workflow-body" in html:
+                required_classes = ["top-band", "spec-kit-workflow-body", "spec-kit-stage-track", "spec-kit-stage-label", "spec-kit-side-stack", "spec-kit-principle", "spec-kit-outcome", "spec-kit-source", "footer"]
             elif shell == "process-flow-shell" and "cursor-tools-body" in html:
                 required_classes = ["top-band", "cursor-tools-body", "cursor-tool-panel", "cursor-tools-rail", "footer"]
             elif shell == "process-flow-shell" and "cursor-architecture-redraw-body" in html:
@@ -513,31 +515,39 @@ def main() -> int:
                     errors.append(f"{slide_id}: stale native redraw layout remains after raw asset exception")
         if slide_id == "S023":
             for snippet in [
-                "폭주를 만드는 것",
-                "잘못된 결과나 응답 유입",
-                "느슨한 실행 권한",
-                "잘못된 검증",
-                "먼저 고정할 것",
-                "허용/차단 범위",
-                "멈춤 기준",
-                "검증 경로",
-                "멈춤 기준과 검증 경로를 먼저 설계해야 한다",
+                "루프",
+                "도구 호출 실패",
+                "목표 망각",
+                "테스트 오해",
+                "보안 경계",
+                "잘못된 방향으로 전력질주",
             ]:
                 if snippet not in html:
                     errors.append(f"{slide_id}: context failure slide missing snippet {snippet}")
+            for class_name in [
+                "context-loop-injection-body",
+                "context-loop-panel",
+                "loop-cycle-track",
+                "context-injection-rail",
+                "context-injection-plus",
+                "context-issue-grid",
+                "context-loop-synthesis",
+            ]:
+                if not has_class(html, class_name):
+                    errors.append(f"{slide_id}: context loop slide requires class '{class_name}'")
+            for snippet in ["gather context", "take action", "verify work", "repeat"]:
+                if snippet not in html:
+                    errors.append(f"{slide_id}: mini loop diagram missing snippet {snippet}")
             for forbidden in [
-                "gather context",
-                "take action",
-                "verify",
-                "repeat",
                 "loop-cycle-body",
-                "loop-cycle-arrow",
                 "loop-repeat-arc",
                 "↺ repeat",
                 "context-wall-body",
                 "context-wall-grid",
                 "context-wall-risk-strip",
                 "context-failure-body",
+                "cache-sequence-body",
+                "잘못된 응답 주입",
             ]:
                 if forbidden in html:
                     errors.append(f"{slide_id}: stale loop/context-wall layout remains after current redesign: {forbidden}")
@@ -588,9 +598,8 @@ def main() -> int:
                 errors.append(f"{slide_id}: SDD page must not become a Harness summary")
         if slide_id == "S029":
             for snippet in [
-                "TDD (Test-Driven Development)",
-                "테스트를 먼저 쓰고, 통과하는 코드를 나중에 쓴다",
-                "AI 시대에는 인간이 테스트, AI가 구현",
+                "TDD",
+                "Test-Driven Development",
                 "Red",
                 "Green",
                 "Refactor",
@@ -608,9 +617,12 @@ def main() -> int:
             ]:
                 if snippet not in html:
                     errors.append(f"{slide_id}: TDD control map missing snippet {snippet}")
-            for class_name in ["tdd-control-layers-body", "tdd-flow-stack", "tdd-control-column", "tdd-control-lead"]:
+            for class_name in ["tdd-control-layers-body", "tdd-flow-stack", "tdd-control-column", "lead-placeholder"]:
                 if not has_class(html, class_name):
                     errors.append(f"{slide_id}: TDD revision requires class '{class_name}'")
+            for forbidden in ["TDD (Test-Driven Development)", "tdd-control-lead", "chapter-label statement-tag"]:
+                if forbidden in html:
+                    errors.append(f"{slide_id}: stale TDD title-band/body artifact remains: {forbidden}")
             if len(re.findall(r'class="[^"]*\btdd-flow-step\b[^"]*"', html)) != 3:
                 errors.append(f"{slide_id}: TDD revision must render exactly three left flow steps")
             if len(re.findall(r'class="[^"]*\btdd-control-block\b[^"]*"', html)) != 2:
@@ -837,7 +849,7 @@ def main() -> int:
                 if stale_label in html:
                     errors.append(f"{slide_id}: stale chapter helper label remains: {stale_label}")
         if slide_id >= "S026" and slide_id <= "S031":
-            if "CHAPTER 03" not in html:
+            if slide_id != "S029" and "CHAPTER 03" not in html:
                 errors.append(f"{slide_id}: chapter label must be CHAPTER 03")
             if "chapter-03" not in attrs:
                 errors.append(f"{slide_id}: main root must carry chapter-03 class")

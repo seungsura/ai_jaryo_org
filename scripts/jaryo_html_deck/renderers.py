@@ -182,16 +182,16 @@ def render_shell(spec: SlideSpec) -> str:
                 "</article>"
                 for block in spec.body.get("controls", [])
             )
-            lead = ""
-            if spec.lead:
-                lead = f'<p class="tdd-control-lead">{html.escape(spec.lead)}</p>'
+            chapter_label = ""
+            if not spec.body.get("hide_chapter_label"):
+                chapter_label = f'<p class="chapter-label statement-tag">{html.escape(spec.chapter_label)}</p>'
             return (
                 '<section class="top-band">'
-                f'<p class="chapter-label statement-tag">{html.escape(spec.chapter_label)}</p>'
+                f"{chapter_label}"
                 f'<h1 class="title-placeholder statement-text">{html.escape(spec.title)}</h1>'
+                f"{render_lead(spec.lead)}"
                 "</section>"
                 '<section class="statement-panel tdd-control-layers-body">'
-                f"{lead}"
                 '<div class="tdd-control-grid">'
                 '<div class="tdd-flow-stack">'
                 f"{flow_steps}"
@@ -760,7 +760,7 @@ def render_shell(spec: SlideSpec) -> str:
                 items = "".join(f'<li>{html.escape(item)}</li>' for item in step.get("items", []))
                 stages.append(
                     '<li class="process-step spec-kit-stage">'
-                    f'<span class="step-index">{html.escape(step["index"])}</span>'
+                    f'<span class="step-index spec-kit-stage-label">{html.escape(step["index"])}</span>'
                     f'<span class="step-title">{html.escape(step["title"])}</span>'
                     f'<span class="step-copy">{html.escape(step["text"])}</span>'
                     f'<ul class="spec-kit-stage-notes">{items}</ul>'
@@ -1234,6 +1234,50 @@ def render_shell(spec: SlideSpec) -> str:
                 '<div class="harness-era-runtime centered-claim">실행 환경</div>'
                 "</div>"
                 f'<div class="harness-era-grid">{cards}</div>'
+                "</section>"
+            )
+
+        if spec.body.get("variant") == "harness-environment-map":
+            decision_cards = "".join(
+                '<article class="responsibility-card harness-decision-card">'
+                f'<h2>{html.escape(str(card.get("title", "")))}</h2>'
+                f'<p>{html.escape(str(card.get("text", "")))}</p>'
+                "</article>"
+                for card in spec.body.get("decisions", [])
+            )
+            flow_parts: list[str] = []
+            flow = spec.body.get("flow", [])
+            for index, step in enumerate(flow):
+                flow_parts.append(
+                    '<li class="process-step harness-runtime-step">'
+                    f'<span class="step-index">{html.escape(str(step.get("index", "")))}</span>'
+                    f'<span class="step-title">{html.escape(str(step.get("title", "")))}</span>'
+                    "</li>"
+                )
+                if index < len(flow) - 1:
+                    flow_parts.append('<div class="harness-runtime-arrow" aria-hidden="true">→</div>')
+            support_groups = "".join(
+                '<div class="harness-support-stack">'
+                + "".join(
+                    '<article class="tool-cluster-card harness-support-card">'
+                    f'<h2>{html.escape(str(item))}</h2>'
+                    "</article>"
+                    for item in group
+                )
+                + "</div>"
+                for group in spec.body.get("groups", [])
+            )
+            return (
+                '<section class="top-band">'
+                f'<p class="chapter-label">{html.escape(spec.chapter_label)}</p>'
+                f'<h1 class="title-placeholder">{html.escape(spec.title)}</h1>'
+                "</section>"
+                '<section class="harness-environment-map-body">'
+                f'<div class="responsibility-column harness-decision-column">{decision_cards}</div>'
+                '<div class="harness-runtime-column">'
+                f'<ol class="process-track harness-runtime-flow">{"".join(flow_parts)}</ol>'
+                f'<div class="harness-support-grid">{support_groups}</div>'
+                "</div>"
                 "</section>"
             )
 
@@ -1747,6 +1791,53 @@ def render_shell(spec: SlideSpec) -> str:
                 "</article>"
                 "</section>"
                 f"{quote}"
+            )
+
+        if spec.body.get("variant") == "context-loop-injection":
+            step_parts = []
+            for index, step in enumerate(spec.body.get("steps", [])[:4], start=1):
+                step_parts.append(
+                    f'<article class="process-step loop-step context-loop-step context-loop-step-{index}">'
+                    f'<span class="step-index">{html.escape(str(step["index"]))}</span>'
+                    f'<span class="step-title">{html.escape(str(step["title"]))}</span>'
+                    "</article>"
+                )
+            issue_cards = "".join(
+                '<article class="context-issue-tile">'
+                f'<h2>{html.escape(issue)}</h2>'
+                "</article>"
+                for issue in spec.body.get("issues", [])
+            )
+            return (
+                '<section class="top-band">'
+                f'<p class="chapter-label">{html.escape(spec.chapter_label)}</p>'
+                f'<h1 class="title-placeholder">{html.escape(spec.title)}</h1>'
+                "</section>"
+                '<section class="compare-grid with-arrow context-loop-injection-body">'
+                '<article class="compare-col context-loop-column">'
+                '<div class="context-loop-panel">'
+                '<p class="context-loop-caption">루프</p>'
+                '<div class="loop-cycle-track context-loop-mini-track">'
+                f"{step_parts[0]}"
+                '<div class="loop-cycle-arrow arrow-east context-loop-mini-arrow" aria-hidden="true">→</div>'
+                f"{step_parts[1]}"
+                '<div class="loop-cycle-arrow arrow-north context-loop-mini-arrow" aria-hidden="true">↑</div>'
+                '<div class="loop-center-gap context-loop-mini-gap" aria-hidden="true"></div>'
+                '<div class="loop-cycle-arrow arrow-south context-loop-mini-arrow" aria-hidden="true">↓</div>'
+                f"{step_parts[3]}"
+                '<div class="loop-cycle-arrow arrow-west context-loop-mini-arrow" aria-hidden="true">←</div>'
+                f"{step_parts[2]}"
+                "</div>"
+                "</div>"
+                "</article>"
+                '<div class="compare-arrow context-injection-rail">'
+                '<div class="context-injection-plus" aria-hidden="true">+</div>'
+                "</div>"
+                '<article class="compare-col context-issue-column">'
+                f'<div class="context-issue-grid">{issue_cards}</div>'
+                "</article>"
+                "</section>"
+                f'<p class="context-loop-synthesis centered-claim">{html.escape(str(spec.body.get("opinion", spec.key_claim)))}</p>'
             )
 
         if spec.body.get("variant") == "waterfall-comparison":
