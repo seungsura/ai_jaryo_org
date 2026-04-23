@@ -27,6 +27,8 @@
 - 병렬 HTML 작업은 chapter별 작업 폴더를 우선한다. chapter-local 폴더 아래에서 해당 chapter의 local slide order와 임시 slide number를 함께 관리하고, 전역 deck 번호는 마지막 main 통합 단계에서만 재부여한다.
 - 사용자가 선호 페이지 baseline을 지정하면 즉시 deck-wide reference set으로 고정한다. 2026-04-23 기준 고정 baseline은 page `1-18`, `21`, `24`, `37`, `39`, `40`, `52`, `53`이다.
 - page 번호는 `output/pdf/harness-full-main-94-current-720x405.pdf`의 1-based PDF export page를 기준으로 해석한다.
+- legacy page 기준이 현재 deck 번호와 다를 때는 `docs/03-html/shared/page-number-mapping.json`을 우선 참조해 현재 `index.html` footer page로 변환한다.
+- 2026-04-23 삭제 반영(`legacy page 19, 20` 제거) 이후 선호 baseline 매핑은 `1-18->1-18`, `21->19`, `24->22`, `37->35`, `39->37`, `40->38`, `52->50`, `53->51`로 고정한다.
 
 ## Source Discipline
 
@@ -70,6 +72,7 @@
 - S018 feedback round 3에서 추가 승인한 reference는 `assets/claude-code-seminar-kakao/page-064.png`, 사용자가 첨부한 ReAct screenshot, `https://pub.towardsai.net/chain-of-thought-vs-tree-of-thought-vs-graph-of-thought-reasoning-method-comparison-1f19d238a005`의 CoT/ToT comparison structure다. S018은 `CoT`, `ReAct`, `ToT` 3개를 한 페이지에 모두 visible copy로 두고, `2캔 × 3개`, `11개` 같은 산수 예시는 쓰지 않는다. `Graph-of-Thought`, `GoT`는 S018 visible copy에 넣지 않는다.
 - CHAPTER 06-07 revision에서 사용자가 승인한 primary visual reference는 `assets/claude-code-seminar-kakao/page-062.png`, `page-063.png`, `page-064.png`, `page-065.png`, `page-066.png`, `page-067.png`, `page-068.png`다. 이 묶음은 CHAPTER 06뿐 아니라 CHAPTER 07의 재구성에도 structure-only reference로 쓴다.
 - 2026-04-23 사용자 고정 baseline은 `output/pdf/harness-full-main-94-current-720x405.pdf` 기준 page `1-18`, `21`, `24`, `37`, `39`, `40`, `52`, `53`이다. 이 묶음은 향후 피드백 루프에서 우선 비교군으로 사용한다.
+- legacy baseline과 현재 deck 번호의 대응표는 `docs/03-html/shared/page-number-mapping.md`와 `docs/03-html/shared/page-number-mapping.json`을 단일 진실원으로 유지한다.
 - 이 baseline은 composition, layout rhythm, diagram density, spatial hierarchy의 soft reference다.
 - 이 baseline은 content source가 아니다. 문구, 비교 축, label, metric, 사례, 해설 의미를 여기서 새로 가져오지 않는다.
 - baseline의 warm brown palette, section pill, character image, decorative mood를 복사하지 않는다.

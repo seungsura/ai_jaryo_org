@@ -46,3 +46,5 @@
 - 사용자가 지정한 선호 페이지 `1-18`, `21`, `24`, `37`, `39`, `40`, `52`, `53`을 deck-wide 고정 baseline으로 채택한다. page 해석은 `output/pdf/harness-full-main-94-current-720x405.pdf`의 1-based PDF export 기준으로 고정한다. 이후 피드백 루프에서는 이 묶음을 우선 비교군으로 사용하고, baseline 교체는 사용자 명시 승인 없이는 수행하지 않는다.
 - 반복 루프(`html 생성 -> pdf 생성 -> 피드백 -> html 수정 -> html 생성`)에서 footer 우하단 번호 drift를 blocker로 본다. 검증 단계에서 전역 번호의 중복/누락/역순을 매회 확인한다.
 - slide source 구현 경로를 chapter folder(`scripts/jaryo_html_deck/slides/chapter_XX/`)로 분리하고, 전체 deck은 기존처럼 한 번의 build로 렌더링한다. 파일 경로 분리와 전역 `spec.order` contiguous 검증을 함께 사용해 번호 충돌을 방지한다.
+- 사용자가 선호 baseline을 legacy PDF page로 계속 지칭할 수 있으므로 `docs/03-html/shared/page-number-mapping.md`와 `docs/03-html/shared/page-number-mapping.json`을 추가한다. 삭제된 legacy page는 `19`, `20`이고, 변환 규칙은 `1-18 유지`, `21 이상은 -2`다.
+- 선호 baseline remap은 `1-18 -> 1-18`, `21 -> 19`, `24 -> 22`, `37 -> 35`, `39 -> 37`, `40 -> 38`, `52 -> 50`, `53 -> 51`로 고정한다.
