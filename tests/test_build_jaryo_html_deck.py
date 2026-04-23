@@ -364,10 +364,23 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
         self.assertIn("06-cursor-ai-code-editor-architecture.png", slide_024)
         self.assertNotIn("cursor-architecture-redraw-body", slide_024)
         self.assertNotIn("architecture-side-tools", slide_024)
-        for snippet in ["좋은 입력만으로는 루프를 통제할 수 없다", "도구 호출 실패", "테스트 오해", "비용 폭주", "위험 명령", "보안 경계", "목표 망각", "어떤 정보를 넣어야 하나", "무엇을 하게 할 것인가", "무엇을 못 하게 막을 것인가", "어디서 멈출 것인가", "어떻게 검증할 것인가"]:
+        for snippet in [
+            "폭주를 만드는 것",
+            "잘못된 결과나 응답 유입",
+            "느슨한 실행 권한",
+            "잘못된 검증",
+            "먼저 고정할 것",
+            "허용/차단 범위",
+            "멈춤 기준",
+            "검증 경로",
+            "멈춤 기준과 검증 경로를 먼저 설계해야 한다",
+        ]:
             self.assertIn(snippet, slide_025)
         self.assertIn("<h1 class=\"title-placeholder\">컨텍스트만으로는 부족하다</h1>", slide_025)
-        self.assertIn("context-wall-body", slide_025)
+        self.assertIn("cache-sequence-body", slide_025)
+        self.assertIn("compare-grid with-arrow", slide_025)
+        self.assertNotIn("context-failure-body", slide_025)
+        self.assertNotIn("context-wall-body", slide_025)
         for forbidden in ["gather context", "take action", "verify", "repeat", "loop-cycle-body", "loop-cycle-arrow", "loop-repeat-arc", "↺ repeat"]:
             self.assertNotIn(forbidden, slide_025)
         self.assertIn("<h1 class=\"title-placeholder\">3막: 하네스의 시대</h1>", slide_026)

@@ -287,6 +287,8 @@ def main() -> int:
                 required_classes = ["top-band", "loop-cycle-body", "loop-cycle-track", "process-step", "loop-cycle-arrow", "footer"]
             elif shell == "process-flow-shell" and "context-wall-body" in html:
                 required_classes = ["top-band", "context-wall-body", "context-wall-claim", "context-wall-risk", "context-wall-control", "footer"]
+            elif shell == "process-flow-shell" and "context-failure-body" in html:
+                required_classes = ["top-band", "context-failure-body", "context-failure-risk-grid", "context-failure-emphasis", "context-failure-priority", "footer"]
             elif shell == "process-flow-shell" and "context-engineering-body" in html:
                 required_classes = ["top-band", "context-engineering-body", "context-strategy-grid", "quote-card-block", "context-quote-block", "process-step", "footer"]
             elif shell == "process-flow-shell" and "mcp-context-card-body" in html:
@@ -294,7 +296,7 @@ def main() -> int:
             elif shell == "split-compare-shell" and "waterfall-comparison-body" in html:
                 required_classes = ["top-band", "waterfall-comparison-body", "comparison-row-grid", "comparison-row", "footer"]
             elif shell == "split-compare-shell" and "cache-sequence-body" in html:
-                required_classes = ["top-band", "cache-sequence-body", "stable-prefix-block", "variable-suffix-block", "cache-token-stack", "quote-card-block", "cache-quote-block", "footer"]
+                required_classes = ["top-band", "cache-sequence-body", "stable-prefix-block", "variable-suffix-block", "cache-token-stack", "footer"]
             elif shell == "split-compare-shell" and "long-work-cost-map" in html:
                 required_classes = ["top-band", "long-work-cost-map", "long-work-flow", "long-work-node", "long-work-gate", "footer"]
             elif shell == "split-compare-shell" and "context-signal-body" in html:
@@ -323,6 +325,8 @@ def main() -> int:
                 step_count = len(re.findall(r'class="[^"]*\bcursor-architecture-graph-step\b[^"]*"', html))
             elif "context-wall-body" in html:
                 step_count = len(re.findall(r'class="[^"]*\bcontext-wall-risk\b[^"]*"', html))
+            elif "context-failure-body" in html:
+                step_count = len(re.findall(r'class="[^"]*\bcontext-failure-risk\b[^"]*"', html))
             elif "harness-era-minimal-body" in html:
                 step_count = len(re.findall(r'class="[^"]*\bharness-era-minimal-node\b[^"]*"', html))
             else:
@@ -508,12 +512,35 @@ def main() -> int:
                 if forbidden in html:
                     errors.append(f"{slide_id}: stale native redraw layout remains after raw asset exception")
         if slide_id == "S023":
-            for snippet in ["좋은 입력만으로는 루프를 통제할 수 없다", "도구 호출 실패", "테스트 오해", "비용 폭주", "위험 명령", "보안 경계", "목표 망각", "어떤 정보를 넣어야 하나", "무엇을 하게 할 것인가", "무엇을 못 하게 막을 것인가", "어디서 멈출 것인가", "어떻게 검증할 것인가"]:
+            for snippet in [
+                "폭주를 만드는 것",
+                "잘못된 결과나 응답 유입",
+                "느슨한 실행 권한",
+                "잘못된 검증",
+                "먼저 고정할 것",
+                "허용/차단 범위",
+                "멈춤 기준",
+                "검증 경로",
+                "멈춤 기준과 검증 경로를 먼저 설계해야 한다",
+            ]:
                 if snippet not in html:
-                    errors.append(f"{slide_id}: context wall slide missing snippet {snippet}")
-            for forbidden in ["gather context", "take action", "verify", "repeat", "loop-cycle-body", "loop-cycle-arrow", "loop-repeat-arc", "↺ repeat"]:
+                    errors.append(f"{slide_id}: context failure slide missing snippet {snippet}")
+            for forbidden in [
+                "gather context",
+                "take action",
+                "verify",
+                "repeat",
+                "loop-cycle-body",
+                "loop-cycle-arrow",
+                "loop-repeat-arc",
+                "↺ repeat",
+                "context-wall-body",
+                "context-wall-grid",
+                "context-wall-risk-strip",
+                "context-failure-body",
+            ]:
                 if forbidden in html:
-                    errors.append(f"{slide_id}: stale loop layout remains after context wall redesign: {forbidden}")
+                    errors.append(f"{slide_id}: stale loop/context-wall layout remains after current redesign: {forbidden}")
             if '<h1 class="title-placeholder">컨텍스트만으로는 부족하다</h1>' not in html:
                 errors.append(f"{slide_id}: long loop title must be shortened")
         if slide_id == "S024":

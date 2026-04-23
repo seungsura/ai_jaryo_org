@@ -114,9 +114,9 @@
 - bridge: 사용자 승인 예외: approved 06 asset raw embed + source text arrow graph
 
 ## S023 컨텍스트만으로는 부족하다
-- intent: 컨텍스트 시대의 벽을 통제 관점으로 재구성
-- opening: 좋은 입력만으로는 루프 통제 불가
-- bridge: source heading + risk list + control question 4개를 context-wall 구조로 압축
+- intent: split-compare family로 폭주 축과 통제 기준을 압축 대비
+- opening: 멈춤 기준과 검증 경로를 먼저 설계해야 한다
+- bridge: 잘못된 결과 유입·실행 권한·검증 실패를 왼쪽에, 허용/차단 범위·멈춤 기준·검증 경로를 오른쪽에 배치
 
 ## S024 3막: 하네스의 시대
 - intent: Harness era minimal transition

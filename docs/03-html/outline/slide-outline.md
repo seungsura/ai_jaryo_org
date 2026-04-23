@@ -264,13 +264,13 @@
 
 ### S023. 컨텍스트만으로는 부족하다
 - file: `docs/03-html/slides/slide-023.html`
-- slide type: `process`
-- layout: `wide`
-- shell: `process-flow-shell`
+- slide type: `comparison`
+- layout: `split`
+- shell: `split-compare-shell`
 - source section: `02`
 - source paragraph block: `02-08`
-- key claim: 좋은 입력만으로는 루프 통제 불가
-- notes intent: 컨텍스트 시대의 벽을 통제 관점으로 재구성
+- key claim: 멈춤 기준과 검증 경로를 먼저 설계해야 한다
+- notes intent: split-compare family로 폭주 축과 통제 기준을 압축 대비
 - notes status: `ready`
 
 ### S024. 3막: 하네스의 시대

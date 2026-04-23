@@ -48,3 +48,5 @@
 - slide source 구현 경로를 chapter folder(`scripts/jaryo_html_deck/slides/chapter_XX/`)로 분리하고, 전체 deck은 기존처럼 한 번의 build로 렌더링한다. 파일 경로 분리와 전역 `spec.order` contiguous 검증을 함께 사용해 번호 충돌을 방지한다.
 - 사용자가 선호 baseline을 legacy PDF page로 계속 지칭할 수 있으므로 `docs/03-html/shared/page-number-mapping.md`와 `docs/03-html/shared/page-number-mapping.json`을 추가한다. 삭제된 legacy page는 `19`, `20`이고, 변환 규칙은 `1-18 유지`, `21 이상은 -2`다.
 - 선호 baseline remap은 `1-18 -> 1-18`, `21 -> 19`, `24 -> 22`, `37 -> 35`, `39 -> 37`, `40 -> 38`, `52 -> 50`, `53 -> 51`로 고정한다.
+- 현재 main 기준 23페이지 `컨텍스트만으로는 부족하다`는 임시 custom layout보다 deck의 기존 `split-compare` family가 더 적합하다고 판단했다. 왼쪽은 `잘못된 결과나 응답 유입`, `느슨한 실행 권한`, `잘못된 검증` 세 축으로 압축하고, 오른쪽은 `허용/차단 범위`, `멈춤 기준`, `검증 경로`를 둔다. 하단 한 줄은 `멈춤 기준과 검증 경로를 먼저 설계해야 한다`로 묶고, body 폭은 chapter 02의 다른 slide와 비슷한 압축 밀도로 줄인다.
+- 현재 main 기준 23페이지 latest feedback에서는 더 단순한 관계도가 필요하다고 판단했다. 좌측은 PDF 기준 37페이지의 관계 다이어그램 리듬만 축소 재사용한 loop panel로 두고, 우측 상단은 `도구 호출 실패`, `목표 망각`, `테스트 오해`, `보안 경계` 네 카드만 남긴다. 중간 레일은 각 card에서 loop 쪽으로 향하는 화살표와 `잘못된 응답 주입` label로 관계를 직접 보여 준다. 하단 dark one-line은 유지한다.

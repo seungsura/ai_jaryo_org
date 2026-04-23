@@ -1336,6 +1336,51 @@ def render_shell(spec: SlideSpec) -> str:
                 "</section>"
             )
 
+        if spec.body.get("variant") == "context-failure-focus":
+            risks = "".join(
+                '<article class="context-failure-risk">'
+                f'<p>{html.escape(risk)}</p>'
+                "</article>"
+                for risk in spec.body.get("risks", [])
+            )
+            emphasis = "".join(
+                '<p class="context-failure-emphasis-line">'
+                f"{html.escape(line)}"
+                "</p>"
+                for line in spec.body.get("emphasis", [])
+            )
+            minor_controls = "".join(
+                '<span class="context-failure-minor-control">'
+                f"{html.escape(control)}"
+                "</span>"
+                for control in spec.body.get("minor_controls", [])
+            )
+            priority_controls = "".join(
+                '<article class="context-failure-priority-card">'
+                f'<p>{html.escape(control)}</p>'
+                "</article>"
+                for control in spec.body.get("priority_controls", [])
+            )
+            return (
+                '<section class="top-band">'
+                f'<p class="chapter-label">{html.escape(spec.chapter_label)}</p>'
+                f'<h1 class="title-placeholder">{html.escape(spec.title)}</h1>'
+                "</section>"
+                '<section class="context-failure-body">'
+                '<div class="context-failure-grid">'
+                f'<div class="context-failure-risk-grid">{risks}</div>'
+                '<div class="context-failure-side">'
+                f'<p class="context-failure-support centered-claim">{html.escape(spec.body.get("support", spec.key_claim))}</p>'
+                f'<article class="context-failure-emphasis">{emphasis}</article>'
+                '<div class="context-failure-controls">'
+                f'<div class="context-failure-minor">{minor_controls}</div>'
+                f'<div class="context-failure-priority">{priority_controls}</div>'
+                "</div>"
+                "</div>"
+                "</div>"
+                "</section>"
+            )
+
         if spec.body.get("variant") == "context-wall":
             risks = "".join(
                 f'<span class="context-wall-risk">{html.escape(risk)}</span>'

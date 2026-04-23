@@ -4286,6 +4286,48 @@ main[data-slide-id="S031"] .top-band .title-placeholder.statement-text {
   line-height: 1.12;
 }
 
+.chapter-02 .cache-sequence-body {
+  left: 74px;
+  right: 74px;
+  top: 138px;
+  bottom: 138px;
+  grid-template-columns: minmax(0, 1fr) 30px minmax(0, 1fr);
+  gap: 10px;
+}
+
+.chapter-02 .cache-segment {
+  min-height: 0;
+  padding: 11px 14px;
+  gap: 8px;
+}
+
+.chapter-02 .cache-token {
+  font-size: 13px;
+  line-height: 1.1;
+}
+
+.chapter-02 .cache-role-note {
+  font-size: 11px;
+}
+
+.chapter-02 .cache-synthesis {
+  left: 74px;
+  right: 74px;
+  bottom: 70px;
+  padding: 12px 18px;
+  font-size: 18px;
+  line-height: 1.16;
+}
+
+.chapter-02 .cache-quote-block {
+  left: 74px;
+  right: 74px;
+  bottom: 70px;
+  min-height: 62px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 /* Chapter 05 integrated styles */
 .chapter-05 .long-work-cost-map {
   position: absolute;
@@ -6770,6 +6812,152 @@ main[data-slide-id="S054"] .ch-split-panel:nth-child(2) small {
 .cursor-architecture-graph-step:first-child .cursor-architecture-graph-detail,
 .cursor-architecture-graph-step:last-child .cursor-architecture-graph-detail {
   color: rgba(255, 255, 255, 0.82);
+}
+
+.context-failure-body {
+  position: absolute;
+  left: 58px;
+  right: 58px;
+  top: 126px;
+  bottom: 68px;
+}
+
+.context-failure-grid {
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.context-failure-risk-grid {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.context-failure-risk {
+  min-width: 0;
+  min-height: 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line-soft);
+  box-shadow: var(--shadow-card);
+  display: grid;
+  place-items: center;
+}
+
+.context-failure-risk p {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: 20px;
+  line-height: 1.02;
+  font-weight: 900;
+  text-align: center;
+  word-break: keep-all;
+}
+
+.context-failure-side {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 10px;
+}
+
+.context-failure-support {
+  margin: 0;
+  color: var(--color-accent);
+  font-size: 14px;
+  line-height: 1.1;
+  font-weight: 900;
+  word-break: keep-all;
+}
+
+.context-failure-emphasis {
+  min-height: 0;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: var(--color-dark-surface);
+  color: #ffffff;
+  display: grid;
+  align-content: center;
+  gap: 8px;
+  box-shadow: var(--shadow-card);
+}
+
+.context-failure-emphasis-line {
+  margin: 0;
+  text-align: center;
+  font-weight: 900;
+  word-break: keep-all;
+}
+
+.context-failure-emphasis-line:first-child {
+  font-size: 24px;
+  line-height: 1.02;
+}
+
+.context-failure-emphasis-line + .context-failure-emphasis-line {
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.96);
+  font-size: 16px;
+  line-height: 1.08;
+}
+
+.context-failure-controls {
+  display: grid;
+  gap: 8px;
+}
+
+.context-failure-minor {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.context-failure-minor-control {
+  min-width: 0;
+  padding: 6px 8px;
+  border-radius: 7px;
+  background: var(--color-surface-muted);
+  color: var(--color-mute);
+  font-size: 11px;
+  line-height: 1.1;
+  font-weight: 900;
+  text-align: center;
+  word-break: keep-all;
+}
+
+.context-failure-priority {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.context-failure-priority-card {
+  min-width: 0;
+  min-height: 58px;
+  padding: 8px 10px;
+  border-radius: 9px;
+  background: var(--color-signal-soft);
+  border: 1px solid rgba(0, 102, 204, 0.18);
+  box-shadow: var(--shadow-card);
+  display: grid;
+  place-items: center;
+}
+
+.context-failure-priority-card p {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: 15px;
+  line-height: 1.08;
+  font-weight: 900;
+  text-align: center;
+  word-break: keep-all;
 }
 
 .context-wall-body {

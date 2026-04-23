@@ -888,39 +888,48 @@
     "slide_id": "S023",
     "file_name": "slide-023.html",
     "title": "컨텍스트만으로는 부족하다",
-    "slide_type": "process",
-    "layout": "wide",
-    "shell": "process-flow-shell",
-    "family": "content",
+    "slide_type": "comparison",
+    "layout": "split",
+    "shell": "split-compare-shell",
+    "family": "comparison",
     "density": "medium",
     "source_section": "02",
     "source_block": "02-08",
-    "key_claim": "좋은 입력만으로는 루프 통제 불가",
-    "notes_intent": "컨텍스트 시대의 벽을 통제 관점으로 재구성",
+    "key_claim": "멈춤 기준과 검증 경로를 먼저 설계해야 한다",
+    "notes_intent": "split-compare family로 폭주 축과 통제 기준을 압축 대비",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "CHAPTER 02",
-    "notes": "source heading + risk list + control question 4개를 context-wall 구조로 압축",
+    "notes": "잘못된 결과 유입·실행 권한·검증 실패를 왼쪽에, 허용/차단 범위·멈춤 기준·검증 경로를 오른쪽에 배치",
     "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
-      "variant": "context-wall",
-      "claim": "좋은 입력만으로는 루프를 통제할 수 없다",
-      "risks": [
-        "도구 호출 실패",
-        "테스트 오해",
-        "비용 폭주",
-        "위험 명령",
-        "보안 경계",
-        "목표 망각"
+      "variant": "prefix-suffix-cache",
+      "left_label": "폭주를 만드는 것",
+      "left_badges": [
+        "오염",
+        "권한",
+        "검증"
       ],
-      "source": "어떤 정보를 넣어야 하나",
-      "controls": [
-        "무엇을 하게 할 것인가",
-        "무엇을 못 하게 막을 것인가",
-        "어디서 멈출 것인가",
-        "어떻게 검증할 것인가"
-      ]
+      "left_points": [
+        "잘못된 결과나 응답 유입",
+        "느슨한 실행 권한",
+        "잘못된 검증"
+      ],
+      "left_note": "루프 안에서 빠르게 증폭",
+      "right_label": "먼저 고정할 것",
+      "right_badges": [
+        "허용/차단",
+        "멈춤",
+        "검증"
+      ],
+      "right_points": [
+        "허용/차단 범위",
+        "멈춤 기준",
+        "검증 경로"
+      ],
+      "right_note": "좋은 입력보다 먼저 필요한 기준",
+      "opinion": "멈춤 기준과 검증 경로를 먼저 설계해야 한다"
     }
   },
   {
