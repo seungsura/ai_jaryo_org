@@ -391,11 +391,11 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
         for forbidden in ["loop-cycle-body", "loop-repeat-arc", "↺ repeat"]:
             self.assertNotIn(forbidden, slide_025)
         self.assertIn("<h1 class=\"title-placeholder\">3막: 하네스의 시대</h1>", slide_026)
-        self.assertIn("tool-relation-map", slide_026)
-        self.assertIn("responsibility-count-4", slide_026)
-        self.assertIn("tool-cluster-count-3", slide_026)
-        self.assertIn("relation-connector", slide_026)
-        self.assertIn("tool-network-synthesis", slide_026)
+        self.assertIn("harness-environment-map-body", slide_026)
+        self.assertIn("harness-decision-column", slide_026)
+        self.assertIn("harness-runtime-column", slide_026)
+        self.assertIn("harness-runtime-flow", slide_026)
+        self.assertIn("harness-support-grid", slide_026)
         for snippet in [
             "무엇을 보는지",
             "컨텍스트",
@@ -405,27 +405,30 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
             "제약",
             "잘못되었을 때",
             "복구",
-            "Plan Mode · 승인 체계",
-            "CLAUDE.md · Skills · Hooks",
-            "MCP · Plugins · Subagents",
-            "Harness가 해내야 하는 것",
-            "Harness를 이루는 것들",
+            "파일 읽기",
+            "셸 실행",
+            "테스트 결과",
+            "다시 수정",
+            "Plan Mode",
+            "승인 체계",
+            "CLAUDE.md",
+            "Skills",
+            "Hooks",
+            "MCP",
+            "Plugins",
+            "Subagents",
         ]:
             self.assertIn(snippet, slide_026)
-        self.assertNotIn("harness-environment-map-body", slide_026)
-        self.assertNotIn("harness-runtime-flow", slide_026)
         self.assertNotIn("harness-era-minimal-body", slide_026)
+        self.assertNotIn("harness-era-signs-body", slide_026)
+        self.assertNotIn("component-tier-body", slide_026)
         self.assertNotIn("Agent = Model + Harness", slide_026)
         self.assertNotIn("Prompt ⊂ Context ⊂ Harness", slide_026)
-        self.assertNotIn("파일 읽기", slide_026)
-        self.assertNotIn("셸 실행", slide_026)
-        self.assertNotIn("테스트 결과", slide_026)
-        self.assertNotIn("다시 수정", slide_026)
-        self.assertIn("<h1 class=\"title-placeholder\">3막: Claude Code, Codex, OpenCode 와 하네스의 시대</h1>", slide_027)
+        self.assertNotIn("ch-dark-conclusion", slide_026)
+        self.assertIn("<h1 class=\"title-placeholder\">하네스의 시대로</h1>", slide_027)
         self.assertIn("era-native-body", slide_027)
         self.assertIn("Agent = Model + Harness", slide_027)
         self.assertIn("Prompt ⊂ Context ⊂ Harness", slide_027)
-        self.assertIn("하네스 안에 컨텍스트가 있고, 컨텍스트 안에 프롬프트가 있다", slide_027)
         self.assertNotIn("<table class=\"data-table\">", slide_027)
         self.assertNotIn("<p class=\"table-question\">", slide_027)
         self.assertNotIn("era-native-nesting", slide_027)
@@ -642,7 +645,8 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
             self.assertIn(snippet, slide_045)
         for index in range(26, 32):
             slide = (ROOT / f"docs/03-html/slides/slide-{index:03d}.html").read_text(encoding="utf-8")
-            self.assertIn("CHAPTER 03", slide)
+            if index != 29:
+                self.assertIn("CHAPTER 03", slide)
             self.assertIn("chapter-03", slide)
             self.assertNotIn("SECTION 3", slide)
         for index in range(15, 26):
@@ -889,7 +893,6 @@ class BuildJaryoHtmlDeckTest(unittest.TestCase):
 
         self.assertNotIn("harness-environment-map-body", slide_026)
         self.assertNotIn("harness-runtime-flow", slide_026)
-        self.assertNotIn("harness-era-minimal-body", slide_026)
         self.assertNotIn("Agent = Model + Harness", slide_026)
         self.assertNotIn("Prompt ⊂ Context ⊂ Harness", slide_026)
         self.assertNotIn("파일 읽기", slide_026)

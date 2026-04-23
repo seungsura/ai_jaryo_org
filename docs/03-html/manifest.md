@@ -35,11 +35,11 @@
 | 22 | `S022` | `slide-022.html` | Cursor 아키텍처 | `process` | `wide` | `process-flow-shell` | `02` | `02-07` | `ready` | built |
 | 23 | `S023` | `slide-023.html` | 컨텍스트만으로는 부족하다 | `comparison` | `split` | `split-compare-shell` | `02` | `02-08` | `ready` | built |
 | 24 | `S024` | `slide-024.html` | 3막: 하네스의 시대 | `process` | `wide` | `process-flow-shell` | `02` | `02-09` | `ready` | built |
-| 25 | `S025` | `slide-025.html` | 3막: Claude Code, Codex, OpenCode 와 하네스의 시대 | `table` | `wide` | `evidence-table-shell` | `02` | `02-11` | `ready` | built |
+| 25 | `S025` | `slide-025.html` | 하네스의 시대로 | `table` | `wide` | `evidence-table-shell` | `02` | `02-11` | `ready` | built |
 | 26 | `S026` | `slide-026.html` | AI 시대의 개발 방법론 | `section` | `centered` | `section-divider-shell` | `03` | `03-00` | `ready` | built |
 | 27 | `S027` | `slide-027.html` | 왜 지금 방법론 | `table` | `wide` | `evidence-table-shell` | `03` | `03-01` | `ready` | built |
 | 28 | `S028` | `slide-028.html` | SDD | `process` | `wide` | `process-flow-shell` | `03` | `03-02` | `ready` | built |
-| 29 | `S029` | `slide-029.html` | TDD (Test-Driven Development) | `statement` | `editorial` | `statement-editorial-shell` | `03` | `03-03` | `ready` | built |
+| 29 | `S029` | `slide-029.html` | TDD | `statement` | `editorial` | `statement-editorial-shell` | `03` | `03-03` | `ready` | built |
 | 30 | `S030` | `slide-030.html` | Waterfall vs SDD | `comparison` | `split` | `split-compare-shell` | `03` | `03-04` | `ready` | built |
 | 31 | `S031` | `slide-031.html` | SDD + TDD가 Harness로 이어지는 이유 | `statement` | `editorial` | `statement-editorial-shell` | `03` | `03-05` | `ready` | built |
 | 32 | `S032` | `slide-032.html` | 프롬프트를 넘어서 | `section` | `centered` | `section-divider-shell` | `04` | `04-00` | `ready` | built |

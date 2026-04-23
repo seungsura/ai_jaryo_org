@@ -269,8 +269,8 @@
 - shell: `split-compare-shell`
 - source section: `02`
 - source paragraph block: `02-08`
-- key claim: 멈춤 기준과 검증 경로를 먼저 설계해야 한다
-- notes intent: split-compare family로 폭주 축과 통제 기준을 압축 대비
+- key claim: 잘못된 방향으로 전력질주
+- notes intent: page 35 loop diagram reuse + larger right-side failure cards + plus sign
 - notes status: `ready`
 
 ### S024. 3막: 하네스의 시대
@@ -281,10 +281,10 @@
 - source section: `02`
 - source paragraph block: `02-09`
 - key claim: 작업 환경 전체를 품기 시작한 코딩 도구
-- notes intent: Harness era minimal transition
+- notes intent: 하네스의 네 결정 축과 실행 환경 카드 묶음
 - notes status: `ready`
 
-### S025. 3막: Claude Code, Codex, OpenCode 와 하네스의 시대
+### S025. 하네스의 시대로
 - file: `docs/03-html/slides/slide-025.html`
 - slide type: `table`
 - layout: `wide`
@@ -292,7 +292,7 @@
 - source section: `02`
 - source paragraph block: `02-11`
 - key claim: Agent = Model + Harness
-- notes intent: 2장 결론 관계식을 source heading 중심으로 고정
+- notes intent: 2장 결론 관계식을 한 줄 제목으로 고정
 - notes status: `ready`
 
 ### S026. AI 시대의 개발 방법론
@@ -328,7 +328,7 @@
 - notes intent: GitHub Spec Kit의 세 단계와 멈춤 장치
 - notes status: `ready`
 
-### S029. TDD (Test-Driven Development)
+### S029. TDD
 - file: `docs/03-html/slides/slide-029.html`
 - slide type: `statement`
 - layout: `editorial`

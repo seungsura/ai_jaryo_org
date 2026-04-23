@@ -279,6 +279,8 @@ def main() -> int:
                 required_classes = ["top-band", "cursor-architecture-asset-body", "cursor-architecture-reference-figure", "cursor-architecture-arrow-graph", "cursor-architecture-graph-step", "footer"]
             elif shell == "process-flow-shell" and "harness-era-signs-body" in html:
                 required_classes = ["top-band", "harness-era-signs-body", "harness-era-claim", "harness-era-card", "harness-era-component", "footer"]
+            elif shell == "process-flow-shell" and "harness-environment-map-body" in html:
+                required_classes = ["top-band", "harness-environment-map-body", "harness-decision-column", "harness-runtime-column", "harness-runtime-flow", "harness-support-grid", "footer"]
             elif shell == "process-flow-shell" and "harness-era-minimal-body" in html:
                 required_classes = ["top-band", "harness-era-minimal-body", "harness-era-minimal-claim", "harness-era-minimal-flow", "harness-era-minimal-node", "footer"]
             elif shell == "process-flow-shell" and "component-tier-body" in html:
@@ -554,14 +556,49 @@ def main() -> int:
             if '<h1 class="title-placeholder">컨텍스트만으로는 부족하다</h1>' not in html:
                 errors.append(f"{slide_id}: long loop title must be shortened")
         if slide_id == "S024":
-            if "harness-era-minimal-body" not in html:
-                errors.append(f"{slide_id}: harness era slide must use minimal transition layout")
-            for snippet in ["코딩 도구는 이제 실행 환경을 품는다", "자동완성·채팅", "작업 환경 전체", "파일 · 셸 · 테스트", "Harness"]:
+            if "harness-environment-map-body" not in html:
+                errors.append(f"{slide_id}: harness era slide must use left/right environment map layout")
+            for snippet in [
+                "무엇을 보는지",
+                "컨텍스트",
+                "무엇을 할 수 있는지",
+                "도구, 권한",
+                "언제 멈추는지",
+                "제약",
+                "잘못되었을 때",
+                "복구",
+                "파일 읽기",
+                "셸 실행",
+                "테스트 결과",
+                "다시 수정",
+                "Plan Mode",
+                "승인 체계",
+                "CLAUDE.md",
+                "Skills",
+                "Hooks",
+                "MCP",
+                "Plugins",
+                "Subagents",
+            ]:
                 if snippet not in html:
-                    errors.append(f"{slide_id}: harness era minimal slide missing {snippet}")
-            for forbidden in ["harness-era-signs-body", "harness-era-bridge-body", "harness-era-actor-body", "harness-era-control-stack", "harness-era-actor-rail", "component-tier-body", "Plan Mode", "승인 체계", "CLAUDE.md", "Skills", "Hooks", "MCP", "Plugins", "Subagents", "허용", "차단", "기록", "기초", "자동화", "연결", "확장"]:
+                    errors.append(f"{slide_id}: harness environment map missing {snippet}")
+            for forbidden in [
+                "harness-era-minimal-body",
+                "harness-era-signs-body",
+                "harness-era-bridge-body",
+                "harness-era-actor-body",
+                "harness-era-control-stack",
+                "harness-era-actor-rail",
+                "component-tier-body",
+                "Agent = Model + Harness",
+                "Prompt ⊂ Context ⊂ Harness",
+                "ch-dark-conclusion",
+                "harness-era-minimal-claim",
+                "harness-era-minimal-flow",
+                "코딩 도구는 이제 실행 환경을 품는다",
+            ]:
                 if forbidden in html:
-                    errors.append(f"{slide_id}: harness era slide over-expands mechanics with {forbidden}")
+                    errors.append(f"{slide_id}: harness era slide must not fall back to old minimal/formula layout: {forbidden}")
         if slide_id == "S025":
             if "era-native-body" not in html:
                 errors.append(f"{slide_id}: era flow must use native timeline/table layout")

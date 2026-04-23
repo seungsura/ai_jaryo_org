@@ -114,19 +114,19 @@
 - bridge: 사용자 승인 예외: approved 06 asset raw embed + source text arrow graph
 
 ## S023 컨텍스트만으로는 부족하다
-- intent: split-compare family로 폭주 축과 통제 기준을 압축 대비
-- opening: 멈춤 기준과 검증 경로를 먼저 설계해야 한다
-- bridge: 잘못된 결과 유입·실행 권한·검증 실패를 왼쪽에, 허용/차단 범위·멈춤 기준·검증 경로를 오른쪽에 배치
+- intent: page 35 loop diagram reuse + larger right-side failure cards + plus sign
+- opening: 잘못된 방향으로 전력질주
+- bridge: 좌측 mini loop, 가운데 plus, 우측 상단 실패 카드 4개, 하단 one-line emphasis 유지
 
 ## S024 3막: 하네스의 시대
-- intent: Harness era minimal transition
+- intent: 하네스의 네 결정 축과 실행 환경 카드 묶음
 - opening: 작업 환경 전체를 품기 시작한 코딩 도구
-- bridge: source markdown + user-requested S026 simplification
+- bridge: source markdown 3막 paragraph + user-requested left/right grouped cards
 
-## S025 3막: Claude Code, Codex, OpenCode 와 하네스의 시대
-- intent: 2장 결론 관계식을 source heading 중심으로 고정
+## S025 하네스의 시대로
+- intent: 2장 결론 관계식을 한 줄 제목으로 고정
 - opening: Agent = Model + Harness
-- bridge: source markdown 3막 heading + 시대 구분 표 + 포함 관계 문장
+- bridge: user-shortened title + 시대 구분 카드 + 포함 관계 문장
 
 ## S026 AI 시대의 개발 방법론
 - intent: 03장 진입을 source heading 키워드와 함께 고정
@@ -143,7 +143,7 @@
 - opening: 스펙이 진실의 원천
 - bridge: 요구사항, 계획, 태스크를 파일로 고정하는 흐름
 
-## S029 TDD (Test-Driven Development)
+## S029 TDD
 - intent: Page 028 TDD lead와 anti-cheat 규칙
 - opening: 테스트를 먼저 쓰고, 통과하는 코드를 나중에 쓴다
 - bridge: 테스트가 에이전트의 자유를 제한하는 통제선

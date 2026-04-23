@@ -7,20 +7,57 @@ def build() -> SlideSpec:
     return make_slide(
         24,
         title="3막: 하네스의 시대",
-        shell="process-flow-shell",
+        shell="evidence-table-shell",
         source_section="02",
         source_block="02-09",
-        key_claim="작업 환경 전체를 품기 시작한 코딩 도구",
+        key_claim="Harness가 해내야 하는 것 · Harness를 이루는 것들",
         chapter_label="CHAPTER 02",
-        notes_intent="Harness era minimal transition",
-        notes="source markdown + user-requested S026 simplification",
+        notes_intent="해야 하는 것과 이루는 것의 relation map",
+        notes="source markdown 3막 paragraph + user-requested relation remap",
         body={
-            "variant": "harness-era-minimal",
-            "claim": "코딩 도구는 이제 실행 환경을 품는다",
-            "flow": [
-                {"title": "자동완성·채팅"},
-                {"title": "작업 환경 전체", "text": "파일 · 셸 · 테스트"},
-                {"title": "Harness", "emphasis": True},
+            "variant": "tool-relation-map",
+            "responsibilities": [
+                {
+                    "title": "무엇을 보는지",
+                    "text": "컨텍스트",
+                    "tools": [
+                        "Plan Mode · 승인 체계",
+                        "CLAUDE.md · Skills · Hooks",
+                        "MCP · Plugins · Subagents",
+                    ],
+                },
+                {
+                    "title": "무엇을 할 수 있는지",
+                    "text": "도구, 권한",
+                    "tools": [
+                        "Plan Mode · 승인 체계",
+                        "CLAUDE.md · Skills · Hooks",
+                        "MCP · Plugins · Subagents",
+                    ],
+                },
+                {
+                    "title": "언제 멈추는지",
+                    "text": "제약",
+                    "tools": [
+                        "Plan Mode · 승인 체계",
+                        "CLAUDE.md · Skills · Hooks",
+                        "MCP · Plugins · Subagents",
+                    ],
+                },
+                {
+                    "title": "잘못되었을 때",
+                    "text": "복구",
+                    "tools": [
+                        "Plan Mode · 승인 체계",
+                        "CLAUDE.md · Skills · Hooks",
+                        "MCP · Plugins · Subagents",
+                    ],
+                },
+            ],
+            "tools": [
+                {"title": "Plan Mode · 승인 체계"},
+                {"title": "CLAUDE.md · Skills · Hooks"},
+                {"title": "MCP · Plugins · Subagents"},
             ],
         },
     )

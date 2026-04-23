@@ -895,41 +895,41 @@
     "density": "medium",
     "source_section": "02",
     "source_block": "02-08",
-    "key_claim": "멈춤 기준과 검증 경로를 먼저 설계해야 한다",
-    "notes_intent": "split-compare family로 폭주 축과 통제 기준을 압축 대비",
+    "key_claim": "잘못된 방향으로 전력질주",
+    "notes_intent": "page 35 loop diagram reuse + larger right-side failure cards + plus sign",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "CHAPTER 02",
-    "notes": "잘못된 결과 유입·실행 권한·검증 실패를 왼쪽에, 허용/차단 범위·멈춤 기준·검증 경로를 오른쪽에 배치",
+    "notes": "좌측 mini loop, 가운데 plus, 우측 상단 실패 카드 4개, 하단 one-line emphasis 유지",
     "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
-      "variant": "prefix-suffix-cache",
-      "left_label": "폭주를 만드는 것",
-      "left_badges": [
-        "오염",
-        "권한",
-        "검증"
+      "variant": "context-loop-injection",
+      "steps": [
+        {
+          "index": "01",
+          "title": "gather context"
+        },
+        {
+          "index": "02",
+          "title": "take action"
+        },
+        {
+          "index": "03",
+          "title": "verify work"
+        },
+        {
+          "index": "04",
+          "title": "repeat"
+        }
       ],
-      "left_points": [
-        "잘못된 결과나 응답 유입",
-        "느슨한 실행 권한",
-        "잘못된 검증"
+      "issues": [
+        "도구 호출 실패",
+        "목표 망각",
+        "테스트 오해",
+        "보안 경계"
       ],
-      "left_note": "루프 안에서 빠르게 증폭",
-      "right_label": "먼저 고정할 것",
-      "right_badges": [
-        "허용/차단",
-        "멈춤",
-        "검증"
-      ],
-      "right_points": [
-        "허용/차단 범위",
-        "멈춤 기준",
-        "검증 경로"
-      ],
-      "right_note": "좋은 입력보다 먼저 필요한 기준",
-      "opinion": "멈춤 기준과 검증 경로를 먼저 설계해야 한다"
+      "opinion": "잘못된 방향으로 전력질주"
     }
   },
   {
@@ -945,28 +945,66 @@
     "source_section": "02",
     "source_block": "02-09",
     "key_claim": "작업 환경 전체를 품기 시작한 코딩 도구",
-    "notes_intent": "Harness era minimal transition",
+    "notes_intent": "하네스의 네 결정 축과 실행 환경 카드 묶음",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "CHAPTER 02",
-    "notes": "source markdown + user-requested S026 simplification",
+    "notes": "source markdown 3막 paragraph + user-requested left/right grouped cards",
     "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
-      "variant": "harness-era-minimal",
-      "claim": "코딩 도구는 이제 실행 환경을 품는다",
+      "variant": "harness-environment-map",
+      "decisions": [
+        {
+          "title": "무엇을 보는지",
+          "text": "컨텍스트"
+        },
+        {
+          "title": "무엇을 할 수 있는지",
+          "text": "도구, 권한"
+        },
+        {
+          "title": "언제 멈추는지",
+          "text": "제약"
+        },
+        {
+          "title": "잘못되었을 때",
+          "text": "복구"
+        }
+      ],
       "flow": [
         {
-          "title": "자동완성·채팅"
+          "index": "01",
+          "title": "파일 읽기"
         },
         {
-          "title": "작업 환경 전체",
-          "text": "파일 · 셸 · 테스트"
+          "index": "02",
+          "title": "셸 실행"
         },
         {
-          "title": "Harness",
-          "emphasis": true
+          "index": "03",
+          "title": "테스트 결과"
+        },
+        {
+          "index": "04",
+          "title": "다시 수정"
         }
+      ],
+      "groups": [
+        [
+          "Plan Mode",
+          "승인 체계"
+        ],
+        [
+          "CLAUDE.md",
+          "Skills",
+          "Hooks"
+        ],
+        [
+          "MCP",
+          "Plugins",
+          "Subagents"
+        ]
       ]
     }
   },
@@ -974,7 +1012,7 @@
     "order": 25,
     "slide_id": "S025",
     "file_name": "slide-025.html",
-    "title": "3막: Claude Code, Codex, OpenCode 와 하네스의 시대",
+    "title": "하네스의 시대로",
     "slide_type": "table",
     "layout": "wide",
     "shell": "evidence-table-shell",
@@ -983,11 +1021,11 @@
     "source_section": "02",
     "source_block": "02-11",
     "key_claim": "Agent = Model + Harness",
-    "notes_intent": "2장 결론 관계식을 source heading 중심으로 고정",
+    "notes_intent": "2장 결론 관계식을 한 줄 제목으로 고정",
     "notes_status": "ready",
     "status": "built",
     "chapter_label": "CHAPTER 02",
-    "notes": "source markdown 3막 heading + 시대 구분 표 + 포함 관계 문장",
+    "notes": "user-shortened title + 시대 구분 카드 + 포함 관계 문장",
     "lead": "",
     "footer_left": "Harness 잘 사용하기",
     "body": {
@@ -1031,7 +1069,6 @@
           "question": "어떤 시스템을 만들어야 하나"
         }
       ],
-      "question": "하네스 안에 컨텍스트가 있고, 컨텍스트 안에 프롬프트가 있다",
       "formula": "Agent = Model + Harness",
       "relationship": "Prompt ⊂ Context ⊂ Harness"
     }
@@ -1182,7 +1219,7 @@
     "order": 29,
     "slide_id": "S029",
     "file_name": "slide-029.html",
-    "title": "TDD (Test-Driven Development)",
+    "title": "TDD",
     "slide_type": "statement",
     "layout": "editorial",
     "shell": "statement-editorial-shell",
@@ -1196,10 +1233,11 @@
     "status": "built",
     "chapter_label": "CHAPTER 03",
     "notes": "테스트가 에이전트의 자유를 제한하는 통제선",
-    "lead": "테스트를 먼저 쓰고, 통과하는 코드를 나중에 쓴다. AI 시대에는 인간이 테스트, AI가 구현.",
+    "lead": "Test-Driven Development",
     "footer_left": "Harness 잘 사용하기",
     "body": {
       "variant": "tdd-control-layers",
+      "hide_chapter_label": true,
       "flow": [
         {
           "title": "Red",

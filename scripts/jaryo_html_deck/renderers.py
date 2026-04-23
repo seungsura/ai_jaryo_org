@@ -1255,7 +1255,7 @@ def render_shell(spec: SlideSpec) -> str:
                     "</li>"
                 )
                 if index < len(flow) - 1:
-                    flow_parts.append('<div class="harness-runtime-arrow" aria-hidden="true">→</div>')
+                    flow_parts.append('<li class="harness-runtime-arrow" aria-hidden="true">→</li>')
             support_groups = "".join(
                 '<div class="harness-support-stack">'
                 + "".join(
