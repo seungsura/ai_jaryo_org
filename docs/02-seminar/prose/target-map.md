@@ -41,8 +41,8 @@
 | --- | --- | --- | --- |
 | 00 | `docs/02-seminar/prose/00-coding-disappear.md` | 코딩은 사라지는가 | 개발자는 무엇을 계속 위임해 왔고, 무엇을 새로 붙들어야 하는가 |
 | 01 | `docs/02-seminar/prose/01-stop-fighting-chatbots.md` | 챗봇과 싸우지 않기 | 왜 더 좋은 프롬프트만으로는 충분하지 않은가 |
-| 02 | `docs/02-seminar/prose/02-harness-is-environment.md` | Harness는 환경이다 | 모델 바깥에서 무엇을 통제해야 하는가 |
-| 03 | `docs/02-seminar/prose/03-why-agents-get-lost.md` | 에이전트는 왜 길을 잃는가 | 긴 루프와 긴 컨텍스트는 어떻게 실패를 키우는가 |
+| 02 | `docs/02-seminar/prose/02-what-is-harness.md` | 하네스는 무엇인가 | 모델 바깥에서 무엇을 통제해야 하는가 |
+| 03 | `docs/02-seminar/prose/03-this-is-how-it-fails.md` | 이렇게 하면 망한다 | 긴 루프와 긴 컨텍스트는 어디서 망가지는가 |
 | 04 | `docs/02-seminar/prose/04-fix-direction-first.md` | 먼저 방향을 고정한다 | 빠른 생성보다 먼저 정해야 하는 것은 무엇인가 |
 | 05 | `docs/02-seminar/prose/05-move-deterministic-gates-left.md` | 기계가 막을 수 있는 것은 앞에서 막는다 | 검증과 권한 경계는 어떻게 세워야 하는가 |
 | 06 | `docs/02-seminar/prose/06-do-not-give-one-ai-everything.md` | 하나의 AI에게 다 맡기지 않는다 | 역할, 컨텍스트, 검증 책임을 어떻게 나누는가 |
@@ -114,9 +114,9 @@
   - 프롬프트의 한계와 에이전트 루프 설명은 한 장면으로 묶고, 좋은 결과와 Harness 정의도 한 장면으로 묶는다.
   - 별도의 전환 전용 섹션은 두지 않고 마지막 문단에서 자연스럽게 다음 장으로 넘긴다.
 
-### 02. Harness는 환경이다
+### 02. 하네스는 무엇인가
 
-- Target file: `docs/02-seminar/prose/02-harness-is-environment.md`
+- Target file: `docs/02-seminar/prose/02-what-is-harness.md`
 - Main source:
   - `docs/02-seminar/harness-rebuilt-md/04-프롬프트를 넘어서: 에이전트를 움직이는 기술, Harness.md`
   - `docs/02-seminar/harness-rebuilt-md/02-왜 Claude Code인가, 그리고 왜 Harness 인가.md`
@@ -150,9 +150,9 @@
   - 장의 중심은 "개발자는 사라지는가"가 아니라 "환경을 설계하는 사람이 왜 중요해지는가"다.
   - `~가 강합니다` 같은 번역투는 피하고 자연스러운 발표체로 쓴다.
 
-### 03. 에이전트는 왜 길을 잃는가
+### 03. 이렇게 하면 망한다
 
-- Target file: `docs/02-seminar/prose/03-why-agents-get-lost.md`
+- Target file: `docs/02-seminar/prose/03-this-is-how-it-fails.md`
 - Main source:
   - `docs/02-seminar/harness-rebuilt-md/05-이렇게 하면 망한다: 한계와 실패 패턴.md`
   - `docs/02-seminar/harness-rebuilt-md/04-프롬프트를 넘어서: 에이전트를 움직이는 기술, Harness.md`
@@ -173,6 +173,13 @@
   - 공포 조장이 아니라 구조의 필요성을 설득한다.
   - `Context Rot`은 본문에서 `컨텍스트 부패 (Context Rot)`로 쓴다.
   - "오늘 모델이 이상하다"에서 "어떤 게이트와 상태 관리가 비어 있었는가"로 시선을 바꾼다.
+- Research anchors:
+  - `docs/01-sources/local-canonical/claude-code-seminar-kakao.md` Page 057: 단계 성공률 복합 실패율 예시.
+  - `docs/01-sources/local-canonical/claude-code-seminar-kakao.md` Page 058-059: 컨텍스트 4가지 실패 모드, Context Rot, 신호 대 잡음비.
+  - Claude Code context window docs: 컨텍스트에 로드되는 항목과 `/compact` 후 남는 정보.
+  - Claude API context window docs: 컨텍스트 창은 작업 기억이며, 길어질수록 정확도와 recall이 떨어질 수 있다는 설명.
+  - `Lost in the Middle`: 긴 컨텍스트의 중간 위치 정보가 덜 잘 쓰이는 문제.
+  - Chroma `Context Rot`: 입력 길이와 distractor가 성능 저하에 미치는 실험.
 
 ### 04. 먼저 방향을 고정한다
 
