@@ -110,8 +110,9 @@
   - "남들은 잘 쓰는데 나는 왜 계속 AI와 싸우는가"라는 감각을 주제의 입구로 삼는다.
   - `Harness`의 상세 구성요소는 02장으로 넘기고, 이 장은 문제 전환에 집중한다.
   - 소제목은 PPT 한 장으로 옮길 수 있는 크기로 둔다.
-  - 01장의 소제목은 `AI와 말씨름하는 순간`, `챗봇은 답하고, 에이전트는 일한다`, `Harness는 말이 아니라 환경이다`, `다음 질문: 무엇을 통제할 것인가`를 기준으로 삼는다.
+  - 01장의 소제목은 `AI와 말씨름하는 순간`, `챗봇은 답하고, 에이전트는 일한다`, `Harness는 말이 아니라 환경이다`를 기준으로 삼는다.
   - 프롬프트의 한계와 에이전트 루프 설명은 한 장면으로 묶고, 좋은 결과와 Harness 정의도 한 장면으로 묶는다.
+  - 별도의 전환 전용 섹션은 두지 않고 마지막 문단에서 자연스럽게 다음 장으로 넘긴다.
 
 ### 02. Harness는 환경이다
 
@@ -120,11 +121,15 @@
   - `docs/02-seminar/harness-rebuilt-md/04-프롬프트를 넘어서: 에이전트를 움직이는 기술, Harness.md`
   - `docs/02-seminar/harness-rebuilt-md/02-왜 Claude Code인가, 그리고 왜 Harness 인가.md`
   - `docs/02-seminar/harness-rebuilt-md/01-코딩은 사라지는가.md`
+  - `docs/02-seminar/harness-rebuilt-md/05-이렇게 하면 망한다: 한계와 실패 패턴.md`
+  - `docs/02-seminar/harness-rebuilt-md/07-실전 워크플로우와 도구 세팅.md`
 - Source sections:
   - 04 `에이전트 루프: 하네스의 심장`
   - 04 `Prompt, Context, Harness`
   - 04 `하네스의 구성요소`
   - 04 `하네스의 책임`
+  - 05 `컨텍스트가 클수록 항상 좋은 것은 아니다`
+  - 07 `시작하며: 두 가지 막다른 길`
   - 01 `문서가 코드다`
   - 01 `개발자의 새로운 역할`
   - 02 `Agent = Model + Harness`
@@ -135,9 +140,14 @@
   - `Prompt ⊂ Context ⊂ Harness`.
   - 하네스는 모델이 실제 일을 하는 실행 환경 전체다.
 - Writing direction:
-  - 하네스의 책임과 구성요소를 설명하기 전에 에이전트 루프를 먼저 설명한다.
-  - 루프를 먼저 보여 준 뒤 `Guardrails`, `Specification`, `Verification`, `State Management`, `Observability`로 확장한다.
+  - 01장이 이미 `Harness`를 환경으로 정의하고 끝나므로 02장은 정의를 반복하지 않고 에이전트 루프에서 바로 시작한다.
+  - 첫 장면은 `에이전트 루프는 작업의 기본 단위다`로 시작한다.
+  - 루프를 작업 단위로 설명하되, 실패 누적 구조는 짧게 예고하고 03장으로 넘긴다.
+  - `오류의 나비효과`, `Poisoning`, `Distraction`, `Confusion`, `Clash`, `Context Rot`의 본론은 03장에 둔다.
+  - 그다음 `Prompt ⊂ Context ⊂ Harness`, `Agent = Model + Harness`, `Harness의 구성요소`, `구성요소/책임/도구의 관계`, 도구 레이어로 확장한다.
+  - 구성요소는 하네스가 갖춰야 할 능력, 책임은 그 능력으로 지킬 운영 기준, 도구는 그 책임을 실행 환경에 고정하는 수단으로 설명한다.
   - 장의 중심은 "개발자는 사라지는가"가 아니라 "환경을 설계하는 사람이 왜 중요해지는가"다.
+  - `~가 강합니다` 같은 번역투는 피하고 자연스러운 발표체로 쓴다.
 
 ### 03. 에이전트는 왜 길을 잃는가
 
@@ -201,7 +211,7 @@
   - 07 `필요없는 도구는 덜어내라`
   - 07 `Approval, Auto-accept, Plan Mode`
 - Core claims:
-  - AI에게 "잘 확인해줘"라고 말하는 것보다 실제 테스트, lint, type check, 승인 게이트를 통과하게 만드는 편이 강하다.
+  - AI에게 "잘 확인해줘"라고 말하는 것보다 실제 테스트, lint, type check, 승인 게이트를 통과하게 만드는 편이 덜 흔들린다.
   - 결정론적으로 막을 수 있는 것은 앞쪽 게이트로 옮겨야 한다.
   - `TDD`는 단순 품질 관리가 아니라 에이전트의 자유를 제한하는 통제선이다.
   - 작업 위험도에 따라 권한과 승인 방식을 다르게 둬야 한다.
@@ -276,7 +286,7 @@
   - 08 `생성과 검증을 같은 손에 쥐지 않았다`
   - 08 `이 제작 과정이 보여 주는 하네스 원리`
 - Core claims:
-  - 이 발표와 글의 핵심은 결과물이 아니라 결과물이 만들어지는 과정이다.
+  - 이 발표와 글에서 봐야 할 것은 결과물만이 아니라 결과물이 만들어지는 과정이다.
   - `source -> prose -> outline -> html -> pdf`의 층을 분리했다.
   - source boundary, prose spine, outline/manifest, design contract, generation/validation separation이 Harness 원리로 작동했다.
   - 생성과 검증을 같은 손에 쥐지 않았다.
