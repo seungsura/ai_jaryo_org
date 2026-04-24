@@ -146,6 +146,7 @@
   - `오류의 나비효과`, `Poisoning`, `Distraction`, `Confusion`, `Clash`, `Context Rot`의 본론은 03장에 둔다.
   - 그다음 `Prompt ⊂ Context ⊂ Harness`, `Agent = Model + Harness`, `Harness의 구성요소`, `구성요소/책임/도구의 관계`, 도구 레이어로 확장한다.
   - 구성요소는 하네스가 갖춰야 할 능력, 책임은 그 능력으로 지킬 운영 기준, 도구는 그 책임을 실행 환경에 고정하는 수단으로 설명한다.
+  - `Human-in-the-Loop Control`은 별도 루프가 아니라 `take action`과 `verify` 전후에 걸리는 승인 관문으로 설명한다.
   - 장의 중심은 "개발자는 사라지는가"가 아니라 "환경을 설계하는 사람이 왜 중요해지는가"다.
   - `~가 강합니다` 같은 번역투는 피하고 자연스러운 발표체로 쓴다.
 
