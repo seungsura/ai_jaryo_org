@@ -83,6 +83,7 @@
   - p67/S065 `멀티 모델`은 06장 결론 직전이 아니라 07장 `한 모델에만 기대지 않는다` 또는 workflow reviewer rule로 이동할지 판단한다.
 - 산출물:
   - updated outline/manifest proposal only. 구현 source 수정은 다음 batch부터.
+  - STOP: Batch 0 결과는 PM gate 산출물이다. orchestrator가 source-alignment 결정을 명시 승인하기 전까지 builder는 Batch 1~3으로 넘어가지 않는다.
 
 ### Batch 1. p54/S052 단독 개선
 
@@ -192,6 +193,8 @@ Gemini prompt 핵심:
 
 ```text
 이 이미지는 Jaryo HTML deck의 chapter 06 후보와 Kakao reference page 062-068입니다.
+역할: read-only visual/reference reviewer.
+Reasoning budget: high. 구조 충돌, gate 위반, source 밖 의미 생성 가능성을 우선 검토하세요.
 content를 복사하지 말고 structure-only로 비교하세요.
 검토 기준은 여백, 정보 위계, diagram density, 한 slide의 역할, 하단 결론 처리입니다.
 source에 없는 문구나 새 비교 축은 제안하지 마세요.
@@ -209,7 +212,7 @@ source에 없는 문구나 새 비교 축은 제안하지 마세요.
 
 - Codex CLI는 `codex-cli 0.125.0`, Gemini CLI는 `0.39.1`로 확인됐다.
 - 사용자 지정 우선 model은 Codex/OpenAI 계열 `gpt-5.5`, `gpt-5.4`, `gpt-5.3-codex`, Gemini 계열 `gemini-3.1-pro-preview`, `gemini-3.1-flash-preview`다.
-- 정확한 model명이 CLI/provider에서 거부되면 같은 계열의 가장 가까운 사용 가능 model을 쓰되, handoff에 `requested model`, `actual model`, `command`, `fallback reason`을 남긴다.
+- 정확한 model명이 CLI/provider에서 거부되면 같은 preview/pro/flash 계열의 가장 가까운 사용 가능 model을 쓰되, handoff에 `requested model`, `actual model`, `command`, `fallback reason`을 남긴다.
 - reasoning effort는 역할별로 명시한다. PM/reviewer/final source-alignment는 high 또는 xhigh, builder는 high, QA는 high, quick visual sanity/목록화는 medium 이하를 기본값으로 둔다.
 - Codex rules/review pass 예시는 read-only sandbox를 기본으로 한다.
 
