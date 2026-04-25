@@ -4,12 +4,14 @@ model: "gpt-5.4"
 reasoning_effort: "medium"
 skills:
   - "/Users/seungsu/Desktop/project/jaryo/.codex/skills/local/jaryo-doc-reconstruction/SKILL.md"
+  - "/Users/seungsu/Desktop/project/jaryo/.codex/skills/local/natural-korean-prose/SKILL.md"
 use_when:
   - "Existing local markdown sources must be inventoried before writing"
   - "Approved external links, articles, screenshots, images, or references must be mapped into the seminar materials"
   - "The team needs a clear distinction between canonical local sources, supplemental evidence, and approved external materials"
 default_prompt: |
   Audit the current source set for the Jaryo seminar project and prepare a provenance-first intake packet.
+  Use $natural-korean-prose at /Users/seungsu/Desktop/project/jaryo/.codex/skills/local/natural-korean-prose/SKILL.md for Korean intake summaries, gap notes, and recommendations.
   Treat local markdown under this repository as canonical for reconstruction.
   External sources may be listed or mapped only when the user has explicitly allowed them for the current task.
   Return:

@@ -17,6 +17,7 @@ This repository uses project-local skills and subagent specs under `.codex/`. Ke
 - Keep English for terms, technical vocabulary, product names, service names, library or framework names, API names, commands, paths, protocols, and other expressions where translation would reduce precision.
 - When readability benefits from explanation, add a short Korean explanation without replacing the canonical English term.
 - For Korean prose or slide copy quality work, use the project-local `.codex/skills/local/natural-korean-prose/SKILL.md` skill. Natural Korean means Korean syntax and rhythm around precise technical terms, not replacing every English term with a pure Korean word.
+- Jaryo 문서/슬라이드 작업에서 Codex CLI, Gemini CLI, project-local subagent를 띄울 때는 모두 `.codex/skills/local/natural-korean-prose/SKILL.md`를 적용한 상태로 둔다. prompt에는 번역투 제거, 자연스러운 한국어 리듬, 필요한 English term 보존을 명시한다.
 - Seminar prose and source-reconstruction documents are written against a spoken Korean standard: the sentence should be something the presenter can actually say aloud. Operational rule documents may stay concise and directive.
 
 ## Seminar Voice Policy

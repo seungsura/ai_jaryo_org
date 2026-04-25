@@ -20,7 +20,7 @@
 각 file을 손보기 전에 아래 묶음을 먼저 읽는다.
 
 1. target file
-2. `docs/02-seminar/prose/00-overview.md`
+2. `docs/02-seminar/prose/목표-지도.md`
 3. target file의 직전/직후 chapter
 4. 관련 `docs/01-sources/maps/*.md`
 5. `docs/01-sources/intake/open-questions.md`
@@ -67,15 +67,18 @@
 
 현재 기본 순서는 아래와 같다.
 
-1. `04-harness-and-context-engineering.md`
-2. `05-limitations-and-failure-patterns.md`
-3. `06-multi-agent-patterns.md`
-4. `07-practical-workflow-and-tooling.md`
-5. `08-how-this-presentation-was-made.md`
-6. `09-what-we-should-do-next.md`
-7. `90-appendix-references.md`
+1. `00-코딩은-사라지는가.md`
+2. `01-챗봇과-싸우지-않기.md`
+3. `02-하네스는-무엇인가.md`
+4. `03-이렇게-하면-망한다.md`
+5. `04-먼저-방향을-잡는다.md`
+6. `05-기계가-막을-수-있는-것은-앞에서-막는다.md`
+7. `06-하나의-AI에게-다-맡기지-않는다.md`
+8. `07-실전-하네스는-파일과-명령어로-남는다.md`
+9. `08-이-발표-자체가-하네스였다.md`
+10. `09-하네스-엔지니어.md`
 
-초반부 `00`~`03`은 기준선 shell로 계속 참조한다.
+전체 흐름 판단은 `목표-지도.md`를 기준선 shell로 계속 참조한다.
 
 ## 패스 산출물
 
