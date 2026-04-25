@@ -17,10 +17,11 @@ This repository uses project-local skills and subagent specs under `.codex/`. Ke
 - Keep English for terms, technical vocabulary, product names, service names, library or framework names, API names, commands, paths, protocols, and other expressions where translation would reduce precision.
 - When readability benefits from explanation, add a short Korean explanation without replacing the canonical English term.
 - For Korean prose or slide copy quality work, use the project-local `.codex/skills/local/natural-korean-prose/SKILL.md` skill. Natural Korean means Korean syntax and rhythm around precise technical terms, not replacing every English term with a pure Korean word.
+- Seminar prose and source-reconstruction documents are written against a spoken Korean standard: the sentence should be something the presenter can actually say aloud. Operational rule documents may stay concise and directive.
 
 ## Seminar Voice Policy
 
-- `docs/02-seminar/prose/`는 보고서, 강의안, 제품 문서 말투가 아니라 밀도 높은 기술 블로그 에세이 톤으로 씁니다.
+- `docs/02-seminar/prose/`는 보고서, 강의안, 제품 문서 말투가 아니라 실제 발표자가 말할 수 있는 구어체를 기준으로 씁니다. 다만 수다스럽게 풀지 않고, 밀도 높은 기술 블로그 에세이의 압력은 유지합니다.
 - 문장은 직접적이고 단정적으로 씁니다. 과하게 비겁한 완곡어법, 사내 문서식 관료 문장, 안전한 요약문을 기본값으로 두지 않습니다.
 - 문단은 주장과 대비가 앞으로 밀고 가는 리듬을 가져야 합니다. 필요한 경우 수사적 질문과 짧은 단문을 쓰되, 습관처럼 남발하지는 않습니다.
 - 영어식 번역투와 방법론 직역체를 피합니다. 예: `상류/하류`, `강하게 호출된다`, `핵심은 ~ 데 있다`, `~의 측면에서`, `~라고 볼 수 있다` 같은 표현은 더 살아 있는 한국어가 있으면 교체합니다.
@@ -42,6 +43,7 @@ This repository uses project-local skills and subagent specs under `.codex/`. Ke
 - source에 없는 비교 축, label, 의미, 예시, metric, 해설 문구를 새로 만들지 않습니다.
 - deck은 `theme-minimal-light`, 기존/minimal-light palette, `720pt × 405pt`, Pretendard CDN, footer `Harness 잘 사용하기` 기준을 유지합니다.
 - slide 문구는 명사형·구 단위 중심으로 쓰고, 공손체·서술형·명령형을 피합니다.
+- prose가 구어체 기준으로 바뀌어도 slide copy 규칙은 유지합니다. slide에는 발표자가 말할 문장 전체를 옮기지 않고, source-backed 압축 문구와 시각 구조를 둡니다.
 - 번역체와 어색한 한국어 표현은 구현 금지입니다. slide 문구는 자연스러운 한국어 압축문이어야 하며, `check_slide_korean.py`와 reviewer가 이를 검증합니다.
 - 한국문학적 어휘는 허용합니다. 단, source 의미와 발표 가독성을 살리는 압축어로만 쓰고, 과한 문예체나 장식적 수사는 피합니다.
 - HTML 수정 후 `check_slide_contract`, `check_slide_korean`, `check_deck_runtime`, 필요한 Playwright/PDF smoke를 규칙 기준으로 실행합니다.

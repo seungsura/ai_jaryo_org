@@ -38,6 +38,8 @@ If the answer is no, rewrite.
 
 ## Seminar Prose Moves
 
+- Treat prose as something the presenter can say aloud. If a sentence only works on paper, rewrite it.
+- Spoken Korean here does not mean casual filler. Remove `그러니까`, `뭔가`, `사실은` when they only loosen the sentence.
 - Prefer `문제는 X가 아니라 Y입니다` when the chapter turns on contrast.
 - Prefer short assertive endings after a long explanatory sentence.
 - Do not write every paragraph with the same length and rhythm.
@@ -45,6 +47,7 @@ If the answer is no, rewrite.
 
 ## Slide Copy Moves
 
+- Keep the slide-copy rules even when prose becomes more spoken. The slide should not become a transcript.
 - Slide copy can be shorter than prose, but it must not become a slogan with lost meaning.
 - Numeric and evidence slides may use `metric card trio`, `evidence cards without tables`, or `evidence table`; do not force them into one-line statement slides.
 - A slide title should name the scene or claim, not explain the whole paragraph.

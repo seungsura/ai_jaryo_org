@@ -9,7 +9,7 @@ description: Use when writing, revising, or reviewing Korean prose and slide cop
 
 Use this skill whenever Korean wording quality matters. The goal is not "simpler Korean" in the abstract. The goal is Korean that sounds written in Korean first: natural word order, clear subject-verb relationships, living verbs, precise technical terms, and a rhythm that fits the Jaryo seminar voice.
 
-For `docs/02-seminar/prose/`, the default voice is a dense technical blog essay. Do not turn it into a public notice, lecture script, product manual, or bland summary.
+For `docs/02-seminar/prose/`, the default voice is spoken Korean that the presenter can actually say aloud, with the density of a technical blog essay. Do not turn it into a public notice, product manual, bland summary, or loose chat transcript.
 
 ## Source Basis
 
@@ -21,7 +21,7 @@ Those principles are adapted here for technical seminar prose. Public-document p
 
 1. Preserve the claim, source boundary, and technical precision before changing style.
 2. Decide the surface:
-   - prose: direct technical essay, paragraph rhythm, argument and contrast.
+   - prose: spoken, presentation-ready technical essay; natural when read aloud.
    - slide copy: compressed phrase or noun phrase, source-backed, scan-friendly.
    - conversation: natural Korean explanation without editorial jargon.
 3. Run the translationese pass:
@@ -53,3 +53,4 @@ Use scanner hits as review candidates, not automatic failures. Context decides.
 - In presentation prose, use `이 챕터에서`, `앞 챕터`, `다음 챕터` instead of chapter-flow wording that sounds like a report.
 - Keep English for product names, APIs, commands, paths, protocols, method names, and technical terms whose Korean translation would reduce precision.
 - Do not replace every English term with a pure Korean word. Natural Korean in this project means Korean syntax around precise technical vocabulary.
+- Prose may become spoken and presentation-ready; slide copy keeps the existing rule: compressed Korean phrases, noun phrases, and source-backed visible text rather than full spoken sentences.
