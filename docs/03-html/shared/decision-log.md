@@ -50,3 +50,13 @@
 - 선호 baseline remap은 `1-18 -> 1-18`, `21 -> 19`, `24 -> 22`, `37 -> 35`, `39 -> 37`, `40 -> 38`, `52 -> 50`, `53 -> 51`로 고정한다.
 - 현재 main 기준 23페이지 `컨텍스트만으로는 부족하다`는 임시 custom layout보다 deck의 기존 `split-compare` family가 더 적합하다고 판단했다. 왼쪽은 `잘못된 결과나 응답 유입`, `느슨한 실행 권한`, `잘못된 검증` 세 축으로 압축하고, 오른쪽은 `허용/차단 범위`, `멈춤 기준`, `검증 경로`를 둔다. 하단 한 줄은 `멈춤 기준과 검증 경로를 먼저 설계해야 한다`로 묶고, body 폭은 chapter 02의 다른 slide와 비슷한 압축 밀도로 줄인다.
 - 현재 main 기준 23페이지 latest feedback에서는 더 단순한 관계도가 필요하다고 판단했다. 좌측은 `index.html` 기준 35페이지의 loop diagram만 축소 재사용한 loop panel로 두고, 우측 상단은 `도구 호출 실패`, `목표 망각`, `테스트 오해`, `보안 경계` 네 카드만 남긴다. 중간 레일은 각 card에서 loop 쪽으로 향하는 화살표와 `잘못된 응답 주입` label로 관계를 직접 보여 준다. 하단 dark one-line은 유지한다.
+
+## 2026-04-25
+
+- 사용자가 선호 baseline page를 재확인했다. 기준은 legacy mapping이 아니라 현재 생성본 `output/pdf/harness-full-main-94-current-720x405.pdf`의 1-based PDF page number이며, 선호 page는 `1-18`, `21`, `24`, `37`, `39`, `40`, `52`, `53`이다.
+- 같은 현재 PDF 기준 비선호 page는 `41`, `54`, `57-68`이다. 특히 `57-68`은 `assets/claude-code-seminar-kakao/page-062.png`부터 `page-068.png`까지의 구조 감각을 따라갔어야 했던 묶음으로 보고, 재작업 시 이 reference를 우선 비교한다.
+- 사용자는 `assets/claude-code-seminar-kakao`를 가장 원하는 slide style reference로 지정했다. 이 reference는 content source가 아니라 구조, 여백, 정보 위계, 도식 밀도, 결론 처리 방식의 기준으로 쓴다.
+- Gemini CLI는 primary builder가 아니라 다른 시각의 검토자와 visual reference analyst로 쓰는 데 동의했다. HTML 구현은 Codex CLI 또는 project-local HTML 전용 subagent로 spawn하되, PM, builder, QA, reviewer gate를 유지한다.
+- current PDF page number는 사용자 피드백 handle로만 쓴다. `output/pdf/harness-full-main-94-current-720x405.pdf`는 94page이고 현재 manifest/source는 92-slide deck이므로 구현 대상은 title/source match로 확정한다. 확인된 mapping은 `p41 -> S039`, `p54 -> S052`, `p57-p68 -> S055-S066`이다.
+- `docs/03-html/shared/current-pdf-disliked-pages-rework-packet.md`를 PM packet으로 추가했다. 이 packet은 `Advisor`가 target-map에서 제외된 source에 기대고, `Parallel`/`멀티 모델`도 최신 prose 위치와 충돌 가능성이 있으므로 visual rebuild 전에 source-alignment gate를 먼저 통과해야 한다고 정리한다.
+- Codex CLI는 설치되어 있으나 `codex-cli 0.121.0` + 기본 model `gpt-5.5` 조합에서 `codex exec`가 CLI 업그레이드 요구 오류로 실패했다. 당장 구현 agent를 띄울 때는 Codex CLI upgrade 후 사용하거나, project-local/Hermes subagent 방식으로 HTML 전용 agent를 spawn한다.

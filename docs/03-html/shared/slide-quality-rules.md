@@ -15,6 +15,8 @@
 - 모든 HTML 관련 작업 전 `AGENTS.md`, `.codex/subagents/README.md`, `.codex/templates/subagent-task-template.md`, 이 문서 전체, 현재 작업 대상 slide의 source/reference를 읽는다.
 - HTML 관련 작업은 subagent 위임 기반으로 진행한다. orchestrator는 규칙 확정, prompt 구성, 결과 검수, 후속 지시를 맡는다.
 - HTML 작업 subagent prompt에는 이 문서 사전 확인, 최신 피드백 기록, source/reference 밖 생성 금지, 필요한 검증 명령을 명시한다.
+- HTML 구현과 검토는 project-local HTML subagent 또는 Codex CLI로 띄운 HTML 전용 agent에게 맡긴다. 어떤 방식을 쓰더라도 `html-slide-pm -> html-slide-builder -> html-slide-qa -> html-slide-reviewer` gate를 건너뛰지 않는다.
+- Gemini CLI는 primary builder가 아니라 다른 시각의 검토자와 visual reference analyst로 쓴다. Gemini 결과는 source가 아니며, slide copy나 의미 구조는 target-map/prose/source markdown과 이 문서의 규칙을 다시 통과해야 한다.
 - 새 사용자 피드백은 구현 전에 먼저 이 문서에 기록한다. 기록 위치는 active rule, reusable pattern, Decision Log, Traceability 중 가장 강제력이 높은 곳이다.
 - 사용자 피드백은 단순 작업 메모로 흘려보내지 않는다. 매번 문서에 남기고, fixed rule, reusable pattern, validation rule, Traceability history 중 어디로 승격할 수 있는지 먼저 검토한다.
 - 피드백을 규칙으로 승격하지 않을 때도 이유를 남긴다. one-off correction, 현재 slide 한정, source/reference 부족, 또는 다른 active rule과 충돌 같은 보류 사유를 Decision Log나 Traceability에 기록한다.
@@ -25,10 +27,11 @@
 - 일반 구현 순서: 규칙 기록 -> subagent 위임 -> generator/CSS/test/check 갱신 -> HTML/PDF 재생성 -> 정적 검증 -> Playwright screenshot/PDF smoke 검증.
 - 병렬 worktree에서 slide numbering은 임시값이다. 다른 chapter 작업과 겹칠 수 있으므로 chapter 작업자는 전역 `SXXX`/`slide-XXX` 번호를 안정된 소유권으로 가정하지 않는다.
 - 병렬 HTML 작업은 chapter별 작업 폴더를 우선한다. chapter-local 폴더 아래에서 해당 chapter의 local slide order와 임시 slide number를 함께 관리하고, 전역 deck 번호는 마지막 main 통합 단계에서만 재부여한다.
-- 사용자가 선호 페이지 baseline을 지정하면 즉시 deck-wide reference set으로 고정한다. 2026-04-23 기준 고정 baseline은 page `1-18`, `21`, `24`, `37`, `39`, `40`, `52`, `53`이다.
-- page 번호는 `output/pdf/harness-full-main-94-current-720x405.pdf`의 1-based PDF export page를 기준으로 해석한다.
-- legacy page 기준이 현재 deck 번호와 다를 때는 `docs/03-html/shared/page-number-mapping.json`을 우선 참조해 현재 `index.html` footer page로 변환한다.
-- 2026-04-23 삭제 반영(`legacy page 19, 20` 제거) 이후 선호 baseline 매핑은 `1-18->1-18`, `21->19`, `24->22`, `37->35`, `39->37`, `40->38`, `52->50`, `53->51`로 고정한다.
+- 사용자가 선호 페이지 baseline을 지정하면 즉시 deck-wide reference set으로 고정한다. 2026-04-25 재확인된 고정 baseline은 `output/pdf/harness-full-main-94-current-720x405.pdf`의 1-based PDF page `1-18`, `21`, `24`, `37`, `39`, `40`, `52`, `53`이다.
+- 위 baseline은 현재 PDF 기준 page number다. 이 묶음에는 legacy page remap을 적용하지 않는다. `docs/03-html/shared/page-number-mapping.json`은 과거 기록이 명시적으로 legacy page를 가리킬 때만 쓴다.
+- 2026-04-25 재확인된 비선호 page는 같은 현재 PDF 기준 `41`, `54`, `57-68`이다. 이 page들은 재작업 우선 후보이며, 특히 `57-68`은 `assets/claude-code-seminar-kakao/page-062.png`부터 `page-068.png`의 구조 감각을 충분히 살리지 못한 실패로 본다.
+- current PDF page number는 사용자 피드백 handle이다. 구현 target은 반드시 PDF에서 추출한 title과 현재 source title을 대조해 확정한다. `output/pdf/harness-full-main-94-current-720x405.pdf`는 94page이고 현재 manifest/source는 92-slide deck이므로 `PDF page N == SNNN`으로 가정하지 않는다.
+- 2026-04-25 known mapping: current PDF `p41 -> S039`, `p54 -> S052`, `p57-p68 -> S055-S066`. 자세한 scope와 source-alignment gate는 `docs/03-html/shared/current-pdf-disliked-pages-rework-packet.md`를 따른다.
 
 ## Source Discipline
 
@@ -71,8 +74,9 @@
 - CHAPTER 02 rebuild에서 사용자가 추가 승인한 reference는 `output/pdf/harness-00-02-current-720x405.pdf`의 S016-S018, `assets/evolution-of-ai-agentic-patterns/02-chain-of-thought.png`부터 `06-cursor-ai-code-editor-architecture.png`, `assets/claude-code-seminar-kakao/page-052.png`, `assets/claude-code-seminar-kakao/page-067.png`이다.
 - S018 feedback round 3에서 추가 승인한 reference는 `assets/claude-code-seminar-kakao/page-064.png`, 사용자가 첨부한 ReAct screenshot, `https://pub.towardsai.net/chain-of-thought-vs-tree-of-thought-vs-graph-of-thought-reasoning-method-comparison-1f19d238a005`의 CoT/ToT comparison structure다. S018은 `CoT`, `ReAct`, `ToT` 3개를 한 페이지에 모두 visible copy로 두고, `2캔 × 3개`, `11개` 같은 산수 예시는 쓰지 않는다. `Graph-of-Thought`, `GoT`는 S018 visible copy에 넣지 않는다.
 - CHAPTER 06-07 revision에서 사용자가 승인한 primary visual reference는 `assets/claude-code-seminar-kakao/page-062.png`, `page-063.png`, `page-064.png`, `page-065.png`, `page-066.png`, `page-067.png`, `page-068.png`다. 이 묶음은 CHAPTER 06뿐 아니라 CHAPTER 07의 재구성에도 structure-only reference로 쓴다.
-- 2026-04-23 사용자 고정 baseline은 `output/pdf/harness-full-main-94-current-720x405.pdf` 기준 page `1-18`, `21`, `24`, `37`, `39`, `40`, `52`, `53`이다. 이 묶음은 향후 피드백 루프에서 우선 비교군으로 사용한다.
-- legacy baseline과 현재 deck 번호의 대응표는 `docs/03-html/shared/page-number-mapping.md`와 `docs/03-html/shared/page-number-mapping.json`을 단일 진실원으로 유지한다.
+- 사용자는 `assets/claude-code-seminar-kakao`를 가장 원하는 slide style reference로 본다. 특히 page `062-068`은 비선호 current PDF page `57-68`을 고칠 때 먼저 비교해야 하는 structure/style baseline이다.
+- 2026-04-25 사용자 재확인 고정 baseline은 `output/pdf/harness-full-main-94-current-720x405.pdf` 기준 page `1-18`, `21`, `24`, `37`, `39`, `40`, `52`, `53`이다. 이 묶음은 향후 피드백 루프에서 우선 비교군으로 사용하며 legacy remap을 적용하지 않는다.
+- legacy baseline과 현재 deck 번호의 대응표는 `docs/03-html/shared/page-number-mapping.md`와 `docs/03-html/shared/page-number-mapping.json`을 유지하되, 사용자 확인 없이 현재 PDF 기준 baseline에 자동 적용하지 않는다.
 - 이 baseline은 composition, layout rhythm, diagram density, spatial hierarchy의 soft reference다.
 - 이 baseline은 content source가 아니다. 문구, 비교 축, label, metric, 사례, 해설 의미를 여기서 새로 가져오지 않는다.
 - baseline의 warm brown palette, section pill, character image, decorative mood를 복사하지 않는다.
@@ -93,7 +97,8 @@
 - page-064: card row + mini diagram + 1-line meaning 구조를 참고한다.
 - page-067: dominant system map + side explanation + bottom conclusion 구조를 참고한다.
 - CHAPTER 06-07 approved references: page-062는 dark chapter divider, page-063은 3-wall card composition, page-064는 5-pattern card row, page-065는 high-contrast split comparison, page-066은 Main/Sub relationship map with side cards, page-067은 system map + side explanation + bottom conclusion, page-068은 4-principle grid + dark conclusion 구조를 참고한다.
-- 고정 선호 page cluster 해석: `1-3`(opening cadence), `4-14`(chapter 01 narrative rhythm), `15-18/21/24`(chapter 02 정보-구조 혼합), `37/39/40`(chapter 04 핵심 도식), `52/53`(chapter 05 statement 밀도) 구조를 우선 패턴으로 둔다.
+- 고정 선호 page cluster 해석: 현재 PDF 기준 `1-3`(opening cadence), `4-14`(chapter 01 narrative rhythm), `15-18/21/24`(chapter 02 정보-구조 혼합), `37/39/40`(chapter 04 핵심 도식), `52/53`(chapter 05 statement 밀도) 구조를 우선 패턴으로 둔다.
+- 고정 비선호 page cluster 해석: 현재 PDF 기준 `41`, `54`, `57-68`은 우선 재검토 대상이다. `57-68`은 Kakao page `062-068`의 layout grammar를 참고해 source-backed content를 다시 배치해야 하며, 단순 색감/장식 복사가 아니라 정보 위계, 여백, 관계도, 결론 처리 방식을 배운다.
 
 ## Layout Grammar
 
