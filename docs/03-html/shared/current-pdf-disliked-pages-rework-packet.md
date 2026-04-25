@@ -180,13 +180,13 @@ docs/03-html/slides/slide-055.html ... docs/03-html/slides/slide-066.html
 
 ## 6. Gemini Reviewer Use
 
-Gemini는 builder가 아니라 reviewer/visual analyst로만 쓴다.
+Gemini는 builder가 아니라 reviewer/visual analyst로만 쓴다. 단, Gemini 검토는 보조 의견이다. PM, QA, reviewer gate를 대체하거나 다음 gate로 자동 진행시키지 않는다.
 
 권장 사용 위치:
 
-1. Batch 0 이후: source-alignment 제안이 target-map과 충돌하는지 다른 시각으로 검토.
-2. Batch 2 build 이후: current chapter 06 contact sheet와 Kakao page 062-068 contact sheet를 함께 보고 구조만 비교.
-3. 최종 reviewer 전: 선호 current PDF pages `1-18`, `21`, `24`, `37`, `39`, `40`, `52`, `53`와 새 chapter 06 묶음의 rhythm 차이를 요약.
+1. Batch 0 이후: source-alignment 제안이 target-map과 충돌하는지 다른 시각으로 검토. 이 결과는 PM 첨부 의견일 뿐이며, orchestrator가 PM gate를 명시 승인하기 전에는 builder가 시작하지 않는다.
+2. Batch 2 build 이후와 QA 전/후: current chapter 06 contact sheet와 Kakao page 062-068 contact sheet를 함께 보고 구조만 비교. 단, QA evidence와 final reviewer 판단을 대체하지 않는다.
+3. 최종 reviewer 전: 선호 current PDF pages `1-18`, `21`, `24`, `37`, `39`, `40`, `52`, `53`와 새 chapter 06 묶음의 rhythm 차이를 요약. 최종 승인 권한은 `html-slide-reviewer` gate에 있다.
 
 Gemini prompt 핵심:
 
@@ -207,9 +207,20 @@ source에 없는 문구나 새 비교 축은 제안하지 마세요.
 
 ## 8. Agent Spawn Note
 
-- Codex CLI는 설치되어 있고 `codex-cli 0.121.0`으로 확인됐다.
-- 현재 `~/.codex/config.toml`의 기본 model은 `gpt-5.5`이며, 이 조합에서는 `codex exec`가 `The 'gpt-5.5' model requires a newer version of Codex` 오류로 실행되지 않았다.
-- `gpt-5`, `gpt-5.1` override도 ChatGPT account 제약으로 실패했다.
-- 따라서 지금 당장 구현 agent를 띄울 때는 다음 둘 중 하나를 택한다.
-  - Codex CLI를 업그레이드한 뒤 HTML 전용 agent를 띄운다.
-  - Hermes/project-local subagent를 HTML 전용 agent로 사용하되, 이 packet과 `html-slide-pm -> html-slide-builder -> html-slide-qa -> html-slide-reviewer` gate를 그대로 준수한다.
+- Codex CLI는 `codex-cli 0.125.0`, Gemini CLI는 `0.39.1`로 확인됐다.
+- 사용자 지정 우선 model은 Codex/OpenAI 계열 `gpt-5.5`, `gpt-5.4`, `gpt-5.3-codex`, Gemini 계열 `gemini-3.1-pro-preview`, `gemini-3.1-flash-preview`다.
+- 정확한 model명이 CLI/provider에서 거부되면 같은 계열의 가장 가까운 사용 가능 model을 쓰되, handoff에 `requested model`, `actual model`, `command`, `fallback reason`을 남긴다.
+- reasoning effort는 역할별로 명시한다. PM/reviewer/final source-alignment는 high 또는 xhigh, builder는 high, QA는 high, quick visual sanity/목록화는 medium 이하를 기본값으로 둔다.
+- Codex rules/review pass 예시는 read-only sandbox를 기본으로 한다.
+
+```bash
+codex exec -m gpt-5.5 -c model_reasoning_effort='"high"' -s read-only -C /Users/seungsu/Desktop/project/jaryo - < prompt.md
+```
+
+- Gemini rules/review pass 예시는 plan approval mode를 기본으로 한다.
+
+```bash
+gemini -m gemini-3.1-pro-preview --approval-mode plan -p "<prompt>"
+```
+
+- 현재 세션은 rules/planning 세션이므로 HTML 생성, PDF export, generated HTML 수정, slide source 수정, CSS/generator/test 수정, build/check 실행을 하지 않는다. orchestrator rules-edit mode에서는 이 packet/규칙/decision/handoff 문서만 수정할 수 있고, CLI/subagent reviewer를 read-only review mode로 띄운 경우에는 그 reviewer가 파일을 수정하지 않는다. 실제 구현 agent는 별도 구현 세션에서 이 packet과 `html-slide-pm -> html-slide-builder -> html-slide-qa -> html-slide-reviewer` gate를 그대로 준수한다.

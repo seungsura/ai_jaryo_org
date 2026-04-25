@@ -16,7 +16,11 @@
 - HTML 관련 작업은 subagent 위임 기반으로 진행한다. orchestrator는 규칙 확정, prompt 구성, 결과 검수, 후속 지시를 맡는다.
 - HTML 작업 subagent prompt에는 이 문서 사전 확인, 최신 피드백 기록, source/reference 밖 생성 금지, 필요한 검증 명령을 명시한다.
 - HTML 구현과 검토는 project-local HTML subagent 또는 Codex CLI로 띄운 HTML 전용 agent에게 맡긴다. 어떤 방식을 쓰더라도 `html-slide-pm -> html-slide-builder -> html-slide-qa -> html-slide-reviewer` gate를 건너뛰지 않는다.
+- Codex CLI를 쓸 때의 우선 model은 `gpt-5.5`, `gpt-5.4`, `gpt-5.3-codex`다. 정확한 model명이 CLI/provider에서 거부되면 같은 계열의 가장 가까운 사용 가능 model을 쓰되, handoff에 `requested model`, `actual model`, `command`, `fallback reason`을 남긴다.
+- Gemini CLI를 쓸 때의 우선 model은 `gemini-3.1-pro-preview`, `gemini-3.1-flash-preview`다. 정확한 model명이 거부되면 같은 preview/pro/flash 계열의 가장 가까운 사용 가능 model을 쓰되, handoff에 `requested model`, `actual model`, `command`, `fallback reason`을 남긴다.
+- Reasoning effort는 역할별로 명시한다. PM/reviewer/final source-alignment는 high 또는 xhigh, builder는 high, QA는 high, quick visual sanity나 단순 목록화는 medium 이하를 쓴다. 모델/CLI가 reasoning flag를 직접 지원하지 않으면 prompt에 reasoning budget과 검토 깊이를 명시한다.
 - Gemini CLI는 primary builder가 아니라 다른 시각의 검토자와 visual reference analyst로 쓴다. Gemini 결과는 source가 아니며, slide copy나 의미 구조는 target-map/prose/source markdown과 이 문서의 규칙을 다시 통과해야 한다.
+- rules/planning 세션에서는 HTML 생성, PDF export, generated HTML 수정, `scripts/jaryo_html_deck/slides/...` source 수정, shared CSS/generator/test 수정, build/check 실행을 하지 않는다. 이 단계의 orchestrator rules-edit mode에서 허용되는 작업은 규칙 문서, decision log, PM packet, open question/handoff 정리뿐이다. CLI/subagent reviewer를 read-only review mode로 띄운 경우에는 그 reviewer가 파일을 수정하지 않는다.
 - 새 사용자 피드백은 구현 전에 먼저 이 문서에 기록한다. 기록 위치는 active rule, reusable pattern, Decision Log, Traceability 중 가장 강제력이 높은 곳이다.
 - 사용자 피드백은 단순 작업 메모로 흘려보내지 않는다. 매번 문서에 남기고, fixed rule, reusable pattern, validation rule, Traceability history 중 어디로 승격할 수 있는지 먼저 검토한다.
 - 피드백을 규칙으로 승격하지 않을 때도 이유를 남긴다. one-off correction, 현재 slide 한정, source/reference 부족, 또는 다른 active rule과 충돌 같은 보류 사유를 Decision Log나 Traceability에 기록한다.
