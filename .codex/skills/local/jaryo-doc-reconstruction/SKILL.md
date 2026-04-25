@@ -19,6 +19,7 @@ Rebuild source-quality documentation from the markdown files in this repository 
 - Prefer section-scoped files under `docs/02-seminar/prose/` over one giant document unless the user explicitly wants a monolith.
 - Follow the repository seminar voice policy: prose should read like a dense technical blog essay, not a report or translated methodology memo.
 - Avoid translationese and dead explanatory phrasing when a sharper Korean sentence is available.
+- When the task involves Korean naturalness, translationese removal, slide copy tone, or seminar narration quality, also use the sibling project-local skill `.codex/skills/local/natural-korean-prose/SKILL.md`.
 - When improving the canonical seminar prose as a set, follow `docs/00-process/seminar-refinement-plan.md` and keep `docs/00-process/seminar-refinement-manifest.md` synchronized.
 - After each meaningful draft or revision pass, prepare focused follow-up questions for the user instead of silently making speculative editorial decisions.
 
@@ -49,6 +50,7 @@ Rebuild source-quality documentation from the markdown files in this repository 
 - Read [references/output-contract.md](references/output-contract.md) when preparing section maps, draft outputs, or open-question logs.
 - Read [references/collaboration-loop.md](references/collaboration-loop.md) when improving draft quality through user dialogue or integrating newly collected materials.
 - Read [references/tone-rules.md](references/tone-rules.md) when prose starts drifting into report-style or translated-Korean phrasing.
+- Read `../natural-korean-prose/references/translationese-checklist.md` when the edit is primarily about Korean naturalness or translationese.
 - Read `docs/00-process/seminar-refinement-plan.md` when aligning multiple prose chapters or pulling later chapters back to the opening chapters' quality bar.
 
 ## Example Triggers

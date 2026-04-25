@@ -16,6 +16,7 @@ This repository uses project-local skills and subagent specs under `.codex/`. Ke
 - Write new and revised documentation in Korean by default.
 - Keep English for terms, technical vocabulary, product names, service names, library or framework names, API names, commands, paths, protocols, and other expressions where translation would reduce precision.
 - When readability benefits from explanation, add a short Korean explanation without replacing the canonical English term.
+- For Korean prose or slide copy quality work, use the project-local `.codex/skills/local/natural-korean-prose/SKILL.md` skill. Natural Korean means Korean syntax and rhythm around precise technical terms, not replacing every English term with a pure Korean word.
 
 ## Seminar Voice Policy
 
@@ -25,6 +26,7 @@ This repository uses project-local skills and subagent specs under `.codex/`. Ke
 - 영어식 번역투와 방법론 직역체를 피합니다. 예: `상류/하류`, `강하게 호출된다`, `핵심은 ~ 데 있다`, `~의 측면에서`, `~라고 볼 수 있다` 같은 표현은 더 살아 있는 한국어가 있으면 교체합니다.
 - 명사구만 무겁게 쌓는 문장, 설명문 냄새가 짙은 추상 문장, bullet을 줄글로 늘인 듯한 문장은 피합니다.
 - 근거가 있는 강한 문장은 허용하지만, 밈체·허세체·과장된 인터넷체로 미끄러지면 안 됩니다.
+- `장표`는 쓰지 않고 `슬라이드` 또는 `발표 자료`를 씁니다. 발표 흐름을 가리킬 때는 `이 챕터에서`, `앞 챕터`, `다음 챕터`를 기본 표현으로 씁니다.
 
 ## HTML Slide Policy
 
@@ -47,6 +49,7 @@ This repository uses project-local skills and subagent specs under `.codex/`. Ke
 ## Local Skills
 
 - `.codex/skills/local/jaryo-doc-reconstruction/SKILL.md`
+- `.codex/skills/local/natural-korean-prose/SKILL.md`
 - `.codex/skills/vendor/pdf/SKILL.md`
 
 ## Local Subagents

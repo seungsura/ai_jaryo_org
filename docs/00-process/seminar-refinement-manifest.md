@@ -6,7 +6,7 @@
 
 | file | role | gate | current drift | next loop focus |
 | --- | --- | --- | --- | --- |
-| `prose/00-coding-disappear.md` | 역할 이동의 도입부 | `REVISE` | slide-first 형식으로 재작성함. 목적지를 먼저 제시하고, `추상화의 역사` 구간은 이미 만들어 둔 자료를 연속 장면으로 살림. 숫자는 설득 장치이되 역할 이동의 증거로 회수함 | 추상화 역사 자료의 길이, 숫자 근거 3개를 모두 둘지 조정 |
+| `prose/00-coding-disappear.md` | 역할 이동의 도입부 | `REVISE` | slide-first 형식으로 재작성함. 목적지를 먼저 제시하고, `추상화의 역사` 구간은 이미 만들어 둔 자료를 연속 장면으로 살림. 숫자 사례 3개는 적절하므로 모두 유지하고 역할 이동의 증거로 회수함 | 추상화 역사 자료의 길이, 숫자 slide의 layout family 조정 |
 | `prose/01-stop-fighting-chatbots.md` | 프롬프트 한계에서 Harness 필요성으로 넘기는 장 | `REVISE` | slide-first 형식으로 재작성함. `AI를 채팅창/챗봇처럼 쓰면서 실무 결과를 기대했다`는 문제를 명시함 | `챗봇처럼 쓰고 에이전트 결과를 기대한다`는 문장을 더 앞당길지 조정 |
 | `prose/02-what-is-harness.md` | Harness 정의와 구성요소 설명 | `REVISE` | slide-first 형식으로 재작성함. loop, Prompt/Context/Harness, Agent=Model+Harness, 구성요소/책임/도구 흐름으로 정렬함 | 정의 장이 너무 교과서처럼 보이지 않는지 사용자 리뷰 |
 | `prose/03-this-is-how-it-fails.md` | 긴 작업과 긴 컨텍스트의 실패 구조 | `REVISE` | slide-first 형식으로 재작성함. 큰 작업을 통째로 맡겼다가 이상한 수정이 누적되는 장면을 루프 실패와 연결함 | 실패 패턴 용어 수와 `AI Slop/Doom Loop/Shadow Agent`의 필요성 조정 |

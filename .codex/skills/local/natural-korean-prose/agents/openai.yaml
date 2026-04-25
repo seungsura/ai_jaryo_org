@@ -1,0 +1,4 @@
+interface:
+  display_name: "Natural Korean Prose"
+  short_description: "Polish Korean prose without translationese"
+  default_prompt: "Use $natural-korean-prose to revise this Korean prose so it keeps the technical meaning but reads naturally, without translationese."
