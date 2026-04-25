@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>하네스의 5대 해부학</title>
+<title>1. Sub-Agent: 중간 작업을 격리하는 기본형</title>
+<link rel="icon" href="data:,">
 <link rel="stylesheet" href="../shared/tokens.css">
 <link rel="stylesheet" href="../shared/slide-base.css">
 </head>
 <body class="theme-minimal-light">
-<main class="slide family-content layout-wide density-medium" data-slide-id="S056" data-shell="evidence-table-shell" data-notes="하네스의 5대 해부학를 먼저 말한다. 이어서 하네스의 5대 해부학의 근거를 짧게 보강한다." data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 04</p><h1 class="title-placeholder">하네스의 5대 해부학</h1><p class="lead-placeholder">하네스를 손에 잡히는 구조로 보려면 다섯 기능 블록으로</p></section><section class="table-wrap"><div class="table-callout">하네스의 5대 해부학</div><table class="data-table"><thead><tr><th>블록</th><th>하는 일</th><th>구현 예시</th></tr></thead><tbody><tr><td>Guardrails</td><td>위험한 행동을 막고 권한</td><td>승인 규칙</td></tr><tr><td>Specification</td><td>작업 범위와 기준선을 흔들리지</td><td>작업 명세</td></tr><tr><td>Verification</td><td>결과를 결정론적으로 걸러낸다</td><td>lint</td></tr><tr><td>State Management</td><td>세션이 바뀌어도 상태가</td><td>파일, Git 이력, 진행 기록</td></tr></tbody></table></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">56</span></footer></main>
+<main class="slide family-content layout-wide density-medium chapter-06" data-slide-id="S056" data-shell="process-flow-shell" data-notes="source lines 28-51, page 066 structure reference" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 06</p><h1 class="title-placeholder">1. Sub-Agent: 중간 작업을 격리하는 기본형</h1></section><section class="ch-map-side-body"><div class="ch-main-sub-map"><article class="ch-map-node ch-map-main"><strong>Main</strong><span>결과 요약과 결론만 수신</span></article><div class="ch-map-arrow ch-map-arrow-out"><span>task</span></div><article class="ch-map-node ch-map-sub"><strong>Sub</strong><span>격리된 워커</span><div class="ch-map-artifacts"><span>file</span><span>log</span><span>test</span><span>api</span></div></article><div class="ch-map-arrow ch-map-arrow-back"><span>summary</span></div></div><div class="ch-side-stack"><article class="ch-card ch-side-card"><h2>컨텍스트 격리</h2><p>파일을 많이 읽고 수만 토큰을 써도 메인 컨텍스트는 오염되지 않음</p></article><article class="ch-card ch-side-card"><h2>least privilege</h2><p>필요한 파일, 질문, 출력 형식, 권한만 전달</p></article><article class="ch-card ch-side-card"><h2>좋은 지시</h2><p>목적, 읽을 범위, 출력 형식, 근거 표시 방식, 금지 행동</p></article></div><p class="ch-dark-conclusion centered-claim">Sub-Agent는 메인 컨텍스트를 지키는 데 특히 강함</p></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">56</span></footer></main>
 </body>
 </html>

@@ -1,0 +1,63 @@
+{
+  "mapping_version": "2026-04-23",
+  "legacy_reference": {
+    "deck_path": "output/pdf/harness-full-main-94-current-720x405.pdf",
+    "page_base": "1-based"
+  },
+  "current_reference": {
+    "deck_path": "docs/03-html/deck/index.html",
+    "page_base": "1-based",
+    "total_pages": 92
+  },
+  "removed_legacy_pages": [19, 20],
+  "conversion_rule": {
+    "range_keep": {
+      "start": 1,
+      "end": 18,
+      "formula": "current = legacy"
+    },
+    "range_shift": {
+      "start": 21,
+      "formula": "current = legacy - 2"
+    },
+    "removed": {
+      "pages": [19, 20],
+      "formula": "no direct mapping"
+    }
+  },
+  "favorite_baseline_legacy_pages": [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+    21, 24, 37, 39, 40, 52, 53
+  ],
+  "favorite_baseline_current_pages": [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+    19, 22, 35, 37, 38, 50, 51
+  ],
+  "favorite_mapping_pairs": [
+    {"legacy": 1, "current": 1},
+    {"legacy": 2, "current": 2},
+    {"legacy": 3, "current": 3},
+    {"legacy": 4, "current": 4},
+    {"legacy": 5, "current": 5},
+    {"legacy": 6, "current": 6},
+    {"legacy": 7, "current": 7},
+    {"legacy": 8, "current": 8},
+    {"legacy": 9, "current": 9},
+    {"legacy": 10, "current": 10},
+    {"legacy": 11, "current": 11},
+    {"legacy": 12, "current": 12},
+    {"legacy": 13, "current": 13},
+    {"legacy": 14, "current": 14},
+    {"legacy": 15, "current": 15},
+    {"legacy": 16, "current": 16},
+    {"legacy": 17, "current": 17},
+    {"legacy": 18, "current": 18},
+    {"legacy": 21, "current": 19},
+    {"legacy": 24, "current": 22},
+    {"legacy": 37, "current": 35},
+    {"legacy": 39, "current": 37},
+    {"legacy": 40, "current": 38},
+    {"legacy": 52, "current": 50},
+    {"legacy": 53, "current": 51}
+  ]
+}

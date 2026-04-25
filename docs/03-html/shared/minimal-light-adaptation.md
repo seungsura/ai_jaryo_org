@@ -1,6 +1,8 @@
 # Minimal Light Adaptation
 
-이 문서는 `make-slide/themes/minimal-light`를 Jaryo seminar deck에 맞게 변환한 적용 기준입니다. 목표는 원본의 밝고 절제된 인상을 가져오되, Jaryo의 canonical prose, shell contract, 한국어 발표 톤을 깨지 않는 것입니다.
+이 문서는 `make-slide/themes/minimal-light`를 Jaryo seminar deck에 맞게 변환한 적용 기준입니다. 목표는 원본의 밝고 절제된 인상을 가져오되, Jaryo의 source markdown, shell contract, 한국어 발표 톤을 깨지 않는 것입니다.
+
+`docs/03-html/shared/slide-quality-rules.md`가 최상위 authority입니다. 이 문서는 theme 적용을 보조하며, 최신 사용자 승인 규칙과 충돌하면 `slide-quality-rules.md`를 따릅니다. `docs/03-html/shared/decision-log.md`가 있으면 preserved Decision Log의 보충 기록으로 함께 확인합니다.
 
 ## What We Adopt
 
@@ -9,6 +11,7 @@
 - 얇은 border와 매우 약한 shadow
 - white surface card와 restrained accent blue
 - 장식보다 hierarchy와 spacing으로 읽히는 구성
+- Current PDF와 Kakao reference pages의 composition 감각은 visual baseline으로만 참고
 
 ## What We Reject
 
@@ -17,6 +20,7 @@
 - 큰 watermark 숫자 장식
 - 범용 demo deck에서 쓰는 카드/flow component의 무분별한 재사용
 - 한 장에 설명문이 길게 들어가는 body paragraph
+- Current PDF와 Kakao reference pages를 content source나 새 palette theme로 취급하는 방식
 
 ## What We Localize For Jaryo
 
@@ -26,6 +30,8 @@
 - section 흐름과 chapter label을 Jaryo deck rhythm에 맞춤
 
 ## Theme Mapping
+
+Reference 적용은 soft하고 structure-only입니다. 색은 `theme-minimal-light` palette와 token mapping을 유지합니다.
 
 | make-slide minimal-light | Jaryo adaptation |
 | --- | --- |
@@ -46,31 +52,15 @@
 
 ## Shell Implications
 
-### `title-hero-shell`
+- `title-hero-shell`: clean cover 감각은 유지하되, 첫 장 전용 tool icon 외 장식 mark를 늘리지 않음.
+- `agenda-list-shell`: numbered list clarity는 채택하되, 설명은 짧은 topic/phrase로 압축.
+- `section-divider-shell`: chapter marker와 큰 whitespace를 유지하고, 범용 tag를 추가하지 않음.
+- `statement-editorial-shell`: quote/thesis 중심. card나 label을 늘려 statement의 힘을 분산하지 않음.
+- `process-flow-shell`: process, loop, architecture, workflow를 source-backed native diagram으로 구성.
+- `split-compare-shell`: 비교 축은 source에 있는 것만 쓰고, accent arrow로 전환감을 줌.
+- `evidence-table-shell`: 표, metric cards, fact cards를 포함하되 해설 열과 source 밖 label을 만들지 않음.
 
-- minimal-light의 clean cover 감각은 유지
-- 불필요한 overline은 기본 제거
-- subtitle은 한 줄 또는 두 개 clause 이하
-
-### `agenda-list-shell`
-
-- minimal-light card list의 clarity는 채택
-- item 설명은 짧게 유지하고, 장황한 서술은 발표 노트로 이동
-
-### `section-divider-shell`
-
-- whitespace를 크게 유지
-- chapter marker만 남기고 범용 tag는 두지 않음
-
-### `content-three-step-shell`
-
-- process 감각은 채택하되, step 수와 title 길이를 엄격히 제한
-- accent는 하나의 focus step만 강조
-
-### `content-three-card-shell`
-
-- white card + thin border + subtle shadow를 채택
-- 카드 내부 문장은 스캔 위주로 압축
+Reference-derived soft patterns는 active shell 안에서 선택 가능한 배치 감각이다. hard template가 아니며 per-slide 규칙으로 확장하지 않는다.
 
 ## Core Policy
 

@@ -3,11 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>코딩은 어디로 가고 있는가</title>
+<title>C → Java</title>
+<link rel="icon" href="data:,">
 <link rel="stylesheet" href="../shared/tokens.css">
 <link rel="stylesheet" href="../shared/slide-base.css">
 </head>
 <body class="theme-minimal-light">
-<main class="slide family-section layout-centered density-light" data-slide-id="S007" data-shell="section-divider-shell" data-notes="코딩은 어디로 가고 있는가에서 무엇을 묻는지 먼저 잠근다. 지금부터는 세부 논지를 2~3문장 단위로 분해해 본다." data-footer="default"><section class="section-main"><p class="chapter-marker">CHAPTER 01</p><h1 class="title-placeholder">코딩은 어디로 가고 있는가</h1><p class="short-line">지금 던져야 할 질문은 “코딩이 사라지는가”가 아닙니다</p><ul class="section-keywords"><li class="section-keyword">추상화</li><li class="section-keyword">문서</li><li class="section-keyword">역할</li></ul></section><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">7</span></footer></main>
+<main class="slide family-comparison layout-split density-medium chapter-01" data-slide-id="S007" data-shell="split-compare-shell" data-notes="source markdown의 C와 Java 코드 블록" data-footer="default"><section class="top-band"><p class="chapter-label">CHAPTER 01</p><h1 class="title-placeholder">C → Java</h1></section><section class="compare-grid with-arrow"><article class="compare-col"><p class="compare-label">C</p><pre class="code-block"><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+...
+
+int main() {
+    Point* p = (Point*)malloc(sizeof(Point));
+    p-&gt;x = 10;
+    p-&gt;y = 20;
+    printf(
+        &quot;Point: %d, %d\n&quot;,
+        p-&gt;x,
+        p-&gt;y
+    );
+    free(p);
+    return 0;
+}</code></pre>
+</article><div class="compare-arrow" aria-hidden="true">→</div><article class="compare-col is-focus"><p class="compare-label">Java</p><pre class="code-block"><code>Point p = new Point(10, 20);
+System.out.println(
+    &quot;Point: &quot; + p.x + &quot;, &quot; + p.y
+);
+p = null;</code></pre>
+</article></section><p class="negative-opinion">메모리를 직접 관리하지 않으면 진짜 개발자가 아니다!</p><footer class="footer"><span class="footer-left">Harness 잘 사용하기</span><span class="footer-right">7</span></footer></main>
 </body>
 </html>

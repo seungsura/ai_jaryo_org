@@ -1,10 +1,10 @@
 # HTML Stage
 
-이 디렉터리는 seminar prose를 HTML slide 산출물로 전환하는 단계입니다.
+이 디렉터리는 `docs/02-seminar/harness-rebuilt-md` source markdown을 HTML slide 산출물로 전환하는 단계입니다.
 
 ## 구성
 
-- `outline/`: prose를 slide-by-slide outline으로 압축한 계획
+- `outline/`: source markdown을 slide-by-slide outline으로 압축한 계획
 - `briefs/`: batch별 slide brief packet
 - `copy/`: batch별 Korean copy packet
 - `slides/`: 실제 `slide-XX.html` 파일
@@ -13,13 +13,18 @@
 - `shared/layout-shell-reference.md`: family보다 더 구체적인 approved shell catalog
 - `shared/minimal-light-adaptation.md`: `make-slide` minimal-light theme의 Jaryo 적용 기준
 - `shared/make-slide-adoption.md`: `make-slide` 채택 범위와 hybrid output 계약
+- `shared/slide-quality-rules.md`: HTML slide 최상위 규칙과 preserved Decision Log
+- `shared/decision-log.md`: preserved Decision Log를 보충하는 상세 결정 기록
 - `manifest.md`: 현재 deck 버전, slide id, section 대응, 진행 상태를 기록하는 live sync 문서
 
 ## 원칙
 
+- HTML slide 작업 전 `shared/slide-quality-rules.md`를 먼저 읽고, 이어서 `shared/decision-log.md`가 있으면 확인합니다.
+- 사용자와 대화하며 확정한 `shared/slide-quality-rules.md`의 규칙은 이 README, shared design 문서, 기존 HTML stage 관례보다 우선합니다.
+- HTML 작업은 orchestrator/subagent workflow를 기본 실행 단위로 삼습니다.
 - HTML은 canonical source가 아닙니다.
-- deck 구조는 `docs/02-seminar/prose/`와 승인된 outline을 따라야 합니다.
-- 시각적 강조를 위해 표현은 바꿔도, 핵심 claim은 prose를 벗어나면 안 됩니다.
+- deck 구조와 문구는 `docs/02-seminar/harness-rebuilt-md` source markdown과 승인된 outline을 따라야 합니다.
+- 시각적 강조를 위해 표현은 압축할 수 있지만, 핵심 claim은 source markdown을 벗어나면 안 됩니다.
 - `shared/design.md`는 HTML stage의 design contract입니다.
 - `shared/layout-shell-reference.md`는 HTML stage의 reference shell contract입니다.
 - `shared/minimal-light-adaptation.md`는 active theme와 core runtime 적용 범위를 설명합니다.
@@ -28,7 +33,7 @@
 - `manifest.md`는 slide 제작이 끝난 뒤 작성하는 회고 문서가 아니라, 작업 시작 전에 골격을 만들고 진행 중 계속 갱신하는 운영 문서입니다.
 - `slide-outline.md`와 `manifest.md`에는 승인된 결과만 반영합니다. 작업 중 메모와 재작업 범위는 별도 작업 로그로 관리합니다.
 - HTML/CSS generation은 Codex가 담당합니다.
-- `slides/slide-XX.html`은 source artifact이고, `deck/index.html`은 final standalone artifact입니다.
+- generated slide HTML과 `deck/index.html`은 artifact입니다. 실제 slide 구현 단위는 `scripts/jaryo_html_deck/slides/chapter_XX/slide_YYY.py`입니다.
 - chapter batch는 review와 점검을 거친 뒤 HTML generation으로 넘어갑니다.
 - built HTML deck는 최종 review와 점검을 거친 뒤 PDF export나 notes 단계로 넘어갑니다.
 

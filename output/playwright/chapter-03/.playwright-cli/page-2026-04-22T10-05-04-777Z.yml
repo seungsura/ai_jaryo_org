@@ -1,0 +1,25 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - paragraph [ref=e4]: CHAPTER 03
+    - heading "Waterfall과는 무엇이 다른가" [level=1] [ref=e5]
+  - generic [ref=e6]:
+    - generic [ref=e7]:
+      - generic [ref=e8]: Waterfall
+      - generic [ref=e10]: AI 시대 SDD + TDD
+    - generic [ref=e11]:
+      - article [ref=e12]:
+        - paragraph [ref=e13]: 앞단의 문서
+        - paragraph [ref=e14]: 고정된 계약서
+        - paragraph [ref=e15]: 살아 있는 기준점
+      - article [ref=e16]:
+        - paragraph [ref=e17]: 검증 루프
+        - paragraph [ref=e18]: 모든 구현이 끝난 뒤
+        - paragraph [ref=e19]: TDD를 통한 자동 검증
+      - article [ref=e20]:
+        - paragraph [ref=e21]: 실제 작동 원리
+        - paragraph [ref=e22]: 앞에서 다 정하고 뒤는 맹목적으로 따라간다
+        - paragraph [ref=e23]: 앞에서 단호하게 정의하고, 뒤에서 집요하게 검증하며, 틀리면 바로 되돌아간다
+    - paragraph [ref=e24]: 문서가 부서 간 계약서가 아니라 에이전트의 행동 반경을 제어하는 실행 규약
+  - generic [ref=e25]:
+    - generic [ref=e26]: Harness 잘 사용하기
+    - generic [ref=e27]: "32"
