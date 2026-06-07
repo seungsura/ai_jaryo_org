@@ -53,10 +53,10 @@ HTML slide work is a separate subagent system. The main session acts only as HTM
 ## Project Skill Paths
 
 - Local custom skill:
-  - `/Users/seungsu/Desktop/project/jaryo/.codex/skills/local/jaryo-doc-reconstruction/SKILL.md`
-  - `/Users/seungsu/Desktop/project/jaryo/.codex/skills/local/natural-korean-prose/SKILL.md`
+  - `/Users/seungsu/Code/jaryo/.codex/skills/local/jaryo-doc-reconstruction/SKILL.md`
+  - `/Users/seungsu/Code/jaryo/.codex/skills/local/natural-korean-prose/SKILL.md`
 - Local vendor skills:
-  - `/Users/seungsu/Desktop/project/jaryo/.codex/skills/vendor/pdf/SKILL.md`
+  - `/Users/seungsu/Code/jaryo/.codex/skills/vendor/pdf/SKILL.md`
 
 ## Prompt Template
 

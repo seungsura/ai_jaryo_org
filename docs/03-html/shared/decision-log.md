@@ -2,6 +2,11 @@
 
 이 문서는 `docs/03-html/shared/slide-quality-rules.md`의 `Decision Log`를 보완하는 append-only future decision log다. 이 파일은 preserved Decision Log를 대체하지 않는다. 최상위 authority와 active rule은 항상 `slide-quality-rules.md`에 먼저 기록한다.
 
+## 2026-04-28
+
+- 사용자 지시: `target-map`/`목표-지도`는 06-08장 slide source-alignment 기준에서 제외한다. 최신 기준은 `docs/02-seminar/prose`의 현재 챕터 원문, 사용자가 명시한 reference, 그리고 사용자의 최신 지시다. target-map과 충돌하면 target-map을 따르지 않고 conflict로 기록한다.
+- 사용자 지시: `assets/claude-code-seminar-kakao`는 기본적으로 구조/위계/여백/도식 밀도 reference지만, 사용자가 Kakao 내용과 prose가 완전히 겹친다고 명시한 경우에는 content/diagram reference로도 쓴다. 특히 Kakao page `054-058`은 CHAPTER 07과 겹칠 수 있으므로, 해당 범위의 복잡한 diagram은 reference와 구조적으로 동등한 수준까지 구현되어야 통과한다.
+
 ## 2026-04-22
 
 - Approved HTML Slide Rules 재정비 계획 v5를 기준으로 `slide-quality-rules.md`를 top-level HTML slide authority로 재구성하기로 결정했다.

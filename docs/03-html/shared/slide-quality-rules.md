@@ -20,7 +20,7 @@
 - Gemini CLI를 쓸 때의 우선 model은 `gemini-3-flash-preview`다. 정확한 model명이 CLI/provider에서 거부되면 같은 Gemini 3 preview/flash 계열의 가장 가까운 사용 가능 model을 쓰되, handoff에 `requested model`, `actual model`, `command`, `fallback reason`을 남긴다.
 - Reasoning effort는 역할별로 명시한다. PM/reviewer/final source-alignment는 high 또는 xhigh, builder는 high, QA는 high, quick visual sanity나 단순 목록화는 medium 이하를 쓴다. 모델/CLI가 reasoning flag를 직접 지원하지 않으면 prompt에 reasoning budget과 검토 깊이를 명시한다.
 - Codex CLI, Gemini CLI, project-local subagent를 띄울 때는 모두 `.codex/skills/local/natural-korean-prose/SKILL.md`를 적용한 상태로 둔다. prompt에는 자연스러운 한국어, 번역투 제거, 보고서식 연결어 회피, 필요한 English term 보존을 명시한다.
-- Gemini CLI는 primary builder가 아니라 다른 시각의 검토자와 visual reference analyst로 쓴다. Gemini 결과는 source가 아니며, slide copy나 의미 구조는 target-map/prose/source markdown과 이 문서의 규칙을 다시 통과해야 한다.
+- Gemini CLI는 primary builder가 아니라 다른 시각의 검토자와 visual reference analyst로 쓴다. Gemini 결과는 source가 아니며, slide copy나 의미 구조는 prose/source markdown, 사용자가 content overlap을 명시한 reference, 이 문서의 규칙을 다시 통과해야 한다.
 - Gemini 검토는 보조 의견이다. PM, QA, reviewer gate를 대체하거나 다음 gate로 자동 진행시키지 않는다.
 - rules/planning 세션에서는 HTML 생성, PDF export, generated HTML 수정, `scripts/jaryo_html_deck/slides/...` source 수정, shared CSS/generator/test 수정, build/check 실행을 하지 않는다. 이 단계의 orchestrator rules-edit mode에서 허용되는 작업은 규칙 문서, decision log, PM packet, open question/handoff 정리뿐이다. CLI/subagent reviewer를 read-only review mode로 띄운 경우에는 그 reviewer가 파일을 수정하지 않는다.
 - 새 사용자 피드백은 구현 전에 먼저 이 문서에 기록한다. 기록 위치는 active rule, reusable pattern, Decision Log, Traceability 중 가장 강제력이 높은 곳이다.
@@ -45,6 +45,9 @@
 - 2026-04-25 known mapping: current PDF `p41 -> S039`, `p54 -> S052`, `p57-p68 -> S055-S066`. 자세한 scope와 source-alignment gate는 `docs/03-html/shared/current-pdf-disliked-pages-rework-packet.md`를 따른다.
 
 ## Source Discipline
+
+- 2026-04-28 사용자 지시: `target-map`/`목표-지도`는 더 이상 06-08장 slide source-alignment 기준으로 신뢰하지 않는다. 구현·검토 기준은 `docs/02-seminar/prose`의 현재 챕터 원문, 사용자가 명시한 reference, 그리고 사용자의 최신 지시다. target-map과 충돌하면 target-map을 따르지 말고 conflict로 기록한다.
+- 2026-04-28 사용자 지시: `assets/claude-code-seminar-kakao`는 기본적으로 구조/위계/여백/도식 밀도 reference지만, 사용자가 Kakao 내용과 prose가 완전히 겹친다고 명시한 경우에는 content/diagram reference로도 쓴다. 특히 Kakao page `054-058`은 CHAPTER 07과 겹칠 수 있으므로, 해당 범위의 복잡한 diagram은 reference와 구조적으로 동등한 수준까지 구현되어야 통과한다. 단, Jaryo theme/tokens와 자연스러운 한국어 slide copy는 유지한다.
 
 - local markdown과 사용자가 명시한 reference만 의미 source로 쓴다. source/reference 밖 비교 축, label, 의미, 예시, metric, 해설 문구를 만들지 않는다.
 - 모든 visible slide 요소는 source markdown, 사용자가 명시한 reference, 또는 사용자가 직접 지시한 문구로 추적 가능해야 한다. 원문에 없는 내용이나 문장을 보기 좋게 보이기 위해 창작해서 넣는 것은 deck-wide 실패다.

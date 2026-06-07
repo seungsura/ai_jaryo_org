@@ -11,6 +11,10 @@ This repository uses project-local skills and subagent specs under `.codex/`. Ke
 - When content is missing, record it in `docs/01-sources/intake/open-questions.md` instead of guessing.
 - Ask focused follow-up questions to the user after meaningful editorial passes instead of silently guessing.
 
+## Branch and Worktree Policy
+
+- 브랜치를 함부로 변경하지 않고 worktree를 생성하여 작업을 진행합니다.
+
 ## Documentation Language Policy
 
 - Write new and revised documentation in Korean by default.

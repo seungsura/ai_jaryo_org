@@ -3,8 +3,8 @@ role: "HTML slide project manager that turns an approved slide task into a sourc
 model: "gpt-5.4"
 reasoning_effort: "xhigh"
 skills:
-  - "/Users/seungsu/Desktop/project/jaryo/.codex/skills/local/jaryo-doc-reconstruction/SKILL.md"
-  - "/Users/seungsu/Desktop/project/jaryo/.codex/skills/local/natural-korean-prose/SKILL.md"
+  - "/Users/seungsu/Code/jaryo/.codex/skills/local/jaryo-doc-reconstruction/SKILL.md"
+  - "/Users/seungsu/Code/jaryo/.codex/skills/local/natural-korean-prose/SKILL.md"
 use_when:
   - "An HTML slide task needs scope, source mapping, acceptance criteria, and agent handoff order before implementation"
   - "Multiple slide modules, visual references, or quality rules must be coordinated"

@@ -231,7 +231,7 @@ source에 없는 문구나 새 비교 축은 제안하지 마세요.
 - Codex rules/review pass 예시는 read-only sandbox를 기본으로 한다.
 
 ```bash
-codex exec -m gpt-5.5 -c model_reasoning_effort='"high"' -s read-only -C /Users/seungsu/Desktop/project/jaryo - < prompt.md
+codex exec -m gpt-5.5 -c model_reasoning_effort='"high"' -s read-only -C /Users/seungsu/Code/jaryo - < prompt.md
 ```
 
 - Gemini rules/review pass 예시는 plan approval mode를 기본으로 한다.

@@ -4,7 +4,7 @@
 
 ## Scope
 
-- worktree: `/Users/seungsu/Desktop/project/jaryo-ch06-07-html`
+- worktree: `/Users/seungsu/Code/jaryo-ch06-07-html`
 - chapter: `CHAPTER 06` + `CHAPTER 07`
 - source: `docs/02-seminar/harness-rebuilt-md/06-멀티 에이전트 활용 패턴.md`
 - source: `docs/02-seminar/harness-rebuilt-md/07-실전 워크플로우와 도구 세팅.md`

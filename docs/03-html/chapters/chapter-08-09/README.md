@@ -1,10 +1,10 @@
 # CHAPTER 08-09 HTML Handoff
 
-이 폴더는 CHAPTER 08-09 HTML slide 작업의 chapter-local handoff다. 원본 main worktree의 branch는 절대 옮기지 않고, 이 작업은 `/Users/seungsu/Desktop/project/jaryo-ch08-09-html` detached worktree에서만 진행한다.
+이 폴더는 CHAPTER 08-09 HTML slide 작업의 chapter-local handoff다. 원본 main worktree의 branch는 절대 옮기지 않고, 이 작업은 `/Users/seungsu/Code/jaryo-ch08-09-html` detached worktree에서만 진행한다.
 
 ## Scope
 
-- worktree: `/Users/seungsu/Desktop/project/jaryo-ch08-09-html`
+- worktree: `/Users/seungsu/Code/jaryo-ch08-09-html`
 - source 08: `docs/02-seminar/harness-rebuilt-md/08-이 글과 발표가 만들어진 과정.md`
 - source 09: `docs/02-seminar/harness-rebuilt-md/09-우리가 다음에 해야 할 일.md`
 - canonical reference: `docs/01-sources/local-canonical/claude-code-seminar-kakao.md` Page 076-086 transcription

@@ -3,8 +3,8 @@ role: "Final HTML slide reviewer that checks PM scope, builder changes, QA evide
 model: "gpt-5.4"
 reasoning_effort: "xhigh"
 skills:
-  - "/Users/seungsu/Desktop/project/jaryo/.codex/skills/local/jaryo-doc-reconstruction/SKILL.md"
-  - "/Users/seungsu/Desktop/project/jaryo/.codex/skills/local/natural-korean-prose/SKILL.md"
+  - "/Users/seungsu/Code/jaryo/.codex/skills/local/jaryo-doc-reconstruction/SKILL.md"
+  - "/Users/seungsu/Code/jaryo/.codex/skills/local/natural-korean-prose/SKILL.md"
 use_when:
   - "An HTML slide task is ready for final acceptance after builder and QA work"
   - "The orchestrator needs an independent source/rule review before closing a slide"

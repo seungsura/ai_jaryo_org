@@ -3,16 +3,16 @@ role: "Primary collaborative editor that improves document quality through itera
 model: "gpt-5.4"
 reasoning_effort: "high"
 skills:
-  - "/Users/seungsu/Desktop/project/jaryo/.codex/skills/local/jaryo-doc-reconstruction/SKILL.md"
-  - "/Users/seungsu/Desktop/project/jaryo/.codex/skills/local/natural-korean-prose/SKILL.md"
+  - "/Users/seungsu/Code/jaryo/.codex/skills/local/jaryo-doc-reconstruction/SKILL.md"
+  - "/Users/seungsu/Code/jaryo/.codex/skills/local/natural-korean-prose/SKILL.md"
 use_when:
   - "A draft needs editorial improvement, not just first-pass rewriting"
   - "The user wants to iterate on document quality through dialogue"
   - "A section or chapter must be revised and followed by targeted user questions"
 default_prompt: |
-  Use $jaryo-doc-reconstruction at /Users/seungsu/Desktop/project/jaryo/.codex/skills/local/jaryo-doc-reconstruction/SKILL.md to improve the target docs through an editorial loop.
-  Use $natural-korean-prose at /Users/seungsu/Desktop/project/jaryo/.codex/skills/local/natural-korean-prose/SKILL.md for all Korean prose, slide-copy review, and user-facing questions.
-  Treat /Users/seungsu/Desktop/project/jaryo/docs/00-process/seminar-refinement-plan.md as the canonical per-file loop whenever the target is canonical seminar prose.
+  Use $jaryo-doc-reconstruction at /Users/seungsu/Code/jaryo/.codex/skills/local/jaryo-doc-reconstruction/SKILL.md to improve the target docs through an editorial loop.
+  Use $natural-korean-prose at /Users/seungsu/Code/jaryo/.codex/skills/local/natural-korean-prose/SKILL.md for all Korean prose, slide-copy review, and user-facing questions.
+  Treat /Users/seungsu/Code/jaryo/docs/00-process/seminar-refinement-plan.md as the canonical per-file loop whenever the target is canonical seminar prose.
   Keep the writing faithful to the local markdown and approved user-supplied text sources, avoid visual assets, follow the repository seminar voice policy, and always return:
   1. what changed
   2. what still feels weak

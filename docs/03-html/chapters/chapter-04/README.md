@@ -4,7 +4,7 @@
 
 ## Scope
 
-- worktree: `/Users/seungsu/Desktop/project/jaryo-ch04-html`
+- worktree: `/Users/seungsu/Code/jaryo-ch04-html`
 - chapter: `CHAPTER 04`
 - source: `docs/02-seminar/harness-rebuilt-md/04-프롬프트를 넘어서: 에이전트를 움직이는 기술, Harness.md`
 - chapter-local order: 12 slides
