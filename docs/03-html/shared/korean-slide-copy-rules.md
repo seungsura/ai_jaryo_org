@@ -119,4 +119,3 @@ python3 scripts/check_slide_korean.py docs/03-html/slides/slide-XXX.html
 ```
 
 `check_slide_korean.py`는 공손체 ending, 번역체, slide-specific awkward copy, 과도하게 긴 문구, prose-like ending, 보고서형 연결어, 어색한 서술 동사를 잡는다. 이 결과는 최소 기준이며, 최종 판단은 source alignment와 사람이 보는 한국어 리듬까지 포함한다.
-

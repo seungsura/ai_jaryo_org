@@ -117,4 +117,3 @@ python3 .codex/skills/local/natural-korean-prose/scripts/check_natural_korean.py
 ```
 
 scanner 결과는 자동 실패가 아니라 review candidate다. 문맥이 최종 판단한다.
-
