@@ -4,7 +4,7 @@
 
 ## Scope
 
-- worktree: `/Users/seungsu/Desktop/project/jaryo`
+- worktree: `/Users/seungsu/Code/jaryo`
 - branch: `main`
 - chapter: `CHAPTER 03`
 - source: `docs/02-seminar/harness-rebuilt-md/03-AI 시대의 개발 방법론.md`

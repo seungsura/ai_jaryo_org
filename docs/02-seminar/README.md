@@ -4,17 +4,17 @@
 
 ## 현재 파일 구성
 
-- `prose/00-overview.md`
-- `prose/01-where-coding-is-going.md`
-- `prose/02-why-claude-code.md`
-- `prose/03-ai-era-methodology.md`
-- `prose/04-harness-and-context-engineering.md`
-- `prose/05-limitations-and-failure-patterns.md`
-- `prose/06-multi-agent-patterns.md`
-- `prose/07-practical-workflow-and-tooling.md`
-- `prose/08-how-this-presentation-was-made.md`
-- `prose/09-what-we-should-do-next.md`
-- `prose/90-appendix-references.md`
+- `prose/목표-지도.md`
+- `prose/00-코딩은-사라지는가.md`
+- `prose/01-챗봇과-싸우지-않기.md`
+- `prose/02-하네스는-무엇인가.md`
+- `prose/03-이렇게-하면-망한다.md`
+- `prose/04-먼저-방향을-잡는다.md`
+- `prose/05-기계가-막을-수-있는-것은-앞에서-막는다.md`
+- `prose/06-하나의-AI에게-다-맡기지-않는다.md`
+- `prose/07-실전-하네스는-파일과-명령어로-남는다.md`
+- `prose/08-이-발표-자체가-하네스였다.md`
+- `prose/09-하네스-엔지니어.md`
 
 ## 편집 원칙
 
@@ -28,6 +28,6 @@
 ## 다듬기 루프
 
 - canonical prose는 `docs/00-process/seminar-refinement-plan.md`의 per-document loop를 기본값으로 다듬습니다.
-- 각 chapter는 `00-overview.md`, 인접 chapter, source map, open questions를 묶은 reference shell을 먼저 읽고 수정합니다.
+- 각 chapter는 `목표-지도.md`, 인접 chapter, source map, open questions를 묶은 reference shell을 먼저 읽고 수정합니다.
 - review는 `PASS`, `REVISE`, `BLOCK`으로만 반환하고, `REVISE` 또는 `BLOCK`이면 exact rework scope를 남깁니다.
 - 진행 상태와 다음 패스 목표는 `docs/00-process/seminar-refinement-manifest.md`에 live sync로 기록합니다.

@@ -10,15 +10,15 @@
 - 이 PDF는 94page이고, 현재 `docs/03-html/manifest.md`는 92-slide deck을 가리킨다. 그래서 current PDF page number를 곧바로 `Sxxx`로 보면 안 된다.
 - 작업 대상은 PDF page number가 아니라, PDF에서 추출한 title을 현재 source file title과 대조해 확정한다.
 - `57-68` 묶음은 단순히 예쁘게 바꾸는 일이 아니다. 현재 prose/target-map 기준으로 보면 `Advisor`, `Parallel`, `멀티 모델`처럼 위치가 흔들리거나 source에서 빠진 항목이 섞여 있다. 먼저 source-alignment를 통과해야 한다.
-- 특히 `docs/02-seminar/prose/target-map.md`는 `docs/02-seminar/harness-rebuilt-md/90-advisor.md`를 source map에서 제외한다. 따라서 `Advisor 전략` slide는 그대로 살려 꾸미면 안 된다.
+- 특히 `docs/02-seminar/prose/목표-지도.md`는 `docs/02-seminar/harness-rebuilt-md/90-advisor.md`를 source map에서 제외한다. 따라서 `Advisor 전략` slide는 그대로 살려 꾸미면 안 된다.
 
 ## 1. Scope Map
 
 | current PDF page | PDF title | source slide | editable file | generated artifact | source/prose 기준 |
 | --- | --- | --- | --- | --- | --- |
 | 41 | MCP와 Context 7 | S039 | `scripts/jaryo_html_deck/slides/chapter_04/slide_039.py` | `docs/03-html/slides/slide-039.html` | target-map 최신 구조와 충돌 가능. MCP/Context 7은 새 target-map에서 02/07 쪽 맥락으로 다시 확인 필요 |
-| 54 | 결정 제어와 확률 제어를 분리하라 | S052 | `scripts/jaryo_html_deck/slides/chapter_05/slide_052.py` | `docs/03-html/slides/slide-052.html` | `docs/02-seminar/prose/05-move-deterministic-gates-left.md`의 `결정론적 제어와 확률적 제어를 분리한다`와 직접 대응 |
-| 57 | 하나의 에이전트 = 하나의 역할 | S055 | `scripts/jaryo_html_deck/slides/chapter_06/slide_055.py` | `docs/03-html/slides/slide-055.html` | `docs/02-seminar/prose/06-do-not-give-one-ai-everything.md` `하나의 에이전트는 하나의 역할을 맡아야 한다` |
+| 54 | 결정 제어와 확률 제어를 분리하라 | S052 | `scripts/jaryo_html_deck/slides/chapter_05/slide_052.py` | `docs/03-html/slides/slide-052.html` | `docs/02-seminar/prose/05-기계가-막을-수-있는-것은-앞에서-막는다.md`의 `결정론적 제어와 확률적 제어를 분리한다`와 직접 대응 |
+| 57 | 하나의 에이전트 = 하나의 역할 | S055 | `scripts/jaryo_html_deck/slides/chapter_06/slide_055.py` | `docs/03-html/slides/slide-055.html` | `docs/02-seminar/prose/06-하나의-AI에게-다-맡기지-않는다.md` `하나의 에이전트는 하나의 역할을 맡아야 한다` |
 | 58 | 1. Sub-Agent: 중간 작업을 격리하는 기본형 | S056 | `scripts/jaryo_html_deck/slides/chapter_06/slide_056.py` | `docs/03-html/slides/slide-056.html` | prose 06 `Sub-Agent는 중간 작업을 격리한다` |
 | 59 | Advisor 전략: 작은 실행자, 큰 자문 | S057 | `scripts/jaryo_html_deck/slides/chapter_06/slide_057.py` | `docs/03-html/slides/slide-057.html` | source drift. target-map에서 `90-advisor.md` 제외. 유지 금지 후보 |
 | 60 | 2. Orchestrator: 계획자 하나가 여러 실행자를 배치한다 | S058 | `scripts/jaryo_html_deck/slides/chapter_06/slide_058.py` | `docs/03-html/slides/slide-058.html` | prose 06 `Orchestrator는 작업을 나누고 수렴시킨다` |
@@ -100,7 +100,7 @@
 
 목표: `57-68`을 `패턴 설명회`가 아니라 `역할/컨텍스트/검증 책임을 나누는 장`으로 다시 묶는다.
 
-- primary source: `docs/02-seminar/prose/06-do-not-give-one-ai-everything.md`
+- primary source: `docs/02-seminar/prose/06-하나의-AI에게-다-맡기지-않는다.md`
 - editable candidates:
   - `scripts/jaryo_html_deck/slides/chapter_06/slide_055.py`
   - `scripts/jaryo_html_deck/slides/chapter_06/slide_056.py`
@@ -195,6 +195,7 @@ Gemini prompt 핵심:
 이 이미지는 Jaryo HTML deck의 chapter 06 후보와 Kakao reference page 062-068입니다.
 역할: read-only visual/reference reviewer.
 Reasoning budget: high. 구조 충돌, gate 위반, source 밖 의미 생성 가능성을 우선 검토하세요.
+한국어 품질 기준: `.codex/skills/local/natural-korean-prose/SKILL.md`를 적용한 상태로, 번역투/어색한 한국어/보고서식 연결어를 함께 잡으세요.
 content를 복사하지 말고 structure-only로 비교하세요.
 검토 기준은 여백, 정보 위계, diagram density, 한 slide의 역할, 하단 결론 처리입니다.
 source에 없는 문구나 새 비교 축은 제안하지 마세요.
@@ -208,22 +209,35 @@ source에 없는 문구나 새 비교 축은 제안하지 마세요.
 2. `Parallel`은 최신 prose 06에 standalone section이 없으므로 07장 worktree/작업 환경 분리로 보내는 것이 기본값이다.
 3. `멀티 모델`은 사용자 최신 피드백과 연결되지만 06장 본문에는 없으므로 07장 또는 reviewer workflow 규칙으로 보내는 것이 기본값이다.
 
-## 8. Agent Spawn Note
+## 8. Output / Feedback Loop Policy
+
+- 현재 이미 생성된 PDF 기준으로 재사용할 HTML은 별도 재사용 후보로 기록한다. 재사용 판단은 PDF page number가 아니라 `current PDF page -> stable slide id -> source file -> generated artifact` mapping으로 한다.
+- 새 HTML/PDF feedback artifact는 기준 PDF와 기존 generated directory에 섞지 않는다. 구현 세션 권장 출력 root는 다음과 같다.
+  - single-slide feedback: `output/html-feedback/<run-id>/chapter_XX/SYYY/`
+  - chapter mini-batch review: `output/html-feedback/<run-id>/chapter_XX/mini-batch/`
+  - full PDF milestone: `output/pdf-milestones/<build-id>/`
+- feedback loop에서는 전체 deck HTML rebuild, 전체 screenshot sweep, 전체 PDF export를 하지 않는다. 한 slide 피드백은 해당 slide HTML/screenshot만 새로 만든다.
+- 전체 렌더링은 PDF를 구성하는 milestone에서만 쓴다. chapter freeze, 큰 구조 변경 후, 최종 QA 직전이 기본 trigger다.
+- mini-batch는 각 chapter별로 진행한다. chapter 안에서 S-id 범위를 나눌 수는 있지만, 사용자 승인/보류 기록은 chapter rhythm 기준으로 남긴다.
+- page number는 매 PDF build마다 바뀔 수 있으므로 영구 식별자로 쓰지 않는다. 모든 feedback item에는 PDF build id, PDF page, stable slide id, source file을 함께 적는다.
+
+## 9. Agent Spawn Note
 
 - Codex CLI는 `codex-cli 0.125.0`, Gemini CLI는 `0.39.1`로 확인됐다.
-- 사용자 지정 우선 model은 Codex/OpenAI 계열 `gpt-5.5`, `gpt-5.4`, `gpt-5.3-codex`, Gemini 계열 `gemini-3.1-pro-preview`, `gemini-3.1-flash-preview`다.
-- 정확한 model명이 CLI/provider에서 거부되면 같은 preview/pro/flash 계열의 가장 가까운 사용 가능 model을 쓰되, handoff에 `requested model`, `actual model`, `command`, `fallback reason`을 남긴다.
+- 사용자 지정 우선 model은 Codex/OpenAI 계열 `gpt-5.5`, `gpt-5.4`, `gpt-5.3-codex`, Gemini 계열 `gemini-3-flash-preview`다.
+- 정확한 model명이 CLI/provider에서 거부되면 같은 Gemini 3 preview/flash 계열의 가장 가까운 사용 가능 model을 쓰되, handoff에 `requested model`, `actual model`, `command`, `fallback reason`을 남긴다.
+- Codex CLI, Gemini CLI, project-local subagent를 띄울 때는 모두 `.codex/skills/local/natural-korean-prose/SKILL.md`를 적용한 상태로 둔다. prompt에는 자연스러운 한국어, 번역투 제거, 보고서식 연결어 회피, 필요한 English term 보존을 명시한다.
 - reasoning effort는 역할별로 명시한다. PM/reviewer/final source-alignment는 high 또는 xhigh, builder는 high, QA는 high, quick visual sanity/목록화는 medium 이하를 기본값으로 둔다.
 - Codex rules/review pass 예시는 read-only sandbox를 기본으로 한다.
 
 ```bash
-codex exec -m gpt-5.5 -c model_reasoning_effort='"high"' -s read-only -C /Users/seungsu/Desktop/project/jaryo - < prompt.md
+codex exec -m gpt-5.5 -c model_reasoning_effort='"high"' -s read-only -C /Users/seungsu/Code/jaryo - < prompt.md
 ```
 
 - Gemini rules/review pass 예시는 plan approval mode를 기본으로 한다.
 
 ```bash
-gemini -m gemini-3.1-pro-preview --approval-mode plan -p "<prompt>"
+gemini -m gemini-3-flash-preview --approval-mode plan -p "<prompt>"
 ```
 
 - 현재 세션은 rules/planning 세션이므로 HTML 생성, PDF export, generated HTML 수정, slide source 수정, CSS/generator/test 수정, build/check 실행을 하지 않는다. orchestrator rules-edit mode에서는 이 packet/규칙/decision/handoff 문서만 수정할 수 있고, CLI/subagent reviewer를 read-only review mode로 띄운 경우에는 그 reviewer가 파일을 수정하지 않는다. 실제 구현 agent는 별도 구현 세션에서 이 packet과 `html-slide-pm -> html-slide-builder -> html-slide-qa -> html-slide-reviewer` gate를 그대로 준수한다.

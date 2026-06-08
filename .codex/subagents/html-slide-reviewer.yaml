@@ -2,6 +2,9 @@ name: "html-slide-reviewer"
 role: "Final HTML slide reviewer that checks PM scope, builder changes, QA evidence, and source/rule conformance before orchestrator acceptance."
 model: "gpt-5.4"
 reasoning_effort: "xhigh"
+skills:
+  - "/Users/seungsu/Code/jaryo/.codex/skills/local/jaryo-doc-reconstruction/SKILL.md"
+  - "/Users/seungsu/Code/jaryo/.codex/skills/local/natural-korean-prose/SKILL.md"
 use_when:
   - "An HTML slide task is ready for final acceptance after builder and QA work"
   - "The orchestrator needs an independent source/rule review before closing a slide"
@@ -14,6 +17,10 @@ default_prompt: |
   reference pages, and the relevant scripts/jaryo_html_deck/slides/chapter_XX/slide_YYY.py,
   generated slide-XXX.html, docs/03-html/outline/slide-outline.md, and
   docs/03-html/manifest.md entries.
+
+  Apply the local natural Korean prose skill when reviewing visible copy and writing findings.
+  Preserve precise English technical terms, but block translationese, stiff report-style phrasing,
+  and awkward Korean rhythm.
 
   Review for source fidelity, visual-rule fidelity, implementation-unit discipline,
   validation sufficiency, and scope control. Return findings first, ordered by

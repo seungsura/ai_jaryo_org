@@ -18,6 +18,7 @@ HTML 관련 작업 필수 입력
 - `.codex/templates/subagent-task-template.md`
 - `docs/03-html/shared/slide-quality-rules.md`
 - `docs/03-html/shared/decision-log.md`
+- `.codex/skills/local/natural-korean-prose/SKILL.md`
 - 대상 source markdown
 - 작업에 필요한 사용자 승인 visual reference page
 - 관련 `scripts/jaryo_html_deck/slides/chapter_XX/slide_YYY.py`
@@ -31,6 +32,7 @@ HTML orchestration gate
 - `html-slide-reviewer` 결과를 기다린 뒤 종료/승인 판단
 - 실제 HTML 구현은 `scripts/jaryo_html_deck/slides/chapter_XX/slide_YYY.py`에서 수행
 - generated `slide-XXX.html`은 artifact inspection 대상이며 구현 source로 직접 수정하지 않음
+- 모든 한국어 문구, 검토 의견, 사용자 질문에는 `.codex/skills/local/natural-korean-prose/SKILL.md`를 적용함
 
 출력 형식
 <exact expected deliverable>

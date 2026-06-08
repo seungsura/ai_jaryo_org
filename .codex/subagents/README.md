@@ -53,9 +53,10 @@ HTML slide work is a separate subagent system. The main session acts only as HTM
 ## Project Skill Paths
 
 - Local custom skill:
-  - `/Users/seungsu/Desktop/project/jaryo/.codex/skills/local/jaryo-doc-reconstruction/SKILL.md`
+  - `/Users/seungsu/Code/jaryo/.codex/skills/local/jaryo-doc-reconstruction/SKILL.md`
+  - `/Users/seungsu/Code/jaryo/.codex/skills/local/natural-korean-prose/SKILL.md`
 - Local vendor skills:
-  - `/Users/seungsu/Desktop/project/jaryo/.codex/skills/vendor/pdf/SKILL.md`
+  - `/Users/seungsu/Code/jaryo/.codex/skills/vendor/pdf/SKILL.md`
 
 ## Prompt Template
 
@@ -70,6 +71,7 @@ For any HTML-related task, every spawned subagent must read the following before
 - `.codex/templates/subagent-task-template.md`
 - `docs/03-html/shared/slide-quality-rules.md`
 - `docs/03-html/shared/decision-log.md`
+- `.codex/skills/local/natural-korean-prose/SKILL.md`
 - target source markdown
 - required visual reference pages approved for the task
 - relevant `scripts/jaryo_html_deck/slides/chapter_XX/slide_YYY.py`
@@ -78,6 +80,8 @@ For any HTML-related task, every spawned subagent must read the following before
 - relevant `docs/03-html/manifest.md` rows
 
 HTML-related scope includes `docs/03-html/` outline, manifest, generated slides, deck HTML, shared CSS/tokens, screenshot QA, and PDF export QA.
+
+All Codex CLI, Gemini CLI, and project-local subagent prompts for Jaryo docs/slide work must keep `.codex/skills/local/natural-korean-prose/SKILL.md` applied. Korean outputs, slide copy review, QA findings, and user-facing questions should preserve technical English terms while removing translationese and stiff report-style Korean.
 
 Latest user feedback must be written to `docs/03-html/shared/slide-quality-rules.md` before implementation, then verified through the relevant static checks and visual/PDF smoke checks. Missing `docs/03-html/shared/decision-log.md` or missing visual reference pages are blocking input gaps for HTML subagents unless the orchestrator explicitly narrows the task to docs-only system maintenance.
 

@@ -2,7 +2,7 @@
 
 - chapter: `05`
 - source: `docs/02-seminar/harness-rebuilt-md/05-이렇게 하면 망한다: 한계와 실패 패턴.md`
-- worktree: `/Users/seungsu/Desktop/project/jaryo-ch05-html`
+- worktree: `/Users/seungsu/Code/jaryo-ch05-html`
 - numbering: provisional, subject to final main integration
 - final main range: `S046`-`S055`
 - final main source modules: `scripts/jaryo_html_deck/slides/chapter_05/slide_046.py`-`slide_055.py`

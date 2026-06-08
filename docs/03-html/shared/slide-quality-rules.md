@@ -17,9 +17,10 @@
 - HTML 작업 subagent prompt에는 이 문서 사전 확인, 최신 피드백 기록, source/reference 밖 생성 금지, 필요한 검증 명령을 명시한다.
 - HTML 구현과 검토는 project-local HTML subagent 또는 Codex CLI로 띄운 HTML 전용 agent에게 맡긴다. 어떤 방식을 쓰더라도 `html-slide-pm -> html-slide-builder -> html-slide-qa -> html-slide-reviewer` gate를 건너뛰지 않는다.
 - Codex CLI를 쓸 때의 우선 model은 `gpt-5.5`, `gpt-5.4`, `gpt-5.3-codex`다. 정확한 model명이 CLI/provider에서 거부되면 같은 계열의 가장 가까운 사용 가능 model을 쓰되, handoff에 `requested model`, `actual model`, `command`, `fallback reason`을 남긴다.
-- Gemini CLI를 쓸 때의 우선 model은 `gemini-3.1-pro-preview`, `gemini-3.1-flash-preview`다. 정확한 model명이 거부되면 같은 preview/pro/flash 계열의 가장 가까운 사용 가능 model을 쓰되, handoff에 `requested model`, `actual model`, `command`, `fallback reason`을 남긴다.
+- Gemini CLI를 쓸 때의 우선 model은 `gemini-3-flash-preview`다. 정확한 model명이 CLI/provider에서 거부되면 같은 Gemini 3 preview/flash 계열의 가장 가까운 사용 가능 model을 쓰되, handoff에 `requested model`, `actual model`, `command`, `fallback reason`을 남긴다.
 - Reasoning effort는 역할별로 명시한다. PM/reviewer/final source-alignment는 high 또는 xhigh, builder는 high, QA는 high, quick visual sanity나 단순 목록화는 medium 이하를 쓴다. 모델/CLI가 reasoning flag를 직접 지원하지 않으면 prompt에 reasoning budget과 검토 깊이를 명시한다.
-- Gemini CLI는 primary builder가 아니라 다른 시각의 검토자와 visual reference analyst로 쓴다. Gemini 결과는 source가 아니며, slide copy나 의미 구조는 target-map/prose/source markdown과 이 문서의 규칙을 다시 통과해야 한다.
+- Codex CLI, Gemini CLI, project-local subagent를 띄울 때는 모두 `.codex/skills/local/natural-korean-prose/SKILL.md`를 적용한 상태로 둔다. prompt에는 자연스러운 한국어, 번역투 제거, 보고서식 연결어 회피, 필요한 English term 보존을 명시한다.
+- Gemini CLI는 primary builder가 아니라 다른 시각의 검토자와 visual reference analyst로 쓴다. Gemini 결과는 source가 아니며, slide copy나 의미 구조는 prose/source markdown, 사용자가 content overlap을 명시한 reference, 이 문서의 규칙을 다시 통과해야 한다.
 - Gemini 검토는 보조 의견이다. PM, QA, reviewer gate를 대체하거나 다음 gate로 자동 진행시키지 않는다.
 - rules/planning 세션에서는 HTML 생성, PDF export, generated HTML 수정, `scripts/jaryo_html_deck/slides/...` source 수정, shared CSS/generator/test 수정, build/check 실행을 하지 않는다. 이 단계의 orchestrator rules-edit mode에서 허용되는 작업은 규칙 문서, decision log, PM packet, open question/handoff 정리뿐이다. CLI/subagent reviewer를 read-only review mode로 띄운 경우에는 그 reviewer가 파일을 수정하지 않는다.
 - 새 사용자 피드백은 구현 전에 먼저 이 문서에 기록한다. 기록 위치는 active rule, reusable pattern, Decision Log, Traceability 중 가장 강제력이 높은 곳이다.
@@ -29,7 +30,12 @@
 - 모든 사용자 피드백은 작업 지시이기 전에 rule-candidate다. slide-specific 수정 요청, visual reference 요청, 검증 누락 지적, workflow 지적을 모두 문서 기록 대상으로 본다.
 - 피드백 기록에는 적용 범위 판단을 함께 둔다: deck-wide rule, chapter/slide-specific rule, reusable pattern, validation rule, one-off exception 중 하나로 분류한다.
 - "기록만 하고 규칙화하지 않음"도 명시적 판단이다. 이 경우에도 이후 작업자가 같은 피드백을 재해석하지 않도록 보류 사유와 적용 한계를 남긴다.
-- 일반 구현 순서: 규칙 기록 -> subagent 위임 -> generator/CSS/test/check 갱신 -> HTML/PDF 재생성 -> 정적 검증 -> Playwright screenshot/PDF smoke 검증.
+- 일반 구현 순서: 규칙 기록 -> source-alignment/slide contract 확정 -> chapter별 mini-batch 작업 -> 단일 slide HTML/screenshot 피드백 루프 -> chapter freeze -> milestone PDF export.
+- feedback loop에서는 전체 deck HTML rebuild, 전체 screenshot sweep, 전체 PDF export를 하지 않는다. 한 slide 피드백은 해당 slide source, 해당 slide HTML, 해당 slide screenshot, 해당 slide 검증만 대상으로 삼는다.
+- 전체 deck/PDF 렌더링은 chapter freeze나 milestone 검증 때만 실행한다. 사용자가 한 slide를 지적했더라도 full PDF는 기본 루프에 넣지 않는다.
+- 현재 이미 생성된 PDF에서 재사용하기로 한 slide는 current PDF page number가 아니라 stable slide id와 source file 기준으로 관리한다. 재사용 후보는 `current PDF page -> stable slide id -> source file -> generated artifact`를 함께 기록한다.
+- 새 feedback/output artifact는 기존 `docs/03-html/slides`, `docs/03-html/deck`, `output/pdf/harness-full-main-94-current-720x405.pdf`와 섞지 않는다. 구현 세션에서는 별도 출력 root를 둔다. 권장 구조는 `output/html-feedback/<run-id>/chapter_XX/SYYY/` for single-slide loop, `output/html-feedback/<run-id>/chapter_XX/mini-batch/` for chapter mini-batch, `output/pdf-milestones/<build-id>/` for full PDF milestone이다.
+- mini-batch review는 slide 수 기준이 아니라 chapter별로 진행한다. chapter 안에서는 필요한 경우 S-id 범위를 나눠 보되, 승인/보류 판단은 chapter rhythm 기준으로 남긴다.
 - 병렬 worktree에서 slide numbering은 임시값이다. 다른 chapter 작업과 겹칠 수 있으므로 chapter 작업자는 전역 `SXXX`/`slide-XXX` 번호를 안정된 소유권으로 가정하지 않는다.
 - 병렬 HTML 작업은 chapter별 작업 폴더를 우선한다. chapter-local 폴더 아래에서 해당 chapter의 local slide order와 임시 slide number를 함께 관리하고, 전역 deck 번호는 마지막 main 통합 단계에서만 재부여한다.
 - 사용자가 선호 페이지 baseline을 지정하면 즉시 deck-wide reference set으로 고정한다. 2026-04-25 재확인된 고정 baseline은 `output/pdf/harness-full-main-94-current-720x405.pdf`의 1-based PDF page `1-18`, `21`, `24`, `37`, `39`, `40`, `52`, `53`이다.
@@ -39,6 +45,9 @@
 - 2026-04-25 known mapping: current PDF `p41 -> S039`, `p54 -> S052`, `p57-p68 -> S055-S066`. 자세한 scope와 source-alignment gate는 `docs/03-html/shared/current-pdf-disliked-pages-rework-packet.md`를 따른다.
 
 ## Source Discipline
+
+- 2026-04-28 사용자 지시: `target-map`/`목표-지도`는 더 이상 06-08장 slide source-alignment 기준으로 신뢰하지 않는다. 구현·검토 기준은 `docs/02-seminar/prose`의 현재 챕터 원문, 사용자가 명시한 reference, 그리고 사용자의 최신 지시다. target-map과 충돌하면 target-map을 따르지 말고 conflict로 기록한다.
+- 2026-04-28 사용자 지시: `assets/claude-code-seminar-kakao`는 기본적으로 구조/위계/여백/도식 밀도 reference지만, 사용자가 Kakao 내용과 prose가 완전히 겹친다고 명시한 경우에는 content/diagram reference로도 쓴다. 특히 Kakao page `054-058`은 CHAPTER 07과 겹칠 수 있으므로, 해당 범위의 복잡한 diagram은 reference와 구조적으로 동등한 수준까지 구현되어야 통과한다. 단, Jaryo theme/tokens와 자연스러운 한국어 slide copy는 유지한다.
 
 - local markdown과 사용자가 명시한 reference만 의미 source로 쓴다. source/reference 밖 비교 축, label, 의미, 예시, metric, 해설 문구를 만들지 않는다.
 - 모든 visible slide 요소는 source markdown, 사용자가 명시한 reference, 또는 사용자가 직접 지시한 문구로 추적 가능해야 한다. 원문에 없는 내용이나 문장을 보기 좋게 보이기 위해 창작해서 넣는 것은 deck-wide 실패다.
@@ -202,7 +211,7 @@
 - 2026-04-22 feedback round 3: S018은 `CoT`, `ReAct`, `ToT`를 모두 기재한다. layout은 `assets/claude-code-seminar-kakao/page-064.png`의 card row + mini diagram + 1-line meaning 구조를 따른다. CoT/ToT 그림은 Towards AI comparison의 native structure를 참고하고, ReAct 그림은 사용자 첨부 screenshot의 LM/Env loop, `Reasoning Traces`, `Actions`, `Observations`, `ReAct (Reason + Act)` 구조를 따른다. 산수 예시 `2캔 × 3개`, `11개`는 제거한다.
 - 2026-04-22 feedback discipline: 사용자의 모든 피드백은 먼저 문서에 기록하고, fixed rule, reusable pattern, validation rule, Traceability history로 승격 가능한지 검토한다. 규칙화하지 않는 피드백도 보류 사유를 남긴다.
 - 2026-04-22 feedback governance reinforcement: 사용자가 피드백은 항상 문서에 기록하고 규칙 적용 가능성을 검토해야 한다고 재확인했다. 이 원칙은 deck-wide Workflow Gate로 승격하며, 모든 피드백을 rule-candidate로 분류한다.
-- 2026-04-22 S018 Gemini CLI experiment: S018 전체 재구성은 `gemini` CLI의 `gemini-3.1-pro-preview` 모델에 맡겨본다. 이번 pass에서는 사용자 지시에 따라 validation command, Playwright screenshot, PDF export를 실행하지 않는다. 이 검증 생략은 현재 S018 실험에 한정된 one-off exception이다.
+- 2026-04-22 S018 Gemini CLI experiment: S018 전체 재구성은 당시 `gemini` CLI의 `gemini-3.1-pro-preview` 모델에 맡겨본 one-off 실험 기록이다. 현재 Gemini 우선 model은 Workflow Gate의 `gemini-3-flash-preview`를 따른다. 해당 pass에서는 사용자 지시에 따라 validation command, Playwright screenshot, PDF export를 실행하지 않았다. 이 검증 생략은 당시 S018 실험에 한정된 one-off exception이다.
 - 2026-04-22 chapter 02 final visual pass: S019/S020은 S018과 중복되어 폐기한다. S021은 Andrew Ng 4-pattern reference를 사람/글자 없이 node/arrow native diagram으로 재구성하고, Planning은 사용자가 제시한 fan-out 상태를 따른다. S022는 3개 원인 card + full-width dark quote card만 남긴다. S024는 Cursor architecture 06 asset raw embed 예외를 허용하고, 오른쪽은 source text arrow graph로 둔다. S025는 1/2/3/4 루프를 버리고 context-wall layout으로 둔다.
 - 2026-04-23 S026 simplification: 사용자가 S026에 요소가 너무 많다고 지적했다. S026은 기능 목록, control stack, component rail을 제거하고 `코딩 도구는 이제 실행 환경을 품는다` 한 문장과 `자동완성·채팅 -> 작업 환경 전체 -> Harness` 전환만 남긴다. 보조 정보는 `파일 · 셸 · 테스트` 수준으로 제한한다.
 - 2026-04-23 current-main S023 refinement: 현재 main의 23페이지 `컨텍스트만으로는 부족하다`는 기존 임시 context-wall 변형을 폐기하고, 이미 deck에서 검증된 `split-compare` family로 재구성한다. source 문장의 세부 실패 예시를 모두 펼치지 말고 `잘못된 결과나 응답 유입`, `느슨한 실행 권한`, `잘못된 검증` 세 축으로 압축한다. 오른쪽은 `허용/차단 범위`, `멈춤 기준`, `검증 경로`를 두고, 하단 한 줄은 `멈춤 기준과 검증 경로를 먼저 설계해야 한다`로 묶는다. body width는 chapter 02 기준에서 과도하게 넓어지지 않게 줄이고, 관계가 보이는 좌->우 흐름이 없으면 실패다.

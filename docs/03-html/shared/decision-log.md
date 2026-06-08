@@ -2,6 +2,11 @@
 
 이 문서는 `docs/03-html/shared/slide-quality-rules.md`의 `Decision Log`를 보완하는 append-only future decision log다. 이 파일은 preserved Decision Log를 대체하지 않는다. 최상위 authority와 active rule은 항상 `slide-quality-rules.md`에 먼저 기록한다.
 
+## 2026-04-28
+
+- 사용자 지시: `target-map`/`목표-지도`는 06-08장 slide source-alignment 기준에서 제외한다. 최신 기준은 `docs/02-seminar/prose`의 현재 챕터 원문, 사용자가 명시한 reference, 그리고 사용자의 최신 지시다. target-map과 충돌하면 target-map을 따르지 않고 conflict로 기록한다.
+- 사용자 지시: `assets/claude-code-seminar-kakao`는 기본적으로 구조/위계/여백/도식 밀도 reference지만, 사용자가 Kakao 내용과 prose가 완전히 겹친다고 명시한 경우에는 content/diagram reference로도 쓴다. 특히 Kakao page `054-058`은 CHAPTER 07과 겹칠 수 있으므로, 해당 범위의 복잡한 diagram은 reference와 구조적으로 동등한 수준까지 구현되어야 통과한다.
+
 ## 2026-04-22
 
 - Approved HTML Slide Rules 재정비 계획 v5를 기준으로 `slide-quality-rules.md`를 top-level HTML slide authority로 재구성하기로 결정했다.
@@ -59,7 +64,11 @@
 - Gemini CLI는 primary builder가 아니라 다른 시각의 검토자와 visual reference analyst로 쓰는 데 동의했다. HTML 구현은 Codex CLI 또는 project-local HTML 전용 subagent로 spawn하되, PM, builder, QA, reviewer gate를 유지한다.
 - current PDF page number는 사용자 피드백 handle로만 쓴다. `output/pdf/harness-full-main-94-current-720x405.pdf`는 94page이고 현재 manifest/source는 92-slide deck이므로 구현 대상은 title/source match로 확정한다. 확인된 mapping은 `p41 -> S039`, `p54 -> S052`, `p57-p68 -> S055-S066`이다.
 - `docs/03-html/shared/current-pdf-disliked-pages-rework-packet.md`를 PM packet으로 추가했다. 이 packet은 `Advisor`가 target-map에서 제외된 source에 기대고, `Parallel`/`멀티 모델`도 최신 prose 위치와 충돌 가능성이 있으므로 visual rebuild 전에 source-alignment gate를 먼저 통과해야 한다고 정리한다.
-- Codex CLI는 현재 `codex-cli 0.125.0`, Gemini CLI는 현재 `0.39.1`로 확인했다. 사용자는 HTML 작업 agent에 Codex CLI와 Gemini CLI 사용을 허용했고, 우선 model을 `gpt-5.5`, `gpt-5.4`, `gpt-5.3-codex`, `gemini-3.1-pro-preview`, `gemini-3.1-flash-preview`로 지정했다. 정확한 model명이 거부되면 가장 가까운 같은 계열 model로 fallback하고 handoff에 `requested model`, `actual model`, `command`, `fallback reason`을 남긴다.
+- Codex CLI는 현재 `codex-cli 0.125.0`, Gemini CLI는 현재 `0.39.1`로 확인했다. 사용자는 HTML 작업 agent에 Codex CLI와 Gemini CLI 사용을 허용했고, Codex/OpenAI 우선 model은 `gpt-5.5`, `gpt-5.4`, `gpt-5.3-codex`, Gemini 우선 model은 `gemini-3-flash-preview`로 정정했다. 정확한 model명이 거부되면 가장 가까운 같은 계열 model로 fallback하고 handoff에 `requested model`, `actual model`, `command`, `fallback reason`을 남긴다.
+- Codex CLI, Gemini CLI, project-local subagent는 모두 `.codex/skills/local/natural-korean-prose/SKILL.md`를 적용한 상태로 둔다. 각 prompt에는 번역투 제거, 자연스러운 한국어 리듬, 필요한 English term 보존을 명시한다.
 - 현재 세션은 rules/planning 세션으로 고정한다. 따라서 HTML 생성, PDF export, generated HTML 수정, slide source 수정, CSS/generator/test 수정, build/check 실행은 하지 않는다. orchestrator rules-edit mode에서는 규칙 문서, decision log, PM packet, open question/handoff 정리만 허용하고, CLI/subagent reviewer를 read-only review mode로 띄운 경우에는 그 reviewer가 파일을 수정하지 않는다.
+- 사용자는 현재 이미 생성된 PDF 기준으로 특정 HTML을 재사용하되, 새 산출물이 기존 기준본과 섞이지 않도록 별도 출력 디렉토리를 쓰기로 했다. 피드백 루프에서는 single-slide HTML/screenshot만 갱신하고, 전체 deck/PDF 렌더링은 chapter freeze 또는 milestone PDF 때만 실행한다.
+- mini-batch는 고정 slide 수가 아니라 각 chapter 단위로 진행한다. page number가 변할 수 있으므로 사용자 피드백의 PDF page는 임시 handle로만 남기고, 내부 추적과 재사용 판단은 stable slide id, source file, generated artifact 기준으로 한다.
+- 권장 출력 root는 `output/html-feedback/<run-id>/chapter_XX/SYYY/`, chapter mini-batch는 `output/html-feedback/<run-id>/chapter_XX/mini-batch/`, milestone PDF는 `output/pdf-milestones/<build-id>/`이다.
 - 역할별 reasoning effort는 PM/reviewer/final source-alignment high 또는 xhigh, builder high, QA high, quick visual sanity/단순 목록화 medium 이하로 둔다. CLI가 reasoning flag를 직접 지원하지 않으면 prompt에 검토 깊이와 reasoning budget을 명시한다.
 - Codex/Gemini read-only rules review 결과에 따라 `rules-edit mode`와 `read-only review mode`를 분리하고, model fallback handoff fields를 `requested model`, `actual model`, `command`, `fallback reason`으로 통일했다. Gemini 검토는 보조 의견이며 PM/QA/reviewer gate를 대체하거나 다음 gate로 자동 진행시키지 않는다.

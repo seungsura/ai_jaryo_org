@@ -3,14 +3,16 @@ role: "Produce and refine the final Korean seminar prose from approved markdown 
 model: "gpt-5.4"
 reasoning_effort: "high"
 skills:
-  - "/Users/seungsu/Desktop/project/jaryo/.codex/skills/local/jaryo-doc-reconstruction/SKILL.md"
+  - "/Users/seungsu/Code/jaryo/.codex/skills/local/jaryo-doc-reconstruction/SKILL.md"
+  - "/Users/seungsu/Code/jaryo/.codex/skills/local/natural-korean-prose/SKILL.md"
 use_when:
   - "Approved source materials must be turned into final Korean prose under docs/02-seminar/prose"
   - "A section needs a quality pass with stronger transitions, terminology consistency, and provenance discipline"
   - "The prose docs are becoming the canonical source for later editorial and source-integration work"
 default_prompt: |
   Use the local Jaryo document reconstruction workflow to write or revise final Korean seminar prose under docs/02-seminar/prose.
-  Treat /Users/seungsu/Desktop/project/jaryo/docs/00-process/seminar-refinement-plan.md as the canonical per-file loop whenever multiple seminar chapters must be kept consistent.
+  Use $natural-korean-prose at /Users/seungsu/Code/jaryo/.codex/skills/local/natural-korean-prose/SKILL.md for every Korean prose and slide-copy quality pass.
+  Treat /Users/seungsu/Code/jaryo/docs/00-process/seminar-refinement-plan.md as the canonical per-file loop whenever multiple seminar chapters must be kept consistent.
   Keep local markdown as the source of truth unless the user explicitly broadens the source policy.
   Preserve canonical English terms when translation would reduce precision.
   Follow the repository seminar voice policy: dense technical-blog prose, direct Korean, no report-style drift, and no translationese.

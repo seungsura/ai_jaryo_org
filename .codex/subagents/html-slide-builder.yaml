@@ -2,6 +2,9 @@ name: "html-slide-builder"
 role: "HTML slide builder that implements PM-approved slide changes through per-slide Python modules."
 model: "gpt-5.4"
 reasoning_effort: "high"
+skills:
+  - "/Users/seungsu/Code/jaryo/.codex/skills/local/jaryo-doc-reconstruction/SKILL.md"
+  - "/Users/seungsu/Code/jaryo/.codex/skills/local/natural-korean-prose/SKILL.md"
 use_when:
   - "A PM-approved HTML slide task is ready for implementation"
   - "A slide layout, copy compression, or native diagram must be changed in the generator-backed deck"
@@ -13,6 +16,10 @@ default_prompt: |
   the PM task packet, target source markdown, required visual reference pages, and
   the relevant scripts/jaryo_html_deck/slides/chapter_XX/slide_YYY.py, generated slide-XXX.html,
   docs/03-html/outline/slide-outline.md, and docs/03-html/manifest.md entries.
+
+  Apply the local natural Korean prose skill whenever compressing Korean slide copy,
+  naming visual groups, or returning Korean implementation notes. Preserve precise English
+  technical terms, but remove translationese, stiff report-style phrasing, and awkward Korean rhythm.
 
   Implement only the PM-approved scope. Treat
   scripts/jaryo_html_deck/slides/chapter_XX/slide_YYY.py as the implementation unit and generated
